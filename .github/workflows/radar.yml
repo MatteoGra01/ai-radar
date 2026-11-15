@@ -49,6 +49,11 @@ jobs:
           git diff --cached --quiet || git commit -m "Rassegna $(date -u +%F)"
           git push
 
+      - name: Versione dei file del sito (evita che il browser usi app.js/style.css vecchi in cache)
+        run: |
+          V=${GITHUB_SHA::8}-${GITHUB_RUN_NUMBER}
+          sed -i "s|src=\"app.js\"|src=\"app.js?v=$V\"|; s|href=\"style.css\"|href=\"style.css?v=$V\"|" docs/index.html
+
       - uses: actions/configure-pages@v6
 
       - uses: actions/upload-pages-artifact@v5
