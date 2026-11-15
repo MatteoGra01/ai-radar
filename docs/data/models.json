@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T17:34:27Z",
+ "updated": "2026-11-15T17:36:04Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -2602,7 +2602,7 @@
    "signals": {
     "likes": 2097,
     "downloads": 46766,
-    "trending": 288,
+    "trending": 287,
     "trend_rank": 11,
     "watched_org": true
    },
@@ -3776,7 +3776,7 @@
    "signals": {
     "likes": 78,
     "downloads": 955,
-    "trending": 67,
+    "trending": 66,
     "trend_rank": 76
    },
    "links": {

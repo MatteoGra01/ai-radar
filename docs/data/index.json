@@ -2,12 +2,12 @@
  "days": [
   {
    "date": "2026-11-15",
-   "headline": "Qwen3.8-27B quantizzato da Unsloth e DeepSeek-V4.1 su GPU 16 GB in llama.cpp",
+   "headline": "Qwen3.8-27B quantizzato da Unsloth e DeepSeek-V4.1 su GPU 16 GB con tandem.cpp",
    "n_items": 150,
    "n_models": 52
   }
  ],
- "updated": "2026-11-15T17:33:05Z",
+ "updated": "2026-11-15T17:35:03Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -24,21 +24,21 @@
  },
  "status": {
   "sources": {
-   "rss:Simon Willison": {
-    "ok": true,
-    "n": 2
-   },
    "rss:Interconnects": {
     "ok": true,
     "n": 1
    },
-   "rss:Google DeepMind": {
+   "rss:NVIDIA Developer": {
     "ok": true,
     "n": 0
    },
    "rss:OpenAI News": {
     "ok": true,
     "n": 0
+   },
+   "rss:Simon Willison": {
+    "ok": true,
+    "n": 2
    },
    "rss:Hugging Face Blog": {
     "ok": true,
@@ -48,21 +48,21 @@
     "ok": true,
     "n": 0
    },
+   "rss:Google DeepMind": {
+    "ok": true,
+    "n": 0
+   },
    "hackernews": {
     "ok": true,
     "n": 10
    },
-   "rss:NVIDIA Developer": {
+   "rss:Ollama releases": {
     "ok": true,
     "n": 0
    },
    "rss:r/LocalLLaMA": {
     "ok": true,
     "n": 25
-   },
-   "rss:Ollama releases": {
-    "ok": true,
-    "n": 0
    },
    "rss:vLLM releases": {
     "ok": true,
@@ -119,16 +119,16 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 3,
-   "cost_usd": 0.0018,
+   "calls": 2,
+   "cost_usd": 0.0019,
    "failures": 0,
    "models": {
     "openrouter/deepseek/deepseek-v4.1-flash": 1,
-    "openrouter/anthropic/claude-haiku-5.5": 2
+    "openrouter/anthropic/claude-haiku-5.5": 1
    },
    "log": []
   },
-  "duration_s": 81
+  "duration_s": 61
  },
  "new_model_days": 14,
  "benchmarks_meta": {
