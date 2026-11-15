@@ -14,6 +14,7 @@ from zoneinfo import ZoneInfo
 from . import models as M
 from . import embeddings as EM
 from . import papers as PA
+from . import validate as V
 from .hardware import estimate
 from .llm import LLM
 from .sources import collect_news
@@ -90,7 +91,8 @@ Restituisci:
  "params": "parametri dichiarati (es. '27B dense', '35B totali / 3B attivi') o ''",
  "context": "contesto massimo dichiarato o ''",
  "availability": "dove e come si usa: pesi aperti, API, prezzo, piattaforme; o ''",
- "local_tips": "consigli per l'esecuzione locale presenti nel testo (sampling, framework, quantizzazioni ufficiali) o ''"}}
+ "local_tips": "consigli per l'esecuzione locale presenti nel testo (sampling, framework, quantizzazioni ufficiali) o ''",
+ "hw_claims": "requisiti hardware DICHIARATI nel testo per l'esecuzione locale (VRAM, RAM, GPU usata, motore di inferenza, offload, velocità misurate) riportando i numeri esatti, o ''"}}
 Usa solo dati presenti nel testo. Massimo 12 benchmark, preferendo i più noti (SWE-bench, GPQA, HLE, AIME, LiveCodeBench, MMLU-Pro, Terminal-Bench, ARC-AGI, MTEB…); in "vs" al massimo 3 concorrenti della stessa tabella. Se il testo riguarda più modelli, concentrati su {name}."""
 
 DIGEST_RULES = """Data: {date}.
@@ -247,8 +249,8 @@ def resolve_mention(name: str, it: dict, reg: M.Registry, or_index: list, cfg: d
     }
     others = others or M.family_placeholders(name)
     if others:
-        e["note"] = ("Nessun peso ufficiale su Hugging Face: esistono solo repo di terze parti o segnaposto ("
-                     + ", ".join(others[:3]) + ").")
+        e["note"] = ("Pesi ufficiali non ancora individuati su Hugging Face. Repository correlati (non del produttore "
+                     "o senza pesi, da verificare): " + ", ".join(others[:3]) + ".")
     return reg.add(e, today)
 
 
@@ -363,6 +365,7 @@ def normalize_deep(d: dict) -> dict:
         "context": s(d.get("context"), 80),
         "availability": s(d.get("availability"), 400),
         "local_tips": s(d.get("local_tips"), 500),
+        "hw_claims": s(d.get("hw_claims"), 400),
     }
 
 
@@ -456,6 +459,42 @@ def make_digest(llm: LLM, cfg: dict, date: str, items: list[dict], models_today:
     }
 
 
+def local_models(reg: M.Registry) -> list[dict]:
+    return [e for e in reg.models.values() if e.get("hf_id") and e.get("params_b") and e.get("weights_available") is not False
+            and e.get("kind") != "closed"]
+
+
+def recompute_verdicts(local: list[dict], cfg: dict):
+    """Verdetti GPU ricalcolati ogni giorno per tutto il registro (stessa formula, hardware da config.toml),
+    con l'indicazione se esiste già un checkpoint nel formato nativo consigliato."""
+    for e in local:
+        v = estimate(e["params_b"], e.get("active_b"), e.get("arch"), cfg["hardware"], e.get("pipeline"))
+        if v and v.get("native_best") and v.get("quantized") and v.get("mode") == "quant":
+            fmt = v["native_best"]
+            ready = M.native_ready(e, fmt)
+            v["native_ready"] = ready["id"] if ready else None
+            v["text"] += (f" — checkpoint {fmt} già su Hugging Face ({ready['id']})" if ready else
+                          f" — nessun checkpoint {fmt} pubblicato: va convertito (es. NVIDIA ModelOpt o llm-compressor)")
+        e["vram"] = v
+
+
+def predecessors(reg: M.Registry, ids: list[str]) -> dict:
+    """Per ogni modello: è una nuova versione di un modello già in registro (stessa famiglia e taglia)?"""
+    pv = {mid: M.parse_version(e.get("hf_id") or e["name"]) for mid, e in reg.models.items()}
+    out = {}
+    for mid in ids:
+        cur = pv.get(mid)
+        if not cur or not cur["fam"]:
+            continue
+        best = None
+        for oid, o in pv.items():
+            if oid != mid and o and M._is_newer(o, cur) and (best is None or o["ver"] > best[1]["ver"]):
+                best = (oid, o)
+        if best:
+            out[mid] = {"id": best[0], "name": reg.models[best[0]]["name"]}
+    return out
+
+
 def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | None = None,
         refresh_deep: bool = False) -> dict:
     t0 = time.time()
@@ -510,31 +549,37 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
     # 3b. benchmark indipendenti: Artificial Analysis (via OpenRouter) e valutazioni di OpenRouter
     bench, bench_meta = M.fetch_benchmarks(status)
     n_bench = M.sync_benchmarks(reg, or_index, bench, cfg, today)
+    # 3c. controllo qualità delle schede: duplicati, stato dei repo su HF, dati mancanti
+    vstats = V.validate(reg, cfg, today)
+    for it in new:
+        if it.get("model_ids"):
+            it["model_ids"] = list(dict.fromkeys(reg.canon(x) for x in it["model_ids"]))
+    log(f"Validazione schede: {vstats['merged']} duplicati fusi, {vstats['rechecked']} repo ricontrollati su HF, "
+        f"{vstats['with_warnings']} schede con avvisi")
     # quantizzazioni pronte su HF (GGUF, NVFP4, FP8…) per tutti i modelli aperti, ricontrollate ogni settimana
-    local = [e for e in reg.models.values() if e.get("hf_id") and e.get("params_b") and e.get("weights_available") is not False
-             and e.get("kind") != "closed"]
+    local = local_models(reg)
     qweek = (now - timedelta(days=7)).date().isoformat()
     stale_q = sorted((e for e in local if (e.get("quants_checked") or "") < qweek),
                      key=lambda e: e.get("quants_checked") or "")[:150]
 
+    quants_new = []  # formati comparsi da un controllo all'altro (es. la prima GGUF o il primo NVFP4)
+
+    def fmts(qs):
+        return {q["format"] for q in qs or []} | ({"NVFP4"} if any(q.get("nvfp4") for q in qs or []) else set())
+
     def fetch_q(e):
+        before = fmts(e.get("quants"))
         q = M.hf_quants(e["hf_id"])
         if q is not None:
+            added = sorted((fmts(q) - before) & {"GGUF", "NVFP4", "FP8", "MXFP4", "AWQ", "GPTQ", "MLX"})
+            if added and e.get("quants_checked"):
+                repos = {f: next((x["id"] for x in q if x["format"] == f or (f == "NVFP4" and x.get("nvfp4"))), None) for f in added}
+                quants_new.append({"id": e["id"], "name": e["name"], "formats": added, "repos": repos})
             e["quants"] = q
             e["quants_checked"] = today
     with ThreadPoolExecutor(max_workers=6) as ex:
         list(ex.map(fetch_q, stale_q))
-    # verdetti GPU ricalcolati ogni giorno per tutto il registro (stessa formula, hardware da config.toml),
-    # con l'indicazione se esiste già un checkpoint nel formato nativo consigliato
-    for e in local:
-        v = estimate(e["params_b"], e.get("active_b"), e.get("arch"), cfg["hardware"], e.get("pipeline"))
-        if v and v.get("native_best") and v.get("quantized"):
-            fmt = v["native_best"]
-            ready = M.native_ready(e, fmt)
-            v["native_ready"] = ready["id"] if ready else None
-            v["text"] += (f" — checkpoint {fmt} già su Hugging Face ({ready['id']})" if ready else
-                          f" — nessun checkpoint {fmt} pubblicato: va convertito (es. NVIDIA ModelOpt o llm-compressor)")
-        e["vram"] = v
+    recompute_verdicts(local, cfg)
     log(f"Quantizzazioni controllate: {len(stale_q)} modelli; verdetti GPU ricalcolati: {len(local)}")
     for e in reg.models.values():
         e["score"] = M.priority(e, cfg)
@@ -543,8 +588,9 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
     day_path = data_dir / "days" / f"{today}.json"
     prev = load_json(day_path, None)
     if prev:  # seconda esecuzione nello stesso giorno: considera anche i modelli già in pagina
-        today_ids |= set(prev.get("models", [])) & set(reg.models)
-        today_ids |= {s["id"] for s in prev.get("models_superseded", [])} & set(reg.models)
+        today_ids |= {reg.canon(x) for x in prev.get("models", [])} & set(reg.models)
+        today_ids |= {reg.canon(s["id"]) for s in prev.get("models_superseded", [])} & set(reg.models)
+        today_ids = {reg.canon(x) for x in today_ids} & set(reg.models)
     models_today = sorted((reg.models[i] for i in today_ids), key=lambda e: -e["score"])
     log(f"Modelli: {len(reg.models)} nel registro, {len(reg.touched)} nuovi/aggiornati, "
         f"{len(mentioned_today)} citati oggi, {n_bench} con benchmark indipendenti")
@@ -578,6 +624,8 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
     cands = sorted((e for e in models_today if not e.get("deep") and e["kind"] != "placeholder"),
                    key=lambda e: (-max([m.get("rel", 0) for m in e.get("mentions", []) if m.get("date", "") >= (now - timedelta(days=7)).date().isoformat()] or [0]), -e["score"]))
     n_deep = deep_dives(llm, reg, cfg, items_by_id, today, cands)
+    # le schede appena analizzate possono dichiarare i parametri attivi (MoE senza config.json leggibile)
+    recompute_verdicts([e for e in local_models(reg) if V.declared_active(e)], cfg)
 
     # 4b. paper per argomento
     papers_first = not (data_dir / "papers.json").exists()
@@ -622,6 +670,8 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
         "models_new": [e["id"] for e in models_today if (e.get("released") or e.get("first_seen") or "") >= new_cut],
         "models_cited": [e["id"] for e in models_today if (e.get("released") or e.get("first_seen") or "") < new_cut],
         "models_superseded": [{"id": e["id"], "name": e["name"], "newer": e["newer"]} for e in superseded_today],
+        "model_tags": predecessors(reg, [e["id"] for e in models_today]),
+        "quants_new": quants_new + [q for q in (prev or {}).get("quants_new", []) if q["id"] not in {x["id"] for x in quants_new}],
         "stats": {"collected": len(items), "new": len(new), "triaged": n_triaged, "deep_dives": n_deep,
                   "papers_new": sum(1 for p in pdata["papers"].values() if p.get("first_seen") == today)},
     }

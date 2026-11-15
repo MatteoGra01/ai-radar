@@ -72,6 +72,19 @@ class TestHardware(unittest.TestCase):
         self.assertEqual(v["level"], "warn")
         self.assertIn("offload", v["text"])
 
+    def test_modes(self):
+        a = arch_from_config(HYBRID)
+        self.assertEqual(estimate(1.7, None, None, HW, "text-generation")["mode"], "bf16")
+        self.assertEqual(estimate(27.78, None, a, HW, "image-text-to-text")["mode"], "quant")
+        # 145B senza config (es. Edge0-145B): non entra in VRAM ma con 64 GB di RAM gira in GPU + RAM
+        v = estimate(145, None, None, {**HW, "ram_reserved_gb": 8}, "text-generation")
+        self.assertEqual(v["mode"], "offload")
+        self.assertEqual(v["offload"]["q"], "Q4_K_M")
+        self.assertLessEqual(v["offload"]["ram_gb"], 64 - 8)
+        self.assertIn("parametri attivi non noti", v["text"])
+        # senza RAM sufficiente: non supportato
+        self.assertEqual(estimate(145, None, None, {**HW, "system_ram_gb": 16}, "text-generation")["mode"], "no")
+
     def test_bad_config(self):
         self.assertIsNone(arch_from_config({"sliding_window_pattern": "interleave"}))
         self.assertIsNotNone(arch_from_config({**MOE, "sliding_window_pattern": "interleave", "sliding_window": 4096}))

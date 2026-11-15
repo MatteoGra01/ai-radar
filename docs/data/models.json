@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T18:41:23Z",
+ "updated": "2026-11-15T20:01:44Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -27,7 +27,10 @@
    "score": 3.5,
    "updated": "2026-11-15",
    "newer": null,
-   "newer_checked": "2026-11-15"
+   "newer_checked": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ]
   },
   "or:google/gemini-4-hydrogen": {
    "id": "or:google/gemini-4-hydrogen",
@@ -203,7 +206,10 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "newer": null,
-   "newer_checked": "2026-11-15"
+   "newer_checked": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ]
   },
   "or:baidu/ernie-light-dt-1.0-intl": {
    "id": "or:baidu/ernie-light-dt-1.0-intl",
@@ -442,8 +448,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~181 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~181 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -454,6 +461,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -655,7 +663,8 @@
    },
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15"
   },
   "thinkingmachines/Inkling-2-Small": {
    "id": "thinkingmachines/Inkling-2-Small",
@@ -726,8 +735,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~335 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~335 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -738,6 +748,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -916,7 +927,8 @@
    "or_evals": {
     "gpqa_diamond": 91.1,
     "tau_bench_verified_airline": 63.3
-   }
+   },
+   "hf_checked": "2026-11-15"
   },
   "or:anthropic/claude-fable-5.2": {
    "id": "or:anthropic/claude-fable-5.2",
@@ -1219,12 +1231,13 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 1796,
+    "likes": 1798,
     "downloads": 103744,
     "trending": null
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 256k",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~256k, ~352 tok/s",
     "best_quant": "BF16",
@@ -1237,6 +1250,7 @@
     "tok_s": 352,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -1610,7 +1624,8 @@
    },
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15"
   },
   "or:google/gemini-omni-1.2-flash": {
    "id": "or:google/gemini-omni-1.2-flash",
@@ -1772,8 +1787,9 @@
    },
    "vram": {
     "level": "warn",
+    "mode": "quant",
     "label": "IQ2_M · 147k",
-    "text": "Solo con quantizzazione aggressiva. GGUF IQ2_M: contesto fino a ~147k, ~56 tok/s",
+    "text": "Solo con quantizzazione aggressiva. GGUF IQ2_M: contesto fino a ~147k, ~56 tok/s · In alternativa GPU + RAM: Q4_K_M con ~30 GB in VRAM + ~11 GB in RAM, ~4 tok/s (llama.cpp -ngl parziale)",
     "best_quant": "IQ2_M",
     "quantized": true,
     "native_best": null,
@@ -1784,6 +1800,14 @@
     "tok_s": 56,
     "kv_known": true,
     "is_moe": false,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 10.8,
+     "tok_s": 4,
+     "moe": false,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -2177,7 +2201,8 @@
    },
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15"
   },
   "tencent/Hy4": {
    "id": "tencent/Hy4",
@@ -2230,7 +2255,10 @@
    },
    "or_evals": {
     "gpqa_diamond": 83.2
-   }
+   },
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ]
   },
   "Motif-Technologies/Motif-3": {
    "id": "Motif-Technologies/Motif-3",
@@ -2289,8 +2317,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~178 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~178 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -2300,7 +2329,8 @@
     "ref_ctx": 32768,
     "tok_s": null,
     "kv_known": true,
-    "is_moe": false,
+    "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -2309,7 +2339,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 2
+      "tok_s": 37
      },
      {
       "q": "Q8_0",
@@ -2318,7 +2348,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 4
+      "tok_s": 69
      },
      {
       "q": "Q6_K",
@@ -2327,7 +2357,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 5
+      "tok_s": 88
      },
      {
       "q": "Q5_K_M",
@@ -2336,7 +2366,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 6
+      "tok_s": 102
      },
      {
       "q": "Q4_K_M",
@@ -2345,7 +2375,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 7
+      "tok_s": 119
      },
      {
       "q": "IQ4_XS",
@@ -2354,7 +2384,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 7
+      "tok_s": 135
      },
      {
       "q": "Q3_K_M",
@@ -2363,7 +2393,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 8
+      "tok_s": 146
      },
      {
       "q": "IQ2_M",
@@ -2372,7 +2402,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 12
+      "tok_s": 208
      },
      {
       "q": "FP8",
@@ -2381,7 +2411,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 4
+      "tok_s": 71
      },
      {
       "q": "NVFP4",
@@ -2390,7 +2420,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 7
+      "tok_s": 127
      }
     ]
    },
@@ -2620,7 +2650,13 @@
     "agentic": 28.4,
     "variant": null,
     "slug": "motif-technologies/motif-3"
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
+   ],
+   "active_b": 13.2,
+   "active_source": "dichiarato"
   },
   "or:z-ai/glm-5.3-flashx-legal": {
    "id": "or:z-ai/glm-5.3-flashx-legal",
@@ -2682,7 +2718,7 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 1167,
+    "likes": 1171,
     "downloads": 571067,
     "trending": 1056,
     "trend_rank": 2,
@@ -2748,7 +2784,11 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "newer": null,
-   "newer_checked": "2026-11-15"
+   "newer_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ]
   },
   "Zyphra/ZONOS3-Mini": {
    "id": "Zyphra/ZONOS3-Mini",
@@ -2767,7 +2807,7 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 381,
+    "likes": 383,
     "downloads": 39862,
     "trending": 341,
     "trend_rank": 7,
@@ -2808,7 +2848,11 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "newer": null,
-   "newer_checked": "2026-11-15"
+   "newer_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ]
   },
   "moonshotai/Kimi-K3.1-Pro": {
    "id": "moonshotai/Kimi-K3.1-Pro",
@@ -2822,7 +2866,7 @@
    "gated": false,
    "params_b": 2780.11,
    "params_source": "safetensors",
-   "active_b": null,
+   "active_b": 104.0,
    "context": 1048576,
    "arch": {
     "layers": 93,
@@ -2858,8 +2902,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~1570 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~1570 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -2869,7 +2914,8 @@
     "ref_ctx": 32768,
     "tok_s": null,
     "kv_known": true,
-    "is_moe": false,
+    "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -2878,7 +2924,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 0
+      "tok_s": 6
      },
      {
       "q": "Q8_0",
@@ -2887,7 +2933,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 0
+      "tok_s": 11
      },
      {
       "q": "Q6_K",
@@ -2896,7 +2942,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 15
      },
      {
       "q": "Q5_K_M",
@@ -2905,7 +2951,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 17
      },
      {
       "q": "Q4_K_M",
@@ -2914,7 +2960,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 20
      },
      {
       "q": "IQ4_XS",
@@ -2923,7 +2969,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 23
      },
      {
       "q": "Q3_K_M",
@@ -2932,7 +2978,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 24
      },
      {
       "q": "IQ2_M",
@@ -2941,7 +2987,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 35
      },
      {
       "q": "FP8",
@@ -2950,7 +2996,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 0
+      "tok_s": 12
      },
      {
       "q": "NVFP4",
@@ -2959,7 +3005,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 21
      }
     ]
    },
@@ -3209,7 +3255,12 @@
    "or_evals": {
     "gpqa_diamond": 92.9,
     "tau_bench_verified_airline": 75.9
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
+   ],
+   "active_source": "dichiarato"
   },
   "higurashi-ai/Haru-4B": {
    "id": "higurashi-ai/Haru-4B",
@@ -3228,7 +3279,7 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 290,
+    "likes": 295,
     "downloads": 2098,
     "trending": 274,
     "trend_rank": 13
@@ -3238,6 +3289,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), 9.8 GB di pesi",
     "best_quant": "BF16",
@@ -3250,6 +3302,7 @@
     "tok_s": null,
     "kv_known": false,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -3393,7 +3446,11 @@
    },
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "Cactus-Compute/mirage": {
    "id": "Cactus-Compute/mirage",
@@ -3412,7 +3469,7 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 316,
+    "likes": 317,
     "downloads": 28553,
     "trending": 215,
     "trend_rank": 19
@@ -3444,7 +3501,11 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "newer": null,
-   "newer_checked": "2026-11-15"
+   "newer_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ]
   },
   "adventists-ai/Sophon-Realtime-v1": {
    "id": "adventists-ai/Sophon-Realtime-v1",
@@ -3478,7 +3539,8 @@
    "score": 4.19,
    "updated": "2026-11-15",
    "newer": null,
-   "newer_checked": "2026-11-15"
+   "newer_checked": "2026-11-15",
+   "hf_checked": "2026-11-15"
   },
   "meituan-longcat/LongCat-2.5": {
    "id": "meituan-longcat/LongCat-2.5",
@@ -3492,7 +3554,7 @@
    "gated": false,
    "params_b": 1779.75,
    "params_source": "safetensors",
-   "active_b": null,
+   "active_b": 48.0,
    "context": 524288,
    "arch": {
     "layers": 38,
@@ -3528,8 +3590,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~1005 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~1005 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -3539,7 +3602,8 @@
     "ref_ctx": 32768,
     "tok_s": null,
     "kv_known": true,
-    "is_moe": false,
+    "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -3548,7 +3612,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 0
+      "tok_s": 13
      },
      {
       "q": "Q8_0",
@@ -3557,7 +3621,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 25
      },
      {
       "q": "Q6_K",
@@ -3566,7 +3630,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 32
      },
      {
       "q": "Q5_K_M",
@@ -3575,7 +3639,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 37
      },
      {
       "q": "Q4_K_M",
@@ -3584,7 +3648,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 43
      },
      {
       "q": "IQ4_XS",
@@ -3593,7 +3657,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 49
      },
      {
       "q": "Q3_K_M",
@@ -3602,7 +3666,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 53
      },
      {
       "q": "IQ2_M",
@@ -3611,7 +3675,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 2
+      "tok_s": 77
      },
      {
       "q": "FP8",
@@ -3620,7 +3684,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 25
      },
      {
       "q": "NVFP4",
@@ -3629,7 +3693,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 1
+      "tok_s": 46
      }
     ]
    },
@@ -3787,7 +3851,12 @@
    },
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
+   ],
+   "active_source": "dichiarato"
   },
   "ConwayResearch/Underdog-Woof": {
    "id": "ConwayResearch/Underdog-Woof",
@@ -3870,7 +3939,11 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "newer": null,
-   "newer_checked": "2026-11-15"
+   "newer_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ]
   },
   "MinimaLabs/KLM-1.6": {
    "id": "MinimaLabs/KLM-1.6",
@@ -3919,6 +3992,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 2k",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~2k, 500+ tok/s",
     "best_quant": "BF16",
@@ -3931,6 +4005,7 @@
     "tok_s": 4172,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -4141,7 +4216,8 @@
    },
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15"
   },
   "Oomni/mithi-v1-flash": {
    "id": "Oomni/mithi-v1-flash",
@@ -4205,7 +4281,11 @@
     "released": "2026-11-10",
     "url": "https://huggingface.co/Oomni/mithi-v2-flash"
    },
-   "newer_checked": "2026-11-15"
+   "newer_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ]
   },
   "nvidia/MetricTrail": {
    "id": "nvidia/MetricTrail",
@@ -4258,7 +4338,11 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "newer": null,
-   "newer_checked": "2026-11-15"
+   "newer_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ]
   },
   "BAAI/PingPongRealWorldRL": {
    "id": "BAAI/PingPongRealWorldRL",
@@ -4311,7 +4395,11 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "newer": null,
-   "newer_checked": "2026-11-15"
+   "newer_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ]
   },
   "ByteDance-Seed/Cola2": {
    "id": "ByteDance-Seed/Cola2",
@@ -4340,6 +4428,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), 16.3 GB di pesi, contesto non stimabile",
     "best_quant": "BF16",
@@ -4352,6 +4441,7 @@
     "tok_s": 72,
     "kv_known": false,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -4634,7 +4724,11 @@
    },
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "Zyphra/ZONOS3-Mini-hf": {
    "id": "Zyphra/ZONOS3-Mini-hf",
@@ -4663,6 +4757,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), 1.9 GB di pesi",
     "best_quant": "BF16",
@@ -4675,6 +4770,7 @@
     "tok_s": null,
     "kv_known": false,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -4794,7 +4890,11 @@
    },
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "Zyphra/fusealign": {
    "id": "Zyphra/fusealign",
@@ -4968,7 +5068,11 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "newer": null,
-   "newer_checked": "2026-11-15"
+   "newer_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ]
   },
   "ann:claudemythos52": {
    "id": "ann:claudemythos52",
@@ -5252,7 +5356,7 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 20059,
+    "likes": 20094,
     "downloads": 6547772,
     "trending": null
    },
@@ -5262,6 +5366,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 244k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~52 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~244k, ~78 tok/s · GGUF Q6_K: contesto fino a ~135k, ~54 tok/s; Q8_0 al limite — checkpoint NVFP4 già su Hugging Face (unsloth/Qwen3.8-27B-NVFP4)",
     "best_quant": "NVFP4",
@@ -5274,6 +5379,7 @@
     "tok_s": 78,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -5515,7 +5621,8 @@
    "or_evals": {
     "gpqa_diamond": 81.9,
     "tau_bench_verified_airline": 77.5
-   }
+   },
+   "hf_checked": "2026-11-15"
   },
   "ibm-granite/granite-4.1-3b": {
    "id": "ibm-granite/granite-4.1-3b",
@@ -5527,8 +5634,8 @@
    "pipeline": "text-generation",
    "license": "apache-2.0",
    "gated": false,
-   "params_b": 3.0,
-   "params_source": "nome",
+   "params_b": 3.4,
+   "params_source": "safetensors",
    "active_b": null,
    "context": 131072,
    "arch": {
@@ -5563,108 +5670,110 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 128k",
-    "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~128k, ~198 tok/s",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~128k, ~176 tok/s",
     "best_quant": "BF16",
     "quantized": false,
     "native_best": "FP8",
     "gguf_best": "BF16",
     "tight": null,
-    "native_gb": 5.6,
+    "native_gb": 6.3,
     "ref_ctx": 32768,
-    "tok_s": 198,
+    "tok_s": 176,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
       "native": false,
-      "gb": 9.0,
+      "gb": 9.7,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 198
+      "tok_s": 176
      },
      {
       "q": "Q8_0",
       "native": false,
-      "gb": 6.3,
+      "gb": 6.7,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 356
+      "tok_s": 318
      },
      {
       "q": "Q6_K",
+      "native": false,
+      "gb": 5.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 131072,
+      "tok_s": 402
+     },
+     {
+      "q": "Q5_K_M",
       "native": false,
       "gb": 5.6,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 449
-     },
-     {
-      "q": "Q5_K_M",
-      "native": false,
-      "gb": 5.3,
-      "fits": true,
-      "comfy": true,
-      "max_ctx": 131072,
-      "tok_s": 508
+      "tok_s": 456
      },
      {
       "q": "Q4_K_M",
+      "native": false,
+      "gb": 5.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 131072,
+      "tok_s": 523
+     },
+     {
+      "q": "IQ4_XS",
       "native": false,
       "gb": 5.0,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 582
+      "tok_s": 586
      },
      {
-      "q": "IQ4_XS",
+      "q": "Q3_K_M",
       "native": false,
       "gb": 4.8,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 650
-     },
-     {
-      "q": "Q3_K_M",
-      "native": false,
-      "gb": 4.7,
-      "fits": true,
-      "comfy": true,
-      "max_ctx": 131072,
-      "tok_s": 696
+      "tok_s": 628
      },
      {
       "q": "IQ2_M",
       "native": false,
-      "gb": 4.2,
+      "gb": 4.4,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 931
+      "tok_s": 846
      },
      {
       "q": "FP8",
       "native": true,
-      "gb": 6.2,
+      "gb": 6.6,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 366
+      "tok_s": 327
      },
      {
       "q": "NVFP4",
       "native": true,
-      "gb": 4.9,
+      "gb": 5.1,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 620
+      "tok_s": 558
      }
     ]
    },
@@ -5751,7 +5860,8 @@
     "url": "https://huggingface.co/ibm-granite/granite-4.2-3b"
    },
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15"
   },
   "ibm-granite/granite-4.1-8b": {
    "id": "ibm-granite/granite-4.1-8b",
@@ -5763,8 +5873,8 @@
    "pipeline": "text-generation",
    "license": "apache-2.0",
    "gated": false,
-   "params_b": 8.0,
-   "params_source": "nome",
+   "params_b": 8.79,
+   "params_source": "safetensors",
    "active_b": null,
    "context": 131072,
    "arch": {
@@ -5799,108 +5909,110 @@
    },
    "vram": {
     "level": "ok",
-    "label": "BF16 nativo · 96k",
-    "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~96k, ~75 tok/s",
+    "mode": "bf16",
+    "label": "BF16 nativo · 86k",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~86k, ~69 tok/s",
     "best_quant": "BF16",
     "quantized": false,
     "native_best": "FP8",
     "gguf_best": "BF16",
     "tight": null,
-    "native_gb": 14.9,
+    "native_gb": 16.4,
     "ref_ctx": 32768,
-    "tok_s": 75,
+    "tok_s": 69,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
       "native": false,
-      "gb": 20.9,
+      "gb": 22.5,
       "fits": true,
       "comfy": true,
-      "max_ctx": 98432,
-      "tok_s": 75
+      "max_ctx": 88742,
+      "tok_s": 69
      },
      {
       "q": "Q8_0",
       "native": false,
-      "gb": 13.8,
+      "gb": 14.6,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 137
+      "tok_s": 125
      },
      {
       "q": "Q6_K",
       "native": false,
-      "gb": 12.0,
+      "gb": 12.6,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 173
+      "tok_s": 159
      },
      {
       "q": "Q5_K_M",
       "native": false,
-      "gb": 11.2,
+      "gb": 11.7,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 197
+      "tok_s": 181
      },
      {
       "q": "Q4_K_M",
       "native": false,
-      "gb": 10.3,
+      "gb": 10.8,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 227
+      "tok_s": 209
      },
      {
       "q": "IQ4_XS",
+      "native": false,
+      "gb": 10.1,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 131072,
+      "tok_s": 235
+     },
+     {
+      "q": "Q3_K_M",
       "native": false,
       "gb": 9.8,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 255
-     },
-     {
-      "q": "Q3_K_M",
-      "native": false,
-      "gb": 9.4,
-      "fits": true,
-      "comfy": true,
-      "max_ctx": 131072,
-      "tok_s": 274
+      "tok_s": 253
      },
      {
       "q": "IQ2_M",
       "native": false,
-      "gb": 8.3,
+      "gb": 8.6,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 372
+      "tok_s": 345
      },
      {
       "q": "FP8",
       "native": true,
-      "gb": 13.6,
+      "gb": 14.3,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 141
+      "tok_s": 129
      },
      {
       "q": "NVFP4",
       "native": true,
-      "gb": 10.0,
+      "gb": 10.4,
       "fits": true,
       "comfy": true,
       "max_ctx": 131072,
-      "tok_s": 243
+      "tok_s": 223
      }
     ]
    },
@@ -6001,7 +6113,8 @@
     "agentic": null,
     "variant": null,
     "slug": "ibm-granite/granite-4.1-8b-20260429"
-   }
+   },
+   "hf_checked": "2026-11-15"
   },
   "ann:alphaproofcode": {
    "id": "ann:alphaproofcode",
@@ -6244,6 +6357,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "FP8 · 128k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~45 GB). FP8 (formato nativo della RTX 5090): contesto fino a ~128k, ~166 tok/s · GGUF Q8_0: contesto fino a ~128k, ~161 tok/s — checkpoint FP8 già su Hugging Face (LiquidAI/LFM2.5-24B-A2B-FP8)",
     "best_quant": "FP8",
@@ -6256,6 +6370,7 @@
     "tok_s": 166,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -6609,7 +6724,8 @@
    },
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15"
   },
   "arcee-ai/Arcee-Agent": {
    "id": "arcee-ai/Arcee-Agent",
@@ -6622,7 +6738,7 @@
    "license": "apache-2.0",
    "gated": false,
    "params_b": 7.62,
-   "params_source": "stima da config",
+   "params_source": "safetensors",
    "active_b": null,
    "context": 131072,
    "arch": {
@@ -6657,6 +6773,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 128k",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~128k, ~81 tok/s",
     "best_quant": "BF16",
@@ -6669,6 +6786,7 @@
     "tok_s": 81,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -6812,284 +6930,8 @@
    },
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
-  },
-  "ann:edge0145b": {
-   "id": "ann:edge0145b",
-   "name": "Edge0-145B",
-   "org": "",
-   "kind": "open",
-   "released": "2026-11-12",
-   "links": {
-    "announcement": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
-    "hf": "https://huggingface.co/Edge0/Edge0-145B-NVFP4"
-   },
-   "first_seen": "2026-11-15",
-   "mentions": [
-    {
-     "item": "f980cc1f1e21",
-     "rel": 9,
-     "date": "2026-11-12",
-     "title": "Edge0-145B: modello frontier Apache 2.0 eseguibile su singola GPU consumer",
-     "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
-     "source": "Hacker News"
-    }
-   ],
-   "score": 12.4,
-   "updated": "2026-11-15",
-   "deep": {
-    "tldr": "Edge0-145B è un modello open-weight da 145B parametri pensato per girare in locale su laptop (picco di memoria dichiarato 29GB, decoding oltre 80 token/s), insieme a un framework di inferenza unificato. Il testo lo presenta come competitivo con alcuni modelli cloud frontier su coding, reasoning e instruction following, con un focus su task agentici complessi.",
-    "features": [
-     "Architettura a esperti sparsi con matrici condivise: gruppi di 64 esperti condividono due grandi matrici, con circa 10B parametri attivi per step di inferenza su 145B totali",
-     "Addestrato nativamente per l'esecuzione on-device fin dall'inizio, non come compressione post-training di un modello cloud",
-     "Pipeline di caricamento su tre livelli (GPU, memoria di sistema ~40GB di libreria esperti, SSD ~48GB di dati del vocabolario) e scheduling CPU+GPU con speculative decoding",
-     "Contesto dichiarato 128K–256K con velocità sostanzialmente stabile su input lunghi",
-     "Capacità agentiche: pianificazione, scrittura ed esecuzione di codice, debugging e verifica visiva dei risultati tramite screenshot",
-     "Parte di una famiglia più ampia (Edge0-120B, 35B e 8B per telefoni; Audio8, Decision0, Embedding0)"
-    ],
-    "benchmarks": [
-     {
-      "name": "DeepSWE 1.1",
-      "score": "64.6",
-      "vs": [
-       {
-        "model": "Qwen3.8-Flash-Next",
-        "score": "58.7"
-       },
-       {
-        "model": "DeepSeek-V4-Flash-0731",
-        "score": "54.4"
-       }
-      ]
-     },
-     {
-      "name": "Terminal-Bench 2.1",
-      "score": "86.52",
-      "vs": [
-       {
-        "model": "Qwen3.8-Flash-Next",
-        "score": "83.3"
-       },
-       {
-        "model": "DeepSeek-V4-Flash-0731",
-        "score": "82.7"
-       },
-       {
-        "model": "Claude-Opus-4.6 (Max)",
-        "score": "78.2"
-       }
-      ]
-     },
-     {
-      "name": "HLE",
-      "score": "35.4",
-      "vs": [
-       {
-        "model": "Qwen3.8-Flash-Next",
-        "score": "35.9"
-       },
-       {
-        "model": "Claude-Opus-4.6 (Max)",
-        "score": "40.0"
-       }
-      ]
-     },
-     {
-      "name": "GPQA-Diamond",
-      "score": "90.4",
-      "vs": [
-       {
-        "model": "DeepSeek-V4-Flash-0731",
-        "score": "90.8"
-       },
-       {
-        "model": "Claude-Opus-4.6 (Max)",
-        "score": "91.3"
-       }
-      ]
-     },
-     {
-      "name": "IFBench",
-      "score": "80.6",
-      "vs": [
-       {
-        "model": "DeepSeek-V4-Flash-0731",
-        "score": "79.2"
-       },
-       {
-        "model": "Claude-Opus-4.6 (Max)",
-        "score": "62.5"
-       }
-      ]
-     },
-     {
-      "name": "AA-LCR",
-      "score": "79.3",
-      "vs": [
-       {
-        "model": "Qwen3.8-27B",
-        "score": "82.0"
-       },
-       {
-        "model": "Claude-Opus-4.6 (Max)",
-        "score": "78.0"
-       }
-      ]
-     }
-    ],
-    "params": "145B totali (circa 10B attivi per step di inferenza, architettura MoE con esperti sparsi)",
-    "context": "128K–256K",
-    "availability": "Pesi aperti (open-source, con il framework di inferenza e gli strumenti di deploy); demo tramite Edge0 App. Il testo non riporta prezzi API né licenza specifica.",
-    "local_tips": "Il testo indica: picco di memoria ~29GB su laptop compatibili (es. MacBook Pro), target 48GB di RAM; deploy tramite il framework di inferenza unificato rilasciato insieme ai pesi; speculative decoding e caricamento pipeline GPU/RAM/SSD gestiti dal framework. Non sono riportate quantizzazioni ufficiali, parametri di sampling o integrazioni con llama.cpp/Ollama/vLLM/LM Studio.",
-    "source": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
-    "date": "2026-11-15",
-    "by": "anthropic/claude-haiku-5.5"
-   },
-   "newer": null,
-   "newer_checked": "2026-11-15",
-   "hf_id": "Edge0/Edge0-145B-NVFP4",
-   "pipeline": "text-generation",
-   "license": "other",
-   "gated": false,
-   "params_b": 145.0,
-   "params_source": "nome",
-   "weights_available": true,
-   "signals": {
-    "likes": 278,
-    "downloads": 41606,
-    "trending": null
-   },
-   "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~82 GB solo di pesi anche in Q4_K_M",
-    "best_quant": null,
-    "quantized": false,
-    "native_best": null,
-    "gguf_best": null,
-    "tight": null,
-    "native_gb": 270.1,
-    "ref_ctx": 32768,
-    "tok_s": null,
-    "kv_known": false,
-    "is_moe": false,
-    "options": [
-     {
-      "q": "BF16",
-      "native": false,
-      "gb": 276.3,
-      "fits": false,
-      "comfy": false,
-      "max_ctx": null,
-      "tok_s": 4
-     },
-     {
-      "q": "Q8_0",
-      "native": false,
-      "gb": 147.1,
-      "fits": false,
-      "comfy": false,
-      "max_ctx": null,
-      "tok_s": 8
-     },
-     {
-      "q": "Q6_K",
-      "native": false,
-      "gb": 113.7,
-      "fits": false,
-      "comfy": false,
-      "max_ctx": null,
-      "tok_s": 11
-     },
-     {
-      "q": "Q5_K_M",
-      "native": false,
-      "gb": 98.7,
-      "fits": false,
-      "comfy": false,
-      "max_ctx": null,
-      "tok_s": 12
-     },
-     {
-      "q": "Q4_K_M",
-      "native": false,
-      "gb": 84.3,
-      "fits": false,
-      "comfy": false,
-      "max_ctx": null,
-      "tok_s": 14
-     },
-     {
-      "q": "IQ4_XS",
-      "native": false,
-      "gb": 73.9,
-      "fits": false,
-      "comfy": false,
-      "max_ctx": null,
-      "tok_s": 16
-     },
-     {
-      "q": "Q3_K_M",
-      "native": false,
-      "gb": 68.1,
-      "fits": false,
-      "comfy": false,
-      "max_ctx": null,
-      "tok_s": 18
-     },
-     {
-      "q": "IQ2_M",
-      "native": false,
-      "gb": 47.3,
-      "fits": false,
-      "comfy": false,
-      "max_ctx": null,
-      "tok_s": 26
-     },
-     {
-      "q": "FP8",
-      "native": true,
-      "gb": 142.8,
-      "fits": false,
-      "comfy": false,
-      "max_ctx": null,
-      "tok_s": 8
-     },
-     {
-      "q": "NVFP4",
-      "native": true,
-      "gb": 78.3,
-      "fits": false,
-      "comfy": false,
-      "max_ctx": null,
-      "tok_s": 15
-     }
-    ]
-   },
-   "quants": [
-    {
-     "id": "infosave/Edge0-145B-cmf",
-     "format": "NVFP4",
-     "nvfp4": true,
-     "official": false,
-     "downloads": 937
-    },
-    {
-     "id": "WaveCut/Edge0-145B-NVFP4-NInfer-v3",
-     "format": "NVFP4",
-     "nvfp4": true,
-     "official": false,
-     "downloads": 857
-    },
-    {
-     "id": "qwegnai/Edge0-145B-hq8g32-hq4g64",
-     "format": "altro",
-     "nvfp4": false,
-     "official": false,
-     "downloads": 0
-    }
-   ],
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15"
   },
   "Qwen/Qwen3.5-4B": {
    "id": "Qwen/Qwen3.5-4B",
@@ -7101,8 +6943,8 @@
    "pipeline": "image-text-to-text",
    "license": "apache-2.0",
    "gated": false,
-   "params_b": 4.0,
-   "params_source": "nome",
+   "params_b": 4.66,
+   "params_source": "safetensors",
    "active_b": null,
    "context": 262144,
    "arch": {
@@ -7137,108 +6979,110 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 256k",
-    "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~256k, ~153 tok/s",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~256k, ~132 tok/s",
     "best_quant": "BF16",
     "quantized": false,
     "native_best": "FP8",
     "gguf_best": "BF16",
     "tight": null,
-    "native_gb": 7.5,
+    "native_gb": 8.7,
     "ref_ctx": 32768,
-    "tok_s": 153,
+    "tok_s": 132,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
       "native": false,
-      "gb": 9.4,
+      "gb": 10.7,
       "fits": true,
       "comfy": true,
       "max_ctx": 262144,
-      "tok_s": 153
+      "tok_s": 132
      },
      {
       "q": "Q8_0",
       "native": false,
-      "gb": 5.9,
+      "gb": 6.5,
       "fits": true,
       "comfy": true,
       "max_ctx": 262144,
-      "tok_s": 283
+      "tok_s": 244
      },
      {
       "q": "Q6_K",
+      "native": false,
+      "gb": 5.5,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 262144,
+      "tok_s": 313
+     },
+     {
+      "q": "Q5_K_M",
       "native": false,
       "gb": 5.0,
       "fits": true,
       "comfy": true,
       "max_ctx": 262144,
-      "tok_s": 362
+      "tok_s": 359
      },
      {
-      "q": "Q5_K_M",
+      "q": "Q4_K_M",
       "native": false,
       "gb": 4.4,
       "fits": true,
       "comfy": true,
       "max_ctx": 262144,
-      "tok_s": 414
+      "tok_s": 417
      },
      {
-      "q": "Q4_K_M",
+      "q": "IQ4_XS",
       "native": false,
       "gb": 4.1,
       "fits": true,
       "comfy": true,
       "max_ctx": 262144,
-      "tok_s": 481
-     },
-     {
-      "q": "IQ4_XS",
-      "native": false,
-      "gb": 3.8,
-      "fits": true,
-      "comfy": true,
-      "max_ctx": 262144,
-      "tok_s": 543
+      "tok_s": 472
      },
      {
       "q": "Q3_K_M",
       "native": false,
-      "gb": 3.6,
-      "fits": true,
-      "comfy": true,
-      "max_ctx": 262144,
-      "tok_s": 586
-     },
-     {
-      "q": "IQ2_M",
-      "native": false,
-      "gb": 3.1,
-      "fits": true,
-      "comfy": true,
-      "max_ctx": 262144,
-      "tok_s": 817
-     },
-     {
-      "q": "FP8",
-      "native": true,
-      "gb": 5.7,
-      "fits": true,
-      "comfy": true,
-      "max_ctx": 262144,
-      "tok_s": 291
-     },
-     {
-      "q": "NVFP4",
-      "native": true,
       "gb": 3.9,
       "fits": true,
       "comfy": true,
       "max_ctx": 262144,
-      "tok_s": 515
+      "tok_s": 509
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 3.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 262144,
+      "tok_s": 714
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 6.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 262144,
+      "tok_s": 251
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 4.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 262144,
+      "tok_s": 447
      }
     ]
    },
@@ -7341,7 +7185,8 @@
    },
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15"
   },
   "ann:openvisionbananaovb": {
    "id": "ann:openvisionbananaovb",
@@ -7548,7 +7393,7 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 4976,
+    "likes": 4977,
     "downloads": 1694181,
     "trending": null
    },
@@ -7558,8 +7403,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~431 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~431 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -7570,6 +7416,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -7796,7 +7643,11 @@
    "or_evals": {
     "gpqa_diamond": 89.1,
     "tau_bench_verified_airline": 75.1
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+   ]
   },
   "pfnet/plamo-2-translate": {
    "id": "pfnet/plamo-2-translate",
@@ -7808,8 +7659,8 @@
    "pipeline": "translation",
    "license": "other",
    "gated": false,
-   "params_b": 8.47,
-   "params_source": "stima da config",
+   "params_b": 9.53,
+   "params_source": "safetensors",
    "active_b": null,
    "context": 10485760,
    "arch": {
@@ -7844,107 +7695,109 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo",
-    "text": "Gira su RTX 5090 senza quantizzare (BF16), 15.8 GB di pesi",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), 17.8 GB di pesi",
     "best_quant": "BF16",
     "quantized": false,
     "native_best": "FP8",
     "gguf_best": "BF16",
     "tight": null,
-    "native_gb": 15.8,
+    "native_gb": 17.8,
     "ref_ctx": 32768,
     "tok_s": null,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
       "native": false,
-      "gb": 18.9,
+      "gb": 20.9,
       "fits": true,
       "comfy": true,
-      "max_ctx": 231860,
+      "max_ctx": 198902,
       "tok_s": null
      },
      {
       "q": "Q8_0",
       "native": false,
-      "gb": 11.3,
+      "gb": 12.3,
       "fits": true,
       "comfy": true,
-      "max_ctx": 355534,
+      "max_ctx": 337935,
       "tok_s": null
      },
      {
       "q": "Q6_K",
       "native": false,
-      "gb": 9.4,
+      "gb": 10.2,
       "fits": true,
       "comfy": true,
-      "max_ctx": 387373,
+      "max_ctx": 373933,
       "tok_s": null
      },
      {
       "q": "Q5_K_M",
       "native": false,
-      "gb": 8.5,
+      "gb": 9.2,
       "fits": true,
       "comfy": true,
-      "max_ctx": 401772,
+      "max_ctx": 390092,
       "tok_s": null
      },
      {
       "q": "Q4_K_M",
       "native": false,
-      "gb": 7.6,
+      "gb": 8.3,
       "fits": true,
       "comfy": true,
-      "max_ctx": 415691,
+      "max_ctx": 405612,
       "tok_s": null
      },
      {
       "q": "IQ4_XS",
       "native": false,
-      "gb": 7.0,
+      "gb": 7.5,
       "fits": true,
       "comfy": true,
-      "max_ctx": 425451,
+      "max_ctx": 416811,
       "tok_s": null
      },
      {
       "q": "Q3_K_M",
       "native": false,
-      "gb": 6.7,
+      "gb": 7.1,
       "fits": true,
       "comfy": true,
-      "max_ctx": 431050,
+      "max_ctx": 423051,
       "tok_s": null
      },
      {
       "q": "IQ2_M",
       "native": false,
-      "gb": 5.5,
+      "gb": 5.8,
       "fits": true,
       "comfy": true,
-      "max_ctx": 451050,
+      "max_ctx": 445450,
       "tok_s": null
      },
      {
       "q": "FP8",
       "native": true,
-      "gb": 11.0,
+      "gb": 12.1,
       "fits": true,
       "comfy": true,
-      "max_ctx": 359534,
+      "max_ctx": 342575,
       "tok_s": null
      },
      {
       "q": "NVFP4",
       "native": true,
-      "gb": 7.2,
+      "gb": 7.8,
       "fits": true,
       "comfy": true,
-      "max_ctx": 421451,
+      "max_ctx": 412171,
       "tok_s": null
      }
     ]
@@ -8017,7 +7870,8 @@
     "url": "https://huggingface.co/pfnet/plamo-3-translate-0.8b"
    },
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15"
   },
   "or:anthropic/claude-opus-5.5": {
    "id": "or:anthropic/claude-opus-5.5",
@@ -8656,8 +8510,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~425 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~425 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -8668,6 +8523,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -8765,7 +8621,7 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 2452,
+    "likes": 2454,
     "downloads": 1761619,
     "trending": null
    },
@@ -8862,7 +8718,9 @@
    "or_evals": {
     "gpqa_diamond": 85.4,
     "tau_bench_verified_airline": 76.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:x-ai/grok-4.6": {
    "id": "or:x-ai/grok-4.6",
@@ -8992,8 +8850,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~578 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~578 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -9004,6 +8863,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -9170,7 +9030,9 @@
    "or_evals": {
     "gpqa_diamond": 88.8,
     "tau_bench_verified_airline": 76.8
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "inclusionAI/Ling-3.1-flash": {
    "id": "inclusionAI/Ling-3.1-flash",
@@ -9221,8 +9083,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~323 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~323 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -9233,6 +9096,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -9385,7 +9249,9 @@
    "or_evals": {
     "gpqa_diamond": 81.3,
     "tau_bench_verified_airline": 79.3
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "MiniMaxAI/MiniMax-M3.1-Flash": {
    "id": "MiniMaxAI/MiniMax-M3.1-Flash",
@@ -9434,9 +9300,10 @@
     "max_ctx": 1048576
    },
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~124 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · IQ2_M",
+    "text": "Non entra tutto in VRAM (124 GB in Q4_K_M), ma gira con offload in RAM: IQ2_M con ~30 GB in VRAM + ~46 GB in RAM, ~1 tok/s (llama.cpp -ngl parziale)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -9447,6 +9314,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": false,
+    "offload": {
+     "q": "IQ2_M",
+     "vram_gb": 29.5,
+     "ram_gb": 45.7,
+     "tok_s": 1,
+     "moe": false,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -9613,7 +9488,12 @@
    "or_evals": {
     "gpqa_diamond": 87.6,
     "tau_bench_verified_airline": 66.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+   ]
   },
   "deepseek-ai/DeepSeek-V4.1-Flash-1017": {
    "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
@@ -9663,8 +9543,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~431 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~431 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -9675,6 +9556,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -9772,7 +9654,7 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 5718,
+    "likes": 5728,
     "downloads": 460551,
     "trending": null
    },
@@ -9862,7 +9744,12 @@
    "or_evals": {
     "gpqa_diamond": 90.1,
     "tau_bench_verified_airline": 72.3
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+   ]
   },
   "stepfun-ai/Step-5-Preview": {
    "id": "stepfun-ai/Step-5-Preview",
@@ -9913,8 +9800,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~341 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~341 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -9925,6 +9813,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -10058,7 +9947,9 @@
     "agentic": null,
     "variant": null,
     "slug": "stepfun/step-5-preview-20261008"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:upstage/solar-pro4": {
    "id": "or:upstage/solar-pro4",
@@ -10183,8 +10074,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~181 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~181 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -10195,6 +10087,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -10292,7 +10185,7 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 3182,
+    "likes": 3186,
     "downloads": 6363073,
     "trending": null
    },
@@ -10396,7 +10289,9 @@
    "or_evals": {
     "gpqa_diamond": 84.1,
     "tau_bench_verified_airline": 70.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "XiaomiMiMo/MiMo-V2.6-Flash-RL": {
    "id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
@@ -10447,8 +10342,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~176 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~176 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -10459,6 +10355,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -10556,7 +10453,7 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 597,
+    "likes": 598,
     "downloads": 44460,
     "trending": null
    },
@@ -10639,7 +10536,9 @@
    "or_evals": {
     "gpqa_diamond": 73.2,
     "tau_bench_verified_airline": 77.9
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "mistralai/Mistral-Large-4-1T-A52B": {
    "id": "mistralai/Mistral-Large-4-1T-A52B",
@@ -10690,8 +10589,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~565 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~565 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -10702,6 +10602,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -10885,7 +10786,12 @@
     "agentic": null,
     "variant": "High",
     "slug": "mistralai/mistral-large-4-0-20261006"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Parametri dedotti dal nome del repository (non dai metadati dei pesi)."
+   ]
   },
   "meta-models/Muse-Spark-Open-816B-A42B": {
    "id": "meta-models/Muse-Spark-Open-816B-A42B",
@@ -10915,8 +10821,9 @@
    "active_b": 42.0,
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~464 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~464 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -10927,6 +10834,7 @@
     "tok_s": null,
     "kv_known": false,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -11108,7 +11016,11 @@
    "or_evals": {
     "gpqa_diamond": 90.2,
     "tau_bench_verified_airline": 75.7
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "or:openai/gpt-5.6-luna": {
    "id": "or:openai/gpt-5.6-luna",
@@ -11201,8 +11113,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~932 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~932 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -11213,6 +11126,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -11379,7 +11293,9 @@
    "or_evals": {
     "gpqa_diamond": 90.5,
     "tau_bench_verified_airline": 77.3
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "deepseek-ai/DeepSeek-V4-Pro": {
    "id": "deepseek-ai/DeepSeek-V4-Pro",
@@ -11430,8 +11346,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~903 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~903 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -11442,6 +11359,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -11539,7 +11457,7 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 5711,
+    "likes": 5712,
     "downloads": 318350,
     "trending": null
    },
@@ -11629,7 +11547,9 @@
    "or_evals": {
     "gpqa_diamond": 87.3,
     "tau_bench_verified_airline": 76.9
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "MiniMaxAI/Minimax-M3": {
    "id": "MiniMaxAI/Minimax-M3",
@@ -11680,8 +11600,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~241 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~241 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -11692,6 +11613,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -11808,7 +11730,9 @@
    "or_evals": {
     "gpqa_diamond": 90.2,
     "tau_bench_verified_airline": 74.1
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "reflection/Beam-1.0-501B-A23B": {
    "id": "reflection/Beam-1.0-501B-A23B",
@@ -11859,8 +11783,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~283 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~283 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -11871,6 +11796,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -12037,7 +11963,9 @@
    "or_evals": {
     "gpqa_diamond": 88.4,
     "tau_bench_verified_airline": 69.3
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "moonshotai/Kimi-K3": {
    "id": "moonshotai/Kimi-K3",
@@ -12087,8 +12015,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~1570 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~1570 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -12099,6 +12028,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -12196,7 +12126,7 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 11995,
+    "likes": 11994,
     "downloads": 783375,
     "trending": null
    },
@@ -12293,7 +12223,12 @@
    "or_evals": {
     "gpqa_diamond": 92.0,
     "tau_bench_verified_airline": 73.9
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+   ]
   },
   "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16": {
    "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
@@ -12323,8 +12258,9 @@
    "active_b": 12.0,
    "vram": {
     "level": "warn",
-    "label": "offload MoE",
-    "text": "MoE da 124.45B (12B attivi): non entra in VRAM ma gira con offload degli esperti in RAM (~70 GB in Q4_K_M, llama.cpp --n-cpu-moe). Velocità limitata dalla RAM",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (70 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~43 GB in RAM, ~10 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -12335,6 +12271,14 @@
     "tok_s": null,
     "kv_known": false,
     "is_moe": true,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 43.0,
+     "tok_s": 10,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -12516,7 +12460,11 @@
    "or_evals": {
     "gpqa_diamond": 86.8,
     "tau_bench_verified_airline": 72.9
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "thinkingmachines/Inkling-Small": {
    "id": "thinkingmachines/Inkling-Small",
@@ -12567,8 +12515,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~150 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~150 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -12579,6 +12528,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -12773,7 +12723,9 @@
    "or_evals": {
     "gpqa_diamond": 86.6,
     "tau_bench_verified_airline": 60.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "thinkingmachines/Inkling": {
    "id": "thinkingmachines/Inkling",
@@ -12824,8 +12776,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~538 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~538 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -12836,6 +12789,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -13023,7 +12977,9 @@
    "or_evals": {
     "gpqa_diamond": 83.4,
     "tau_bench_verified_airline": 67.2
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16": {
    "id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
@@ -13053,8 +13009,9 @@
    "active_b": 55.0,
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~316 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~316 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -13065,6 +13022,7 @@
     "tok_s": null,
     "kv_known": false,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -13242,7 +13200,11 @@
     "agentic": 20.1,
     "variant": "Reasoning",
     "slug": "nvidia/nemotron-3-ultra-550b-a55b-20260604"
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "or:google/gemini-3.5-flash-lite": {
    "id": "or:google/gemini-3.5-flash-lite",
@@ -13371,6 +13333,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 128k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~56 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~128k, ~74 tok/s · GGUF Q6_K: contesto fino a ~128k, ~51 tok/s — checkpoint NVFP4 già su Hugging Face (RadixArk/Muse-Glimmer-NVFP4)",
     "best_quant": "NVFP4",
@@ -13383,6 +13346,7 @@
     "tok_s": 74,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -13564,7 +13528,9 @@
    "or_evals": {
     "gpqa_diamond": 80.8,
     "tau_bench_verified_airline": 75.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:google/gemini-3.1-flash-lite-preview": {
    "id": "or:google/gemini-3.1-flash-lite-preview",
@@ -13652,9 +13618,10 @@
     "max_ctx": 200000
    },
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~124 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · IQ2_M",
+    "text": "Non entra tutto in VRAM (124 GB in Q4_K_M), ma gira con offload in RAM: IQ2_M con ~30 GB in VRAM + ~43 GB in RAM, ~9 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -13665,6 +13632,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "IQ2_M",
+     "vram_gb": 29.5,
+     "ram_gb": 42.8,
+     "tok_s": 9,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -13813,7 +13788,9 @@
     "agentic": 1,
     "variant": null,
     "slug": "cohere/command-a-plus-05-2026"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16": {
    "id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
@@ -13864,6 +13841,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 256k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~59 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~256k, ~226 tok/s · GGUF Q6_K: contesto fino a ~111k, ~161 tok/s — checkpoint NVFP4 già su Hugging Face (nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4-DSpark)",
     "best_quant": "NVFP4",
@@ -13876,6 +13854,7 @@
     "tok_s": 226,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -13974,7 +13953,7 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 274,
+    "likes": 275,
     "downloads": 963117,
     "trending": null
    },
@@ -14050,7 +14029,9 @@
    "or_evals": {
     "gpqa_diamond": 70.6,
     "tau_bench_verified_airline": 65.6
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "ibm-granite/granite-4.2-8b": {
    "id": "ibm-granite/granite-4.2-8b",
@@ -14100,6 +14081,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 86k",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~86k, ~69 tok/s",
     "best_quant": "BF16",
@@ -14112,6 +14094,7 @@
     "tok_s": 69,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -14292,7 +14275,9 @@
    "or_evals": {
     "gpqa_diamond": 65.7,
     "tau_bench_verified_airline": 58.3
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "mistralai/Mistral-Medium-3.5-128B": {
    "id": "mistralai/Mistral-Medium-3.5-128B",
@@ -14341,9 +14326,10 @@
     "max_ctx": 262144
    },
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~72 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (72 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~56 GB in RAM, ~1 tok/s (llama.cpp -ngl parziale)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -14354,6 +14340,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": false,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 55.8,
+     "tok_s": 1,
+     "moe": false,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -14550,7 +14544,9 @@
     "agentic": 7,
     "variant": null,
     "slug": "mistralai/mistral-medium-3.5-20260430"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "google/gemma-4-31B-it": {
    "id": "google/gemma-4-31B-it",
@@ -14600,6 +14596,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 81k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~58 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~81k, ~66 tok/s · GGUF Q5_K_M: contesto fino a ~53k, ~53 tok/s; Q6_K al limite — checkpoint NVFP4 già su Hugging Face (nvidia/Gemma-4-31B-IT-NVFP4)",
     "best_quant": "NVFP4",
@@ -14612,6 +14609,7 @@
     "tok_s": 66,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -14710,7 +14708,7 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 4371,
+    "likes": 4375,
     "downloads": 6435249,
     "trending": null
    },
@@ -14807,7 +14805,9 @@
    "or_evals": {
     "gpqa_diamond": 82.3,
     "tau_bench_verified_airline": 75.6
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "mistralai/Mistral-Small-4-119B-2603": {
    "id": "mistralai/Mistral-Small-4-119B-2603",
@@ -14858,8 +14858,9 @@
    },
    "vram": {
     "level": "warn",
-    "label": "offload MoE",
-    "text": "MoE da 119.4B (7.1B attivi): non entra in VRAM ma gira con offload degli esperti in RAM (~67 GB in Q4_K_M, llama.cpp --n-cpu-moe). Velocità limitata dalla RAM",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (67 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~41 GB in RAM, ~18 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -14870,6 +14871,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 40.7,
+     "tok_s": 18,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -15042,7 +15051,9 @@
    "or_evals": {
     "gpqa_diamond": 75.8,
     "tau_bench_verified_airline": 46.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "openai/gpt-oss-120b": {
    "id": "openai/gpt-oss-120b",
@@ -15093,8 +15104,9 @@
    },
    "vram": {
     "level": "warn",
-    "label": "offload MoE",
-    "text": "MoE da 116.83B (5.8B attivi): non entra in VRAM ma gira con offload degli esperti in RAM (~66 GB in Q4_K_M, llama.cpp --n-cpu-moe). Velocità limitata dalla RAM",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (66 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~40 GB in RAM, ~22 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -15105,6 +15117,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 39.7,
+     "tok_s": 22,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -15264,7 +15284,9 @@
    "or_evals": {
     "gpqa_diamond": 74.2,
     "tau_bench_verified_airline": 65.2
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "CohereLabs/North-Mini-Code-1.0": {
    "id": "CohereLabs/North-Mini-Code-1.0",
@@ -15315,6 +15337,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 488k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~57 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~488k, ~197 tok/s · GGUF Q6_K: contesto fino a ~245k, ~143 tok/s — checkpoint NVFP4 già su Hugging Face (XanuNetworks/North-Mini-Code-1.0-NVFP4)",
     "best_quant": "NVFP4",
@@ -15327,6 +15350,7 @@
     "tok_s": 197,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -15511,7 +15535,9 @@
     "agentic": 1.1,
     "variant": null,
     "slug": "cohere/north-mini-code-20260617"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:openai/gpt-5.6-sol": {
    "id": "or:openai/gpt-5.6-sol",
@@ -15885,8 +15911,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~1381 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~1381 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -15897,6 +15924,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -15994,7 +16022,7 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 1392,
+    "likes": 1394,
     "downloads": 28954,
     "trending": null
    },
@@ -16084,7 +16112,9 @@
    "or_evals": {
     "gpqa_diamond": 87.4,
     "tau_bench_verified_airline": 74.8
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:anthropic/claude-sonnet-5": {
    "id": "or:anthropic/claude-sonnet-5",
@@ -16341,8 +16371,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~172 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~172 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -16353,6 +16384,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -16450,7 +16482,7 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 4105,
+    "likes": 4107,
     "downloads": 2235061,
     "trending": null
    },
@@ -16545,7 +16577,9 @@
    "or_evals": {
     "gpqa_diamond": 86.7,
     "tau_bench_verified_airline": 73.4
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "zai-org/GLM-5.2": {
    "id": "zai-org/GLM-5.2",
@@ -16596,8 +16630,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~425 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~425 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -16608,6 +16643,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -16705,7 +16741,7 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 5207,
+    "likes": 5208,
     "downloads": 309982,
     "trending": null
    },
@@ -16814,7 +16850,9 @@
    "or_evals": {
     "gpqa_diamond": 85.2,
     "tau_bench_verified_airline": 70.9
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:google/gemini-3.1-pro-preview": {
    "id": "or:google/gemini-3.1-pro-preview",
@@ -16944,8 +16982,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~172 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~172 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -16956,6 +16995,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -17143,7 +17183,9 @@
    "or_evals": {
     "gpqa_diamond": 88.0,
     "tau_bench_verified_airline": 74.8
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:anthropic/claude-sonnet-4.6": {
    "id": "or:anthropic/claude-sonnet-4.6",
@@ -17236,8 +17278,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~580 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~580 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -17248,6 +17291,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -17440,7 +17484,9 @@
    "or_evals": {
     "gpqa_diamond": 86.7,
     "tau_bench_verified_airline": 73.1
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "moonshotai/Kimi-K2.7-Code": {
    "id": "moonshotai/Kimi-K2.7-Code",
@@ -17491,8 +17537,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~580 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~580 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -17503,6 +17550,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -17676,7 +17724,9 @@
    "or_evals": {
     "gpqa_diamond": 86.6,
     "tau_bench_verified_airline": 73.9
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "XiaomiMiMo/MiMo-V2.5-Pro": {
    "id": "XiaomiMiMo/MiMo-V2.5-Pro",
@@ -17727,8 +17777,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~578 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~578 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -17739,6 +17790,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -17903,7 +17955,9 @@
    "or_evals": {
     "gpqa_diamond": 82.2,
     "tau_bench_verified_airline": 73.6
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "aa:kwaipilot/kat-coder-pro-v2-20260327": {
    "id": "aa:kwaipilot/kat-coder-pro-v2-20260327",
@@ -17994,8 +18048,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~169 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~169 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -18006,6 +18061,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -18152,7 +18208,9 @@
     "agentic": 24.1,
     "variant": null,
     "slug": "tencent/hy3-preview-20260421"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "inclusionAI/Ling-3.0-flash-VL": {
    "id": "inclusionAI/Ling-3.0-flash-VL",
@@ -18203,8 +18261,9 @@
    },
    "vram": {
     "level": "warn",
-    "label": "offload MoE",
-    "text": "MoE da 124.85B (5.9B attivi): non entra in VRAM ma gira con offload degli esperti in RAM (~70 GB in Q4_K_M, llama.cpp --n-cpu-moe). Velocità limitata dalla RAM",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (70 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~45 GB in RAM, ~20 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -18215,6 +18274,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 44.6,
+     "tok_s": 20,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -18360,7 +18427,9 @@
    "or_evals": {
     "gpqa_diamond": 84.8,
     "tau_bench_verified_airline": 70.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "XiaomiMiMo/MiMo-V2.5": {
    "id": "XiaomiMiMo/MiMo-V2.5",
@@ -18411,8 +18480,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~176 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~176 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -18423,6 +18493,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -18603,7 +18674,9 @@
    "or_evals": {
     "gpqa_diamond": 77.2,
     "tau_bench_verified_airline": 73.2
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "deepseek-ai/DeepSeek-V4-Flash": {
    "id": "deepseek-ai/DeepSeek-V4-Flash",
@@ -18654,8 +18727,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~164 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~164 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -18666,6 +18740,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -18763,7 +18838,7 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 2399,
+    "likes": 2401,
     "downloads": 1185978,
     "trending": null
    },
@@ -18858,7 +18933,9 @@
    "or_evals": {
     "gpqa_diamond": 85.9,
     "tau_bench_verified_airline": 73.1
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:openai/gpt-5.4-mini": {
    "id": "or:openai/gpt-5.4-mini",
@@ -19020,8 +19097,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~426 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~426 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -19032,6 +19110,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -19231,7 +19310,9 @@
    "or_evals": {
     "gpqa_diamond": 81.0,
     "tau_bench_verified_airline": 71.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "aa:inclusionai/ling-3.0-flash-fin-20260827": {
    "id": "aa:inclusionai/ling-3.0-flash-fin-20260827",
@@ -19343,6 +19424,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 244k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~52 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~244k, ~78 tok/s · GGUF Q6_K: contesto fino a ~135k, ~54 tok/s; Q8_0 al limite — checkpoint NVFP4 già su Hugging Face (unsloth/Qwen3.6-27B-NVFP4)",
     "best_quant": "NVFP4",
@@ -19355,6 +19437,7 @@
     "tok_s": 78,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -19548,7 +19631,9 @@
    "or_evals": {
     "gpqa_diamond": 83.8,
     "tau_bench_verified_airline": 77.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "MiniMaxAI/MiniMax-M2.7": {
    "id": "MiniMaxAI/MiniMax-M2.7",
@@ -19598,9 +19683,10 @@
     "max_ctx": 204800
    },
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~129 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · IQ2_M",
+    "text": "Non entra tutto in VRAM (129 GB in Q4_K_M), ma gira con offload in RAM: IQ2_M con ~30 GB in VRAM + ~52 GB in RAM, ~17 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -19611,6 +19697,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "IQ2_M",
+     "vram_gb": 29.5,
+     "ram_gb": 52.3,
+     "tok_s": 17,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -19810,7 +19904,9 @@
    "or_evals": {
     "gpqa_diamond": 85.5,
     "tau_bench_verified_airline": 70.9
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:anthropic/claude-sonnet-4.5": {
    "id": "or:anthropic/claude-sonnet-4.5",
@@ -19936,8 +20032,9 @@
    },
    "vram": {
     "level": "warn",
-    "label": "offload MoE",
-    "text": "MoE da 127.49B (8.6B attivi): non entra in VRAM ma gira con offload degli esperti in RAM (~72 GB in Q4_K_M, llama.cpp --n-cpu-moe). Velocità limitata dalla RAM",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (72 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~46 GB in RAM, ~14 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -19948,6 +20045,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 46.2,
+     "tok_s": 14,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -20140,7 +20245,9 @@
    "or_evals": {
     "gpqa_diamond": 74.9,
     "tau_bench_verified_airline": 68.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "aa:xiaomi/mimo-v2-flash-20251210": {
    "id": "aa:xiaomi/mimo-v2-flash-20251210",
@@ -20253,8 +20360,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~228 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~228 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -20265,6 +20373,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -20466,7 +20575,9 @@
    "or_evals": {
     "gpqa_diamond": 86.0,
     "tau_bench_verified_airline": 79.1
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "moonshotai/Kimi-K2.5": {
    "id": "moonshotai/Kimi-K2.5",
@@ -20517,8 +20628,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~580 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~580 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -20529,6 +20641,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -20721,7 +20834,9 @@
    "or_evals": {
     "gpqa_diamond": 84.5,
     "tau_bench_verified_airline": 70.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "aa:google/gemini-2.5-pro-exp-03-25": {
    "id": "aa:google/gemini-2.5-pro-exp-03-25",
@@ -20792,8 +20907,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~201 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~201 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -20804,6 +20920,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -21003,7 +21120,9 @@
    "or_evals": {
     "gpqa_diamond": 77.1,
     "tau_bench_verified_airline": 71.9
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "Qwen/Qwen3.5-122B-A10B": {
    "id": "Qwen/Qwen3.5-122B-A10B",
@@ -21054,8 +21173,9 @@
    },
    "vram": {
     "level": "warn",
-    "label": "offload MoE",
-    "text": "MoE da 125.09B (10B attivi): non entra in VRAM ma gira con offload degli esperti in RAM (~71 GB in Q4_K_M, llama.cpp --n-cpu-moe). Velocità limitata dalla RAM",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (71 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~44 GB in RAM, ~12 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -21066,6 +21186,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 44.2,
+     "tok_s": 12,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -21253,7 +21381,9 @@
    "or_evals": {
     "gpqa_diamond": 84.9,
     "tau_bench_verified_airline": 77.5
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "meituan-longcat/LongCat-2.0": {
    "id": "meituan-longcat/LongCat-2.0",
@@ -21303,8 +21433,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~1002 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~1002 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -21315,6 +21446,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -21440,7 +21572,12 @@
     "agentic": 14,
     "variant": null,
     "slug": "meituan/longcat-2.0-20260720"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+   ]
   },
   "zai-org/GLM-4.7": {
    "id": "zai-org/GLM-4.7",
@@ -21491,8 +21628,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~202 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~202 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -21503,6 +21641,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -21709,7 +21848,9 @@
    "or_evals": {
     "gpqa_diamond": 82.7,
     "tau_bench_verified_airline": 72.1
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "deepseek-ai/DeepSeek-V3.2": {
    "id": "deepseek-ai/DeepSeek-V3.2",
@@ -21760,8 +21901,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~387 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~387 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -21772,6 +21914,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -21869,7 +22012,7 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 1600,
+    "likes": 1601,
     "downloads": 8865855,
     "trending": null
    },
@@ -21966,7 +22109,9 @@
    "or_evals": {
     "gpqa_diamond": 81.7,
     "tau_bench_verified_airline": 73.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "deepseek-ai/DeepSeek-V3.1-Terminus": {
    "id": "deepseek-ai/DeepSeek-V3.1-Terminus",
@@ -22017,8 +22162,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~386 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~386 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -22029,6 +22175,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -22195,7 +22342,9 @@
    "or_evals": {
     "gpqa_diamond": 77.2,
     "tau_bench_verified_airline": 73.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "aa:inclusionai/ring-2.6-1t-20260508": {
    "id": "aa:inclusionai/ring-2.6-1t-20260508",
@@ -22304,6 +22453,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 256k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~67 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~256k, ~234 tok/s · GGUF Q6_K: contesto fino a ~111k, ~165 tok/s — checkpoint NVFP4 già su Hugging Face (nvidia/Qwen3.6-35B-A3B-NVFP4)",
     "best_quant": "NVFP4",
@@ -22316,6 +22466,7 @@
     "tok_s": 234,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -22414,7 +22565,7 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 3130,
+    "likes": 3132,
     "downloads": 3935004,
     "trending": null
    },
@@ -22511,7 +22662,9 @@
    "or_evals": {
     "gpqa_diamond": 79.8,
     "tau_bench_verified_airline": 72.3
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "aa:openai/o1-2024-12-17": {
    "id": "aa:openai/o1-2024-12-17",
@@ -22581,9 +22734,10 @@
     "max_ctx": 262144
    },
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~114 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · IQ2_M",
+    "text": "Non entra tutto in VRAM (114 GB in Q4_K_M), ma gira con offload in RAM: IQ2_M con ~30 GB in VRAM + ~48 GB in RAM, ~56 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -22594,6 +22748,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "IQ2_M",
+     "vram_gb": 29.5,
+     "ram_gb": 48.4,
+     "tok_s": 56,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -22763,7 +22925,9 @@
     "agentic": null,
     "variant": null,
     "slug": "stepfun/step-3.7-flash-20260528"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "google/gemma-4-26B-A4B-it": {
    "id": "google/gemma-4-26B-A4B-it",
@@ -22823,6 +22987,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "FP8 · 122k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~48 GB). FP8 (formato nativo della RTX 5090): contesto fino a ~122k, ~107 tok/s · GGUF Q8_0: contesto fino a ~102k, ~105 tok/s — checkpoint FP8 già su Hugging Face (RedHatAI/gemma-4-26B-A4B-it-FP8-dynamic)",
     "best_quant": "FP8",
@@ -22835,6 +23000,7 @@
     "tok_s": 107,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -23247,7 +23413,9 @@
    "or_evals": {
     "gpqa_diamond": 69.3,
     "tau_bench_verified_airline": 68.5
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:openai/gpt-5": {
    "id": "or:openai/gpt-5",
@@ -23340,8 +23508,9 @@
    },
    "vram": {
     "level": "warn",
-    "label": "offload MoE",
-    "text": "MoE da 123.61B (12B attivi): non entra in VRAM ma gira con offload degli esperti in RAM (~70 GB in Q4_K_M, llama.cpp --n-cpu-moe). Velocità limitata dalla RAM",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (70 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~43 GB in RAM, ~10 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -23352,6 +23521,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 42.9,
+     "tok_s": 10,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -23464,7 +23641,9 @@
     "agentic": 1.7,
     "variant": "Reasoning",
     "slug": "nvidia/nemotron-3-super-120b-a12b-20230311"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "aa:anthropic/claude-4-sonnet-20250522": {
    "id": "aa:anthropic/claude-4-sonnet-20250522",
@@ -23539,6 +23718,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 256k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~67 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~256k, ~234 tok/s · GGUF Q6_K: contesto fino a ~111k, ~165 tok/s — checkpoint NVFP4 già su Hugging Face (txn545/Qwen3.5-35B-A3B-NVFP4)",
     "best_quant": "NVFP4",
@@ -23551,6 +23731,7 @@
     "tok_s": 234,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -23751,7 +23932,9 @@
    "or_evals": {
     "gpqa_diamond": 81.6,
     "tau_bench_verified_airline": 75.6
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "Qwen/Qwen3-Coder-Next": {
    "id": "Qwen/Qwen3-Coder-Next",
@@ -23802,8 +23985,9 @@
    },
    "vram": {
     "level": "warn",
+    "mode": "quant",
     "label": "IQ2_M · 197k",
-    "text": "Solo con quantizzazione aggressiva. GGUF IQ2_M: contesto fino a ~197k, ~321 tok/s",
+    "text": "Solo con quantizzazione aggressiva. GGUF IQ2_M: contesto fino a ~197k, ~321 tok/s · In alternativa GPU + RAM: Q4_K_M con ~30 GB in VRAM + ~18 GB in RAM, ~44 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": "IQ2_M",
     "quantized": true,
     "native_best": null,
@@ -23814,6 +23998,14 @@
     "tok_s": 321,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 18.0,
+     "tok_s": 44,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -24015,7 +24207,9 @@
    "or_evals": {
     "gpqa_diamond": 75.1,
     "tau_bench_verified_airline": 61.3
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:google/gemini-2.5-pro": {
    "id": "or:google/gemini-2.5-pro",
@@ -24106,9 +24300,10 @@
     "max_ctx": 262144
    },
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~71 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (71 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~54 GB in RAM, ~1 tok/s (llama.cpp -ngl parziale)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -24119,6 +24314,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": false,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 54.3,
+     "tok_s": 1,
+     "moe": false,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -24280,7 +24483,9 @@
     "agentic": 2.3,
     "variant": null,
     "slug": "mistralai/devstral-2512"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "aa:inception/mercury-2-20260304": {
    "id": "aa:inception/mercury-2-20260304",
@@ -24390,6 +24595,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 256k",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~256k, ~64 tok/s",
     "best_quant": "BF16",
@@ -24402,6 +24608,7 @@
     "tok_s": 64,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -24499,7 +24706,7 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 2372,
+    "likes": 2373,
     "downloads": 6029812,
     "trending": null
    },
@@ -24582,7 +24789,9 @@
    "or_evals": {
     "gpqa_diamond": 77.4,
     "tau_bench_verified_airline": 73.4
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "inclusionAI/Ling-3.0-tiny": {
    "id": "inclusionAI/Ling-3.0-tiny",
@@ -24633,6 +24842,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 128k",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~128k, ~118 tok/s",
     "best_quant": "BF16",
@@ -24645,6 +24855,7 @@
     "tok_s": 118,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -24800,7 +25011,9 @@
     "agentic": 4.4,
     "variant": null,
     "slug": "inclusionai/ling-3.0-tiny-20260806"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "aa:mistralai/mistral-small": {
    "id": "aa:mistralai/mistral-small",
@@ -25004,8 +25217,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~386 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~386 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -25016,6 +25230,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -25112,7 +25327,7 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 4461,
+    "likes": 4462,
     "downloads": 1409220,
     "trending": null
    },
@@ -25200,7 +25415,9 @@
    "or_evals": {
     "gpqa_diamond": 62.1,
     "tau_bench_verified_airline": 39.8
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:amazon/nova-2-lite-v1": {
    "id": "or:amazon/nova-2-lite-v1",
@@ -25283,9 +25500,10 @@
     "max_ctx": 262144
    },
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~133 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · IQ2_M",
+    "text": "Non entra tutto in VRAM (133 GB in Q4_K_M), ma gira con offload in RAM: IQ2_M con ~30 GB in VRAM + ~52 GB in RAM, ~9 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -25296,6 +25514,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "IQ2_M",
+     "vram_gb": 29.5,
+     "ram_gb": 52.5,
+     "tok_s": 9,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -25490,7 +25716,9 @@
    "or_evals": {
     "gpqa_diamond": 78.6,
     "tau_bench_verified_airline": 62.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:openai/gpt-4-turbo": {
    "id": "or:openai/gpt-4-turbo",
@@ -25574,8 +25802,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~386 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~386 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -25586,6 +25815,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -25757,7 +25987,9 @@
    "or_evals": {
     "gpqa_diamond": 54.6,
     "tau_bench_verified_airline": 45.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "moonshotai/Kimi-K2-Thinking": {
    "id": "moonshotai/Kimi-K2-Thinking",
@@ -25808,8 +26040,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~580 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~580 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -25820,6 +26053,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -25982,7 +26216,9 @@
     "agentic": null,
     "variant": null,
     "slug": "moonshotai/kimi-k2-thinking-20251106"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "openai/gpt-oss-20b": {
    "id": "openai/gpt-oss-20b",
@@ -26033,6 +26269,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "FP8 · 128k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~39 GB). FP8 (formato nativo della RTX 5090): contesto fino a ~128k, ~112 tok/s · GGUF Q8_0: contesto fino a ~128k, ~108 tok/s — checkpoint FP8 già su Hugging Face (amd/gpt-oss-20b-WFP8-AFP8-KVFP8)",
     "best_quant": "FP8",
@@ -26045,6 +26282,7 @@
     "tok_s": 112,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -26205,7 +26443,9 @@
    "or_evals": {
     "gpqa_diamond": 65.2,
     "tau_bench_verified_airline": 53.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:mistralai/mistral-medium-3.1": {
    "id": "or:mistralai/mistral-medium-3.1",
@@ -26314,8 +26554,9 @@
    "params_source": "nome",
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~381 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~381 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -26326,6 +26567,7 @@
     "tok_s": null,
     "kv_known": false,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -26460,7 +26702,12 @@
     "agentic": 1,
     "variant": null,
     "slug": "mistralai/mistral-large-2512"
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Parametri dedotti dal nome del repository (non dai metadati dei pesi).",
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "aa:anthropic/claude-3-opus": {
    "id": "aa:anthropic/claude-3-opus",
@@ -26549,8 +26796,9 @@
    "params_source": "safetensors",
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~227 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~227 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -26561,6 +26809,7 @@
     "tok_s": null,
     "kv_known": false,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -26742,7 +26991,11 @@
    "or_evals": {
     "gpqa_diamond": 66.3,
     "tau_bench_verified_airline": 42.3
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "aa:upstage/solar-pro-3": {
    "id": "aa:upstage/solar-pro-3",
@@ -26874,6 +27127,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 40k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~61 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~40k, ~64 tok/s · GGUF Q4_K_M: contesto fino a ~40k, ~60 tok/s; Q5_K_M al limite — checkpoint NVFP4 già su Hugging Face (RedHatAI/Qwen3-32B-NVFP4)",
     "best_quant": "NVFP4",
@@ -26886,6 +27140,7 @@
     "tok_s": 64,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -27081,7 +27336,9 @@
    "or_evals": {
     "gpqa_diamond": 60.9,
     "tau_bench_verified_airline": 47.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "mistralai/Ministral-3-14B-Instruct-2512": {
    "id": "mistralai/Ministral-3-14B-Instruct-2512",
@@ -27131,6 +27388,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "FP8 · 106k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~26 GB). FP8 (formato nativo della RTX 5090): contesto fino a ~106k, ~83 tok/s · GGUF Q8_0: contesto fino a ~103k, ~81 tok/s — checkpoint FP8 già su Hugging Face (unsloth/Ministral-3-14B-Instruct-2512-FP8)",
     "best_quant": "FP8",
@@ -27143,6 +27401,7 @@
     "tok_s": 83,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -27312,7 +27571,9 @@
     "agentic": 1.1,
     "variant": null,
     "slug": "mistralai/ministral-14b-2512"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16": {
    "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
@@ -27363,6 +27624,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 256k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~59 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~256k, ~244 tok/s · GGUF Q6_K: contesto fino a ~256k, ~170 tok/s — checkpoint NVFP4 già su Hugging Face (nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4)",
     "best_quant": "NVFP4",
@@ -27375,6 +27637,7 @@
     "tok_s": 244,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -27570,7 +27833,9 @@
    "or_evals": {
     "gpqa_diamond": 63.2,
     "tau_bench_verified_airline": 51.8
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "aa:anthropic/claude-2.1": {
    "id": "aa:anthropic/claude-2.1",
@@ -27640,6 +27905,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "FP8 · 40k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~28 GB). FP8 (formato nativo della RTX 5090): contesto fino a ~40k, ~79 tok/s · GGUF Q8_0: contesto fino a ~40k, ~77 tok/s — checkpoint FP8 già su Hugging Face (Qwen/Qwen3-14B-FP8)",
     "best_quant": "FP8",
@@ -27652,6 +27918,7 @@
     "tok_s": 79,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -27847,7 +28114,9 @@
    "or_evals": {
     "gpqa_diamond": 59.2,
     "tau_bench_verified_airline": 44.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16": {
    "id": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16",
@@ -27898,6 +28167,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 256k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~62 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~256k, ~244 tok/s · GGUF Q6_K: contesto fino a ~256k, ~170 tok/s — checkpoint NVFP4 già su Hugging Face (nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-NVFP4)",
     "best_quant": "NVFP4",
@@ -27910,6 +28180,7 @@
     "tok_s": 244,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -28094,7 +28365,9 @@
     "agentic": null,
     "variant": null,
     "slug": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning-20260428"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:openai/gpt-4": {
    "id": "or:openai/gpt-4",
@@ -28201,8 +28474,9 @@
    "params_source": "safetensors",
    "vram": {
     "level": "warn",
+    "mode": "quant",
     "label": "IQ2_M",
-    "text": "Solo con quantizzazione aggressiva. GGUF IQ2_M: 22.2 GB di pesi, contesto non stimabile",
+    "text": "Solo con quantizzazione aggressiva. GGUF IQ2_M: 22.2 GB di pesi, contesto non stimabile · In alternativa GPU + RAM: Q4_K_M con ~30 GB in VRAM + ~12 GB in RAM (llama.cpp -ngl parziale, o --n-cpu-moe se è un MoE); parametri attivi non noti: ~3 tok/s se denso, molto di più se è un MoE",
     "best_quant": "IQ2_M",
     "quantized": true,
     "native_best": null,
@@ -28213,6 +28487,14 @@
     "tok_s": 53,
     "kv_known": false,
     "is_moe": false,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 11.8,
+     "tok_s": 3,
+     "moe": false,
+     "active_known": false
+    },
     "options": [
      {
       "q": "BF16",
@@ -28394,7 +28676,11 @@
    "or_evals": {
     "gpqa_diamond": 47.5,
     "tau_bench_verified_airline": 33.6
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "or:openai/gpt-4o-mini": {
    "id": "or:openai/gpt-4o-mini",
@@ -28522,6 +28808,7 @@
    "params_source": "safetensors",
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "FP8",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~51 GB). FP8 (formato nativo della RTX 5090): 26.3 GB di pesi, contesto non stimabile · GGUF Q8_0: 27.1 GB di pesi, contesto non stimabile — checkpoint FP8 già su Hugging Face (RedHatAI/gemma-3-27b-it-FP8-dynamic)",
     "best_quant": "FP8",
@@ -28534,6 +28821,7 @@
     "tok_s": 44,
     "kv_known": false,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -28712,7 +29000,11 @@
     "agentic": 0.1,
     "variant": null,
     "slug": "google/gemma-3-27b-it"
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "mistralai/Ministral-3-8B-Instruct-2512": {
    "id": "mistralai/Ministral-3-8B-Instruct-2512",
@@ -28762,6 +29054,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 100k",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~100k, ~68 tok/s",
     "best_quant": "BF16",
@@ -28774,6 +29067,7 @@
     "tok_s": 68,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -28942,7 +29236,9 @@
     "agentic": 0.6,
     "variant": null,
     "slug": "mistralai/ministral-8b-2512"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "aa:qwen/qwen3-8b-04-28": {
    "id": "aa:qwen/qwen3-8b-04-28",
@@ -28990,9 +29286,10 @@
    "params_b": 108.64,
    "params_source": "safetensors",
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~61 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (61 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~34 GB in RAM (llama.cpp -ngl parziale, o --n-cpu-moe se è un MoE); parametri attivi non noti: ~1 tok/s se denso, molto di più se è un MoE",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -29003,6 +29300,14 @@
     "tok_s": null,
     "kv_known": false,
     "is_moe": false,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 33.8,
+     "tok_s": 1,
+     "moe": false,
+     "active_known": false
+    },
     "options": [
      {
       "q": "BF16",
@@ -29187,7 +29492,11 @@
     "agentic": 0.5,
     "variant": null,
     "slug": "meta-llama/llama-4-scout-17b-16e-instruct"
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "aa:anthropic/claude-instant-1": {
    "id": "aa:anthropic/claude-instant-1",
@@ -29256,6 +29565,7 @@
    "params_source": "safetensors",
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), 22.7 GB di pesi, contesto non stimabile",
     "best_quant": "BF16",
@@ -29268,6 +29578,7 @@
     "tok_s": 51,
     "kv_known": false,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -29447,7 +29758,11 @@
    "or_evals": {
     "gpqa_diamond": 38.0,
     "tau_bench_verified_airline": 48.0
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "meta-llama/Meta-Llama-3.1-8B-Instruct": {
    "id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
@@ -29476,6 +29791,7 @@
    "params_source": "safetensors",
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), 15.0 GB di pesi, contesto non stimabile",
     "best_quant": "BF16",
@@ -29488,6 +29804,7 @@
     "tok_s": 78,
     "kv_known": false,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -29585,7 +29902,7 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 8939,
+    "likes": 8944,
     "downloads": 4238569,
     "trending": null
    },
@@ -29604,7 +29921,12 @@
    "or_evals": {
     "gpqa_diamond": 27.7,
     "tau_bench_verified_airline": 25.6
-   }
+   },
+   "gated": true,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "mistralai/Ministral-3-3B-Instruct-2512": {
    "id": "mistralai/Ministral-3-3B-Instruct-2512",
@@ -29654,6 +29976,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 225k",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~225k, ~154 tok/s",
     "best_quant": "BF16",
@@ -29666,6 +29989,7 @@
     "tok_s": 154,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -29834,7 +30158,9 @@
     "agentic": 0.8,
     "variant": null,
     "slug": "mistralai/ministral-3b-2512"
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "aa:microsoft/phi-4-mini-instruct": {
    "id": "aa:microsoft/phi-4-mini-instruct",
@@ -29903,6 +30229,7 @@
    "params_source": "safetensors",
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), 8.0 GB di pesi, contesto non stimabile",
     "best_quant": "BF16",
@@ -29915,6 +30242,7 @@
     "tok_s": 146,
     "kv_known": false,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -30012,7 +30340,7 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 1669,
+    "likes": 1670,
     "downloads": 1010980,
     "trending": null
    },
@@ -30088,7 +30416,11 @@
    },
    "or_evals": {
     "gpqa_diamond": 27.1
-   }
+   },
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ]
   },
   "or:openai/gpt-6-astra-pro": {
    "id": "or:openai/gpt-6-astra-pro",
@@ -30204,8 +30536,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~440 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~440 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -30216,6 +30549,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -30361,7 +30695,9 @@
    "or_evals": {
     "gpqa_diamond": 89.8,
     "tau_bench_verified_airline": 76.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:openai/gpt-5.6-luna-pro": {
    "id": "or:openai/gpt-5.6-luna-pro",
@@ -30475,9 +30811,10 @@
     "max_ctx": 262144
    },
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~102 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · Q3_K_M",
+    "text": "Non entra tutto in VRAM (102 GB in Q4_K_M), ma gira con offload in RAM: Q3_K_M con ~30 GB in VRAM + ~56 GB in RAM, ~1 tok/s (llama.cpp -ngl parziale)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -30488,6 +30825,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": false,
+    "offload": {
+     "q": "Q3_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 55.6,
+     "tok_s": 1,
+     "moe": false,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -30585,7 +30930,7 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 7141,
+    "likes": 7147,
     "downloads": 2997819,
     "trending": null
    },
@@ -30668,7 +31013,12 @@
    "or_evals": {
     "gpqa_diamond": 88.6,
     "tau_bench_verified_airline": 71.3
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+   ]
   },
   "or:google/gemini-3-flash-preview": {
    "id": "or:google/gemini-3-flash-preview",
@@ -30919,8 +31269,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~426 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~426 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -30931,6 +31282,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -31116,7 +31468,9 @@
    "or_evals": {
     "gpqa_diamond": 79.1,
     "tau_bench_verified_airline": 74.1
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "MiniMaxAI/MiniMax-M2.5": {
    "id": "MiniMaxAI/MiniMax-M2.5",
@@ -31166,9 +31520,10 @@
     "max_ctx": 196608
    },
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~129 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · IQ2_M",
+    "text": "Non entra tutto in VRAM (129 GB in Q4_K_M), ma gira con offload in RAM: IQ2_M con ~30 GB in VRAM + ~52 GB in RAM, ~17 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -31179,6 +31534,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "IQ2_M",
+     "vram_gb": 29.5,
+     "ram_gb": 52.3,
+     "tok_s": 17,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -31371,7 +31734,9 @@
    "or_evals": {
     "gpqa_diamond": 78.9,
     "tau_bench_verified_airline": 67.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "deepseek-ai/DeepSeek-R1-0528": {
    "id": "deepseek-ai/DeepSeek-R1-0528",
@@ -31422,8 +31787,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~386 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~386 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -31434,6 +31800,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -31614,7 +31981,9 @@
    "or_evals": {
     "gpqa_diamond": 76.7,
     "tau_bench_verified_airline": 49.5
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:google/gemini-2.5-flash": {
    "id": "or:google/gemini-2.5-flash",
@@ -31699,9 +32068,10 @@
     "max_ctx": 262144
    },
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~133 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · IQ2_M",
+    "text": "Non entra tutto in VRAM (133 GB in Q4_K_M), ma gira con offload in RAM: IQ2_M con ~30 GB in VRAM + ~52 GB in RAM, ~9 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -31712,6 +32082,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "IQ2_M",
+     "vram_gb": 29.5,
+     "ram_gb": 52.5,
+     "tok_s": 9,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -31906,7 +32284,9 @@
    "or_evals": {
     "gpqa_diamond": 72.7,
     "tau_bench_verified_airline": 37.8
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "Qwen/Qwen3-Next-80B-A3B-Instruct": {
    "id": "Qwen/Qwen3-Next-80B-A3B-Instruct",
@@ -31957,8 +32337,9 @@
    },
    "vram": {
     "level": "warn",
+    "mode": "quant",
     "label": "IQ2_M · 175k",
-    "text": "Solo con quantizzazione aggressiva. GGUF IQ2_M: contesto fino a ~175k, ~362 tok/s",
+    "text": "Solo con quantizzazione aggressiva. GGUF IQ2_M: contesto fino a ~175k, ~362 tok/s · In alternativa GPU + RAM: Q4_K_M con ~30 GB in VRAM + ~19 GB in RAM, ~55 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": "IQ2_M",
     "quantized": true,
     "native_best": null,
@@ -31969,6 +32350,14 @@
     "tok_s": 362,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 18.9,
+     "tok_s": 55,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -32156,7 +32545,9 @@
    "or_evals": {
     "gpqa_diamond": 71.8,
     "tau_bench_verified_airline": 46.2
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:openai/gpt-5-nano": {
    "id": "or:openai/gpt-5-nano",
@@ -32241,9 +32632,10 @@
     "max_ctx": 262144
    },
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~133 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · IQ2_M",
+    "text": "Non entra tutto in VRAM (133 GB in Q4_K_M), ma gira con offload in RAM: IQ2_M con ~30 GB in VRAM + ~53 GB in RAM, ~9 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -32254,6 +32646,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "IQ2_M",
+     "vram_gb": 29.5,
+     "ram_gb": 52.7,
+     "tok_s": 9,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -32434,7 +32834,9 @@
    "or_evals": {
     "gpqa_diamond": 69.5,
     "tau_bench_verified_airline": 40.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "zai-org/GLM-4.6V": {
    "id": "zai-org/GLM-4.6V",
@@ -32485,8 +32887,9 @@
    },
    "vram": {
     "level": "warn",
-    "label": "offload MoE",
-    "text": "MoE da 107.71B (14.3B attivi): non entra in VRAM ma gira con offload degli esperti in RAM (~61 GB in Q4_K_M, llama.cpp --n-cpu-moe). Velocità limitata dalla RAM",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (61 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~39 GB in RAM, ~8 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -32497,6 +32900,14 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 39.0,
+     "tok_s": 8,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -32670,7 +33081,9 @@
    "or_evals": {
     "gpqa_diamond": 66.8,
     "tau_bench_verified_airline": 60.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "Qwen/Qwen3-30B-A3B-Instruct-2507": {
    "id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
@@ -32721,6 +33134,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 148k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~57 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~148k, ~206 tok/s · GGUF Q6_K: contesto fino a ~68k, ~150 tok/s — checkpoint NVFP4 già su Hugging Face (NVFP4/Qwen3-30B-A3B-Instruct-2507-FP4)",
     "best_quant": "NVFP4",
@@ -32733,6 +33147,7 @@
     "tok_s": 206,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -32921,7 +33336,9 @@
    "or_evals": {
     "gpqa_diamond": 64.9,
     "tau_bench_verified_airline": 38.4
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "Qwen/Qwen3-VL-30B-A3B-Instruct": {
    "id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
@@ -32972,6 +33389,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 145k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~58 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~145k, ~206 tok/s · GGUF Q6_K: contesto fino a ~64k, ~150 tok/s — checkpoint NVFP4 già su Hugging Face (ig1/Qwen3-VL-30B-A3B-Instruct-NVFP4)",
     "best_quant": "NVFP4",
@@ -32984,6 +33402,7 @@
     "tok_s": 206,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -33172,7 +33591,9 @@
    "or_evals": {
     "gpqa_diamond": 64.2,
     "tau_bench_verified_airline": 35.6
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:openai/gpt-4.1": {
    "id": "or:openai/gpt-4.1",
@@ -33258,8 +33679,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~386 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~386 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -33270,6 +33692,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -33441,7 +33864,9 @@
    "or_evals": {
     "gpqa_diamond": 63.7,
     "tau_bench_verified_airline": 43.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "Qwen/Qwen3-30B-A3B": {
    "id": "Qwen/Qwen3-30B-A3B",
@@ -33492,6 +33917,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 40k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~57 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~40k, ~206 tok/s · GGUF Q6_K: contesto fino a ~40k, ~150 tok/s — checkpoint NVFP4 già su Hugging Face (nvidia/Qwen3-30B-A3B-NVFP4)",
     "best_quant": "NVFP4",
@@ -33504,6 +33930,7 @@
     "tok_s": 206,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -33692,7 +34119,9 @@
    "or_evals": {
     "gpqa_diamond": 60.9,
     "tau_bench_verified_airline": 47.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
    "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
@@ -33743,8 +34172,9 @@
    },
    "vram": {
     "level": "no",
+    "mode": "no",
     "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~271 GB solo di pesi anche in Q4_K_M",
+    "text": "Troppo grande per una RTX 5090, anche con offload su 64 GB di RAM: ~271 GB solo di pesi in Q4_K_M",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -33755,6 +34185,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -33942,7 +34373,9 @@
    "or_evals": {
     "gpqa_diamond": 60.4,
     "tau_bench_verified_airline": 46.2
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:google/gemini-2.5-flash-lite": {
    "id": "or:google/gemini-2.5-flash-lite",
@@ -34027,6 +34460,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 96k",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~96k, ~69 tok/s",
     "best_quant": "BF16",
@@ -34039,6 +34473,7 @@
     "tok_s": 69,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -34212,7 +34647,9 @@
    "or_evals": {
     "gpqa_diamond": 53.9,
     "tau_bench_verified_airline": 32.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:openai/gpt-4o-2024-08-06": {
    "id": "or:openai/gpt-4o-2024-08-06",
@@ -34293,6 +34730,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4 · 198k",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~58 GB). NVFP4 (formato nativo della RTX 5090): contesto fino a ~198k, ~174 tok/s · GGUF Q6_K: contesto fino a ~114k, ~122 tok/s — checkpoint NVFP4 già su Hugging Face (GadflyII/GLM-4.7-Flash-NVFP4)",
     "best_quant": "NVFP4",
@@ -34305,6 +34743,7 @@
     "tok_s": 174,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -34498,7 +34937,9 @@
    "or_evals": {
     "gpqa_diamond": 51.7,
     "tau_bench_verified_airline": 66.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:openai/gpt-4o": {
    "id": "or:openai/gpt-4o",
@@ -34578,8 +35019,9 @@
    },
    "vram": {
     "level": "warn",
+    "mode": "quant",
     "label": "IQ2_M · 22k",
-    "text": "Serve quantizzazione e contesto ridotto: IQ2_M fino a ~22k",
+    "text": "Serve quantizzazione e contesto ridotto: IQ2_M fino a ~22k · In alternativa GPU + RAM: Q4_K_M con ~30 GB in VRAM + ~23 GB in RAM, ~2 tok/s (llama.cpp -ngl parziale)",
     "best_quant": "IQ2_M",
     "quantized": true,
     "native_best": null,
@@ -34590,6 +35032,14 @@
     "tok_s": 48,
     "kv_known": true,
     "is_moe": false,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 23.2,
+     "tok_s": 2,
+     "moe": false,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -34770,7 +35220,9 @@
    "or_evals": {
     "gpqa_diamond": 46.0,
     "tau_bench_verified_airline": 24.0
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "Qwen/Qwen2.5-VL-72B-Instruct": {
    "id": "Qwen/Qwen2.5-VL-72B-Instruct",
@@ -34820,8 +35272,9 @@
    },
    "vram": {
     "level": "warn",
+    "mode": "quant",
     "label": "IQ2_M · 21k",
-    "text": "Serve quantizzazione e contesto ridotto: IQ2_M fino a ~21k",
+    "text": "Serve quantizzazione e contesto ridotto: IQ2_M fino a ~21k · In alternativa GPU + RAM: Q4_K_M con ~30 GB in VRAM + ~24 GB in RAM, ~2 tok/s (llama.cpp -ngl parziale)",
     "best_quant": "IQ2_M",
     "quantized": true,
     "native_best": null,
@@ -34832,6 +35285,14 @@
     "tok_s": 48,
     "kv_known": true,
     "is_moe": false,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 23.5,
+     "tok_s": 2,
+     "moe": false,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -34990,7 +35451,9 @@
    "quants_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 42.9
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "tencent/Hy-MT2-30B-A3B": {
    "id": "tencent/Hy-MT2-30B-A3B",
@@ -35041,6 +35504,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "quant",
     "label": "NVFP4",
     "text": "Serve quantizzazione (in BF16 i pesi sono ~56 GB). NVFP4 (formato nativo della RTX 5090): 15.7 GB di pesi · GGUF Q6_K: 23.0 GB di pesi — checkpoint NVFP4 già su Hugging Face (AutomatosX/AX-Hy-MT2-30B-A3B-CUDA-AXQ-NVFP4-W4A16)",
     "best_quant": "NVFP4",
@@ -35053,6 +35517,7 @@
     "tok_s": null,
     "kv_known": true,
     "is_moe": true,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -35212,7 +35677,9 @@
    "quants_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 38.9
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "meta-llama/Llama-3.2-3B-Instruct": {
    "id": "meta-llama/Llama-3.2-3B-Instruct",
@@ -35241,6 +35708,7 @@
    "params_source": "safetensors",
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), 6.0 GB di pesi, contesto non stimabile",
     "best_quant": "BF16",
@@ -35253,6 +35721,7 @@
     "tok_s": 195,
     "kv_known": false,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -35412,7 +35881,11 @@
    "quants_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 28.6
-   }
+   },
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "hf_checked": "2026-11-15"
   },
   "Sao10K/L3-8B-Lunaris-v1": {
    "id": "Sao10K/L3-8B-Lunaris-v1",
@@ -35462,6 +35935,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 8k",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~8k, ~76 tok/s",
     "best_quant": "BF16",
@@ -35474,6 +35948,7 @@
     "tok_s": 76,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -35618,7 +36093,9 @@
    "quants_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 27.7
-   }
+   },
+   "gated": false,
+   "hf_checked": "2026-11-15"
   },
   "or:google/gemini-nano-banana-2.1": {
    "id": "or:google/gemini-nano-banana-2.1",
@@ -35734,6 +36211,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), 15.0 GB di pesi, contesto non stimabile",
     "best_quant": "BF16",
@@ -35746,6 +36224,7 @@
     "tok_s": 78,
     "kv_known": false,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -35924,7 +36403,11 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "updated": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "hf_checked": "2026-11-15"
   },
   "n4ze3m/tiny-voca": {
    "id": "n4ze3m/tiny-voca",
@@ -35943,7 +36426,7 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 62,
+    "likes": 66,
     "downloads": 40,
     "trending": 62,
     "trend_rank": 86
@@ -36003,7 +36486,11 @@
     "date": "2026-11-15",
     "by": "anthropic/claude-haiku-5.5"
    },
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ],
+   "hf_checked": "2026-11-15"
   },
   "ann:x3guard150m": {
    "id": "ann:x3guard150m",
@@ -36042,7 +36529,7 @@
    "license": "apache-2.0",
    "gated": false,
    "params_b": 0.15,
-   "params_source": "nome",
+   "params_source": "safetensors",
    "active_b": null,
    "context": 8192,
    "arch": {
@@ -36077,6 +36564,7 @@
    },
    "vram": {
     "level": "ok",
+    "mode": "bf16",
     "label": "BF16 nativo · 8k",
     "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~8k, 500+ tok/s",
     "best_quant": "BF16",
@@ -36089,6 +36577,7 @@
     "tok_s": 3341,
     "kv_known": true,
     "is_moe": false,
+    "offload": null,
     "options": [
      {
       "q": "BF16",
@@ -36334,7 +36823,8 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "updated": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15"
   },
   "Edge0/Edge0-145B-NVFP4": {
    "id": "Edge0/Edge0-145B-NVFP4",
@@ -36348,22 +36838,24 @@
    "gated": false,
    "params_b": 145.0,
    "params_source": "nome",
-   "active_b": null,
+   "active_b": 10.0,
    "context": null,
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 278,
+    "likes": 281,
     "downloads": 41606,
     "trending": null
    },
    "links": {
+    "announcement": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
     "hf": "https://huggingface.co/Edge0/Edge0-145B-NVFP4"
    },
    "vram": {
-    "level": "no",
-    "label": "non entra",
-    "text": "Troppo grande per una RTX 5090: ~82 GB solo di pesi anche in Q4_K_M",
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (82 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~55 GB in RAM, ~11 tok/s (llama.cpp --n-cpu-moe: esperti in RAM)",
     "best_quant": null,
     "quantized": false,
     "native_best": null,
@@ -36373,7 +36865,15 @@
     "ref_ctx": 32768,
     "tok_s": null,
     "kv_known": false,
-    "is_moe": false,
+    "is_moe": true,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 54.8,
+     "tok_s": 11,
+     "moe": true,
+     "active_known": true
+    },
     "options": [
      {
       "q": "BF16",
@@ -36382,7 +36882,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 4
+      "tok_s": 40
      },
      {
       "q": "Q8_0",
@@ -36391,7 +36891,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 8
+      "tok_s": 76
      },
      {
       "q": "Q6_K",
@@ -36400,7 +36900,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 11
+      "tok_s": 98
      },
      {
       "q": "Q5_K_M",
@@ -36409,7 +36909,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 12
+      "tok_s": 113
      },
      {
       "q": "Q4_K_M",
@@ -36418,7 +36918,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 14
+      "tok_s": 133
      },
      {
       "q": "IQ4_XS",
@@ -36427,7 +36927,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 16
+      "tok_s": 152
      },
      {
       "q": "Q3_K_M",
@@ -36436,7 +36936,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 18
+      "tok_s": 165
      },
      {
       "q": "IQ2_M",
@@ -36445,7 +36945,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 26
+      "tok_s": 239
      },
      {
       "q": "FP8",
@@ -36454,7 +36954,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 8
+      "tok_s": 78
      },
      {
       "q": "NVFP4",
@@ -36463,7 +36963,7 @@
       "fits": false,
       "comfy": false,
       "max_ctx": null,
-      "tok_s": 15
+      "tok_s": 143
      }
     ]
    },
@@ -36491,31 +36991,30 @@
     }
    ],
    "first_seen": "2026-11-15",
-   "mentions": [],
-   "score": 5.2,
+   "mentions": [
+    {
+     "item": "f980cc1f1e21",
+     "rel": 9,
+     "date": "2026-11-12",
+     "title": "Edge0-145B: modello frontier Apache 2.0 eseguibile su singola GPU consumer",
+     "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
+     "source": "Hacker News"
+    }
+   ],
+   "score": 12.4,
    "newer": null,
    "newer_checked": "2026-11-15",
    "deep": {
-    "tldr": "Edge0-145B-NVFP4 è un modello open-weight da 145B parametri (MoE latente, 512 esperti, 10 attivi per token) addestrato nativamente a 4 bit, pensato per girare in locale su una singola GPU consumer come la RTX 5090 D 24 GB. Il testo sottolinea l'efficienza di memoria e throughput più che la qualità assoluta, ed è indicato per agenti e inferenza locale su hardware consumer.",
+    "tldr": "Edge0-145B è un modello open-weight da 145B parametri pensato per girare in locale su laptop, con capacità di coding, reasoning e agente dichiarate competitive con alcuni modelli frontier cloud. Il testo presenta anche Edge0-120B e un framework di inferenza unificato; l'architettura sfrutta esperti sparsi con matrici condivise, attivando circa 10B parametri per step. Adatto a coding agentico, ragionamento e workflow locali che combinano pianificazione, esecuzione di codice e verifica visiva.",
     "features": [
-     "Architettura MoE latente: 48 layer, 512 esperti per layer, 10 routed + 1 shared attivi per token, proiezione in uno spazio latente di larghezza ℓ=1792 prima degli esperti",
-     "Contesto dichiarato di 256K token con KV cache int8 e 32K residenti",
-     "Addestrato nativamente a 4 bit (formato NVFP4), con build alternativa Q3_K",
-     "Head MTP da 1.26B parametri per speculative decoding e tabella di embedding PLE da 51.2B memory-mapped",
-     "Gestione della residenza degli esperti tra VRAM e RAM di sistema (flag --resident-experts, --expert-cache, --kv-resident) con esecuzione su 24 GB VRAM",
-     "Interfacce compatibili OpenAI e Anthropic tramite il binario edge0-infer; licenza dichiarata 'other'"
+     "Architettura MoE con esperti sparsi: gruppi di 64 esperti condividono due grandi matrici; su 145B parametri totali ne partecipano circa 10B per step di inferenza",
+     "Pipeline di caricamento su tre livelli (VRAM GPU per 'hot experts', libreria di esperti da ~40GB in RAM di sistema, ~48GB di dati di vocabolario su SSD letti on demand)",
+     "Speculative decoding e uso combinato di CPU e GPU per raggiungere oltre 80 token/s in decodifica",
+     "Contesto dichiarato di 128K–256K token mantenendo velocità simile su input lunghi",
+     "Modello addestrato direttamente nell'architettura per l'esecuzione on-device, non compresso a posteriori",
+     "Pesi, framework di inferenza e strumenti di deployment rilasciati insieme; licenza indicata come 'other'"
     ],
     "benchmarks": [
-     {
-      "name": "Terminal-Bench 2.1",
-      "score": "86.5",
-      "vs": [
-       {
-        "model": "Qwen3.8-Flash-Next",
-        "score": "83.3"
-       }
-      ]
-     },
      {
       "name": "DeepSWE 1.1",
       "score": "64.6",
@@ -36523,20 +37022,122 @@
        {
         "model": "Qwen3.8-Flash-Next",
         "score": "58.7"
+       },
+       {
+        "model": "DeepSeek-V4-Flash-0731",
+        "score": "54.4"
+       }
+      ]
+     },
+     {
+      "name": "Terminal-Bench 2.1",
+      "score": "86.52",
+      "vs": [
+       {
+        "model": "Qwen3.8-Flash-Next",
+        "score": "83.3"
+       },
+       {
+        "model": "DeepSeek-V4-Flash-0731",
+        "score": "82.7"
+       },
+       {
+        "model": "Claude-Opus-4.6 (Max)",
+        "score": "78.2"
+       }
+      ]
+     },
+     {
+      "name": "HLE",
+      "score": "35.4",
+      "vs": [
+       {
+        "model": "Qwen3.8-Flash-Next",
+        "score": "35.9"
+       },
+       {
+        "model": "DeepSeek-V4-Flash-0731",
+        "score": "33.8"
+       },
+       {
+        "model": "Claude-Opus-4.6 (Max)",
+        "score": "40.0"
+       }
+      ]
+     },
+     {
+      "name": "GPQA-Diamond",
+      "score": "90.4",
+      "vs": [
+       {
+        "model": "DeepSeek-V4-Flash-0731",
+        "score": "90.8"
+       },
+       {
+        "model": "Claude-Opus-4.6 (Max)",
+        "score": "91.3"
+       },
+       {
+        "model": "Qwen3.8-Flash-Next",
+        "score": "91.7"
+       }
+      ]
+     },
+     {
+      "name": "IFBench",
+      "score": "80.6",
+      "vs": [
+       {
+        "model": "DeepSeek-V4-Flash-0731",
+        "score": "79.2"
+       },
+       {
+        "model": "Claude-Opus-4.6 (Max)",
+        "score": "62.5"
+       },
+       {
+        "model": "Qwen3.8-Flash-Next",
+        "score": "81.3"
+       }
+      ]
+     },
+     {
+      "name": "AA-LCR",
+      "score": "79.3",
+      "vs": [
+       {
+        "model": "Claude-Opus-4.6 (Max)",
+        "score": "78.0"
+       },
+       {
+        "model": "Qwen3.8-Flash-Next",
+        "score": "79.1"
+       },
+       {
+        "model": "DeepSeek-V4-Flash-0731",
+        "score": "79.7"
        }
       ]
      }
     ],
-    "params": "145B totali · 10.12B attivi per token",
-    "context": "256K",
-    "availability": "Pesi aperti tramite il repository GitHub Edge0-AI/Edge0 (build Q3_K 40.81 GiB e NVFP4 47.79 GiB); eseguibile con edge0-infer da CLI o tramite l'app desktop Edge0 Chat per Windows; build NVFP4 solo CUDA, build Q3_K anche Metal su Apple Silicon; nessun prezzo API indicato",
-    "local_tips": "Passare una sola cartella modello a edge0-infer serve/chat; usare --expert-cache auto, --kv-resident 32768 e --vram-reserve-mib per gestire VRAM; con residency attiva NVFP4 usa 23.25 GiB VRAM + 38.27 GiB RAM su RTX 5090 D 24 GB; throughput misurato: 98.3 tok/s agent decode e 3165.7 tok/s prefill a 16K su RTX 5090 D; configurazioni via model.json con variabili d'ambiente come STRATA_LATENT_DENSE",
-    "source": "https://huggingface.co/Edge0/Edge0-145B-NVFP4",
+    "params": "145B totali / ~10B attivi per step (Edge0-120B è la variante da 120B)",
+    "context": "128K–256K token",
+    "availability": "Pesi aperti (open-source) annunciati; disponibili anche framework di inferenza unificato e app Edge0. Nessun prezzo API indicato: il testo afferma che l'inferenza locale non comporta costi token/API, ma hardware ed elettricità hanno un costo.",
+    "local_tips": "Framework di inferenza unificato rilasciato insieme ai pesi; decodifica con speculative decoding e pipeline CPU+GPU; nessuna quantizzazione ufficiale esplicitamente indicata nel testo (il nome del file, NVFP4, non è spiegato nel testo).",
+    "hw_claims": "Memoria di picco dichiarata: 29GB (testo riporta anche 28GB nel confronto con Edge0-35B); laptop compatibile con 48GB (es. 'enabling local use on a 48GB laptop'); esempio MacBook Pro; velocità: oltre 80 token/s di decodifica, 1.100+ token/s di prefill; potenza tipica ~120W; libreria di esperti ~40GB in RAM di sistema e ~48GB di vocabolario su SSD; GPU/motore specifico non indicato con precisione…",
+    "source": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
     "date": "2026-11-15",
     "by": "anthropic/claude-haiku-5.5"
    },
    "updated": "2026-11-15",
-   "quants_checked": "2026-11-15"
+   "quants_checked": "2026-11-15",
+   "checks": [
+    "Parametri dedotti dal nome del repository (non dai metadati dei pesi).",
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili.",
+    "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
+   ],
+   "hf_checked": "2026-11-15",
+   "active_source": "dichiarato"
   },
   "inclusionAI/Duo-1.0-distill-quant": {
    "id": "inclusionAI/Duo-1.0-distill-quant",
@@ -36589,18 +37190,22 @@
     "date": "2026-11-15",
     "by": "anthropic/claude-haiku-5.5"
    },
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ],
+   "hf_checked": "2026-11-15"
   },
   "ann:villanova215ba3bbase": {
    "id": "ann:villanova215ba3bbase",
    "name": "Villanova2-15B-A3B-Base",
    "org": "",
-   "kind": "announced",
+   "kind": "open",
    "released": "2026-11-15",
    "links": {
-    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/"
+    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
+    "hf": "https://huggingface.co/VillanovaAI/Villanova2-15B-A3B-Base"
    },
-   "note": "Nessun peso ufficiale su Hugging Face: esistono solo repo di terze parti o segnaposto (VillanovaAI/Villanova2-15B-A3B, VillanovaAI/Villanova2-2B, VillanovaAI/Villanova2-15B-A3B-VL).",
    "first_seen": "2026-11-15",
    "mentions": [
     {
@@ -36615,18 +37220,146 @@
    "score": 9.5,
    "newer": null,
    "newer_checked": "2026-11-15",
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "hf_id": "VillanovaAI/Villanova2-15B-A3B-Base",
+   "pipeline": "text-generation",
+   "license": "apache-2.0",
+   "gated": true,
+   "params_b": 15.5,
+   "params_source": "safetensors",
+   "active_b": 3.0,
+   "weights_available": true,
+   "signals": {
+    "likes": 4,
+    "downloads": 21,
+    "trending": null
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "quant",
+    "label": "FP8",
+    "text": "Serve quantizzazione (in BF16 i pesi sono ~29 GB). FP8 (formato nativo della RTX 5090): 14.9 GB di pesi, contesto non stimabile · GGUF Q8_0: 15.3 GB di pesi, contesto non stimabile; BF16 al limite — nessun checkpoint FP8 pubblicato: va convertito (es. NVIDIA ModelOpt o llm-compressor)",
+    "best_quant": "FP8",
+    "quantized": true,
+    "native_best": "FP8",
+    "gguf_best": "Q8_0",
+    "tight": "BF16",
+    "native_gb": 28.9,
+    "ref_ctx": 32768,
+    "tok_s": 139,
+    "kv_known": false,
+    "is_moe": true,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 30.2,
+      "fits": true,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 72
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 16.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 135
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 12.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 175
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 11.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 202
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 9.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 236
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 8.6,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 270
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 8.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 293
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 5.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 425
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 15.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 139
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 9.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 255
+     }
+    ],
+    "native_ready": null
+   },
+   "quants_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "hf_checked": "2026-11-15"
   },
   "ann:villanova215ba3bvl": {
    "id": "ann:villanova215ba3bvl",
    "name": "Villanova2-15B-A3B-VL",
    "org": "",
-   "kind": "announced",
+   "kind": "open",
    "released": "2026-11-15",
    "links": {
-    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/"
+    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
+    "hf": "https://huggingface.co/VillanovaAI/Villanova2-15B-A3B-VL"
    },
-   "note": "Nessun peso ufficiale su Hugging Face: esistono solo repo di terze parti o segnaposto (VillanovaAI/Villanova2-15B-A3B-VL-GGUF).",
    "first_seen": "2026-11-15",
    "mentions": [
     {
@@ -36641,18 +37374,155 @@
    "score": 9.5,
    "newer": null,
    "newer_checked": "2026-11-15",
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "hf_id": "VillanovaAI/Villanova2-15B-A3B-VL",
+   "pipeline": "image-text-to-text",
+   "license": "apache-2.0",
+   "gated": true,
+   "params_b": 15.83,
+   "params_source": "safetensors",
+   "active_b": 3.0,
+   "weights_available": true,
+   "signals": {
+    "likes": 6,
+    "downloads": 14,
+    "trending": null
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "quant",
+    "label": "FP8",
+    "text": "Serve quantizzazione (in BF16 i pesi sono ~30 GB). FP8 (formato nativo della RTX 5090): 15.2 GB di pesi, contesto non stimabile · GGUF Q8_0: 15.7 GB di pesi, contesto non stimabile; BF16 al limite — nessun checkpoint FP8 pubblicato: va convertito (es. NVIDIA ModelOpt o llm-compressor)",
+    "best_quant": "FP8",
+    "quantized": true,
+    "native_best": "FP8",
+    "gguf_best": "Q8_0",
+    "tight": "BF16",
+    "native_gb": 29.5,
+    "ref_ctx": 32768,
+    "tok_s": 139,
+    "kv_known": false,
+    "is_moe": true,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 30.8,
+      "fits": true,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 72
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 16.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 135
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 13.1,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 175
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 11.5,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 202
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 9.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 236
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 8.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 270
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 8.1,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 293
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 5.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 425
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 16.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 139
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 9.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 255
+     }
+    ],
+    "native_ready": null
+   },
+   "quants": [
+    {
+     "id": "VillanovaAI/Villanova2-15B-A3B-VL-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": true,
+     "downloads": 21
+    }
+   ],
+   "quants_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "hf_checked": "2026-11-15"
   },
   "ann:villanova22bbase": {
    "id": "ann:villanova22bbase",
    "name": "Villanova2-2B-Base",
    "org": "",
-   "kind": "announced",
+   "kind": "open",
    "released": "2026-11-15",
    "links": {
-    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/"
+    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
+    "hf": "https://huggingface.co/VillanovaAI/Villanova2-2B-Base"
    },
-   "note": "Nessun peso ufficiale su Hugging Face: esistono solo repo di terze parti o segnaposto (VillanovaAI/Villanova2-15B-A3B, VillanovaAI/Villanova2-2B, VillanovaAI/Villanova2-15B-A3B-VL).",
    "first_seen": "2026-11-15",
    "mentions": [
     {
@@ -36667,7 +37537,136 @@
    "score": 9.5,
    "newer": null,
    "newer_checked": "2026-11-15",
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "hf_id": "VillanovaAI/Villanova2-2B-Base",
+   "pipeline": "text-generation",
+   "license": "apache-2.0",
+   "gated": true,
+   "params_b": 2.41,
+   "params_source": "safetensors",
+   "weights_available": true,
+   "signals": {
+    "likes": 4,
+    "downloads": 13,
+    "trending": null
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), 4.5 GB di pesi, contesto non stimabile",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 4.5,
+    "ref_ctx": 32768,
+    "tok_s": 260,
+    "kv_known": false,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 5.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 260
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 3.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 490
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 2.6,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 635
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 2.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 732
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 2.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 859
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 2.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 980
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 1.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 1065
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 1.6,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 1542
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 3.1,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 505
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 2.1,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 925
+     }
+    ]
+   },
+   "quants_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "hf_checked": "2026-11-15"
   }
+ },
+ "aliases": {
+  "ann:edge0145b": "Edge0/Edge0-145B-NVFP4"
  }
 }

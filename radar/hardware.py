@@ -298,10 +298,49 @@ def estimate(params_b: float | None, active_b: float | None, arch: dict | None, 
     def short(r):
         return f"{r['q']} · {_fmt_ctx(r['max_ctx'])}" if text_model and r["max_ctx"] else r["q"]
 
-    primary, tight = None, None
+    # GPU + RAM: in VRAM KV cache, overhead e quanti più pesi possibile (layer o esperti MoE), il resto in RAM
+    ram_avail = max(0.0, float(hw.get("system_ram_gb", 0)) - float(hw.get("ram_reserved_gb", 8)))
+    ram_bw = float(hw.get("ram_bandwidth_gbs", 80))
+
+    def offload(r):
+        kv = kv_bytes(arch, ctx_ref) / GiB if kv_known else 0.0
+        vram_w = max(0.0, usable - margin - kv - 0.75 - 0.02 * r["weights_gb"])
+        ram_w = r["weights_gb"] - vram_w
+        if ram_w <= 0 or ram_w > ram_avail:
+            return None
+        frac = ram_w / r["weights_gb"]
+        act_bytes = act * 1e9 * r["bpw"] / 8
+        tok_s = None
+        if text_model:
+            t = act_bytes * (1 - frac) / (eff * hw["bandwidth_gbs"] * 1e9) + act_bytes * frac / (0.6 * ram_bw * 1e9)
+            tok_s = max(1, round(1 / t)) if t else None
+        return {"q": r["q"], "vram_gb": round(vram_w + kv + 0.75 + 0.02 * r["weights_gb"], 1),
+                "ram_gb": round(ram_w, 1), "tok_s": tok_s, "moe": is_moe, "active_known": bool(is_moe or dense_known)}
+
+    def first_offload():
+        for q in ("Q4_K_M", "IQ4_XS", "Q3_K_M", "IQ2_M"):
+            o = offload(next(r for r in table if r["q"] == q))
+            if o:
+                return o
+        return None
+
+    dense_known = arch is not None and not is_moe  # senza config.json non sappiamo se è un MoE
+
+    def off_desc(o):
+        known = o["moe"] or dense_known
+        how = ("llama.cpp --n-cpu-moe: esperti in RAM" if o["moe"] else
+               "llama.cpp -ngl parziale" if dense_known else "llama.cpp -ngl parziale, o --n-cpu-moe se è un MoE")
+        s = f"{o['q']} con ~{o['vram_gb']:.0f} GB in VRAM + ~{o['ram_gb']:.0f} GB in RAM"
+        s += (f", ~{o['tok_s']} tok/s" if o["tok_s"] and known else "") + f" ({how})"
+        if o["tok_s"] and not known:
+            s += f"; parametri attivi non noti: ~{o['tok_s']} tok/s se denso, molto di più se è un MoE"
+        return s
+
+    primary, tight, off = None, None, None
+    mode = "no"
     if comfy(bf16):
         primary = bf16
-        level = "ok"
+        level, mode = "ok", "bf16"
         text = f"Gira su {gpu} senza quantizzare (BF16), {desc(bf16)}"
         label = "BF16 nativo" + (f" · {_fmt_ctx(bf16['max_ctx'])}" if text_model and bf16["max_ctx"] else "")
     elif nat_best or gguf_best:
@@ -313,30 +352,42 @@ def estimate(params_b: float | None, active_b: float | None, arch: dict | None, 
         tight = gguf_tight
         primary = nat_best if (nat_best and hw.get("prefer_native", True)) else (gguf_best or nat_best)
         good = primary["native"] or primary["q"] in GOOD_QUANTS
-        level = "ok" if good else "warn"
+        level, mode = ("ok" if good else "warn"), "quant"
         lead = f"Serve quantizzazione (in BF16 i pesi sono ~{bf16['weights_gb']:.0f} GB). " if good else \
             "Solo con quantizzazione aggressiva. "
         text = lead + " · ".join(parts)
+        if not good:
+            off = first_offload()
+            if off and off["q"] in GOOD_QUANTS:
+                text += f" · In alternativa GPU + RAM: {off_desc(off)}"
+            else:
+                off = None
         label = short(primary)
     else:
         small_ctx = min(hw["contexts"]) if kv_known else 0
         squeeze = next((r for r in natives + table if fits(r, small_ctx)), None)
+        off = first_offload()
         if squeeze:
             primary = squeeze
-            level = "warn"
+            level, mode = "warn", "quant"
             text = f"Serve quantizzazione e contesto ridotto: {squeeze['q']} fino a ~{_fmt_ctx(squeeze['max_ctx'] or small_ctx or ref_ctx)}"
+            if off and off["q"] in GOOD_QUANTS:
+                text += f" · In alternativa GPU + RAM: {off_desc(off)}"
+            else:
+                off = None
             label = f"{squeeze['q']} · {_fmt_ctx(squeeze['max_ctx'] or small_ctx or ref_ctx)}"
-        elif is_moe and q4["weights_gb"] <= usable + hw["system_ram_gb"] * 0.8:
-            level = "warn"
-            text = (f"MoE da {params_b:g}B ({act:g}B attivi): non entra in VRAM ma gira con offload degli esperti "
-                    f"in RAM (~{q4['weights_gb']:.0f} GB in Q4_K_M, llama.cpp --n-cpu-moe). Velocità limitata dalla RAM")
-            label = "offload MoE"
+        elif off:
+            level, mode = "warn", "offload"
+            text = f"Non entra tutto in VRAM ({q4['weights_gb']:.0f} GB in Q4_K_M), ma gira con offload in RAM: {off_desc(off)}"
+            label = f"GPU + RAM · {off['q']}"
         else:
-            level = "no"
-            text = f"Troppo grande per una {gpu}: ~{q4['weights_gb']:.0f} GB solo di pesi anche in Q4_K_M"
+            level, mode = "no", "no"
+            text = (f"Troppo grande per una {gpu}, anche con offload su {hw.get('system_ram_gb', 0)} GB di RAM: "
+                    f"~{q4['weights_gb']:.0f} GB solo di pesi in Q4_K_M")
             label = "non entra"
     return {
         "level": level,
+        "mode": mode,
         "label": label,
         "text": text,
         "best_quant": primary["q"] if primary else None,
@@ -349,6 +400,7 @@ def estimate(params_b: float | None, active_b: float | None, arch: dict | None, 
         "tok_s": primary["tok_s"] if primary else None,
         "kv_known": kv_known,
         "is_moe": is_moe,
+        "offload": off,
         "options": options,
         "table": table + natives,
     }

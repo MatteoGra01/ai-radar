@@ -6,19 +6,33 @@ Costo: ~1 $/mese con i modelli economici di OpenRouter (0 € con i soli modelli
 
 ## Sezioni del sito
 
-- **Oggi** — editoriale, nuovi modelli, modelli citati, paper sui tuoi argomenti, notizie filtrabili.
+- **Oggi** — editoriale, **le 5 notizie da sapere**, riquadri riassuntivi (nuovi modelli, nuove quantizzazioni,
+  paper, tool), nuovi modelli con il tipo di novità (**nuovo modello / nuova versione di… / semplice menzione**),
+  **nuove quantizzazioni** comparse per modelli già noti, paper sui tuoi argomenti e la rassegna completa.
   Le **novità dall'ultima visita** sono evidenziate (il browser ricorda cosa hai già visto) e c'è il filtro
   "solo novità". In prima pagina compaiono **solo le ultime versioni**: se di un modello esiste già una versione
   più recente della stessa famiglia e taglia (es. Granite 4.1 → 4.2), viene nascosto con un rimando.
-- **Modelli** — registro di tutti i modelli tracciati, con schede, benchmark e calcolatore VRAM.
+- **Modelli** — registro di tutti i modelli tracciati. Ogni scheda ha: stato di disponibilità (annunciato, repo senza
+  pesi, pesi gated, pesi aperti, quantizzazioni pronte), categoria GPU (**senza quantizzare / quantizzato /
+  GPU + RAM con offload / non supportato**), requisiti **dichiarati dal produttore** separati dalla stima,
+  **"Quando sceglierlo"** (punti di forza e limiti ricavati dai dati, alternative nella stessa fascia),
+  calcolatore VRAM con la metodologia spiegata, **comandi pronti** per llama.cpp / Ollama / vLLM e
+  **"Qualità dei dati"** (da dove viene ogni informazione, avvisi, data dell'ultima verifica).
 - **Classifica** — Intelligence, Coding e Agentic Index di **Artificial Analysis** (via l'endpoint Benchmarks di
   OpenRouter) più le valutazioni proprie di OpenRouter (GPQA, tau-bench), con verdetto GPU per i modelli aperti.
+  «n.v.» = indice non misurato (non un punteggio basso).
 - **Paper** — HF Daily Papers, arXiv per argomento e Alignment Forum, classificati da un LLM per argomento
-  (allineamento, interpretabilità meccanicistica, efficienza, retrieval…) e importanza; scegli gli argomenti.
+  (allineamento, interpretabilità meccanicistica, efficienza, retrieval…) con **due voti**: rilevanza per te e
+  valore scientifico nel suo campo. **Cliccando un paper** si apre un'overview semplice (problema, idea, risultati,
+  limiti, parole chiave) e l'abstract originale. Date distinte (pubblicazione, comparsa su HF, rilevamento),
+  "salva per dopo" e "letto".
 - **Embedding** — leaderboard **MTEB** ufficiale (multilingue, inglese, europeo, codice, documenti lunghi,
-  retrieval con ragionamento), punteggio sull'italiano, VRAM, novità e modelli non ancora valutati.
-- **Confronto** — fino a 4 modelli fianco a fianco (migliore per riga evidenziato) e un **consiglio LLM**
-  sul compito che descrivi: gira nel tuo browser con il tuo account OpenRouter (pulsante "Collega OpenRouter").
+  retrieval con ragionamento): scegli il **task che ti serve** (Retrieval, Classification, Pair Classification, STS…)
+  e la classifica si ordina su quello; filtri per lingua, VRAM e dimensione; posizione nella vista e rank MTEB.
+- **Confronto** — fino a 4 modelli fianco a fianco (migliore per riga evidenziato), tabella **"Quale sceglieresti
+  per…"** (coding in locale, massima qualità, agenti, API economica, contesto lungo, velocità) calcolata sui dati,
+  e un **consiglio LLM** sul compito che descrivi: gira nel tuo browser con il tuo account OpenRouter.
+- **Archivio** — tutti i giorni passati, con ricerca in tutte le notizie.
 
 ## Cosa fa ogni mattina
 
@@ -34,12 +48,19 @@ Costo: ~1 $/mese con i modelli economici di OpenRouter (0 € con i soli modelli
    - **benchmark e caratteristiche** estratti dall'annuncio ufficiale o dalla model card;
    - **versione più recente** della stessa famiglia, se esiste;
    - avvisi utili: repo HF **segnaposto senza pesi**, modelli solo annunciati, repo dichiarati ma non pubblici.
-4. Scrive l'**editoriale** del giorno (solo modelli davvero nuovi presentati come novità) e pubblica il sito.
+4. **Controlla la qualità delle schede** prima di pubblicarle: unisce i duplicati (un "annunciato" che poi è un repo
+   già noto), ricontrolla ogni settimana su Hugging Face lo stato dei repository (esiste, gated, contiene i pesi),
+   riconosce i repo ufficiali anche quando il nome dell'organizzazione differisce (VillanovaAI → Villanova2) e
+   annota gli avvisi sui dati mancanti.
+5. Scrive l'**overview** dei paper più rilevanti (punteggio ≥ 6, max 60 al giorno).
+6. Scrive l'**editoriale** del giorno (solo modelli davvero nuovi presentati come novità) e pubblica il sito.
 
 Il calcolo VRAM è deterministico (da `config.json`): gestisce MoE, attenzione ibrida/lineare
-(es. Qwen3.8: solo 16 layer su 64 hanno KV cache), sliding window e MLA. Nel sito c'è un
-calcolatore interattivo con slider del contesto e tipo di KV cache. Precisione indicativa ±10% sulla memoria,
-±25% sui token/s.
+(es. Qwen3.8: solo 16 layer su 64 hanno KV cache), sliding window e MLA. Se il modello non entra in VRAM ma
+entra in VRAM + RAM, il verdetto è **GPU + RAM** con la velocità stimata dalla banda della RAM (con i MoE gli
+esperti vanno in RAM con `llama.cpp --n-cpu-moe`). Senza `config.json` leggibile usa i parametri attivi
+dichiarati dal produttore. Nel sito c'è un calcolatore interattivo con slider del contesto e tipo di KV cache.
+Sono **stime**, non misure: precisione indicativa ±10% sulla memoria, ±25% sui token/s (batch 1, contesto breve).
 
 ## Messa online (10 minuti)
 
@@ -71,6 +92,9 @@ python3 -m radar serve            # apri http://localhost:8000
 python3 -m radar check Qwen/Qwen3.8-27B   # verdetto VRAM per qualsiasi repo HF
 python3 -m radar run --no-llm     # senza LLM: solo punteggi euristici
 python3 -m radar papers --reclassify   # dopo aver cambiato gli argomenti in config.toml: riclassifica l'archivio
+python3 -m radar papers --overviews    # genera le overview mancanti dei paper più rilevanti
+python3 -m radar validate              # controllo qualità delle schede (senza LLM)
+python3 -m radar deep <id-modello>     # rifà l'analisi approfondita di un modello
 ```
 
 Nessuna dipendenza: solo Python ≥ 3.11 (libreria standard). Test: `python3 -m unittest discover -s tests -t .`
@@ -79,17 +103,21 @@ Nessuna dipendenza: solo Python ≥ 3.11 (libreria standard). Test: `python3 -m 
 
 Tutto in `config.toml`:
 - `[profile]` — descrizione libera dei tuoi interessi: è quello che l'LLM usa per decidere la rilevanza.
-- `[hardware]` — GPU, VRAM, banda, RAM di sistema, contesto di riferimento.
+- `[hardware]` — GPU, VRAM, banda, RAM di sistema (e quanta lasciarne al sistema, banda della RAM per l'offload),
+  contesto di riferimento.
 - `[llm]` — budget di chiamate e modelli. `"auto:free"` sceglie da solo i modelli gratuiti disponibili
   (prima il router `openrouter/free`). Con qualche euro puoi mettere un modello economico in testa alla lista.
   Puoi aggiungere altri provider OpenAI-compatibili come riserva.
 - `[sources]` — feed RSS, soglie, organizzazioni HF da seguire.
+- `[papers]` — argomenti, fonti, soglia e numero massimo di overview al giorno.
 
 ## Struttura
 
 ```
 radar/            pipeline Python (sources, models, hardware, llm, pipeline)
+radar/validate.py controllo qualità delle schede modello
 docs/             sito statico (index.html, app.js, style.css) + docs/data/ generato
+                  (paper_details.json = abstract e overview, caricato solo quando apri un paper)
 state/seen.json   notizie già viste (evita duplicati tra un giorno e l'altro)
 .github/workflows/radar.yml   esecuzione giornaliera + deploy su Pages
 ```

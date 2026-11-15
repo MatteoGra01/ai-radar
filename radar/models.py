@@ -40,12 +40,23 @@ class Registry:
     def __init__(self, path: Path):
         self.path = path
         self.models: dict[str, dict] = {}
+        self.aliases: dict[str, str] = {}  # schede fuse in un'altra (es. "ann:edge0145b" → "Edge0/Edge0-145B-NVFP4")
         if path.exists():
-            self.models = json.loads(path.read_text()).get("models", {})
+            data = json.loads(path.read_text())
+            self.models = data.get("models", {})
+            self.aliases = data.get("aliases", {})
         self.touched: set[str] = set()  # nuovi o aggiornati in questa esecuzione
+
+    def canon(self, mid: str) -> str:
+        return self.aliases.get(mid, mid)
 
     def add(self, e: dict, today: str, touch: bool = True) -> dict:
         """touch=False: aggiunge al registro senza segnarlo come novità del giorno (es. modelli della classifica)."""
+        if e["id"] in self.aliases and self.aliases[e["id"]] in self.models:
+            # scheda già fusa in un'altra: non ricrearla (e non sovrascrivere tipo/stato della scheda canonica)
+            cur = self.models[self.aliases[e["id"]]]
+            cur.setdefault("links", {}).update({k: v for k, v in (e.get("links") or {}).items() if k not in cur["links"]})
+            return cur
         cur = self.models.get(e["id"])
         if cur:
             for k, v in e.items():
@@ -86,7 +97,8 @@ class Registry:
             if isinstance(e.get("vram"), dict):
                 e["vram"] = {kk: vv for kk, vv in e["vram"].items() if kk != "table"}
             slim[k] = e
-        data = {"updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "models": slim}
+        data = {"updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "models": slim,
+                "aliases": self.aliases}
         self.path.write_text(json.dumps(data, ensure_ascii=False, indent=1))
 
 
@@ -340,6 +352,20 @@ def match_openrouter(name: str, index: list[dict]) -> dict | None:
     return best
 
 
+_ORG_SUFFIX = re.compile(r"(ai|labs?|research|org|inc|team|hq|official|tech|models?|llm|io)$")
+
+
+def is_official(author: str, name: str, orgs: set[str]) -> bool:
+    """Il repo è del produttore? Organizzazione seguita, oppure nome dell'organizzazione contenuto nel nome del
+    modello anche senza suffissi tipo AI/Labs (VillanovaAI → Villanova2, Edge0 → Edge0-145B)."""
+    a = author.lower()
+    if a in orgs:
+        return True
+    n, na = norm_name(name), norm_name(author)
+    core = _ORG_SUFFIX.sub("", na)
+    return (len(na) >= 3 and na in n) or (len(core) >= 4 and core in n)
+
+
 def search_hf(name: str, cfg: dict) -> tuple[dict | None, list[str]]:
     """Cerca su HF un repo ufficiale con pesi per il nome citato. Restituisce (api_model|None, repo_terzi)."""
     n = norm_name(name)
@@ -355,8 +381,9 @@ def search_hf(name: str, cfg: dict) -> tuple[dict | None, list[str]]:
     for m in res:
         if n not in norm_name(m["id"]):
             continue
-        author = m["id"].split("/")[0].lower()
-        official = author in orgs or (len(norm_name(author)) >= 3 and norm_name(author) in n)
+        author = m["id"].split("/")[0]
+        official = is_official(author, name, orgs)
+        m["_official"] = official
         weights = has_weights(m.get("siblings"))
         if is_variant(m) or weights is False:
             # un produttore può pubblicare direttamente solo la versione quantizzata (es. Edge0/Edge0-145B-NVFP4)
@@ -366,8 +393,9 @@ def search_hf(name: str, cfg: dict) -> tuple[dict | None, list[str]]:
                 others.append(m["id"])
             continue
         good.append(m)
-    good.sort(key=lambda m: (m["id"].split("/")[0].lower() not in orgs, -m.get("likes", 0)))
-    if good and (good[0]["id"].split("/")[0].lower() in orgs or good[0].get("likes", 0) >= 50):
+    # prima i repo ufficiali (anche gated: i pesi esistono, serve solo accettare le condizioni), poi i più votati
+    good.sort(key=lambda m: (not m["_official"], m["id"].split("/")[0].lower() not in orgs, -m.get("likes", 0)))
+    if good and (good[0]["_official"] or good[0].get("likes", 0) >= 50):
         return good[0], others
     if official_variants:
         return max(official_variants, key=lambda m: m.get("likes", 0)), others
