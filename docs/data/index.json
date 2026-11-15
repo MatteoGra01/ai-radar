@@ -2,12 +2,12 @@
  "days": [
   {
    "date": "2026-11-15",
-   "headline": "Gemini 4 Carbon e Hydrogen, Qwen3.8-27B quantizzato per RTX 5090, DeepSeek-V4.1 su GPU 16 GB",
+   "headline": "Quantizzazioni Qwen3.8-27B di Unsloth e DeepSeek-V4.1 su GPU 16 GB con tandem.cpp",
    "n_items": 150,
    "n_models": 51
   }
  ],
- "updated": "2026-11-15T16:46:48Z",
+ "updated": "2026-11-15T17:00:31Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -23,11 +23,11 @@
  },
  "status": {
   "sources": {
-   "rss:Interconnects": {
+   "rss:Hugging Face Blog": {
     "ok": true,
-    "n": 1
+    "n": 0
    },
-   "rss:Ollama Blog": {
+   "rss:Google DeepMind": {
     "ok": true,
     "n": 0
    },
@@ -35,21 +35,17 @@
     "ok": true,
     "n": 2
    },
+   "rss:Ollama Blog": {
+    "ok": true,
+    "n": 0
+   },
    "rss:OpenAI News": {
     "ok": true,
     "n": 0
    },
-   "rss:Hugging Face Blog": {
+   "rss:Interconnects": {
     "ok": true,
-    "n": 0
-   },
-   "rss:NVIDIA Developer": {
-    "ok": true,
-    "n": 0
-   },
-   "rss:Google DeepMind": {
-    "ok": true,
-    "n": 0
+    "n": 1
    },
    "rss:r/LocalLLaMA": {
     "ok": true,
@@ -58,10 +54,6 @@
    "rss:Ollama releases": {
     "ok": true,
     "n": 0
-   },
-   "hackernews": {
-    "ok": true,
-    "n": 10
    },
    "rss:vLLM releases": {
     "ok": true,
@@ -74,6 +66,14 @@
    "github": {
     "ok": true,
     "n": 48
+   },
+   "hackernews": {
+    "ok": true,
+    "n": 10
+   },
+   "rss:NVIDIA Developer": {
+    "ok": true,
+    "n": 0
    },
    "openrouter": {
     "ok": true,
@@ -118,16 +118,16 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 3,
-   "cost_usd": 0.0023,
+   "calls": 2,
+   "cost_usd": 0.0011,
    "failures": 0,
    "models": {
     "openrouter/deepseek/deepseek-v4.1-flash": 1,
-    "openrouter/anthropic/claude-haiku-5.5": 2
+    "openrouter/anthropic/claude-haiku-5.5": 1
    },
    "log": []
   },
-  "duration_s": 59
+  "duration_s": 55
  },
  "new_model_days": 14,
  "benchmarks_meta": {

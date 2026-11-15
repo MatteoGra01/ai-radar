@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T16:47:47Z",
+ "updated": "2026-11-15T17:01:26Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -1427,7 +1427,7 @@
    "signals": {
     "likes": 584,
     "downloads": 10675,
-    "trending": 159,
+    "trending": 158,
     "trend_rank": 44
    },
    "vram": {
@@ -2085,9 +2085,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 1160,
+    "likes": 1161,
     "downloads": 571067,
-    "trending": 1051,
+    "trending": 1052,
     "trend_rank": 2,
     "watched_org": true
    },
@@ -2250,9 +2250,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 2096,
+    "likes": 2097,
     "downloads": 46766,
-    "trending": 290,
+    "trending": 289,
     "trend_rank": 11,
     "watched_org": true
    },
@@ -2513,9 +2513,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 283,
+    "likes": 284,
     "downloads": 2098,
-    "trending": 267,
+    "trending": 268,
     "trend_rank": 13
    },
    "links": {
@@ -2889,7 +2889,7 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 269,
+    "likes": 270,
     "downloads": 10,
     "trending": 139,
     "trend_rank": 52
@@ -15152,7 +15152,7 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 1667,
+    "likes": 1669,
     "downloads": 1010980,
     "trending": null
    },
