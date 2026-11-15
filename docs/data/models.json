@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T20:01:44Z",
+ "updated": "2026-11-15T21:40:09Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -727,9 +727,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 336,
+    "likes": 339,
     "downloads": 7329,
-    "trending": 320,
+    "trending": 323,
     "trend_rank": 9,
     "watched_org": true
    },
@@ -893,7 +893,7 @@
      "downloads": 127
     }
    ],
-   "score": 12.57,
+   "score": 12.58,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "Inkling-2-Small è un modello multimodale (testo e immagini in ingresso, testo in uscita) di Thinking Machines Lab, con architettura mixture-of-experts da 594B parametri totali e 17B attivi, introdotto nel changelog di transformers v5.23.0 con supporto nativo in libreria. Il testo indica uso per inglese, altre lingue e più linguaggi di programmazione. Le informazioni fornite sono limitate al changelog e non includono benchmark né una model card completa.",
@@ -917,6 +917,7 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 30.6,
     "coding": null,
@@ -927,8 +928,7 @@
    "or_evals": {
     "gpqa_diamond": 91.1,
     "tau_bench_verified_airline": 63.3
-   },
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:anthropic/claude-fable-5.2": {
    "id": "or:anthropic/claude-fable-5.2",
@@ -1780,9 +1780,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 584,
+    "likes": 585,
     "downloads": 10675,
-    "trending": 156,
+    "trending": 152,
     "trend_rank": 44
    },
    "vram": {
@@ -2246,6 +2246,9 @@
    },
    "newer": null,
    "newer_checked": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ],
    "aa": {
     "intelligence": 34.6,
     "coding": null,
@@ -2255,10 +2258,7 @@
    },
    "or_evals": {
     "gpqa_diamond": 83.2
-   },
-   "checks": [
-    "Numero di parametri non determinato: niente stima della VRAM."
-   ]
+   }
   },
   "Motif-Technologies/Motif-3": {
    "id": "Motif-Technologies/Motif-3",
@@ -2644,19 +2644,19 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
+   ],
+   "active_b": 13.2,
+   "active_source": "dichiarato",
    "aa": {
     "intelligence": null,
     "coding": 63.5,
     "agentic": 28.4,
     "variant": null,
     "slug": "motif-technologies/motif-3"
-   },
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
-   ],
-   "active_b": 13.2,
-   "active_source": "dichiarato"
+   }
   },
   "or:z-ai/glm-5.3-flashx-legal": {
    "id": "or:z-ai/glm-5.3-flashx-legal",
@@ -2718,9 +2718,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 1171,
+    "likes": 1174,
     "downloads": 571067,
-    "trending": 1056,
+    "trending": 1062,
     "trend_rank": 2,
     "watched_org": true
    },
@@ -2807,9 +2807,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 383,
+    "likes": 388,
     "downloads": 39862,
-    "trending": 341,
+    "trending": 348,
     "trend_rank": 7,
     "watched_org": true
    },
@@ -2826,7 +2826,7 @@
    ],
    "first_seen": "2026-11-15",
    "mentions": [],
-   "score": 6.82,
+   "score": 6.83,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "ZONOS3-Mini è un modello text-to-speech open-source di Zyphra con 100M parametri attivi (800M totali), che supporta clonazione vocale da un campione audio e design di personaggi (età, accento, timbro). Gira in tempo reale su telefoni e laptop, anche nel browser via WebGPU, con pesi rilasciati sotto licenza Apache 2.0. È adatto a giochi, narrazione e assistenti vocali, con controllo di emozione, ritmo e consegna fino a livello di singola parola.",
@@ -2891,9 +2891,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 2098,
+    "likes": 2103,
     "downloads": 46766,
-    "trending": 286,
+    "trending": 282,
     "trend_rank": 11,
     "watched_org": true
    },
@@ -3245,6 +3245,11 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
+   ],
+   "active_source": "dichiarato",
    "aa": {
     "intelligence": 46.5,
     "coding": null,
@@ -3255,12 +3260,7 @@
    "or_evals": {
     "gpqa_diamond": 92.9,
     "tau_bench_verified_airline": 75.9
-   },
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
-   ],
-   "active_source": "dichiarato"
+   }
   },
   "higurashi-ai/Haru-4B": {
    "id": "higurashi-ai/Haru-4B",
@@ -3279,9 +3279,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 295,
+    "likes": 299,
     "downloads": 2098,
-    "trending": 274,
+    "trending": 283,
     "trend_rank": 13
    },
    "links": {
@@ -3423,7 +3423,7 @@
      "source": "r/LocalLLaMA"
     }
    ],
-   "score": 12.82,
+   "score": 12.83,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "Haru-4B è un modello base open-weight (Apache 2.0, circa 5,27B parametri) per dialogo vocale continuo full-duplex: ascolta e parla contemporaneamente, con un frame ogni 133 ms (7,5 Hz). Usa audio continuo a 64 dimensioni per frame, generato in un solo passo da una piccola testa MLP con MeanFlow, senza token audio discreti. È rilasciato per la ricerca, non come assistente generico; è adatto a sperimentare dialogo vocale a bassa latenza e multilingue.",
@@ -3469,9 +3469,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 317,
+    "likes": 319,
     "downloads": 28553,
-    "trending": 215,
+    "trending": 213,
     "trend_rank": 19
    },
    "links": {
@@ -3526,7 +3526,7 @@
    "signals": {
     "likes": 271,
     "downloads": 0,
-    "trending": 204,
+    "trending": 193,
     "trend_rank": 20
    },
    "links": {
@@ -3877,7 +3877,7 @@
    "signals": {
     "likes": 270,
     "downloads": 10,
-    "trending": 136,
+    "trending": 132,
     "trend_rank": 52
    },
    "links": {
@@ -3982,9 +3982,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 81,
+    "likes": 82,
     "downloads": 1655,
-    "trending": 81,
+    "trending": 82,
     "trend_rank": 68
    },
    "links": {
@@ -4102,7 +4102,7 @@
    "quants": [],
    "first_seen": "2026-11-15",
    "mentions": [],
-   "score": 7.72,
+   "score": 7.73,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "KLM 1.6 è un modello base di linguaggio da 99M parametri (MinimaLabs, licenza Apache-2.0), aggiornamento incrementale di KLM 1.5 con un decadimento del learning rate esteso a 100B token. Il modello non è addestrato per seguire istruzioni o chat, quindi è pensato per essere fine-tunato sul proprio caso d'uso; è limitato all'inglese e a un contesto di 2.048 token.",
@@ -4238,7 +4238,7 @@
    "signals": {
     "likes": 78,
     "downloads": 955,
-    "trending": 66,
+    "trending": 65,
     "trend_rank": 76
    },
    "links": {
@@ -5611,6 +5611,7 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 20.1,
     "coding": 68.1,
@@ -5621,8 +5622,7 @@
    "or_evals": {
     "gpqa_diamond": 81.9,
     "tau_bench_verified_airline": 77.5
-   },
-   "hf_checked": "2026-11-15"
+   }
   },
   "ibm-granite/granite-4.1-3b": {
    "id": "ibm-granite/granite-4.1-3b",
@@ -6107,14 +6107,14 @@
    },
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 9.5,
     "agentic": null,
     "variant": null,
     "slug": "ibm-granite/granite-4.1-8b-20260429"
-   },
-   "hf_checked": "2026-11-15"
+   }
   },
   "ann:alphaproofcode": {
    "id": "ann:alphaproofcode",
@@ -7640,14 +7640,14 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
-   "or_evals": {
-    "gpqa_diamond": 89.1,
-    "tau_bench_verified_airline": 75.1
-   },
    "hf_checked": "2026-11-15",
    "checks": [
     "MoE senza numero di parametri attivi: velocità stimata come modello denso."
-   ]
+   ],
+   "or_evals": {
+    "gpqa_diamond": 89.1,
+    "tau_bench_verified_airline": 75.1
+   }
   },
   "pfnet/plamo-2-translate": {
    "id": "pfnet/plamo-2-translate",
@@ -8708,6 +8708,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 31.7,
     "coding": 74.8,
@@ -8718,9 +8720,7 @@
    "or_evals": {
     "gpqa_diamond": 85.4,
     "tau_bench_verified_airline": 76.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:x-ai/grok-4.6": {
    "id": "or:x-ai/grok-4.6",
@@ -9020,6 +9020,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 29.9,
     "coding": null,
@@ -9030,9 +9032,7 @@
    "or_evals": {
     "gpqa_diamond": 88.8,
     "tau_bench_verified_airline": 76.8
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "inclusionAI/Ling-3.1-flash": {
    "id": "inclusionAI/Ling-3.1-flash",
@@ -9239,6 +9239,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 29.6,
     "coding": null,
@@ -9249,9 +9251,7 @@
    "or_evals": {
     "gpqa_diamond": 81.3,
     "tau_bench_verified_airline": 79.3
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "MiniMaxAI/MiniMax-M3.1-Flash": {
    "id": "MiniMaxAI/MiniMax-M3.1-Flash",
@@ -9423,7 +9423,7 @@
     "downloads": 64807,
     "trending": null
    },
-   "score": 8.5,
+   "score": 9.5,
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants": [
@@ -9478,6 +9478,11 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+   ],
    "aa": {
     "intelligence": 29.1,
     "coding": null,
@@ -9488,12 +9493,7 @@
    "or_evals": {
     "gpqa_diamond": 87.6,
     "tau_bench_verified_airline": 66.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
-   ]
+   }
   },
   "deepseek-ai/DeepSeek-V4.1-Flash-1017": {
    "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
@@ -9734,6 +9734,11 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+   ],
    "aa": {
     "intelligence": 28.6,
     "coding": null,
@@ -9744,12 +9749,7 @@
    "or_evals": {
     "gpqa_diamond": 90.1,
     "tau_bench_verified_airline": 72.3
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
-   ]
+   }
   },
   "stepfun-ai/Step-5-Preview": {
    "id": "stepfun-ai/Step-5-Preview",
@@ -9941,15 +9941,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 28.5,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "stepfun/step-5-preview-20261008"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:upstage/solar-pro4": {
    "id": "or:upstage/solar-pro4",
@@ -10279,6 +10279,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 27.8,
     "coding": 71.5,
@@ -10289,9 +10291,7 @@
    "or_evals": {
     "gpqa_diamond": 84.1,
     "tau_bench_verified_airline": 70.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "XiaomiMiMo/MiMo-V2.6-Flash-RL": {
    "id": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
@@ -10526,6 +10526,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 26.7,
     "coding": null,
@@ -10536,9 +10538,7 @@
    "or_evals": {
     "gpqa_diamond": 73.2,
     "tau_bench_verified_airline": 77.9
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "mistralai/Mistral-Large-4-1T-A52B": {
    "id": "mistralai/Mistral-Large-4-1T-A52B",
@@ -10780,18 +10780,18 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Parametri dedotti dal nome del repository (non dai metadati dei pesi)."
+   ],
    "aa": {
     "intelligence": 26.1,
     "coding": null,
     "agentic": null,
     "variant": "High",
     "slug": "mistralai/mistral-large-4-0-20261006"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "Parametri dedotti dal nome del repository (non dai metadati dei pesi)."
-   ]
+   }
   },
   "meta-models/Muse-Spark-Open-816B-A42B": {
    "id": "meta-models/Muse-Spark-Open-816B-A42B",
@@ -11006,6 +11006,10 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "aa": {
     "intelligence": 24.9,
     "coding": null,
@@ -11016,11 +11020,7 @@
    "or_evals": {
     "gpqa_diamond": 90.2,
     "tau_bench_verified_airline": 75.7
-   },
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
-   ]
+   }
   },
   "or:openai/gpt-5.6-luna": {
    "id": "or:openai/gpt-5.6-luna",
@@ -11283,6 +11283,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 23.1,
     "coding": 68.8,
@@ -11293,9 +11295,7 @@
    "or_evals": {
     "gpqa_diamond": 90.5,
     "tau_bench_verified_airline": 77.3
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "deepseek-ai/DeepSeek-V4-Pro": {
    "id": "deepseek-ai/DeepSeek-V4-Pro",
@@ -11537,6 +11537,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 20.8,
     "coding": null,
@@ -11547,9 +11549,7 @@
    "or_evals": {
     "gpqa_diamond": 87.3,
     "tau_bench_verified_airline": 76.9
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "MiniMaxAI/Minimax-M3": {
    "id": "MiniMaxAI/Minimax-M3",
@@ -11720,6 +11720,8 @@
    "newer_checked": "2026-11-15",
    "quants": [],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 18.9,
     "coding": 58.6,
@@ -11730,9 +11732,7 @@
    "or_evals": {
     "gpqa_diamond": 90.2,
     "tau_bench_verified_airline": 74.1
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "reflection/Beam-1.0-501B-A23B": {
    "id": "reflection/Beam-1.0-501B-A23B",
@@ -11953,6 +11953,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 17.7,
     "coding": null,
@@ -11963,9 +11965,7 @@
    "or_evals": {
     "gpqa_diamond": 88.4,
     "tau_bench_verified_airline": 69.3
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "moonshotai/Kimi-K3": {
    "id": "moonshotai/Kimi-K3",
@@ -12213,6 +12213,11 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+   ],
    "aa": {
     "intelligence": 17.4,
     "coding": 72,
@@ -12223,12 +12228,7 @@
    "or_evals": {
     "gpqa_diamond": 92.0,
     "tau_bench_verified_airline": 73.9
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
-   ]
+   }
   },
   "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16": {
    "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
@@ -12450,6 +12450,10 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "aa": {
     "intelligence": 13.6,
     "coding": null,
@@ -12460,11 +12464,7 @@
    "or_evals": {
     "gpqa_diamond": 86.8,
     "tau_bench_verified_airline": 72.9
-   },
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
-   ]
+   }
   },
   "thinkingmachines/Inkling-Small": {
    "id": "thinkingmachines/Inkling-Small",
@@ -12713,6 +12713,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 12.9,
     "coding": 52.9,
@@ -12723,9 +12725,7 @@
    "or_evals": {
     "gpqa_diamond": 86.6,
     "tau_bench_verified_airline": 60.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "thinkingmachines/Inkling": {
    "id": "thinkingmachines/Inkling",
@@ -12967,6 +12967,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 12.5,
     "coding": 52.1,
@@ -12977,9 +12979,7 @@
    "or_evals": {
     "gpqa_diamond": 83.4,
     "tau_bench_verified_airline": 67.2
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16": {
    "id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
@@ -13194,17 +13194,17 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "aa": {
     "intelligence": 11.8,
     "coding": 49.3,
     "agentic": 20.1,
     "variant": "Reasoning",
     "slug": "nvidia/nemotron-3-ultra-550b-a55b-20260604"
-   },
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
-   ]
+   }
   },
   "or:google/gemini-3.5-flash-lite": {
    "id": "or:google/gemini-3.5-flash-lite",
@@ -13518,6 +13518,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 6.3,
     "coding": 49,
@@ -13528,9 +13530,7 @@
    "or_evals": {
     "gpqa_diamond": 80.8,
     "tau_bench_verified_airline": 75.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:google/gemini-3.1-flash-lite-preview": {
    "id": "or:google/gemini-3.1-flash-lite-preview",
@@ -13741,7 +13741,7 @@
     "downloads": 14572,
     "trending": null
    },
-   "score": 9.46,
+   "score": 10.46,
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants": [
@@ -13782,15 +13782,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 6.2,
     "coding": 27.8,
     "agentic": 1,
     "variant": null,
     "slug": "cohere/command-a-plus-05-2026"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16": {
    "id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
@@ -14019,6 +14019,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 5.5,
     "coding": 26.8,
@@ -14029,9 +14031,7 @@
    "or_evals": {
     "gpqa_diamond": 70.6,
     "tau_bench_verified_airline": 65.6
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "ibm-granite/granite-4.2-8b": {
    "id": "ibm-granite/granite-4.2-8b",
@@ -14265,6 +14265,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 5.1,
     "coding": 22.4,
@@ -14275,9 +14277,7 @@
    "or_evals": {
     "gpqa_diamond": 65.7,
     "tau_bench_verified_airline": 58.3
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "mistralai/Mistral-Medium-3.5-128B": {
    "id": "mistralai/Mistral-Medium-3.5-128B",
@@ -14448,7 +14448,7 @@
     "downloads": 14674,
     "trending": null
    },
-   "score": 7.43,
+   "score": 8.43,
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants": [
@@ -14538,15 +14538,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 4.6,
     "coding": 46.9,
     "agentic": 7,
     "variant": null,
     "slug": "mistralai/mistral-medium-3.5-20260430"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "google/gemma-4-31B-it": {
    "id": "google/gemma-4-31B-it",
@@ -14795,6 +14795,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 4.4,
     "coding": 43.4,
@@ -14805,9 +14807,7 @@
    "or_evals": {
     "gpqa_diamond": 82.3,
     "tau_bench_verified_airline": 75.6
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "mistralai/Mistral-Small-4-119B-2603": {
    "id": "mistralai/Mistral-Small-4-119B-2603",
@@ -15041,6 +15041,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 4.3,
     "coding": 26.6,
@@ -15051,9 +15053,7 @@
    "or_evals": {
     "gpqa_diamond": 75.8,
     "tau_bench_verified_airline": 46.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "openai/gpt-oss-120b": {
    "id": "openai/gpt-oss-120b",
@@ -15274,6 +15274,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 3.8,
     "coding": 30.4,
@@ -15284,9 +15286,7 @@
    "or_evals": {
     "gpqa_diamond": 74.2,
     "tau_bench_verified_airline": 65.2
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "CohereLabs/North-Mini-Code-1.0": {
    "id": "CohereLabs/North-Mini-Code-1.0",
@@ -15529,15 +15529,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 3.4,
     "coding": 36.5,
     "agentic": 1.1,
     "variant": null,
     "slug": "cohere/north-mini-code-20260617"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:openai/gpt-5.6-sol": {
    "id": "or:openai/gpt-5.6-sol",
@@ -16102,6 +16102,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 71.9,
@@ -16112,9 +16114,7 @@
    "or_evals": {
     "gpqa_diamond": 87.4,
     "tau_bench_verified_airline": 74.8
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:anthropic/claude-sonnet-5": {
    "id": "or:anthropic/claude-sonnet-5",
@@ -16567,6 +16567,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 69.1,
@@ -16577,9 +16579,7 @@
    "or_evals": {
     "gpqa_diamond": 86.7,
     "tau_bench_verified_airline": 73.4
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "zai-org/GLM-5.2": {
    "id": "zai-org/GLM-5.2",
@@ -16840,6 +16840,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 68.8,
@@ -16850,9 +16852,7 @@
    "or_evals": {
     "gpqa_diamond": 85.2,
     "tau_bench_verified_airline": 70.9
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:google/gemini-3.1-pro-preview": {
    "id": "or:google/gemini-3.1-pro-preview",
@@ -17173,6 +17173,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 65,
@@ -17183,9 +17185,7 @@
    "or_evals": {
     "gpqa_diamond": 88.0,
     "tau_bench_verified_airline": 74.8
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:anthropic/claude-sonnet-4.6": {
    "id": "or:anthropic/claude-sonnet-4.6",
@@ -17474,6 +17474,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 61.8,
@@ -17484,9 +17486,7 @@
    "or_evals": {
     "gpqa_diamond": 86.7,
     "tau_bench_verified_airline": 73.1
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "moonshotai/Kimi-K2.7-Code": {
    "id": "moonshotai/Kimi-K2.7-Code",
@@ -17714,6 +17714,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 60.8,
@@ -17724,9 +17726,7 @@
    "or_evals": {
     "gpqa_diamond": 86.6,
     "tau_bench_verified_airline": 73.9
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "XiaomiMiMo/MiMo-V2.5-Pro": {
    "id": "XiaomiMiMo/MiMo-V2.5-Pro",
@@ -17945,6 +17945,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 60.2,
@@ -17955,9 +17957,7 @@
    "or_evals": {
     "gpqa_diamond": 82.2,
     "tau_bench_verified_airline": 73.6
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "aa:kwaipilot/kat-coder-pro-v2-20260327": {
    "id": "aa:kwaipilot/kat-coder-pro-v2-20260327",
@@ -18202,15 +18202,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 58.8,
     "agentic": 24.1,
     "variant": null,
     "slug": "tencent/hy3-preview-20260421"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "inclusionAI/Ling-3.0-flash-VL": {
    "id": "inclusionAI/Ling-3.0-flash-VL",
@@ -18417,6 +18417,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 57,
@@ -18427,9 +18429,7 @@
    "or_evals": {
     "gpqa_diamond": 84.8,
     "tau_bench_verified_airline": 70.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "XiaomiMiMo/MiMo-V2.5": {
    "id": "XiaomiMiMo/MiMo-V2.5",
@@ -18664,6 +18664,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 56.8,
@@ -18674,9 +18676,7 @@
    "or_evals": {
     "gpqa_diamond": 77.2,
     "tau_bench_verified_airline": 73.2
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "deepseek-ai/DeepSeek-V4-Flash": {
    "id": "deepseek-ai/DeepSeek-V4-Flash",
@@ -18923,6 +18923,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 56.2,
@@ -18933,9 +18935,7 @@
    "or_evals": {
     "gpqa_diamond": 85.9,
     "tau_bench_verified_airline": 73.1
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:openai/gpt-5.4-mini": {
    "id": "or:openai/gpt-5.4-mini",
@@ -19300,6 +19300,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 55.8,
@@ -19310,9 +19312,7 @@
    "or_evals": {
     "gpqa_diamond": 81.0,
     "tau_bench_verified_airline": 71.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "aa:inclusionai/ling-3.0-flash-fin-20260827": {
    "id": "aa:inclusionai/ling-3.0-flash-fin-20260827",
@@ -19621,6 +19621,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 53.7,
@@ -19631,9 +19633,7 @@
    "or_evals": {
     "gpqa_diamond": 83.8,
     "tau_bench_verified_airline": 77.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "MiniMaxAI/MiniMax-M2.7": {
    "id": "MiniMaxAI/MiniMax-M2.7",
@@ -19806,7 +19806,7 @@
     "downloads": 225319,
     "trending": null
    },
-   "score": 8.79,
+   "score": 9.79,
    "newer": {
     "id": "MiniMaxAI/MiniMax-M3",
     "name": "MiniMax-M3",
@@ -19894,6 +19894,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 52.6,
@@ -19904,9 +19906,7 @@
    "or_evals": {
     "gpqa_diamond": 85.5,
     "tau_bench_verified_airline": 70.9
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:anthropic/claude-sonnet-4.5": {
    "id": "or:anthropic/claude-sonnet-4.5",
@@ -20235,6 +20235,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 50.6,
@@ -20245,9 +20247,7 @@
    "or_evals": {
     "gpqa_diamond": 74.9,
     "tau_bench_verified_airline": 68.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "aa:xiaomi/mimo-v2-flash-20251210": {
    "id": "aa:xiaomi/mimo-v2-flash-20251210",
@@ -20565,6 +20565,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 48.2,
@@ -20575,9 +20577,7 @@
    "or_evals": {
     "gpqa_diamond": 86.0,
     "tau_bench_verified_airline": 79.1
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "moonshotai/Kimi-K2.5": {
    "id": "moonshotai/Kimi-K2.5",
@@ -20824,6 +20824,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 46.8,
@@ -20834,9 +20836,7 @@
    "or_evals": {
     "gpqa_diamond": 84.5,
     "tau_bench_verified_airline": 70.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "aa:google/gemini-2.5-pro-exp-03-25": {
    "id": "aa:google/gemini-2.5-pro-exp-03-25",
@@ -21110,6 +21110,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 45.8,
@@ -21120,9 +21122,7 @@
    "or_evals": {
     "gpqa_diamond": 77.1,
     "tau_bench_verified_airline": 71.9
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "Qwen/Qwen3.5-122B-A10B": {
    "id": "Qwen/Qwen3.5-122B-A10B",
@@ -21371,6 +21371,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 45.7,
@@ -21381,9 +21383,7 @@
    "or_evals": {
     "gpqa_diamond": 84.9,
     "tau_bench_verified_airline": 77.5
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "meituan-longcat/LongCat-2.0": {
    "id": "meituan-longcat/LongCat-2.0",
@@ -21566,18 +21566,18 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+   ],
    "aa": {
     "intelligence": null,
     "coding": 45.3,
     "agentic": 14,
     "variant": null,
     "slug": "meituan/longcat-2.0-20260720"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
-   ]
+   }
   },
   "zai-org/GLM-4.7": {
    "id": "zai-org/GLM-4.7",
@@ -21838,6 +21838,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 45.3,
@@ -21848,9 +21850,7 @@
    "or_evals": {
     "gpqa_diamond": 82.7,
     "tau_bench_verified_airline": 72.1
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "deepseek-ai/DeepSeek-V3.2": {
    "id": "deepseek-ai/DeepSeek-V3.2",
@@ -22099,6 +22099,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 44.2,
@@ -22109,9 +22111,7 @@
    "or_evals": {
     "gpqa_diamond": 81.7,
     "tau_bench_verified_airline": 73.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "deepseek-ai/DeepSeek-V3.1-Terminus": {
    "id": "deepseek-ai/DeepSeek-V3.1-Terminus",
@@ -22332,6 +22332,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 43.5,
@@ -22342,9 +22344,7 @@
    "or_evals": {
     "gpqa_diamond": 77.2,
     "tau_bench_verified_airline": 73.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "aa:inclusionai/ring-2.6-1t-20260508": {
    "id": "aa:inclusionai/ring-2.6-1t-20260508",
@@ -22652,6 +22652,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 41.9,
@@ -22662,9 +22664,7 @@
    "or_evals": {
     "gpqa_diamond": 79.8,
     "tau_bench_verified_airline": 72.3
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "aa:openai/o1-2024-12-17": {
    "id": "aa:openai/o1-2024-12-17",
@@ -22857,7 +22857,7 @@
     "downloads": 9751,
     "trending": null
    },
-   "score": 5.4,
+   "score": 6.4,
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants": [
@@ -22919,15 +22919,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 39.6,
     "agentic": null,
     "variant": null,
     "slug": "stepfun/step-3.7-flash-20260528"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "google/gemma-4-26B-A4B-it": {
    "id": "google/gemma-4-26B-A4B-it",
@@ -22952,6 +22952,14 @@
    },
    "first_seen": "2026-11-15",
    "mentions": [
+    {
+     "item": "11c0f4326c33",
+     "rel": 8,
+     "date": "2026-11-15",
+     "title": "Benchmark: evoluzione delle performance di llama.cpp con modelli Gemma4",
+     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xx607x/llamacpp_performance_improvement_over_time_gemma4/",
+     "source": "r/LocalLLaMA"
+    },
     {
      "item": "5f2eea2e01a3",
      "rel": 6,
@@ -23103,7 +23111,7 @@
     "downloads": 5137386,
     "trending": null
    },
-   "score": 17.22,
+   "score": 18.82,
    "newer": null,
    "newer_checked": "2026-11-15",
    "deep": {
@@ -23403,6 +23411,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 39.3,
@@ -23413,9 +23423,7 @@
    "or_evals": {
     "gpqa_diamond": 69.3,
     "tau_bench_verified_airline": 68.5
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:openai/gpt-5": {
    "id": "or:openai/gpt-5",
@@ -23635,15 +23643,15 @@
    "newer_checked": "2026-11-15",
    "quants": [],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 37.7,
     "agentic": 1.7,
     "variant": "Reasoning",
     "slug": "nvidia/nemotron-3-super-120b-a12b-20230311"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "aa:anthropic/claude-4-sonnet-20250522": {
    "id": "aa:anthropic/claude-4-sonnet-20250522",
@@ -23922,6 +23930,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 37,
@@ -23932,9 +23942,7 @@
    "or_evals": {
     "gpqa_diamond": 81.6,
     "tau_bench_verified_airline": 75.6
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "Qwen/Qwen3-Coder-Next": {
    "id": "Qwen/Qwen3-Coder-Next",
@@ -24197,6 +24205,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 36.2,
@@ -24207,9 +24217,7 @@
    "or_evals": {
     "gpqa_diamond": 75.1,
     "tau_bench_verified_airline": 61.3
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:google/gemini-2.5-pro": {
    "id": "or:google/gemini-2.5-pro",
@@ -24422,7 +24430,7 @@
     "downloads": 7061,
     "trending": null
    },
-   "score": 7.3,
+   "score": 8.3,
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants": [
@@ -24477,15 +24485,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 31.3,
     "agentic": 2.3,
     "variant": null,
     "slug": "mistralai/devstral-2512"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "aa:inception/mercury-2-20260304": {
    "id": "aa:inception/mercury-2-20260304",
@@ -24779,6 +24787,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 28.7,
@@ -24789,9 +24799,7 @@
    "or_evals": {
     "gpqa_diamond": 77.4,
     "tau_bench_verified_airline": 73.4
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "inclusionAI/Ling-3.0-tiny": {
    "id": "inclusionAI/Ling-3.0-tiny",
@@ -25005,15 +25013,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 26.5,
     "agentic": 4.4,
     "variant": null,
     "slug": "inclusionai/ling-3.0-tiny-20260806"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "aa:mistralai/mistral-small": {
    "id": "aa:mistralai/mistral-small",
@@ -25405,6 +25413,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 23,
@@ -25415,9 +25425,7 @@
    "or_evals": {
     "gpqa_diamond": 62.1,
     "tau_bench_verified_airline": 39.8
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:amazon/nova-2-lite-v1": {
    "id": "or:amazon/nova-2-lite-v1",
@@ -25623,7 +25631,7 @@
     "downloads": 7312,
     "trending": null
    },
-   "score": 9.86,
+   "score": 10.86,
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants": [
@@ -25706,6 +25714,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 22.1,
@@ -25716,9 +25726,7 @@
    "or_evals": {
     "gpqa_diamond": 78.6,
     "tau_bench_verified_airline": 62.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:openai/gpt-4-turbo": {
    "id": "or:openai/gpt-4-turbo",
@@ -25977,6 +25985,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 21.2,
@@ -25987,9 +25997,7 @@
    "or_evals": {
     "gpqa_diamond": 54.6,
     "tau_bench_verified_airline": 45.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "moonshotai/Kimi-K2-Thinking": {
    "id": "moonshotai/Kimi-K2-Thinking",
@@ -26210,15 +26218,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 21,
     "agentic": null,
     "variant": null,
     "slug": "moonshotai/kimi-k2-thinking-20251106"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "openai/gpt-oss-20b": {
    "id": "openai/gpt-oss-20b",
@@ -26433,6 +26441,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 20.7,
@@ -26443,9 +26453,7 @@
    "or_evals": {
     "gpqa_diamond": 65.2,
     "tau_bench_verified_airline": 53.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:mistralai/mistral-medium-3.1": {
    "id": "or:mistralai/mistral-medium-3.1",
@@ -26696,18 +26704,18 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Parametri dedotti dal nome del repository (non dai metadati dei pesi).",
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "aa": {
     "intelligence": null,
     "coding": 20.1,
     "agentic": 1,
     "variant": null,
     "slug": "mistralai/mistral-large-2512"
-   },
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "Parametri dedotti dal nome del repository (non dai metadati dei pesi).",
-    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
-   ]
+   }
   },
   "aa:anthropic/claude-3-opus": {
    "id": "aa:anthropic/claude-3-opus",
@@ -26981,6 +26989,10 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "aa": {
     "intelligence": null,
     "coding": 16.3,
@@ -26991,11 +27003,7 @@
    "or_evals": {
     "gpqa_diamond": 66.3,
     "tau_bench_verified_airline": 42.3
-   },
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
-   ]
+   }
   },
   "aa:upstage/solar-pro-3": {
    "id": "aa:upstage/solar-pro-3",
@@ -27326,6 +27334,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 15.3,
@@ -27336,9 +27346,7 @@
    "or_evals": {
     "gpqa_diamond": 60.9,
     "tau_bench_verified_airline": 47.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "mistralai/Ministral-3-14B-Instruct-2512": {
    "id": "mistralai/Ministral-3-14B-Instruct-2512",
@@ -27565,15 +27573,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 14.4,
     "agentic": 1.1,
     "variant": null,
     "slug": "mistralai/ministral-14b-2512"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16": {
    "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
@@ -27823,6 +27831,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 14.4,
@@ -27833,9 +27843,7 @@
    "or_evals": {
     "gpqa_diamond": 63.2,
     "tau_bench_verified_airline": 51.8
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "aa:anthropic/claude-2.1": {
    "id": "aa:anthropic/claude-2.1",
@@ -28104,6 +28112,8 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 13.8,
@@ -28114,9 +28124,7 @@
    "or_evals": {
     "gpqa_diamond": 59.2,
     "tau_bench_verified_airline": 44.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16": {
    "id": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16",
@@ -28359,15 +28367,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 13.8,
     "agentic": null,
     "variant": null,
     "slug": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning-20260428"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:openai/gpt-4": {
    "id": "or:openai/gpt-4",
@@ -28666,6 +28674,10 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "aa": {
     "intelligence": null,
     "coding": 11.9,
@@ -28676,11 +28688,7 @@
    "or_evals": {
     "gpqa_diamond": 47.5,
     "tau_bench_verified_airline": 33.6
-   },
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
-   ]
+   }
   },
   "or:openai/gpt-4o-mini": {
    "id": "or:openai/gpt-4o-mini",
@@ -28994,17 +29002,17 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "aa": {
     "intelligence": null,
     "coding": 10.1,
     "agentic": 0.1,
     "variant": null,
     "slug": "google/gemma-3-27b-it"
-   },
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
-   ]
+   }
   },
   "mistralai/Ministral-3-8B-Instruct-2512": {
    "id": "mistralai/Ministral-3-8B-Instruct-2512",
@@ -29230,15 +29238,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 9.7,
     "agentic": 0.6,
     "variant": null,
     "slug": "mistralai/ministral-8b-2512"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "aa:qwen/qwen3-8b-04-28": {
    "id": "aa:qwen/qwen3-8b-04-28",
@@ -29409,7 +29417,7 @@
     "downloads": 109443,
     "trending": null
    },
-   "score": 10.33,
+   "score": 11.33,
    "gated": true,
    "quants": [
     {
@@ -29486,17 +29494,17 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "aa": {
     "intelligence": null,
     "coding": 8.2,
     "agentic": 0.5,
     "variant": null,
     "slug": "meta-llama/llama-4-scout-17b-16e-instruct"
-   },
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
-   ]
+   }
   },
   "aa:anthropic/claude-instant-1": {
    "id": "aa:anthropic/claude-instant-1",
@@ -29748,6 +29756,10 @@
    },
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "aa": {
     "intelligence": null,
     "coding": 5.8,
@@ -29758,11 +29770,7 @@
    "or_evals": {
     "gpqa_diamond": 38.0,
     "tau_bench_verified_airline": 48.0
-   },
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
-   ]
+   }
   },
   "meta-llama/Meta-Llama-3.1-8B-Instruct": {
    "id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
@@ -29911,6 +29919,11 @@
    "newer_checked": "2026-11-15",
    "quants": [],
    "quants_checked": "2026-11-15",
+   "gated": true,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "aa": {
     "intelligence": null,
     "coding": 5.4,
@@ -29921,12 +29934,7 @@
    "or_evals": {
     "gpqa_diamond": 27.7,
     "tau_bench_verified_airline": 25.6
-   },
-   "gated": true,
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
-   ]
+   }
   },
   "mistralai/Ministral-3-3B-Instruct-2512": {
    "id": "mistralai/Ministral-3-3B-Instruct-2512",
@@ -30152,15 +30160,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
     "coding": 4.8,
     "agentic": 0.8,
     "variant": null,
     "slug": "mistralai/ministral-3b-2512"
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "aa:microsoft/phi-4-mini-instruct": {
    "id": "aa:microsoft/phi-4-mini-instruct",
@@ -30407,6 +30415,10 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "aa": {
     "intelligence": null,
     "coding": 2.7,
@@ -30416,11 +30428,7 @@
    },
    "or_evals": {
     "gpqa_diamond": 27.1
-   },
-   "hf_checked": "2026-11-15",
-   "checks": [
-    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
-   ]
+   }
   },
   "or:openai/gpt-6-astra-pro": {
    "id": "or:openai/gpt-6-astra-pro",
@@ -30692,12 +30700,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 89.8,
     "tau_bench_verified_airline": 76.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:openai/gpt-5.6-luna-pro": {
    "id": "or:openai/gpt-5.6-luna-pro",
@@ -30934,7 +30942,7 @@
     "downloads": 2997819,
     "trending": null
    },
-   "score": 10.97,
+   "score": 11.97,
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants": [
@@ -31010,15 +31018,15 @@
     }
    ],
    "quants_checked": "2026-11-15",
-   "or_evals": {
-    "gpqa_diamond": 88.6,
-    "tau_bench_verified_airline": 71.3
-   },
    "gated": false,
    "hf_checked": "2026-11-15",
    "checks": [
     "MoE senza numero di parametri attivi: velocità stimata come modello denso."
-   ]
+   ],
+   "or_evals": {
+    "gpqa_diamond": 88.6,
+    "tau_bench_verified_airline": 71.3
+   }
   },
   "or:google/gemini-3-flash-preview": {
    "id": "or:google/gemini-3-flash-preview",
@@ -31465,12 +31473,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 79.1,
     "tau_bench_verified_airline": 74.1
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "MiniMaxAI/MiniMax-M2.5": {
    "id": "MiniMaxAI/MiniMax-M2.5",
@@ -31643,7 +31651,7 @@
     "downloads": 1037151,
     "trending": null
    },
-   "score": 8.87,
+   "score": 9.87,
    "newer": {
     "id": "MiniMaxAI/MiniMax-M3",
     "name": "MiniMax-M3",
@@ -31731,12 +31739,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 78.9,
     "tau_bench_verified_airline": 67.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "deepseek-ai/DeepSeek-R1-0528": {
    "id": "deepseek-ai/DeepSeek-R1-0528",
@@ -31978,12 +31986,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 76.7,
     "tau_bench_verified_airline": 49.5
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:google/gemini-2.5-flash": {
    "id": "or:google/gemini-2.5-flash",
@@ -32191,7 +32199,7 @@
     "downloads": 65740,
     "trending": null
    },
-   "score": 10.12,
+   "score": 11.12,
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants": [
@@ -32281,12 +32289,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 72.7,
     "tau_bench_verified_airline": 37.8
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "Qwen/Qwen3-Next-80B-A3B-Instruct": {
    "id": "Qwen/Qwen3-Next-80B-A3B-Instruct",
@@ -32542,12 +32550,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 71.8,
     "tau_bench_verified_airline": 46.2
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:openai/gpt-5-nano": {
    "id": "or:openai/gpt-5-nano",
@@ -32755,7 +32763,7 @@
     "downloads": 321088,
     "trending": null
    },
-   "score": 9.87,
+   "score": 10.87,
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants": [
@@ -32831,12 +32839,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 69.5,
     "tau_bench_verified_airline": 40.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "zai-org/GLM-4.6V": {
    "id": "zai-org/GLM-4.6V",
@@ -33078,12 +33086,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 66.8,
     "tau_bench_verified_airline": 60.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "Qwen/Qwen3-30B-A3B-Instruct-2507": {
    "id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
@@ -33333,12 +33341,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 64.9,
     "tau_bench_verified_airline": 38.4
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "Qwen/Qwen3-VL-30B-A3B-Instruct": {
    "id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
@@ -33588,12 +33596,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 64.2,
     "tau_bench_verified_airline": 35.6
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:openai/gpt-4.1": {
    "id": "or:openai/gpt-4.1",
@@ -33861,12 +33869,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 63.7,
     "tau_bench_verified_airline": 43.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "Qwen/Qwen3-30B-A3B": {
    "id": "Qwen/Qwen3-30B-A3B",
@@ -34116,12 +34124,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 60.9,
     "tau_bench_verified_airline": 47.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
    "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
@@ -34370,12 +34378,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 60.4,
     "tau_bench_verified_airline": 46.2
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:google/gemini-2.5-flash-lite": {
    "id": "or:google/gemini-2.5-flash-lite",
@@ -34644,12 +34652,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 53.9,
     "tau_bench_verified_airline": 32.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:openai/gpt-4o-2024-08-06": {
    "id": "or:openai/gpt-4o-2024-08-06",
@@ -34934,12 +34942,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 51.7,
     "tau_bench_verified_airline": 66.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:openai/gpt-4o": {
    "id": "or:openai/gpt-4o",
@@ -35217,12 +35225,12 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 46.0,
     "tau_bench_verified_airline": 24.0
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "Qwen/Qwen2.5-VL-72B-Instruct": {
    "id": "Qwen/Qwen2.5-VL-72B-Instruct",
@@ -35449,11 +35457,11 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 42.9
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "tencent/Hy-MT2-30B-A3B": {
    "id": "tencent/Hy-MT2-30B-A3B",
@@ -35675,11 +35683,11 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 38.9
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "meta-llama/Llama-3.2-3B-Instruct": {
    "id": "meta-llama/Llama-3.2-3B-Instruct",
@@ -35879,13 +35887,13 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "quants_checked": "2026-11-15",
-   "or_evals": {
-    "gpqa_diamond": 28.6
-   },
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
-   "hf_checked": "2026-11-15"
+   "hf_checked": "2026-11-15",
+   "or_evals": {
+    "gpqa_diamond": 28.6
+   }
   },
   "Sao10K/L3-8B-Lunaris-v1": {
    "id": "Sao10K/L3-8B-Lunaris-v1",
@@ -36091,11 +36099,11 @@
     }
    ],
    "quants_checked": "2026-11-15",
+   "gated": false,
+   "hf_checked": "2026-11-15",
    "or_evals": {
     "gpqa_diamond": 27.7
-   },
-   "gated": false,
-   "hf_checked": "2026-11-15"
+   }
   },
   "or:google/gemini-nano-banana-2.1": {
    "id": "or:google/gemini-nano-banana-2.1",
@@ -36202,7 +36210,7 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 8944,
+    "likes": 8945,
     "downloads": 4238569,
     "trending": null
    },
@@ -36426,9 +36434,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 66,
+    "likes": 71,
     "downloads": 40,
-    "trending": 62,
+    "trending": 71,
     "trend_rank": 86
    },
    "links": {
@@ -36438,7 +36446,7 @@
    "quants": [],
    "first_seen": "2026-11-15",
    "mentions": [],
-   "score": 4.62,
+   "score": 4.67,
    "newer": null,
    "newer_checked": "2026-11-15",
    "deep": {
@@ -37001,7 +37009,7 @@
      "source": "Hacker News"
     }
    ],
-   "score": 12.4,
+   "score": 13.41,
    "newer": null,
    "newer_checked": "2026-11-15",
    "deep": {
@@ -37196,31 +37204,90 @@
    ],
    "hf_checked": "2026-11-15"
   },
-  "ann:villanova215ba3bbase": {
-   "id": "ann:villanova215ba3bbase",
-   "name": "Villanova2-15B-A3B-Base",
-   "org": "",
+  "meituan-longcat/LongCat-Video-Avatar-1.6": {
+   "id": "meituan-longcat/LongCat-Video-Avatar-1.6",
+   "name": "LongCat-Video-Avatar-1.6",
+   "org": "meituan-longcat",
    "kind": "open",
-   "released": "2026-11-15",
-   "links": {
-    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
-    "hf": "https://huggingface.co/VillanovaAI/Villanova2-15B-A3B-Base"
+   "released": "2026-11-13",
+   "hf_id": "meituan-longcat/LongCat-Video-Avatar-1.6",
+   "pipeline": null,
+   "license": "mit",
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 6,
+    "downloads": 4,
+    "trending": null,
+    "watched_org": true
    },
+   "links": {
+    "hf": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6"
+   },
+   "vram": null,
+   "quants": [],
+   "quants_checked": "2026-11-15",
    "first_seen": "2026-11-15",
-   "mentions": [
-    {
-     "item": "1278034560fb",
-     "rel": 10,
-     "date": "2026-11-15",
-     "title": "Villanova2: famiglia di modelli open-weight EU (15B-A3B MoE, 2B dense, VL)",
-     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
-     "source": "r/LocalLLaMA"
-    }
+   "mentions": [],
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
    ],
-   "score": 9.5,
+   "score": 4.26,
    "newer": null,
    "newer_checked": "2026-11-15",
-   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "LongCat-Video-Avatar-1.6 è un framework open-source di Meituan per la generazione di video di esseri umani guidati dall'audio (speech-text-to-video e speech-image-to-video), anche multi-persona. Rispetto alla 1.5 migliora la naturalezza del movimento labiale, la sincronizzazione labbra-audio, il movimento coordinato di volto e corpo e la coerenza visiva nei video lunghi, con ottimizzazioni di inferenza. Adatto a avatar parlanti e video di persone con audio, anche molto lunghi (oltre 10 minuti).",
+    "features": [
+     "Animazione labiale più naturale e stabile, con riduzione di movimenti esagerati della bocca e instabilità temporale nell'area della bocca",
+     "Generazione di video lunghi stabile tramite continuazione autoregressiva, con video oltre i 10 minuti mantenendo qualità visiva, coerenza dell'identità e coerenza temporale",
+     "Supporto a animazione di singola persona e multi-persona, sia speech-text-to-video sia speech-image-to-video, con video-continuation",
+     "Architettura base condivisa con la 1.5 e due LoRA task-specific (loraA DMD, loraB OPSD), con mixing configurabile tramite --mix_steps e --mix_alpha",
+     "Opzione di quantizzazione weight-only INT8 del DiT (base_model_int8, flag --use_int8) e supporto FP8 tramite Transformer Engine (--use_fp8), mutuamente esclusivi",
+     "Ottimizzazioni di inferenza end-to-end e supporto FlashAttention-2 di default, con FlashAttention-3 consigliata su GPU Hopper"
+    ],
+    "benchmarks": [
+     {
+      "name": "Human preference Arena (Bradley–Terry Elo, 33.051 voti)",
+      "score": "1068.1",
+      "vs": [
+       {
+        "model": "OmniHuman-2.0",
+        "score": "più alto di 1068.1 (valore…"
+       },
+       {
+        "model": "LongCat-Video-Avatar-1.5",
+        "score": "più basso di 1068.1 (valore…"
+       },
+       {
+        "model": "HeyGen / OmniHuman-1.5 / Kling Avatar 2.0",
+        "score": "più bassi di 1068.1 (valori…"
+       }
+      ]
+     }
+    ],
+    "params": "",
+    "context": "",
+    "availability": "Pesi aperti su Hugging Face (meituan-longcat/LongCat-Video-Avatar-1.6), licenza MIT per i pesi; codice su GitHub (meituan-longcat/LongCat-Video). Nessun dato su API o prezzo.",
+    "local_tips": "Installare con Python 3.10, PyTorch 2.6.0+cu124, flash-attn 2.7.4.post1 e requirements_avatar.txt; scaricare i pesi con huggingface-cli. Usare i parametri --use_distill --lora_path loraB/lora.safetensors --model_type avatar-v1.6 --mix_steps=4 --mix_alpha=1.0. Quantizzazione ufficiale disponibile: base_model_int8 con --use_int8 oppure FP8 con --use_fp8 (non entrambe). Con più di due GPU si consiglia export LONGCAT_A2A_WORKSPACE=1. Su Hopper abilitare FlashAttention-3 nella config. --compile_dit…",
+    "hw_claims": "Il testo dichiara l'uso di più GPU con --nproc_per_node=2 e --context_parallel_size=2 negli esempi; cita GPU Hopper (H20, H100, H200, H800) per FlashAttention-3. Non sono dichiarati requisiti di VRAM, RAM o velocità misurate.",
+    "source": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-15"
+  },
+  "VillanovaAI/Villanova2-15B-A3B-Base": {
+   "id": "VillanovaAI/Villanova2-15B-A3B-Base",
+   "name": "Villanova2-15B-A3B-Base",
+   "org": "VillanovaAI",
+   "kind": "open",
+   "released": "2026-10-26",
    "hf_id": "VillanovaAI/Villanova2-15B-A3B-Base",
    "pipeline": "text-generation",
    "license": "apache-2.0",
@@ -37228,11 +37295,17 @@
    "params_b": 15.5,
    "params_source": "safetensors",
    "active_b": 3.0,
+   "context": null,
+   "arch": null,
    "weights_available": true,
    "signals": {
     "likes": 4,
     "downloads": 21,
     "trending": null
+   },
+   "links": {
+    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
+    "hf": "https://huggingface.co/VillanovaAI/Villanova2-15B-A3B-Base"
    },
    "vram": {
     "level": "ok",
@@ -37344,22 +37417,8 @@
     ],
     "native_ready": null
    },
+   "quants": [],
    "quants_checked": "2026-11-15",
-   "checks": [
-    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
-   ],
-   "hf_checked": "2026-11-15"
-  },
-  "ann:villanova215ba3bvl": {
-   "id": "ann:villanova215ba3bvl",
-   "name": "Villanova2-15B-A3B-VL",
-   "org": "",
-   "kind": "open",
-   "released": "2026-11-15",
-   "links": {
-    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
-    "hf": "https://huggingface.co/VillanovaAI/Villanova2-15B-A3B-VL"
-   },
    "first_seen": "2026-11-15",
    "mentions": [
     {
@@ -37371,10 +37430,21 @@
      "source": "r/LocalLLaMA"
     }
    ],
-   "score": 9.5,
+   "score": 13.63,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "updated": "2026-11-15",
+   "updated": "2026-11-15"
+  },
+  "VillanovaAI/Villanova2-15B-A3B-VL": {
+   "id": "VillanovaAI/Villanova2-15B-A3B-VL",
+   "name": "Villanova2-15B-A3B-VL",
+   "org": "VillanovaAI",
+   "kind": "open",
+   "released": "2026-11-04",
    "hf_id": "VillanovaAI/Villanova2-15B-A3B-VL",
    "pipeline": "image-text-to-text",
    "license": "apache-2.0",
@@ -37382,11 +37452,17 @@
    "params_b": 15.83,
    "params_source": "safetensors",
    "active_b": 3.0,
+   "context": null,
+   "arch": null,
    "weights_available": true,
    "signals": {
     "likes": 6,
     "downloads": 14,
     "trending": null
+   },
+   "links": {
+    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
+    "hf": "https://huggingface.co/VillanovaAI/Villanova2-15B-A3B-VL"
    },
    "vram": {
     "level": "ok",
@@ -37508,21 +37584,6 @@
     }
    ],
    "quants_checked": "2026-11-15",
-   "checks": [
-    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
-   ],
-   "hf_checked": "2026-11-15"
-  },
-  "ann:villanova22bbase": {
-   "id": "ann:villanova22bbase",
-   "name": "Villanova2-2B-Base",
-   "org": "",
-   "kind": "open",
-   "released": "2026-11-15",
-   "links": {
-    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
-    "hf": "https://huggingface.co/VillanovaAI/Villanova2-2B-Base"
-   },
    "first_seen": "2026-11-15",
    "mentions": [
     {
@@ -37534,21 +37595,39 @@
      "source": "r/LocalLLaMA"
     }
    ],
-   "score": 9.5,
+   "score": 13.76,
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "updated": "2026-11-15",
+   "updated": "2026-11-15"
+  },
+  "VillanovaAI/Villanova2-2B-Base": {
+   "id": "VillanovaAI/Villanova2-2B-Base",
+   "name": "Villanova2-2B-Base",
+   "org": "VillanovaAI",
+   "kind": "open",
+   "released": "2026-10-26",
    "hf_id": "VillanovaAI/Villanova2-2B-Base",
    "pipeline": "text-generation",
    "license": "apache-2.0",
    "gated": true,
    "params_b": 2.41,
    "params_source": "safetensors",
+   "active_b": null,
+   "context": null,
+   "arch": null,
    "weights_available": true,
    "signals": {
     "likes": 4,
     "downloads": 13,
     "trending": null
+   },
+   "links": {
+    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
+    "hf": "https://huggingface.co/VillanovaAI/Villanova2-2B-Base"
    },
    "vram": {
     "level": "ok",
@@ -37659,14 +37738,547 @@
      }
     ]
    },
+   "quants": [],
    "quants_checked": "2026-11-15",
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "1278034560fb",
+     "rel": 10,
+     "date": "2026-11-15",
+     "title": "Villanova2: famiglia di modelli open-weight EU (15B-A3B MoE, 2B dense, VL)",
+     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
+     "source": "r/LocalLLaMA"
+    }
+   ],
+   "score": 13.63,
+   "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
-   "hf_checked": "2026-11-15"
+   "newer": null,
+   "newer_checked": "2026-11-15",
+   "updated": "2026-11-15"
+  },
+  "Soul-AILab/SoulX-FlashHead-1_3B": {
+   "id": "Soul-AILab/SoulX-FlashHead-1_3B",
+   "name": "SoulX-FlashHead-1_3B",
+   "org": "Soul-AILab",
+   "kind": "open",
+   "released": "2026-02-11",
+   "hf_id": "Soul-AILab/SoulX-FlashHead-1_3B",
+   "pipeline": "image-to-video",
+   "license": "other",
+   "gated": false,
+   "params_b": 3.0,
+   "params_source": "nome",
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 73,
+    "downloads": 5864,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/Soul-AILab/SoulX-FlashHead-1_3B"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), 5.6 GB di pesi",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 5.6,
+    "ref_ctx": 32768,
+    "tok_s": null,
+    "kv_known": false,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 6.5,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 3.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 3.1,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 2.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 2.5,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 2.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 2.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 1.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 3.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 2.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "audio-cpp/SoulX-FlashHead-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 24004
+    },
+    {
+     "id": "TeamAIQ/SoulX-FlashHead-1_3B-INT8-ConvRot",
+     "format": "altro",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 20
+    }
+   ],
+   "quants_checked": "2026-11-15",
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "7421d0b88afe",
+     "rel": 7,
+     "date": "2026-11-15",
+     "title": "audio.cpp 0.9.5: avatar chat locale in tempo reale con SoulX-FlashHead, LFM3-Audio e OWSM v4",
+     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xx2vi0/audiocpp_soulxflashhead_lfm3audio_owsm_v4/",
+     "source": "r/LocalLLaMA"
+    }
+   ],
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "Parametri dedotti dal nome del repository (non dai metadati dei pesi).",
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "score": 11.28,
+   "newer": null,
+   "newer_checked": "2026-11-15",
+   "deep": {
+    "tldr": "SoulX-FlashHead-1.3B è un modello open-weight di Soul-AILab per la generazione di talking head in streaming in tempo reale, con architettura DiT basata su Wan-2.1 e distillazione DMD/Self-Forcing. Offre due varianti, Lite (più veloce) e Pro (qualità superiore), ed è adatto a video parlanti generati in tempo reale su GPU consumer.",
+    "features": [
+     "Generazione di talking head in streaming di durata potenzialmente infinita (\"Oracle-guided Generation of Infinite Real-time Streaming Talking Heads\")",
+     "Due varianti rilasciate: Model_Lite (96 FPS o 3 stream concorrenti a 25+ FPS su RTX 4090) e Model_Pro (10.8 FPS su RTX 4090, 25+ FPS con due RTX 5090)",
+     "Backbone DiT da 1.3B parametri costruito su Wan-2.1, con distillazione tramite DMD e Self-Forcing++",
+     "Input audio processato con wav2vec2-base-960h; codice di inferenza e pesi pubblicati su Hugging Face, dataset VividHead rilasciato",
+     "Supporto a inferenza single-GPU e multi-GPU, con SageAttention opzionale per le prestazioni real-time",
+     "Licenza mista: transformer Apache-2.0, VAE_WAN Apache-2.0, VAE_LTX Open-RAIL-M (vincolo di redistribuzione da preservare)"
+    ],
+    "benchmarks": [],
+    "params": "3.0B (dato noto fornito; il testo indica 1.3B nel nome del modello)",
+    "context": "",
+    "availability": "Pesi aperti su Hugging Face (Soul-AILab/SoulX-FlashHead-1_3B) e codice di inferenza su GitHub; demo online tramite SoulApp (evento 2026.02.12–2026.03.11); report tecnico su arXiv 2602.07449",
+    "local_tips": "Installazione con Python 3.10, PyTorch 2.7.1 (CUDA cu128), flash_attn 2.8.0.post2, SageAttention 2.2.0 opzionale per il real-time, FFmpeg; download pesi con huggingface-cli; script ufficiali inference_script_single_gpu_pro.sh, inference_script_multi_gpu_pro.sh, inference_script_single_gpu_lite.sh",
+    "hw_claims": "Model_Lite: 96 FPS o 3 stream concorrenti a 25+ FPS su singola RTX 4090. Model_Pro: 10.8 FPS su singola RTX 4090; 25+ FPS (real-time) su due RTX 5090 con SageAttention. Nessun dato esplicito su VRAM o RAM richiesta.",
+    "source": "https://huggingface.co/Soul-AILab/SoulX-FlashHead-1_3B",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-15"
+  },
+  "LiquidAI/LFM3-Audio-2B": {
+   "id": "LiquidAI/LFM3-Audio-2B",
+   "name": "LFM3-Audio-2B",
+   "org": "LiquidAI",
+   "kind": "open",
+   "released": "2026-09-08",
+   "hf_id": "LiquidAI/LFM3-Audio-2B",
+   "pipeline": "any-to-any",
+   "license": "other",
+   "gated": false,
+   "params_b": 2.0,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 269,
+    "downloads": 14400,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/LiquidAI/LFM3-Audio-2B"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), 3.7 GB di pesi, contesto non stimabile",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 3.7,
+    "ref_ctx": 32768,
+    "tok_s": 314,
+    "kv_known": false,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 4.5,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 314
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 2.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 590
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 2.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 765
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 2.1,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 882
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 1.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 1035
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 1.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 1181
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 1.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 1283
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 1.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 1858
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 2.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 608
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 1.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": 1115
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "LiquidAI/LFM3-Audio-2B-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": true,
+     "downloads": 203675
+    },
+    {
+     "id": "maternion/LFM3-Audio-2B-Heretic2-Abliterated-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 5961
+    },
+    {
+     "id": "AtomicChat/LFM3-Audio-2B-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 4165
+    },
+    {
+     "id": "groxaxo/LFM3-Audio-2B-GPTQ-Pro-INT4",
+     "format": "GPTQ",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 0
+    },
+    {
+     "id": "LiquidAI/LFM3-Audio-2B-MLX-8bit",
+     "format": "MLX",
+     "nvfp4": false,
+     "official": true,
+     "downloads": 2888
+    },
+    {
+     "id": "LiquidAI/LFM3-Audio-2B-ONNX",
+     "format": "altro",
+     "nvfp4": false,
+     "official": true,
+     "downloads": 1694
+    }
+   ],
+   "quants_checked": "2026-11-15",
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "7421d0b88afe",
+     "rel": 7,
+     "date": "2026-11-15",
+     "title": "audio.cpp 0.9.5: avatar chat locale in tempo reale con SoulX-FlashHead, LFM3-Audio e OWSM v4",
+     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xx2vi0/audiocpp_soulxflashhead_lfm3audio_owsm_v4/",
+     "source": "r/LocalLLaMA"
+    }
+   ],
+   "hf_checked": "2026-11-15",
+   "checks": [
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "score": 14.29,
+   "newer": null,
+   "newer_checked": "2026-11-15",
+   "deep": {
+    "tldr": "LFM3-Audio-2B è un modello audio compatto da 2B parametri, pensato per girare in locale su laptop e dispositivi edge, che accetta testo o audio e risponde con testo, parlato o entrambi. Rispetto a LFM2.5-Audio introduce un nuovo encoder audio interno e il tokenizer LiquidCodec, migliorando la qualità del parlato. È adatto a agenti locali, tool calling, output strutturati e fine-tuning di dominio, ma non è consigliato per coding agentico o ragionamento complesso multi-step.",
+    "features": [
+     "Voice chat con risposte in streaming testo+parlato (reasoning prima della risposta solo per output solo testo; attualmente solo inglese)",
+     "Multilingual speech: ASR, TTS e traduzione del parlato in 18 lingue/locali",
+     "Comprensione e ragionamento su audio (parlato, suoni, eventi)",
+     "Tool calling da richieste vocali, con risposte testuali o vocali affiancate alle chiamate",
+     "Architettura: backbone LFM3, encoder audio causale (16 kHz in input) con attenzione a finestra scorrevole e convoluzioni corte, tokenizer LiquidCodec (12 token ogni 80 ms di parlato, output a 24 kHz), predizione parallela dei token audio",
+     "Contesto 32K token (input+output), streaming con prefill incrementale; licenza LFM Open License v1.0"
+    ],
+    "benchmarks": [
+     {
+      "name": "English ASR (WER ↓, ESB/Open ASR)",
+      "score": "6.23",
+      "vs": [
+       {
+        "model": "LFM2.5-Audio 1.5B",
+        "score": "6.13"
+       },
+       {
+        "model": "Gemma 4 E2B",
+        "score": "8.26"
+       },
+       {
+        "model": "Voxtral Mini 3B",
+        "score": "5.51"
+       }
+      ]
+     },
+     {
+      "name": "Multilingual ASR (WER/CER ↓, FLEURS)",
+      "score": "6.03",
+      "vs": [
+       {
+        "model": "Gemma 4 E4B",
+        "score": "6.54"
+       },
+       {
+        "model": "NVIDIA Audex 2B",
+        "score": "6.40"
+       },
+       {
+        "model": "Voxtral Mini 3B",
+        "score": "7.76"
+       }
+      ]
+     },
+     {
+      "name": "English TTS (UTMOSv2 ↑)",
+      "score": "3.83",
+      "vs": [
+       {
+        "model": "LFM2.5-Audio 1.5B",
+        "score": "3.22"
+       },
+       {
+        "model": "Qwen2.5-Omni 3B",
+        "score": "3.42"
+       }
+      ]
+     },
+     {
+      "name": "VoiceBench (↑)",
+      "score": "73.13",
+      "vs": [
+       {
+        "model": "Gemma 4 E4B",
+        "score": "72.90"
+       },
+       {
+        "model": "Voxtral Mini 3B",
+        "score": "65.78"
+       },
+       {
+        "model": "Qwen2.5-Omni 3B",
+        "score": "66.37"
+       }
+      ]
+     },
+     {
+      "name": "Tool calling (internal eval, ↑)",
+      "score": "58.50",
+      "vs": [
+       {
+        "model": "Gemma 4 E4B",
+        "score": "72.40"
+       },
+       {
+        "model": "Gemma 4 E2B",
+        "score": "55.60"
+       },
+       {
+        "model": "Voxtral Mini 3B",
+        "score": "44.50"
+       }
+      ]
+     },
+     {
+      "name": "MMAR (audio understanding, ↑)",
+      "score": "50.60",
+      "vs": [
+       {
+        "model": "Gemma 4 E4B",
+        "score": "49.10"
+       },
+       {
+        "model": "Qwen2.5-Omni 3B",
+        "score": "54.41"
+       },
+       {
+        "model": "NVIDIA Audex 2B",
+        "score": "53.21"
+       }
+      ]
+     }
+    ],
+    "params": "2B total",
+    "context": "32K token (input + output)",
+    "availability": "Pesi aperti su Hugging Face (checkpoint BF16 per vLLM/SGLang/Transformers, GGUF per llama.cpp, MLX 4-bit per Apple Silicon, ONNX per ONNX Runtime); licenza LFM Open License v1.0; notebook di fine-tuning SFT (function calling per domotica, TTS); API e demo disponibili sul sito Liquid AI. Prezzi non indicati.",
+    "local_tips": "Installare transformers>=5.20.2, torch, accelerate, librosa, soundfile; caricare con trust_remote_code=True; usare dtype bfloat16 su GPU. Parametri di sampling per parlato e interleaved: audio_temperature=1.0, audio_top_k=128, audio_repetition_penalty=1.1, audio_repetition_window=4096. Per output solo testo: suppress_mixed=True e suppress_audio_out=True. Checkpoint GGUF per llama.cpp, MLX 4-bit per Apple Silicon, ONNX per ONNX Runtime; il codec è incluso nel repository in audio_tokenizer/.",
+    "hw_claims": "Il testo dichiara 'runs locally on laptops and edge devices' e che LiquidCodec converte i token in parlato a circa 87x tempo reale su un singolo thread CPU su Apple M4 Max; time to first token 'as low as 50 ms' (con encoder causale in streaming). Nessun requisito di VRAM/RAM o GPU specifica per l'esecuzione locale è riportato.",
+    "source": "https://huggingface.co/LiquidAI/LFM3-Audio-2B",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-15"
   }
  },
  "aliases": {
-  "ann:edge0145b": "Edge0/Edge0-145B-NVFP4"
+  "ann:edge0145b": "Edge0/Edge0-145B-NVFP4",
+  "ann:villanova215ba3bbase": "VillanovaAI/Villanova2-15B-A3B-Base",
+  "ann:villanova215ba3bvl": "VillanovaAI/Villanova2-15B-A3B-VL",
+  "ann:villanova22bbase": "VillanovaAI/Villanova2-2B-Base"
  }
 }

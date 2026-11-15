@@ -2,12 +2,12 @@
  "days": [
   {
    "date": "2026-11-15",
-   "headline": "Qwen3.8-27B Dynamic v3.1 di Unsloth, Villanova2 EU e DeepSeek-V4.1 su 16 GB",
+   "headline": "Qwen3.8-27B quantizzato per RTX 5090 e Villanova2 open-weight EU",
    "n_items": 150,
-   "n_models": 55
+   "n_models": 57
   }
  ],
- "updated": "2026-11-15T18:40:18Z",
+ "updated": "2026-11-15T21:38:56Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -20,6 +20,8 @@
   "prefer_native": true,
   "bandwidth_gbs": 1792,
   "system_ram_gb": 64,
+  "ram_reserved_gb": 8,
+  "ram_bandwidth_gbs": 80,
   "ref_context": 32768,
   "contexts": [
    8192,
@@ -29,7 +31,7 @@
  },
  "status": {
   "sources": {
-   "rss:OpenAI News": {
+   "rss:Hugging Face Blog": {
     "ok": true,
     "n": 0
    },
@@ -37,15 +39,7 @@
     "ok": true,
     "n": 0
    },
-   "rss:Hugging Face Blog": {
-    "ok": true,
-    "n": 0
-   },
-   "rss:Simon Willison": {
-    "ok": true,
-    "n": 2
-   },
-   "rss:Interconnects": {
+   "rss:OpenAI News": {
     "ok": true,
     "n": 0
    },
@@ -53,7 +47,11 @@
     "ok": true,
     "n": 0
    },
-   "rss:Ollama releases": {
+   "rss:Simon Willison": {
+    "ok": true,
+    "n": 2
+   },
+   "rss:NVIDIA Developer": {
     "ok": true,
     "n": 0
    },
@@ -61,9 +59,17 @@
     "ok": true,
     "n": 25
    },
-   "rss:NVIDIA Developer": {
+   "rss:Interconnects": {
     "ok": true,
     "n": 0
+   },
+   "rss:Ollama releases": {
+    "ok": true,
+    "n": 0
+   },
+   "hackernews": {
+    "ok": true,
+    "n": 7
    },
    "rss:vLLM releases": {
     "ok": true,
@@ -72,10 +78,6 @@
    "rss:Transformers releases": {
     "ok": true,
     "n": 0
-   },
-   "hackernews": {
-    "ok": true,
-    "n": 10
    },
    "github": {
     "ok": true,
@@ -107,7 +109,7 @@
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 226
+    "n": 214
    },
    "papers:Alignment Forum": {
     "ok": true,
@@ -124,16 +126,16 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 3,
-   "cost_usd": 0.0028,
+   "calls": 5,
+   "cost_usd": 0.0055,
    "failures": 0,
    "models": {
-    "openrouter/deepseek/deepseek-v4.1-flash": 2,
-    "openrouter/anthropic/claude-haiku-5.5": 1
+    "openrouter/deepseek/deepseek-v4.1-flash": 1,
+    "openrouter/anthropic/claude-haiku-5.5": 4
    },
    "log": []
   },
-  "duration_s": 65
+  "duration_s": 73
  },
  "new_model_days": 14,
  "benchmarks_meta": {
