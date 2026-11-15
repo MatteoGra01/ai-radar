@@ -1,0 +1,60 @@
+name: AI Radar giornaliero
+
+on:
+  schedule:
+    - cron: "15 5 * * *"   # ogni giorno alle 05:15 UTC (06:15 in inverno, 07:15 in estate)
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Finestra in giorni (vuoto = automatica)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ai-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Genera la rassegna
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          AA_API_KEY: ${{ secrets.AA_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DAYS: ${{ inputs.days }}
+        run: python -m radar run ${DAYS:+--days "$DAYS"}
+
+      - name: Salva dati e stato nel repository
+        run: |
+          git config user.name "ai-radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data state
+          git diff --cached --quiet || git commit -m "Rassegna $(date -u +%F)"
+          git push
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs
+
+      - id: deploy
+        uses: actions/deploy-pages@v5

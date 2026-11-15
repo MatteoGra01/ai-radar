@@ -1,0 +1,311 @@
+"""Stima VRAM / contesto massimo / token al secondo per un modello su una GPU.
+
+Formula (identica a quella di docs/app.js, usata dal calcolatore interattivo):
+  pesi     = parametri × bit_per_peso / 8
+  KV cache = Σ layer di attenzione (2 × kv_heads × head_dim × 2 byte) × contesto
+             (layer sliding-window limitati alla finestra, MLA = (kv_lora_rank + rope_dim) per token,
+              layer lineari/SSM = stato costante)
+  overhead = 0.75 GiB + 2% dei pesi (buffer di calcolo, contesto CUDA)
+I bit/peso sono quelli effettivi dei formati GGUF di llama.cpp.
+"""
+from __future__ import annotations
+
+import re
+
+GiB = 2**30
+
+QUANTS = [
+    ("BF16", 16.0),
+    ("Q8_0", 8.5),
+    ("Q6_K", 6.56),
+    ("Q5_K_M", 5.69),
+    ("Q4_K_M", 4.85),
+    ("IQ4_XS", 4.25),
+    ("Q3_K_M", 3.91),
+    ("IQ2_M", 2.7),
+]
+GOOD_QUANTS = {"BF16", "Q8_0", "Q6_K", "Q5_K_M", "Q4_K_M", "IQ4_XS"}
+
+
+def _first(d: dict, *keys):
+    for k in keys:
+        v = d.get(k)
+        if isinstance(v, (int, float)) and not isinstance(v, bool) and v > 0:
+            return v
+    return None
+
+
+def params_from_name(name: str) -> tuple[float | None, float | None]:
+    """'Qwen3.6-35B-A3B' -> (35.0, 3.0); 'Qwen3.8-2.4T-A95B' -> (2400.0, 95.0)."""
+    base = (name or "").split("/")[-1]
+    total = active = None
+    m = re.search(r"(?<![A-Za-z0-9.])(\d+(?:\.\d+)?)\s?([BbTtMm])(?![A-Za-z0-9])", base)
+    if m:
+        v = float(m.group(1))
+        u = m.group(2).upper()
+        total = v * 1000 if u == "T" else v / 1000 if u == "M" else v
+    m = re.search(r"(?<![A-Za-z0-9])[Aa](\d+(?:\.\d+)?)[Bb](?![A-Za-z0-9])", base)
+    if m:
+        active = float(m.group(1))
+    return total, active
+
+
+def _text_cfg(cfg: dict) -> dict:
+    if not isinstance(cfg, dict):
+        return {}
+    t = dict(cfg)
+    for k in ("text_config", "llm_config", "language_config", "thinker_config", "language_model_config"):
+        sub = cfg.get(k)
+        if isinstance(sub, dict):
+            t.update(_text_cfg(sub))
+    return t
+
+
+def arch_from_config(cfg: dict | None) -> dict | None:
+    """Estrae dal config.json di HF i soli campi che servono a stimare la memoria."""
+    if not cfg:
+        return None
+    try:
+        return _arch(cfg)
+    except Exception:  # config non standard: meglio nessuna stima che un crash
+        return None
+
+
+def _int(v) -> int | None:
+    try:
+        return int(v)
+    except (TypeError, ValueError):
+        return None
+
+
+def _arch(cfg: dict) -> dict | None:
+    t = _text_cfg(cfg)
+    L = _first(t, "num_hidden_layers", "n_layer", "num_layers", "n_layers")
+    if not L:
+        return None
+    L = int(L)
+    hidden = _first(t, "hidden_size", "d_model", "n_embd", "dim")
+    heads = _first(t, "num_attention_heads", "n_head", "n_heads", "num_heads")
+    kv = _first(t, "num_key_value_heads", "num_kv_heads", "n_kv_heads", "multi_query_group_num") or heads
+    head_dim = _first(t, "head_dim", "kv_channels") or (int(hidden // heads) if hidden and heads else None)
+
+    full = sliding = linear = 0
+    lt = t.get("layer_types")
+    if isinstance(lt, list) and lt:
+        for x in lt:
+            x = str(x).lower()
+            if any(s in x for s in ("sliding", "local", "chunk")):
+                sliding += 1
+            elif any(s in x for s in ("linear", "mamba", "ssm", "recurrent", "deltanet", "conv", "rwkv")):
+                linear += 1
+            else:
+                full += 1
+    elif _int(t.get("full_attention_interval")):
+        n = _int(t["full_attention_interval"])
+        full, linear = L // n, L - L // n
+    elif _int(t.get("sliding_window_pattern")) and t.get("sliding_window"):
+        p = _int(t["sliding_window_pattern"])
+        full, sliding = L // p, L - L // p
+    elif isinstance(t.get("hybrid_override_pattern"), str):  # Nemotron-H: M=mamba, *=attention
+        pat = t["hybrid_override_pattern"]
+        full, linear = pat.count("*"), pat.count("M")
+    elif _int(t.get("attn_layer_period")):  # Jamba
+        p = _int(t["attn_layer_period"])
+        full, linear = L // p, L - L // p
+    else:
+        full = L
+    window = _first(t, "sliding_window", "attention_window") if sliding else None
+    if sliding and not window:
+        full, sliding = full + sliding, 0
+
+    mla_dim = None
+    if _first(t, "kv_lora_rank"):
+        mla_dim = int(t["kv_lora_rank"]) + int(_first(t, "qk_rope_head_dim") or 64)
+
+    linear_state = 0
+    if linear:
+        lv = _first(t, "linear_num_value_heads")
+        lk = _first(t, "linear_key_head_dim")
+        lvd = _first(t, "linear_value_head_dim")
+        mh = _first(t, "mamba_num_heads", "mamba_n_heads")
+        mhd = _first(t, "mamba_head_dim")
+        ss = _first(t, "ssm_state_size", "state_size", "mamba_d_state")
+        if lv and lk and lvd:
+            linear_state = int(lv * lk * lvd * 4)
+        elif mh and mhd and ss:
+            linear_state = int(mh * mhd * ss * 4)
+        else:
+            linear_state = 4 * 2**20
+
+    experts = _first(t, "n_routed_experts", "num_local_experts", "num_experts", "moe_num_experts", "num_routed_experts")
+    k_act = _first(t, "num_experts_per_tok", "moe_top_k", "num_experts_per_token", "top_k_experts", "moe_k")
+    moe_inter = _first(t, "moe_intermediate_size", "expert_intermediate_size", "moe_ffn_hidden_size")
+    return {
+        "layers": L,
+        "hidden": hidden,
+        "heads": heads,
+        "kv_heads": kv,
+        "head_dim": head_dim,
+        "full_layers": full,
+        "sliding_layers": sliding,
+        "window": window,
+        "linear_layers": linear,
+        "linear_state_bytes": linear_state,
+        "mla_dim": mla_dim,
+        "experts": int(experts) if experts and experts > 1 else None,
+        "experts_active": int(k_act) if experts and k_act else None,
+        "moe_inter": moe_inter if experts else None,
+        "dense_layers": int(_first(t, "first_k_dense_replace") or 0),
+        "inter": _first(t, "intermediate_size", "ffn_hidden_size"),
+        "vocab": _first(t, "vocab_size", "padded_vocab_size"),
+        "tied": bool(t.get("tie_word_embeddings", False)),
+        "max_ctx": _first(t, "max_position_embeddings", "max_sequence_length", "seq_length", "n_positions"),
+    }
+
+
+def params_from_arch(arch: dict) -> tuple[float | None, float | None]:
+    """Stima grezza (in miliardi) quando HF non espone il numero di parametri."""
+    try:
+        h, L = arch["hidden"], arch["layers"]
+        heads, kv, hd = arch["heads"], arch["kv_heads"], arch["head_dim"]
+        attn = h * heads * hd * 2 + h * kv * hd * 2
+        emb = arch["vocab"] * h * (1 if arch["tied"] else 2)
+        if arch.get("experts"):
+            routed = arch["experts"] * 3 * h * (arch["moe_inter"] or arch["inter"])
+            dense_mlp = 3 * h * (arch["inter"] or 0)
+            n_moe = L - arch["dense_layers"]
+            total = emb + L * attn + n_moe * routed + arch["dense_layers"] * dense_mlp
+            active = total - n_moe * routed * (1 - arch["experts_active"] / arch["experts"])
+            return total / 1e9, active / 1e9
+        total = emb + L * (attn + 3 * h * arch["inter"])
+        return total / 1e9, None
+    except (KeyError, TypeError, ZeroDivisionError):
+        return None, None
+
+
+def active_from_arch(arch: dict | None, total_b: float) -> float | None:
+    if not arch or not arch.get("experts") or not arch.get("experts_active"):
+        return None
+    try:
+        inter = arch.get("moe_inter") or arch.get("inter")
+        routed = (arch["layers"] - arch["dense_layers"]) * arch["experts"] * 3 * arch["hidden"] * inter
+        ratio = arch["experts_active"] / arch["experts"]
+        active = total_b * 1e9 - routed * (1 - ratio)
+        # architetture non standard (tabelle di lookup, layer extra): stima non affidabile → meglio nessun numero
+        if 0 < active < total_b * 1e9 and active / (total_b * 1e9) <= max(0.25, 3 * ratio + 0.15):
+            return round(active / 1e9, 1)
+    except (KeyError, TypeError, ZeroDivisionError):
+        pass
+    return None
+
+
+def kv_bytes(arch: dict | None, ctx: int, bytes_per_el: float = 2.0) -> float:
+    if not arch:
+        return 0.0
+    if arch.get("mla_dim"):
+        per = arch["mla_dim"] * bytes_per_el
+    elif arch.get("kv_heads") and arch.get("head_dim"):
+        per = 2 * arch["kv_heads"] * arch["head_dim"] * bytes_per_el
+    else:
+        return 0.0
+    b = arch.get("full_layers", 0) * per * ctx
+    if arch.get("sliding_layers"):
+        b += arch["sliding_layers"] * per * min(ctx, arch.get("window") or ctx)
+    b += arch.get("linear_layers", 0) * arch.get("linear_state_bytes", 0)
+    return b
+
+
+def _fmt_ctx(c: int) -> str:
+    return f"{c // 1024}k" if c >= 1024 else str(c)
+
+
+TEXT_PIPES = {None, "text-generation", "image-text-to-text", "any-to-any", "text2text-generation", "conversational"}
+
+
+def _tok(t: int | None) -> str:
+    return "500+" if t and t >= 500 else f"~{t}"
+
+
+def estimate(params_b: float | None, active_b: float | None, arch: dict | None, hw: dict,
+             pipeline: str | None = None) -> dict | None:
+    if not params_b:
+        return None
+    text_model = pipeline in TEXT_PIPES
+    usable = hw["vram_gb"] - hw["reserved_gb"]
+    ref = int(hw["ref_context"])
+    max_pos = int(arch["max_ctx"]) if arch and arch.get("max_ctx") else None
+    kv_known = bool(arch and (arch.get("mla_dim") or (arch.get("kv_heads") and arch.get("head_dim"))))
+    is_moe = bool(active_b and active_b < params_b * 0.7)
+    act = active_b or params_b
+    eff = 0.7 if not is_moe else min(0.7, 0.15 + 0.03 * act)
+
+    def total_gb(w, ctx):
+        return w + kv_bytes(arch, ctx) / GiB + 0.75 + 0.02 * w
+
+    table = []
+    for q, bpw in QUANTS:
+        w = params_b * 1e9 * bpw / 8 / GiB
+        rows = []
+        for c in hw["contexts"]:
+            if max_pos and c > max_pos:
+                rows.append(None)
+                continue
+            g = total_gb(w, c)
+            rows.append({"ctx": c, "gb": round(g, 1), "fits": g <= usable})
+        max_ctx = None
+        if kv_known and total_gb(w, 512) <= usable:
+            lo, hi = 512, max_pos or 1_048_576
+            if total_gb(w, hi) <= usable:
+                lo = hi
+            while hi - lo > 256:
+                mid = (lo + hi) // 2
+                lo, hi = (mid, hi) if total_gb(w, mid) <= usable else (lo, mid)
+            max_ctx = lo
+        bytes_tok = act * 1e9 * bpw / 8 + kv_bytes(arch, 4096)
+        tok_s = round(eff * hw["bandwidth_gbs"] * 1e9 / bytes_tok) if bytes_tok and text_model else None
+        table.append({"q": q, "bpw": bpw, "weights_gb": round(w, 1), "rows": rows,
+                      "max_ctx": max_ctx, "tok_s": tok_s})
+
+    gpu = hw["gpu_name"]
+    ref_ctx = min(ref, max_pos) if max_pos else ref
+    fits_ref = [r for r in table if total_gb(r["weights_gb"], ref_ctx if kv_known else 0) <= usable]
+    small_ctx = min(hw["contexts"])
+    fits_small = [r for r in table if total_gb(r["weights_gb"], small_ctx if kv_known else 0) <= usable]
+    q4 = next(r for r in table if r["q"] == "Q4_K_M")
+
+    if fits_ref:
+        best = fits_ref[0]
+        if best["q"] in GOOD_QUANTS:
+            level = "ok"
+            text = f"Gira su {gpu} in {best['q']}" + (
+                f" con {_fmt_ctx(ref_ctx)} di contesto, {_tok(best['tok_s'])} tok/s" if text_model else f" ({best['weights_gb']} GB di pesi)")
+        else:
+            level = "warn"
+            text = f"Solo quantizzazione aggressiva ({best['q']}) per stare in {hw['vram_gb']} GB @{_fmt_ctx(ref_ctx)}"
+        label = f"{best['q']} @{_fmt_ctx(ref_ctx)}"
+    elif fits_small:
+        best = fits_small[0]
+        level = "warn"
+        text = f"Entra in {best['q']} solo con contesto ridotto (~{_fmt_ctx(best['max_ctx'] or small_ctx)})"
+        label = f"{best['q']} @{_fmt_ctx(best['max_ctx'] or small_ctx)}"
+    else:
+        best = None
+        if is_moe and q4["weights_gb"] <= usable + hw["system_ram_gb"] * 0.8:
+            level = "warn"
+            text = (f"MoE da {params_b:g}B ({act:g}B attivi): non entra in VRAM ma gira con offload degli esperti "
+                    f"in RAM (~{q4['weights_gb']:.0f} GB in Q4_K_M, llama.cpp --n-cpu-moe). Velocità limitata dalla RAM")
+            label = "offload MoE"
+        else:
+            level = "no"
+            text = f"Troppo grande per una {gpu}: ~{q4['weights_gb']:.0f} GB solo di pesi anche in Q4_K_M"
+            label = "non entra"
+    return {
+        "level": level,
+        "label": label,
+        "text": text,
+        "best_quant": best["q"] if best else None,
+        "tok_s": best["tok_s"] if best else None,
+        "kv_known": kv_known,
+        "is_moe": is_moe,
+        "table": table,
+    }
