@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T12:57:31Z",
+ "updated": "2026-11-15T13:00:52Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -2819,9 +2819,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 1143,
+    "likes": 1144,
     "downloads": 571067,
-    "trending": 1038,
+    "trending": 1039,
     "trend_rank": 2,
     "watched_org": true
    },
@@ -2883,9 +2883,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 367,
+    "likes": 368,
     "downloads": 39862,
-    "trending": 327,
+    "trending": 328,
     "trend_rank": 7,
     "watched_org": true
    },
@@ -7291,6 +7291,760 @@
     }
    ],
    "score": 5.5,
+   "updated": "2026-11-15"
+  },
+  "deepseek-ai/DeepSeek-V4.1-Flash": {
+   "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+   "name": "DeepSeek-V4.1-Flash",
+   "org": "deepseek-ai",
+   "kind": "open",
+   "released": "2026-09-10",
+   "hf_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+   "pipeline": "image-text-to-text",
+   "license": "mit",
+   "gated": false,
+   "params_b": 763.21,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": 1048576,
+   "arch": {
+    "layers": 40,
+    "hidden": 5120,
+    "heads": 64,
+    "kv_heads": 1,
+    "head_dim": 512,
+    "full_layers": 40,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": 384,
+    "experts_active": 6,
+    "moe_inter": 2304,
+    "dense_layers": 0,
+    "inter": null,
+    "vocab": 129280,
+    "tied": false,
+    "max_ctx": 1048576
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 4976,
+    "downloads": 1694181,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+    "openrouter": "https://openrouter.ai/deepseek/deepseek-v4.1-flash"
+   },
+   "vram": {
+    "level": "no",
+    "label": "non entra",
+    "text": "Troppo grande per una RTX 5090: ~431 GB solo di pesi anche in Q4_K_M",
+    "best_quant": null,
+    "tok_s": null,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 1421.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1451.4,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 1453.3,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 1460.8,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 755.2,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 771.7,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 773.6,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 781.1,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 2
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 582.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 595.9,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 597.8,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 605.3,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 2
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 505.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 517.0,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 518.9,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 526.4,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 2
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 430.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 440.9,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 442.8,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 450.3,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 3
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 377.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 386.5,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 388.4,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 395.9,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 3
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 347.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 355.7,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 357.6,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 365.1,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 3
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 239.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 246.1,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 247.9,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 255.4,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 5
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "antirez/deepseek-v4.1-flash-gguf",
+     "format": "GGUF",
+     "downloads": 809564
+    },
+    {
+     "id": "kyuz0/deepseek-v4.1-flash-gguf",
+     "format": "GGUF",
+     "downloads": 80193
+    },
+    {
+     "id": "pfeifferj/DeepSeek-V4.1-Flash-GSQ-RCO-GGUF",
+     "format": "GGUF",
+     "downloads": 10350
+    },
+    {
+     "id": "vcruz305/DeepSeek-V4.1-Flash-GGUF",
+     "format": "GGUF",
+     "downloads": 7552
+    },
+    {
+     "id": "AMAImedia/DeepSeek-V4.1-Flash-1017-FP8-GGUF",
+     "format": "GGUF",
+     "downloads": 4918
+    },
+    {
+     "id": "smalinin/DeepSeek-V4.1-Flash-GGUF",
+     "format": "GGUF",
+     "downloads": 4588
+    }
+   ],
+   "or_id": "deepseek/deepseek-v4.1-flash",
+   "pricing": {
+    "in": 0.0507,
+    "out": 0.2028
+   },
+   "free_on_openrouter": false,
+   "modality": "text+image->text",
+   "description": "DeepSeek V4.1 Flash is a sparse mixture-of-experts model from DeepSeek, and the first built on the company's Causal Encoder-Decoder (CED) architecture. It activates 8B parameters on input and 16B on...",
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "b60256b42ed7",
+     "rel": 7,
+     "date": "2026-11-05",
+     "title": "DeepSeek V4.1 Flash su 4x DGX Spark: benchmark throughput e contesto 1M",
+     "url": "https://github.com/Picom-code/pico-dgx-ds4",
+     "source": "GitHub"
+    }
+   ],
+   "score": 16.43,
+   "deep": {
+    "tldr": "DeepSeek-V4.1-Flash è un modello MoE open-weight (763B parametri totali) ottimizzato per inferenza ad alta throughput su cluster 4x NVIDIA DGX Spark (GB10). Il fork pico-dgx-ds4 introduce ottimizzazioni kernel-level (stack4/stack5) che portano a 90 tok/s chat e 144 tok/s code single-user, 376 tok/s con 16 utenti distinti, supporto nativo a 1M contesto e visione, mantenendo qualità (qeval 71-72/75) pari all'upstream.",
+    "features": [
+     "Architettura MoE (stile DeepSeek-V3/R1) con 763B parametri totali, servito in FP8 nativo su 4x GB10 (TP4) via RoCE 200G",
+     "Contesto 1M token (17-bit block index in sparse-attention indexer), front-end body limit 64 MB, 16 slot admission (4x1M + 12x128K)",
+     "Multimodalità nativa: supporto image_url/base64 via ViT side-encoder del checkpoint",
+     "Speculative decoding avanzato: 1-pass drafter, 4-bit draft head (MXFP4), learned verify gate (MLP 64-unit), certified LM head (greedy exact), draft budget sharing cross-session",
+     "Ottimizzazioni MoE: expert re-route batch-aware (DSGB10_OEA), wide step 17-64 righe via prefill GEMMs + moe_prefill, direct ring all-reduce su switch (no relay)",
+     "Licenza MIT (codice engine), pesi modello sotto licenza DeepSeek (community variant 'uncensored' FP8 su Hugging Face dealignai/DeepSeek-V4.1-Flash-UNCENSORED-FP8)"
+    ],
+    "benchmarks": [
+     {
+      "name": "Throughput chat single-user (320 held-out prompts)",
+      "score": "90.3 tok/s (mediana 84.6…",
+      "vs": [
+       {
+        "model": "Upstream blaesus/dsgx10 (3 prompts)",
+        "score": "80 tok/s"
+       },
+       {
+        "model": "SGLang TP4 kit",
+        "score": "64 tok/s"
+       }
+      ]
+     },
+     {
+      "name": "Throughput code single-user (3 prompts)",
+      "score": "144 tok/s (mediana 144.0…",
+      "vs": [
+       {
+        "model": "Upstream blaesus/dsgx10",
+        "score": "140 tok/s"
+       },
+       {
+        "model": "SGLang TP4 kit",
+        "score": "117 tok/s"
+       }
+      ]
+     },
+     {
+      "name": "Throughput 16 utenti distinct prompts",
+      "score": "376 tok/s (mediana 374-378)",
+      "vs": [
+       {
+        "model": "Upstream (copies)",
+        "score": "177 tok/s"
+       },
+       {
+        "model": "SGLang TP4 kit (copies)",
+        "score": "427 tok/s"
+       }
+      ]
+     },
+     {
+      "name": "Agentic workloads (8 utenti, 80-300K ctx)",
+      "score": "260-270 tok/s",
+      "vs": [
+       {
+        "model": "Upstream",
+        "score": "~150 tok/s"
+       }
+      ]
+     },
+     {
+      "name": "Cold prefill throughput (16k-120k token, real text)",
+      "score": "8.7k-9.5k tok/s",
+      "vs": [
+       {
+        "model": "SGLang TP4 kit (v2.1)",
+        "score": "4.8k-5.0k tok/s"
+       },
+       {
+        "model": "vLLM spark-ds41f (best published)",
+        "score": "5.7k-5.9k tok/s"
+       }
+      ]
+     },
+     {
+      "name": "Time to first token (short prompts)",
+      "score": "124-156 ms",
+      "vs": [
+       {
+        "model": "SGLang TP4 kit",
+        "score": "219-253 ms"
+       }
+      ]
+     },
+     {
+      "name": "Agentic coding bench (12 pi-style tasks, end-to-end)",
+      "score": "138.5 s / 134.2 s (110-112…",
+      "vs": []
+     },
+     {
+      "name": "GSM8K (first 100 test problems)",
+      "score": "99/100 pass",
+      "vs": [
+       {
+        "model": "SGLang TP4 kit same day",
+        "score": "100/100"
+       }
+      ]
+     },
+     {
+      "name": "Passkey retrieval (18 prompts, 33k-220k token)",
+      "score": "18/18 found",
+      "vs": []
+     },
+     {
+      "name": "Token agreement with SGLang greedy (teacher-forced, 4 prompts)",
+      "score": "260/271 steps (96%)",
+      "vs": []
+     },
+     {
+      "name": "Quality eval (qeval /75)",
+      "score": "71-72",
+      "vs": [
+       {
+        "model": "Upstream",
+        "score": "71"
+       },
+       {
+        "model": "SGLang TP4",
+        "score": "70"
+       }
+      ]
+     },
+     {
+      "name": "sparkDash 1.8.8 catalogs (prose/structural, 256 tok)",
+      "score": "78.1 / 122.3 tok/s",
+      "vs": [
+       {
+        "model": "SGLang TP4 kit (v2.2)",
+        "score": "61.1 / 99.0 tok/s"
+       }
+      ]
+     }
+    ],
+    "params": "763.21B total (MoE, architettura DeepSeek-V3/R1 style)",
+    "context": "1.048.576 token (1M)",
+    "availability": "Pesi aperti: community variant FP8 'dealignai/DeepSeek-V4.1-Flash-UNCENSORED-FP8' (d61c59ea) su Hugging Face; checkpoint ufficiale 'deepseek-ai/DeepSeek-V4.1-Flash' (fb2764a5). Engine inference open-source (MIT): pico-dgx-ds4 (fork di blaesus/dsgx10) per 4x DGX Spark/ASUS GX10 TP4 su RoCE switchless o switched. API commerciale DeepSeek: input $0.0507/Mtok, output $0.2028/Mtok (dati noti).…",
+    "local_tips": "Esecuzione locale richiede 4x NVIDIA DGX Spark / ASUS Ascent GX10 (GB10, 32GB VRAM) con ConnectX-7 RoCE (switchless ring o switched). Engine: pico-dgx-ds4 (dsfront --encoding 1017 per variant 1017). Variabili chiave: DSGB10_BUDGET=1 (draft sharing), DSGB10_OEA=K0,KP,MIN (expert re-route opt-in, lossy), DSGB10_WIDE=64 (wide step), DSGB10_DRAFT1=6 (1-pass drafter), DSGB10_WIDE_COST (cost gate), DSGB10_HEAD4_C1=1 (4-bit draft head single-user), DSGB10_CF_MLP=FILE (learned gate), DSGB10_CERT=1…",
+    "source": "https://github.com/Picom-code/pico-dgx-ds4",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "pfnet/plamo-2-translate": {
+   "id": "pfnet/plamo-2-translate",
+   "name": "plamo-2-translate",
+   "org": "pfnet",
+   "kind": "open",
+   "released": "2025-05-27",
+   "hf_id": "pfnet/plamo-2-translate",
+   "pipeline": "translation",
+   "license": "other",
+   "gated": false,
+   "params_b": 8.47,
+   "params_source": "stima da config",
+   "active_b": null,
+   "context": 10485760,
+   "arch": {
+    "layers": 32,
+    "hidden": 4096,
+    "heads": 32,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "full_layers": 32,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 16384,
+    "vocab": 100032,
+    "tied": false,
+    "max_ctx": 10485760
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 130,
+    "downloads": 1605,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/pfnet/plamo-2-translate"
+   },
+   "vram": {
+    "level": "ok",
+    "label": "BF16 @32k",
+    "text": "Gira su RTX 5090 in BF16 (15.8 GB di pesi)",
+    "best_quant": "BF16",
+    "tok_s": null,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 15.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 17.3,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 18.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 24.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": 231860,
+      "tok_s": null
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 8.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 9.8,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 11.3,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 17.3,
+        "fits": true
+       }
+      ],
+      "max_ctx": 355534,
+      "tok_s": null
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 6.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 7.8,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 9.3,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 15.3,
+        "fits": true
+       }
+      ],
+      "max_ctx": 387373,
+      "tok_s": null
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 5.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 7.0,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 8.5,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 14.5,
+        "fits": true
+       }
+      ],
+      "max_ctx": 401772,
+      "tok_s": null
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 4.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 6.1,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 7.6,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 13.6,
+        "fits": true
+       }
+      ],
+      "max_ctx": 415691,
+      "tok_s": null
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 4.2,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 5.5,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 7.0,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 13.0,
+        "fits": true
+       }
+      ],
+      "max_ctx": 425451,
+      "tok_s": null
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 3.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 5.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 6.7,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 12.7,
+        "fits": true
+       }
+      ],
+      "max_ctx": 431050,
+      "tok_s": null
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 2.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 4.0,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 5.5,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 11.5,
+        "fits": true
+       }
+      ],
+      "max_ctx": 451050,
+      "tok_s": null
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "mmnga/plamo-2-translate-gguf",
+     "format": "GGUF",
+     "downloads": 1759
+    },
+    {
+     "id": "steampunque/plamo-2-translate-MP-GGUF",
+     "format": "GGUF",
+     "downloads": 98
+    },
+    {
+     "id": "mlx-community/plamo-2-translate",
+     "format": "MLX",
+     "downloads": 1529
+    },
+    {
+     "id": "mlx-community/plamo-2-translate-8bit",
+     "format": "MLX",
+     "downloads": 196
+    },
+    {
+     "id": "yufuin/plamo-2-translate-AWQ-INT4-ONNX-WEBGPU",
+     "format": "altro",
+     "downloads": 18
+    }
+   ],
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "ef4109c0d44a",
+     "rel": 8,
+     "date": "2026-11-05",
+     "title": "Sakutto: estensione browser per traduzione locale con modello PLaMo",
+     "url": "https://github.com/jammaru/sakutto",
+     "source": "GitHub"
+    }
+   ],
+   "score": 12.31,
+   "deep": {
+    "tldr": "Sakutto è un'estensione browser open source (MIT) per Chrome e Firefox che esegue traduzioni on-device usando il modello PLaMo 3 Translate (0.8B parametri) tramite una build pinned di wllama. Non richiede server, è gratuita e privata; i pesi del modello non sono inclusi nel repo né nel pacchetto dell'estensione.",
+    "features": [
+     "Traduzione locale on-device senza server",
+     "Usa PLaMo 3 Translate (0.8B parametri) via wllama",
+     "Supporta Chrome (MV3) e Firefox (MV3, Windows prima)",
+     "Fallback su Chrome Translator API solo per lingue non supportate da PLaMo",
+     "Interfaccia bilingue, scorciatoie tastiera, traduzione selezione/PDF/scrittura",
+     "Codice MIT, modello sotto PLaMo Community License"
+    ],
+    "benchmarks": [],
+    "params": "0.8B",
+    "context": "",
+    "availability": "Estensione installabile da Chrome Web Store o compilabile da sorgente (Node.js 24, pnpm 12). Pesi del modello non inclusi; scaricati/cachati automaticamente da wllama (bench/.cache/). Licenza codice: MIT. Modello: PLaMo Community License.",
+    "local_tips": "Build con SAKUTTO_E2E_REAL=1 pnpm build per test reali con modello 0.8B. Benchmark end-to-end con pnpm bench:real (misura time-to-first-token e output speed). Cache modello sotto bench/.cache/ con verifica SHA-256. wllama build pinned per inferenza locale.",
+    "source": "https://github.com/jammaru/sakutto",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
    "updated": "2026-11-15"
   }
  }
