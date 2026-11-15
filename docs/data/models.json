@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T17:49:16Z",
+ "updated": "2026-11-15T18:08:09Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -718,9 +718,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 334,
+    "likes": 335,
     "downloads": 7329,
-    "trending": 318,
+    "trending": 319,
     "trend_rank": 9,
     "watched_org": true
    },
@@ -2682,9 +2682,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 1164,
+    "likes": 1165,
     "downloads": 571067,
-    "trending": 1054,
+    "trending": 1055,
     "trend_rank": 2,
     "watched_org": true
    },
@@ -2767,9 +2767,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 377,
+    "likes": 380,
     "downloads": 39862,
-    "trending": 337,
+    "trending": 340,
     "trend_rank": 7,
     "watched_org": true
    },
@@ -3228,9 +3228,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 286,
+    "likes": 287,
     "downloads": 2098,
-    "trending": 270,
+    "trending": 271,
     "trend_rank": 13
    },
    "links": {
@@ -3412,9 +3412,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 315,
+    "likes": 316,
     "downloads": 28553,
-    "trending": 215,
+    "trending": 216,
     "trend_rank": 19
    },
    "links": {
@@ -3465,7 +3465,7 @@
    "signals": {
     "likes": 271,
     "downloads": 0,
-    "trending": 209,
+    "trending": 208,
     "trend_rank": 20
    },
    "links": {
@@ -3808,7 +3808,7 @@
    "signals": {
     "likes": 270,
     "downloads": 10,
-    "trending": 138,
+    "trending": 136,
     "trend_rank": 52
    },
    "links": {
@@ -5464,6 +5464,14 @@
    "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be...",
    "first_seen": "2026-11-15",
    "mentions": [
+    {
+     "item": "bfce57e293c4",
+     "rel": 9,
+     "date": "2026-11-15",
+     "title": "Basalt 0.4.0: supporto multi-modello, DeepSeek V4.1 Flash e Qwen 3.8 27B su 5090",
+     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1cu9/basalt_040_more_models_still_as_fast_qwen_27b_up/",
+     "source": "r/LocalLLaMA"
+    },
     {
      "item": "10c60fc60c0f",
      "rel": 10,
@@ -7745,6 +7753,14 @@
    "first_seen": "2026-11-15",
    "mentions": [
     {
+     "item": "bfce57e293c4",
+     "rel": 9,
+     "date": "2026-11-15",
+     "title": "Basalt 0.4.0: supporto multi-modello, DeepSeek V4.1 Flash e Qwen 3.8 27B su 5090",
+     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1cu9/basalt_040_more_models_still_as_fast_qwen_27b_up/",
+     "source": "r/LocalLLaMA"
+    },
+    {
      "item": "b60256b42ed7",
      "rel": 7,
      "date": "2026-11-05",
@@ -7753,7 +7769,7 @@
      "source": "GitHub"
     }
    ],
-   "score": 16.43,
+   "score": 18.03,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "Il repository Picom-code/pico-dgx-ds4 è un fork di blaesus/dsgx10 che fa girare DeepSeek V4.1 Flash su un cluster di 4 DGX Spark (TP=4 su rete RoCE a 200G), ottimizzato per molti utenti contemporanei. Dichiara 90 tok/s in chat e 144 tok/s in code per singolo utente, 376 tok/s con 16 utenti con prompt distinti, contesto di 1M token e supporto a immagini. Il testo è un README di un motore di inferenza distribuito, non una model card ufficiale del modello, quindi i numeri sono benchmark interni dell'autore e non confrontabili direttamente con valutazioni standard.",

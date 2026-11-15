@@ -70,6 +70,7 @@ python3 -m radar run              # genera la rassegna di oggi (prima volta: ult
 python3 -m radar serve            # apri http://localhost:8000
 python3 -m radar check Qwen/Qwen3.8-27B   # verdetto VRAM per qualsiasi repo HF
 python3 -m radar run --no-llm     # senza LLM: solo punteggi euristici
+python3 -m radar papers --reclassify   # dopo aver cambiato gli argomenti in config.toml: riclassifica l'archivio
 ```
 
 Nessuna dipendenza: solo Python ≥ 3.11 (libreria standard). Test: `python3 -m unittest discover -s tests -t .`

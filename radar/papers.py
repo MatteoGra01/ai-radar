@@ -216,6 +216,45 @@ def score(p: dict, now: datetime) -> float:
     return round(p.get("imp", 3) * 1.0 + math.log10(1 + p.get("upvotes", 0)) * 2.2 - min(age, 30) * 0.05, 2)
 
 
+def arxiv_abstracts(ids: list[str]) -> dict[str, str]:
+    """Abstract da arXiv per una lista di id (a blocchi di 50, rispettando i 3 s tra le richieste)."""
+    out = {}
+    for i in range(0, len(ids), 50):
+        chunk = ids[i:i + 50]
+        try:
+            root = ET.fromstring(net.fetch(f"https://export.arxiv.org/api/query?id_list={','.join(chunk)}&max_results=50",
+                                           timeout=60, retries=2))
+            for e in root.findall(f"{ATOM}entry"):
+                pid = _arxiv_id(e.findtext(f"{ATOM}id") or "")
+                if pid:
+                    out[pid] = one_line(e.findtext(f"{ATOM}summary") or "", 1600)
+        except Exception as ex:
+            _log(f"  arXiv: blocco {i // 50 + 1} non scaricato ({str(ex)[:80]})")
+        time.sleep(3.1)
+    return out
+
+
+def reclassify(root: Path, cfg: dict, llm, system_prompt) -> int:
+    """Riassegna argomenti/importanza/riassunti a tutto l'archivio (es. dopo aver cambiato gli argomenti)."""
+    path = root / "docs" / "data" / "papers.json"
+    store = json.loads(path.read_text())
+    papers = list(store["papers"].values())
+    abstracts = arxiv_abstracts([p["id"] for p in papers if _arxiv_id(p["id"]) == p["id"]])
+    for p in papers:
+        p["abstract"] = abstracts.get(p["id"]) or p.get("summary_it") or ""
+        p.pop("llm", None)
+    n = classify(llm, cfg, papers, system_prompt)
+    now = datetime.now(timezone.utc)
+    for p in papers:
+        p.pop("abstract", None)
+        p["score"] = score(p, now)
+    store["topics"] = [{"id": t["id"], "label": t["label"], "desc": t["desc"]} for t in cfg["papers"]["topics"]]
+    store["default_topics"] = cfg["papers"].get("default_topics", [])
+    path.write_text(json.dumps(store, ensure_ascii=False))
+    _log(f"Riclassificati {n}/{len(papers)} paper ({len(abstracts)} abstract riscaricati da arXiv)")
+    return n
+
+
 # ───────────────────────── archivio ─────────────────────────
 
 def update(root: Path, cfg: dict, llm, system_prompt, status: dict, since: datetime, today: str) -> dict:

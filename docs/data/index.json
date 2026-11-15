@@ -7,7 +7,7 @@
    "n_models": 52
   }
  ],
- "updated": "2026-11-15T17:48:12Z",
+ "updated": "2026-11-15T18:06:35Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -29,57 +29,57 @@
  },
  "status": {
   "sources": {
+   "rss:Simon Willison": {
+    "ok": true,
+    "n": 19
+   },
    "rss:Interconnects": {
     "ok": true,
     "n": 1
    },
    "rss:OpenAI News": {
     "ok": true,
-    "n": 0
+    "n": 19
+   },
+   "rss:Google DeepMind": {
+    "ok": true,
+    "n": 6
    },
    "rss:Ollama Blog": {
     "ok": true,
     "n": 0
    },
-   "rss:NVIDIA Developer": {
-    "ok": true,
-    "n": 0
-   },
    "rss:Hugging Face Blog": {
-    "ok": true,
-    "n": 0
-   },
-   "rss:Google DeepMind": {
-    "ok": true,
-    "n": 0
-   },
-   "hackernews": {
     "ok": true,
     "n": 10
    },
    "rss:Ollama releases": {
     "ok": true,
-    "n": 0
+    "n": 2
+   },
+   "rss:NVIDIA Developer": {
+    "ok": true,
+    "n": 11
+   },
+   "hackernews": {
+    "ok": true,
+    "n": 92
+   },
+   "rss:vLLM releases": {
+    "ok": true,
+    "n": 5
+   },
+   "rss:Transformers releases": {
+    "ok": true,
+    "n": 1
    },
    "rss:r/LocalLLaMA": {
     "ok": true,
     "n": 25
    },
-   "rss:Simon Willison": {
-    "ok": true,
-    "n": 2
-   },
-   "rss:vLLM releases": {
-    "ok": true,
-    "n": 0
-   },
-   "rss:Transformers releases": {
-    "ok": true,
-    "n": 0
-   },
    "github": {
     "ok": true,
-    "n": 50
+    "n": 55
    },
    "openrouter": {
     "ok": true,
@@ -103,15 +103,15 @@
    },
    "papers:hf": {
     "ok": true,
-    "n": 94
+    "n": 167
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 254
+    "n": 369
    },
    "papers:Alignment Forum": {
     "ok": true,
-    "n": 0
+    "n": 4
    },
    "embeddings:mteb": {
     "ok": true,
@@ -119,21 +119,21 @@
    },
    "embeddings:hf": {
     "ok": true,
-    "n": 3
+    "n": 2
    }
   },
   "llm": {
    "enabled": true,
-   "calls": 2,
-   "cost_usd": 0.0015,
+   "calls": 5,
+   "cost_usd": 0.0058,
    "failures": 0,
    "models": {
-    "openrouter/deepseek/deepseek-v4.1-flash": 1,
+    "openrouter/deepseek/deepseek-v4.1-flash": 4,
     "openrouter/anthropic/claude-haiku-5.5": 1
    },
    "log": []
   },
-  "duration_s": 64
+  "duration_s": 94
  },
  "new_model_days": 14,
  "benchmarks_meta": {

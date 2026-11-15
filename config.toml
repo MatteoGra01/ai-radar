@@ -87,7 +87,7 @@ days_kept = 60           # quanti giorni di paper tenere nella sezione Paper
 lookback_days = 4        # finestra di raccolta giornaliera (arXiv pubblica con 1-2 giorni di ritardo)
 max_per_run = 400        # paper nuovi valutati dall LLM per esecuzione (~0,001 $ ogni 12 paper)
 arxiv_per_topic = 30     # paper più recenti presi da arXiv per ogni argomento
-default_topics = ["interp", "alignment", "efficiency", "retrieval", "agents", "reasoning"]
+default_topics = ["interp", "alignment", "embalign", "efficiency", "retrieval", "agents", "reasoning"]
 feeds = [
   { name = "Alignment Forum", url = "https://www.alignmentforum.org/feed.xml" },
 ]
@@ -95,9 +95,16 @@ feeds = [
 # Argomenti: id, etichetta, descrizione per l'LLM, frasi cercate su arXiv (titolo/abstract)
 [[papers.topics]]
 id = "alignment"
-label = "Allineamento"
-desc = "alignment, RLHF/RLAIF, preference optimization, reward hacking, scalable oversight, specification gaming"
-arxiv = ["alignment", "RLHF", "reward hacking", "scalable oversight", "preference optimization"]
+label = "Allineamento (safety)"
+desc = "AI/safety alignment: making model behaviour match human intentions and values — RLHF/RLAIF, preference optimization, reward hacking, scalable oversight, specification gaming, value alignment. NOT the alignment of embedding/representation spaces"
+arxiv = ["AI alignment", "value alignment", "RLHF", "reward hacking", "scalable oversight", "preference optimization", "alignment faking"]
+
+[[papers.topics]]
+id = "embalign"
+label = "Allineamento di embedding"
+desc = "alignment of embedding/representation spaces across models, layers or modalities: embedding translation without paired data (vec2vec), model stitching, Platonic Representation Hypothesis, representational similarity (CKA), cross-lingual and cross-modal embedding alignment, representation alignment objectives (e.g. REPA). NOT safety alignment"
+arxiv = ["embedding alignment", "representation alignment", "embedding space translation", "aligning embedding spaces",
+         "Platonic representation hypothesis", "model stitching", "representational similarity", "cross-model embedding"]
 
 [[papers.topics]]
 id = "interp"
@@ -138,7 +145,7 @@ arxiv = ["mixture of experts", "state space model", "linear attention", "long co
 [[papers.topics]]
 id = "retrieval"
 label = "Embedding e retrieval"
-desc = "embeddings, representation geometry, retrieval-augmented generation, rerankers, embedding translation (vec2vec)"
+desc = "embedding models for search and retrieval, retrieval-augmented generation, dense/sparse retrieval, rerankers, vector search (for aligning embedding spaces use embalign)"
 arxiv = ["text embeddings", "retrieval-augmented generation", "dense retrieval", "reranker", "embedding space"]
 
 [[papers.topics]]

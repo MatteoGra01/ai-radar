@@ -35,6 +35,9 @@ def main():
     r.add_argument("--days", type=int, default=None, help="finestra temporale in giorni")
     r.add_argument("--refresh-deep", action="store_true", help="rifà schede ed editoriale dei modelli di oggi")
     r.add_argument("--config", default=str(ROOT / "config.toml"))
+    pp = sub.add_parser("papers", help="operazioni sull'archivio dei paper")
+    pp.add_argument("--reclassify", action="store_true", help="riassegna gli argomenti a tutti i paper (es. dopo averli cambiati)")
+    pp.add_argument("--config", default=str(ROOT / "config.toml"))
     s = sub.add_parser("serve", help="anteprima locale del sito")
     s.add_argument("--port", type=int, default=8000)
     c = sub.add_parser("check", help="verdetto VRAM per un repo HF")
@@ -48,6 +51,18 @@ def main():
         from .pipeline import run
         run(ROOT, load_config(Path(args.config)), use_llm=not args.no_llm, bootstrap_days=args.days,
             refresh_deep=args.refresh_deep)
+    elif args.cmd == "papers":
+        if not args.reclassify:
+            raise SystemExit("Usa: python3 -m radar papers --reclassify")
+        from .config import load_config
+        from .llm import LLM
+        from .papers import reclassify
+        from .pipeline import system_prompt
+        cfg = load_config(Path(args.config))
+        cfg["llm"]["max_calls_per_run"] = max(int(cfg["llm"]["max_calls_per_run"]), 80)
+        llm = LLM(cfg)
+        reclassify(ROOT, cfg, llm, system_prompt)
+        print(f"Chiamate LLM: {llm.calls}, spesa ${llm.cost:.4f}")
     elif args.cmd == "serve":
         handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(ROOT / "docs"))
         print(f"AI Radar su http://localhost:{args.port}  (Ctrl+C per uscire)")
