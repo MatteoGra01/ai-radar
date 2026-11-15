@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T18:08:09Z",
+ "updated": "2026-11-15T18:09:35Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -2682,7 +2682,7 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 1165,
+    "likes": 1166,
     "downloads": 571067,
     "trending": 1055,
     "trend_rank": 2,

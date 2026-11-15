@@ -2,12 +2,12 @@
  "days": [
   {
    "date": "2026-11-15",
-   "headline": "Qwen3.8-27B quantizzato per RTX 5090 e DeepSeek-V4.1 su GPU 16 GB",
+   "headline": "Qwen3.8-27B quantizzato per RTX 5090 e DeepSeek-V4.1 su GPU consumer",
    "n_items": 150,
    "n_models": 52
   }
  ],
- "updated": "2026-11-15T18:06:35Z",
+ "updated": "2026-11-15T18:08:36Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -31,55 +31,55 @@
   "sources": {
    "rss:Simon Willison": {
     "ok": true,
-    "n": 19
-   },
-   "rss:Interconnects": {
-    "ok": true,
-    "n": 1
-   },
-   "rss:OpenAI News": {
-    "ok": true,
-    "n": 19
-   },
-   "rss:Google DeepMind": {
-    "ok": true,
-    "n": 6
+    "n": 2
    },
    "rss:Ollama Blog": {
     "ok": true,
     "n": 0
    },
+   "rss:Interconnects": {
+    "ok": true,
+    "n": 1
+   },
    "rss:Hugging Face Blog": {
     "ok": true,
-    "n": 10
+    "n": 0
    },
-   "rss:Ollama releases": {
+   "rss:OpenAI News": {
     "ok": true,
-    "n": 2
+    "n": 0
    },
    "rss:NVIDIA Developer": {
     "ok": true,
-    "n": 11
+    "n": 0
    },
    "hackernews": {
     "ok": true,
-    "n": 92
+    "n": 10
    },
-   "rss:vLLM releases": {
+   "rss:Google DeepMind": {
     "ok": true,
-    "n": 5
-   },
-   "rss:Transformers releases": {
-    "ok": true,
-    "n": 1
+    "n": 0
    },
    "rss:r/LocalLLaMA": {
     "ok": true,
     "n": 25
    },
+   "rss:Ollama releases": {
+    "ok": true,
+    "n": 0
+   },
+   "rss:vLLM releases": {
+    "ok": true,
+    "n": 0
+   },
    "github": {
     "ok": true,
     "n": 55
+   },
+   "rss:Transformers releases": {
+    "ok": true,
+    "n": 0
    },
    "openrouter": {
     "ok": true,
@@ -103,15 +103,15 @@
    },
    "papers:hf": {
     "ok": true,
-    "n": 167
+    "n": 94
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 369
+    "n": 227
    },
    "papers:Alignment Forum": {
     "ok": true,
-    "n": 4
+    "n": 0
    },
    "embeddings:mteb": {
     "ok": true,
@@ -124,16 +124,16 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 5,
-   "cost_usd": 0.0058,
+   "calls": 2,
+   "cost_usd": 0.0013,
    "failures": 0,
    "models": {
-    "openrouter/deepseek/deepseek-v4.1-flash": 4,
+    "openrouter/deepseek/deepseek-v4.1-flash": 1,
     "openrouter/anthropic/claude-haiku-5.5": 1
    },
    "log": []
   },
-  "duration_s": 94
+  "duration_s": 60
  },
  "new_model_days": 14,
  "benchmarks_meta": {
