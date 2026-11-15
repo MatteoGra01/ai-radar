@@ -588,9 +588,17 @@ function viewArchive() {
 }
 
 /* ───────────── embedding (leaderboard MTEB) ───────────── */
-const EMB_TYPES = ["Retrieval", "Reranking", "STS", "Classification", "Clustering", "PairClassification", "InstructionReranking", "BitextMining", "MultilabelClassification"];
-const TYPE_IT = { Retrieval: "Retrieval", Reranking: "Reranking", STS: "STS", Classification: "Classific.", Clustering: "Clustering",
-  PairClassification: "Coppie", InstructionReranking: "Rerank istr.", BitextMining: "Bitext", MultilabelClassification: "Multilabel" };
+const EMB_TYPES = ["Retrieval", "Reranking", "STS", "Classification", "PairClassification", "Clustering", "MultilabelClassification",
+  "BitextMining", "InstructionReranking", "Summarization"];
+// nomi ufficiali MTEB (in tabella) e spiegazione (al passaggio del mouse)
+const TYPE_IT = { Retrieval: "Retrieval", Reranking: "Reranking", STS: "STS", Classification: "Classification",
+  PairClassification: "Pair Classification", Clustering: "Clustering", MultilabelClassification: "Multilabel Classification",
+  BitextMining: "Bitext Mining", InstructionReranking: "Instruction Reranking", Summarization: "Summarization" };
+const TYPE_HELP = { Retrieval: "trovare i documenti pertinenti a una query (RAG, ricerca)", Reranking: "riordinare candidati per pertinenza",
+  STS: "similarità semantica tra frasi", Classification: "classificare testi con un classificatore sugli embedding",
+  PairClassification: "decidere se due testi sono equivalenti/duplicati/parafrasi", Clustering: "raggruppare testi simili",
+  MultilabelClassification: "classificazione con più etichette", BitextMining: "trovare frasi equivalenti in lingue diverse",
+  InstructionReranking: "reranking che segue istruzioni", Summarization: "valutare riassunti" };
 const LANG_IT = { Italian: "Italiano", English: "Inglese", German: "Tedesco", French: "Francese", Spanish: "Spagnolo" };
 function embFits(m) {
   if (!m.params) return null;
@@ -625,7 +633,9 @@ function viewEmbeddings() {
   const E = S.emb;
   if (!E || !E.benchmarks || !E.benchmarks.length) return h("p", { class: "empty" }, "Dati MTEB non ancora disponibili: arriveranno con la prossima esecuzione.");
   const B = E.benchmarks[Math.min(S.eBench, E.benchmarks.length - 1)];
-  const types = EMB_TYPES.filter((t) => (B.types || []).includes(t)).slice(0, 6);
+  const present = new Set(B.rows.flatMap((r) => Object.keys(r.types).filter((t) => r.types[t] != null)));
+  const types = EMB_TYPES.filter((t) => present.has(t));
+  const colCls = (key, base) => (base || "num") + (S.eSort === key ? " sorted-col" : "");
   const langLabel = LANG_IT[E.language] || E.language;
   const q = S.eQ.trim().toLowerCase();
   const sizeOk = (p) => S.eSize === "all" || (p != null && (S.eSize === "s" ? p < 1 : S.eSize === "m" ? p >= 1 && p < 5 : S.eSize === "l" ? p >= 5 && p < 10 : p >= 10));
@@ -664,7 +674,19 @@ function viewEmbeddings() {
       h("div", { class: "section-head" }, h("h3", { class: "h3" }, "Novità"), h("span", { class: "muted" }, "usciti negli ultimi 45 giorni")),
       h("div", { class: "mgrid" }, recent.slice(0, 6).map((m) => embCard(m, false)), unb.slice(0, 6).map((m) => embCard(m, true)))) : null,
     h("div", { class: "filters topics", style: "margin-top:22px" }, E.benchmarks.map((b, i) => h("button", { class: "fchip" + (i === S.eBench ? " on" : ""), type: "button", title: b.name,
-      onclick: () => { S.eBench = i; if (S.eSort.startsWith("t:") || (S.eSort === "lang" && !E.benchmarks[i].language)) { S.eSort = "rank"; S.eDir = 1; } render(); } }, b.label))),
+      onclick: () => {
+        S.eBench = i;
+        const nb = E.benchmarks[i];
+        const has = (t) => nb.rows.some((r) => r.types[t] != null);
+        if ((S.eSort.startsWith("t:") && !has(S.eSort.slice(2))) || (S.eSort === "lang" && !nb.language)) { S.eSort = "rank"; S.eDir = 1; }
+        render();
+      } }, b.label))),
+    h("div", { class: "filters task-pick" }, h("span", { class: "muted small" }, "Classifica per:"),
+      [["rank", "Rank ufficiale", "ordine della leaderboard MTEB"], ["mean", "Media", "media di tutti i task"],
+        B.language ? ["lang", langLabel, `media dei task in ${langLabel.toLowerCase()}`] : null,
+        ...types.map((t) => ["t:" + t, TYPE_IT[t], TYPE_HELP[t]])].filter(Boolean).map(([key, label, help]) =>
+        h("button", { class: "fchip" + (S.eSort === key ? " on" : ""), type: "button", title: help,
+          onclick: () => { S.eSort = key; S.eDir = key === "rank" ? 1 : -1; render(); } }, label))),
     h("div", { class: "filters" },
       toggle("eOpen", "Pesi aperti"), toggle("eGpu", `Girano sulla ${gpu}`), toggle("eLang", `Supportano l'${langLabel.toLowerCase()}`),
       h("select", { class: "search", "aria-label": "Dimensione", onchange: (ev) => { S.eSize = ev.target.value; render(); } },
@@ -672,10 +694,10 @@ function viewEmbeddings() {
       h("input", { class: "search", type: "search", placeholder: "Cerca…", value: S.eQ, "aria-label": "Cerca embedding",
         oninput: (ev) => { S.eQ = ev.target.value; renderKeepFocus(ev.target); } }),
       latestToggle(hiddenOld)),
-    h("div", { class: "tbl-wrap card" }, h("table", { class: "tbl lb" },
+    h("div", { class: "tbl-wrap card" }, h("table", { class: "tbl lb emb" },
       h("thead", {}, h("tr", {}, th("rank", "#", "Posizione nella leaderboard ufficiale"), th("name", "Modello"), th("mean", "Media", "Media dei task"),
         th("meanType", "Media tipi", "Media per tipo di task"), B.language ? th("lang", langLabel, `Media dei task in ${langLabel.toLowerCase()}`) : null,
-        types.map((t) => th("t:" + t, TYPE_IT[t] || t)), th("params", "Param."), th("dim", "Dim."), th("maxTokens", "Max token"), th("released", "Uscita"), h("th", {}, gpu))),
+        types.map((t) => th("t:" + t, TYPE_IT[t] || t, TYPE_HELP[t])), th("params", "Param."), th("dim", "Dim."), th("maxTokens", "Max token"), th("released", "Uscita"), h("th", {}, gpu))),
       h("tbody", {}, rows.map((r) => {
         const m = r.meta;
         const fit = embFits(m);
@@ -686,9 +708,9 @@ function viewEmbeddings() {
               embNew(m) ? " · nuovo" : "", r.zs != null && r.zs >= 0 && r.zs < 90 ? h("span", { class: "zs", title: "Percentuale di task su cui il modello NON è stato addestrato (zero-shot): sotto 100% i punteggi possono essere gonfiati" }, ` · zero-shot ${r.zs}%`) : "",
               m.newer ? h("span", { class: "newer" }, ` · superato da ${m.newer.split("/").pop()}`) : "")),
           h("td", { class: "wide" }, h("div", { class: "ibar" }, h("i", { style: `width:${Math.max(2, (r.mean || 0) / maxMean * 100)}%` }), h("b", {}, fmtNum(r.mean)))),
-          h("td", { class: "num" }, fmtNum(r.meanType)),
-          B.language ? h("td", { class: "num" }, fmtNum(r.lang)) : null,
-          types.map((t) => h("td", { class: "num" }, fmtNum(r.types[t]))),
+          h("td", { class: colCls("meanType") }, fmtNum(r.meanType)),
+          B.language ? h("td", { class: colCls("lang") }, fmtNum(r.lang)) : null,
+          types.map((t) => h("td", { class: colCls("t:" + t) }, fmtNum(r.types[t]))),
           h("td", { class: "num" }, m.params ? fmtParams(m.params) : "—"), h("td", { class: "num" }, m.dim || "—"),
           h("td", { class: "num" }, m.maxTokens ? fmtCtx(m.maxTokens) : "—"), h("td", { class: "num" }, fmtShort(m.released) || "—"),
           h("td", {}, m.open && fit ? h("span", { class: `lvl ${fit.fits ? "ok" : "no"}` }, `${fit.gb.toFixed(1)} GB`) : h("span", { class: "muted" }, m.open ? "—" : "API")));
