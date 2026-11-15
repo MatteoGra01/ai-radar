@@ -2,12 +2,12 @@
  "days": [
   {
    "date": "2026-11-15",
-   "headline": "Quantizzazioni Qwen3.8-27B di Unsloth e DeepSeek-V4.1 su GPU 16 GB con tandem.cpp",
+   "headline": "Gemini 4 Carbon e Hydrogen, Qwen3.8-27B quantizzato per RTX 5090, DeepSeek-V4.1 su GPU 16 GB",
    "n_items": 150,
-   "n_models": 50
+   "n_models": 51
   }
  ],
- "updated": "2026-11-15T16:39:15Z",
+ "updated": "2026-11-15T16:46:48Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -23,23 +23,19 @@
  },
  "status": {
   "sources": {
-   "rss:Simon Willison": {
-    "ok": true,
-    "n": 2
-   },
    "rss:Interconnects": {
     "ok": true,
     "n": 1
-   },
-   "rss:OpenAI News": {
-    "ok": true,
-    "n": 0
    },
    "rss:Ollama Blog": {
     "ok": true,
     "n": 0
    },
-   "rss:Google DeepMind": {
+   "rss:Simon Willison": {
+    "ok": true,
+    "n": 2
+   },
+   "rss:OpenAI News": {
     "ok": true,
     "n": 0
    },
@@ -51,6 +47,14 @@
     "ok": true,
     "n": 0
    },
+   "rss:Google DeepMind": {
+    "ok": true,
+    "n": 0
+   },
+   "rss:r/LocalLLaMA": {
+    "ok": true,
+    "n": 25
+   },
    "rss:Ollama releases": {
     "ok": true,
     "n": 0
@@ -58,10 +62,6 @@
    "hackernews": {
     "ok": true,
     "n": 10
-   },
-   "rss:r/LocalLLaMA": {
-    "ok": true,
-    "n": 25
    },
    "rss:vLLM releases": {
     "ok": true,
@@ -73,7 +73,7 @@
    },
    "github": {
     "ok": true,
-    "n": 47
+    "n": 48
    },
    "openrouter": {
     "ok": true,
@@ -97,11 +97,11 @@
    },
    "papers:hf": {
     "ok": true,
-    "n": 0
+    "n": 94
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 0
+    "n": 260
    },
    "papers:Alignment Forum": {
     "ok": true,
@@ -118,16 +118,16 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 5,
-   "cost_usd": 0.0059,
+   "calls": 3,
+   "cost_usd": 0.0023,
    "failures": 0,
    "models": {
     "openrouter/deepseek/deepseek-v4.1-flash": 1,
-    "openrouter/anthropic/claude-haiku-5.5": 4
+    "openrouter/anthropic/claude-haiku-5.5": 2
    },
    "log": []
   },
-  "duration_s": 98
+  "duration_s": 59
  },
  "new_model_days": 14,
  "benchmarks_meta": {
