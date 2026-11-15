@@ -2,16 +2,17 @@
  "days": [
   {
    "date": "2026-11-15",
-   "headline": "Quantizzazioni Qwen3.8-27B di Unsloth e DeepSeek-V4.1 su GPU 16 GB con tandem.cpp",
+   "headline": "Qwen3.8-27B quantizzato da Unsloth e DeepSeek-V4.1 su GPU 16 GB in llama.cpp",
    "n_items": 150,
-   "n_models": 51
+   "n_models": 52
   }
  ],
- "updated": "2026-11-15T17:00:31Z",
+ "updated": "2026-11-15T17:33:05Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
   "reserved_gb": 1.0,
+  "margin_gb": 1.5,
   "bandwidth_gbs": 1792,
   "system_ram_gb": 64,
   "ref_context": 32768,
@@ -23,19 +24,15 @@
  },
  "status": {
   "sources": {
-   "rss:Hugging Face Blog": {
-    "ok": true,
-    "n": 0
-   },
-   "rss:Google DeepMind": {
-    "ok": true,
-    "n": 0
-   },
    "rss:Simon Willison": {
     "ok": true,
     "n": 2
    },
-   "rss:Ollama Blog": {
+   "rss:Interconnects": {
+    "ok": true,
+    "n": 1
+   },
+   "rss:Google DeepMind": {
     "ok": true,
     "n": 0
    },
@@ -43,9 +40,21 @@
     "ok": true,
     "n": 0
    },
-   "rss:Interconnects": {
+   "rss:Hugging Face Blog": {
     "ok": true,
-    "n": 1
+    "n": 0
+   },
+   "rss:Ollama Blog": {
+    "ok": true,
+    "n": 0
+   },
+   "hackernews": {
+    "ok": true,
+    "n": 10
+   },
+   "rss:NVIDIA Developer": {
+    "ok": true,
+    "n": 0
    },
    "rss:r/LocalLLaMA": {
     "ok": true,
@@ -66,14 +75,6 @@
    "github": {
     "ok": true,
     "n": 48
-   },
-   "hackernews": {
-    "ok": true,
-    "n": 10
-   },
-   "rss:NVIDIA Developer": {
-    "ok": true,
-    "n": 0
    },
    "openrouter": {
     "ok": true,
@@ -101,7 +102,7 @@
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 260
+    "n": 257
    },
    "papers:Alignment Forum": {
     "ok": true,
@@ -118,16 +119,16 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 2,
-   "cost_usd": 0.0011,
+   "calls": 3,
+   "cost_usd": 0.0018,
    "failures": 0,
    "models": {
     "openrouter/deepseek/deepseek-v4.1-flash": 1,
-    "openrouter/anthropic/claude-haiku-5.5": 1
+    "openrouter/anthropic/claude-haiku-5.5": 2
    },
    "log": []
   },
-  "duration_s": 55
+  "duration_s": 81
  },
  "new_model_days": 14,
  "benchmarks_meta": {

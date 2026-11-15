@@ -327,3 +327,7 @@ textarea.task { width: 100%; margin-top: 10px; padding: 10px 12px; border: 1px s
 .ecard h3 a { color: var(--text); }
 .zs { color: var(--warn); }
 .tbl.lb td:nth-child(2) { min-width: 210px; }
+.bar > i.tight { background: var(--warn); }
+.fit-tight { color: var(--warn); font-weight: 600; }
+.tbl tr.rec td { background: var(--ok-soft); }
+.md-head .mtop { padding-right: 44px; }

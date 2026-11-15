@@ -3,7 +3,7 @@ import unittest
 
 from radar.hardware import active_from_arch, arch_from_config, estimate, kv_bytes, params_from_name
 
-HW = {"gpu_name": "RTX 5090", "vram_gb": 32, "reserved_gb": 1.0, "bandwidth_gbs": 1792,
+HW = {"gpu_name": "RTX 5090", "vram_gb": 32, "reserved_gb": 1.0, "margin_gb": 1.5, "bandwidth_gbs": 1792,
       "system_ram_gb": 64, "ref_context": 32768, "contexts": [8192, 32768, 131072]}
 
 # struttura reale di Qwen3.8-27B (attenzione ibrida: 1 layer full ogni 4)
@@ -35,7 +35,11 @@ class TestHardware(unittest.TestCase):
         a = arch_from_config(HYBRID)
         v = estimate(27.78, None, a, HW, "image-text-to-text")
         self.assertEqual(v["level"], "ok")
-        self.assertEqual(v["best_quant"], "Q8_0")
+        # Q8_0 entra solo al limite a 32k: la consigliata è Q6_K, e il verdetto deve dire che serve quantizzare
+        self.assertEqual(v["best_quant"], "Q6_K")
+        self.assertEqual(v["tight"], "Q8_0")
+        self.assertTrue(v["quantized"])
+        self.assertIn("Serve quantizzazione", v["text"])
         q4 = next(r for r in v["table"] if r["q"] == "Q4_K_M")
         self.assertAlmostEqual(q4["weights_gb"], 15.7, delta=0.2)
         self.assertGreater(q4["max_ctx"], 200_000)

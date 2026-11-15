@@ -267,27 +267,56 @@ def estimate(params_b: float | None, active_b: float | None, arch: dict | None, 
                       "max_ctx": max_ctx, "tok_s": tok_s})
 
     gpu = hw["gpu_name"]
+    margin = float(hw.get("margin_gb", 1.5))  # spazio libero che vogliamo lasciare (desktop, picchi, altri processi)
     ref_ctx = min(ref, max_pos) if max_pos else ref
-    fits_ref = [r for r in table if total_gb(r["weights_gb"], ref_ctx if kv_known else 0) <= usable]
+    ctx_ref = ref_ctx if kv_known else 0
+    fits_ref = [r for r in table if total_gb(r["weights_gb"], ctx_ref) <= usable]            # entra, anche al limite
+    comfy_ref = [r for r in table if total_gb(r["weights_gb"], ctx_ref) <= usable - margin]  # entra con margine
     small_ctx = min(hw["contexts"])
     fits_small = [r for r in table if total_gb(r["weights_gb"], small_ctx if kv_known else 0) <= usable]
     q4 = next(r for r in table if r["q"] == "Q4_K_M")
+    native_gb = table[0]["weights_gb"]
+    options = [{"q": r["q"], "gb": round(total_gb(r["weights_gb"], ctx_ref), 1),
+                "fits": total_gb(r["weights_gb"], ctx_ref) <= usable,
+                "comfy": total_gb(r["weights_gb"], ctx_ref) <= usable - margin,
+                "max_ctx": r["max_ctx"], "tok_s": r["tok_s"]} for r in table]
+    tight = None
+
+    def ctx_txt(r):
+        if not text_model:
+            return f"{r['weights_gb']} GB di pesi"
+        if not kv_known:
+            return "contesto non stimabile"
+        mc = r["max_ctx"] or ref_ctx
+        return f"contesto fino a ~{_fmt_ctx(mc)}" + (f", {_tok(r['tok_s'])} tok/s" if r["tok_s"] else "")
+
+    def short(r):
+        return f"{r['q']} · {_fmt_ctx(r['max_ctx'])}" if text_model and r["max_ctx"] else r["q"]
 
     if fits_ref:
-        best = fits_ref[0]
-        if best["q"] in GOOD_QUANTS:
+        best = comfy_ref[0] if comfy_ref else fits_ref[0]
+        if fits_ref[0] is not best:
+            tight = fits_ref[0]  # qualità più alta che però entra solo al limite
+        tight_txt = f"; {tight['q']} entra solo al limite (~{_fmt_ctx(tight['max_ctx'] or ref_ctx)})" if tight and text_model else \
+            (f"; {tight['q']} entra solo al limite" if tight else "")
+        if best["q"] == "BF16":
             level = "ok"
-            text = f"Gira su {gpu} in {best['q']}" + (
-                f" con {_fmt_ctx(ref_ctx)} di contesto, {_tok(best['tok_s'])} tok/s" if text_model else f" ({best['weights_gb']} GB di pesi)")
+            text = f"Gira su {gpu} senza quantizzare (BF16), {ctx_txt(best)}"
+            label = "BF16 nativo" + (f" · {_fmt_ctx(best['max_ctx'])}" if text_model and best["max_ctx"] else "")
+        elif best["q"] in GOOD_QUANTS:
+            level = "ok"
+            text = (f"Serve quantizzazione (in BF16 i pesi sono ~{native_gb:.0f} GB): consigliata {best['q']}, "
+                    f"{ctx_txt(best)}{tight_txt}")
+            label = short(best)
         else:
             level = "warn"
-            text = f"Solo quantizzazione aggressiva ({best['q']}) per stare in {hw['vram_gb']} GB @{_fmt_ctx(ref_ctx)}"
-        label = f"{best['q']} @{_fmt_ctx(ref_ctx)}"
+            text = f"Solo con quantizzazione aggressiva: {best['q']}, {ctx_txt(best)}"
+            label = short(best)
     elif fits_small:
         best = fits_small[0]
         level = "warn"
-        text = f"Entra in {best['q']} solo con contesto ridotto (~{_fmt_ctx(best['max_ctx'] or small_ctx)})"
-        label = f"{best['q']} @{_fmt_ctx(best['max_ctx'] or small_ctx)}"
+        text = f"Serve quantizzazione e contesto ridotto: {best['q']} fino a ~{_fmt_ctx(best['max_ctx'] or small_ctx)}"
+        label = f"{best['q']} · {_fmt_ctx(best['max_ctx'] or small_ctx)}"
     else:
         best = None
         if is_moe and q4["weights_gb"] <= usable + hw["system_ram_gb"] * 0.8:
@@ -304,8 +333,13 @@ def estimate(params_b: float | None, active_b: float | None, arch: dict | None, 
         "label": label,
         "text": text,
         "best_quant": best["q"] if best else None,
+        "quantized": bool(best and best["q"] != "BF16"),
+        "tight": tight["q"] if tight else None,
+        "native_gb": native_gb,
+        "ref_ctx": ref_ctx,
         "tok_s": best["tok_s"] if best else None,
         "kv_known": kv_known,
         "is_moe": is_moe,
+        "options": options,
         "table": table,
     }

@@ -130,6 +130,11 @@ function maxCtx(e, bpw, kvb = 2) {
   while (hi - lo > 256) { const mid = (lo + hi) >> 1; if (tot(mid) <= usable) lo = mid; else hi = mid; }
   return lo;
 }
+function vramTip(v) {
+  if (!v.options) return v.text;
+  return v.text + "\n\n" + v.options.map((o) => `${o.q}: ${o.comfy ? "entra" : o.fits ? "al limite" : "non entra"}` +
+    (o.fits && o.max_ctx ? `, contesto fino a ${fmtCtx(o.max_ctx)}` : "") + (o.fits && o.tok_s ? `, ~${o.tok_s >= 500 ? "500+" : o.tok_s} tok/s` : "")).join("\n");
+}
 const localModel = (e) => e.params_b && e.kind !== "closed" && e.kind !== "placeholder";
 
 /* ───────────── confronto: selezione ───────────── */
@@ -519,10 +524,13 @@ function viewLeaderboard() {
         h("td", { class: "num" }, fmtNum(e.aa.coding)), h("td", { class: "num" }, fmtNum(e.aa.agentic)),
         h("td", { class: "num" }, e.pricing && e.pricing.in != null ? `${fmtPrice(e.pricing.in)} / ${fmtPrice(e.pricing.out)}` : "—"),
         h("td", { class: "num" }, fmtCtx(e.context) || "—"),
-        h("td", {}, e.vram ? h("span", { class: `lvl ${e.vram.level}`, title: e.vram.text }, e.vram.label) : h("span", { class: "muted" }, e.kind === "closed" ? "API" : "—")),
+        h("td", {}, e.vram ? [h("span", { class: `lvl ${e.vram.level}`, title: vramTip(e.vram) }, e.vram.label),
+          e.vram.quantized ? h("div", { class: "small" }, "quantizzato") : null] : h("span", { class: "muted" }, e.kind === "closed" ? "API" : "—")),
         h("td", { class: "num" }, fmtShort(e.released) || "—"),
         h("td", {}, cmpBtn(e))))))),
     h("p", { class: "small source-note" },
+      `Colonna ${gpu}: quantizzazione consigliata (la migliore che lascia almeno ${S.index.hardware.margin_gb ?? 1.5} GB liberi) e contesto massimo; `,
+      "«BF16 nativo» = gira senza quantizzare. Passa il mouse per le alternative, clicca il modello per il calcolatore completo. ",
       "Intelligence, Coding e Agentic sono gli indici compositi di Artificial Analysis, misurati da loro con la stessa metodologia per tutti i modelli: ",
       "a differenza dei benchmark dichiarati dai produttori, sono confrontabili tra loro. Per i modelli con più modalità di ragionamento è indicata la variante migliore. ",
       meta.citation ? meta.citation : "Fonte: Artificial Analysis via OpenRouter.", meta.as_of ? ` Dati al ${fmtShort(meta.as_of)}.` : ""),
@@ -906,16 +914,21 @@ function vramCalc(e) {
   let kvi = 0;
   const out = h("output", {});
   const tbody = h("tbody", {});
+  const margin = hw.margin_gb ?? 1.5;
   const update = () => {
     const ctx = steps[ci];
     out.textContent = fmtCtx(ctx);
+    let recDone = false;
     tbody.replaceChildren(...QUANTS.map(([q, bpw]) => {
       const r = vramRow(e, bpw, known ? ctx : 0, KV_TYPES[kvi][1]);
+      const comfy = r.total <= hw.vram_gb - hw.reserved_gb - margin;
+      const rec = comfy && !recDone;
+      if (rec) recDone = true;
       const pct = Math.min(100, r.total / hw.vram_gb * 100);
-      return h("tr", {},
+      return h("tr", { class: rec ? "rec" : "" },
         h("td", {}, h("b", {}, q)), h("td", { class: "num" }, `${r.w.toFixed(1)} GB`), h("td", { class: "num" }, `${r.total.toFixed(1)} GB`),
-        h("td", {}, h("div", { class: "bar" }, h("i", { class: r.fits ? "ok" : "no", style: `width:${pct}%` }))),
-        h("td", { class: r.fits ? "fit-ok" : "fit-no" }, r.fits ? "entra" : "no"),
+        h("td", {}, h("div", { class: "bar" }, h("i", { class: comfy ? "ok" : r.fits ? "tight" : "no", style: `width:${pct}%` }))),
+        h("td", { class: comfy ? "fit-ok" : r.fits ? "fit-tight" : "fit-no" }, rec ? (q === "BF16" ? "★ nativo" : "★ consigliata") : comfy ? "entra" : r.fits ? "al limite" : "no"),
         h("td", { class: "num" }, r.fits && isTextModel(e) ? `${fmtTok(r.tok)} tok/s` : "—"));
     }));
   };
@@ -930,6 +943,7 @@ function vramCalc(e) {
     h("div", { class: "tbl-wrap" }, h("table", { class: "tbl" },
       h("thead", {}, h("tr", {}, ["Quant", "Pesi", "Totale", `su ${hw.vram_gb} GB`, "", isTextModel(e) ? "Velocità" : ""].map((t) => h("th", {}, t)))), tbody)),
     h("p", { class: "small" }, `Stima per ${hw.gpu_name} (${hw.vram_gb} GB, ${hw.reserved_gb} GB riservati, ${hw.bandwidth_gbs} GB/s). `,
+      `«Consigliata» = la quantizzazione di qualità più alta che lascia almeno ${margin} GB liberi; «al limite» = entra ma senza margine. `,
       "Bit per peso dei GGUF di llama.cpp; overhead 0,75 GB + 2% dei pesi; tok/s = generazione a contesto breve, indicativi (±25%). ",
       e.active_b ? "MoE: in VRAM vanno tutti i parametri, la velocità dipende da quelli attivi. " : "",
       a && a.linear_layers ? `Attenzione ibrida: solo ${a.full_layers + (a.sliding_layers || 0)} layer su ${a.layers} hanno KV cache che cresce col contesto. ` : "",

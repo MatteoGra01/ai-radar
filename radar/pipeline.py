@@ -14,6 +14,7 @@ from zoneinfo import ZoneInfo
 from . import models as M
 from . import embeddings as EM
 from . import papers as PA
+from .hardware import estimate
 from .llm import LLM
 from .sources import collect_news
 from .textutil import norm_name, one_line
@@ -509,6 +510,9 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
     # 3b. benchmark indipendenti: Artificial Analysis (via OpenRouter) e valutazioni di OpenRouter
     bench, bench_meta = M.fetch_benchmarks(status)
     n_bench = M.sync_benchmarks(reg, or_index, bench, cfg, today)
+    for e in reg.models.values():  # verdetti GPU ricalcolati ogni giorno: stessa formula, hardware da config.toml
+        if e.get("params_b") and e.get("weights_available") is not False and e.get("kind") != "closed":
+            e["vram"] = estimate(e["params_b"], e.get("active_b"), e.get("arch"), cfg["hardware"], e.get("pipeline"))
     for e in reg.models.values():
         e["score"] = M.priority(e, cfg)
     mentioned_today = {mid for it in new if it["rel"] >= 6 for mid in it.get("model_ids", [])}
