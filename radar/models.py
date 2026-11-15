@@ -462,14 +462,15 @@ def primary_urls(e: dict, items_by_id: dict) -> list[str]:
 
 def fetch_source_text(e: dict, items_by_id: dict, limit: int = 14000) -> tuple[str, str | None]:
     """Testo su cui fare l'analisi approfondita: annuncio ufficiale, poi model card, poi descrizione."""
-    for url in primary_urls(e, items_by_id)[:3]:
-        if NON_PRIMARY_URL.search(url):
+    for url in primary_urls(e, items_by_id)[:4]:
+        if "news.ycombinator.com" in url:
             continue
         try:
             text = strip_html(net.get_text(url, timeout=25, retries=1))
         except Exception:
             continue
-        if len(text) > 1500:
+        # siti ufficiali e articoli: serve un testo ricco; post social (es. annuncio su X): basta un paragrafo
+        if len(text) > (400 if NON_PRIMARY_URL.search(url) else 1500):
             return smart_truncate(text, limit), url
     if e.get("hf_id"):
         try:

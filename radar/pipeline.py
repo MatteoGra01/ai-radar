@@ -357,7 +357,7 @@ def deep_dives(llm: LLM, reg: M.Registry, cfg: dict, items_by_id: dict, today: s
             return 0
         known = {k: e.get(k) for k in ("params_b", "active_b", "context", "license", "pricing", "pipeline") if e.get(k)}
         user = DEEP_RULES.format(name=e["name"], org=e.get("org") or "", known=json.dumps(known, ensure_ascii=False), text=text)
-        res = llm.chat_json(sysmsg, user, max_tokens=3500, label=f"scheda {e['name']}",
+        res = llm.chat_json(sysmsg, user, max_tokens=3500, label=f"scheda {e['name']}", tier="deep",
                             validate=lambda r: isinstance(r, dict) and r.get("tldr"))
         if not res:
             return 0
@@ -410,7 +410,7 @@ def make_digest(llm: LLM, cfg: dict, date: str, items: list[dict], models_today:
         + ")" for e in models_today[:12]) or "(nessuno)"
     sysmsg = system_prompt(cfg, "Scrivi l'apertura della rassegna AI quotidiana per questo lettore: concreta, senza enfasi.")
     res = llm.chat_json(sysmsg, DIGEST_RULES.format(date=date, news=news, models=mods, gpu=cfg["hardware"]["gpu_name"]),
-                        max_tokens=2000, validate=lambda r: isinstance(r, dict) and r.get("bullets"))
+                        max_tokens=2000, tier="deep", label="editoriale", validate=lambda r: isinstance(r, dict) and r.get("bullets"))
     if not res:
         return None
     return {
@@ -421,7 +421,8 @@ def make_digest(llm: LLM, cfg: dict, date: str, items: list[dict], models_today:
     }
 
 
-def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | None = None) -> dict:
+def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | None = None,
+        refresh_deep: bool = False) -> dict:
     t0 = time.time()
     tz = ZoneInfo(cfg["run"]["timezone"])
     now = datetime.now(timezone.utc)
@@ -478,6 +479,14 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
     log(f"Modelli: {len(reg.models)} nel registro, {len(reg.touched)} nuovi/aggiornati, {len(mentioned_today)} citati oggi")
 
     # 4. approfondimenti (benchmark, feature) sui modelli più importanti
+    day_path = data_dir / "days" / f"{today}.json"
+    prev = load_json(day_path, None)
+    if prev:  # seconda esecuzione nello stesso giorno: considera anche i modelli già in pagina
+        today_ids |= set(prev.get("models", [])) & set(reg.models)
+        models_today = sorted((reg.models[i] for i in today_ids), key=lambda e: -e["score"])
+    if refresh_deep:
+        for e in models_today:
+            e.pop("deep", None)
     # prima i modelli citati dalle notizie più rilevanti per te, poi per punteggio
     cands = sorted((e for e in models_today if not e.get("deep") and e["kind"] != "placeholder"),
                    key=lambda e: (-max([m.get("rel", 0) for m in e.get("mentions", []) if m.get("date", "") >= (now - timedelta(days=7)).date().isoformat()] or [0]), -e["score"]))
@@ -485,8 +494,6 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
     M.attach_aa(reg, M.aa_models(status))
 
     # 5. pagina del giorno
-    day_path = data_dir / "days" / f"{today}.json"
-    prev = load_json(day_path, None)
     if n_triaged:
         triaged_ids = {i["id"] for i in to_triage}
         keep = [i for i in new if (i["llm"] and i["rel"] >= cfg["run"]["min_relevance"])
@@ -497,11 +504,9 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
     if prev:
         known = {i["id"] for i in out_items}
         out_items += [i for i in prev.get("items", []) if i["id"] not in known]
-        today_ids |= set(prev.get("models", [])) & set(reg.models)
-        models_today = sorted((reg.models[i] for i in today_ids), key=lambda e: -e["score"])
     out_items.sort(key=lambda i: (-i["rel"], -i["engagement"]))
     out_items = out_items[: int(cfg["run"]["max_items_per_day"])]
-    digest = make_digest(llm, cfg, today, out_items, models_today) if (new or not prev) else None
+    digest = make_digest(llm, cfg, today, out_items, models_today) if (new or not prev or refresh_deep) else None
     if digest is None and prev:
         digest = prev.get("digest")
 
@@ -535,13 +540,14 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
         "status": {
             "sources": status,
             "llm": {"enabled": bool(llm.providers and any(p.key for p in llm.providers)), "calls": llm.calls,
+                    "cost_usd": round(llm.cost, 4),
                     "failures": llm.failures, "models": llm.used_models, "log": llm.log[-15:]},
             "duration_s": round(time.time() - t0),
         },
     })
     save_json(data_dir / "index.json", index, indent=1)
     log(f"Fatto in {round(time.time() - t0)}s: {len(out_items)} notizie, {len(day['models'])} modelli, "
-        f"{llm.calls} chiamate LLM ({llm.failures} fallite)")
+        f"{llm.calls} chiamate LLM ({llm.failures} fallite), spesa ${llm.cost:.4f}")
     for line in llm.log[-8:]:
         log(f"  llm: {line}")
     bad = [k for k, v in status.items() if not v.get("ok")]

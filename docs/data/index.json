@@ -2,12 +2,12 @@
  "days": [
   {
    "date": "2026-11-15",
-   "headline": "Unsloth Qwen3.8-27B Dynamic v3.1, llama.cpp 1.0.0, tandem.cpp per MoE su GPU 16GB",
-   "n_items": 144,
+   "headline": "Qwen3.8-27B quantizzato per RTX 5090, DeepSeek-V4.1 su GPU 16 GB via tandem.cpp",
+   "n_items": 146,
    "n_models": 50
   }
  ],
- "updated": "2026-11-15T12:59:05Z",
+ "updated": "2026-11-15T13:15:30Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -31,18 +31,6 @@
     "ok": true,
     "n": 2
    },
-   "rss:Hugging Face Blog": {
-    "ok": true,
-    "n": 0
-   },
-   "hf_papers": {
-    "ok": true,
-    "n": 0
-   },
-   "rss:Ollama Blog": {
-    "ok": true,
-    "n": 0
-   },
    "rss:Google DeepMind": {
     "ok": true,
     "n": 0
@@ -51,7 +39,11 @@
     "ok": true,
     "n": 0
    },
-   "rss:NVIDIA Developer": {
+   "rss:Ollama Blog": {
+    "ok": true,
+    "n": 0
+   },
+   "rss:Hugging Face Blog": {
     "ok": true,
     "n": 0
    },
@@ -59,13 +51,21 @@
     "ok": true,
     "n": 7
    },
-   "rss:r/LocalLLaMA": {
+   "hf_papers": {
     "ok": true,
-    "n": 25
+    "n": 0
+   },
+   "rss:NVIDIA Developer": {
+    "ok": true,
+    "n": 0
    },
    "rss:Ollama releases": {
     "ok": true,
     "n": 0
+   },
+   "rss:r/LocalLLaMA": {
+    "ok": true,
+    "n": 25
    },
    "rss:vLLM releases": {
     "ok": true,
@@ -81,7 +81,7 @@
    },
    "openrouter": {
     "ok": true,
-    "n": 470
+    "n": 467
    },
    "hf_trending": {
     "ok": true,
@@ -94,13 +94,14 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 5,
+   "calls": 16,
+   "cost_usd": 0.0158,
    "failures": 0,
    "models": {
-    "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free": 5
+    "openrouter/anthropic/claude-haiku-5.5": 16
    },
    "log": []
   },
-  "duration_s": 107
+  "duration_s": 22
  }
 }

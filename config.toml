@@ -46,14 +46,16 @@ max_items_per_day = 150  # quante notizie tenere nella pagina del giorno
 min_relevance = 3        # sotto questa soglia (0-10) le notizie vengono scartate (solo con LLM)
 
 [llm]
-# Budget: i modelli :free hanno 50 richieste/giorno (1000 se l'account ha acquistato ≥10$ di crediti, come il tuo).
-# Con il limite da 50 riporta: max_calls_per_run = 24, triage_items = 100, max_deep_dives = 8.
-max_calls_per_run = 45
+# Budget. Con i modelli a pagamento scelti sotto una chiamata costa ~0,001 $: un'esecuzione giornaliera
+# ~0,02-0,05 $, circa 1 $/mese. max_cost_per_run_usd è un tetto di sicurezza: superato, si usano solo i gratuiti.
+# Solo modelli gratuiti (models = ["auto:free"]): 50 richieste/giorno, 1000 se hai acquistato ≥10 $ di crediti.
+max_cost_per_run_usd = 0.30
+max_calls_per_run = 60
 triage_items = 160       # quante notizie (le più promettenti) mandare all'LLM per la valutazione
 triage_batch = 12        # notizie per chiamata
-max_deep_dives = 14      # schede modello approfondite (benchmark, feature) per esecuzione
+max_deep_dives = 16      # schede modello approfondite (benchmark, feature) per esecuzione
 temperature = 0.2
-parallel = 4             # chiamate LLM in parallelo
+parallel = 6             # chiamate LLM in parallelo
 call_timeout_s = 120     # durata massima di una singola chiamata
 time_budget_s = 1200     # tempo massimo totale per l'LLM: poi si prosegue con le euristiche
 
@@ -62,11 +64,13 @@ time_budget_s = 1200     # tempo massimo totale per l'LLM: poi si prosegue con l
 name = "openrouter"
 base_url = "https://openrouter.ai/api/v1"
 api_key_env = "OPENROUTER_API_KEY"
-# "auto:free" = sceglie da solo i modelli gratuiti disponibili oggi (prima il router openrouter/free).
-# Con qualche euro di credito puoi mettere un modello economico, es. ["deepseek/deepseek-v4.1-flash", "auto:free"]
-models = ["auto:free"]
-# Ordine di preferenza tra i modelli gratuiti (sottostringhe dell'id), misurato a novembre 2026:
-# tutti rispondono in 8-35 s con JSON valido. Se spariscono, si usano gli altri gratuiti disponibili.
+# Provati in ordine; "auto:free" = tutti i modelli gratuiti disponibili oggi, come riserva.
+# Misurati a novembre 2026 su valutazione notizie ed estrazione benchmark (numeri corretti, 3-15 s, ~0,001 $/chiamata).
+# models      = valutazione delle notizie (tante chiamate: conta velocità e prezzo)
+# deep_models = schede modello, benchmark ed editoriale (poche chiamate: conta la precisione)
+models = ["deepseek/deepseek-v4.1-flash", "openai/gpt-6-luna", "auto:free"]
+deep_models = ["anthropic/claude-haiku-5.5", "deepseek/deepseek-v4.1-flash", "auto:free"]
+# Ordine di preferenza tra i modelli gratuiti di riserva (sottostringhe dell'id).
 prefer = ["nemotron-3-ultra", "nemotron-3.5-super", "particle-1", "dots-3", "north-mini", "nemotron-3.5-lightning"]
 
 # Esempio di provider alternativo (decommenta e imposta la variabile d'ambiente):

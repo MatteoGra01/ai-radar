@@ -417,7 +417,7 @@ function renderFoot() {
   const upd = S.index.updated ? new Date(S.index.updated).toLocaleString("it-IT", { dateStyle: "medium", timeStyle: "short" }) : "?";
   document.getElementById("foot").replaceChildren(
     h("div", {}, `Aggiornato ${upd} · ${src.length - bad.length}/${src.length} fonti ok`,
-      llm.calls ? ` · LLM: ${llm.calls} chiamate${llm.failures ? ` (${llm.failures} fallite)` : ""}` : " · LLM non attivo",
+      llm.calls ? ` · LLM: ${llm.calls} chiamate${llm.failures ? ` (${llm.failures} fallite)` : ""}${llm.cost_usd ? `, $${llm.cost_usd.toFixed(3)}` : ""}` : " · LLM non attivo",
       st.duration_s ? ` · ${st.duration_s}s` : ""),
     h("details", {}, h("summary", {}, "Dettagli esecuzione"),
       h("div", {}, src.map(([k, x]) => h("span", { class: "src" + (x.ok ? "" : " bad"), title: x.error || "" }, `${x.ok ? "✓" : "✗"} ${k}${x.n != null ? ` (${x.n})` : ""}`))),

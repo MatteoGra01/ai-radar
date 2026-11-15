@@ -33,6 +33,7 @@ def main():
     r = sub.add_parser("run", help="esegue la rassegna")
     r.add_argument("--no-llm", action="store_true", help="non usare l'LLM")
     r.add_argument("--days", type=int, default=None, help="finestra temporale in giorni")
+    r.add_argument("--refresh-deep", action="store_true", help="rifà schede ed editoriale dei modelli di oggi")
     r.add_argument("--config", default=str(ROOT / "config.toml"))
     s = sub.add_parser("serve", help="anteprima locale del sito")
     s.add_argument("--port", type=int, default=8000)
@@ -45,7 +46,8 @@ def main():
     if args.cmd == "run":
         from .config import load_config
         from .pipeline import run
-        run(ROOT, load_config(Path(args.config)), use_llm=not args.no_llm, bootstrap_days=args.days)
+        run(ROOT, load_config(Path(args.config)), use_llm=not args.no_llm, bootstrap_days=args.days,
+            refresh_deep=args.refresh_deep)
     elif args.cmd == "serve":
         handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(ROOT / "docs"))
         print(f"AI Radar su http://localhost:{args.port}  (Ctrl+C per uscire)")

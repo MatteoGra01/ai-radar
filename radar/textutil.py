@@ -14,6 +14,7 @@ def strip_html(s: str | None, limit: int | None = None) -> str:
     if not s:
         return ""
     s = re.sub(r"<(script|style|svg|nav|footer|header|noscript)\b[^>]*>.*?</\1>", " ", s, flags=re.S | re.I)
+    s = re.sub(r"</t[dh]>", " | ", s, flags=re.I)
     s = re.sub(r"<br\s*/?>|</p>|</li>|</h\d>|</tr>|</div>", "\n", s, flags=re.I)
     s = re.sub(r"<[^>]+>", " ", s)
     s = html.unescape(s)

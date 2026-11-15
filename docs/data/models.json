@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T13:00:52Z",
+ "updated": "2026-11-15T13:15:52Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -83,20 +83,21 @@
     }
    ],
    "score": 13.7,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Gemini 4 Hydrogen è un modello closed-source di Google ottimizzato per velocità ed efficienza in workflow agentici e coding quotidiano. Offre 1M token di contesto, 1M token di output, quattro livelli di 'thinking' (low/medium/high/xhigh) e prezzo flat ($1.50/$7.50 per M token). Supera il predecessore Flash 3.8 e compete con modelli di fascia superiore su benchmark agentici e di coding.",
+    "tldr": "Gemini 4 Hydrogen è il modello Google di fascia veloce della famiglia Gemini 4, pensato per l'esecuzione rapida di workflow agentici e per il coding quotidiano, affiancando i modelli frontier Carbon e Argon. Rispetto a Gemini 3.8 Flash dichiara salti significativi in velocità e intelligenza, con quattro livelli di thinking (low, medium, high di default, xhigh). È adatto a coding, agenti, RAG multimodale e uso consumer/enterprise, ma il testo non indica pesi aperti: è un modello disponibile tramite API e prodotti Google.",
     "features": [
-     "Modello closed-source (Google DeepMind), non open-weight",
-     "Context window 1M token input / fino a 1M token output",
-     "Quattro livelli di reasoning configurabili: low, medium, high (default), xhigh",
-     "Nativo multimodale: PDF, spreadsheet, chart, audio, video, code execution",
-     "Ottimizzato per tool use parallelo, batching nativo di file-read/search, agentic workflows",
-     "Sicurezza: -81% overreach, -79% under-service, -12x misaligned actions vs Flash 3.8; 99.9% CoT legibility"
+     "Famiglia Gemini 4: Hydrogen affianca i frontier Carbon e Argon; può fungere da motore di esecuzione veloce in workflow multi-modello (Orchestrator in Google Antigravity)",
+     "Contesto di 1M token con prezzo flat su tutta la finestra; input nativo fino a 1M token e output fino a 1M token, con input multimodali (PDF, fogli di calcolo, grafici, audio, video)",
+     "Quattro livelli di thinking: low, medium, high (default) e xhigh, con compromesso progressivo tra qualità, latenza e costo",
+     "Ottimizzato per tool use e batching parallelo di letture/ricerche su file, con riduzione dei token usati rispetto a 3.8 Flash in casi d'uso enterprise",
+     "Miglioramenti di sicurezza agentica: riduzione dichiarata dell'overreach fino all'81%, maggiore resistenza alla prompt injection indiretta (2.3x sul Gray Swan IPI benchmark), 99.9% di leggibilità della chain-of-thought",
+     "Non sono dichiarati né architettura, né numero di parametri, né licenza dei pesi nel testo"
     ],
     "benchmarks": [
      {
       "name": "Artificial Analysis Intelligence Index",
-      "score": "51 (high default), 54 (xhigh)",
+      "score": "51 (high default); 54 a xhigh",
       "vs": [
        {
         "model": "Gemini 4 Argon",
@@ -115,95 +116,39 @@
       ]
      },
      {
-      "name": "SWE-sweep (bug discovery & repair)",
-      "score": "outperforms similar-tier…",
-      "vs": []
-     },
-     {
-      "name": "Agent Arena (live)",
-      "score": "#5 rank",
-      "vs": []
-     },
-     {
       "name": "HLE-Diamond",
       "score": "58.8%",
-      "vs": [
-       {
-        "model": "competing models in class",
-        "score": "leads class"
-       }
-      ]
+      "vs": []
      },
      {
       "name": "Vals Tax Agent Bench",
-      "score": "52.3%",
-      "vs": [
-       {
-        "model": "overall",
-        "score": "#1"
-       }
-      ]
+      "score": "52.3% (#1 overall)",
+      "vs": []
      },
      {
       "name": "Vals Legal Research Bench",
-      "score": "55.8%",
-      "vs": [
-       {
-        "model": "overall",
-        "score": "tied #1"
-       }
-      ]
-     },
-     {
-      "name": "AutomationBench-AA",
-      "score": "leads class",
+      "score": "55.8% (tie for #1)",
       "vs": []
      },
      {
       "name": "Multimodal Knowledge Agent (MKA)",
       "score": "53.4%",
-      "vs": [
-       {
-        "model": "other models",
-        "score": "outperforms"
-       }
-      ]
+      "vs": []
      },
      {
       "name": "Agents' Last Exam v1.1",
       "score": "71.6%",
-      "vs": [
-       {
-        "model": "other models",
-        "score": "outperforms"
-       }
-      ]
-     },
-     {
-      "name": "Gray Swan IPI (indirect prompt injection)",
-      "score": ">2.3x more resilient",
-      "vs": [
-       {
-        "model": "Gemini 3.8 Flash",
-        "score": "baseline"
-       }
-      ]
-     },
-     {
-      "name": "HealthBench Pro (false refusals)",
-      "score": "<0.4%",
       "vs": []
      }
     ],
     "params": "",
-    "context": "1048576",
-    "availability": "Closed-source. Disponibile via: Gemini API (AI Studio, Android Studio), Gemini app (tutti gli utenti, free via auto-selection), Google Search (globale), Google Antigravity (Pro/Ultra subscribers), Gemini for Business/Enterprise, Gemini in Google Sheets (Pro/Ultra). Prezzo flat: $1.50/M input token, $7.50/M output token su tutto il context window da 1M token.",
+    "context": "1.048.576 token (1M) di input; fino a 1M di output",
+    "availability": "Pesi aperti: non dichiarati. API: Gemini API in Google AI Studio e Android Studio; enterprise tramite Gemini for business (API o menu modelli), Google Antigravity e Gemini in Google Sheets. Consumer: app Gemini (menu modelli, selezione automatica per utenti free) e Google Search per tutti gli utenti. Prezzo: 1,50 $ per milione di token in input e 7,50 $ per milione di token in output; prezzo flat…",
     "local_tips": "",
     "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "baidu/ERNIE-5.5-Flash-Preview": {
    "id": "baidu/ERNIE-5.5-Flash-Preview",
@@ -288,142 +233,82 @@
     }
    ],
    "score": 12.9,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Gemini 4 Carbon è il nuovo modello frontier di Google DeepMind, ottimizzato per cybersecurity avanzata, ragionamento scientifico profondo e workflow agentici complessi a lungo orizzonte. Supera Argon nelle attività che richiedono esplorazione estesa, verifiche iterative e ragionamento multi-step, mantenendo lo stesso prezzo introduttivo. Introduce l'anteprima della funzionalità /swarm in Google Antigravity per orchestrare team di agenti coordinati.",
+    "tldr": "Gemini 4 Carbon è il modello frontier di Google, ora disponibile via API (Google AI Studio, Gemini for business) e nell'app Gemini/AI Mode per abbonati Ultra. Rispetto ad Argon è pensato per compiti complessi come coding multi-step, debugging, ricerca scientifica e cybersecurity, usando più token per ragionare e verificare. Il testo non indica pesi aperti né adatto all'esecuzione locale.",
     "features": [
-     "Frontier performance in cybersecurity (finding, exploiting, patching vulnerabilità) tramite Fairwind Program",
-     "Ragionamento scientifico/matematico avanzato: fisica, life sciences, formal verification (AlphaProof Code), protein structure prediction",
-     "Multimodal Knowledge Agent (MKA) benchmark: #2 con 6X costo inferiore per task vs top model",
-     "Supporto nativo per workflow agentici complessi con /swarm (team di agenti coordinati, workspaces isolati, verifiers avversari)",
-     "Context window 1M token, prezzo $2/M input - $10/M output (stesso di Argon)",
-     "Sicurezza rinforzata: 99% blocco traiettorie attacco adattive, 0% successo prompt injection su Gray Swan IPI, 92% honesty benchmark"
+     "Posizionato sopra Gemini 4 Argon: più token per esplorare, ragionare e fare cicli di verifica estesi su coding complesso e scienza",
+     "Multimodalità: comprensione visiva di documenti densi con grafici, schemi, tabelle e disegni tecnici; output strutturato per fogli di calcolo, presentazioni e report",
+     "Orchestrazione agentica tramite /swarm in Google Antigravity: un prompt viene trasformato in un team coordinato di agenti con ruoli di architettura, coordinamento e auditing",
+     "Capacità cyber avanzate (accesso riservato tramite Fairwind Program): scansione, triage e patch di vulnerabilità",
+     "Ragionamento scientifico e matematico migliorato, incluso formal verification in Lean per il protocollo Signal",
+     "Sicurezza: 0% di successo di prompt injection indiretta sul benchmark Gray Swan IPI, con miglioramenti nell'onestà agentica (92% dei task superati)"
     ],
     "benchmarks": [
      {
       "name": "CursorBench 4.0",
       "score": "#1",
-      "vs": [
-       {
-        "model": "next best external model",
-        "score": "2X higher cost per task"
-       }
-      ]
+      "vs": []
      },
      {
       "name": "Perplexity WANDR",
       "score": "#1",
-      "vs": [
-       {
-        "model": "next best external model",
-        "score": "2X higher cost per task"
-       }
-      ]
+      "vs": []
      },
      {
       "name": "Zapier AutomationBench",
       "score": "#1",
-      "vs": [
-       {
-        "model": "next best external model",
-        "score": "2X higher cost per task"
-       }
-      ]
+      "vs": []
      },
      {
       "name": "Multimodal Knowledge Agent (MKA)",
       "score": "#2",
-      "vs": [
-       {
-        "model": "top performing model",
-        "score": "6X higher avg cost per task"
-       }
-      ]
-     },
-     {
-      "name": "SEC-bench Pro (finding vulnerabilities)",
-      "score": "leads",
       "vs": []
-     },
-     {
-      "name": "ExploitGym (exploiting vulnerabilities)",
-      "score": "leads",
-      "vs": []
-     },
-     {
-      "name": "CWE-bench v1 (patching vulnerabilities)",
-      "score": "leads",
-      "vs": []
-     },
-     {
-      "name": "Project Fortify internal benchmark",
-      "score": "100% recall scanning, 95%…",
-      "vs": [
-       {
-        "model": "Argon",
-        "score": "25% lower recall on OSS repos"
-       }
-      ]
-     },
-     {
-      "name": "Hebbia E2E Financial Agentic",
-      "score": "matched best model tested",
-      "vs": []
-     },
-     {
-      "name": "Balyasny General Financial Intelligence",
-      "score": "top of 23 frontier model…",
-      "vs": []
-     },
-     {
-      "name": "Agentic Honesty Benchmark (375 tasks)",
-      "score": "92% pass rate",
-      "vs": [
-       {
-        "model": "Argon",
-        "score": "70% pass rate"
-       }
-      ]
      },
      {
       "name": "Gray Swan IPI (prompt injection)",
       "score": "0% attack success rate",
+      "vs": []
+     },
+     {
+      "name": "Gray Swan automated cyberattack query success",
+      "score": "2.17%",
       "vs": [
        {
-        "model": "Argon",
-        "score": "not specified"
+        "model": "Gemini 4 Argon",
+        "score": "9.86%"
        }
       ]
      },
      {
-      "name": "Gray Swan automated cyberattack query",
-      "score": "2.17% success rate",
+      "name": "Agentic honesty benchmark (375 task)",
+      "score": "92% task passati",
       "vs": [
        {
-        "model": "Argon",
-        "score": "9.86% success rate"
+        "model": "Gemini 4 Argon",
+        "score": "70%"
        }
       ]
      },
      {
-      "name": "Adaptive red-teaming (ExploitBench/CyScenarioBench)",
-      "score": "0.8% per-attempt breach rate",
-      "vs": [
-       {
-        "model": "Argon",
-        "score": "3.1% per-attempt breach rate"
-       }
-      ]
+      "name": "Balyasny General Financial Intelligence",
+      "score": "primo su 23 configurazioni",
+      "vs": []
+     },
+     {
+      "name": "Hebbia E2E Financial Agentic",
+      "score": "pari al migliore modello…",
+      "vs": []
      }
     ],
     "params": "",
-    "context": "1048576",
-    "availability": "API a pagamento in Google AI Studio, Android Studio, Gemini for Business, CodeMender; Google Antigravity (con /swarm preview) e Gemini app / AI Mode in Search per abbonati Google AI Ultra; Fairwind Program per cybersecurity defenders (rolling access); Programma scienziati: accesso gratuito 6 mesi ad Argon e Carbon in Antigravity (rolling onboarding, soggetto a eligibilità/capacità). Prezzo: $2/M…",
+    "context": "1048576 token (dato noto fornito, non presente nel testo)",
+    "availability": "API a pagamento in Google AI Studio e Gemini for business, $2 per milione di token input e $10 per milione di token output (prezzo introduttivo, uguale ad Argon); accesso in Gemini app, AI Mode in Search e Google Antigravity per abbonati Google AI Ultra; accesso gratuito per 6 mesi a 10.000 scienziati tramite programma dedicato (candidature aperte); accesso cyber riservato via Fairwind Program.…",
     "local_tips": "",
     "source": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "nex-agi/Nex-N2.6": {
    "id": "nex-agi/Nex-N2.6",
@@ -727,15 +612,16 @@
     }
    ],
    "score": 11.34,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Nex-N2.6 è un modello multimodale agentico da 321B parametri (FP8) basato su GLM-5.3-Flash, ottimizzato per computer use, coding e task a lungo orizzonte con strumenti. Rispetto al predecessore Nex-N2.5-Pro riduce drasticamente il reasoning ripetitivo (dal 16% all'1,6%) e raggiunge il 100% di aderenza alla lista di tool disponibili.",
+    "tldr": "Nex-N2.6 è un modello multimodale agentico di Nex-AGI, costruito su GLM-5.3-Flash e pensato per uso del computer, coding e task a lungo orizzonte con tool. Rispetto a Nex-N2.5-Pro riduce il ragionamento ripetitivo (dal 16,0% all'1,6%) e migliora l'aderenza alla lista dei tool, raggiungendo 83,0 su OSWorld. Adatto ad agenti e workflow con tool calling, con pesi FP8 da ~321B parametri.",
     "features": [
-     "Architettura MoE derivata da GLM-5.3-Flash (321B totali, 25.4B attivi)",
-     "Contesto fino a 1M token (1.048.576)",
-     "Multimodale: accetta input immagine-testo (image-text-to-text)",
-     "Supporto nativo per tool use e function calling con aderenza al 100%",
-     "Parametro reasoning_effort (low/high/max) per controllare la catena di pensiero",
-     "Licenza Apache-2.0, pesi aperti in formato FP8"
+     "Architettura derivata da GLM-5.3-Flash, con circa 321B parametri (FP8), distribuiti come pesi aperti Apache-2.0",
+     "Pipeline image-text-to-text: supporta input immagine tramite content block del runtime di serving",
+     "Reasoning meno ripetitivo: tasso di ripetizione ridotto dal 16,0% (Nex-N2.5-Pro) all'1,6%, riduzione relativa del 90%",
+     "Tool use più affidabile: 100% di aderenza alla lista dei tool tra le risposte con chiamate a tool nella valutazione interna",
+     "Parametro reasoning_effort con valori low, high e max (default max) nel chat template incluso",
+     "Computer use migliorato: 83,0 su OSWorld contro 82,2 di Nex-N2.5-Pro e 78,0 di GLM-5.3-Flash"
     ],
     "benchmarks": [
      {
@@ -743,16 +629,16 @@
       "score": "83.0",
       "vs": [
        {
-        "model": "Nex-N2.5-Pro",
-        "score": "82.2"
-       },
-       {
         "model": "GLM-5.3-Flash",
         "score": "78.0"
        },
        {
         "model": "DeepSeek-V4.1-Flash",
         "score": "71.7"
+       },
+       {
+        "model": "Nex-N2.5-Pro",
+        "score": "82.2"
        }
       ]
      },
@@ -765,11 +651,11 @@
         "score": "84.3"
        },
        {
-        "model": "Nex-N2.5-Pro",
+        "model": "DeepSeek-V4.1-Flash",
         "score": "82.7"
        },
        {
-        "model": "DeepSeek-V4.1-Flash",
+        "model": "Nex-N2.5-Pro",
         "score": "82.7"
        }
       ]
@@ -779,85 +665,28 @@
       "score": "45.7",
       "vs": [
        {
-        "model": "DeepSeek-V4.1-Flash",
-        "score": "54.8"
-       },
-       {
         "model": "GLM-5.3-Flash",
         "score": "48.8"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash",
+        "score": "54.8"
        },
        {
         "model": "Nex-N2.5-Pro",
         "score": "44.2"
        }
       ]
-     },
-     {
-      "name": "Reasoning Repetition Rate (internal)",
-      "score": "1.6%",
-      "vs": [
-       {
-        "model": "Nex-N2.5-Pro",
-        "score": "16.0%"
-       },
-       {
-        "model": "GLM-5.3-Flash",
-        "score": "6.0%"
-       }
-      ]
-     },
-     {
-      "name": "Overall Non-Repetition Rate (internal)",
-      "score": "97.8%",
-      "vs": [
-       {
-        "model": "GLM-5.3-Flash",
-        "score": "96.2%"
-       },
-       {
-        "model": "Nex-N2.5-Pro",
-        "score": "91.0%"
-       }
-      ]
-     },
-     {
-      "name": "Valid Tool Selection Rate Overall (internal)",
-      "score": "100.0%",
-      "vs": [
-       {
-        "model": "GLM-5.3-Flash",
-        "score": "85.3%"
-       },
-       {
-        "model": "Nex-N2.5-Pro",
-        "score": "82.2%"
-       }
-      ]
-     },
-     {
-      "name": "Valid Tool Selection Rate When with Tools (internal)",
-      "score": "100.0%",
-      "vs": [
-       {
-        "model": "GLM-5.3-Flash",
-        "score": "84.1%"
-       },
-       {
-        "model": "Nex-N2.5-Pro",
-        "score": "80.5%"
-       }
-      ]
      }
     ],
-    "params": "321B totali / 25.4B attivi (MoE)",
-    "context": "1.048.576 token",
-    "availability": "Pesi aperti (FP8) su Hugging Face (nex-agi/Nex-N2.6), licenza Apache-2.0. API su OpenRouter (input $0.12/Mtok, output $0.40/Mtok). Self-hosting via SGLang con configurazione FP8-compatibile.",
-    "local_tips": "Usare SGLang seguendo la guida ufficiale per GLM-5.3-Flash con configurazione FP8-compatibile per l'hardware. Mantenere tokenizer, processor e chat template originali. Il server espone endpoint OpenAI-compatibile su porta 8000. Supporta parametro reasoning_effort (low/high/max, default max) e max_tokens fino a 8192 nell'esempio. Per immagini usare blocchi content supportati dal runtime.",
+    "params": "~321B (FP8)",
+    "context": "",
+    "availability": "Pesi aperti su Hugging Face con licenza Apache-2.0 (versione FP8); API disponibile tramite OpenRouter; self-hosting con SGLang seguendo la guida ufficiale per GLM-5.3-Flash. Prezzo indicato nei dati noti: 0,12 input / 0,4 output (unità non specificata nel testo).",
+    "local_tips": "Usare un runtime con supporto GLM-5.3-Flash, in particolare SGLang seguendo la guida ufficiale, scegliendo una configurazione FP8-compatibile per l'hardware; impostare --served-model-name Nex-N2.6 e mantenere tokenizer, processor e chat template forniti con i pesi. Esempio di richiesta a endpoint OpenAI-compatibile con reasoning_effort 'max', max_tokens 8192 e stream attivo. Nel testo non sono indicati sampling ufficiali né quantizzazioni diverse dall'FP8.",
     "source": "https://huggingface.co/nex-agi/Nex-N2.6",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "thinkingmachines/Inkling-2-Small": {
    "id": "thinkingmachines/Inkling-2-Small",
@@ -920,9 +749,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 330,
+    "likes": 331,
     "downloads": 7329,
-    "trending": 315,
+    "trending": 316,
     "trend_rank": 9,
     "watched_org": true
    },
@@ -1162,26 +991,26 @@
     }
    ],
    "score": 12.57,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Inkling-2-Small è un modello multimodale (testo+immagine → testo) di Thinking Machines Lab con architettura Mixture-of-Experts: 594B parametri totali e 17B attivi. Introduce innovazioni architetturali come block attention residuals, gated attention con learned sink e convoluzioni dinamiche key/value, ed è disponibile sotto licenza Apache 2.0.",
+    "tldr": "Inkling-2-Small è un modello multimodale (testo e immagini in ingresso, testo in uscita) di Thinking Machines Lab, con architettura mixture-of-experts da 594B parametri totali e 17B attivi, introdotto nel changelog di transformers v5.23.0 con supporto nativo in libreria. Il testo indica uso per inglese, altre lingue e più linguaggi di programmazione. Le informazioni fornite sono limitate al changelog e non includono benchmark né una model card completa.",
     "features": [
-     "Architettura MoE: 48 layer decoder, 384 esperti totali, routing a 8 esperti per token",
-     "Parametri: 594B totali / 17B attivi (backbone linguistico)",
-     "Multimodale: accetta testo e immagini (patch 40x40 px via Perception Encoder ViT), genera testo",
-     "Novità tecniche: block attention residuals, gated attention con learned sink, dynamic key/value convolutions",
-     "Licenza Apache 2.0 (pesi aperti)",
-     "Supporto lingue multiple e linguaggi di programmazione"
+     "Architettura: 48 layer decoder mixture-of-experts, ciascuno con routing di ogni token verso 8 esperti su 384; 594B parametri totali, 17B attivi",
+     "Decoder Inkling con relative attention apprese, convoluzioni causali corte e layer MoE, con block attention residuals, gated attention con sink appreso e convoluzioni dinamiche su key/value",
+     "Multimodalità: immagini codificate da un vision transformer basato su Perception Encoder, proiettate negli embedding del language model con una patch di 40x40 pixel per embedding",
+     "Input testo e immagini, output testo; orientato a inglese, altre lingue e coding multi-linguaggio",
+     "Licenza Apache-2.0 e pipeline image-text-to-text, come indicato nei dati già noti",
+     "Integrazione in Hugging Face transformers v5.23.0 (PR #50682), con documentazione e blog post collegati"
     ],
     "benchmarks": [],
-    "params": "594B totali / 17B attivi",
-    "context": "1048576 token",
-    "availability": "Pesi aperti su Hugging Face (transformers v5.23.0+), licenza Apache 2.0. Prezzo API indicativo: $0.30/1M token input, $1.00/1M token output.",
+    "params": "594B totali / 17B attivi (48 layer MoE, 8 di 384 esperti per token)",
+    "context": "1048576 (dato noto fornito; il testo non dichiara esplicitamente il contesto…",
+    "availability": "Pesi aperti sotto licenza Apache-2.0 tramite transformers v5.23.0; prezzo API indicato nei dati noti: 0.3 (input) e 1.0 (output), senza unità specificate nel testo",
     "local_tips": "",
     "source": "https://github.com/huggingface/transformers/releases/tag/v5.23.0",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "or:anthropic/claude-fable-5.2": {
    "id": "or:anthropic/claude-fable-5.2",
@@ -1215,25 +1044,22 @@
     }
    ],
    "score": 12.2,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Claude Fable 5.2 è il nuovo modello di punta di Anthropic per compiti tecnici complessi (coding, ricerca scientifica, cybersecurity, hardware engineering). Rispetto alla versione 5.1 è fino al 30% più veloce, costa meno ($8/$40 per M token) e introduce una 'fast mode' opzionale (2.5x velocità a $16/$80). Supera Opus 5.5 e i concorrenti (GPT-6 Astra, Gemini 4 Carbon) nella maggior parte dei benchmark agentici e di reasoning ad alto sforzo.",
+    "tldr": "Claude Fable 5.2 è il modello Anthropic di punta per compiti tecnici ambiziosi e open-ended, con miglioramenti in coding, reasoning e vision rispetto a Fable 5.1. Fable e Mythos sono lo stesso modello: Fable è disponibile a tutti con salvaguardie cyber/biologiche più forti, Mythos è accessibile su richiesta tramite programmi di verifica. Il prezzo è di $8/M token input e $40/M output, con una modalità fast opzionale.",
     "features": [
-     "Modello closed-source accessibile via API Anthropic (Claude apps, Claude Code, Claude Enterprise)",
-     "Context window 1M token (dato noto)",
-     "Multimodale: visione (Chartography, OSWorld) e tool use estensivo (agenti, sub-agenti, MCP)",
-     "Reasoning ad 'effort' scalabile (Low, Medium, High, Xhigh, Max) con efficienza token/costo superiore a Opus 5.5",
-     "Safeguard cyber/biologia robusti (Fable) vs accesso senza safeguard per ricerca autorizzata (Mythos)",
-     "Protezioni anti-distillazione 'strongest-ever' e minori false positive sui blocchi di sicurezza"
+     "Contesto dichiarato di 1M token (dai dati noti forniti)",
+     "Stesso modello di base condiviso tra Fable 5.2 e Mythos 5.2; Fable include salvaguardie cyber e biologiche per l'accesso generale",
+     "Modalità fast opzionale fino a 2.5x più veloce nella generazione di token, a $16/M input e $80/M output",
+     "Ruoli di orchestrazione: può fungere da Advisor per altri modelli o da Orchestrator che delega compiti semplici a modelli più piccoli",
+     "Effort configurabile (Medium di default in Claude apps e Claude Code, fino a Xhigh) con trade-off costo/accuratezza",
+     "Output generati fino al 30% più veloci rispetto a Fable 5.1 e comunicazione più chiara secondo i tester"
     ],
     "benchmarks": [
      {
-      "name": "FrontierCode 2.0 (Xhigh effort)",
-      "score": "49.1%",
+      "name": "FrontierCode 2.0 (agentic coding)",
+      "score": "49.1% (Xhigh effort)",
       "vs": [
-       {
-        "model": "Fable 5.1",
-        "score": "32.4%"
-       },
        {
         "model": "Opus 5.5",
         "score": "45.5%"
@@ -1241,17 +1067,17 @@
        {
         "model": "GPT-6 Astra",
         "score": "42.8%"
+       },
+       {
+        "model": "Gemini 4 Carbon",
+        "score": "41.1% (Medium effort)"
        }
       ]
      },
      {
-      "name": "FrontierSWE v2",
+      "name": "FrontierSWE v2 (agentic coding)",
       "score": "69.9%",
       "vs": [
-       {
-        "model": "Fable 5.1",
-        "score": "56.3%"
-       },
        {
         "model": "Opus 5.5",
         "score": "62.3%"
@@ -1259,150 +1085,10 @@
        {
         "model": "GPT-6 Astra",
         "score": "65.5%"
-       }
-      ]
-     },
-     {
-      "name": "Terminal-Bench-Science (Mythos 5.2)",
-      "score": "74.6%",
-      "vs": [
-       {
-        "model": "Fable 5.1",
-        "score": "52.6%"
-       },
-       {
-        "model": "Opus 5.5",
-        "score": "58.7%"
-       },
-       {
-        "model": "GPT-6 Astra",
-        "score": "68.1%"
-       }
-      ]
-     },
-     {
-      "name": "CyScenarioBench (Mythos 5.2)",
-      "score": "76.3%",
-      "vs": [
-       {
-        "model": "Mythos 5.1",
-        "score": "61.7%"
-       },
-       {
-        "model": "Opus 5.5 (no safeguards)",
-        "score": "67.6%"
-       },
-       {
-        "model": "GPT-6 Cyber",
-        "score": "—"
-       }
-      ]
-     },
-     {
-      "name": "CVE Rediscovery (Mythos 5.2)",
-      "score": "89.6%",
-      "vs": [
-       {
-        "model": "Mythos 5.1",
-        "score": "78.3%"
-       },
-       {
-        "model": "Opus 5.5 (no safeguards)",
-        "score": "81.3%"
-       },
-       {
-        "model": "GPT-6 Astra",
-        "score": "—"
-       }
-      ]
-     },
-     {
-      "name": "De novo binder design 24h (Mythos 5.2)",
-      "score": "85.1",
-      "vs": [
-       {
-        "model": "Mythos 5.1",
-        "score": "79.1"
-       },
-       {
-        "model": "Opus 5.5 (no safeguards)",
-        "score": "82.6"
-       },
-       {
-        "model": "GPT-6 Astra",
-        "score": "—"
-       }
-      ]
-     },
-     {
-      "name": "WANDR relaxed score",
-      "score": "82.1%",
-      "vs": [
-       {
-        "model": "Fable 5.1",
-        "score": "68.7%"
-       },
-       {
-        "model": "Opus 5.5",
-        "score": "72.3%"
-       },
-       {
-        "model": "GPT-6 Astra",
-        "score": "—"
-       }
-      ]
-     },
-     {
-      "name": "OSWorld 2.1 (offline, partial)",
-      "score": "89.3%",
-      "vs": [
-       {
-        "model": "Fable 5.1",
-        "score": "83.5%"
-       },
-       {
-        "model": "Opus 5.5",
-        "score": "87.2%"
-       },
-       {
-        "model": "GPT-6 Astra",
-        "score": "79.5%"
-       }
-      ]
-     },
-     {
-      "name": "RoboDojo Sim",
-      "score": "64.9%",
-      "vs": [
-       {
-        "model": "Fable 5.1",
-        "score": "27.6%"
-       },
-       {
-        "model": "Opus 5.5",
-        "score": "39.4%"
-       },
-       {
-        "model": "GPT-6 Astra",
-        "score": "29.8%"
-       }
-      ]
-     },
-     {
-      "name": "AA-Briefcase v1.1 (rubric)",
-      "score": "66.1%",
-      "vs": [
-       {
-        "model": "Fable 5.1",
-        "score": "61.5%"
-       },
-       {
-        "model": "Opus 5.5",
-        "score": "61.2%"
        },
        {
         "model": "Gemini 4 Carbon",
-        "score": "61.8%"
+        "score": "61.2%"
        }
       ]
      },
@@ -1410,10 +1096,6 @@
       "name": "Humanity's Last Exam (with tools)",
       "score": "74.2%",
       "vs": [
-       {
-        "model": "Fable 5.1",
-        "score": "65.6%"
-       },
        {
         "model": "Opus 5.5",
         "score": "67.7%"
@@ -1425,33 +1107,92 @@
       ]
      },
      {
+      "name": "Terminal-Bench-Science 0.1",
+      "score": "74.6% (75.3% per Mythos 5.2)",
+      "vs": [
+       {
+        "model": "Opus 5.5",
+        "score": "58.7%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "68.1%"
+       }
+      ]
+     },
+     {
+      "name": "OSWorld 2.1 (offline set, partial)",
+      "score": "89.3%",
+      "vs": [
+       {
+        "model": "Opus 5.5",
+        "score": "87.2%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "79.5%"
+       },
+       {
+        "model": "Gemini 4 Carbon",
+        "score": "81.5%"
+       }
+      ]
+     },
+     {
       "name": "Chartography (no tools)",
       "score": "73.4%",
       "vs": [
        {
-        "model": "Fable 5.1",
-        "score": "44.8%"
-       },
-       {
         "model": "Opus 5.5",
         "score": "64.4%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "71.0%"
        },
        {
         "model": "Gemini 4 Carbon",
         "score": "72.5%"
        }
       ]
+     },
+     {
+      "name": "AutomationBench (business workflows)",
+      "score": "51.4%",
+      "vs": [
+       {
+        "model": "Opus 5.5",
+        "score": "42.5%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "41.4%"
+       },
+       {
+        "model": "Gemini 4 Carbon",
+        "score": "53.9%"
+       }
+      ]
+     },
+     {
+      "name": "WANDR (relaxed score, agentic search)",
+      "score": "82.1%",
+      "vs": [
+       {
+        "model": "Opus 5.5",
+        "score": "72.3%"
+       }
+      ]
      }
     ],
     "params": "",
-    "context": "1000000",
-    "availability": "API Anthropic (Claude apps, Claude Code, Claude Enterprise). Prezzo standard: $8/M input, $40/M output. Fast mode opzionale: $16/M input, $80/M output (fino a 2.5x velocità). Fable 5.2 disponibile per tutti; Mythos 5.2 richiede applicazione a Life Sciences / Cyber Verification Programs. Nessun peso aperto.",
+    "context": "1000000 token (dato noto fornito; non specificato nel testo)",
+    "availability": "Fable 5.2 disponibile a tutti gli utenti; Mythos 5.2 accessibile tramite Life Sciences and Cyber Verification Programs; prezzo $8/M token input e $40/M output; modalità fast a $16/$80; Claude Security per Enterprise con Mythos 5.2. Nessuna menzione di pesi aperti o piattaforme locali.",
     "local_tips": "",
     "source": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "or:meta/muse-ember": {
    "id": "or:meta/muse-ember",
@@ -1485,45 +1226,26 @@
     }
    ],
    "score": 9.0,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Muse Ember è il nuovo modello piccolo ed efficiente di Meta AI, posizionato nella fascia di prezzo e prestazioni di GPT-6 Luna e Claude Haiku 5.5. È ottimizzato per ragionamento complesso, tool calling, coding, routing, estrazione e parsing di documenti lunghi, offrendo 6 livelli di reasoning configurabili. Si colloca sulla frontiera di Pareto dell'Artificial Analysis Intelligence Index vs Cost per Task, indicando efficienza ottimale.",
+    "tldr": "Muse Ember è il modello più piccolo ed efficiente di Meta, pensato per ragionamento complesso e per i compiti ripetitivi degli agenti (tool call, subtask di coding, routing, estrazione, parsing di documenti lunghi). Nel testo viene posizionato nella categoria di Claude Haiku e GPT Luna, con cui condivide il prezzo per prompt brevi, e si colloca sulla frontiera di Pareto di Artificial Analysis (Intelligence Index vs costo per task). Adatto a carichi agentici e pipeline ad alto volume dove il costo per task conta più del massimo punteggio assoluto.",
     "features": [
-     "Modello entry-level 'smallest and most efficient' di Meta AI",
-     "Ottimizzato per complex reasoning, tool calls, coding subtasks, routing, extraction, long document parsing",
-     "Supporta fino a 1 milione di token di contesto (input)",
-     "6 livelli di reasoning configurabili: minimal, low, medium, high, xhigh, max",
-     "Prezzi differenziati per prompt ≤200k e >200k token con cached input scontato",
-     "Posizionato sulla efficiency frontier (Pareto line) di Artificial Analysis Intelligence Index vs Cost per Task"
+     "Modello più piccolo ed efficiente della famiglia Muse di Meta, orientato a ragionamento complesso ed esecuzione di compiti agentici",
+     "Sei livelli di reasoning: minimal, low, medium, high, xhigh, max",
+     "Context window fino a 1M di token in input (prezzo maggiorato sopra i 200k)",
+     "Prezzo per prompt ≤200k: $0.10/M input, $0.004/M cached input, $0.50/M output; >200k: $0.30/M input, $0.012/M cached, $1.50/M output",
+     "Sulla frontiera di Pareto di Artificial Analysis: nessun modello ottiene punteggio più alto a costo per task inferiore",
+     "Qualità delle SVG generate (test con pelicani su biciclette) comparabile a Muse Wonder, che costa 40x di più"
     ],
-    "benchmarks": [
-     {
-      "name": "Artificial Analysis Intelligence Index vs Cost per Task",
-      "score": "Sulla Pareto frontier…",
-      "vs": [
-       {
-        "model": "GPT-6 Luna",
-        "score": "Sulla Pareto frontier"
-       },
-       {
-        "model": "Claude Haiku 5.5",
-        "score": "Sulla Pareto frontier"
-       },
-       {
-        "model": "GPT-6.1 Terra (low)",
-        "score": "Sulla Pareto frontier"
-       }
-      ]
-     }
-    ],
+    "benchmarks": [],
     "params": "",
-    "context": "1.048.576 token (1M)",
-    "availability": "API Meta AI (Muse Ember 1.0). Prezzi: ≤200k input $0.10/M, cached $0.004/M, output $0.50/M; >200k input $0.30/M, cached $0.012/M, output $1.50/M. Stesso prezzo base di GPT-6 Luna e Claude Haiku 5.5 per prompt brevi.",
+    "context": "1048576 token (1M) in input",
+    "availability": "Lanciato da Meta AI tramite API con prezzi indicati nel testo; il testo non specifica se i pesi siano aperti né altre piattaforme",
     "local_tips": "",
     "source": "https://simonwillison.net/2026/Nov/10/muse-ember/",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "LiquidAI/LFM3-1.7B": {
    "id": "LiquidAI/LFM3-1.7B",
@@ -1816,140 +1538,141 @@
     }
    ],
    "score": 9.43,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "LFM3-1.7B è un modello text-only da 1.73B parametri basato su architettura tri-hybrid (convoluzioni, sliding-window e global attention), ottimizzato per agenti locali, tool calling e fine-tuning su singola GPU. Offre 256K token di contesto e a 4-bit occupa ~1 GB, rendendolo eseguibile su edge/phone.",
+    "tldr": "LFM3-1.7B è un modello text-only da 1.73B parametri di Liquid AI, post-addestrato per agenti locali e tool calling, con contesto di 256K token. Secondo il testo, a 4 bit occupa circa 1 GB di memoria e può essere specializzato con fine-tuning rapido su singola GPU. Non è raccomandato per coding agentico o ragionamento multi-step complesso a causa delle dimensioni ridotte.",
     "features": [
-     "Architettura tri-hybrid: 24 layer (13 gated short convolutions, 5 sliding-window attention, 6 global attention)",
-     "Context window 256K token (input+output), esteso in mid-training su 3.5T token",
-     "Post-training agentic su Hermes Agent, Pi, OpenClaw; supporta tool calling nativo (XML), deferred tool search e structured output",
-     "Quantizzazioni ufficiali: BF16, FP8, NVFP4 (SGLang/vLLM), GGUF (llama.cpp/Ollama/LM Studio), MLX 4-bit (Apple Silicon), ONNX, OpenVINO 4-bit (Intel)",
-     "Licenza LFM Open License v1.0 (non standard OSI); vocab 128k token, 15 lingue tra cui italiano",
-     "Progettato per fine-tuning rapido single-GPU (SFT, DPO, GRPO, CPT via TRL)"
+     "Architettura tri-hybrid: 24 layer con 13 short convolutions gated, 5 sliding-window attention e 6 global attention",
+     "Contesto di 256K token (input + output) e vocabolario da 128.000 token",
+     "Post-training agentico per harness come Hermes Agent, Pi e OpenClaw, con supporto a tool calling, deferred tools/tool search e output strutturati",
+     "Supporto dichiarato a 16 lingue, tra cui italiano, inglese, cinese, giapponese e arabo",
+     "Formati di checkpoint ufficiali: BF16 (vLLM, SGLang, Transformers), FP8 e NVFP4 (SGLang), GGUF (llama.cpp, Ollama, LM Studio), MLX, ONNX e OpenVINO",
+     "Pre-training su 22T token in totale con fase di mid-training estesa a 256K di contesto; post-training con SFT, RL misto, distillazione on-policy multi-dominio (MOPD) e agentic RL; licenza LFM Open License v1.0"
     ],
     "benchmarks": [
      {
-      "name": "LiveClaw",
-      "score": "45.60",
+      "name": "GPQA Diamond",
+      "score": "63.37",
       "vs": [
        {
-        "model": "LFM2.5-2.6B",
-        "score": "14.70"
+        "model": "LFM2.5 2.6B",
+        "score": "57.78"
        },
        {
-        "model": "MiniCPM5-2B",
-        "score": "30.37"
+        "model": "Qwen3.5 4B",
+        "score": "75.76"
        },
        {
-        "model": "Qwen3.5-9B",
-        "score": "35.77"
+        "model": "Qwen3.5 9B",
+        "score": "80.40"
        }
       ]
      },
      {
-      "name": "Claw-Eval General (EN) average",
-      "score": "68.64",
+      "name": "Humanity's Last Exam (no tools)",
+      "score": "7.17",
       "vs": [
        {
-        "model": "LFM2.5-2.6B",
-        "score": "62.63"
+        "model": "LFM2.5 2.6B",
+        "score": "5.88"
        },
        {
-        "model": "MiniCPM5-2B",
-        "score": "60.74"
+        "model": "Qwen3.5 4B",
+        "score": "12.84"
        },
        {
-        "model": "Qwen3.5-9B",
-        "score": "66.53"
+        "model": "Qwen3.5 9B",
+        "score": "16.41"
        }
       ]
      },
      {
-      "name": "Claw-Eval General (EN) pass^3",
-      "score": "51.40",
+      "name": "Humanity's Last Exam (with tools)",
+      "score": "13.90",
       "vs": [
        {
-        "model": "LFM2.5-2.6B",
-        "score": "37.52"
+        "model": "LFM2.5 2.6B",
+        "score": "9.60"
        },
        {
-        "model": "MiniCPM5-2B",
-        "score": "34.58"
+        "model": "Qwen3.5 4B",
+        "score": "11.60"
        },
        {
-        "model": "Qwen3.5-9B",
-        "score": "51.87"
+        "model": "Qwen3.5 9B",
+        "score": "17.50"
        }
       ]
      },
      {
-      "name": "BrowseComp-Plus (OpenClaw subset)",
-      "score": "37.00",
+      "name": "SWE-bench Verified (OpenCode)",
+      "score": "43.40",
       "vs": [
        {
-        "model": "LFM2.5-2.6B",
-        "score": "26.33"
+        "model": "LFM2.5 2.6B",
+        "score": "18.00"
        },
        {
-        "model": "MiniCPM5-2B",
-        "score": "16.83"
+        "model": "Qwen3.5 4B",
+        "score": "41.20"
        },
        {
-        "model": "Qwen3.5-9B",
-        "score": "38.00"
+        "model": "Qwen3.5 9B",
+        "score": "51.20"
        }
       ]
      },
      {
-      "name": "WebArena-Verified",
-      "score": "38.42",
+      "name": "LiveCodeBench v6",
+      "score": "73.46",
       "vs": [
        {
-        "model": "LFM2.5-2.6B",
-        "score": "3.02"
+        "model": "LFM2.5 2.6B",
+        "score": "60.57"
        },
        {
-        "model": "MiniCPM5-2B",
-        "score": "9.11"
+        "model": "Qwen3.5 4B",
+        "score": "61.99"
        },
        {
-        "model": "Qwen3.5-9B",
-        "score": "28.94"
+        "model": "Qwen3.5 9B",
+        "score": "69.86"
        }
       ]
      },
      {
-      "name": "EnterpriseOps-Gym",
-      "score": "28.20",
+      "name": "Terminal-Bench 2.1 (OpenCode)",
+      "score": "12.92",
       "vs": [
        {
-        "model": "LFM2.5-2.6B",
-        "score": "7.94"
+        "model": "LFM2.5 2.6B",
+        "score": "0.00"
        },
        {
-        "model": "MiniCPM5-2B",
-        "score": "13.41"
+        "model": "Qwen3.5 4B",
+        "score": "13.48"
        },
        {
-        "model": "Qwen3.5-9B",
-        "score": "28.97"
+        "model": "Qwen3.5 9B",
+        "score": "17.98"
        }
       ]
      },
      {
-      "name": "AutomationBench (public)",
-      "score": "41.29",
+      "name": "IFEval",
+      "score": "96.66",
       "vs": [
        {
-        "model": "LFM2.5-2.6B",
-        "score": "0.94"
+        "model": "LFM2.5 2.6B",
+        "score": "95.39"
        },
        {
-        "model": "MiniCPM5-2B",
-        "score": "4.71"
+        "model": "Qwen3.5 4B",
+        "score": "92.52"
        },
        {
-        "model": "Qwen3.5-9B",
-        "score": "15.10"
+        "model": "Qwen3.5 9B",
+        "score": "92.08"
        }
       ]
      },
@@ -1958,15 +1681,15 @@
       "score": "71.39",
       "vs": [
        {
-        "model": "LFM2.5-2.6B",
+        "model": "LFM2.5 2.6B",
         "score": "55.89"
        },
        {
-        "model": "MiniCPM5-2B",
-        "score": "62.65"
+        "model": "Qwen3.5 4B",
+        "score": "55.12"
        },
        {
-        "model": "Qwen3.5-9B",
+        "model": "Qwen3.5 9B",
         "score": "62.83"
        }
       ]
@@ -1976,119 +1699,64 @@
       "score": "80.36",
       "vs": [
        {
-        "model": "LFM2.5-2.6B",
+        "model": "LFM2.5 2.6B",
         "score": "78.04"
        },
        {
-        "model": "MiniCPM5-2B",
-        "score": "68.16"
+        "model": "Qwen3.5 4B",
+        "score": "75.40"
        },
        {
-        "model": "Qwen3.5-9B",
+        "model": "Qwen3.5 9B",
         "score": "76.41"
        }
       ]
      },
      {
-      "name": "MCP-Atlas",
-      "score": "32.57",
+      "name": "AA-LCR",
+      "score": "52.83",
       "vs": [
        {
-        "model": "LFM2.5-2.6B",
-        "score": "16.45"
+        "model": "LFM2.5 2.6B",
+        "score": "6.00"
        },
        {
-        "model": "MiniCPM5-2B",
-        "score": "26.38"
+        "model": "Qwen3.5 4B",
+        "score": "52.67"
        },
        {
-        "model": "Qwen3.5-9B",
-        "score": "42.67"
+        "model": "Qwen3.5 9B",
+        "score": "62.00"
        }
       ]
      },
      {
-      "name": "τ³-bench (4 domains) average",
-      "score": "68.01",
+      "name": "RULER 128K",
+      "score": "65.56",
       "vs": [
        {
-        "model": "LFM2.5-2.6B",
-        "score": "56.77"
+        "model": "LFM2.5 2.6B",
+        "score": "1.15"
        },
        {
-        "model": "MiniCPM5-2B",
-        "score": "69.44"
+        "model": "Qwen3.5 4B",
+        "score": "84.63"
        },
        {
-        "model": "Qwen3.5-9B",
-        "score": "67.11"
-       }
-      ]
-     },
-     {
-      "name": "SWE-bench Verified (OpenCode)",
-      "score": "43.40",
-      "vs": [
-       {
-        "model": "LFM2.5-2.6B",
-        "score": "18.00"
-       },
-       {
-        "model": "MiniCPM5-2B",
-        "score": "34.80"
-       },
-       {
-        "model": "Qwen3.5-9B",
-        "score": "51.20"
-       }
-      ]
-     },
-     {
-      "name": "SWE-bench Multilingual (OpenCode)",
-      "score": "23.00",
-      "vs": [
-       {
-        "model": "LFM2.5-2.6B",
-        "score": "8.00"
-       },
-       {
-        "model": "MiniCPM5-2B",
-        "score": "15.67"
-       },
-       {
-        "model": "Qwen3.5-9B",
-        "score": "35.00"
-       }
-      ]
-     },
-     {
-      "name": "Terminal-Bench 2.1 (OpenCode)",
-      "score": "12.92",
-      "vs": [
-       {
-        "model": "LFM2.5-2.6B",
-        "score": "0.00"
-       },
-       {
-        "model": "MiniCPM5-2B",
-        "score": "5.62"
-       },
-       {
-        "model": "Qwen3.5-9B",
-        "score": "17.98"
+        "model": "Qwen3.5 9B",
+        "score": "87.11"
        }
       ]
      }
     ],
     "params": "1.73B",
-    "context": "256K tokens (262.144)",
-    "availability": "Pesi aperti su Hugging Face (LiquidAI/LFM3-1.7B) con licenza LFM Open License v1.0. Checkpoint: BF16 (vLLM, SGLang, Transformers), FP8/NVFP4 (SGLang), GGUF (llama.cpp, Ollama, LM Studio), MLX 4-bit (Apple Silicon), ONNX Runtime, OpenVINO 4-bit (Intel). API a pagamento: $0.08/M in, $0.20/M out.",
-    "local_tips": "Sampling consigliato: General (chat, tool use, agents, coding) temperature=0.1, top_k=50, repetition_penalty=1.1; Math & STEM temperature=1.0, top_p=0.95, top_k=20. Chat template ChatML-style; usa tokenizer.apply_chat_template(add_generation_prompt=True). Tool calling nativo con schema XML; supporta deferred tools (defer_loading=True). Per llama.cpp serve build con supporto LFM3 o --chat-template-file. Reasoning abilitato di default (enable_thinking=False per disabilitare). A 32K context in…",
+    "context": "262144 token (256K, input + output)",
+    "availability": "Pesi aperti con LFM Open License v1.0 (licenza non standard, da verificare). Checkpoint su Hugging Face (BF16, FP8, NVFP4, GGUF, MLX, ONNX, OpenVINO). Prezzo API indicato nei dati noti: 0.08 input / 0.20 output (unità non specificata nel testo). Piattaforme: vLLM, SGLang, Transformers, llama.cpp, Ollama, LM Studio, MLX, ONNX Runtime, OpenVINO.",
+    "local_tips": "Sampling generale (chat, tool use, agenti, coding): temperature=0.1, top_k=50, repetition_penalty=1.1. Sampling per Math & STEM: temperature=1.0, top_p=0.95, top_k=20. Ragionamento attivo di default; enable_thinking=False disattivabile ma con comportamento non sempre consistente. Per llama.cpp usare un GGUF con il chat template aggiornato o --chat-template-file. Quantizzazione Q4_0 GGUF citata nei test edge; circa 1 GB a 4 bit secondo il testo. Guida agent harness:…",
     "source": "https://huggingface.co/LiquidAI/LFM3-1.7B",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "or:google/gemini-omni-1.2-flash": {
    "id": "or:google/gemini-omni-1.2-flash",
@@ -2217,7 +1885,7 @@
    "signals": {
     "likes": 584,
     "downloads": 10675,
-    "trending": 166,
+    "trending": 165,
     "trend_rank": 44
    },
    "vram": {
@@ -2819,9 +2487,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 1144,
+    "likes": 1146,
     "downloads": 571067,
-    "trending": 1039,
+    "trending": 1040,
     "trend_rank": 2,
     "watched_org": true
    },
@@ -2864,7 +2532,26 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 7.25,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "MiniMax-H3-Image è un modello open-weight (licenza community MiniMax) per text-to-image e image editing, con pesi unificati in un solo checkpoint. Genera immagini a circa 16 MP direttamente, distillato a 6 step senza CFG, con un DiT da 33.1B parametri. Adatto a generazione fotorealistica, concept art, illustrazione e editing con fino a 16 immagini di riferimento.",
+    "features": [
+     "DiT single-stream da 33.1B parametri, 50 layer, hidden size 5376, 56 attention heads, con RoPE multimodale 3D; pesi BF16 (embedding, timestep e output in FP32)",
+     "Text encoder Qwen3-VL di MiniMax-H3 invariato (layer 50 letto dal DiT); VAE con downsampling 16x e 24 canali latenti, patch 2x2 (token di 32x32 px)",
+     "Generazione diretta a ~16 MP senza upscaler, da 4096x4096 (1:1) a 6272x2688 (21:9); supporto fino a 16 immagini di riferimento nell'editing",
+     "Distillato a 6 step di campionamento (6 NFE) senza classifier-free guidance; negative_prompt non supportato",
+     "Modello di prompt expansion opzionale MiniMax-H3-Image-PE (NVFP4, 17.9 GB) per espandere prompt brevi in descrizioni dettagliate in inglese",
+     "Licenza: MiniMax-H3-Image Community License Agreement (licenza 'other')"
+    ],
+    "benchmarks": [],
+    "params": "33.1B (DiT)",
+    "context": "",
+    "availability": "Pesi aperti su Hugging Face (MiniMaxAI/MiniMax-H3-Image, circa 68.65 GB in BF16, più text encoder MiniMax-H3 da 66.7 GB se non già presente); API su platform.minimax.io / platform.minimax.cn (endpoint /v1/images/generations, /v1/images/edits, /v1/h3_image_context_ir); app web e desktop MiniMax. Framework consigliati: SGLang, vLLM-Omni, diffusers. Prezzi non indicati nel testo.",
+    "local_tips": "Framework di riferimento: SGLang (sglang serve --model-path MiniMaxAI/MiniMax-H3-Image, con --num-gpus e --ulysses-degree per sequence parallelism su più GPU, ad esempio 4 GPU) e vLLM-Omni; diffusers citato ma dettagli nel testo troncato. Usare generator_device=cpu per riproducibilità del seed. Parametri fissi: num_inference_steps=6 e guidance_scale=1 (altri valori danno HTTP 400). Il testo consiglia range effettivo 4-20 MP con risultati migliori intorno a 16 MP; min_generation_area (default…",
+    "source": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "Zyphra/ZONOS3-Mini": {
    "id": "Zyphra/ZONOS3-Mini",
@@ -2942,9 +2629,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 2089,
+    "likes": 2090,
     "downloads": 46766,
-    "trending": 298,
+    "trending": 297,
     "trend_rank": 11,
     "watched_org": true
    },
@@ -3189,7 +2876,185 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 8.49,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Kimi K3.1 Pro è un modello open-weight natively multimodal (testo e immagini), di classe 3T, primo della serie K3.1, post-addestrato da Kimi K3 con RL su larga scala. Dichiara una finestra di contesto di 1M token e miglioramenti in coding, creazione 3D, ricerca finanziaria, accuratezza fattuale e capacità agentiche. È indicato soprattutto per workflow agentici di lungo orizzonte, coding e task documentali/visuali complessi.",
+    "features": [
+     "Architettura MoE con 2.8T parametri totali e 104B attivi, 93 layer, 896 esperti con 16 selezionati per token e 2 esperti condivisi",
+     "Attenzione ibrida: 69 layer KDA + 24 layer Gated DSA (DeepSeek Sparse Attention), sostituisce il Gated MLA di Kimi K3 per un long-context più efficiente",
+     "Contesto di 1.048.576 token e encoder visivo MoonViT-V2 da 401M parametri (modalità testo e immagine)",
+     "Quantizzazione dichiarata MXFP4 sui pesi e MXFP8 sulle attivazioni, con quantization-aware training",
+     "Controllo del ragionamento tramite il campo di richiesta reasoning_effort (low, high, max; default max)",
+     "API compatibile con OpenAI e Anthropic; licenza indicata come 'other' nei dati noti"
+    ],
+    "benchmarks": [
+     {
+      "name": "Terminal-Bench 4.0",
+      "score": "65.7",
+      "vs": [
+       {
+        "model": "Claude Opus 5.5",
+        "score": "66.4"
+       },
+       {
+        "model": "Claude Fable 5.1",
+        "score": "57.9"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "58.2"
+       }
+      ]
+     },
+     {
+      "name": "DeepSWE v1.1",
+      "score": "75.5",
+      "vs": [
+       {
+        "model": "Claude Opus 5.5",
+        "score": "74.2"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "74.1"
+       },
+       {
+        "model": "Claude Fable 5.1",
+        "score": "67.4"
+       }
+      ]
+     },
+     {
+      "name": "HLE-Full w/ tools",
+      "score": "70.0",
+      "vs": [
+       {
+        "model": "Claude Opus 5.5",
+        "score": "67.7"
+       },
+       {
+        "model": "Claude Fable 5.1",
+        "score": "65.6"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "57.2"
+       }
+      ]
+     },
+     {
+      "name": "HLE-Full",
+      "score": "51.1",
+      "vs": [
+       {
+        "model": "Claude Opus 5.5",
+        "score": "59.8"
+       },
+       {
+        "model": "Claude Fable 5.1",
+        "score": "57.6"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "53.6"
+       }
+      ]
+     },
+     {
+      "name": "HLE-Diamond",
+      "score": "39.4",
+      "vs": [
+       {
+        "model": "GPT-6 Astra",
+        "score": "65.8"
+       },
+       {
+        "model": "Claude Opus 5.5",
+        "score": "60.9"
+       },
+       {
+        "model": "Claude Fable 5.1",
+        "score": "55.1"
+       }
+      ]
+     },
+     {
+      "name": "GPQA-Diamond",
+      "score": "94.2",
+      "vs": [
+       {
+        "model": "GPT-6 Astra",
+        "score": "96.1"
+       },
+       {
+        "model": "Claude Opus 5.5",
+        "score": "93.9"
+       },
+       {
+        "model": "Claude Fable 5.1",
+        "score": "93.7"
+       }
+      ]
+     },
+     {
+      "name": "BrowseComp",
+      "score": "92.1",
+      "vs": [
+       {
+        "model": "GPT-6 Astra",
+        "score": "91.5"
+       },
+       {
+        "model": "Claude Opus 5.5",
+        "score": "90.8"
+       }
+      ]
+     },
+     {
+      "name": "OSWorld V2.1",
+      "score": "79.6",
+      "vs": [
+       {
+        "model": "Claude Opus 5.5",
+        "score": "81.8"
+       },
+       {
+        "model": "Claude Fable 5.1",
+        "score": "80.7"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "75.8"
+       }
+      ]
+     },
+     {
+      "name": "BenchCAD w/ tools",
+      "score": "92.7",
+      "vs": [
+       {
+        "model": "Claude Opus 5.5",
+        "score": "96.2"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "95.9"
+       },
+       {
+        "model": "Claude Fable 5.1",
+        "score": "92.6"
+       }
+      ]
+     }
+    ],
+    "params": "2.8T totali / 104B attivi (MoE)",
+    "context": "1048576 token (1M)",
+    "availability": "Pesi aperti (open-weight) dichiarati; API su platform.kimi.ai con modello 'kimi-k3.1-pro', compatibile OpenAI/Anthropic. Engine consigliati: vLLM, SGLang, TokenSpeed. Prezzo non indicato nel testo.",
+    "local_tips": "Il testo non fornisce configurazioni di sampling per l'esecuzione locale oltre a temperature = 1.0 e top-p = 0.95 per le valutazioni (BrowseComp usa top-p = 1.0). Framework consigliati: vLLM (recipes), SGLang (cookbook), TokenSpeed. Quantizzazione ufficiale dichiarata: MXFP4 pesi / MXFP8 attivazioni. Con 2.8T parametri non è realistico su una singola RTX 5090 da 32 GB senza offloading estremo; il testo non indica requisiti hardware.",
+    "source": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "higurashi-ai/Haru-4B": {
    "id": "higurashi-ai/Haru-4B",
@@ -3434,7 +3299,26 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 7.18,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Haru-4B è un modello base open-weight (Apache 2.0, circa 5,27B parametri) per dialogo vocale continuo full-duplex: ascolta e parla contemporaneamente, con un frame ogni 133 ms (7,5 Hz). Usa audio continuo a 64 dimensioni per frame, generato in un solo passo da una piccola testa MLP con MeanFlow, senza token audio discreti. È rilasciato per la ricerca, non come assistente generico; è adatto a sperimentare dialogo vocale a bassa latenza e multilingue.",
+    "features": [
+     "Full-duplex nativo a 7,5 Hz: input utente, audio del modello e testo del modello sono sommati in un'unica posizione del language model, quindi ascolto e parlato non si attendono a vicenda",
+     "Audio continuo a 64 dimensioni per frame con testa MLP (4 livelli, MeanFlow, 1 passo di campionamento), senza audio transformer separato né token audio discreti",
+     "Controllo di personaggio tramite text card e di voce tramite un breve clip di riferimento (da 3 secondi a 3 minuti, un solo parlante)",
+     "Multilingue: inglese, spagnolo, portoghese, tedesco, francese, cinese, giapponese, russo e coreano",
+     "Backbone Qwen3.5-4B (32 livelli, hidden size 2560), codec audio VibeVoice causale a 24 kHz con 3200 campioni per latente",
+     "Licenza Apache License 2.0; pesi in bfloat16 in model.safetensors"
+    ],
+    "benchmarks": [],
+    "params": "5,27B (dichiarato nei dati noti; il testo indica backbone Qwen3.5-4B)",
+    "context": "",
+    "availability": "Pesi aperti su Hugging Face (higurashi-ai/Haru-4B), codice su GitHub (higurashi-ai/Haru) con implementazione PyTorch con web demo, implementazione MLX con app nativa macOS e plugin per vLLM-Omni; licenza Apache 2.0",
+    "local_tips": "Con GPU NVIDIA servono circa 12 GB di memoria; avvio con `python -m haru.server --hf-repo higurashi-ai/Haru-4B` dopo `pip install -e ./haru`. Per bassa latenza si consigliano cuffie e microfono cablati (il Bluetooth aggiunge 100 ms o più). Guidance scale consigliata tra 1 e 2 (default 1,5). Il testo non menziona quantizzazioni ufficiali.",
+    "source": "https://huggingface.co/higurashi-ai/Haru-4B",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "Cactus-Compute/mirage": {
    "id": "Cactus-Compute/mirage",
@@ -3453,9 +3337,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 309,
+    "likes": 310,
     "downloads": 28553,
-    "trending": 214,
+    "trending": 215,
     "trend_rank": 19
    },
    "links": {
@@ -3753,7 +3637,154 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 7.69,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "LongCat-2.5 è un modello MoE nativamente multimodale di Meituan, con 1.6 trilioni di parametri totali e circa 48 miliardi attivi per token, pensato per task agentici a lungo orizzonte, coding su codebase complete e compiti visivi/3D. Rispetto a LongCat-2.0 introduce modellazione visiva nativa tramite token discreti, RL agentico su larga scala e distillazione multi-teacher; i pesi sono rilasciati sotto licenza MIT. Per l'uso locale con una RTX 5090 da 32 GB la dimensione del modello (1.6T) rende impraticabile l'esecuzione senza offloading estremo, e il testo indica il deployment ufficiale su NPU tramite SGLang-FluentLLM.",
+    "features": [
+     "MoE da 1.6T parametri totali con circa 48B attivi per token; modello ibrido con modalità thinking on/off (enable_thinking)",
+     "Visione nativa: feature a risoluzione nativa convertite in token discreti allineati con il testo in uno spazio semantico condiviso (basato su LongCat-Next)",
+     "Contesto dichiarato di 512K token nelle impostazioni di valutazione (max_seq_length 512K) e fino a 1M in DeepSWE; 256K in alcuni benchmark agentici",
+     "Long-horizon agentic RL con rollout efficienti e protezioni contro il reward hacking; distillazione multi-teacher con full-vocabulary KL e Tree Attention",
+     "Quantizzazione W4A4 su pesi ed attivazioni degli expert con trasformazioni in stile FlatQuant, con inferenza INT4 nativa su acceleratori domestici; W4A4KV8 con +92% di throughput di decode rispetto a W8A8KV16",
+     "Licenza MIT sui pesi; supporto tool calling in formato OpenAI-compatibile nell'esempio d'uso",
+     "Deployment ufficiale indicato su NPU tramite SGLang-FluentLLM; nessun framework per GPU consumer è citato nel testo"
+    ],
+    "benchmarks": [
+     {
+      "name": "Terminal Bench v2.1",
+      "score": "88.4",
+      "vs": [
+       {
+        "model": "Claude-Opus-5",
+        "score": "89.1"
+       },
+       {
+        "model": "GPT-5.6-Sol",
+        "score": "88.8"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash",
+        "score": "90.6"
+       }
+      ]
+     },
+     {
+      "name": "BrowseComp",
+      "score": "91.9",
+      "vs": [
+       {
+        "model": "Claude-Opus-5",
+        "score": "90.8"
+       },
+       {
+        "model": "GPT-5.6-Sol",
+        "score": "90.4"
+       },
+       {
+        "model": "kimi-k3",
+        "score": "91.2"
+       }
+      ]
+     },
+     {
+      "name": "HLE (w/ tools)",
+      "score": "63.1",
+      "vs": [
+       {
+        "model": "Claude-Opus-5",
+        "score": "64.7"
+       },
+       {
+        "model": "GLM-5.3",
+        "score": "62.5"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash",
+        "score": "63.9"
+       }
+      ]
+     },
+     {
+      "name": "MCP Atlas",
+      "score": "83.1",
+      "vs": [
+       {
+        "model": "Claude-Opus-5",
+        "score": "85.8"
+       },
+       {
+        "model": "kimi-k3",
+        "score": "84.2"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash",
+        "score": "84.4"
+       }
+      ]
+     },
+     {
+      "name": "MathVision (w/ tools)",
+      "score": "96.5",
+      "vs": [
+       {
+        "model": "GPT-5.6-Sol",
+        "score": "97.8"
+       },
+       {
+        "model": "kimi-k3",
+        "score": "97.8"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash",
+        "score": "97.4"
+       }
+      ]
+     },
+     {
+      "name": "CharXiv-RQ (w/ tools)",
+      "score": "90.2",
+      "vs": [
+       {
+        "model": "kimi-k3",
+        "score": "91.3"
+       },
+       {
+        "model": "Claude-Opus-4.8",
+        "score": "89.9"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash",
+        "score": "87.7"
+       }
+      ]
+     },
+     {
+      "name": "VideoMME",
+      "score": "85.2",
+      "vs": [
+       {
+        "model": "kimi-k3",
+        "score": "90.0"
+       },
+       {
+        "model": "GPT-5.6-Sol",
+        "score": "89.5"
+       },
+       {
+        "model": "Claude-Opus-4.8",
+        "score": "86.0"
+       }
+      ]
+     }
+    ],
+    "params": "1.6T totali (~1600B) / ~48B attivi per token (MoE); i dati di sistema indicano 1779.75B parametri",
+    "context": "512K (524288) token nelle impostazioni di valutazione; fino a 1M per DeepSWE…",
+    "availability": "Pesi aperti su Hugging Face (meituan-longcat/LongCat-2.5) sotto licenza MIT; chat ufficiale su longcat.ai; deployment NPU tramite SGLang-FluentLLM. Nessun prezzo API o piattaforma GPU indicati nel testo.",
+    "local_tips": "Per l'esecuzione su NPU si rimanda a SGLang-FluentLLM (branch longcat-2.5-npu). Parametri di sampling dichiarati per la valutazione: temperature=1.0, top_p=0.95, enable_thinking=on; per efficienza di token si può disattivare il thinking. Quantizzazione W4A4 e KV cache quantizzata (KV8) citate, ma non sono disponibili indicazioni per llama.cpp, vLLM, Ollama o LM Studio nel testo.",
+    "source": "https://huggingface.co/meituan-longcat/LongCat-2.5",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ConwayResearch/Underdog-Woof": {
    "id": "ConwayResearch/Underdog-Woof",
@@ -3954,7 +3985,117 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 7.72,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "KLM 1.6 è un modello base di linguaggio da 99M parametri (MinimaLabs, licenza Apache-2.0), aggiornamento incrementale di KLM 1.5 con un decadimento del learning rate esteso a 100B token. Il modello non è addestrato per seguire istruzioni o chat, quindi è pensato per essere fine-tunato sul proprio caso d'uso; è limitato all'inglese e a un contesto di 2.048 token.",
+    "features": [
+     "Architettura ibrida: 24 layer con Gated DeltaNet-2 e attention in rapporto 3:1, residui basati su Block Attention Residuals",
+     "Memoria n-gram appresa (125.000 bigrammi e 38.000 trigrammi) per circa 5,4M dei 98,975M parametri",
+     "Training in tre fasi con Token-Superposition Training nella fase di warm-up, MuonEq-R per i pesi e AdamW per embedding, norm e gate, in bf16",
+     "Contesto di 2.048 token, vocabolario di 4.100 token con embedding tied",
+     "Funzione fast_generate con kernel Triton e CUDA graph per la generazione batch su GPU NVIDIA",
+     "Licenza Apache-2.0"
+    ],
+    "benchmarks": [
+     {
+      "name": "ARC-Easy",
+      "score": "61.07%",
+      "vs": [
+       {
+        "model": "KLM 1.5",
+        "score": "59.68%"
+       },
+       {
+        "model": "GPT-X3-150M",
+        "score": "59.64%"
+       },
+       {
+        "model": "SmolLM2-135M",
+        "score": "58.63%"
+       }
+      ]
+     },
+     {
+      "name": "ARC-Challenge",
+      "score": "33.53%",
+      "vs": [
+       {
+        "model": "LFM-2.5-230M-Base",
+        "score": "34.98%"
+       },
+       {
+        "model": "KLM 1.5",
+        "score": "32.68%"
+       },
+       {
+        "model": "GPT-X3-150M",
+        "score": "31.31%"
+       }
+      ]
+     },
+     {
+      "name": "HellaSwag",
+      "score": "45.28%",
+      "vs": [
+       {
+        "model": "GPT-X3-150M",
+        "score": "46.16%"
+       },
+       {
+        "model": "KLM 1.5",
+        "score": "43.74%"
+       },
+       {
+        "model": "SmolLM2-135M",
+        "score": "43.22%"
+       }
+      ]
+     },
+     {
+      "name": "PIQA",
+      "score": "70.18%",
+      "vs": [
+       {
+        "model": "GPT-X3-150M",
+        "score": "71.33%"
+       },
+       {
+        "model": "KLM 1.5",
+        "score": "68.55%"
+       },
+       {
+        "model": "SmolLM2-135M",
+        "score": "68.44%"
+       }
+      ]
+     },
+     {
+      "name": "ArithMark-3",
+      "score": "55.90%",
+      "vs": [
+       {
+        "model": "GPT-X3-150M",
+        "score": "50.90%"
+       },
+       {
+        "model": "KLM 1.5",
+        "score": "48.20%"
+       },
+       {
+        "model": "SmolLM2-135M",
+        "score": "39.20%"
+       }
+      ]
+     }
+    ],
+    "params": "99M (98.975.308 dichiarati, di cui 5.411.832 memoria n-gram)",
+    "context": "2048 token",
+    "availability": "Pesi aperti su Hugging Face (MinimaLabs/KLM-1.6), licenza Apache-2.0; uso tramite Transformers con trust_remote_code=True; codice PyTorch puro eseguibile su CPU o GPU",
+    "local_tips": "Eseguibile su CPU o GPU con Transformers; su NVIDIA si può usare fast_generate con kernel Triton e CUDA graph; installare flash-linear-attention per accelerare i prompt lunghi; esempio di sampling con temperature=0.7, top_p=0.9. Nel testo non sono indicate quantizzazioni ufficiali né framework come llama.cpp, vLLM, Ollama o LM Studio.",
+    "source": "https://huggingface.co/MinimaLabs/KLM-1.6",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "Oomni/mithi-v1-flash": {
    "id": "Oomni/mithi-v1-flash",
@@ -4290,7 +4431,189 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 7.58,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Cola2 è un modello linguistico base (text-generation, circa 8.77B parametri secondo i dati noti) di ByteDance-Seed che combina compressione semantica continua e generazione discreta: un VAE a compressione dinamica raggruppa il testo in span semantici, un Diffusion Transformer (DiT) genera blocchi latenti e un decoder di token li converte in testo. È un modello base, non un assistente chat, adatto a sperimentare generazione gerarchica latente-discreta su risorse limitate (346B token di pretraining).",
+    "features": [
+     "Architettura ibrida: VAE a compressione dinamica + DiT block-causal (circa 4B) con Flow Matching + decoder di token span-causal con feedback latente",
+     "Pretraining su 346.03B source token, dichiarato come molto meno di Llama-3-8B, Qwen2.5-7B e Qwen3-8B-Base",
+     "Generazione per blocchi con ri-codifica del testo impegnato per mantenere allineate storia continua e discreta",
+     "Preset di generazione di default: DiT CFG 10, decoder CFG -0.9, greedy token selection, max_new_tokens=32",
+     "Repository con pesi safetensors shardati, tokenizer, codice remoto Transformers, dataset di valutazione normalizzati e SHA256SUMS",
+     "Licenza: codice Apache 2.0; pesi e dataset soggetti ai rispettivi termini"
+    ],
+    "benchmarks": [
+     {
+      "name": "8-task average",
+      "score": "60.10",
+      "vs": [
+       {
+        "model": "Llama-3-8B",
+        "score": "66.25"
+       },
+       {
+        "model": "Qwen2.5-7B",
+        "score": "75.08"
+       },
+       {
+        "model": "LLaDA-8B-Base",
+        "score": "72.11"
+       }
+      ]
+     },
+     {
+      "name": "HellaSwag",
+      "score": "41.75",
+      "vs": [
+       {
+        "model": "Llama-3-8B",
+        "score": "39.21"
+       },
+       {
+        "model": "Qwen2.5-7B",
+        "score": "75.67"
+       },
+       {
+        "model": "LLaDA-8B-Base",
+        "score": "69.65"
+       }
+      ]
+     },
+     {
+      "name": "StoryCloze",
+      "score": "80.42",
+      "vs": [
+       {
+        "model": "Llama-3-8B",
+        "score": "79.49"
+       },
+       {
+        "model": "Qwen2.5-7B",
+        "score": "95.09"
+       },
+       {
+        "model": "LLaDA-8B-Base",
+        "score": "95.94"
+       }
+      ]
+     },
+     {
+      "name": "MMLU",
+      "score": "51.32",
+      "vs": [
+       {
+        "model": "Llama-3-8B",
+        "score": "63.19"
+       },
+       {
+        "model": "Qwen2.5-7B",
+        "score": "70.16"
+       },
+       {
+        "model": "LLaDA-8B-Base",
+        "score": "61.27"
+       }
+      ]
+     },
+     {
+      "name": "ARC-Easy",
+      "score": "87.62",
+      "vs": [
+       {
+        "model": "Llama-3-8B",
+        "score": "90.86"
+       },
+       {
+        "model": "Qwen2.5-7B",
+        "score": "96.00"
+       },
+       {
+        "model": "LLaDA-8B-Base",
+        "score": "93.85"
+       }
+      ]
+     },
+     {
+      "name": "TruthfulQA",
+      "score": "54.10",
+      "vs": [
+       {
+        "model": "Llama-3-8B",
+        "score": "63.04"
+       },
+       {
+        "model": "Qwen2.5-7B",
+        "score": "69.03"
+       },
+       {
+        "model": "LLaDA-8B-Base",
+        "score": "64.87"
+       }
+      ]
+     },
+     {
+      "name": "RACE",
+      "score": "69.91",
+      "vs": [
+       {
+        "model": "Llama-3-8B",
+        "score": "75.77"
+       },
+       {
+        "model": "Qwen2.5-7B",
+        "score": "89.95"
+       },
+       {
+        "model": "LLaDA-8B-Base",
+        "score": "87.40"
+       }
+      ]
+     },
+     {
+      "name": "NarrativeQA",
+      "score": "32.70",
+      "vs": [
+       {
+        "model": "Llama-3-8B",
+        "score": "42.70"
+       },
+       {
+        "model": "Qwen2.5-7B",
+        "score": "32.90"
+       },
+       {
+        "model": "LLaDA-8B-Base",
+        "score": "36.00"
+       }
+      ]
+     },
+     {
+      "name": "LAMBADA",
+      "score": "63.00",
+      "vs": [
+       {
+        "model": "Llama-3-8B",
+        "score": "75.70"
+       },
+       {
+        "model": "Qwen2.5-7B",
+        "score": "71.82"
+       },
+       {
+        "model": "LLaDA-8B-Base",
+        "score": "67.90"
+       }
+      ]
+     }
+    ],
+    "params": "8.77B (dato noto fornito; il testo menziona un DiT di circa 4B ma non il totale dei parametri)",
+    "context": "",
+    "availability": "Pesi aperti su Hugging Face (ByteDance-Seed/Cola2, 8 shard safetensors), codice GitHub ByteDance-Seed/Cola2, paper arXiv 2610.31305; richiede trust_remote_code=True. Non sono indicati API né prezzo.",
+    "local_tips": "Requisiti: Python 3.10+, PyTorch 2.2+, Transformers 4.51–4.x, safetensors 0.4+; CUDA con bfloat16 consigliato. Il testo non indica quantizzazioni ufficiali né framework tipo llama.cpp/Ollama/vLLM. Usare un generator con seed per confronti riproducibili, perché la generazione parte da rumore gaussiano. Nel quick start si usa device 'cuda' con torch.bfloat16 e low_cpu_mem_usage=True. Per la chat locale: clonare il repo, pip install -e ., impostare COLA2_MODEL_PATH e lanciare scripts/run_chat.sh.",
+    "source": "https://huggingface.co/ByteDance-Seed/Cola2",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "Zyphra/ZONOS3-Mini-hf": {
    "id": "Zyphra/ZONOS3-Mini-hf",
@@ -4579,231 +4902,183 @@
     }
    ],
    "score": 8.7,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Claude Mythos 5.2 è il modello di punta di Anthropic per attività tecniche ad alto rischio (cybersecurity, ricerca scientifica, ingegneria hardware), identico a Fable 5.2 ma senza i safeguard che bloccano task sensibili. Raggiunge SOTA su benchmark di coding agentico, cybersecurity e ragionamento scientifico, con un'opzione 'fast mode' 2.5x più veloce e prezzi ridotti rispetto alla v5.1.",
+    "tldr": "Claude Mythos 5.2 è la variante di Anthropic (stesso modello sottostante di Claude Fable 5.2) pensata per i compiti tecnici più ambiziosi e aperti, con forte enfasi su coding agentico, cybersecurity e ragionamento. Rispetto a Mythos 5.1 e a Opus 5.5 migliora in coding, reasoning e vision, genera output fino al 30% più velocemente e costa meno; l'accesso è però riservato a programmi di verifica per usi cyber e biomedici. È indicato per lavori complessi e a lungo orizzonte, mentre per la maggior parte dei task Anthropic raccomanda Opus 5.5 come modello quotidiano.",
     "features": [
-     "Stesso modello sottostante di Claude Fable 5.2, differenziato solo per l'assenza di safeguard su cyber/biologia (accesso su richiesta via Cyber/Life Sciences Verification Programs)",
-     "Miglioramenti su coding, reasoning, vision; output fino al 30% più veloce vs v5.1",
-     "Modalità 'Fast' opzionale: generazione token fino a 2.5x più veloce (prezzo doppio: $16/$80 per M token in/out)",
-     "Capacità 'Advisor/Orchestrator': può fare da modello forte che delega a modelli minori (Sonnet/Haiku/Opus) o viene consultato da essi",
-     "Robuste difese contro attacchi di distillazione; safeguard Fable producono meno falsi positivi",
-     "Accessibile via API Anthropic, Claude Enterprise (Claude Security per scanning repo), e programmi verificati per Mythos"
+     "Stesso modello sottostante di Claude Fable 5.2: Mythos è accessibile tramite programmi di verifica (Life Sciences e Cyber Verification), Fable è disponibile a tutti con safeguard cyber e biologici più forti",
+     "Ruolo di Advisor (modelli più piccoli lo consultano per problemi difficili) e Orchestrator (delega compiti semplici a modelli minori)",
+     "Miglioramenti dichiarati in coding, ragionamento e visione; output fino al 30% più veloci rispetto a Mythos 5.1 e modalità fast fino a 2,5x",
+     "Effort configurabile (Medium di default in Claude apps e Claude Code, fino a Xhigh) con efficienza in token migliorata",
+     "Capacità cyber: trova il 10,2% di vulnerabilità in più di Opus 5.5 e il 14,4% in più di Mythos 5.1 nel CVE Rediscovery interno; accesso tramite Cyber Verification Program e Claude Security (con MCP e API)",
+     "Testo non riporta dettagli su architettura, numero di parametri, context window, multimodalità specifica, licenza o pesi aperti"
     ],
     "benchmarks": [
      {
-      "name": "FrontierCode 2.0 (Agentic coding, Xhigh effort)",
-      "score": "49.1%",
+      "name": "FrontierCode 2.0 (agentic coding)",
+      "score": "49,1% (Xhigh effort, Fable…",
       "vs": [
        {
-        "model": "Claude Fable 5.1",
-        "score": "32.4%"
-       },
-       {
-        "model": "Claude Opus 5.5",
-        "score": "45.5%"
+        "model": "Opus 5.5",
+        "score": "45,5%"
        },
        {
         "model": "GPT-6 Astra",
-        "score": "42.8%"
+        "score": "42,8%"
+       },
+       {
+        "model": "Gemini 4 Carbon",
+        "score": "41,1% (Medium effort)"
        }
       ]
      },
      {
-      "name": "FrontierSWE v2 (Agentic coding)",
-      "score": "69.9%",
+      "name": "FrontierSWE v2 (agentic coding)",
+      "score": "69,9% (Fable 5.2)",
       "vs": [
        {
-        "model": "Claude Fable 5.1",
-        "score": "56.3%"
-       },
-       {
-        "model": "Claude Opus 5.5",
-        "score": "62.3%"
+        "model": "Opus 5.5",
+        "score": "62,3%"
        },
        {
         "model": "GPT-6 Astra",
-        "score": "65.5%"
+        "score": "65,5%"
+       },
+       {
+        "model": "Gemini 4 Carbon",
+        "score": "61,2%"
        }
       ]
      },
      {
-      "name": "Terminal-Bench-Science (Agentic scientific research, Mythos 5.2)",
-      "score": "75.3%",
+      "name": "Humanity's Last Exam (with tools)",
+      "score": "74,2% (Fable 5.2)",
       "vs": [
        {
-        "model": "Claude Fable 5.1",
-        "score": "52.6%"
-       },
-       {
-        "model": "Claude Opus 5.5",
-        "score": "58.7%"
+        "model": "Opus 5.5",
+        "score": "67,7%"
        },
        {
         "model": "GPT-6 Astra",
-        "score": "68.1%"
+        "score": "57,2%"
        }
       ]
      },
      {
-      "name": "CyScenarioBench (Cybersecurity, Mythos 5.2)",
-      "score": "76.3%",
+      "name": "Terminal-Bench-Science 0.1",
+      "score": "75,3% (Mythos 5.2)",
       "vs": [
        {
-        "model": "Claude Mythos 5.1",
-        "score": "61.7%"
+        "model": "Opus 5.5",
+        "score": "58,7%"
        },
        {
-        "model": "Claude Opus 5.5 (no safeguards)",
-        "score": "67.6%"
+        "model": "GPT-6 Astra",
+        "score": "68,1%"
        },
        {
-        "model": "GPT-6 Astra Cyber",
+        "model": "Gemini 4 Carbon",
+        "score": "64,8%"
+       }
+      ]
+     },
+     {
+      "name": "OSWorld 2.1 (offline set, partial)",
+      "score": "89,3% (Fable 5.2)",
+      "vs": [
+       {
+        "model": "Opus 5.5",
+        "score": "87,2%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "79,5%"
+       },
+       {
+        "model": "Gemini 4 Carbon",
+        "score": "81,5%"
+       }
+      ]
+     },
+     {
+      "name": "Chartography (no tools)",
+      "score": "73,4% (Fable 5.2)",
+      "vs": [
+       {
+        "model": "Opus 5.5",
+        "score": "64,4%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "71,0%"
+       },
+       {
+        "model": "Gemini 4 Carbon",
+        "score": "72,5%"
+       }
+      ]
+     },
+     {
+      "name": "AutomationBench (business workflows)",
+      "score": "51,4% (Fable 5.2)",
+      "vs": [
+       {
+        "model": "Opus 5.5",
+        "score": "42,5%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "41,4%"
+       },
+       {
+        "model": "Gemini 4 Carbon",
+        "score": "53,9%"
+       }
+      ]
+     },
+     {
+      "name": "CyScenarioBench",
+      "score": "76,3% (Mythos 5.2)",
+      "vs": [
+       {
+        "model": "Opus 5.5",
+        "score": "67,6% (senza safeguard)"
+       },
+       {
+        "model": "GPT-6 Cyber",
         "score": "61%"
        }
       ]
      },
      {
-      "name": "CVE Rediscovery (Cybersecurity, Mythos 5.2)",
-      "score": "89.6%",
+      "name": "CVE Rediscovery",
+      "score": "89,6% (Mythos 5.2)",
       "vs": [
        {
-        "model": "Claude Mythos 5.1",
-        "score": "78.3%"
-       },
-       {
-        "model": "Claude Opus 5.5 (no safeguards)",
-        "score": "81.3%"
+        "model": "Opus 5.5",
+        "score": "81,3% (senza safeguard)"
        }
       ]
      },
      {
-      "name": "De novo binder design 24h (Protein design, Mythos 5.2)",
-      "score": "85.1",
+      "name": "WANDR (relaxed score, agentic search)",
+      "score": "82,1% (Fable 5.2)",
       "vs": [
        {
-        "model": "Claude Mythos 5.1",
-        "score": "79.1"
-       },
-       {
-        "model": "Claude Opus 5.5 (no safeguards)",
-        "score": "82.6"
-       }
-      ]
-     },
-     {
-      "name": "WANDR relaxed (Agentic search)",
-      "score": "82.1%",
-      "vs": [
-       {
-        "model": "Claude Fable 5.1",
-        "score": "68.7%"
-       },
-       {
-        "model": "Claude Opus 5.5",
-        "score": "72.3%"
-       }
-      ]
-     },
-     {
-      "name": "OSWorld 2.1 offline partial (Computer use)",
-      "score": "89.3%",
-      "vs": [
-       {
-        "model": "Claude Fable 5.1",
-        "score": "83.5%"
-       },
-       {
-        "model": "Claude Opus 5.5",
-        "score": "87.2%"
-       },
-       {
-        "model": "GPT-6 Astra",
-        "score": "79.5%"
-       }
-      ]
-     },
-     {
-      "name": "RoboDojo Sim (Robotics, highest effort)",
-      "score": "64.9%",
-      "vs": [
-       {
-        "model": "Claude Fable 5.1",
-        "score": "27.6%"
-       },
-       {
-        "model": "Claude Opus 5.5",
-        "score": "39.4%"
-       },
-       {
-        "model": "GPT-6 Astra",
-        "score": "29.8%"
-       }
-      ]
-     },
-     {
-      "name": "AA-Briefcase v1.1 (Knowledge work, rubric)",
-      "score": "66.1%",
-      "vs": [
-       {
-        "model": "Claude Fable 5.1",
-        "score": "61.5%"
-       },
-       {
-        "model": "Claude Opus 5.5",
-        "score": "61.2%"
-       },
-       {
-        "model": "GPT-6 Astra",
-        "score": "52.0%"
-       }
-      ]
-     },
-     {
-      "name": "Humanity's Last Exam with tools (Multidisciplinary reasoning)",
-      "score": "74.2%",
-      "vs": [
-       {
-        "model": "Claude Fable 5.1",
-        "score": "65.6%"
-       },
-       {
-        "model": "Claude Opus 5.5",
-        "score": "67.7%"
-       },
-       {
-        "model": "GPT-6 Astra",
-        "score": "57.2%"
-       }
-      ]
-     },
-     {
-      "name": "Chartography no tools (Visual chart recognition)",
-      "score": "73.4%",
-      "vs": [
-       {
-        "model": "Claude Fable 5.1",
-        "score": "44.8%"
-       },
-       {
-        "model": "Claude Opus 5.5",
-        "score": "64.4%"
-       },
-       {
-        "model": "GPT-6 Astra",
-        "score": "71.0%"
+        "model": "Opus 5.5",
+        "score": "72,3%"
        }
       ]
      }
     ],
     "params": "",
     "context": "",
-    "availability": "API Anthropic (standard: $8/M input, $40/M output; fast mode: $16/M input, $80/M output). Claude Mythos 5.2 accessibile solo tramite Cyber Verification Program e Life Sciences Verification Program (su richiesta per org qualificate). Incluso in Claude Enterprise per clienti via Claude Security (scanning repo continuo, API/MCP). Non open-weight, non eseguibile in locale.",
+    "availability": "Fable 5.2 disponibile a tutti gli utenti; Mythos 5.2 accessibile tramite Life Sciences e Cyber Verification Program. Prezzo API: 8 $/M token input e 40 $/M token output; fast mode 16 $/M input e 80 $/M output. Cyber capabilities tramite Claude Security (Claude Enterprise) e API/MCP. Pesi aperti: non specificato nel testo.",
     "local_tips": "",
     "source": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ann:qwen4max": {
    "id": "ann:qwen4max",
@@ -4827,7 +5102,25 @@
     }
    ],
    "score": 8.7,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Qwen4-Max è il nuovo modello di Alibaba (Qwen), annunciato come 'in arrivo' con enfasi su conoscenza più profonda, migliore comprensione del mondo e capacità superiori di coding e agentic. È indicato per compiti reali come coding complesso, knowledge work, build front-end e workflow software professionali.",
+    "features": [
+     "Conoscenza più profonda e migliore comprensione del mondo (dichiarato genericamente, senza dettagli tecnici)",
+     "Capacità di coding e agentic potenziate per workflow software professionali e build front-end",
+     "Disponibile in anteprima sul Token Plan di Alibaba (Qwen Cloud)",
+     "Early access tramite QwenWork, Qoder, Qwen APP e QwenStudio",
+     "Il testo non specifica architettura, multimodalità, licenza o novità tecniche"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "Anteprima (preview) tramite Token Plan di Alibaba Cloud (qwencloud.com/pricing); early access su QwenWork, Qoder, Qwen APP, QwenStudio. Nessun dato su pesi aperti, prezzo o API nel testo.",
+    "local_tips": "",
+    "source": "https://twitter.com/Alibaba_Qwen/status/2120335993643684315",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "Qwen/Qwen3.8-27B": {
    "id": "Qwen/Qwen3.8-27B",
@@ -5129,81 +5422,26 @@
     }
    ],
    "score": 21.37,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Qwen3.8-27B è un modello denso da 27B parametri con capacità vision e reasoning, finestra di contesto a 256K (estendibile a 1M via YaRN) e licenza Apache-2.0. Unsloth rilascia quantizzazioni Dynamic V3.1 GGUF e NVFP4 che migliorano accuratezza del 5-10% a parità di dimensioni e offrono 1.5x speedup su GPU Blackwell. È ottimizzato per coding agentico, tool use e chat, gira in locale su 16-19 GB VRAM (4-bit) ed è servibile via Unsloth Desktop, llama.cpp e vLLM.",
+    "tldr": "Qwen3.8-27B è un modello dense da 27B parametri di Qwen, multimodale (image-text-to-text) con capacità di reasoning, finestra di contesto da 256K e licenza Apache-2.0. Il testo lo presenta come adatto a agentic coding, visione e chat, eseguibile localmente con quantizzazioni GGUF Unsloth (circa 16-19 GB di memoria per il 4-bit) e in formato NVFP4 per GPU Blackwell.",
     "features": [
-     "Architettura dense 27B parametri con vision e reasoning ibrido (thinking/non-thinking mode)",
-     "Contesto 256K nativo, estendibile a 1M token via YaRN",
-     "Multimodalità: image-text-to-text (vision + language)",
-     "Supporto nativo tool calling, parsing oggetti annidati, developer role per agenti (Codex, Claude Code)",
-     "MTP (Multi-Token Prediction) abilitato per inferenza più veloce",
-     "Quantizzazioni Unsloth Dynamic V3.1 GGUF (1-8 bit) e NVFP4 per Blackwell (RTX 50-series, B200/B300)"
+     "Architettura dense da 27B parametri con capacità di visione e reasoning ibrido (thinking/non-thinking)",
+     "Finestra di contesto massima di 262.144 token, estendibile fino a 1M tramite YaRN",
+     "Supporto a reasoning_effort (none, low, medium, xhigh di default) per regolare profondità del ragionamento e costo",
+     "Supporto al ruolo developer per tool agentici come Codex e tool calling con parsing migliorato di oggetti annidati",
+     "Quantizzazioni Unsloth Dynamic V3.1 (GGUF) e NVFP4 dinamiche, quest'ultima circa 1,5x più veloce di BF16 su GPU Blackwell e con MTP per inferenza rapida",
+     "Licenza Apache-2.0"
     ],
-    "benchmarks": [
-     {
-      "name": "Terminal Bench 2.1",
-      "score": "UD3.1 migliora accuratezza…",
-      "vs": []
-     },
-     {
-      "name": "DeepSWE v1.1",
-      "score": "UD3.1 migliora accuratezza…",
-      "vs": []
-     },
-     {
-      "name": "LiveCodeBench v6",
-      "score": "UD3.1 migliora su UD3; UD3…",
-      "vs": [
-       {
-        "model": "ISTA GSQ-RCO",
-        "score": "peggiore a 128K, simile a 96K"
-       }
-      ]
-     },
-     {
-      "name": "GPQA Diamond",
-      "score": "Incluso nella suite di…",
-      "vs": []
-     },
-     {
-      "name": "MMLU-Pro",
-      "score": "Incluso nella suite di…",
-      "vs": []
-     },
-     {
-      "name": "AIME25",
-      "score": "UD3 media 93-96% recovery…",
-      "vs": [
-       {
-        "model": "ISTA GSQ-RCO",
-        "score": "100%/100%/100%/96.7% (single…"
-       }
-      ]
-     },
-     {
-      "name": "NVFP4 Accuracy Recovery (KLD / Top-1)",
-      "score": "92-97% top-1 agreement vs…",
-      "vs": [
-       {
-        "model": "BF16 baseline",
-        "score": "100%"
-       },
-       {
-        "model": "NVIDIA NVFP4 (Qwen3.6)",
-        "score": "simile su MMLU-Pro, AIME25,…"
-       }
-      ]
-     }
-    ],
+    "benchmarks": [],
     "params": "27B dense",
-    "context": "262.144 token (estendibile a 1M via YaRN)",
-    "availability": "Pesi aperti (Apache-2.0). GGUF e NVFP4 su Hugging Face (Qwen3.8-27B-GGUF, Qwen3.8-27B-NVFP4) e ModelScope. Eseguibile localmente via Unsloth Desktop (Mac/Win/Linux), llama.cpp (CPU/CUDA/Metal), vLLM (NVFP4 su Blackwell). Nessun prezzo API indicato nel testo.",
-    "local_tips": "VRAM consigliata: 16-19 GB per 4-bit GGUF (RTX 4090/5080, Mac 24GB unified); +1-2 GB se si usa MTP. Sampling thinking mode: temp=1.0, top_p=0.95, top_k=20, min_p=0, presence_penalty=0, repetition_penalty=1.0. Sampling instruct mode: temp=0.7, top_p=0.8, top_k=20, min_p=0, presence_penalty=1.5, repetition_penalty=1.0. reasoning_effort: xhigh (default), medium, low, none via chat-template-kwargs. NVFP4 richiede GPU Blackwell (RTX 50xx, B200, B300) e vLLM (SGLang v0.5.19+ per FP8 lm_head). FP8 KV…",
+    "context": "262144",
+    "availability": "Pesi aperti su Hugging Face e ModelScope (GGUF e NVFP4); eseguibile in Unsloth Desktop, llama.cpp, vLLM (NVFP4) e SGLang v0.5.19 (NVFP4); il testo non riporta prezzo API nel corpo, i dati noti indicano in 0.15 e out 1.875.",
+    "local_tips": "Modalità thinking: temperature 1.0, top_p 0.95, top_k 20, min_p 0.0, presence_penalty 0.0, repetition_penalty 1.0. Modalità instruct: temperature 0.7, top_p 0.80, top_k 20, min_p 0.0, presence_penalty 1.5, repetition_penalty 1.0. Requisiti: 4-bit su 16-19 GB di memoria (VRAM+RAM), 6-bit 23-26 GB, 8-bit 31 GB, BF16 56 GB; MTP richiede 1-2 GB extra. NVFP4 richiede GPU Blackwell (RTX 50, DGX Spark, B200, B300) e si esegue solo in vLLM o SGLang v0.5.19; per GPU più vecchie usare i GGUF. Comando…",
     "source": "https://unsloth.ai/docs/models/qwen3.8",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ibm-granite/granite-4.1-3b": {
    "id": "ibm-granite/granite-4.1-3b",
@@ -5496,61 +5734,26 @@
     }
    ],
    "score": 15.57,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Granite 4.1 3B LLMON-preview è una variante sperimentale del modello base Granite 4.1 3B addestrata per consumare e generare LLMON, un linguaggio di markup nativo per LLM che separa esplicitamente istruzioni, dati e requisiti tramite token speciali riservati. Offre robustezza quasi totale contro gli indirect prompt injection (benchmark OPI) mantenendo capacità generali paragonabili al modello Instruct standard. È pensato per RAG, tool-calling e agenti strutturati, con supporto nativo in Mellea e toolkit open-source per conversione JSON↔LLMON e fine-tuning LoRA su vocabolari custom.",
+    "tldr": "LLMON è un linguaggio di markup pensato per i modelli LLM (anziché per i parser JSON), che separa in modo esplicito istruzioni, dati e requisiti tramite token speciali riservati. Il post annuncia due preview sperimentali derivate da Granite 4.1 base, granite-4.1-3b-LLMON-preview e granite-4.1-8b-LLMON-preview, progettate per essere più resistenti alle prompt injection indirette senza perdere capacità generali rispetto agli Instruct.",
     "features": [
-     "Architettura: 3B parametri dense, derivato da Granite 4.1 base checkpoint (non da Instruct)",
-     "Contesto: 131.072 token (ereditato da Granite 4.1)",
-     "LLMON: markup XML-like con delimitatori riservati single-token per separare instruction/data/requirement/exec block",
-     "Sicurezza: resistenza a indirect prompt injection (attack success rate ~0% su benchmark OPI, ASB, StruQ)",
-     "Estensibilità: supporto Bring-Your-Own-Vocabulary + LoRA tuning (es. ScienceWorld, tool-calling agents)",
-     "Licenza Apache-2.0, pesi aperti, chat template LLMON-aware incluso"
+     "Markup XML-like con delimitatori strutturali come token speciali riservati, separando struttura e contenuto nel vocabolario; blocchi indirizzabili con ID a due caratteri per legare istruzioni ai dati su cui agire",
+     "Separazione istruzione/dati: nel benchmark OPI la robustezza (1 − attack success rate) è molto più alta rispetto ai modelli non-LLMON, con un vantaggio dichiarato del 47% sul miglior frontier model testato e del 95% sul miglior open-source testato",
+     "Capacità generali paragonabili ai modelli Granite 4.1 Instruct su categorie di benchmark standard",
+     "Estensione dei chat template con blocchi named (instruction, data, requirement, exec, output) e convertitori lossless da JSON a LLMON; supporto nativo in Mellea",
+     "Vocabolario personalizzabile: è possibile definire tag di dominio e addestrare un LoRA sopra il modello LLMON (esempio su ScienceWorld)",
+     "Addestramento: partenza dai checkpoint base di Granite 4.1, re-serializzazione di un corpus di instruction-tuning, dati decoy non collegati, cinque stadi GRPO seguiti da DPO su 1000 coppie on-policy; licenza Apache-2.0 dichiarata nei dati noti"
     ],
-    "benchmarks": [
-     {
-      "name": "OPI (indirect prompt injection robustness)",
-      "score": "~100% robustness (attack…",
-      "vs": [
-       {
-        "model": "best frontier model tested",
-        "score": "47% less robust"
-       },
-       {
-        "model": "best open-source model tested",
-        "score": "95% less robust"
-       }
-      ]
-     },
-     {
-      "name": "General capability (standard benchmark categories)",
-      "score": "on par with Granite 4.1…",
-      "vs": [
-       {
-        "model": "Granite 4.1 Instruct 3B",
-        "score": "comparable"
-       }
-      ]
-     },
-     {
-      "name": "ScienceWorld (text-based agent benchmark)",
-      "score": "LoRA-tuned LLMON model solves…",
-      "vs": [
-       {
-        "model": "untrained LLMON base model",
-        "score": "lower"
-       }
-      ]
-     }
-    ],
-    "params": "3B dense",
+    "benchmarks": [],
+    "params": "3.0B",
     "context": "131072",
-    "availability": "Pesi aperti su Hugging Face (granite-4.1-3b-LLMON-preview), licenza Apache-2.0. Utilizzabile con llama.cpp, vLLM, Ollama, LM Studio. Toolkit LLMON: https://github.com/generative-computing/llmon. Integrazione nativa in Mellea (https://github.com/generative-computing/mellea). Demo attenzione: Hugging Face Spaces. Paper: arXiv:2610.38120, arXiv:2603.22519. Stato: experimental preview, non per…",
-    "local_tips": "Usare il chat template LLMON-aware incluso (nomina parti del turno: instruction/data/requirement con exec:true/false). Per JSON strutturato, usare llmon-converters per conversione lossless JSON↔LLMON. Per domini custom, definire tag propri e fare LoRA tuning sul modello LLMON (es. notebook ScienceWorld). Nessuna pipeline di conversione richiesta per uso base.",
+    "availability": "Preview sperimentale (non per produzione), pesi aperti su Hugging Face (granite-4.1-3b-LLMON-preview e granite-4.1-8b-LLMON-preview), repo GitHub generative-computing/llmon, Mellea, demo LLMON Attention Visualization su Hugging Face Spaces",
+    "local_tips": "Il testo non fornisce indicazioni su sampling, framework di esecuzione locale o quantizzazioni ufficiali; viene indicato solo che il chat template del modello converte automaticamente i blocchi in LLMON e che il toolkit LLMON-converters è disponibile nel repo GitHub.",
     "source": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ibm-granite/granite-4.1-8b": {
    "id": "ibm-granite/granite-4.1-8b",
@@ -5843,71 +6046,26 @@
     }
    ],
    "score": 15.87,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Granite 4.1 8B LLMON-preview è una variante sperimentale addestrata per consumare e generare LLMON, un linguaggio di markup nativo per LLM che separa esplicitamente istruzioni, dati e requisiti tramite token speciali riservati. Mantiene le capacità generali del modello base Granite 4.1 Instruct ma elimina quasi completamente gli attacchi di indirect prompt injection sui benchmark OPI, ASB e StruQ. È pensato per RAG, tool-calling e agenti strutturati, con supporto nativo in Mellea e toolkit open-source per conversione JSON↔LLMON e fine-tuning LoRA su vocabolari custom.",
+    "tldr": "Il testo è un annuncio di IBM su LLMON, un markup language pensato per i LLM, e sui due modelli sperimentali granite-4.1-3b-LLMON-preview e granite-4.1-8b-LLMON-preview, derivati dai base model Granite 4.1. Il valore aggiunto è la separazione esplicita tra istruzioni e dati tramite token speciali riservati, che riduce drasticamente il successo degli attacchi di prompt injection mantenendo la capacità generale vicina ai Granite 4.1 Instruct. Adatto soprattutto a pipeline RAG, agenti e applicazioni enterprise esposte a dati non fidati.",
     "features": [
-     "Architettura: 8B parametri dense, derivato da Granite 4.1 base checkpoint (non da Instruct), post-training con LLMON serialization + 5 stadi GRPO + DPO finale su preference pairs da tentativi di injection",
-     "Contesto: 131.072 token (ereditato da Granite 4.1)",
-     "LLMON: markup XML-like con delimitatori strutturali come token speciali riservati (single-token), block ID a 2 caratteri (single-token), execution block che lega istruzioni→dati→requisiti→output",
-     "Sicurezza: separazione istruzione/dati appresa (non guardrail); istruzioni non richiamate nell'exec block vengono ignorate; injection success rate ~0% su OPI benchmark",
-     "Estensibilità: schema libero, tag custom (es. instr.task.goal, req.planning_policy.rule), LoRA tuning dimostrato su ScienceWorld e tool-calling agents",
-     "Ecosistema: chat template che LLMONizza automaticamente, libreria llmon-converters (JSON↔LLMON lossless), integrazione nativa in Mellea, repo GitHub generative-computing/llmon, demo attenzione su HF Spaces"
+     "Formato LLMON: markup XML-like con delimitatori riservati come special token, blocchi indirizzabili e blocco exec che lega istruzioni, dati e requisiti",
+     "Riduzione dell'attack success rate su OPI: robustezza (1 − ASR) superiore del 47% rispetto al miglior modello frontier testato e del 95% rispetto al miglior open-source testato",
+     "Capacità generale sui benchmark standard allineata ai Granite 4.1 Instruct",
+     "Convertitori JSON↔LLMON senza perdita e possibilità di definire vocabolari di tag personalizzati con LoRA",
+     "Addestramento: re-serializzazione di un corpus di instruction tuning, dati decoy, cinque stage GRPO e uno stage DPO finale",
+     "Licenza, contesto e parametri: licenza apache-2.0 e contesto 131072 già noti; nel testo non sono dichiarati esplicitamente i parametri oltre agli 8B/3B"
     ],
-    "benchmarks": [
-     {
-      "name": "OPI (indirect prompt injection robustness)",
-      "score": "~100% robustness (attack…",
-      "vs": [
-       {
-        "model": "best frontier model tested",
-        "score": "47% less robust"
-       },
-       {
-        "model": "best open-source model tested",
-        "score": "95% less robust"
-       }
-      ]
-     },
-     {
-      "name": "ASB",
-      "score": "similar trend to OPI",
-      "vs": []
-     },
-     {
-      "name": "StruQ",
-      "score": "similar trend to OPI",
-      "vs": []
-     },
-     {
-      "name": "General capability (standard benchmark categories)",
-      "score": "on par with Granite 4.1…",
-      "vs": [
-       {
-        "model": "Granite 4.1 Instruct 8B",
-        "score": "comparable"
-       }
-      ]
-     },
-     {
-      "name": "ScienceWorld (held-out games, LoRA on custom vocabulary)",
-      "score": "trained adapter outperforms…",
-      "vs": [
-       {
-        "model": "LLMON base (no LoRA)",
-        "score": "lower"
-       }
-      ]
-     }
-    ],
-    "params": "8B dense",
-    "context": "131072",
-    "availability": "Pesi aperti (Apache-2.0) su Hugging Face: granite-4.1-8b-LLMON-preview e granite-4.1-3b-LLMON-preview. Usabili con llama.cpp, vLLM, Ollama, LM Studio tramite chat template LLMON incluso. Repo toolkit: https://github.com/generative-computing/llmon. Integrazione nativa in Mellea (https://github.com/generative-computing/mellea). Preview sperimentale, non per produzione.",
-    "local_tips": "Usare il chat template fornito (gestisce automaticamente la serializzazione LLMON). Per dati strutturati (JSON) usare llmon-converters per conversione lossless. Per domini custom definire tag propri e fare LoRA tuning (esempi notebook su ScienceWorld e tool-calling). Quantizzazione standard GGUF/GPTQ/AWQ compatibile; nessun requisito speciale di sampling segnalato. Visualizzazione attenzione LLMON disponibile su HF Spaces per debug.",
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "Pesi aperti come preview sperimentale (granite-4.1-3b-LLMON-preview e granite-4.1-8b-LLMON-preview); repo GitHub generative-computing/llmon; integrazione in Mellea; demo LLMON Attention Visualization su Hugging Face Spaces; non destinato alla produzione",
+    "local_tips": "Non presenti nel testo indicazioni su sampling, quantizzazioni ufficiali o framework di esecuzione locale; il testo cita solo la possibilità di sostituire il modello nel template di chat senza pipeline di conversione",
     "source": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ann:alphaproofcode": {
    "id": "ann:alphaproofcode",
@@ -5930,7 +6088,26 @@
     }
    ],
    "score": 6.3,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "AlphaProof Code è un framework agentico multi-LLM sviluppato da Google DeepMind per la verifica formale di codice software a un livello di profondità senza precedenti. Ha dimostrato matematicamente proprietà di sicurezza del codice reale del protocollo crittografico di Signal, generando oltre sei milioni di righe di Lean. È adatto a verifica formale di software critico (crittografia, firmware, infrastrutture), non è un modello da eseguire localmente.",
+    "features": [
+     "Framework agentico multi-LLM: esperti umani definiscono le specifiche formali, agenti AI (basati su Gemini Carbon) generano le dimostrazioni",
+     "Verifica del codice compilato, non solo del design del protocollo, con proprietà come la protezione dei messaggi prima e dopo la compromissione temporanea di un dispositivo",
+     "Ogni dimostrazione è controllata dal proof assistant Lean; agenti segnalano solo circa l'1% della codebase per revisione umana",
+     "Validazione: reintrodotti due bug reali già corretti, il sistema ha prodotto dimostrazioni automatiche di insicurezza della versione difettosa",
+     "Tempo di verifica di quattro settimane per un lavoro che storicamente richiede anni a team di esperti",
+     "Artefatti di verifica formale rilasciati open-source per uso della comunità"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "Artefatti di verifica formale open-source; paper tecnico disponibile sul sito DeepMind. Nessuna informazione su pesi di modello, API o prezzo.",
+    "local_tips": "",
+    "source": "https://deepmind.google/blog/introducing-alphaproof-code/",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ann:miciusflash": {
    "id": "ann:miciusflash",
@@ -5953,7 +6130,47 @@
     }
    ],
    "score": 8.7,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Micius-Flash è un modello open-source da 27B parametri, multimodale e orientato a ingegneria dei semiconduttori e applicazioni scientifiche, addestrato con una pipeline dati basata su un albero di conoscenza e con Multi-Teacher On-Policy Distillation (MOPD). Dichiara 64.2% di accuratezza media su benchmark di hardware coding e 62.4% su un benchmark agentico specifico per semiconduttori, superando baseline di pari dimensione di 15.0 e 17.2 punti percentuali. È adatto a flussi di lavoro agentici con tool EDA e KiCad (PCB design, automazione del design di chip, sviluppo software).",
+    "features": [
+     "Modello da 27B parametri con input multimodale nativo e ragionamento approfondito",
+     "Finestra di contesto da 256K token",
+     "Pipeline dati 'knowledge-tree-driven' con costruzione/espansione dell'albero di conoscenza, data synthesis e validazione qualitativa con hard-example augmentation",
+     "Addestramento di expert model dedicati (conoscenza/ragionamento semiconduttori, hardware coding, multimodale semiconduttori, agentic experts) integrati tramite MOPD in un unico modello",
+     "Micius Harness: integrazione con tool EDA, KiCad e ambienti di esecuzione, con uso del feedback per pianificazione multi-step, debug del codice e verifica iterativa",
+     "Rilascio come modello open-source"
+    ],
+    "benchmarks": [
+     {
+      "name": "Hardware coding benchmarks (media su 20+ dataset, ~15K record)",
+      "score": "64.2%",
+      "vs": [
+       {
+        "model": "same-size baseline",
+        "score": "49.2% (implicito: 64.2% -…"
+       }
+      ]
+     },
+     {
+      "name": "Semiconductor-specific agent benchmark",
+      "score": "62.4%",
+      "vs": [
+       {
+        "model": "same-size baseline",
+        "score": "45.2% (implicito: 62.4% -…"
+       }
+      ]
+     }
+    ],
+    "params": "27B (dense, non specificato nel testo)",
+    "context": "256K token",
+    "availability": "Pesi aperti (rilascio open-source dichiarato); pagina di progetto: zhiman.cn/models/micius; paper su arXiv e HuggingFace",
+    "local_tips": "",
+    "source": "https://huggingface.co/papers/2611.10015",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ann:ripplepreview": {
    "id": "ann:ripplepreview",
@@ -5976,7 +6193,23 @@
     }
    ],
    "score": 8.7,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Ripple Preview è un modello dense da 65B parametri di Ricursive Intelligence, dichiarato orientato al coding agentico. Il testo lo annuncia come disponibile tramite Ollama con il comando 'ollama run ripple-preview', nel contesto della release v0.40.16 di Ollama. Il testo non fornisce benchmark, specifiche di contesto o dettagli architetturali aggiuntivi.",
+    "features": [
+     "Modello dense da 65B parametri costruito per agentic coding",
+     "Disponibile in Ollama tramite 'ollama run ripple-preview'",
+     "Nella stessa release: supporto CUDA 13.5 per Windows on ARM e llama.cpp aggiornato (note generiche della release, non specifiche del modello)"
+    ],
+    "benchmarks": [],
+    "params": "65B dense",
+    "context": "",
+    "availability": "Eseguibile tramite Ollama (ollama run ripple-preview); il testo non specifica licenza, prezzo API o altre piattaforme",
+    "local_tips": "",
+    "source": "https://github.com/ollama/ollama/releases/tag/v0.40.16",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ann:geminidecision1": {
    "id": "ann:geminidecision1",
@@ -5999,7 +6232,26 @@
     }
    ],
    "score": 8.6,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Gemini Decision 1 è il nuovo modello API di Google nella categoria 'decision model', quasi identico nell'interfaccia a 'Jev' e al 'GPT-6 Luna' di OpenAI: supporta domande sì/no, a scelta multipla e a punteggio su rubrica. Il suo punto distintivo è essere completamente multimodale (testo, immagini, audio, video, PDF), mentre Jev accetta solo testo/JSON e OpenAI testo e immagini. Il testo lo descrive come adatto a valutazioni e classificazioni su contenuti multimodali tramite API.",
+    "features": [
+     "Tre tipi di domanda supportati: yes/no, choice e rubric-scoring, con il termine 'Noul' per le domande sì/no ripreso da Jev",
+     "Multimodalità completa: testo, immagini, audio, video e PDF",
+     "Per le domande sì/no restituisce una probabilità continua invece di 1.0/0.0 (es. 0.92 per 'robot' e 0.05 per 'dragon' nel test video)",
+     "Test riportato su un video con domande su oggetti e ambientazione (robot, drago, Francia, USA)",
+     "Prezzo di input dichiarato di 10 centesimi per milione di token, con output gratuito",
+     "Confronto di prezzo: Jev resta il più economico a 4,2 centesimi per milione di token di input"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "API, prezzo di 10 centesimi per milione di token di input e output gratuito; pesi aperti non dichiarati nel testo",
+    "local_tips": "",
+    "source": "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "LiquidAI/LFM2.5-24B-A2B": {
    "id": "LiquidAI/LFM2.5-24B-A2B",
@@ -6301,149 +6553,24 @@
     }
    ],
    "score": 15.41,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "LFM2.5-24B-A2B è un modello MoE da 24B parametri totali (2.45B attivi) ottimizzato per agenti veloci e privati on-device. Introduce una finestra di contesto a 131K token, vocabolario espanso a 128K e post-training specializzato in tool-use e reasoning, superando modelli più grandi come Qwen3-30B-A3B nei benchmark agentici.",
+    "tldr": "LFM2.5-24B-A2B è un modello di ragionamento text-only da 24B parametri totali con circa 2B attivi per token (architettura MoE con 64 esperti, top-4), pensato per agenti rapidi e privati on-device. È l'ultimo e più grande modello della famiglia LFM2.5 e si distingue per tool use e throughput di inferenza, mentre non è consigliato da solo per compiti knowledge-heavy (va abbinato a retrieval o web search).",
     "features": [
-     "Architettura MoE ibrida: 40 layer (30 double-gated short convolution + 10 GQA), 64 esperti per blocco MoE con routing top-4",
-     "Contesto 131.072 token (da 32K) e vocabolario 128K token (da 65K) tramite espansione tokenizer in-place",
-     "Modello 'pure reasoning': pensa sempre prima di rispondere, inserisce tag <thinking> nel chat template",
-     "Addestrato su 36T token totali (33T pre-training + 2T mid-training + 300B long-context) con RL agentico in harness reali (OpenClaw, Hermes Agent, Pi, OpenCode)",
-     "Supporto nativo tool-use con formato JSON strutturato e integrazione documentata per OpenClaw, Hermes, Pi, OpenCode",
-     "Disponibile in formati nativi (Transformers/vLLM/SGLang), FP8, GGUF (llama.cpp), ONNX, MLX-4bit e DSpark per speculative decoding"
+     "Architettura ibrida: 40 layer (30 blocchi short convolution double-gated + 10 GQA), 64 esperti per blocco MoE con routing top-4; contesto esteso a 131.072 token (da 32K di LFM2-24B-A2B) e vocabolario portato a 128K token tramite espansione in-place del…",
+     "Reasoning sempre attivo: il modello pensa prima di rispondere, aggiungendo un tag di reasoning nel chat template all'inizio della risposta dell'assistente.",
+     "Tool use e agentic: post-training con distillazione on-policy e reinforcement learning agentico in harness come OpenClaw, Hermes Agent, Pi e OpenCode; supporta chiamate a tool in formato ChatML-like.",
+     "Efficienza: fino a 1.7x più veloce dei MoE comparabili on-device; 184 tok/s su Apple M5 Max, 114 tok/s su AMD Ryzen AI Max+ 395, fino a 21K output tok/s su singola NVIDIA B300 con SGLang (misure dichiarate nel testo).",
+     "Multilingua: supporto dichiarato per 16 lingue, tra cui italiano, inglese, cinese, giapponese, russo e hindi.",
+     "Formati di distribuzione: pesi nativi, FP8 a blocchi, GGUF, ONNX, MLX 4-bit e checkpoint DSpark per speculative decoding (annunciato come 'coming soon')."
     ],
     "benchmarks": [
-     {
-      "name": "LiveClaw",
-      "score": "48.09",
-      "vs": [
-       {
-        "model": "Qwen3-30B-A3B",
-        "score": "38.19"
-       },
-       {
-        "model": "Gemma-4-26B-A4B-it",
-        "score": "41.25"
-       },
-       {
-        "model": "Nemotron-3.5-Lightning (30B-A3B)",
-        "score": "37.72"
-       }
-      ]
-     },
-     {
-      "name": "BFCLv4",
-      "score": "65.01",
-      "vs": [
-       {
-        "model": "Qwen3-30B-A3B",
-        "score": "65.00"
-       },
-       {
-        "model": "Gemma-4-26B-A4B-it",
-        "score": "57.09"
-       },
-       {
-        "model": "Nemotron-3.5-Lightning (30B-A3B)",
-        "score": "53.78"
-       }
-      ]
-     },
-     {
-      "name": "ToolSandbox",
-      "score": "80.71",
-      "vs": [
-       {
-        "model": "Qwen3-30B-A3B",
-        "score": "75.02"
-       },
-       {
-        "model": "Gemma-4-26B-A4B-it",
-        "score": "72.09"
-       },
-       {
-        "model": "Nemotron-3.5-Lightning (30B-A3B)",
-        "score": "75.13"
-       }
-      ]
-     },
-     {
-      "name": "AutomationBench",
-      "score": "27.69",
-      "vs": [
-       {
-        "model": "Qwen3-30B-A3B",
-        "score": "8.72"
-       },
-       {
-        "model": "Gemma-4-26B-A4B-it",
-        "score": "5.46"
-       },
-       {
-        "model": "Nemotron-3.5-Lightning (30B-A3B)",
-        "score": "2.61"
-       }
-      ]
-     },
-     {
-      "name": "PinchBench",
-      "score": "83.18",
-      "vs": [
-       {
-        "model": "Qwen3-30B-A3B",
-        "score": "89.93"
-       },
-       {
-        "model": "Gemma-4-26B-A4B-it",
-        "score": "77.12"
-       },
-       {
-        "model": "Nemotron-3.5-Lightning (30B-A3B)",
-        "score": "84.20"
-       }
-      ]
-     },
-     {
-      "name": "τ³-Bench Banking",
-      "score": "8.04",
-      "vs": [
-       {
-        "model": "Qwen3-30B-A3B",
-        "score": "7.63"
-       },
-       {
-        "model": "Gemma-4-26B-A4B-it",
-        "score": "4.54"
-       },
-       {
-        "model": "Nemotron-3.5-Lightning (30B-A3B)",
-        "score": "7.01"
-       }
-      ]
-     },
-     {
-      "name": "WebArena Verified",
-      "score": "26.75",
-      "vs": [
-       {
-        "model": "Qwen3-30B-A3B",
-        "score": "37.62"
-       },
-       {
-        "model": "Gemma-4-26B-A4B-it",
-        "score": "25.62"
-       },
-       {
-        "model": "Nemotron-3.5-Lightning (30B-A3B)",
-        "score": "28.69"
-       }
-      ]
-     },
      {
       "name": "GPQA Diamond",
       "score": "74.42",
       "vs": [
        {
-        "model": "Qwen3-30B-A3B",
+        "model": "Qwen3.6-35B-A3B",
         "score": "83.69"
        },
        {
@@ -6461,7 +6588,7 @@
       "score": "7.40",
       "vs": [
        {
-        "model": "Qwen3-30B-A3B",
+        "model": "Qwen3.6-35B-A3B",
         "score": "7.69"
        },
        {
@@ -6475,65 +6602,11 @@
       ]
      },
      {
-      "name": "IFEval",
-      "score": "96.75",
-      "vs": [
-       {
-        "model": "Qwen3-30B-A3B",
-        "score": "93.06"
-       },
-       {
-        "model": "Gemma-4-26B-A4B-it",
-        "score": "92.00"
-       },
-       {
-        "model": "Nemotron-3.5-Lightning (30B-A3B)",
-        "score": "94.19"
-       }
-      ]
-     },
-     {
-      "name": "IFBench",
-      "score": "74.69",
-      "vs": [
-       {
-        "model": "Qwen3-30B-A3B",
-        "score": "64.21"
-       },
-       {
-        "model": "Gemma-4-26B-A4B-it",
-        "score": "47.44"
-       },
-       {
-        "model": "Nemotron-3.5-Lightning (30B-A3B)",
-        "score": "71.67"
-       }
-      ]
-     },
-     {
-      "name": "MATH-500",
-      "score": "96.04",
-      "vs": [
-       {
-        "model": "Qwen3-30B-A3B",
-        "score": "96.73"
-       },
-       {
-        "model": "Gemma-4-26B-A4B-it",
-        "score": "95.66"
-       },
-       {
-        "model": "Nemotron-3.5-Lightning (30B-A3B)",
-        "score": "96.40"
-       }
-      ]
-     },
-     {
       "name": "SWE-Bench Verified (OpenCode)",
       "score": "51.00",
       "vs": [
        {
-        "model": "Qwen3-30B-A3B",
+        "model": "Qwen3.6-35B-A3B",
         "score": "66.20"
        },
        {
@@ -6547,11 +6620,83 @@
       ]
      },
      {
+      "name": "MATH-500",
+      "score": "96.04",
+      "vs": [
+       {
+        "model": "Qwen3.6-35B-A3B",
+        "score": "96.73"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "95.66"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "96.40"
+       }
+      ]
+     },
+     {
+      "name": "IFEval",
+      "score": "96.75",
+      "vs": [
+       {
+        "model": "Qwen3.6-35B-A3B",
+        "score": "93.06"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "92.00"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "94.19"
+       }
+      ]
+     },
+     {
+      "name": "BFCLv4",
+      "score": "65.01",
+      "vs": [
+       {
+        "model": "Qwen3.6-35B-A3B",
+        "score": "65.00"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "57.09"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "53.78"
+       }
+      ]
+     },
+     {
+      "name": "LiveClaw",
+      "score": "48.09",
+      "vs": [
+       {
+        "model": "Qwen3.6-35B-A3B",
+        "score": "38.19"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "41.25"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "37.72"
+       }
+      ]
+     },
+     {
       "name": "SciCode",
       "score": "32.71",
       "vs": [
        {
-        "model": "Qwen3-30B-A3B",
+        "model": "Qwen3.6-35B-A3B",
         "score": "37.35"
        },
        {
@@ -6565,15 +6710,14 @@
       ]
      }
     ],
-    "params": "24B totali / 2.45B attivi",
-    "context": "131.072 token",
-    "availability": "Pesi aperti su Hugging Face (LiquidAI/LFM2.5-24B-A2B) con licenza 'other' (non standard OSI). Formati: nativo (Transformers/vLLM/SGLang), FP8, GGUF (llama.cpp), ONNX, MLX-4bit, DSpark (speculative decoding). API a pagamento: $0.05/M input, $0.70/M output. Integrazione documentata per OpenClaw, Hermes Agent, Pi, OpenCode, LM Studio.",
-    "local_tips": "Generazione consigliata: temperature=0.1, top_k=50, repetition_penalty=1.05. Per edge/CPU: llama.cpp con quantizzazione Q4_K_M (184 tok/s su Apple M5 Max, 114 tok/s su AMD Ryzen AI Max+ 395). Per GPU throughput: SGLang 0.5.22 con pesi BF16 su singola NVIDIA B300 (21K+ output tok/s ad alta concorrenza). vLLM supportato per serving produzione. Unsloth e TRL per fine-tuning LoRA (CPT, SFT, DPO, GRPO).",
+    "params": "24B totali / ~2B attivi (il testo indica 2B attivi nel titolo e 2.45B nei dettagli tecnici)",
+    "context": "131072 token",
+    "availability": "Pesi aperti su Hugging Face (LiquidAI/LFM2.5-24B-A2B, con varianti FP8, GGUF, ONNX, MLX-4bit); licenza indicata come 'other' nei dati noti. Utilizzabile con Transformers, vLLM, SGLang, llama.cpp, MLX, LM Studio. Prezzo API nei dati noti: 0.05 input / 0.70 output (unità non specificata nel testo). Endpoint locale compatibile OpenAI configurabile per Hermes, OpenClaw e Pi.",
+    "local_tips": "Parametri di generazione consigliati: temperature 0.1, top_k 50, repetition_penalty 1.05. Il chat template include un tag di reasoning all'inizio della risposta dell'assistente. Framework indicati: Transformers (>=5.0.0, dtype bfloat16, device_map auto, flash_attention_2 opzionale), vLLM e SGLang per GPU, llama.cpp con GGUF (benchmark edge con Q4_K_M), MLX-4bit per Apple Silicon, LM Studio. Il testo non fornisce indicazioni specifiche sul consumo di VRAM per la RTX 5090.",
     "source": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "arcee-ai/Arcee-Agent": {
    "id": "arcee-ai/Arcee-Agent",
@@ -6846,26 +6990,26 @@
     }
    ],
    "score": 14.68,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Arcee-Agent è un modello da 7B parametri basato su Qwen2-7B, specializzato in function calling e tool use. Addestrato con la tecnica Spectrum, offre prestazioni competitive con modelli molto più grandi mantenendo velocità ed efficienza per deployment real-time e ambienti resource-constrained.",
+    "tldr": "Arcee-Agent è un modello da 7,62B parametri, inizializzato da Qwen2-7B, progettato specificamente per function calling e tool use. Il testo lo presenta come capace di rivaleggiare con modelli molto più grandi mantenendo velocità ed efficienza, e utilizzabile sia come router di strumenti sia come agente di chat autonomo. È indicato per sviluppatori e ricercatori che vogliono costruire automazioni basate su chiamate a API, database ed esecuzione di codice.",
     "features": [
-     "Architettura: 7B parametri dense, inizializzato da Qwen2-7B",
-     "Context window: 131K token",
-     "Addestrato con Spectrum (tecnica di training efficiente)",
-     "Function calling avanzato: supporta formati Glaive FC v2, Salesforce, Agent-FLAN, ottimale con VLLM OpenAI FC format",
-     "Dual-mode: Tool Router (middleware per routing a tool/LLM maggiori) e Standalone Chat Agent",
-     "Licenza Apache-2.0, pesi aperti con GGUF ufficiali disponibili"
+     "Architettura di 7B parametri inizializzata da Qwen2-7B, addestrata con la tecnica Spectrum (arXiv 2406.06623) e con compute fornito da CrusoeAI",
+     "Function calling avanzato: interpreta, esegue e concatena chiamate a funzioni/API esterne; supporta formati Glaive FC v2, Salesforce e Agent-FLAN, con prestazioni migliori nel formato VLLM OpenAI FC",
+     "Doppia modalità: Tool Router (middleware che instrada richieste verso strumenti o modelli più grandi) e Standalone Chat Agent per conversazioni generali",
+     "Contesto dichiarato di 131072 token e licenza Apache-2.0 (dato riportato nei dati noti forniti)",
+     "Efficienza e bassa latenza dichiarate, adatte a scenari real-time e a risorse limitate",
+     "GGUF ufficiali disponibili tramite CrusoeAI per l'esecuzione locale"
     ],
     "benchmarks": [],
-    "params": "7.62B",
+    "params": "7B (7,62B dichiarati nei dati noti)",
     "context": "131072",
-    "availability": "Pesi aperti su Hugging Face (arcee-ai/Arcee-Agent). GGUF ufficiali disponibili su crusoeai/Arcee-Agent-GGUF per llama.cpp, Ollama, LM Studio. Utilizzabile con vLLM (formato OpenAI FC raccomandato). Compute per training fornito da CrusoeAI.",
-    "local_tips": "Il modello performa meglio con il formato VLLM OpenAI FC. Template di tool calling specifico usato in evaluation: 'In this environment, you have access to a set of tools you can use to answer the user's question. You may call them like this: $TOOL_NAME $PARAMETER_VALUE ... Here are the tools available:'. GGUF disponibili per quantizzazione efficiente su GPU consumer.",
+    "availability": "Pesi aperti con licenza Apache-2.0; GGUF disponibili su Hugging Face tramite CrusoeAI (https://huggingface.co/crusoeai/Arcee-Agent-GGUF)",
+    "local_tips": "Il testo indica che il modello è stato valutato usando un template di tool specifico (formato con blocchi $TOOL_NAME / $PARAMETER_VALUE) e che il formato VLLM OpenAI FC offre le prestazioni migliori. Sono disponibili GGUF ufficiali di CrusoeAI. Non sono presenti indicazioni su sampling o framework specifici oltre al riferimento a vLLM.",
     "source": "https://huggingface.co/arcee-ai/Arcee-Agent",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ann:edge0145b": {
    "id": "ann:edge0145b",
@@ -6889,7 +7033,115 @@
     }
    ],
    "score": 8.7,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Edge0-145B è un modello open-weight da 145B parametri pensato per girare in locale su laptop (picco di memoria dichiarato 29GB, decoding oltre 80 token/s), insieme a un framework di inferenza unificato. Il testo lo presenta come competitivo con alcuni modelli cloud frontier su coding, reasoning e instruction following, con un focus su task agentici complessi.",
+    "features": [
+     "Architettura a esperti sparsi con matrici condivise: gruppi di 64 esperti condividono due grandi matrici, con circa 10B parametri attivi per step di inferenza su 145B totali",
+     "Addestrato nativamente per l'esecuzione on-device fin dall'inizio, non come compressione post-training di un modello cloud",
+     "Pipeline di caricamento su tre livelli (GPU, memoria di sistema ~40GB di libreria esperti, SSD ~48GB di dati del vocabolario) e scheduling CPU+GPU con speculative decoding",
+     "Contesto dichiarato 128K–256K con velocità sostanzialmente stabile su input lunghi",
+     "Capacità agentiche: pianificazione, scrittura ed esecuzione di codice, debugging e verifica visiva dei risultati tramite screenshot",
+     "Parte di una famiglia più ampia (Edge0-120B, 35B e 8B per telefoni; Audio8, Decision0, Embedding0)"
+    ],
+    "benchmarks": [
+     {
+      "name": "DeepSWE 1.1",
+      "score": "64.6",
+      "vs": [
+       {
+        "model": "Qwen3.8-Flash-Next",
+        "score": "58.7"
+       },
+       {
+        "model": "DeepSeek-V4-Flash-0731",
+        "score": "54.4"
+       }
+      ]
+     },
+     {
+      "name": "Terminal-Bench 2.1",
+      "score": "86.52",
+      "vs": [
+       {
+        "model": "Qwen3.8-Flash-Next",
+        "score": "83.3"
+       },
+       {
+        "model": "DeepSeek-V4-Flash-0731",
+        "score": "82.7"
+       },
+       {
+        "model": "Claude-Opus-4.6 (Max)",
+        "score": "78.2"
+       }
+      ]
+     },
+     {
+      "name": "HLE",
+      "score": "35.4",
+      "vs": [
+       {
+        "model": "Qwen3.8-Flash-Next",
+        "score": "35.9"
+       },
+       {
+        "model": "Claude-Opus-4.6 (Max)",
+        "score": "40.0"
+       }
+      ]
+     },
+     {
+      "name": "GPQA-Diamond",
+      "score": "90.4",
+      "vs": [
+       {
+        "model": "DeepSeek-V4-Flash-0731",
+        "score": "90.8"
+       },
+       {
+        "model": "Claude-Opus-4.6 (Max)",
+        "score": "91.3"
+       }
+      ]
+     },
+     {
+      "name": "IFBench",
+      "score": "80.6",
+      "vs": [
+       {
+        "model": "DeepSeek-V4-Flash-0731",
+        "score": "79.2"
+       },
+       {
+        "model": "Claude-Opus-4.6 (Max)",
+        "score": "62.5"
+       }
+      ]
+     },
+     {
+      "name": "AA-LCR",
+      "score": "79.3",
+      "vs": [
+       {
+        "model": "Qwen3.8-27B",
+        "score": "82.0"
+       },
+       {
+        "model": "Claude-Opus-4.6 (Max)",
+        "score": "78.0"
+       }
+      ]
+     }
+    ],
+    "params": "145B totali (circa 10B attivi per step di inferenza, architettura MoE con esperti sparsi)",
+    "context": "128K–256K",
+    "availability": "Pesi aperti (open-source, con il framework di inferenza e gli strumenti di deploy); demo tramite Edge0 App. Il testo non riporta prezzi API né licenza specifica.",
+    "local_tips": "Il testo indica: picco di memoria ~29GB su laptop compatibili (es. MacBook Pro), target 48GB di RAM; deploy tramite il framework di inferenza unificato rilasciato insieme ai pesi; speculative decoding e caricamento pipeline GPU/RAM/SSD gestiti dal framework. Non sono riportate quantizzazioni ufficiali, parametri di sampling o integrazioni con llama.cpp/Ollama/vLLM/LM Studio.",
+    "source": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "Qwen/Qwen3.5-4B": {
    "id": "Qwen/Qwen3.5-4B",
@@ -7182,47 +7434,19 @@
     }
    ],
    "score": 13.28,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Qwen3.5-4B è un modello open-weight da 4B parametri con licenza Apache-2.0 e contesto fino a 262k token, valutato nel paper BioAgent-DF come agente biomedicale su task SciFact e hERG screening. Lo studio mostra che errori numerici silenziosi su GPU alterano le decisioni dell'agente (es. skip di safety test) pur mantenendo invariato il verdetto finale, e che il recupero richiede il ripristino dello stato di esecuzione, non solo dell'output dello strumento.",
-    "features": [
-     "4B parametri, architettura Qwen (dense)",
-     "Context window 262.144 token",
-     "Licenza Apache-2.0 (pesi aperti)",
-     "Pipeline image-text-to-text (multimodale)",
-     "Valutato come agente scientifico (Biomni A1) su SciFact e hERG cardiac safety screening",
-     "Evidenzia separazione tra verdetto finale e evidence citata (citation shifts senza verdict changes)"
-    ],
-    "benchmarks": [
-     {
-      "name": "SciFact (citation/evidence audit)",
-      "score": "repeatable citation changes…",
-      "vs": [
-       {
-        "model": "Gemma 3 4B IT",
-        "score": "repeatable read and citation…"
-       }
-      ]
-     },
-     {
-      "name": "hERG cardiac safety screening (Biomni A1 agent)",
-      "score": "2/402 compounds (K12252,…",
-      "vs": [
-       {
-        "model": "GPT-6.1 Sol (via Biomni)",
-        "score": "citation shifts without…"
-       }
-      ]
-     }
-    ],
-    "params": "4B dense",
-    "context": "262144",
-    "availability": "Pesi aperti (Apache-2.0), utilizzabile in locale con llama.cpp, vLLM, Ollama, LM Studio. Nessuna informazione su API ufficiale o prezzi nel testo.",
-    "local_tips": "Nessun consiglio specifico su quantizzazione, sampling o framework presente nel testo. Il modello è 4B parametri: su RTX 5090 (32 GB VRAM) gira agevolmente in FP16/BF16 o quantizzato (es. Q4_K_M, Q8_0) con contesto esteso.",
+    "tldr": "Il testo fornito è un thread/annuncio di una paper page di Hugging Face su BioAgent-DF, uno studio sugli effetti di guasti GPU silenziosi sulle decisioni di agenti AI biomedici. Qwen3.5-4B compare solo come modello su cui sono stati osservati cambiamenti di citazione in un benchmark SciFact; il testo non descrive architettura, benchmark o capacità del modello Qwen3.5-4B.",
+    "features": [],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "",
+    "local_tips": "",
     "source": "https://huggingface.co/papers/2611.01527",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ann:openvisionbananaovb": {
    "id": "ann:openvisionbananaovb",
@@ -7245,7 +7469,47 @@
     }
    ],
    "score": 7.9,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Open Vision Banana (OVB) è una ricetta completamente aperta e riproducibile per trasformare generatori di immagini pre-addestrati in sistemi di percezione visiva multi-task, convertendo i compiti visivi in editing di immagini condizionato. Rispetto a Vision Banana, di cui dati, pesi e codice non sono pubblici, OVB rilascia dataset, pipeline, codice di training/valutazione e checkpoint. È adatto a segmentazione semantica, depth estimation e segmentazione referenziale/di ragionamento con modelli generativi open-weight.",
+    "features": [
+     "Ricetta open e riproducibile che converte generatori pre-addestrati (base open-weight da 4B e 9B parametri) in percezione multi-task",
+     "Analisi delle scelte progettuali che contano per la generalizzazione: codifica dei colori, design dei prompt, adattamento dei parametri e bilanciamento dei task",
+     "Legend ensembling: metodo di test-time scaling senza retraining che segmenta con più legende colore-classe e fonde i risultati per voto di maggioranza",
+     "Mantiene in gran parte le capacità di editing di immagini del modello base",
+     "Rilascio di pipeline di costruzione del dataset, codice di training e valutazione, checkpoint finali, intermedi e di ablation",
+     "Dati di training: 2.1M-3.8M coppie da dataset pubblici"
+    ],
+    "benchmarks": [
+     {
+      "name": "Cityscapes zero-shot (mIoU)",
+      "score": "73.9",
+      "vs": [
+       {
+        "model": "Vision Banana",
+        "score": "69.9"
+       }
+      ]
+     },
+     {
+      "name": "Cityscapes (miglioramento con legend ensembling, mIoU)",
+      "score": "+8.7 punti",
+      "vs": []
+     },
+     {
+      "name": "COCO-Object (miglioramento con legend ensembling, mIoU)",
+      "score": "+15.0 punti",
+      "vs": []
+     }
+    ],
+    "params": "4B e 9B (modelli base open-weight di partenza)",
+    "context": "",
+    "availability": "Pesi aperti: dataset, pipeline di costruzione, codice di training/valutazione e checkpoint rilasciati; codice su GitHub (github.com/OpenVisionBanana/OpenVisionBanana); pagina progetto openvisionbanana.github.io",
+    "local_tips": "",
+    "source": "https://huggingface.co/papers/2611.15844",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ann:dnavit": {
    "id": "ann:dnavit",
@@ -7268,7 +7532,42 @@
     }
    ],
    "score": 8.7,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "dNaViT è un tokenizer visivo discreto a risoluzione nativa, costruito su un encoder pretrainato congelato con modulazione residua leggera e quantizzazione prodotto raggruppata. Mira a un vocabolario discreto compatto che funzioni come rappresentazione visiva universale per comprensione, ricostruzione, generazione ed editing di immagini. Il testo lo presenta come adatto a modelli multimodali unificati con next-token prediction.",
+    "features": [
+     "Tokenizer visivo discreto a risoluzione nativa (Discrete Native-resolution Vision Transformer) costruito su un encoder pretrainato congelato",
+     "Modulazione residua leggera con obiettivo a doppio ramo per iniettare segnali consapevoli della ricostruzione nelle feature semantiche",
+     "Grouped product quantization per scalare la capacità discreta senza aumentare la lunghezza della sequenza spaziale",
+     "Training progressivo a tre stadi / ricetta di training bilanciata per preservare informazione semantica e a livello di pixel",
+     "Codici visivi discreti condivisi per ricostruzione ad alta fedeltà, comprensione, generazione ed editing",
+     "Codice e project page dichiarati come disponibili; licenza non indicata nel testo"
+    ],
+    "benchmarks": [
+     {
+      "name": "visual understanding (12 benchmark)",
+      "score": "matches or exceeds…",
+      "vs": []
+     },
+     {
+      "name": "generation (4 benchmark)",
+      "score": "matches or exceeds…",
+      "vs": []
+     },
+     {
+      "name": "image editing benchmark",
+      "score": "matches or exceeds…",
+      "vs": []
+     }
+    ],
+    "params": "",
+    "context": "",
+    "availability": "Codice e project page disponibili (https://lixiaotong97.github.io/dNaViT/); pesi aperti non esplicitamente dichiarati nel testo",
+    "local_tips": "",
+    "source": "https://huggingface.co/papers/2611.12426",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ann:lingbottouch": {
    "id": "ann:lingbottouch",
@@ -7291,7 +7590,25 @@
     }
    ],
    "score": 5.5,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "LingBot-Touch è un modello di base per la rappresentazione tattile che produce una rappresentazione unificata da sensori tattili eterogenei (piezoresistivi, magnetici e visuotattili). I suoi token tattili sono plug-and-play e si integrano in policy di manipolazione destra, dalla diffusion policy a modelli VLA come π0.5 e LingBot-VLA, migliorando la destrezza. È adatto alla manipolazione dexterous ricca di contatto, sia in simulazione sia su robot reali.",
+    "features": [
+     "Rappresentazione tattile unificata tra sensori piezoresistivi, magnetici e visuotattili, facilmente estendibile a nuovi tipi di sensore",
+     "Token tattili plug-and-play integrabili in policy basate su diffusion policy e modelli vision-language-action (π0.5, LingBot-VLA)",
+     "Valutazione estesa in simulazione e su robot reali con più piattaforme hardware",
+     "Elevata efficienza computazionale mantenuta insieme al beneficio sui compiti di manipolazione complessi",
+     "Obiettivo dichiarato: liberare la comprensione tattile dalla fisica specifica del sensore"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "",
+    "local_tips": "",
+    "source": "https://huggingface.co/papers/2611.12806",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "deepseek-ai/DeepSeek-V4.1-Flash": {
    "id": "deepseek-ai/DeepSeek-V4.1-Flash",
@@ -7593,152 +7910,26 @@
     }
    ],
    "score": 16.43,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "DeepSeek-V4.1-Flash è un modello MoE open-weight (763B parametri totali) ottimizzato per inferenza ad alta throughput su cluster 4x NVIDIA DGX Spark (GB10). Il fork pico-dgx-ds4 introduce ottimizzazioni kernel-level (stack4/stack5) che portano a 90 tok/s chat e 144 tok/s code single-user, 376 tok/s con 16 utenti distinti, supporto nativo a 1M contesto e visione, mantenendo qualità (qeval 71-72/75) pari all'upstream.",
+    "tldr": "Il repository Picom-code/pico-dgx-ds4 è un fork di blaesus/dsgx10 che fa girare DeepSeek V4.1 Flash su un cluster di 4 DGX Spark (TP=4 su rete RoCE a 200G), ottimizzato per molti utenti contemporanei. Dichiara 90 tok/s in chat e 144 tok/s in code per singolo utente, 376 tok/s con 16 utenti con prompt distinti, contesto di 1M token e supporto a immagini. Il testo è un README di un motore di inferenza distribuito, non una model card ufficiale del modello, quindi i numeri sono benchmark interni dell'autore e non confrontabili direttamente con valutazioni standard.",
     "features": [
-     "Architettura MoE (stile DeepSeek-V3/R1) con 763B parametri totali, servito in FP8 nativo su 4x GB10 (TP4) via RoCE 200G",
-     "Contesto 1M token (17-bit block index in sparse-attention indexer), front-end body limit 64 MB, 16 slot admission (4x1M + 12x128K)",
-     "Multimodalità nativa: supporto image_url/base64 via ViT side-encoder del checkpoint",
-     "Speculative decoding avanzato: 1-pass drafter, 4-bit draft head (MXFP4), learned verify gate (MLP 64-unit), certified LM head (greedy exact), draft budget sharing cross-session",
-     "Ottimizzazioni MoE: expert re-route batch-aware (DSGB10_OEA), wide step 17-64 righe via prefill GEMMs + moe_prefill, direct ring all-reduce su switch (no relay)",
-     "Licenza MIT (codice engine), pesi modello sotto licenza DeepSeek (community variant 'uncensored' FP8 su Hugging Face dealignai/DeepSeek-V4.1-Flash-UNCENSORED-FP8)"
+     "Contesto massimo di 1M token tramite un indice a 17 bit nell'attenzione sparsa (il README indica 256K come limite dell'upstream)",
+     "Supporto a immagini via image_url/base64 usando il ViT incluso nel checkpoint",
+     "Serving multi-utente: 16 slot (4 da 1M, 12 da 128K), drafter condiviso tra sessioni e modalità wide step per batch di 17-64 righe",
+     "Decoding speculativo con drafter DSpark, testa di draft a 4 bit e gate appreso (MLP) che decide quante bozze verificare",
+     "Collettive RoCE dirette su switch (DSGB10_RING_DIRECT=2) senza relay, con risultati bit-identici",
+     "Licenza MIT per il codice del fork; i pesi del modello non sono inclusi nel repository"
     ],
-    "benchmarks": [
-     {
-      "name": "Throughput chat single-user (320 held-out prompts)",
-      "score": "90.3 tok/s (mediana 84.6…",
-      "vs": [
-       {
-        "model": "Upstream blaesus/dsgx10 (3 prompts)",
-        "score": "80 tok/s"
-       },
-       {
-        "model": "SGLang TP4 kit",
-        "score": "64 tok/s"
-       }
-      ]
-     },
-     {
-      "name": "Throughput code single-user (3 prompts)",
-      "score": "144 tok/s (mediana 144.0…",
-      "vs": [
-       {
-        "model": "Upstream blaesus/dsgx10",
-        "score": "140 tok/s"
-       },
-       {
-        "model": "SGLang TP4 kit",
-        "score": "117 tok/s"
-       }
-      ]
-     },
-     {
-      "name": "Throughput 16 utenti distinct prompts",
-      "score": "376 tok/s (mediana 374-378)",
-      "vs": [
-       {
-        "model": "Upstream (copies)",
-        "score": "177 tok/s"
-       },
-       {
-        "model": "SGLang TP4 kit (copies)",
-        "score": "427 tok/s"
-       }
-      ]
-     },
-     {
-      "name": "Agentic workloads (8 utenti, 80-300K ctx)",
-      "score": "260-270 tok/s",
-      "vs": [
-       {
-        "model": "Upstream",
-        "score": "~150 tok/s"
-       }
-      ]
-     },
-     {
-      "name": "Cold prefill throughput (16k-120k token, real text)",
-      "score": "8.7k-9.5k tok/s",
-      "vs": [
-       {
-        "model": "SGLang TP4 kit (v2.1)",
-        "score": "4.8k-5.0k tok/s"
-       },
-       {
-        "model": "vLLM spark-ds41f (best published)",
-        "score": "5.7k-5.9k tok/s"
-       }
-      ]
-     },
-     {
-      "name": "Time to first token (short prompts)",
-      "score": "124-156 ms",
-      "vs": [
-       {
-        "model": "SGLang TP4 kit",
-        "score": "219-253 ms"
-       }
-      ]
-     },
-     {
-      "name": "Agentic coding bench (12 pi-style tasks, end-to-end)",
-      "score": "138.5 s / 134.2 s (110-112…",
-      "vs": []
-     },
-     {
-      "name": "GSM8K (first 100 test problems)",
-      "score": "99/100 pass",
-      "vs": [
-       {
-        "model": "SGLang TP4 kit same day",
-        "score": "100/100"
-       }
-      ]
-     },
-     {
-      "name": "Passkey retrieval (18 prompts, 33k-220k token)",
-      "score": "18/18 found",
-      "vs": []
-     },
-     {
-      "name": "Token agreement with SGLang greedy (teacher-forced, 4 prompts)",
-      "score": "260/271 steps (96%)",
-      "vs": []
-     },
-     {
-      "name": "Quality eval (qeval /75)",
-      "score": "71-72",
-      "vs": [
-       {
-        "model": "Upstream",
-        "score": "71"
-       },
-       {
-        "model": "SGLang TP4",
-        "score": "70"
-       }
-      ]
-     },
-     {
-      "name": "sparkDash 1.8.8 catalogs (prose/structural, 256 tok)",
-      "score": "78.1 / 122.3 tok/s",
-      "vs": [
-       {
-        "model": "SGLang TP4 kit (v2.2)",
-        "score": "61.1 / 99.0 tok/s"
-       }
-      ]
-     }
-    ],
-    "params": "763.21B total (MoE, architettura DeepSeek-V3/R1 style)",
-    "context": "1.048.576 token (1M)",
-    "availability": "Pesi aperti: community variant FP8 'dealignai/DeepSeek-V4.1-Flash-UNCENSORED-FP8' (d61c59ea) su Hugging Face; checkpoint ufficiale 'deepseek-ai/DeepSeek-V4.1-Flash' (fb2764a5). Engine inference open-source (MIT): pico-dgx-ds4 (fork di blaesus/dsgx10) per 4x DGX Spark/ASUS GX10 TP4 su RoCE switchless o switched. API commerciale DeepSeek: input $0.0507/Mtok, output $0.2028/Mtok (dati noti).…",
-    "local_tips": "Esecuzione locale richiede 4x NVIDIA DGX Spark / ASUS Ascent GX10 (GB10, 32GB VRAM) con ConnectX-7 RoCE (switchless ring o switched). Engine: pico-dgx-ds4 (dsfront --encoding 1017 per variant 1017). Variabili chiave: DSGB10_BUDGET=1 (draft sharing), DSGB10_OEA=K0,KP,MIN (expert re-route opt-in, lossy), DSGB10_WIDE=64 (wide step), DSGB10_DRAFT1=6 (1-pass drafter), DSGB10_WIDE_COST (cost gate), DSGB10_HEAD4_C1=1 (4-bit draft head single-user), DSGB10_CF_MLP=FILE (learned gate), DSGB10_CERT=1…",
+    "benchmarks": [],
+    "params": "",
+    "context": "1M token (dichiarato dal fork per il serving su 4x DGX Spark; 256K per…",
+    "availability": "Codice open source su GitHub (repository Picom-code/pico-dgx-ds4, licenza MIT, fork di blaesus/dsgx10); i pesi del modello non sono inclusi. Nel testo non è indicato un prezzo API.",
+    "local_tips": "Il repository è pensato per un cluster di 4x DGX Spark con TP=4 su switch RoCE 200G, non per una singola GPU. Per il batch multi-utente si può disattivare DSGB10_OEA per un build strettamente lossless. Gli strumenti di benchmark sono in tools/bench/bench.py. Non sono indicate quantizzazioni ufficiali per una RTX 5090 locale.",
     "source": "https://github.com/Picom-code/pico-dgx-ds4",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "pfnet/plamo-2-translate": {
    "id": "pfnet/plamo-2-translate",
@@ -8026,26 +8217,25 @@
     }
    ],
    "score": 12.31,
+   "updated": "2026-11-15",
    "deep": {
-    "tldr": "Sakutto è un'estensione browser open source (MIT) per Chrome e Firefox che esegue traduzioni on-device usando il modello PLaMo 3 Translate (0.8B parametri) tramite una build pinned di wllama. Non richiede server, è gratuita e privata; i pesi del modello non sono inclusi nel repo né nel pacchetto dell'estensione.",
+    "tldr": "Il testo non è una model card di plamo-2-translate ma il README dell'estensione browser Sakutto (jammaru/sakutto), che usa PLaMo 3 Translate tramite una build fissata di wllama per tradurre pagine web in locale. Non descrive architettura, benchmark o novità del modello plamo-2-translate. Il contenuto è adatto a chi vuole un'estensione di traduzione on-device e non a una valutazione del modello.",
     "features": [
-     "Traduzione locale on-device senza server",
-     "Usa PLaMo 3 Translate (0.8B parametri) via wllama",
-     "Supporta Chrome (MV3) e Firefox (MV3, Windows prima)",
-     "Fallback su Chrome Translator API solo per lingue non supportate da PLaMo",
-     "Interfaccia bilingue, scorciatoie tastiera, traduzione selezione/PDF/scrittura",
-     "Codice MIT, modello sotto PLaMo Community License"
+     "Estensione per Chrome e Firefox che traduce le pagine web on-device tramite PLaMo 3 Translate eseguito con wllama",
+     "Su Chrome usa l'API Translator di Chrome solo per le coppie linguistiche non supportate da PLaMo; su Firefox usa solo PLaMo",
+     "Scorciatoie da tastiera e supporto alla traduzione di selezioni, testo digitato e PDF",
+     "Build tramite Node.js 24 e pnpm; include benchmark di pagina e di PDF e controlli i18n",
+     "Licenza MIT per il codice del progetto; i pesi del modello non sono inclusi nel repository"
     ],
     "benchmarks": [],
-    "params": "0.8B",
+    "params": "",
     "context": "",
-    "availability": "Estensione installabile da Chrome Web Store o compilabile da sorgente (Node.js 24, pnpm 12). Pesi del modello non inclusi; scaricati/cachati automaticamente da wllama (bench/.cache/). Licenza codice: MIT. Modello: PLaMo Community License.",
-    "local_tips": "Build con SAKUTTO_E2E_REAL=1 pnpm build per test reali con modello 0.8B. Benchmark end-to-end con pnpm bench:real (misura time-to-first-token e output speed). Cache modello sotto bench/.cache/ con verifica SHA-256. wllama build pinned per inferenza locale.",
+    "availability": "Estensione gratuita e open source disponibile sul Chrome Web Store e buildabile da sorgente; i pesi del modello non sono nel repository né nel pacchetto dell'estensione. Nel testo non è indicata la licenza dei pesi di PLaMo.",
+    "local_tips": "Il testo indica di buildare il runtime di traduzione e l'estensione con pnpm, di usare il benchmark live con SAKUTTO_E2E_REAL=1 e di provare configurazioni di thread, contesto e batch tramite --sweep; non fornisce consigli su sampling o quantizzazioni ufficiali del modello.",
     "source": "https://github.com/jammaru/sakutto",
     "date": "2026-11-15",
-    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
-   },
-   "updated": "2026-11-15"
+    "by": "anthropic/claude-haiku-5.5"
+   }
   }
  }
 }

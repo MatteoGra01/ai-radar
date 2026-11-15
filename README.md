@@ -26,11 +26,12 @@ calcolatore interattivo con slider del contesto e tipo di KV cache. Precisione i
 
 ## Messa online (10 minuti)
 
-1. **Chiave OpenRouter gratuita**: crea un account su openrouter.ai → *Keys* → *Create key*.
-   Senza crediti hai 50 richieste/giorno sui modelli `:free`; con ≥10 $ di crediti acquistati (che non si
-   consumano usando modelli free) il limite sale a 1000/giorno. La prima esecuzione usa ~30 chiamate, quelle
-   giornaliere meno. Con il limite da 50 abbassa `max_calls_per_run` in `config.toml` (vedi commento).
-   Il "ragionamento" dei modelli viene disattivato: con i modelli gratuiti una chiamata dura 10-60 s.
+1. **Chiave OpenRouter**: crea un account su openrouter.ai → *Keys* → *Create key*.
+   Configurazione attuale: DeepSeek V4.1 Flash per valutare le notizie, Claude Haiku 5.5 per schede,
+   benchmark ed editoriale (~0,001 $ a chiamata): **~0,02-0,05 $ al giorno, circa 1 $/mese**, con tetto
+   di sicurezza `max_cost_per_run_usd` e i modelli gratuiti come riserva.
+   Per restare a 0 € metti `models` e `deep_models` a `["auto:free"]`: senza crediti hai 50 richieste/giorno
+   (1000 con ≥10 $ di crediti acquistati), le chiamate durano 10-60 s e a volte i modelli sono congestionati.
 2. **Repository GitHub**: crea un repo (pubblico, oppure privato se hai GitHub Pro / Student Pack)
    e fai push di questa cartella.
 3. *Settings → Secrets and variables → Actions → New repository secret*:
