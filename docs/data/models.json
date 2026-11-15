@@ -1,0 +1,7297 @@
+{
+ "updated": "2026-11-15T12:57:31Z",
+ "models": {
+  "inclusionAI/Ling-3.2-flash": {
+   "id": "inclusionAI/Ling-3.2-flash",
+   "name": "Ling 3.2 Flash (free)",
+   "org": "inclusionAI",
+   "kind": "closed",
+   "released": "2026-11-13",
+   "or_id": "inclusionai/ling-3.2-flash",
+   "hf_id": "inclusionAI/Ling-3.2-flash",
+   "context": 1048576,
+   "modality": "text+image->text",
+   "pricing": {
+    "in": 0.0,
+    "out": 0.0
+   },
+   "free_on_openrouter": true,
+   "knowledge_cutoff": null,
+   "description": "Ling 3.2 Flash is a hybrid reasoning model from inclusionAI that accepts text and image input, with a 1M-token context window and up to 200 images per request. Thinking can...",
+   "links": {
+    "openrouter": "https://openrouter.ai/inclusionai/ling-3.2-flash"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "note": "OpenRouter indica pesi su Hugging Face, ma il repository non è (ancora) pubblico: verrà ricontrollato ogni giorno.",
+   "score": 3.5,
+   "updated": "2026-11-15"
+  },
+  "or:google/gemini-4-hydrogen": {
+   "id": "or:google/gemini-4-hydrogen",
+   "name": "Gemini 4 Hydrogen",
+   "org": "Google",
+   "kind": "closed",
+   "released": "2026-11-12",
+   "or_id": "google/gemini-4-hydrogen",
+   "hf_id": null,
+   "context": 1048576,
+   "modality": "text+image+file+audio+video->text",
+   "pricing": {
+    "in": 1.5,
+    "out": 7.5
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "Gemini 4 Hydrogen is the high-efficiency workhorse model of the Gemini 4 family from Google, built for high-throughput agentic workflows, coding and multi-model routing at lower cost and latency than...",
+   "links": {
+    "openrouter": "https://openrouter.ai/google/gemini-4-hydrogen"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "d40fca9fd5e1",
+     "rel": 7,
+     "date": "2026-11-12",
+     "title": "Gemini 4 Hydrogen e Orchestrator: architettura multi-modello",
+     "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+     "source": "Hacker News"
+    },
+    {
+     "item": "8fdb0296ea11",
+     "rel": 9,
+     "date": "2026-11-12",
+     "title": "Gemini 4 Hydrogen: dettagli tecnici e pricing",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+     "source": "Hacker News"
+    },
+    {
+     "item": "a8d5fa7d24b3",
+     "rel": 9,
+     "date": "2026-11-12",
+     "title": "Google lancia Gemini 4 Hydrogen: modello low-cost",
+     "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+     "source": "Google DeepMind"
+    },
+    {
+     "item": "9f0b516152c1",
+     "rel": 7,
+     "date": "2026-11-12",
+     "title": "llm-gemini 0.37: supporto Gemini 4 Hydrogen",
+     "url": "https://simonwillison.net/2026/Nov/12/llm-gemini/",
+     "source": "Simon Willison"
+    }
+   ],
+   "score": 13.7,
+   "deep": {
+    "tldr": "Gemini 4 Hydrogen è un modello closed-source di Google ottimizzato per velocità ed efficienza in workflow agentici e coding quotidiano. Offre 1M token di contesto, 1M token di output, quattro livelli di 'thinking' (low/medium/high/xhigh) e prezzo flat ($1.50/$7.50 per M token). Supera il predecessore Flash 3.8 e compete con modelli di fascia superiore su benchmark agentici e di coding.",
+    "features": [
+     "Modello closed-source (Google DeepMind), non open-weight",
+     "Context window 1M token input / fino a 1M token output",
+     "Quattro livelli di reasoning configurabili: low, medium, high (default), xhigh",
+     "Nativo multimodale: PDF, spreadsheet, chart, audio, video, code execution",
+     "Ottimizzato per tool use parallelo, batching nativo di file-read/search, agentic workflows",
+     "Sicurezza: -81% overreach, -79% under-service, -12x misaligned actions vs Flash 3.8; 99.9% CoT legibility"
+    ],
+    "benchmarks": [
+     {
+      "name": "Artificial Analysis Intelligence Index",
+      "score": "51 (high default), 54 (xhigh)",
+      "vs": [
+       {
+        "model": "Gemini 4 Argon",
+        "score": "50"
+       }
+      ]
+     },
+     {
+      "name": "Terminal-Bench 4.1",
+      "score": "57%",
+      "vs": [
+       {
+        "model": "Gemini 3.8 Flash",
+        "score": "18.2%"
+       }
+      ]
+     },
+     {
+      "name": "SWE-sweep (bug discovery & repair)",
+      "score": "outperforms similar-tier…",
+      "vs": []
+     },
+     {
+      "name": "Agent Arena (live)",
+      "score": "#5 rank",
+      "vs": []
+     },
+     {
+      "name": "HLE-Diamond",
+      "score": "58.8%",
+      "vs": [
+       {
+        "model": "competing models in class",
+        "score": "leads class"
+       }
+      ]
+     },
+     {
+      "name": "Vals Tax Agent Bench",
+      "score": "52.3%",
+      "vs": [
+       {
+        "model": "overall",
+        "score": "#1"
+       }
+      ]
+     },
+     {
+      "name": "Vals Legal Research Bench",
+      "score": "55.8%",
+      "vs": [
+       {
+        "model": "overall",
+        "score": "tied #1"
+       }
+      ]
+     },
+     {
+      "name": "AutomationBench-AA",
+      "score": "leads class",
+      "vs": []
+     },
+     {
+      "name": "Multimodal Knowledge Agent (MKA)",
+      "score": "53.4%",
+      "vs": [
+       {
+        "model": "other models",
+        "score": "outperforms"
+       }
+      ]
+     },
+     {
+      "name": "Agents' Last Exam v1.1",
+      "score": "71.6%",
+      "vs": [
+       {
+        "model": "other models",
+        "score": "outperforms"
+       }
+      ]
+     },
+     {
+      "name": "Gray Swan IPI (indirect prompt injection)",
+      "score": ">2.3x more resilient",
+      "vs": [
+       {
+        "model": "Gemini 3.8 Flash",
+        "score": "baseline"
+       }
+      ]
+     },
+     {
+      "name": "HealthBench Pro (false refusals)",
+      "score": "<0.4%",
+      "vs": []
+     }
+    ],
+    "params": "",
+    "context": "1048576",
+    "availability": "Closed-source. Disponibile via: Gemini API (AI Studio, Android Studio), Gemini app (tutti gli utenti, free via auto-selection), Google Search (globale), Google Antigravity (Pro/Ultra subscribers), Gemini for Business/Enterprise, Gemini in Google Sheets (Pro/Ultra). Prezzo flat: $1.50/M input token, $7.50/M output token su tutto il context window da 1M token.",
+    "local_tips": "",
+    "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "baidu/ERNIE-5.5-Flash-Preview": {
+   "id": "baidu/ERNIE-5.5-Flash-Preview",
+   "name": "ERNIE-5.5-Flash-Preview (free)",
+   "org": "Baidu",
+   "kind": "closed",
+   "released": "2026-11-10",
+   "or_id": "baidu/ernie-5.5-flash-preview",
+   "hf_id": "baidu/ERNIE-5.5-Flash-Preview",
+   "context": 1024000,
+   "modality": "text->text",
+   "pricing": {
+    "in": 0.0,
+    "out": 0.0
+   },
+   "free_on_openrouter": true,
+   "knowledge_cutoff": null,
+   "description": "ERNIE 5.5 Flash Preview is the latest foundation model in the ERNIE family, with comprehensive improvements in coding, agentic capabilities, knowledge work, and deep research. It has 280 billion total...",
+   "links": {
+    "openrouter": "https://openrouter.ai/baidu/ernie-5.5-flash-preview"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "note": "OpenRouter indica pesi su Hugging Face, ma il repository non è (ancora) pubblico: verrà ricontrollato ogni giorno.",
+   "score": 3.5,
+   "updated": "2026-11-15"
+  },
+  "or:baidu/ernie-light-dt-1.0-intl": {
+   "id": "or:baidu/ernie-light-dt-1.0-intl",
+   "name": "ERNIE-Light-DT-1.0",
+   "org": "Baidu",
+   "kind": "closed",
+   "released": "2026-11-10",
+   "or_id": "baidu/ernie-light-dt-1.0-intl",
+   "hf_id": null,
+   "context": 1024000,
+   "modality": "text->text",
+   "pricing": {
+    "in": 1.13,
+    "out": 3.94
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "ERNIE-Light-DT-1.0 is based on open-source GLM models and includes research findings from Baidu Search's Lightning large model. It features Baidu Sparse Attention (BSA), a unique sparse attention mechanism developed by...",
+   "links": {
+    "openrouter": "https://openrouter.ai/baidu/ernie-light-dt-1.0-intl"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 3.5,
+   "updated": "2026-11-15"
+  },
+  "or:google/gemini-4-carbon": {
+   "id": "or:google/gemini-4-carbon",
+   "name": "Gemini 4 Carbon",
+   "org": "Google",
+   "kind": "closed",
+   "released": "2026-11-10",
+   "or_id": "google/gemini-4-carbon",
+   "hf_id": null,
+   "context": 1048576,
+   "modality": "text+image+file+audio+video->text",
+   "pricing": {
+    "in": 2.0,
+    "out": 10.0
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "Gemini 4 Carbon is a frontier Gemini 4 model from Google for coding, agentic and complex reasoning work. It takes text, image, audio, video and file input, supports long decode...",
+   "links": {
+    "openrouter": "https://openrouter.ai/google/gemini-4-carbon"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "fc6b6a56df7b",
+     "rel": 8,
+     "date": "2026-11-10",
+     "title": "Gemini 4 Carbon disponibile per tutti",
+     "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
+     "source": "Google DeepMind"
+    }
+   ],
+   "score": 12.9,
+   "deep": {
+    "tldr": "Gemini 4 Carbon è il nuovo modello frontier di Google DeepMind, ottimizzato per cybersecurity avanzata, ragionamento scientifico profondo e workflow agentici complessi a lungo orizzonte. Supera Argon nelle attività che richiedono esplorazione estesa, verifiche iterative e ragionamento multi-step, mantenendo lo stesso prezzo introduttivo. Introduce l'anteprima della funzionalità /swarm in Google Antigravity per orchestrare team di agenti coordinati.",
+    "features": [
+     "Frontier performance in cybersecurity (finding, exploiting, patching vulnerabilità) tramite Fairwind Program",
+     "Ragionamento scientifico/matematico avanzato: fisica, life sciences, formal verification (AlphaProof Code), protein structure prediction",
+     "Multimodal Knowledge Agent (MKA) benchmark: #2 con 6X costo inferiore per task vs top model",
+     "Supporto nativo per workflow agentici complessi con /swarm (team di agenti coordinati, workspaces isolati, verifiers avversari)",
+     "Context window 1M token, prezzo $2/M input - $10/M output (stesso di Argon)",
+     "Sicurezza rinforzata: 99% blocco traiettorie attacco adattive, 0% successo prompt injection su Gray Swan IPI, 92% honesty benchmark"
+    ],
+    "benchmarks": [
+     {
+      "name": "CursorBench 4.0",
+      "score": "#1",
+      "vs": [
+       {
+        "model": "next best external model",
+        "score": "2X higher cost per task"
+       }
+      ]
+     },
+     {
+      "name": "Perplexity WANDR",
+      "score": "#1",
+      "vs": [
+       {
+        "model": "next best external model",
+        "score": "2X higher cost per task"
+       }
+      ]
+     },
+     {
+      "name": "Zapier AutomationBench",
+      "score": "#1",
+      "vs": [
+       {
+        "model": "next best external model",
+        "score": "2X higher cost per task"
+       }
+      ]
+     },
+     {
+      "name": "Multimodal Knowledge Agent (MKA)",
+      "score": "#2",
+      "vs": [
+       {
+        "model": "top performing model",
+        "score": "6X higher avg cost per task"
+       }
+      ]
+     },
+     {
+      "name": "SEC-bench Pro (finding vulnerabilities)",
+      "score": "leads",
+      "vs": []
+     },
+     {
+      "name": "ExploitGym (exploiting vulnerabilities)",
+      "score": "leads",
+      "vs": []
+     },
+     {
+      "name": "CWE-bench v1 (patching vulnerabilities)",
+      "score": "leads",
+      "vs": []
+     },
+     {
+      "name": "Project Fortify internal benchmark",
+      "score": "100% recall scanning, 95%…",
+      "vs": [
+       {
+        "model": "Argon",
+        "score": "25% lower recall on OSS repos"
+       }
+      ]
+     },
+     {
+      "name": "Hebbia E2E Financial Agentic",
+      "score": "matched best model tested",
+      "vs": []
+     },
+     {
+      "name": "Balyasny General Financial Intelligence",
+      "score": "top of 23 frontier model…",
+      "vs": []
+     },
+     {
+      "name": "Agentic Honesty Benchmark (375 tasks)",
+      "score": "92% pass rate",
+      "vs": [
+       {
+        "model": "Argon",
+        "score": "70% pass rate"
+       }
+      ]
+     },
+     {
+      "name": "Gray Swan IPI (prompt injection)",
+      "score": "0% attack success rate",
+      "vs": [
+       {
+        "model": "Argon",
+        "score": "not specified"
+       }
+      ]
+     },
+     {
+      "name": "Gray Swan automated cyberattack query",
+      "score": "2.17% success rate",
+      "vs": [
+       {
+        "model": "Argon",
+        "score": "9.86% success rate"
+       }
+      ]
+     },
+     {
+      "name": "Adaptive red-teaming (ExploitBench/CyScenarioBench)",
+      "score": "0.8% per-attempt breach rate",
+      "vs": [
+       {
+        "model": "Argon",
+        "score": "3.1% per-attempt breach rate"
+       }
+      ]
+     }
+    ],
+    "params": "",
+    "context": "1048576",
+    "availability": "API a pagamento in Google AI Studio, Android Studio, Gemini for Business, CodeMender; Google Antigravity (con /swarm preview) e Gemini app / AI Mode in Search per abbonati Google AI Ultra; Fairwind Program per cybersecurity defenders (rolling access); Programma scienziati: accesso gratuito 6 mesi ad Argon e Carbon in Antigravity (rolling onboarding, soggetto a eligibilità/capacità). Prezzo: $2/M…",
+    "local_tips": "",
+    "source": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "nex-agi/Nex-N2.6": {
+   "id": "nex-agi/Nex-N2.6",
+   "name": "Nex-N2.6",
+   "org": "nex-agi",
+   "kind": "open",
+   "released": "2026-11-10",
+   "or_id": "nex-agi/nex-n2.6",
+   "hf_id": "nex-agi/Nex-N2.6",
+   "context": 1048576,
+   "modality": "text+image->text",
+   "pricing": {
+    "in": 0.12,
+    "out": 0.4
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "Nex-N2.6 is an agentic model from Nex AGI, built on [GLM-5.3-Flash](https://huggingface.co/zai-org/GLM-5.3-Flash-BF16) with about 321B parameters. It is suited for computer use, coding, and long-horizon tasks that involve tools. Compared with...",
+   "links": {
+    "openrouter": "https://openrouter.ai/nex-agi/nex-n2.6",
+    "hf": "https://huggingface.co/nex-agi/Nex-N2.6"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "04c3039fd094",
+     "rel": 7,
+     "date": "2026-11-14",
+     "title": "Nex-N2.6 (321B FP8) su GLM-5.3-Flash: agente multimodale computer-use",
+     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xw9mpa/nexaginexn26_hugging_face/",
+     "source": "r/LocalLLaMA"
+    }
+   ],
+   "pipeline": "image-text-to-text",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 321.32,
+   "params_source": "safetensors",
+   "active_b": 25.4,
+   "arch": {
+    "layers": 45,
+    "hidden": 4096,
+    "heads": 64,
+    "kv_heads": 64,
+    "head_dim": 64,
+    "full_layers": 11,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 34,
+    "linear_state_bytes": 4194304,
+    "mla_dim": 576,
+    "experts": 288,
+    "experts_active": 8,
+    "moe_inter": 2048,
+    "dense_layers": 3,
+    "inter": 12288,
+    "vocab": 154880,
+    "tied": false,
+    "max_ctx": 1048576
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 84,
+    "downloads": 726,
+    "trending": 82,
+    "trend_rank": 66
+   },
+   "vram": {
+    "level": "no",
+    "label": "non entra",
+    "text": "Troppo grande per una RTX 5090: ~181 GB solo di pesi anche in Q4_K_M",
+    "best_quant": null,
+    "tok_s": null,
+    "kv_known": true,
+    "is_moe": true,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 598.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 611.5,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 611.7,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 612.9,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 25
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 318.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 325.3,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 325.6,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 326.7,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 46
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 245.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 251.3,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 251.6,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 252.7,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 60
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 212.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 218.1,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 218.4,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 219.5,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 69
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 181.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 186.0,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 186.3,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 187.5,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 80
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 159.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 163.1,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 163.4,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 164.6,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 92
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 146.3,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 150.2,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 150.5,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 151.6,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 99
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 101.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 104.0,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 104.3,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 105.4,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 143
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "bartowski/Nex-N2.6-GGUF",
+     "format": "GGUF",
+     "downloads": 7839
+    },
+    {
+     "id": "Harsha001/Nex-N2.6-StrixHalo-GGUF",
+     "format": "GGUF",
+     "downloads": 363
+    },
+    {
+     "id": "Hygaard/Nex-N2.6-oQ5e-mtp",
+     "format": "MLX",
+     "downloads": 121
+    },
+    {
+     "id": "Hygaard/Nex-N2.6-oQ4e-mtp",
+     "format": "MLX",
+     "downloads": 105
+    },
+    {
+     "id": "Hygaard/Nex-N2.6-oQ3e-mtp",
+     "format": "MLX",
+     "downloads": 85
+    },
+    {
+     "id": "vcruz305/Nex-N2.6-SAGE-REXL3-2.48bpw",
+     "format": "altro",
+     "downloads": 29
+    }
+   ],
+   "score": 11.34,
+   "deep": {
+    "tldr": "Nex-N2.6 è un modello multimodale agentico da 321B parametri (FP8) basato su GLM-5.3-Flash, ottimizzato per computer use, coding e task a lungo orizzonte con strumenti. Rispetto al predecessore Nex-N2.5-Pro riduce drasticamente il reasoning ripetitivo (dal 16% all'1,6%) e raggiunge il 100% di aderenza alla lista di tool disponibili.",
+    "features": [
+     "Architettura MoE derivata da GLM-5.3-Flash (321B totali, 25.4B attivi)",
+     "Contesto fino a 1M token (1.048.576)",
+     "Multimodale: accetta input immagine-testo (image-text-to-text)",
+     "Supporto nativo per tool use e function calling con aderenza al 100%",
+     "Parametro reasoning_effort (low/high/max) per controllare la catena di pensiero",
+     "Licenza Apache-2.0, pesi aperti in formato FP8"
+    ],
+    "benchmarks": [
+     {
+      "name": "OSWorld",
+      "score": "83.0",
+      "vs": [
+       {
+        "model": "Nex-N2.5-Pro",
+        "score": "82.2"
+       },
+       {
+        "model": "GLM-5.3-Flash",
+        "score": "78.0"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash",
+        "score": "71.7"
+       }
+      ]
+     },
+     {
+      "name": "Terminal-Bench 2.1",
+      "score": "84.1",
+      "vs": [
+       {
+        "model": "GLM-5.3-Flash",
+        "score": "84.3"
+       },
+       {
+        "model": "Nex-N2.5-Pro",
+        "score": "82.7"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash",
+        "score": "82.7"
+       }
+      ]
+     },
+     {
+      "name": "AutomationBench",
+      "score": "45.7",
+      "vs": [
+       {
+        "model": "DeepSeek-V4.1-Flash",
+        "score": "54.8"
+       },
+       {
+        "model": "GLM-5.3-Flash",
+        "score": "48.8"
+       },
+       {
+        "model": "Nex-N2.5-Pro",
+        "score": "44.2"
+       }
+      ]
+     },
+     {
+      "name": "Reasoning Repetition Rate (internal)",
+      "score": "1.6%",
+      "vs": [
+       {
+        "model": "Nex-N2.5-Pro",
+        "score": "16.0%"
+       },
+       {
+        "model": "GLM-5.3-Flash",
+        "score": "6.0%"
+       }
+      ]
+     },
+     {
+      "name": "Overall Non-Repetition Rate (internal)",
+      "score": "97.8%",
+      "vs": [
+       {
+        "model": "GLM-5.3-Flash",
+        "score": "96.2%"
+       },
+       {
+        "model": "Nex-N2.5-Pro",
+        "score": "91.0%"
+       }
+      ]
+     },
+     {
+      "name": "Valid Tool Selection Rate Overall (internal)",
+      "score": "100.0%",
+      "vs": [
+       {
+        "model": "GLM-5.3-Flash",
+        "score": "85.3%"
+       },
+       {
+        "model": "Nex-N2.5-Pro",
+        "score": "82.2%"
+       }
+      ]
+     },
+     {
+      "name": "Valid Tool Selection Rate When with Tools (internal)",
+      "score": "100.0%",
+      "vs": [
+       {
+        "model": "GLM-5.3-Flash",
+        "score": "84.1%"
+       },
+       {
+        "model": "Nex-N2.5-Pro",
+        "score": "80.5%"
+       }
+      ]
+     }
+    ],
+    "params": "321B totali / 25.4B attivi (MoE)",
+    "context": "1.048.576 token",
+    "availability": "Pesi aperti (FP8) su Hugging Face (nex-agi/Nex-N2.6), licenza Apache-2.0. API su OpenRouter (input $0.12/Mtok, output $0.40/Mtok). Self-hosting via SGLang con configurazione FP8-compatibile.",
+    "local_tips": "Usare SGLang seguendo la guida ufficiale per GLM-5.3-Flash con configurazione FP8-compatibile per l'hardware. Mantenere tokenizer, processor e chat template originali. Il server espone endpoint OpenAI-compatibile su porta 8000. Supporta parametro reasoning_effort (low/high/max, default max) e max_tokens fino a 8192 nell'esempio. Per immagini usare blocchi content supportati dal runtime.",
+    "source": "https://huggingface.co/nex-agi/Nex-N2.6",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "thinkingmachines/Inkling-2-Small": {
+   "id": "thinkingmachines/Inkling-2-Small",
+   "name": "Inkling-2-Small",
+   "org": "thinkingmachines",
+   "kind": "open",
+   "released": "2026-11-04",
+   "or_id": "thinkingmachines/inkling-2-small",
+   "hf_id": "thinkingmachines/Inkling-2-Small",
+   "context": 1048576,
+   "modality": "text+image->text",
+   "pricing": {
+    "in": 0.3,
+    "out": 1.0
+   },
+   "free_on_openrouter": true,
+   "knowledge_cutoff": null,
+   "description": "Inkling 2 Small is an open-weight multimodal mixture-of-experts reasoning model from Thinking Machines Lab, with 17B active parameters out of 594B total. It is the first model in the second...",
+   "links": {
+    "openrouter": "https://openrouter.ai/thinkingmachines/inkling-2-small",
+    "hf": "https://huggingface.co/thinkingmachines/Inkling-2-Small"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "c7267c9dcbe2",
+     "rel": 6,
+     "date": "2026-11-13",
+     "title": "Transformers v5.23.0: aggiunto Inkling2 MoE 594B/17B attivi multimodale",
+     "url": "https://github.com/huggingface/transformers/releases/tag/v5.23.0",
+     "source": "Transformers releases"
+    }
+   ],
+   "pipeline": "image-text-to-text",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 594.05,
+   "params_source": "safetensors",
+   "active_b": 19.2,
+   "arch": {
+    "layers": 48,
+    "hidden": 4608,
+    "heads": 48,
+    "kv_heads": 8,
+    "head_dim": 128,
+    "full_layers": 48,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": 384,
+    "experts_active": 8,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 2304,
+    "vocab": 201024,
+    "tied": false,
+    "max_ctx": null
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 330,
+    "downloads": 7329,
+    "trending": 315,
+    "trend_rank": 9,
+    "watched_org": true
+   },
+   "vram": {
+    "level": "no",
+    "label": "non entra",
+    "text": "Troppo grande per una RTX 5090: ~335 GB solo di pesi anche in Q4_K_M",
+    "best_quant": null,
+    "tok_s": null,
+    "kv_known": true,
+    "is_moe": true,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 1106.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1130.9,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 1135.4,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 1153.4,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 32
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 587.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 601.8,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 606.3,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 624.3,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 59
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 453.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 465.0,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 469.5,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 487.5,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 76
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 393.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 403.6,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 408.1,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 426.1,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 87
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 335.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 344.4,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 348.9,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 366.9,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 101
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 293.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 302.0,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 306.5,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 324.5,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 114
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 270.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 278.1,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 282.6,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 300.6,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 123
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 186.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 192.7,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 197.2,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 215.2,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 172
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "unsloth/Inkling-2-Small-GGUF",
+     "format": "GGUF",
+     "downloads": 4162
+    },
+    {
+     "id": "Baekpica/Inkling-2-Small-VQ-GGUF",
+     "format": "GGUF",
+     "downloads": 1859
+    },
+    {
+     "id": "peasantsmith/Inkling-2-Small-GGUF",
+     "format": "GGUF",
+     "downloads": 706
+    },
+    {
+     "id": "Harsha001/Inkling-2-Small-StrixHalo-GGUF",
+     "format": "GGUF",
+     "downloads": 0
+    },
+    {
+     "id": "mlx-community/Inkling-2-Small-oQ4e",
+     "format": "MLX",
+     "downloads": 253
+    },
+    {
+     "id": "brandonmusic/Inkling-2-Small-NVFP4-CSF-Flare",
+     "format": "NVFP4",
+     "downloads": 128
+    }
+   ],
+   "score": 12.57,
+   "deep": {
+    "tldr": "Inkling-2-Small è un modello multimodale (testo+immagine → testo) di Thinking Machines Lab con architettura Mixture-of-Experts: 594B parametri totali e 17B attivi. Introduce innovazioni architetturali come block attention residuals, gated attention con learned sink e convoluzioni dinamiche key/value, ed è disponibile sotto licenza Apache 2.0.",
+    "features": [
+     "Architettura MoE: 48 layer decoder, 384 esperti totali, routing a 8 esperti per token",
+     "Parametri: 594B totali / 17B attivi (backbone linguistico)",
+     "Multimodale: accetta testo e immagini (patch 40x40 px via Perception Encoder ViT), genera testo",
+     "Novità tecniche: block attention residuals, gated attention con learned sink, dynamic key/value convolutions",
+     "Licenza Apache 2.0 (pesi aperti)",
+     "Supporto lingue multiple e linguaggi di programmazione"
+    ],
+    "benchmarks": [],
+    "params": "594B totali / 17B attivi",
+    "context": "1048576 token",
+    "availability": "Pesi aperti su Hugging Face (transformers v5.23.0+), licenza Apache 2.0. Prezzo API indicativo: $0.30/1M token input, $1.00/1M token output.",
+    "local_tips": "",
+    "source": "https://github.com/huggingface/transformers/releases/tag/v5.23.0",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "or:anthropic/claude-fable-5.2": {
+   "id": "or:anthropic/claude-fable-5.2",
+   "name": "Claude Fable 5.2",
+   "org": "Anthropic",
+   "kind": "closed",
+   "released": "2026-11-09",
+   "or_id": "anthropic/claude-fable-5.2",
+   "hf_id": null,
+   "context": 1000000,
+   "modality": "text+image+file->text",
+   "pricing": {
+    "in": 8.0,
+    "out": 40.0
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "Claude Fable 5.2 is Anthropic's most capable model for the most demanding technical work, with gains over Fable 5.1 in coding, reasoning, and vision. In prerelease testing it completed otherwise-infeasible...",
+   "links": {
+    "openrouter": "https://openrouter.ai/anthropic/claude-fable-5.2"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "ffe8a09e969f",
+     "rel": 9,
+     "date": "2026-11-09",
+     "title": "Claude Fable 5.2 e Mythos 5.2 rilasciati",
+     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+     "source": "Hacker News"
+    }
+   ],
+   "score": 12.2,
+   "deep": {
+    "tldr": "Claude Fable 5.2 è il nuovo modello di punta di Anthropic per compiti tecnici complessi (coding, ricerca scientifica, cybersecurity, hardware engineering). Rispetto alla versione 5.1 è fino al 30% più veloce, costa meno ($8/$40 per M token) e introduce una 'fast mode' opzionale (2.5x velocità a $16/$80). Supera Opus 5.5 e i concorrenti (GPT-6 Astra, Gemini 4 Carbon) nella maggior parte dei benchmark agentici e di reasoning ad alto sforzo.",
+    "features": [
+     "Modello closed-source accessibile via API Anthropic (Claude apps, Claude Code, Claude Enterprise)",
+     "Context window 1M token (dato noto)",
+     "Multimodale: visione (Chartography, OSWorld) e tool use estensivo (agenti, sub-agenti, MCP)",
+     "Reasoning ad 'effort' scalabile (Low, Medium, High, Xhigh, Max) con efficienza token/costo superiore a Opus 5.5",
+     "Safeguard cyber/biologia robusti (Fable) vs accesso senza safeguard per ricerca autorizzata (Mythos)",
+     "Protezioni anti-distillazione 'strongest-ever' e minori false positive sui blocchi di sicurezza"
+    ],
+    "benchmarks": [
+     {
+      "name": "FrontierCode 2.0 (Xhigh effort)",
+      "score": "49.1%",
+      "vs": [
+       {
+        "model": "Fable 5.1",
+        "score": "32.4%"
+       },
+       {
+        "model": "Opus 5.5",
+        "score": "45.5%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "42.8%"
+       }
+      ]
+     },
+     {
+      "name": "FrontierSWE v2",
+      "score": "69.9%",
+      "vs": [
+       {
+        "model": "Fable 5.1",
+        "score": "56.3%"
+       },
+       {
+        "model": "Opus 5.5",
+        "score": "62.3%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "65.5%"
+       }
+      ]
+     },
+     {
+      "name": "Terminal-Bench-Science (Mythos 5.2)",
+      "score": "74.6%",
+      "vs": [
+       {
+        "model": "Fable 5.1",
+        "score": "52.6%"
+       },
+       {
+        "model": "Opus 5.5",
+        "score": "58.7%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "68.1%"
+       }
+      ]
+     },
+     {
+      "name": "CyScenarioBench (Mythos 5.2)",
+      "score": "76.3%",
+      "vs": [
+       {
+        "model": "Mythos 5.1",
+        "score": "61.7%"
+       },
+       {
+        "model": "Opus 5.5 (no safeguards)",
+        "score": "67.6%"
+       },
+       {
+        "model": "GPT-6 Cyber",
+        "score": "—"
+       }
+      ]
+     },
+     {
+      "name": "CVE Rediscovery (Mythos 5.2)",
+      "score": "89.6%",
+      "vs": [
+       {
+        "model": "Mythos 5.1",
+        "score": "78.3%"
+       },
+       {
+        "model": "Opus 5.5 (no safeguards)",
+        "score": "81.3%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "—"
+       }
+      ]
+     },
+     {
+      "name": "De novo binder design 24h (Mythos 5.2)",
+      "score": "85.1",
+      "vs": [
+       {
+        "model": "Mythos 5.1",
+        "score": "79.1"
+       },
+       {
+        "model": "Opus 5.5 (no safeguards)",
+        "score": "82.6"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "—"
+       }
+      ]
+     },
+     {
+      "name": "WANDR relaxed score",
+      "score": "82.1%",
+      "vs": [
+       {
+        "model": "Fable 5.1",
+        "score": "68.7%"
+       },
+       {
+        "model": "Opus 5.5",
+        "score": "72.3%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "—"
+       }
+      ]
+     },
+     {
+      "name": "OSWorld 2.1 (offline, partial)",
+      "score": "89.3%",
+      "vs": [
+       {
+        "model": "Fable 5.1",
+        "score": "83.5%"
+       },
+       {
+        "model": "Opus 5.5",
+        "score": "87.2%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "79.5%"
+       }
+      ]
+     },
+     {
+      "name": "RoboDojo Sim",
+      "score": "64.9%",
+      "vs": [
+       {
+        "model": "Fable 5.1",
+        "score": "27.6%"
+       },
+       {
+        "model": "Opus 5.5",
+        "score": "39.4%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "29.8%"
+       }
+      ]
+     },
+     {
+      "name": "AA-Briefcase v1.1 (rubric)",
+      "score": "66.1%",
+      "vs": [
+       {
+        "model": "Fable 5.1",
+        "score": "61.5%"
+       },
+       {
+        "model": "Opus 5.5",
+        "score": "61.2%"
+       },
+       {
+        "model": "Gemini 4 Carbon",
+        "score": "61.8%"
+       }
+      ]
+     },
+     {
+      "name": "Humanity's Last Exam (with tools)",
+      "score": "74.2%",
+      "vs": [
+       {
+        "model": "Fable 5.1",
+        "score": "65.6%"
+       },
+       {
+        "model": "Opus 5.5",
+        "score": "67.7%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "57.2%"
+       }
+      ]
+     },
+     {
+      "name": "Chartography (no tools)",
+      "score": "73.4%",
+      "vs": [
+       {
+        "model": "Fable 5.1",
+        "score": "44.8%"
+       },
+       {
+        "model": "Opus 5.5",
+        "score": "64.4%"
+       },
+       {
+        "model": "Gemini 4 Carbon",
+        "score": "72.5%"
+       }
+      ]
+     }
+    ],
+    "params": "",
+    "context": "1000000",
+    "availability": "API Anthropic (Claude apps, Claude Code, Claude Enterprise). Prezzo standard: $8/M input, $40/M output. Fast mode opzionale: $16/M input, $80/M output (fino a 2.5x velocità). Fable 5.2 disponibile per tutti; Mythos 5.2 richiede applicazione a Life Sciences / Cyber Verification Programs. Nessun peso aperto.",
+    "local_tips": "",
+    "source": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "or:meta/muse-ember": {
+   "id": "or:meta/muse-ember",
+   "name": "Muse Ember",
+   "org": "Meta",
+   "kind": "closed",
+   "released": "2026-11-09",
+   "or_id": "meta/muse-ember",
+   "hf_id": null,
+   "context": 1048576,
+   "modality": "text+image+file+audio+video->text",
+   "pricing": {
+    "in": 0.1,
+    "out": 0.5
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "Muse Ember is the smallest and most efficient model from Meta that’s designed for complex reasoning execution and the work agents repeat all day: tool calls, coding agent subtasks, routing,...",
+   "links": {
+    "openrouter": "https://openrouter.ai/meta/muse-ember"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "1afd9e573768",
+     "rel": 5,
+     "date": "2026-11-10",
+     "title": "Muse Ember: nuovo modello efficiente Meta AI",
+     "url": "https://simonwillison.net/2026/Nov/10/muse-ember/",
+     "source": "Simon Willison"
+    }
+   ],
+   "score": 9.0,
+   "deep": {
+    "tldr": "Muse Ember è il nuovo modello piccolo ed efficiente di Meta AI, posizionato nella fascia di prezzo e prestazioni di GPT-6 Luna e Claude Haiku 5.5. È ottimizzato per ragionamento complesso, tool calling, coding, routing, estrazione e parsing di documenti lunghi, offrendo 6 livelli di reasoning configurabili. Si colloca sulla frontiera di Pareto dell'Artificial Analysis Intelligence Index vs Cost per Task, indicando efficienza ottimale.",
+    "features": [
+     "Modello entry-level 'smallest and most efficient' di Meta AI",
+     "Ottimizzato per complex reasoning, tool calls, coding subtasks, routing, extraction, long document parsing",
+     "Supporta fino a 1 milione di token di contesto (input)",
+     "6 livelli di reasoning configurabili: minimal, low, medium, high, xhigh, max",
+     "Prezzi differenziati per prompt ≤200k e >200k token con cached input scontato",
+     "Posizionato sulla efficiency frontier (Pareto line) di Artificial Analysis Intelligence Index vs Cost per Task"
+    ],
+    "benchmarks": [
+     {
+      "name": "Artificial Analysis Intelligence Index vs Cost per Task",
+      "score": "Sulla Pareto frontier…",
+      "vs": [
+       {
+        "model": "GPT-6 Luna",
+        "score": "Sulla Pareto frontier"
+       },
+       {
+        "model": "Claude Haiku 5.5",
+        "score": "Sulla Pareto frontier"
+       },
+       {
+        "model": "GPT-6.1 Terra (low)",
+        "score": "Sulla Pareto frontier"
+       }
+      ]
+     }
+    ],
+    "params": "",
+    "context": "1.048.576 token (1M)",
+    "availability": "API Meta AI (Muse Ember 1.0). Prezzi: ≤200k input $0.10/M, cached $0.004/M, output $0.50/M; >200k input $0.30/M, cached $0.012/M, output $1.50/M. Stesso prezzo base di GPT-6 Luna e Claude Haiku 5.5 per prompt brevi.",
+    "local_tips": "",
+    "source": "https://simonwillison.net/2026/Nov/10/muse-ember/",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "LiquidAI/LFM3-1.7B": {
+   "id": "LiquidAI/LFM3-1.7B",
+   "name": "LFM3-1.7B",
+   "org": "LiquidAI",
+   "kind": "open",
+   "released": "2026-10-23",
+   "or_id": "liquid/lfm-3-1.7b",
+   "hf_id": "LiquidAI/LFM3-1.7B",
+   "context": 262144,
+   "modality": "text->text",
+   "pricing": {
+    "in": 0.08,
+    "out": 0.2
+   },
+   "free_on_openrouter": true,
+   "knowledge_cutoff": null,
+   "description": "A compact 1.7B-parameter text model with a 256K-token context, post-trained for agents, tool calling, and structured outputs. It reasons before it answers. Prompts and outputs may be retained and used...",
+   "links": {
+    "openrouter": "https://openrouter.ai/liquid/lfm-3-1.7b",
+    "hf": "https://huggingface.co/LiquidAI/LFM3-1.7B"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "pipeline": "text-generation",
+   "license": "other",
+   "gated": false,
+   "params_b": 1.73,
+   "params_source": "safetensors",
+   "arch": {
+    "layers": 24,
+    "hidden": 2048,
+    "heads": 16,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "full_layers": 6,
+    "sliding_layers": 5,
+    "window": 256,
+    "linear_layers": 13,
+    "linear_state_bytes": 4194304,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 7680,
+    "vocab": 128000,
+    "tied": true,
+    "max_ctx": 262144
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 1796,
+    "downloads": 103744,
+    "trending": null
+   },
+   "vram": {
+    "level": "ok",
+    "label": "BF16 @32k",
+    "text": "Gira su RTX 5090 in BF16 con 32k di contesto, ~352 tok/s",
+    "best_quant": "BF16",
+    "tok_s": 352,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 3.2,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 4.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 4.5,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 5.6,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 352
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 1.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 2.6,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 2.9,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 4.0,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 645
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 1.3,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 2.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 2.5,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 3.7,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 822
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 1.1,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 2.1,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 2.3,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 3.5,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 938
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 1.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1.9,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 2.2,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 3.3,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 1085
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 0.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1.8,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 2.1,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 3.2,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 1222
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 0.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1.7,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 2.0,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 3.1,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 1316
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 0.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1.5,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 1.7,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 2.9,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 1814
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "LiquidAI/LFM3-1.7B-GGUF",
+     "format": "GGUF",
+     "downloads": 357497
+    },
+    {
+     "id": "AtomicChat/LFM3-1.7B-Uncensored-GGUF",
+     "format": "GGUF",
+     "downloads": 155299
+    },
+    {
+     "id": "turintech/LFM3-1.7B-Artemis-GGUF",
+     "format": "GGUF",
+     "downloads": 22393
+    },
+    {
+     "id": "AtomicChat/LFM3-1.7B-GGUF",
+     "format": "GGUF",
+     "downloads": 10439
+    },
+    {
+     "id": "bartowski/LFM3-1.7B-GGUF",
+     "format": "GGUF",
+     "downloads": 9934
+    },
+    {
+     "id": "lmstudio-community/LFM3-1.7B-GGUF",
+     "format": "GGUF",
+     "downloads": 8192
+    }
+   ],
+   "score": 9.43,
+   "deep": {
+    "tldr": "LFM3-1.7B è un modello text-only da 1.73B parametri basato su architettura tri-hybrid (convoluzioni, sliding-window e global attention), ottimizzato per agenti locali, tool calling e fine-tuning su singola GPU. Offre 256K token di contesto e a 4-bit occupa ~1 GB, rendendolo eseguibile su edge/phone.",
+    "features": [
+     "Architettura tri-hybrid: 24 layer (13 gated short convolutions, 5 sliding-window attention, 6 global attention)",
+     "Context window 256K token (input+output), esteso in mid-training su 3.5T token",
+     "Post-training agentic su Hermes Agent, Pi, OpenClaw; supporta tool calling nativo (XML), deferred tool search e structured output",
+     "Quantizzazioni ufficiali: BF16, FP8, NVFP4 (SGLang/vLLM), GGUF (llama.cpp/Ollama/LM Studio), MLX 4-bit (Apple Silicon), ONNX, OpenVINO 4-bit (Intel)",
+     "Licenza LFM Open License v1.0 (non standard OSI); vocab 128k token, 15 lingue tra cui italiano",
+     "Progettato per fine-tuning rapido single-GPU (SFT, DPO, GRPO, CPT via TRL)"
+    ],
+    "benchmarks": [
+     {
+      "name": "LiveClaw",
+      "score": "45.60",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "14.70"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "30.37"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "35.77"
+       }
+      ]
+     },
+     {
+      "name": "Claw-Eval General (EN) average",
+      "score": "68.64",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "62.63"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "60.74"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "66.53"
+       }
+      ]
+     },
+     {
+      "name": "Claw-Eval General (EN) pass^3",
+      "score": "51.40",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "37.52"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "34.58"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "51.87"
+       }
+      ]
+     },
+     {
+      "name": "BrowseComp-Plus (OpenClaw subset)",
+      "score": "37.00",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "26.33"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "16.83"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "38.00"
+       }
+      ]
+     },
+     {
+      "name": "WebArena-Verified",
+      "score": "38.42",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "3.02"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "9.11"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "28.94"
+       }
+      ]
+     },
+     {
+      "name": "EnterpriseOps-Gym",
+      "score": "28.20",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "7.94"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "13.41"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "28.97"
+       }
+      ]
+     },
+     {
+      "name": "AutomationBench (public)",
+      "score": "41.29",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "0.94"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "4.71"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "15.10"
+       }
+      ]
+     },
+     {
+      "name": "BFCL V4",
+      "score": "71.39",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "55.89"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "62.65"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "62.83"
+       }
+      ]
+     },
+     {
+      "name": "ToolSandbox",
+      "score": "80.36",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "78.04"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "68.16"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "76.41"
+       }
+      ]
+     },
+     {
+      "name": "MCP-Atlas",
+      "score": "32.57",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "16.45"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "26.38"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "42.67"
+       }
+      ]
+     },
+     {
+      "name": "τ³-bench (4 domains) average",
+      "score": "68.01",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "56.77"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "69.44"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "67.11"
+       }
+      ]
+     },
+     {
+      "name": "SWE-bench Verified (OpenCode)",
+      "score": "43.40",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "18.00"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "34.80"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "51.20"
+       }
+      ]
+     },
+     {
+      "name": "SWE-bench Multilingual (OpenCode)",
+      "score": "23.00",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "8.00"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "15.67"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "35.00"
+       }
+      ]
+     },
+     {
+      "name": "Terminal-Bench 2.1 (OpenCode)",
+      "score": "12.92",
+      "vs": [
+       {
+        "model": "LFM2.5-2.6B",
+        "score": "0.00"
+       },
+       {
+        "model": "MiniCPM5-2B",
+        "score": "5.62"
+       },
+       {
+        "model": "Qwen3.5-9B",
+        "score": "17.98"
+       }
+      ]
+     }
+    ],
+    "params": "1.73B",
+    "context": "256K tokens (262.144)",
+    "availability": "Pesi aperti su Hugging Face (LiquidAI/LFM3-1.7B) con licenza LFM Open License v1.0. Checkpoint: BF16 (vLLM, SGLang, Transformers), FP8/NVFP4 (SGLang), GGUF (llama.cpp, Ollama, LM Studio), MLX 4-bit (Apple Silicon), ONNX Runtime, OpenVINO 4-bit (Intel). API a pagamento: $0.08/M in, $0.20/M out.",
+    "local_tips": "Sampling consigliato: General (chat, tool use, agents, coding) temperature=0.1, top_k=50, repetition_penalty=1.1; Math & STEM temperature=1.0, top_p=0.95, top_k=20. Chat template ChatML-style; usa tokenizer.apply_chat_template(add_generation_prompt=True). Tool calling nativo con schema XML; supporta deferred tools (defer_loading=True). Per llama.cpp serve build con supporto LFM3 o --chat-template-file. Reasoning abilitato di default (enable_thinking=False per disabilitare). A 32K context in…",
+    "source": "https://huggingface.co/LiquidAI/LFM3-1.7B",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "or:google/gemini-omni-1.2-flash": {
+   "id": "or:google/gemini-omni-1.2-flash",
+   "name": "Gemini Omni 1.2 Flash",
+   "org": "Google",
+   "kind": "closed",
+   "released": "2026-11-05",
+   "or_id": "google/gemini-omni-1.2-flash",
+   "hf_id": null,
+   "context": 131072,
+   "modality": "text+image+video->text+video",
+   "pricing": {
+    "in": 1.5,
+    "out": 9.0
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "Gemini Omni 1.2 Flash is Google's native multimodal video generation and editing model, the successor to Gemini Omni 1.1 Flash. It generates clips up to 15 seconds long with native...",
+   "links": {
+    "openrouter": "https://openrouter.ai/google/gemini-omni-1.2-flash"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 6.5,
+   "updated": "2026-11-15"
+  },
+  "or:kt/midm-k-3.0-pro": {
+   "id": "or:kt/midm-k-3.0-pro",
+   "name": "Mi:dm K 3.0 Pro",
+   "org": "KT",
+   "kind": "closed",
+   "released": "2026-11-05",
+   "or_id": "kt/midm-k-3.0-pro",
+   "hf_id": null,
+   "context": 261795,
+   "modality": "text->text",
+   "pricing": {
+    "in": 0.2,
+    "out": 0.8
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "Mi:dm K 3.0 Pro is a Mixture-of-Experts reasoning model from KT, with 120B total and 12B active parameters. It uses a hybrid architecture that mixes Mamba, MoE and attention layers.",
+   "links": {
+    "openrouter": "https://openrouter.ai/kt/midm-k-3.0-pro"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 2.0,
+   "updated": "2026-11-15"
+  },
+  "or:google/gemini-omni-1.1-flash": {
+   "id": "or:google/gemini-omni-1.1-flash",
+   "name": "Gemini Omni 1.1 Flash",
+   "org": "Google",
+   "kind": "closed",
+   "released": "2026-11-04",
+   "or_id": "google/gemini-omni-1.1-flash",
+   "hf_id": null,
+   "context": 131072,
+   "modality": "text+image+video->text+video",
+   "pricing": {
+    "in": 1.5,
+    "out": 9.0
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "Gemini Omni 1.1 Flash is Google's native multimodal video generation and editing model, the generally available successor to Gemini Omni Flash Preview. It is suited for text-to-video, image-to-video, first and...",
+   "links": {
+    "openrouter": "https://openrouter.ai/google/gemini-omni-1.1-flash"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 6.5,
+   "updated": "2026-11-15"
+  },
+  "ricursiveAI/Ripple-65B-Preview": {
+   "id": "ricursiveAI/Ripple-65B-Preview",
+   "name": "Ripple-65B-Preview",
+   "org": "ricursiveAI",
+   "kind": "open",
+   "released": "2026-11-04",
+   "or_id": "ricursiveai/ripple-65b-preview",
+   "hf_id": "ricursiveAI/Ripple-65B-Preview",
+   "context": 2097152,
+   "modality": "text->text",
+   "pricing": {
+    "in": 0.1,
+    "out": 0.3
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "Ripple-65B-Preview by ricursiveAI, a 65B model with native tool calling, served in BF16.",
+   "links": {
+    "openrouter": "https://openrouter.ai/ricursiveai/ripple-65b-preview",
+    "hf": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 64.78,
+   "params_source": "safetensors",
+   "arch": {
+    "layers": 80,
+    "hidden": 5120,
+    "heads": 80,
+    "kv_heads": 8,
+    "head_dim": 128,
+    "full_layers": 16,
+    "sliding_layers": 64,
+    "window": 1024,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 40960,
+    "vocab": 100352,
+    "tied": false,
+    "max_ctx": 2097152
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 584,
+    "downloads": 10675,
+    "trending": 166,
+    "trend_rank": 44
+   },
+   "vram": {
+    "level": "warn",
+    "label": "IQ2_M @32k",
+    "text": "Solo quantizzazione aggressiva (IQ2_M) per stare in 32 GB @32k",
+    "best_quant": "IQ2_M",
+    "tok_s": 56,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 120.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 124.6,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 126.1,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 132.1,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 10
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 64.1,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 66.9,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 68.4,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 74.4,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 18
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 49.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 52.0,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 53.5,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 59.5,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 23
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 42.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 45.3,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 46.8,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 52.8,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 27
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 36.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 38.8,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 40.3,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 46.3,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 32
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 32.1,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 34.2,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 35.7,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 41.7,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 36
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 29.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 31.6,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 33.1,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 39.1,
+        "fits": false
+       }
+      ],
+      "max_ctx": 512,
+      "tok_s": 39
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 20.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 22.3,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 23.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 29.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": 151003,
+      "tok_s": 56
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "AtomicChat/Ripple-65B-Preview-GGUF",
+     "format": "GGUF",
+     "downloads": 108673
+    },
+    {
+     "id": "orcarouter/Ripple-65B-abliterated-GGUF",
+     "format": "GGUF",
+     "downloads": 28195
+    },
+    {
+     "id": "dealignai/Ripple-65B-Preview-UNCENSORED-GGUF",
+     "format": "GGUF",
+     "downloads": 8274
+    },
+    {
+     "id": "mrfakename/Ripple-65B-Preview-GGUF",
+     "format": "GGUF",
+     "downloads": 2635
+    },
+    {
+     "id": "0xKitkat/Ripple-65B-Preview-abliterated-GGUF",
+     "format": "GGUF",
+     "downloads": 1875
+    },
+    {
+     "id": "prometheusAIR/Ripple-65B-Preview-GGUF",
+     "format": "GGUF",
+     "downloads": 1447
+    }
+   ],
+   "score": 6.49,
+   "updated": "2026-11-15"
+  },
+  "tencent/Hy4": {
+   "id": "tencent/Hy4",
+   "name": "Hy4",
+   "org": "Tencent",
+   "kind": "closed",
+   "released": "2026-11-04",
+   "or_id": "tencent/hy4",
+   "hf_id": "tencent/Hy4",
+   "context": 1048576,
+   "modality": "text+image->text",
+   "pricing": {
+    "in": 0.417,
+    "out": 1.2505
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "The official release of Hy4 delivers comprehensive and substantial improvements over Hy4 Preview, with particularly strong gains in agentic capabilities and performance across a wide range of long-horizon, real-world productivity...",
+   "links": {
+    "openrouter": "https://openrouter.ai/tencent/hy4"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "note": "OpenRouter indica pesi su Hugging Face, ma il repository non è (ancora) pubblico: verrà ricontrollato ogni giorno.",
+   "score": 3.5,
+   "updated": "2026-11-15"
+  },
+  "Motif-Technologies/Motif-3": {
+   "id": "Motif-Technologies/Motif-3",
+   "name": "Motif-3",
+   "org": "Motif-Technologies",
+   "kind": "open",
+   "released": "2026-08-07",
+   "or_id": "motif-technologies/motif-3",
+   "hf_id": "Motif-Technologies/Motif-3",
+   "context": 262144,
+   "modality": "text->text",
+   "pricing": {
+    "in": 0.3,
+    "out": 1.2
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "Motif 3 is a Mixture-of-Experts language model from Motif Technologies, with 314B total and 13.2B active parameters. It is a general-purpose multilingual model for English and Korean, particularly strong at...",
+   "links": {
+    "openrouter": "https://openrouter.ai/motif-technologies/motif-3",
+    "hf": "https://huggingface.co/Motif-Technologies/Motif-3"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "pipeline": "text-generation",
+   "license": "mit",
+   "gated": false,
+   "params_b": 314.84,
+   "params_source": "safetensors",
+   "arch": {
+    "layers": 53,
+    "hidden": 4096,
+    "heads": 80,
+    "kv_heads": 16,
+    "head_dim": 192,
+    "full_layers": 53,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": 576,
+    "experts": 384,
+    "experts_active": null,
+    "moe_inter": 1280,
+    "dense_layers": 0,
+    "inter": 12288,
+    "vocab": 220160,
+    "tied": false,
+    "max_ctx": 262144
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 155,
+    "downloads": 2401,
+    "trending": null
+   },
+   "vram": {
+    "level": "no",
+    "label": "non entra",
+    "text": "Troppo grande per una RTX 5090: ~178 GB solo di pesi anche in Q4_K_M",
+    "best_quant": null,
+    "tok_s": null,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 586.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 599.4,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 600.8,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 606.4,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 2
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 311.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 319.0,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 320.4,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 326.0,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 4
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 240.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 246.5,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 247.9,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 253.5,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 5
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 208.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 213.9,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 215.3,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 220.9,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 6
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 177.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 182.5,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 183.9,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 189.5,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 7
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 155.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 160.1,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 161.5,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 167.1,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 7
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 143.3,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 147.4,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 148.8,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 154.4,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 8
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 99.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 102.2,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 103.6,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 109.1,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 12
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "0ppxnhximxr/Motif-3-GGUF",
+     "format": "GGUF",
+     "downloads": 145
+    },
+    {
+     "id": "Baekpica/Motif-3-Mixed-Quant-GGUF",
+     "format": "GGUF",
+     "downloads": 107
+    },
+    {
+     "id": "AesSedai/Motif-3-GGUF",
+     "format": "GGUF",
+     "downloads": 103
+    },
+    {
+     "id": "avar6/Motif-3-gguf",
+     "format": "GGUF",
+     "downloads": 65
+    },
+    {
+     "id": "prometheusAIR/Motif-3-GGUF",
+     "format": "GGUF",
+     "downloads": 46
+    },
+    {
+     "id": "jhkim55/Motif-3-Direct-IQ2-XXS-DGX-Spark",
+     "format": "GGUF",
+     "downloads": 34
+    }
+   ],
+   "score": 4.97,
+   "updated": "2026-11-15"
+  },
+  "or:z-ai/glm-5.3-flashx-legal": {
+   "id": "or:z-ai/glm-5.3-flashx-legal",
+   "name": "GLM 5.3 FlashX Legal",
+   "org": "Z.ai",
+   "kind": "closed",
+   "released": "2026-11-02",
+   "or_id": "z-ai/glm-5.3-flashx-legal",
+   "hf_id": null,
+   "context": 1048576,
+   "modality": "text+image+video->text",
+   "pricing": {
+    "in": 0.37,
+    "out": 1.25
+   },
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "GLM-5.3-FlashX-Legal (GLM-Legal) is Z.ai's legal-domain variant of GLM-5.3-FlashX, a native multimodal model that accepts text, image, and video input and produces text. It adds legal-domain mid-training and post-training with reinforcement...",
+   "links": {
+    "openrouter": "https://openrouter.ai/z-ai/glm-5.3-flashx-legal"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 5.0,
+   "updated": "2026-11-15"
+  },
+  "MiniMaxAI/MiniMax-H3-Image": {
+   "id": "MiniMaxAI/MiniMax-H3-Image",
+   "name": "MiniMax-H3-Image",
+   "org": "MiniMaxAI",
+   "kind": "open",
+   "released": "2026-11-03",
+   "hf_id": "MiniMaxAI/MiniMax-H3-Image",
+   "pipeline": "text-to-image",
+   "license": "other",
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 1143,
+    "downloads": 571067,
+    "trending": 1038,
+    "trend_rank": 2,
+    "watched_org": true
+   },
+   "links": {
+    "hf": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image"
+   },
+   "vram": null,
+   "quants": [
+    {
+     "id": "Abiray/MiniMax-H3-Image-GGUF",
+     "format": "GGUF",
+     "downloads": 127803
+    },
+    {
+     "id": "Hearthscale/MiniMax-H3-Image-GGUF",
+     "format": "GGUF",
+     "downloads": 46781
+    },
+    {
+     "id": "AtomicChat/MiniMax-H3-Image-GGUF",
+     "format": "GGUF",
+     "downloads": 13047
+    },
+    {
+     "id": "unsloth/MiniMax-H3-Image-GGUF",
+     "format": "GGUF",
+     "downloads": 4883
+    },
+    {
+     "id": "realrebelai/Minimax-H3-Image_GGUFs",
+     "format": "GGUF",
+     "downloads": 4245
+    },
+    {
+     "id": "yasutoshi-lab/MiniMax-H3-Image-GGUF",
+     "format": "GGUF",
+     "downloads": 3357
+    }
+   ],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 7.25,
+   "updated": "2026-11-15"
+  },
+  "Zyphra/ZONOS3-Mini": {
+   "id": "Zyphra/ZONOS3-Mini",
+   "name": "ZONOS3-Mini",
+   "org": "Zyphra",
+   "kind": "open",
+   "released": "2026-11-09",
+   "hf_id": "Zyphra/ZONOS3-Mini",
+   "pipeline": "text-to-speech",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 367,
+    "downloads": 39862,
+    "trending": 327,
+    "trend_rank": 7,
+    "watched_org": true
+   },
+   "links": {
+    "hf": "https://huggingface.co/Zyphra/ZONOS3-Mini"
+   },
+   "vram": null,
+   "quants": [
+    {
+     "id": "AtomicChat/ZONOS3-Mini-GGUF",
+     "format": "GGUF",
+     "downloads": 1370
+    }
+   ],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 6.81,
+   "updated": "2026-11-15"
+  },
+  "moonshotai/Kimi-K3.1-Pro": {
+   "id": "moonshotai/Kimi-K3.1-Pro",
+   "name": "Kimi-K3.1-Pro",
+   "org": "moonshotai",
+   "kind": "open",
+   "released": "2026-11-02",
+   "hf_id": "moonshotai/Kimi-K3.1-Pro",
+   "pipeline": "image-text-to-text",
+   "license": "other",
+   "gated": false,
+   "params_b": 2780.11,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": 1048576,
+   "arch": {
+    "layers": 93,
+    "hidden": 7168,
+    "heads": 96,
+    "kv_heads": 96,
+    "head_dim": 74,
+    "full_layers": 93,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": 576,
+    "experts": 896,
+    "experts_active": 16,
+    "moe_inter": 3072,
+    "dense_layers": 1,
+    "inter": 33792,
+    "vocab": 163840,
+    "tied": false,
+    "max_ctx": 1048576
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 2089,
+    "downloads": 46766,
+    "trending": 298,
+    "trend_rank": 11,
+    "watched_org": true
+   },
+   "links": {
+    "hf": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"
+   },
+   "vram": {
+    "level": "no",
+    "label": "non entra",
+    "text": "Troppo grande per una RTX 5090: ~1570 GB solo di pesi anche in Q4_K_M",
+    "best_quant": null,
+    "tok_s": null,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 5178.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 5283.5,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 5285.9,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 5295.8,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 0
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 2751.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 2807.6,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 2810.0,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 2819.9,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 0
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 2123.1,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 2167.2,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 2169.6,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 2179.4,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 1841.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1880.0,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 1882.4,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 1892.2,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 1569.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1602.7,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 1605.1,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 1614.9,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 1375.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1404.6,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 1407.0,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 1416.8,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 1265.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1292.3,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 1294.8,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 1304.6,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 873.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 892.9,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 895.3,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 905.2,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "KarLexAI/Kimi-K3.1-Pro-GGUF",
+     "format": "GGUF",
+     "downloads": 7576
+    },
+    {
+     "id": "shashanth-27xA9/Kimi-K3.1-Pro-SuperExpert-12GB",
+     "format": "GGUF",
+     "downloads": 6634
+    },
+    {
+     "id": "DevQuasar/moonshotai.Kimi-K3.1-Pro-GGUF",
+     "format": "GGUF",
+     "downloads": 1828
+    },
+    {
+     "id": "resuurcct1/Kimi-K3.1-Pro-SuperExpert-12GB",
+     "format": "GGUF",
+     "downloads": 1363
+    },
+    {
+     "id": "akopytko/tiny-kimi-k3.1-pro-GGUF",
+     "format": "GGUF",
+     "downloads": 1070
+    },
+    {
+     "id": "local-inference-lab/Kimi-K3.1-Pro-EXL3-2bit",
+     "format": "altro",
+     "downloads": 33857
+    }
+   ],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 8.49,
+   "updated": "2026-11-15"
+  },
+  "higurashi-ai/Haru-4B": {
+   "id": "higurashi-ai/Haru-4B",
+   "name": "Haru-4B",
+   "org": "higurashi-ai",
+   "kind": "open",
+   "released": "2026-11-12",
+   "hf_id": "higurashi-ai/Haru-4B",
+   "pipeline": "audio-to-audio",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 5.27,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 265,
+    "downloads": 2098,
+    "trending": 250,
+    "trend_rank": 13
+   },
+   "links": {
+    "hf": "https://huggingface.co/higurashi-ai/Haru-4B"
+   },
+   "vram": {
+    "level": "ok",
+    "label": "BF16 @32k",
+    "text": "Gira su RTX 5090 in BF16 (9.8 GB di pesi)",
+    "best_quant": "BF16",
+    "tok_s": null,
+    "kv_known": false,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 9.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 10.8,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 10.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 10.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 5.2,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 6.1,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 6.1,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 6.1,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 4.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 4.9,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 4.9,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 4.9,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 3.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 4.3,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 4.3,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 4.3,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 3.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 3.8,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 3.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 3.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 2.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 3.4,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 3.4,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 3.4,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 2.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 3.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 3.2,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 3.2,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 1.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 2.4,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 2.4,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 2.4,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "sakasegawa/Haru-4B-GGUF",
+     "format": "GGUF",
+     "downloads": 293
+    },
+    {
+     "id": "infosave/Haru-4B-cmf",
+     "format": "altro",
+     "downloads": 12
+    }
+   ],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 7.18,
+   "updated": "2026-11-15"
+  },
+  "Cactus-Compute/mirage": {
+   "id": "Cactus-Compute/mirage",
+   "name": "mirage",
+   "org": "Cactus-Compute",
+   "kind": "open",
+   "released": "2026-11-05",
+   "hf_id": "Cactus-Compute/mirage",
+   "pipeline": "image-text-to-text",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 309,
+    "downloads": 28553,
+    "trending": 214,
+    "trend_rank": 19
+   },
+   "links": {
+    "hf": "https://huggingface.co/Cactus-Compute/mirage"
+   },
+   "vram": null,
+   "quants": [],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 6.24,
+   "updated": "2026-11-15"
+  },
+  "adventists-ai/Sophon-Realtime-v1": {
+   "id": "adventists-ai/Sophon-Realtime-v1",
+   "name": "Sophon-Realtime-v1",
+   "org": "adventists-ai",
+   "kind": "placeholder",
+   "released": "2026-11-07",
+   "hf_id": "adventists-ai/Sophon-Realtime-v1",
+   "pipeline": "any-to-any",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": false,
+   "signals": {
+    "likes": 270,
+    "downloads": 0,
+    "trending": 212,
+    "trend_rank": 20
+   },
+   "links": {
+    "hf": "https://huggingface.co/adventists-ai/Sophon-Realtime-v1"
+   },
+   "vram": null,
+   "note": "Repository senza file di pesi (segnaposto o rilascio non ancora avvenuto).",
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 4.19,
+   "updated": "2026-11-15"
+  },
+  "meituan-longcat/LongCat-2.5": {
+   "id": "meituan-longcat/LongCat-2.5",
+   "name": "LongCat-2.5",
+   "org": "meituan-longcat",
+   "kind": "open",
+   "released": "2026-11-04",
+   "hf_id": "meituan-longcat/LongCat-2.5",
+   "pipeline": "image-text-to-text",
+   "license": "mit",
+   "gated": false,
+   "params_b": 1779.75,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": 524288,
+   "arch": {
+    "layers": 38,
+    "hidden": 8192,
+    "heads": 64,
+    "kv_heads": 64,
+    "head_dim": 128,
+    "full_layers": 38,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": 576,
+    "experts": 768,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 12288,
+    "vocab": 163840,
+    "tied": false,
+    "max_ctx": 524288
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 268,
+    "downloads": 1573,
+    "trending": 203,
+    "trend_rank": 25,
+    "watched_org": true
+   },
+   "links": {
+    "hf": "https://huggingface.co/meituan-longcat/LongCat-2.5"
+   },
+   "vram": {
+    "level": "no",
+    "label": "non entra",
+    "text": "Troppo grande per una RTX 5090: ~1005 GB solo di pesi anche in Q4_K_M",
+    "best_quant": null,
+    "tok_s": null,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 3315.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 3382.4,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 3383.4,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 3387.4,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 0
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 1761.1,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1797.4,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 1798.4,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 1802.4,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 1359.2,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1387.4,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 1388.4,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 1392.4,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 1178.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1203.6,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 1204.6,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 1208.6,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 1004.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1026.1,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 1027.1,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 1031.1,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 880.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 899.3,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 900.3,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 904.3,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 810.1,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 827.4,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 828.4,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 832.4,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 1
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 559.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 571.7,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 572.7,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 576.7,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 2
+     }
+    ]
+   },
+   "quants": [],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 7.69,
+   "updated": "2026-11-15"
+  },
+  "ConwayResearch/Underdog-Woof": {
+   "id": "ConwayResearch/Underdog-Woof",
+   "name": "Underdog-Woof",
+   "org": "ConwayResearch",
+   "kind": "open",
+   "released": "2026-11-05",
+   "hf_id": "ConwayResearch/Underdog-Woof",
+   "pipeline": "text-to-speech",
+   "license": "other",
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 269,
+    "downloads": 10,
+    "trending": 145,
+    "trend_rank": 52
+   },
+   "links": {
+    "hf": "https://huggingface.co/ConwayResearch/Underdog-Woof"
+   },
+   "vram": null,
+   "quants": [
+    {
+     "id": "cowWhySo/Underdog-Woof-MLX",
+     "format": "MLX",
+     "downloads": 14
+    },
+    {
+     "id": "masterofaudio2077/underdog-woof-onnx",
+     "format": "altro",
+     "downloads": 0
+    }
+   ],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 5.19,
+   "updated": "2026-11-15"
+  },
+  "MinimaLabs/KLM-1.6": {
+   "id": "MinimaLabs/KLM-1.6",
+   "name": "KLM-1.6",
+   "org": "MinimaLabs",
+   "kind": "open",
+   "released": "2026-11-09",
+   "hf_id": "MinimaLabs/KLM-1.6",
+   "pipeline": "text-generation",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 0.1,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": 2048,
+   "arch": {
+    "layers": 24,
+    "hidden": 512,
+    "heads": 8,
+    "kv_heads": 4,
+    "head_dim": 64,
+    "full_layers": 24,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 1408,
+    "vocab": 4160,
+    "tied": true,
+    "max_ctx": 2048
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 81,
+    "downloads": 1655,
+    "trending": 81,
+    "trend_rank": 68
+   },
+   "links": {
+    "hf": "https://huggingface.co/MinimaLabs/KLM-1.6"
+   },
+   "vram": {
+    "level": "ok",
+    "label": "BF16 @2k",
+    "text": "Gira su RTX 5090 in BF16 con 2k di contesto, 500+ tok/s",
+    "best_quant": "BF16",
+    "tok_s": 4172,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 0.2,
+      "rows": [
+       null,
+       null,
+       null
+      ],
+      "max_ctx": 2048,
+      "tok_s": 4172
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 0.1,
+      "rows": [
+       null,
+       null,
+       null
+      ],
+      "max_ctx": 2048,
+      "tok_s": 6062
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 0.1,
+      "rows": [
+       null,
+       null,
+       null
+      ],
+      "max_ctx": 2048,
+      "tok_s": 6867
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 0.1,
+      "rows": [
+       null,
+       null,
+       null
+      ],
+      "max_ctx": 2048,
+      "tok_s": 7302
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 0.1,
+      "rows": [
+       null,
+       null,
+       null
+      ],
+      "max_ctx": 2048,
+      "tok_s": 7777
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 0.0,
+      "rows": [
+       null,
+       null,
+       null
+      ],
+      "max_ctx": 2048,
+      "tok_s": 8157
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 0.0,
+      "rows": [
+       null,
+       null,
+       null
+      ],
+      "max_ctx": 2048,
+      "tok_s": 8388
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 0.0,
+      "rows": [
+       null,
+       null,
+       null
+      ],
+      "max_ctx": 2048,
+      "tok_s": 9332
+     }
+    ]
+   },
+   "quants": [],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 7.72,
+   "updated": "2026-11-15"
+  },
+  "Oomni/mithi-v1-flash": {
+   "id": "Oomni/mithi-v1-flash",
+   "name": "mithi-v1-flash",
+   "org": "Oomni",
+   "kind": "open",
+   "released": "2026-11-07",
+   "hf_id": "Oomni/mithi-v1-flash",
+   "pipeline": "text-to-speech",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 78,
+    "downloads": 955,
+    "trending": 68,
+    "trend_rank": 76
+   },
+   "links": {
+    "hf": "https://huggingface.co/Oomni/mithi-v1-flash"
+   },
+   "vram": null,
+   "quants": [
+    {
+     "id": "chintan992/rustle-tts-mithi-v1-flash",
+     "format": "altro",
+     "downloads": 0
+    }
+   ],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 4.71,
+   "updated": "2026-11-15"
+  },
+  "nvidia/MetricTrail": {
+   "id": "nvidia/MetricTrail",
+   "name": "MetricTrail",
+   "org": "nvidia",
+   "kind": "open",
+   "released": "2026-11-05",
+   "hf_id": "nvidia/MetricTrail",
+   "pipeline": null,
+   "license": "other",
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 26,
+    "downloads": 590,
+    "trending": null,
+    "watched_org": true
+   },
+   "links": {
+    "hf": "https://huggingface.co/nvidia/MetricTrail"
+   },
+   "vram": null,
+   "quants": [],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 4.79,
+   "updated": "2026-11-15"
+  },
+  "BAAI/PingPongRealWorldRL": {
+   "id": "BAAI/PingPongRealWorldRL",
+   "name": "PingPongRealWorldRL",
+   "org": "BAAI",
+   "kind": "open",
+   "released": "2026-11-03",
+   "hf_id": "BAAI/PingPongRealWorldRL",
+   "pipeline": "reinforcement-learning",
+   "license": null,
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 8,
+    "downloads": 28,
+    "trending": null,
+    "watched_org": true
+   },
+   "links": {
+    "hf": "https://huggingface.co/BAAI/PingPongRealWorldRL"
+   },
+   "vram": null,
+   "quants": [],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 4.36,
+   "updated": "2026-11-15"
+  },
+  "ByteDance-Seed/Cola2": {
+   "id": "ByteDance-Seed/Cola2",
+   "name": "Cola2",
+   "org": "ByteDance-Seed",
+   "kind": "open",
+   "released": "2026-11-06",
+   "hf_id": "ByteDance-Seed/Cola2",
+   "pipeline": "text-generation",
+   "license": null,
+   "gated": false,
+   "params_b": 8.77,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 15,
+    "downloads": 1377,
+    "trending": null,
+    "watched_org": true
+   },
+   "links": {
+    "hf": "https://huggingface.co/ByteDance-Seed/Cola2"
+   },
+   "vram": {
+    "level": "ok",
+    "label": "BF16 @32k",
+    "text": "Gira su RTX 5090 in BF16 con 32k di contesto, ~72 tok/s",
+    "best_quant": "BF16",
+    "tok_s": 72,
+    "kv_known": false,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 16.3,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 17.4,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 17.4,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 17.4,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 72
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 8.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 9.6,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 9.6,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 9.6,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 135
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 6.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 7.6,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 7.6,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 7.6,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 174
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 5.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 6.7,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 6.7,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 6.7,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 201
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 5.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 5.8,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 5.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 5.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 236
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 4.3,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 5.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 5.2,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 5.2,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 269
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 4.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 4.8,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 4.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 4.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 293
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 2.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 3.6,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 3.6,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 3.6,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 424
+     }
+    ]
+   },
+   "quants": [],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 7.58,
+   "updated": "2026-11-15"
+  },
+  "Zyphra/ZONOS3-Mini-hf": {
+   "id": "Zyphra/ZONOS3-Mini-hf",
+   "name": "ZONOS3-Mini-hf",
+   "org": "Zyphra",
+   "kind": "open",
+   "released": "2026-11-11",
+   "hf_id": "Zyphra/ZONOS3-Mini-hf",
+   "pipeline": "text-to-speech",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 1.04,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 9,
+    "downloads": 452,
+    "trending": null,
+    "watched_org": true
+   },
+   "links": {
+    "hf": "https://huggingface.co/Zyphra/ZONOS3-Mini-hf"
+   },
+   "vram": {
+    "level": "ok",
+    "label": "BF16 @32k",
+    "text": "Gira su RTX 5090 in BF16 (1.9 GB di pesi)",
+    "best_quant": "BF16",
+    "tok_s": null,
+    "kv_known": false,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 1.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 2.7,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 2.7,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 2.7,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 1.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1.8,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 1.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 1.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 0.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1.6,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 1.6,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 1.6,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 0.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1.5,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 1.5,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 1.5,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 0.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1.3,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 1.3,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 1.3,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 0.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1.3,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 1.3,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 1.3,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 0.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 1.2,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 1.2,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 0.3,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 1.1,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 1.1,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 1.1,
+        "fits": true
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": null
+     }
+    ]
+   },
+   "quants": [],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 6.4,
+   "updated": "2026-11-15"
+  },
+  "Zyphra/fusealign": {
+   "id": "Zyphra/fusealign",
+   "name": "fusealign",
+   "org": "Zyphra",
+   "kind": "open",
+   "released": "2026-11-02",
+   "hf_id": "Zyphra/fusealign",
+   "pipeline": null,
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 5,
+    "downloads": 105,
+    "trending": null,
+    "watched_org": true
+   },
+   "links": {
+    "hf": "https://huggingface.co/Zyphra/fusealign"
+   },
+   "vram": null,
+   "quants": [],
+   "first_seen": "2026-11-15",
+   "mentions": [],
+   "score": 4.2,
+   "updated": "2026-11-15"
+  },
+  "ann:claudemythos52": {
+   "id": "ann:claudemythos52",
+   "name": "Claude Mythos 5.2",
+   "org": "Anthropic",
+   "kind": "announced",
+   "released": "2026-11-09",
+   "links": {
+    "announcement": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "ffe8a09e969f",
+     "rel": 9,
+     "date": "2026-11-09",
+     "title": "Claude Fable 5.2 e Mythos 5.2 rilasciati",
+     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+     "source": "Hacker News"
+    }
+   ],
+   "score": 8.7,
+   "deep": {
+    "tldr": "Claude Mythos 5.2 è il modello di punta di Anthropic per attività tecniche ad alto rischio (cybersecurity, ricerca scientifica, ingegneria hardware), identico a Fable 5.2 ma senza i safeguard che bloccano task sensibili. Raggiunge SOTA su benchmark di coding agentico, cybersecurity e ragionamento scientifico, con un'opzione 'fast mode' 2.5x più veloce e prezzi ridotti rispetto alla v5.1.",
+    "features": [
+     "Stesso modello sottostante di Claude Fable 5.2, differenziato solo per l'assenza di safeguard su cyber/biologia (accesso su richiesta via Cyber/Life Sciences Verification Programs)",
+     "Miglioramenti su coding, reasoning, vision; output fino al 30% più veloce vs v5.1",
+     "Modalità 'Fast' opzionale: generazione token fino a 2.5x più veloce (prezzo doppio: $16/$80 per M token in/out)",
+     "Capacità 'Advisor/Orchestrator': può fare da modello forte che delega a modelli minori (Sonnet/Haiku/Opus) o viene consultato da essi",
+     "Robuste difese contro attacchi di distillazione; safeguard Fable producono meno falsi positivi",
+     "Accessibile via API Anthropic, Claude Enterprise (Claude Security per scanning repo), e programmi verificati per Mythos"
+    ],
+    "benchmarks": [
+     {
+      "name": "FrontierCode 2.0 (Agentic coding, Xhigh effort)",
+      "score": "49.1%",
+      "vs": [
+       {
+        "model": "Claude Fable 5.1",
+        "score": "32.4%"
+       },
+       {
+        "model": "Claude Opus 5.5",
+        "score": "45.5%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "42.8%"
+       }
+      ]
+     },
+     {
+      "name": "FrontierSWE v2 (Agentic coding)",
+      "score": "69.9%",
+      "vs": [
+       {
+        "model": "Claude Fable 5.1",
+        "score": "56.3%"
+       },
+       {
+        "model": "Claude Opus 5.5",
+        "score": "62.3%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "65.5%"
+       }
+      ]
+     },
+     {
+      "name": "Terminal-Bench-Science (Agentic scientific research, Mythos 5.2)",
+      "score": "75.3%",
+      "vs": [
+       {
+        "model": "Claude Fable 5.1",
+        "score": "52.6%"
+       },
+       {
+        "model": "Claude Opus 5.5",
+        "score": "58.7%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "68.1%"
+       }
+      ]
+     },
+     {
+      "name": "CyScenarioBench (Cybersecurity, Mythos 5.2)",
+      "score": "76.3%",
+      "vs": [
+       {
+        "model": "Claude Mythos 5.1",
+        "score": "61.7%"
+       },
+       {
+        "model": "Claude Opus 5.5 (no safeguards)",
+        "score": "67.6%"
+       },
+       {
+        "model": "GPT-6 Astra Cyber",
+        "score": "61%"
+       }
+      ]
+     },
+     {
+      "name": "CVE Rediscovery (Cybersecurity, Mythos 5.2)",
+      "score": "89.6%",
+      "vs": [
+       {
+        "model": "Claude Mythos 5.1",
+        "score": "78.3%"
+       },
+       {
+        "model": "Claude Opus 5.5 (no safeguards)",
+        "score": "81.3%"
+       }
+      ]
+     },
+     {
+      "name": "De novo binder design 24h (Protein design, Mythos 5.2)",
+      "score": "85.1",
+      "vs": [
+       {
+        "model": "Claude Mythos 5.1",
+        "score": "79.1"
+       },
+       {
+        "model": "Claude Opus 5.5 (no safeguards)",
+        "score": "82.6"
+       }
+      ]
+     },
+     {
+      "name": "WANDR relaxed (Agentic search)",
+      "score": "82.1%",
+      "vs": [
+       {
+        "model": "Claude Fable 5.1",
+        "score": "68.7%"
+       },
+       {
+        "model": "Claude Opus 5.5",
+        "score": "72.3%"
+       }
+      ]
+     },
+     {
+      "name": "OSWorld 2.1 offline partial (Computer use)",
+      "score": "89.3%",
+      "vs": [
+       {
+        "model": "Claude Fable 5.1",
+        "score": "83.5%"
+       },
+       {
+        "model": "Claude Opus 5.5",
+        "score": "87.2%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "79.5%"
+       }
+      ]
+     },
+     {
+      "name": "RoboDojo Sim (Robotics, highest effort)",
+      "score": "64.9%",
+      "vs": [
+       {
+        "model": "Claude Fable 5.1",
+        "score": "27.6%"
+       },
+       {
+        "model": "Claude Opus 5.5",
+        "score": "39.4%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "29.8%"
+       }
+      ]
+     },
+     {
+      "name": "AA-Briefcase v1.1 (Knowledge work, rubric)",
+      "score": "66.1%",
+      "vs": [
+       {
+        "model": "Claude Fable 5.1",
+        "score": "61.5%"
+       },
+       {
+        "model": "Claude Opus 5.5",
+        "score": "61.2%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "52.0%"
+       }
+      ]
+     },
+     {
+      "name": "Humanity's Last Exam with tools (Multidisciplinary reasoning)",
+      "score": "74.2%",
+      "vs": [
+       {
+        "model": "Claude Fable 5.1",
+        "score": "65.6%"
+       },
+       {
+        "model": "Claude Opus 5.5",
+        "score": "67.7%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "57.2%"
+       }
+      ]
+     },
+     {
+      "name": "Chartography no tools (Visual chart recognition)",
+      "score": "73.4%",
+      "vs": [
+       {
+        "model": "Claude Fable 5.1",
+        "score": "44.8%"
+       },
+       {
+        "model": "Claude Opus 5.5",
+        "score": "64.4%"
+       },
+       {
+        "model": "GPT-6 Astra",
+        "score": "71.0%"
+       }
+      ]
+     }
+    ],
+    "params": "",
+    "context": "",
+    "availability": "API Anthropic (standard: $8/M input, $40/M output; fast mode: $16/M input, $80/M output). Claude Mythos 5.2 accessibile solo tramite Cyber Verification Program e Life Sciences Verification Program (su richiesta per org qualificate). Incluso in Claude Enterprise per clienti via Claude Security (scanning repo continuo, API/MCP). Non open-weight, non eseguibile in locale.",
+    "local_tips": "",
+    "source": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "ann:qwen4max": {
+   "id": "ann:qwen4max",
+   "name": "Qwen4-Max",
+   "org": "Qwen (Alibaba)",
+   "kind": "announced",
+   "released": "2026-11-11",
+   "links": {
+    "announcement": "https://twitter.com/Alibaba_Qwen/status/2120335993643684315"
+   },
+   "note": "Nessun peso ufficiale su Hugging Face: esistono solo repo di terze parti o segnaposto (IteraCompute/Qwen4-27B-NVFP4, InterpreticAI/Qwen4-27B-Uncensored-v3-FP8, stealth-model/Qwen3.8-Flash-Next__Qwen4-news).",
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "d9db01930d58",
+     "rel": 9,
+     "date": "2026-11-11",
+     "title": "Qwen4-Max Preview disponibile",
+     "url": "https://twitter.com/Alibaba_Qwen/status/2120335993643684315",
+     "source": "Hacker News"
+    }
+   ],
+   "score": 8.7,
+   "updated": "2026-11-15"
+  },
+  "Qwen/Qwen3.8-27B": {
+   "id": "Qwen/Qwen3.8-27B",
+   "name": "Qwen3.8-27B",
+   "org": "Qwen",
+   "kind": "open",
+   "released": "2026-08-05",
+   "hf_id": "Qwen/Qwen3.8-27B",
+   "pipeline": "image-text-to-text",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 27.78,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": 262144,
+   "arch": {
+    "layers": 64,
+    "hidden": 5120,
+    "heads": 24,
+    "kv_heads": 4,
+    "head_dim": 256,
+    "full_layers": 16,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 48,
+    "linear_state_bytes": 3145728,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 17408,
+    "vocab": 248320,
+    "tied": false,
+    "max_ctx": 262144
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 20059,
+    "downloads": 6547772,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/Qwen/Qwen3.8-27B",
+    "openrouter": "https://openrouter.ai/qwen/qwen3.8-27b"
+   },
+   "vram": {
+    "level": "ok",
+    "label": "Q8_0 @32k",
+    "text": "Gira su RTX 5090 in Q8_0 con 32k di contesto, ~42 tok/s",
+    "best_quant": "Q8_0",
+    "tok_s": 42,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 51.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 54.2,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 55.7,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 61.7,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 22
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 27.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 29.4,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 30.9,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 36.9,
+        "fits": false
+       }
+      ],
+      "max_ctx": 33727,
+      "tok_s": 42
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 21.2,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 23.0,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 24.5,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 30.5,
+        "fits": true
+       }
+      ],
+      "max_ctx": 138737,
+      "tok_s": 54
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 18.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 20.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 21.7,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 27.7,
+        "fits": true
+       }
+      ],
+      "max_ctx": 185749,
+      "tok_s": 62
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 15.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 17.4,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 18.9,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 24.9,
+        "fits": true
+       }
+      ],
+      "max_ctx": 230973,
+      "tok_s": 73
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 13.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 15.4,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 16.9,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 22.9,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 83
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 12.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 14.3,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 15.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 21.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 90
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 8.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 10.3,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 11.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 17.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 128
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "unsloth/Qwen3.8-27B-GGUF",
+     "format": "GGUF",
+     "downloads": 6566295
+    },
+    {
+     "id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
+     "format": "GGUF",
+     "downloads": 4202683
+    },
+    {
+     "id": "cdiamond/Qwen3.8-27B-iMatrix-NVFP4-MTP-GGUF",
+     "format": "GGUF",
+     "downloads": 3327065
+    },
+    {
+     "id": "JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
+     "format": "GGUF",
+     "downloads": 2320036
+    },
+    {
+     "id": "byteshape/Qwen3.8-27B-GGUF",
+     "format": "GGUF",
+     "downloads": 2063023
+    },
+    {
+     "id": "HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF",
+     "format": "GGUF",
+     "downloads": 1740944
+    }
+   ],
+   "or_id": "qwen/qwen3.8-27b",
+   "pricing": {
+    "in": 0.15,
+    "out": 1.875
+   },
+   "free_on_openrouter": false,
+   "modality": "text+image+video->text",
+   "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be...",
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "10c60fc60c0f",
+     "rel": 10,
+     "date": "2026-11-14",
+     "title": "Unsloth rilascia quantizzazioni Qwen3.8-27B Dynamic v3.1",
+     "url": "https://unsloth.ai/docs/models/qwen3.8",
+     "source": "Hacker News"
+    }
+   ],
+   "score": 21.37,
+   "deep": {
+    "tldr": "Qwen3.8-27B è un modello denso da 27B parametri con capacità vision e reasoning, finestra di contesto a 256K (estendibile a 1M via YaRN) e licenza Apache-2.0. Unsloth rilascia quantizzazioni Dynamic V3.1 GGUF e NVFP4 che migliorano accuratezza del 5-10% a parità di dimensioni e offrono 1.5x speedup su GPU Blackwell. È ottimizzato per coding agentico, tool use e chat, gira in locale su 16-19 GB VRAM (4-bit) ed è servibile via Unsloth Desktop, llama.cpp e vLLM.",
+    "features": [
+     "Architettura dense 27B parametri con vision e reasoning ibrido (thinking/non-thinking mode)",
+     "Contesto 256K nativo, estendibile a 1M token via YaRN",
+     "Multimodalità: image-text-to-text (vision + language)",
+     "Supporto nativo tool calling, parsing oggetti annidati, developer role per agenti (Codex, Claude Code)",
+     "MTP (Multi-Token Prediction) abilitato per inferenza più veloce",
+     "Quantizzazioni Unsloth Dynamic V3.1 GGUF (1-8 bit) e NVFP4 per Blackwell (RTX 50-series, B200/B300)"
+    ],
+    "benchmarks": [
+     {
+      "name": "Terminal Bench 2.1",
+      "score": "UD3.1 migliora accuratezza…",
+      "vs": []
+     },
+     {
+      "name": "DeepSWE v1.1",
+      "score": "UD3.1 migliora accuratezza…",
+      "vs": []
+     },
+     {
+      "name": "LiveCodeBench v6",
+      "score": "UD3.1 migliora su UD3; UD3…",
+      "vs": [
+       {
+        "model": "ISTA GSQ-RCO",
+        "score": "peggiore a 128K, simile a 96K"
+       }
+      ]
+     },
+     {
+      "name": "GPQA Diamond",
+      "score": "Incluso nella suite di…",
+      "vs": []
+     },
+     {
+      "name": "MMLU-Pro",
+      "score": "Incluso nella suite di…",
+      "vs": []
+     },
+     {
+      "name": "AIME25",
+      "score": "UD3 media 93-96% recovery…",
+      "vs": [
+       {
+        "model": "ISTA GSQ-RCO",
+        "score": "100%/100%/100%/96.7% (single…"
+       }
+      ]
+     },
+     {
+      "name": "NVFP4 Accuracy Recovery (KLD / Top-1)",
+      "score": "92-97% top-1 agreement vs…",
+      "vs": [
+       {
+        "model": "BF16 baseline",
+        "score": "100%"
+       },
+       {
+        "model": "NVIDIA NVFP4 (Qwen3.6)",
+        "score": "simile su MMLU-Pro, AIME25,…"
+       }
+      ]
+     }
+    ],
+    "params": "27B dense",
+    "context": "262.144 token (estendibile a 1M via YaRN)",
+    "availability": "Pesi aperti (Apache-2.0). GGUF e NVFP4 su Hugging Face (Qwen3.8-27B-GGUF, Qwen3.8-27B-NVFP4) e ModelScope. Eseguibile localmente via Unsloth Desktop (Mac/Win/Linux), llama.cpp (CPU/CUDA/Metal), vLLM (NVFP4 su Blackwell). Nessun prezzo API indicato nel testo.",
+    "local_tips": "VRAM consigliata: 16-19 GB per 4-bit GGUF (RTX 4090/5080, Mac 24GB unified); +1-2 GB se si usa MTP. Sampling thinking mode: temp=1.0, top_p=0.95, top_k=20, min_p=0, presence_penalty=0, repetition_penalty=1.0. Sampling instruct mode: temp=0.7, top_p=0.8, top_k=20, min_p=0, presence_penalty=1.5, repetition_penalty=1.0. reasoning_effort: xhigh (default), medium, low, none via chat-template-kwargs. NVFP4 richiede GPU Blackwell (RTX 50xx, B200, B300) e vLLM (SGLang v0.5.19+ per FP8 lm_head). FP8 KV…",
+    "source": "https://unsloth.ai/docs/models/qwen3.8",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "ibm-granite/granite-4.1-3b": {
+   "id": "ibm-granite/granite-4.1-3b",
+   "name": "granite-4.1-3b",
+   "org": "ibm-granite",
+   "kind": "open",
+   "released": "2026-04-06",
+   "hf_id": "ibm-granite/granite-4.1-3b",
+   "pipeline": "text-generation",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 3.0,
+   "params_source": "nome",
+   "active_b": null,
+   "context": 131072,
+   "arch": {
+    "layers": 40,
+    "hidden": 2560,
+    "heads": 40,
+    "kv_heads": 8,
+    "head_dim": 64,
+    "full_layers": 40,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 8192,
+    "vocab": 100352,
+    "tied": true,
+    "max_ctx": 131072
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 118,
+    "downloads": 436018,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/ibm-granite/granite-4.1-3b"
+   },
+   "vram": {
+    "level": "ok",
+    "label": "BF16 @32k",
+    "text": "Gira su RTX 5090 in BF16 con 32k di contesto, ~198 tok/s",
+    "best_quant": "BF16",
+    "tok_s": 198,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 5.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 7.1,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 8.9,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 16.4,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 198
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 3.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 4.4,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 6.3,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 13.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 356
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 2.3,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 3.7,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 5.6,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 13.1,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 449
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 2.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 3.4,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 5.3,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 12.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 508
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 1.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 3.1,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 5.0,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 12.5,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 582
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 1.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 2.9,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 4.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 12.3,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 650
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 1.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 2.8,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 4.6,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 12.1,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 696
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 0.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 2.3,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 4.2,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 11.7,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 931
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "ibm-granite/granite-4.1-3b-GGUF",
+     "format": "GGUF",
+     "downloads": 14551
+    },
+    {
+     "id": "unsloth/granite-4.1-3b-GGUF",
+     "format": "GGUF",
+     "downloads": 5730
+    },
+    {
+     "id": "huihui-ai/Huihui-granite-4.1-3b-abliterated",
+     "format": "GGUF",
+     "downloads": 3271
+    },
+    {
+     "id": "ibm-granite/granite-4.1-3b-fp8",
+     "format": "GGUF",
+     "downloads": 2083
+    },
+    {
+     "id": "saidutta69/granite-4.1-3b-heretic",
+     "format": "GGUF",
+     "downloads": 2080
+    },
+    {
+     "id": "bartowski/ibm-granite_granite-4.1-3b-GGUF",
+     "format": "GGUF",
+     "downloads": 1280
+    }
+   ],
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "a88bddb17214",
+     "rel": 9,
+     "date": "2026-11-12",
+     "title": "Granite 4.1 3B/8B: IBM rilascia modelli open-weight con markup LLMON nativo",
+     "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+     "source": "Hugging Face Blog"
+    }
+   ],
+   "score": 15.57,
+   "deep": {
+    "tldr": "Granite 4.1 3B LLMON-preview è una variante sperimentale del modello base Granite 4.1 3B addestrata per consumare e generare LLMON, un linguaggio di markup nativo per LLM che separa esplicitamente istruzioni, dati e requisiti tramite token speciali riservati. Offre robustezza quasi totale contro gli indirect prompt injection (benchmark OPI) mantenendo capacità generali paragonabili al modello Instruct standard. È pensato per RAG, tool-calling e agenti strutturati, con supporto nativo in Mellea e toolkit open-source per conversione JSON↔LLMON e fine-tuning LoRA su vocabolari custom.",
+    "features": [
+     "Architettura: 3B parametri dense, derivato da Granite 4.1 base checkpoint (non da Instruct)",
+     "Contesto: 131.072 token (ereditato da Granite 4.1)",
+     "LLMON: markup XML-like con delimitatori riservati single-token per separare instruction/data/requirement/exec block",
+     "Sicurezza: resistenza a indirect prompt injection (attack success rate ~0% su benchmark OPI, ASB, StruQ)",
+     "Estensibilità: supporto Bring-Your-Own-Vocabulary + LoRA tuning (es. ScienceWorld, tool-calling agents)",
+     "Licenza Apache-2.0, pesi aperti, chat template LLMON-aware incluso"
+    ],
+    "benchmarks": [
+     {
+      "name": "OPI (indirect prompt injection robustness)",
+      "score": "~100% robustness (attack…",
+      "vs": [
+       {
+        "model": "best frontier model tested",
+        "score": "47% less robust"
+       },
+       {
+        "model": "best open-source model tested",
+        "score": "95% less robust"
+       }
+      ]
+     },
+     {
+      "name": "General capability (standard benchmark categories)",
+      "score": "on par with Granite 4.1…",
+      "vs": [
+       {
+        "model": "Granite 4.1 Instruct 3B",
+        "score": "comparable"
+       }
+      ]
+     },
+     {
+      "name": "ScienceWorld (text-based agent benchmark)",
+      "score": "LoRA-tuned LLMON model solves…",
+      "vs": [
+       {
+        "model": "untrained LLMON base model",
+        "score": "lower"
+       }
+      ]
+     }
+    ],
+    "params": "3B dense",
+    "context": "131072",
+    "availability": "Pesi aperti su Hugging Face (granite-4.1-3b-LLMON-preview), licenza Apache-2.0. Utilizzabile con llama.cpp, vLLM, Ollama, LM Studio. Toolkit LLMON: https://github.com/generative-computing/llmon. Integrazione nativa in Mellea (https://github.com/generative-computing/mellea). Demo attenzione: Hugging Face Spaces. Paper: arXiv:2610.38120, arXiv:2603.22519. Stato: experimental preview, non per…",
+    "local_tips": "Usare il chat template LLMON-aware incluso (nomina parti del turno: instruction/data/requirement con exec:true/false). Per JSON strutturato, usare llmon-converters per conversione lossless JSON↔LLMON. Per domini custom, definire tag propri e fare LoRA tuning sul modello LLMON (es. notebook ScienceWorld). Nessuna pipeline di conversione richiesta per uso base.",
+    "source": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "ibm-granite/granite-4.1-8b": {
+   "id": "ibm-granite/granite-4.1-8b",
+   "name": "granite-4.1-8b",
+   "org": "ibm-granite",
+   "kind": "open",
+   "released": "2026-04-06",
+   "hf_id": "ibm-granite/granite-4.1-8b",
+   "pipeline": "text-generation",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 8.0,
+   "params_source": "nome",
+   "active_b": null,
+   "context": 131072,
+   "arch": {
+    "layers": 40,
+    "hidden": 4096,
+    "heads": 32,
+    "kv_heads": 8,
+    "head_dim": 128,
+    "full_layers": 40,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 12800,
+    "vocab": 100352,
+    "tied": true,
+    "max_ctx": 131072
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 258,
+    "downloads": 82210,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/ibm-granite/granite-4.1-8b"
+   },
+   "vram": {
+    "level": "ok",
+    "label": "BF16 @32k",
+    "text": "Gira su RTX 5090 in BF16 con 32k di contesto, ~75 tok/s",
+    "best_quant": "BF16",
+    "tok_s": 75,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 14.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 17.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 20.9,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 35.9,
+        "fits": false
+       }
+      ],
+      "max_ctx": 98432,
+      "tok_s": 75
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 7.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 10.1,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 13.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 28.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 137
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 6.1,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 8.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 12.0,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 27.0,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 173
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 5.3,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 7.4,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 11.2,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 26.2,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 197
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 4.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 6.6,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 10.4,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 25.4,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 227
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 4.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 6.0,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 9.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 24.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 255
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 3.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 5.7,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 9.5,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 24.5,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 274
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 2.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 4.6,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 8.3,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 23.3,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 372
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "ibm-granite/granite-4.1-8b-GGUF",
+     "format": "GGUF",
+     "downloads": 15435
+    },
+    {
+     "id": "ibm-granite/granite-4.1-8b-fp8",
+     "format": "GGUF",
+     "downloads": 6698
+    },
+    {
+     "id": "unsloth/granite-4.1-8b-GGUF",
+     "format": "GGUF",
+     "downloads": 4839
+    },
+    {
+     "id": "bartowski/ibm-granite_granite-4.1-8b-GGUF",
+     "format": "GGUF",
+     "downloads": 2463
+    },
+    {
+     "id": "lmstudio-community/granite-4.1-8b-GGUF",
+     "format": "GGUF",
+     "downloads": 2187
+    },
+    {
+     "id": "mradermacher/granite-4.1-8b-i1-GGUF",
+     "format": "GGUF",
+     "downloads": 1076
+    }
+   ],
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "a88bddb17214",
+     "rel": 9,
+     "date": "2026-11-12",
+     "title": "Granite 4.1 3B/8B: IBM rilascia modelli open-weight con markup LLMON nativo",
+     "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+     "source": "Hugging Face Blog"
+    }
+   ],
+   "score": 15.87,
+   "deep": {
+    "tldr": "Granite 4.1 8B LLMON-preview è una variante sperimentale addestrata per consumare e generare LLMON, un linguaggio di markup nativo per LLM che separa esplicitamente istruzioni, dati e requisiti tramite token speciali riservati. Mantiene le capacità generali del modello base Granite 4.1 Instruct ma elimina quasi completamente gli attacchi di indirect prompt injection sui benchmark OPI, ASB e StruQ. È pensato per RAG, tool-calling e agenti strutturati, con supporto nativo in Mellea e toolkit open-source per conversione JSON↔LLMON e fine-tuning LoRA su vocabolari custom.",
+    "features": [
+     "Architettura: 8B parametri dense, derivato da Granite 4.1 base checkpoint (non da Instruct), post-training con LLMON serialization + 5 stadi GRPO + DPO finale su preference pairs da tentativi di injection",
+     "Contesto: 131.072 token (ereditato da Granite 4.1)",
+     "LLMON: markup XML-like con delimitatori strutturali come token speciali riservati (single-token), block ID a 2 caratteri (single-token), execution block che lega istruzioni→dati→requisiti→output",
+     "Sicurezza: separazione istruzione/dati appresa (non guardrail); istruzioni non richiamate nell'exec block vengono ignorate; injection success rate ~0% su OPI benchmark",
+     "Estensibilità: schema libero, tag custom (es. instr.task.goal, req.planning_policy.rule), LoRA tuning dimostrato su ScienceWorld e tool-calling agents",
+     "Ecosistema: chat template che LLMONizza automaticamente, libreria llmon-converters (JSON↔LLMON lossless), integrazione nativa in Mellea, repo GitHub generative-computing/llmon, demo attenzione su HF Spaces"
+    ],
+    "benchmarks": [
+     {
+      "name": "OPI (indirect prompt injection robustness)",
+      "score": "~100% robustness (attack…",
+      "vs": [
+       {
+        "model": "best frontier model tested",
+        "score": "47% less robust"
+       },
+       {
+        "model": "best open-source model tested",
+        "score": "95% less robust"
+       }
+      ]
+     },
+     {
+      "name": "ASB",
+      "score": "similar trend to OPI",
+      "vs": []
+     },
+     {
+      "name": "StruQ",
+      "score": "similar trend to OPI",
+      "vs": []
+     },
+     {
+      "name": "General capability (standard benchmark categories)",
+      "score": "on par with Granite 4.1…",
+      "vs": [
+       {
+        "model": "Granite 4.1 Instruct 8B",
+        "score": "comparable"
+       }
+      ]
+     },
+     {
+      "name": "ScienceWorld (held-out games, LoRA on custom vocabulary)",
+      "score": "trained adapter outperforms…",
+      "vs": [
+       {
+        "model": "LLMON base (no LoRA)",
+        "score": "lower"
+       }
+      ]
+     }
+    ],
+    "params": "8B dense",
+    "context": "131072",
+    "availability": "Pesi aperti (Apache-2.0) su Hugging Face: granite-4.1-8b-LLMON-preview e granite-4.1-3b-LLMON-preview. Usabili con llama.cpp, vLLM, Ollama, LM Studio tramite chat template LLMON incluso. Repo toolkit: https://github.com/generative-computing/llmon. Integrazione nativa in Mellea (https://github.com/generative-computing/mellea). Preview sperimentale, non per produzione.",
+    "local_tips": "Usare il chat template fornito (gestisce automaticamente la serializzazione LLMON). Per dati strutturati (JSON) usare llmon-converters per conversione lossless. Per domini custom definire tag propri e fare LoRA tuning (esempi notebook su ScienceWorld e tool-calling). Quantizzazione standard GGUF/GPTQ/AWQ compatibile; nessun requisito speciale di sampling segnalato. Visualizzazione attenzione LLMON disponibile su HF Spaces per debug.",
+    "source": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "ann:alphaproofcode": {
+   "id": "ann:alphaproofcode",
+   "name": "AlphaProof Code",
+   "org": "",
+   "kind": "announced",
+   "released": "2026-11-10",
+   "links": {
+    "announcement": "https://deepmind.google/blog/introducing-alphaproof-code/"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "f8c1a7370c13",
+     "rel": 6,
+     "date": "2026-11-10",
+     "title": "AlphaProof Code: agenti verificano crittografia Signal in Lean",
+     "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+     "source": "Google DeepMind"
+    }
+   ],
+   "score": 6.3,
+   "updated": "2026-11-15"
+  },
+  "ann:miciusflash": {
+   "id": "ann:miciusflash",
+   "name": "Micius-Flash",
+   "org": "",
+   "kind": "announced",
+   "released": "2026-11-11",
+   "links": {
+    "announcement": "https://huggingface.co/papers/2611.10015"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "2229db329169",
+     "rel": 9,
+     "date": "2026-11-11",
+     "title": "Micius-Flash 27B: modello multimodale reasoning per ingegneria/hardware",
+     "url": "https://huggingface.co/papers/2611.10015",
+     "source": "HF Daily Papers"
+    }
+   ],
+   "score": 8.7,
+   "updated": "2026-11-15"
+  },
+  "ann:ripplepreview": {
+   "id": "ann:ripplepreview",
+   "name": "Ripple Preview",
+   "org": "",
+   "kind": "announced",
+   "released": "2026-11-09",
+   "links": {
+    "announcement": "https://github.com/ollama/ollama/releases/tag/v0.40.16"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "e01056c942e1",
+     "rel": 9,
+     "date": "2026-11-09",
+     "title": "Ollama v0.40.16: rilascio Ripple Preview 65B per coding agentico",
+     "url": "https://github.com/ollama/ollama/releases/tag/v0.40.16",
+     "source": "Ollama releases"
+    }
+   ],
+   "score": 8.7,
+   "updated": "2026-11-15"
+  },
+  "ann:geminidecision1": {
+   "id": "ann:geminidecision1",
+   "name": "Gemini Decision 1",
+   "org": "Google",
+   "kind": "announced",
+   "released": "2026-11-11",
+   "links": {
+    "announcement": "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "624a305adfa4",
+     "rel": 7,
+     "date": "2026-11-11",
+     "title": "Gemini Decisions API: modello decisionale yes/no/choice/rubric a 10¢/M token",
+     "url": "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
+     "source": "Simon Willison"
+    }
+   ],
+   "score": 8.6,
+   "updated": "2026-11-15"
+  },
+  "LiquidAI/LFM2.5-24B-A2B": {
+   "id": "LiquidAI/LFM2.5-24B-A2B",
+   "name": "LFM2.5-24B-A2B",
+   "org": "LiquidAI",
+   "kind": "open",
+   "released": "2026-10-12",
+   "hf_id": "LiquidAI/LFM2.5-24B-A2B",
+   "pipeline": "text-generation",
+   "license": "other",
+   "gated": false,
+   "params_b": 23.97,
+   "params_source": "safetensors",
+   "active_b": 2.0,
+   "context": 131072,
+   "arch": {
+    "layers": 40,
+    "hidden": 2048,
+    "heads": 32,
+    "kv_heads": 8,
+    "head_dim": 64,
+    "full_layers": 10,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 30,
+    "linear_state_bytes": 4194304,
+    "mla_dim": null,
+    "experts": 64,
+    "experts_active": 4,
+    "moe_inter": 1536,
+    "dense_layers": 0,
+    "inter": 11776,
+    "vocab": 128000,
+    "tied": true,
+    "max_ctx": 131072
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 617,
+    "downloads": 31631,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+    "openrouter": "https://openrouter.ai/liquid/lfm-2.5-24b-a2b"
+   },
+   "vram": {
+    "level": "ok",
+    "label": "Q8_0 @32k",
+    "text": "Gira su RTX 5090 in Q8_0 con 32k di contesto, ~161 tok/s",
+    "best_quant": "Q8_0",
+    "tok_s": 161,
+    "kv_known": true,
+    "is_moe": true,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 44.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 46.6,
+        "fits": false
+       },
+       {
+        "ctx": 32768,
+        "gb": 47.0,
+        "fits": false
+       },
+       {
+        "ctx": 131072,
+        "gb": 48.9,
+        "fits": false
+       }
+      ],
+      "max_ctx": null,
+      "tok_s": 89
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 23.7,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 25.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 25.7,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 27.6,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 161
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 18.3,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 19.7,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 20.2,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 22.0,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 203
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 15.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 17.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 17.7,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 19.6,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 231
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 13.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 14.8,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 15.3,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 17.2,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 265
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 11.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 13.1,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 13.6,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 15.5,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 296
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 10.9,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 12.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 12.6,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 14.5,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 317
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 7.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 8.7,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 9.2,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 11.1,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 425
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "DavidAU/LFM2.5-24B-A2B-Turbo-Brilliance-50X-NEO-MAX-Imatrix-GGUF",
+     "format": "GGUF",
+     "downloads": 1074192
+    },
+    {
+     "id": "unsloth/LFM2.5-24B-A2B-GGUF",
+     "format": "GGUF",
+     "downloads": 500941
+    },
+    {
+     "id": "LiquidAI/LFM2.5-24B-A2B-GGUF",
+     "format": "GGUF",
+     "downloads": 215618
+    },
+    {
+     "id": "abenzerps/LFM2.5-24B-A2B-Uncensored-GSQ-RCO-GGUF",
+     "format": "GGUF",
+     "downloads": 21442
+    },
+    {
+     "id": "bartowski/LFM2.5-24B-A2B-GGUF",
+     "format": "GGUF",
+     "downloads": 12684
+    },
+    {
+     "id": "OS-Software/LFM2.5-24B-A2B-Uncensored-Heretic-GGUF",
+     "format": "GGUF",
+     "downloads": 8321
+    }
+   ],
+   "or_id": "liquid/lfm-2.5-24b-a2b",
+   "pricing": {
+    "in": 0.05,
+    "out": 0.7
+   },
+   "free_on_openrouter": false,
+   "modality": "text->text",
+   "description": "LFM2.5-24B-A2B is a mixture-of-experts reasoning model from Liquid AI with 24B total and 2.45B active parameters. It always reasons before answering and is built for agents that call tools. Liquid...",
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "ecbe36dbb026",
+     "rel": 8,
+     "date": "2026-11-14",
+     "title": "LFM2.5-24B-A2B: modello Liquid AI MoE 24B (2B attivi) su Hugging Face",
+     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xwgiow/lfm2524ba2b_hermes_is_awesome/",
+     "source": "r/LocalLLaMA"
+    }
+   ],
+   "score": 15.41,
+   "deep": {
+    "tldr": "LFM2.5-24B-A2B è un modello MoE da 24B parametri totali (2.45B attivi) ottimizzato per agenti veloci e privati on-device. Introduce una finestra di contesto a 131K token, vocabolario espanso a 128K e post-training specializzato in tool-use e reasoning, superando modelli più grandi come Qwen3-30B-A3B nei benchmark agentici.",
+    "features": [
+     "Architettura MoE ibrida: 40 layer (30 double-gated short convolution + 10 GQA), 64 esperti per blocco MoE con routing top-4",
+     "Contesto 131.072 token (da 32K) e vocabolario 128K token (da 65K) tramite espansione tokenizer in-place",
+     "Modello 'pure reasoning': pensa sempre prima di rispondere, inserisce tag <thinking> nel chat template",
+     "Addestrato su 36T token totali (33T pre-training + 2T mid-training + 300B long-context) con RL agentico in harness reali (OpenClaw, Hermes Agent, Pi, OpenCode)",
+     "Supporto nativo tool-use con formato JSON strutturato e integrazione documentata per OpenClaw, Hermes, Pi, OpenCode",
+     "Disponibile in formati nativi (Transformers/vLLM/SGLang), FP8, GGUF (llama.cpp), ONNX, MLX-4bit e DSpark per speculative decoding"
+    ],
+    "benchmarks": [
+     {
+      "name": "LiveClaw",
+      "score": "48.09",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "38.19"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "41.25"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "37.72"
+       }
+      ]
+     },
+     {
+      "name": "BFCLv4",
+      "score": "65.01",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "65.00"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "57.09"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "53.78"
+       }
+      ]
+     },
+     {
+      "name": "ToolSandbox",
+      "score": "80.71",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "75.02"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "72.09"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "75.13"
+       }
+      ]
+     },
+     {
+      "name": "AutomationBench",
+      "score": "27.69",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "8.72"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "5.46"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "2.61"
+       }
+      ]
+     },
+     {
+      "name": "PinchBench",
+      "score": "83.18",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "89.93"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "77.12"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "84.20"
+       }
+      ]
+     },
+     {
+      "name": "τ³-Bench Banking",
+      "score": "8.04",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "7.63"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "4.54"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "7.01"
+       }
+      ]
+     },
+     {
+      "name": "WebArena Verified",
+      "score": "26.75",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "37.62"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "25.62"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "28.69"
+       }
+      ]
+     },
+     {
+      "name": "GPQA Diamond",
+      "score": "74.42",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "83.69"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "74.90"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "72.42"
+       }
+      ]
+     },
+     {
+      "name": "HLE",
+      "score": "7.40",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "7.69"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "8.57"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "5.65"
+       }
+      ]
+     },
+     {
+      "name": "IFEval",
+      "score": "96.75",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "93.06"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "92.00"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "94.19"
+       }
+      ]
+     },
+     {
+      "name": "IFBench",
+      "score": "74.69",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "64.21"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "47.44"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "71.67"
+       }
+      ]
+     },
+     {
+      "name": "MATH-500",
+      "score": "96.04",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "96.73"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "95.66"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "96.40"
+       }
+      ]
+     },
+     {
+      "name": "SWE-Bench Verified (OpenCode)",
+      "score": "51.00",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "66.20"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "25.80"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "53.40"
+       }
+      ]
+     },
+     {
+      "name": "SciCode",
+      "score": "32.71",
+      "vs": [
+       {
+        "model": "Qwen3-30B-A3B",
+        "score": "37.35"
+       },
+       {
+        "model": "Gemma-4-26B-A4B-it",
+        "score": "35.42"
+       },
+       {
+        "model": "Nemotron-3.5-Lightning (30B-A3B)",
+        "score": "27.78"
+       }
+      ]
+     }
+    ],
+    "params": "24B totali / 2.45B attivi",
+    "context": "131.072 token",
+    "availability": "Pesi aperti su Hugging Face (LiquidAI/LFM2.5-24B-A2B) con licenza 'other' (non standard OSI). Formati: nativo (Transformers/vLLM/SGLang), FP8, GGUF (llama.cpp), ONNX, MLX-4bit, DSpark (speculative decoding). API a pagamento: $0.05/M input, $0.70/M output. Integrazione documentata per OpenClaw, Hermes Agent, Pi, OpenCode, LM Studio.",
+    "local_tips": "Generazione consigliata: temperature=0.1, top_k=50, repetition_penalty=1.05. Per edge/CPU: llama.cpp con quantizzazione Q4_K_M (184 tok/s su Apple M5 Max, 114 tok/s su AMD Ryzen AI Max+ 395). Per GPU throughput: SGLang 0.5.22 con pesi BF16 su singola NVIDIA B300 (21K+ output tok/s ad alta concorrenza). vLLM supportato per serving produzione. Unsloth e TRL per fine-tuning LoRA (CPT, SFT, DPO, GRPO).",
+    "source": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "arcee-ai/Arcee-Agent": {
+   "id": "arcee-ai/Arcee-Agent",
+   "name": "Arcee-Agent",
+   "org": "arcee-ai",
+   "kind": "open",
+   "released": "2024-07-02",
+   "hf_id": "arcee-ai/Arcee-Agent",
+   "pipeline": "text-generation",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 7.62,
+   "params_source": "stima da config",
+   "active_b": null,
+   "context": 131072,
+   "arch": {
+    "layers": 28,
+    "hidden": 3584,
+    "heads": 28,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "full_layers": 28,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 18944,
+    "vocab": 152064,
+    "tied": false,
+    "max_ctx": 131072
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 93,
+    "downloads": 80,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/arcee-ai/Arcee-Agent"
+   },
+   "vram": {
+    "level": "ok",
+    "label": "BF16 @32k",
+    "text": "Gira su RTX 5090 in BF16 con 32k di contesto, ~81 tok/s",
+    "best_quant": "BF16",
+    "tok_s": 81,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 14.2,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 15.7,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 17.0,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 22.2,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 81
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 7.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 8.9,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 10.2,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 15.4,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 151
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 5.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 7.1,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 8.4,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 13.7,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 193
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 5.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 6.3,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 7.6,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 12.9,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 222
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 4.3,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 5.6,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 6.9,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 12.1,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 258
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 3.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 5.0,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 6.3,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 11.6,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 293
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 3.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 4.7,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 6.0,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 11.3,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 317
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 2.4,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 3.6,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 4.9,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 10.2,
+        "fits": true
+       }
+      ],
+      "max_ctx": 131072,
+      "tok_s": 447
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "mradermacher/Arcee-Agent-GGUF",
+     "format": "GGUF",
+     "downloads": 881
+    },
+    {
+     "id": "QuantFactory/Arcee-Agent-GGUF",
+     "format": "GGUF",
+     "downloads": 511
+    }
+   ],
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "e8b3e4cd56a6",
+     "rel": 8,
+     "date": "2026-11-14",
+     "title": "ARC 1.0: router 0.6B Apache 2.0 per scegliere modello cloud/local per agenti",
+     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xw29ic/arc_10_a_decision_model_for_routing_ai_agents/",
+     "source": "r/LocalLLaMA"
+    }
+   ],
+   "score": 14.68,
+   "deep": {
+    "tldr": "Arcee-Agent è un modello da 7B parametri basato su Qwen2-7B, specializzato in function calling e tool use. Addestrato con la tecnica Spectrum, offre prestazioni competitive con modelli molto più grandi mantenendo velocità ed efficienza per deployment real-time e ambienti resource-constrained.",
+    "features": [
+     "Architettura: 7B parametri dense, inizializzato da Qwen2-7B",
+     "Context window: 131K token",
+     "Addestrato con Spectrum (tecnica di training efficiente)",
+     "Function calling avanzato: supporta formati Glaive FC v2, Salesforce, Agent-FLAN, ottimale con VLLM OpenAI FC format",
+     "Dual-mode: Tool Router (middleware per routing a tool/LLM maggiori) e Standalone Chat Agent",
+     "Licenza Apache-2.0, pesi aperti con GGUF ufficiali disponibili"
+    ],
+    "benchmarks": [],
+    "params": "7.62B",
+    "context": "131072",
+    "availability": "Pesi aperti su Hugging Face (arcee-ai/Arcee-Agent). GGUF ufficiali disponibili su crusoeai/Arcee-Agent-GGUF per llama.cpp, Ollama, LM Studio. Utilizzabile con vLLM (formato OpenAI FC raccomandato). Compute per training fornito da CrusoeAI.",
+    "local_tips": "Il modello performa meglio con il formato VLLM OpenAI FC. Template di tool calling specifico usato in evaluation: 'In this environment, you have access to a set of tools you can use to answer the user's question. You may call them like this: $TOOL_NAME $PARAMETER_VALUE ... Here are the tools available:'. GGUF disponibili per quantizzazione efficiente su GPU consumer.",
+    "source": "https://huggingface.co/arcee-ai/Arcee-Agent",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "ann:edge0145b": {
+   "id": "ann:edge0145b",
+   "name": "Edge0-145B",
+   "org": "",
+   "kind": "announced",
+   "released": "2026-11-12",
+   "links": {
+    "announcement": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer"
+   },
+   "note": "Nessun peso ufficiale su Hugging Face: esistono solo repo di terze parti o segnaposto (Edge0/Edge0-145B-NVFP4, Edge0/Edge0-145B-q3k, infosave/Edge0-145B-cmf).",
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "f980cc1f1e21",
+     "rel": 9,
+     "date": "2026-11-12",
+     "title": "Edge0-145B: modello frontier Apache 2.0 eseguibile su singola GPU consumer",
+     "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
+     "source": "Hacker News"
+    }
+   ],
+   "score": 8.7,
+   "updated": "2026-11-15"
+  },
+  "Qwen/Qwen3.5-4B": {
+   "id": "Qwen/Qwen3.5-4B",
+   "name": "Qwen3.5-4B",
+   "org": "Qwen",
+   "kind": "open",
+   "released": "2026-02-27",
+   "hf_id": "Qwen/Qwen3.5-4B",
+   "pipeline": "image-text-to-text",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 4.0,
+   "params_source": "nome",
+   "active_b": null,
+   "context": 262144,
+   "arch": {
+    "layers": 32,
+    "hidden": 2560,
+    "heads": 16,
+    "kv_heads": 4,
+    "head_dim": 256,
+    "full_layers": 8,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 24,
+    "linear_state_bytes": 2097152,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 9216,
+    "vocab": 248320,
+    "tied": true,
+    "max_ctx": 262144
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 1235,
+    "downloads": 4928305,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/Qwen/Qwen3.5-4B"
+   },
+   "vram": {
+    "level": "ok",
+    "label": "BF16 @32k",
+    "text": "Gira su RTX 5090 in BF16 con 32k di contesto, ~153 tok/s",
+    "best_quant": "BF16",
+    "tok_s": 153,
+    "kv_known": true,
+    "is_moe": false,
+    "table": [
+     {
+      "q": "BF16",
+      "bpw": 16.0,
+      "weights_gb": 7.5,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 8.6,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 9.4,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 12.4,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 153
+     },
+     {
+      "q": "Q8_0",
+      "bpw": 8.5,
+      "weights_gb": 4.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 5.1,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 5.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 8.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 283
+     },
+     {
+      "q": "Q6_K",
+      "bpw": 6.56,
+      "weights_gb": 3.1,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 4.2,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 4.9,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 7.9,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 362
+     },
+     {
+      "q": "Q5_K_M",
+      "bpw": 5.69,
+      "weights_gb": 2.6,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 3.7,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 4.5,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 7.5,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 414
+     },
+     {
+      "q": "Q4_K_M",
+      "bpw": 4.85,
+      "weights_gb": 2.3,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 3.4,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 4.1,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 7.1,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 481
+     },
+     {
+      "q": "IQ4_XS",
+      "bpw": 4.25,
+      "weights_gb": 2.0,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 3.1,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 3.8,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 6.8,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 543
+     },
+     {
+      "q": "Q3_K_M",
+      "bpw": 3.91,
+      "weights_gb": 1.8,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 2.9,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 3.7,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 6.7,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 586
+     },
+     {
+      "q": "IQ2_M",
+      "bpw": 2.7,
+      "weights_gb": 1.3,
+      "rows": [
+       {
+        "ctx": 8192,
+        "gb": 2.3,
+        "fits": true
+       },
+       {
+        "ctx": 32768,
+        "gb": 3.1,
+        "fits": true
+       },
+       {
+        "ctx": 131072,
+        "gb": 6.1,
+        "fits": true
+       }
+      ],
+      "max_ctx": 262144,
+      "tok_s": 817
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "unsloth/Qwen3.5-4B-GGUF",
+     "format": "GGUF",
+     "downloads": 1583928
+    },
+    {
+     "id": "turintech/Qwen3.5-4B-Artemis-GGUF",
+     "format": "GGUF",
+     "downloads": 484662
+    },
+    {
+     "id": "lmstudio-community/Qwen3.5-4B-GGUF",
+     "format": "GGUF",
+     "downloads": 223243
+    },
+    {
+     "id": "bartowski/Qwen_Qwen3.5-4B-GGUF",
+     "format": "GGUF",
+     "downloads": 138532
+    },
+    {
+     "id": "prism-ml/Ternary-Bonsai-2-4B-gguf",
+     "format": "GGUF",
+     "downloads": 126925
+    },
+    {
+     "id": "SoAIHQ/Qwen3.5-4B-GGUF",
+     "format": "GGUF",
+     "downloads": 113249
+    }
+   ],
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "1d6fa56e5d59",
+     "rel": 5,
+     "date": "2026-11-11",
+     "title": "BioAgent-DF: auditing provenienza decisionale agenti biomedici",
+     "url": "https://huggingface.co/papers/2611.01527",
+     "source": "HF Daily Papers"
+    }
+   ],
+   "score": 13.28,
+   "deep": {
+    "tldr": "Qwen3.5-4B è un modello open-weight da 4B parametri con licenza Apache-2.0 e contesto fino a 262k token, valutato nel paper BioAgent-DF come agente biomedicale su task SciFact e hERG screening. Lo studio mostra che errori numerici silenziosi su GPU alterano le decisioni dell'agente (es. skip di safety test) pur mantenendo invariato il verdetto finale, e che il recupero richiede il ripristino dello stato di esecuzione, non solo dell'output dello strumento.",
+    "features": [
+     "4B parametri, architettura Qwen (dense)",
+     "Context window 262.144 token",
+     "Licenza Apache-2.0 (pesi aperti)",
+     "Pipeline image-text-to-text (multimodale)",
+     "Valutato come agente scientifico (Biomni A1) su SciFact e hERG cardiac safety screening",
+     "Evidenzia separazione tra verdetto finale e evidence citata (citation shifts senza verdict changes)"
+    ],
+    "benchmarks": [
+     {
+      "name": "SciFact (citation/evidence audit)",
+      "score": "repeatable citation changes…",
+      "vs": [
+       {
+        "model": "Gemma 3 4B IT",
+        "score": "repeatable read and citation…"
+       }
+      ]
+     },
+     {
+      "name": "hERG cardiac safety screening (Biomni A1 agent)",
+      "score": "2/402 compounds (K12252,…",
+      "vs": [
+       {
+        "model": "GPT-6.1 Sol (via Biomni)",
+        "score": "citation shifts without…"
+       }
+      ]
+     }
+    ],
+    "params": "4B dense",
+    "context": "262144",
+    "availability": "Pesi aperti (Apache-2.0), utilizzabile in locale con llama.cpp, vLLM, Ollama, LM Studio. Nessuna informazione su API ufficiale o prezzi nel testo.",
+    "local_tips": "Nessun consiglio specifico su quantizzazione, sampling o framework presente nel testo. Il modello è 4B parametri: su RTX 5090 (32 GB VRAM) gira agevolmente in FP16/BF16 o quantizzato (es. Q4_K_M, Q8_0) con contesto esteso.",
+    "source": "https://huggingface.co/papers/2611.01527",
+    "date": "2026-11-15",
+    "by": "nvidia/nemotron-3-ultra-550b-a55b:free"
+   },
+   "updated": "2026-11-15"
+  },
+  "ann:openvisionbananaovb": {
+   "id": "ann:openvisionbananaovb",
+   "name": "Open Vision Banana (OVB)",
+   "org": "",
+   "kind": "announced",
+   "released": "2026-11-13",
+   "links": {
+    "announcement": "https://huggingface.co/papers/2611.15844"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "abae26331e95",
+     "rel": 8,
+     "date": "2026-11-13",
+     "title": "Open Vision Banana: ricetta open per percepione visiva generativa",
+     "url": "https://huggingface.co/papers/2611.15844",
+     "source": "HF Daily Papers"
+    }
+   ],
+   "score": 7.9,
+   "updated": "2026-11-15"
+  },
+  "ann:dnavit": {
+   "id": "ann:dnavit",
+   "name": "dNaViT",
+   "org": "",
+   "kind": "announced",
+   "released": "2026-11-11",
+   "links": {
+    "announcement": "https://huggingface.co/papers/2611.12426"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "cbaff44eace9",
+     "rel": 9,
+     "date": "2026-11-11",
+     "title": "dNaViT: tokenizer visivo discreto nativo a risoluzione nativa",
+     "url": "https://huggingface.co/papers/2611.12426",
+     "source": "HF Daily Papers"
+    }
+   ],
+   "score": 8.7,
+   "updated": "2026-11-15"
+  },
+  "ann:lingbottouch": {
+   "id": "ann:lingbottouch",
+   "name": "LingBot-Touch",
+   "org": "",
+   "kind": "announced",
+   "released": "2026-11-10",
+   "links": {
+    "announcement": "https://huggingface.co/papers/2611.12806"
+   },
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "123cc8899327",
+     "rel": 5,
+     "date": "2026-11-10",
+     "title": "LingBot-Touch: modello fondazione tattile per manipolazione destrorsa",
+     "url": "https://huggingface.co/papers/2611.12806",
+     "source": "HF Daily Papers"
+    }
+   ],
+   "score": 5.5,
+   "updated": "2026-11-15"
+  }
+ }
+}

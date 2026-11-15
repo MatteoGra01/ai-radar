@@ -27,8 +27,10 @@ calcolatore interattivo con slider del contesto e tipo di KV cache. Precisione i
 ## Messa online (10 minuti)
 
 1. **Chiave OpenRouter gratuita**: crea un account su openrouter.ai → *Keys* → *Create key*.
-   Senza crediti hai 50 richieste/giorno sui modelli `:free`; la rassegna ne usa ~15-25.
-   Se carichi una volta 10 $ (non si consumano usando modelli free) il limite sale a 1000/giorno.
+   Senza crediti hai 50 richieste/giorno sui modelli `:free`; con ≥10 $ di crediti acquistati (che non si
+   consumano usando modelli free) il limite sale a 1000/giorno. La prima esecuzione usa ~30 chiamate, quelle
+   giornaliere meno. Con il limite da 50 abbassa `max_calls_per_run` in `config.toml` (vedi commento).
+   Il "ragionamento" dei modelli viene disattivato: con i modelli gratuiti una chiamata dura 10-60 s.
 2. **Repository GitHub**: crea un repo (pubblico, oppure privato se hai GitHub Pro / Student Pack)
    e fai push di questa cartella.
 3. *Settings → Secrets and variables → Actions → New repository secret*:

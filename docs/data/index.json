@@ -1,0 +1,107 @@
+{
+ "days": [
+  {
+   "date": "2026-11-15",
+   "headline": "llama.cpp 1.0, tandem.cpp per MoE su 16GB, Qwen3.8-27B Dynamic v3.1, Edge0-145B Apache 2.0",
+   "n_items": 128,
+   "n_models": 48
+  }
+ ],
+ "updated": "2026-11-15T12:52:01Z",
+ "hardware": {
+  "gpu_name": "RTX 5090",
+  "vram_gb": 32,
+  "reserved_gb": 1.0,
+  "bandwidth_gbs": 1792,
+  "system_ram_gb": 64,
+  "ref_context": 32768,
+  "contexts": [
+   8192,
+   32768,
+   131072
+  ]
+ },
+ "status": {
+  "sources": {
+   "rss:Interconnects": {
+    "ok": true,
+    "n": 1
+   },
+   "rss:Simon Willison": {
+    "ok": true,
+    "n": 19
+   },
+   "rss:Google DeepMind": {
+    "ok": true,
+    "n": 6
+   },
+   "rss:OpenAI News": {
+    "ok": true,
+    "n": 19
+   },
+   "rss:Hugging Face Blog": {
+    "ok": true,
+    "n": 10
+   },
+   "rss:Ollama Blog": {
+    "ok": true,
+    "n": 0
+   },
+   "rss:Ollama releases": {
+    "ok": true,
+    "n": 2
+   },
+   "rss:NVIDIA Developer": {
+    "ok": true,
+    "n": 11
+   },
+   "rss:vLLM releases": {
+    "ok": true,
+    "n": 5
+   },
+   "rss:Transformers releases": {
+    "ok": true,
+    "n": 1
+   },
+   "rss:r/LocalLLaMA": {
+    "ok": true,
+    "n": 25
+   },
+   "hackernews": {
+    "ok": true,
+    "n": 89
+   },
+   "github": {
+    "ok": true,
+    "n": 34,
+    "error": "HTTP 403 su https://api.github.com/search/repositories?q=topic%3Aai-agents%20created%3A%3E%3D2026-11-05%20stars%3A%3E%3D80&sort=stars&order=desc&per_page=30"
+   },
+   "hf_papers": {
+    "ok": true,
+    "n": 85
+   },
+   "openrouter": {
+    "ok": true,
+    "n": 470
+   },
+   "hf_trending": {
+    "ok": true,
+    "n": 100
+   },
+   "hf_orgs": {
+    "ok": true,
+    "n": 36
+   }
+  },
+  "llm": {
+   "enabled": true,
+   "calls": 29,
+   "failures": 0,
+   "models": {
+    "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free": 29
+   },
+   "log": []
+  },
+  "duration_s": 330
+ }
+}

@@ -63,7 +63,7 @@ Regole:
 - rel: 9-10 imperdibile per QUESTO lettore; 7-8 molto utile; 4-6 interessante; 0-3 rumore, meme, clickbait, fuori tema.
 - title: titolo italiano chiaro e informativo (max 90 caratteri), conserva nomi propri e numeri.
 - summary: 1-2 frasi italiane con i fatti concreti (cosa, chi, numeri chiave). Non aggiungere nulla che non sia nel testo.
-- why: se rel >= 6, una frase su perché interessa a questo lettore; altrimenti "".
+- why: se rel >= 6, una frase su perché interessa a questo lettore; altrimenti "". Non dare per scontato che un modello abbia pesi aperti, si possa scaricare o giri in locale se il testo non lo dice esplicitamente (es. i modelli "Max", "Preview" o via API di solito sono closed).
 - models: nomi esatti dei modelli AI NUOVI annunciati o rilasciati nell'elemento (es. "Qwen4-Max Preview"); [] se nessuno. Non elencare modelli citati solo come confronto.
 - release: true solo se l'elemento annuncia direttamente il rilascio di un nuovo modello o versione.
 
@@ -143,27 +143,31 @@ def fallback_fields(it: dict):
 
 
 def triage(llm: LLM, cfg: dict, items: list[dict]) -> int:
-    """Valuta gli item a lotti con l'LLM. Restituisce quanti item sono stati valutati dall'LLM."""
+    """Valuta gli item a lotti (in parallelo) con l'LLM. Restituisce quanti item sono stati valutati."""
     if not items or not llm.available:
         return 0
     bs = int(cfg["llm"]["triage_batch"])
+    batches = [items[s:s + bs] for s in range(0, len(items), bs)]
     sysmsg = system_prompt(cfg, "Sei l'editor di una rassegna quotidiana su intelligenza artificiale scritta per UN solo lettore. "
                                 "Valuti notizie grezze (blog, Hacker News, Reddit, paper, repository) per utilità e rilevanza.")
-    done = 0
-    for start in range(0, len(items), bs):
+
+    def run_batch(arg) -> int:
+        n, batch = arg
         if not llm.available:
-            break
-        batch = items[start:start + bs]
+            return 0
         lines = []
         for i, it in enumerate(batch):
             eng = f", {int(it['engagement'])} punti" if it["engagement"] else ""
             lines.append(f"[{i}] ({it['source_name']}{eng}) {it['title']}\n    {one_line(it['summary'], 420)}")
         user = TRIAGE_RULES.format(n=len(batch), block="\n".join(lines))
-        res = llm.chat_json(sysmsg, user, max_tokens=6000,
+        res = llm.chat_json(sysmsg, user, max_tokens=5000, label=f"valutazione {n + 1}/{len(batches)}",
                             validate=lambda r: isinstance(r, dict) and isinstance(r.get("items"), list) and r["items"])
         if not res:
-            continue
+            return 0
+        done = 0
         for row in res["items"]:
+            if not isinstance(row, dict):
+                continue
             try:
                 it = batch[int(row.get("i"))]
             except (TypeError, ValueError, IndexError):
@@ -182,7 +186,10 @@ def triage(llm: LLM, cfg: dict, items: list[dict]) -> int:
             it["release"] = bool(row.get("release"))
             it["llm"] = True
             done += 1
-    return done
+        return done
+
+    with ThreadPoolExecutor(max_workers=int(cfg["llm"].get("parallel", 4))) as ex:
+        return sum(ex.map(run_batch, enumerate(batches)))
 
 
 # ───────────────────────── modelli ─────────────────────────
@@ -220,7 +227,7 @@ def resolve_mention(name: str, it: dict, reg: M.Registry, or_index: list, cfg: d
     api, others = M.search_hf(name, cfg)
     if api:
         return reg.add(M.entry_from_hf(api, hw), today)
-    if not it.get("release"):
+    if not it.get("release") or it.get("kind") == "paper":
         return None
     e = {
         "id": f"ann:{norm_name(name)}",
@@ -339,25 +346,30 @@ def normalize_deep(d: dict) -> dict:
 
 
 def deep_dives(llm: LLM, reg: M.Registry, cfg: dict, items_by_id: dict, today: str, candidates: list[dict]) -> int:
-    n = 0
     sysmsg = system_prompt(cfg, "Sei un analista tecnico di modelli AI. Estrai informazioni SOLO dal testo fornito; "
                                 "se un dato manca lascialo vuoto. Non inventare numeri.")
-    for e in candidates[: int(cfg["llm"]["max_deep_dives"])]:
+
+    def one(e: dict) -> int:
         if not llm.available:
-            break
+            return 0
         text, src = M.fetch_source_text(e, items_by_id)
         if len(text) < 200:
-            continue
+            return 0
         known = {k: e.get(k) for k in ("params_b", "active_b", "context", "license", "pricing", "pipeline") if e.get(k)}
         user = DEEP_RULES.format(name=e["name"], org=e.get("org") or "", known=json.dumps(known, ensure_ascii=False), text=text)
-        res = llm.chat_json(sysmsg, user, max_tokens=3500, validate=lambda r: isinstance(r, dict) and r.get("tldr"))
-        if res:
-            deep = normalize_deep(res)
-            deep.update({"source": src, "date": today, "by": llm.last_model})
-            e["deep"] = deep
-            n += 1
-            log(f"  approfondito: {e['name']} ({len(deep['benchmarks'])} benchmark)")
-    return n
+        res = llm.chat_json(sysmsg, user, max_tokens=3500, label=f"scheda {e['name']}",
+                            validate=lambda r: isinstance(r, dict) and r.get("tldr"))
+        if not res:
+            return 0
+        deep = normalize_deep(res)
+        deep.update({"source": src, "date": today, "by": llm.last_model})
+        e["deep"] = deep
+        log(f"  approfondito: {e['name']} ({len(deep['benchmarks'])} benchmark)")
+        return 1
+
+    todo = candidates[: int(cfg["llm"]["max_deep_dives"])]
+    with ThreadPoolExecutor(max_workers=int(cfg["llm"].get("parallel", 4))) as ex:
+        return sum(ex.map(one, todo))
 
 
 # ───────────────────────── output ─────────────────────────
@@ -466,7 +478,9 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
     log(f"Modelli: {len(reg.models)} nel registro, {len(reg.touched)} nuovi/aggiornati, {len(mentioned_today)} citati oggi")
 
     # 4. approfondimenti (benchmark, feature) sui modelli più importanti
-    cands = [e for e in models_today if not e.get("deep") and e["kind"] != "placeholder"]
+    # prima i modelli citati dalle notizie più rilevanti per te, poi per punteggio
+    cands = sorted((e for e in models_today if not e.get("deep") and e["kind"] != "placeholder"),
+                   key=lambda e: (-max([m.get("rel", 0) for m in e.get("mentions", []) if m.get("date", "") >= (now - timedelta(days=7)).date().isoformat()] or [0]), -e["score"]))
     n_deep = deep_dives(llm, reg, cfg, items_by_id, today, cands)
     M.attach_aa(reg, M.aa_models(status))
 
