@@ -4,6 +4,9 @@
 const GiB = 2 ** 30;
 const QUANTS = [["BF16", 16], ["Q8_0", 8.5], ["Q6_K", 6.56], ["Q5_K_M", 5.69], ["Q4_K_M", 4.85], ["IQ4_XS", 4.25], ["Q3_K_M", 3.91], ["IQ2_M", 2.7]];
 const KV_TYPES = [["F16", 2], ["Q8_0", 1.0625], ["Q4_0", 0.5625]];
+const NATIVE = { FP8: 8.25, NVFP4: 4.5 };
+const nativeDefs = () => ((S.index && S.index.hardware.native_formats) || []).filter((f) => NATIVE[f]).map((f) => [f, NATIVE[f]]).sort((a, b) => b[1] - a[1]);
+const bpwOf = (q) => NATIVE[q] || (QUANTS.find(([n]) => n === q) || [])[1];
 const CATS = { modello: "Modelli", feature: "Feature", tool: "Tool", paper: "Paper", guida: "Guide e analisi", industria: "Industria", altro: "Altro" };
 const CAT1 = { modello: "Modello", feature: "Feature", tool: "Tool", paper: "Paper", guida: "Guida", industria: "Industria", altro: "Altro" };
 const KIND = { open: "Pesi aperti", closed: "API", announced: "Annunciato", placeholder: "Senza pesi" };
@@ -132,7 +135,7 @@ function maxCtx(e, bpw, kvb = 2) {
 }
 function vramTip(v) {
   if (!v.options) return v.text;
-  return v.text + "\n\n" + v.options.map((o) => `${o.q}: ${o.comfy ? "entra" : o.fits ? "al limite" : "non entra"}` +
+  return v.text + "\n\n" + v.options.map((o) => `${o.q}${o.native ? " (nativo)" : ""}: ${o.comfy ? "entra" : o.fits ? "al limite" : "non entra"}` +
     (o.fits && o.max_ctx ? `, contesto fino a ${fmtCtx(o.max_ctx)}` : "") + (o.fits && o.tok_s ? `, ~${o.tok_s >= 500 ? "500+" : o.tok_s} tok/s` : "")).join("\n");
 }
 const localModel = (e) => e.params_b && e.kind !== "closed" && e.kind !== "placeholder";
@@ -703,7 +706,8 @@ const num = (s) => { const m = String(s ?? "").replace(",", ".").match(/-?\d+(\.
 function compareRows(ms) {
   const hw = S.index.hardware;
   const ref = hw.ref_context;
-  const q4 = (e) => localModel(e) ? vramRow(e, 4.85, kvKnown(e) ? Math.min(ref, e.arch.max_ctx || ref) : 0) : null;
+  const recQ = (e) => (e.vram && e.vram.best_quant) || "Q4_K_M";
+  const q4 = (e) => localModel(e) ? vramRow(e, bpwOf(recQ(e)) || 4.85, kvKnown(e) ? Math.min(ref, e.arch.max_ctx || ref) : 0) : null;
   const rows = [
     ["Tipo", (e) => KIND[e.kind] || e.kind],
     ["Uscita", (e) => (fmtShort(e.released) || "—") + (isNew(e) ? " · nuovo" : "")],
@@ -721,9 +725,11 @@ function compareRows(ms) {
   for (const k of orKeys) rows.push([`OpenRouter ${k.replace(/_/g, " ")}`, (e) => (e.or_evals || {})[k] != null ? `${e.or_evals[k]}%` : "—", (e) => (e.or_evals || {})[k], "max"]);
   rows.push(
     [`Gira sulla ${hw.gpu_name}?`, (e) => e.vram ? h("span", { class: `lvl ${e.vram.level}` }, e.vram.text) : (e.kind === "closed" ? "solo API" : "—")],
-    [`VRAM in Q4_K_M @${fmtCtx(ref)}`, (e) => q4(e) ? `${q4(e).total.toFixed(1)} GB` : "—", (e) => q4(e) && q4(e).total, "min"],
-    ["Contesto max in Q4_K_M", (e) => { const c = localModel(e) && maxCtx(e, 4.85); return c ? fmtCtx(c) : c === 0 ? "non entra" : "—"; }, (e) => localModel(e) && maxCtx(e, 4.85), "max"],
-    ["Velocità Q4_K_M (stima)", (e) => { const r = q4(e); return r && r.fits && isTextModel(e) ? `${fmtTok(r.tok)} tok/s` : "—"; }, (e) => { const r = q4(e); return r && r.fits && isTextModel(e) ? r.tok : null; }, "max"],
+    ["Formato consigliato", (e) => localModel(e) && e.vram ? (e.vram.quantized ? recQ(e) : "BF16 (nativo)") : "—"],
+    [`VRAM nel formato consigliato @${fmtCtx(ref)}`, (e) => q4(e) ? `${q4(e).total.toFixed(1)} GB` : "—", (e) => q4(e) && q4(e).total, "min"],
+    ["Contesto max nel formato consigliato", (e) => { const c = localModel(e) && maxCtx(e, bpwOf(recQ(e)) || 4.85); return c ? fmtCtx(c) : c === 0 ? "non entra" : "—"; }, (e) => localModel(e) && maxCtx(e, bpwOf(recQ(e)) || 4.85), "max"],
+    ["Velocità (stima)", (e) => { const r = q4(e); return r && r.fits && isTextModel(e) ? `${fmtTok(r.tok)} tok/s` : "—"; }, (e) => { const r = q4(e); return r && r.fits && isTextModel(e) ? r.tok : null; }, "max"],
+    ["Checkpoint nativo pronto", (e) => e.vram && e.vram.native_best ? (e.vram.native_ready ? `✓ ${e.vram.native_ready}` : `nessun ${e.vram.native_best}`) : "—"],
     ["Modalità", (e) => e.pipeline || e.modality || "—"],
     ["Knowledge cutoff", (e) => e.knowledge_cutoff || "—"],
   );
@@ -826,6 +832,8 @@ function compactModel(e) {
     gpu_verdetto: e.vram ? e.vram.text : (e.kind === "closed" ? "solo API" : null),
     q4_vram_gb: r ? +r.total.toFixed(1) : null, q4_contesto_max: localModel(e) ? maxCtx(e, 4.85) : null,
     q4_tok_s: r && r.fits && isTextModel(e) ? Math.round(r.tok) : null,
+    opzioni_gpu: e.vram && e.vram.options ? e.vram.options.filter((o) => o.fits).map((o) => `${o.q}${o.native ? " (nativo)" : ""}: ${o.comfy ? "entra" : "al limite"}, ctx max ${o.max_ctx || "?"}, ~${o.tok_s || "?"} tok/s`) : null,
+    checkpoint_nativo_pronto: e.vram ? e.vram.native_ready || null : null,
     benchmark_dichiarati: (d.benchmarks || []).slice(0, 12).map((b) => `${b.name}: ${b.score}`),
     caratteristiche: d.features || [], sintesi: d.tldr || e.description || null,
   };
@@ -918,19 +926,22 @@ function vramCalc(e) {
   const update = () => {
     const ctx = steps[ci];
     out.textContent = fmtCtx(ctx);
-    let recDone = false;
-    tbody.replaceChildren(...QUANTS.map(([q, bpw]) => {
+    const recDone = {};
+    const groups = [["gguf", QUANTS], ["native", nativeDefs()]];
+    tbody.replaceChildren(...groups.flatMap(([g, defs]) => (defs.length && g === "native" ? [h("tr", { class: "sep" },
+      h("th", { colspan: 6 }, `Formati nativi della ${hw.gpu_name} (accelerazione hardware: vLLM, SGLang, TensorRT-LLM; NVFP4 anche in GGUF)`))] : [])
+      .concat(defs.map(([q, bpw]) => {
       const r = vramRow(e, bpw, known ? ctx : 0, KV_TYPES[kvi][1]);
       const comfy = r.total <= hw.vram_gb - hw.reserved_gb - margin;
-      const rec = comfy && !recDone;
-      if (rec) recDone = true;
+      const rec = comfy && !recDone[g];
+      if (rec) recDone[g] = true;
       const pct = Math.min(100, r.total / hw.vram_gb * 100);
       return h("tr", { class: rec ? "rec" : "" },
         h("td", {}, h("b", {}, q)), h("td", { class: "num" }, `${r.w.toFixed(1)} GB`), h("td", { class: "num" }, `${r.total.toFixed(1)} GB`),
         h("td", {}, h("div", { class: "bar" }, h("i", { class: comfy ? "ok" : r.fits ? "tight" : "no", style: `width:${pct}%` }))),
         h("td", { class: comfy ? "fit-ok" : r.fits ? "fit-tight" : "fit-no" }, rec ? (q === "BF16" ? "★ nativo" : "★ consigliata") : comfy ? "entra" : r.fits ? "al limite" : "no"),
         h("td", { class: "num" }, r.fits && isTextModel(e) ? `${fmtTok(r.tok)} tok/s` : "—"));
-    }));
+    }))));
   };
   const slider = h("input", { type: "range", min: 0, max: steps.length - 1, value: ci, "aria-label": "Contesto", oninput: (ev) => { ci = +ev.target.value; update(); } });
   const kvSel = h("select", { class: "search", "aria-label": "Tipo KV cache", onchange: (ev) => { kvi = +ev.target.value; update(); } },
@@ -944,6 +955,7 @@ function vramCalc(e) {
       h("thead", {}, h("tr", {}, ["Quant", "Pesi", "Totale", `su ${hw.vram_gb} GB`, "", isTextModel(e) ? "Velocità" : ""].map((t) => h("th", {}, t)))), tbody)),
     h("p", { class: "small" }, `Stima per ${hw.gpu_name} (${hw.vram_gb} GB, ${hw.reserved_gb} GB riservati, ${hw.bandwidth_gbs} GB/s). `,
       `«Consigliata» = la quantizzazione di qualità più alta che lascia almeno ${margin} GB liberi; «al limite» = entra ma senza margine. `,
+      nativeDefs().length ? "I formati nativi girano con accelerazione hardware; la velocità indicata è la stessa stima legata alla banda di memoria. " : "",
       "Bit per peso dei GGUF di llama.cpp; overhead 0,75 GB + 2% dei pesi; tok/s = generazione a contesto breve, indicativi (±25%). ",
       e.active_b ? "MoE: in VRAM vanno tutti i parametri, la velocità dipende da quelli attivi. " : "",
       a && a.linear_layers ? `Attenzione ibrida: solo ${a.full_layers + (a.sliding_layers || 0)} layer su ${a.layers} hanno KV cache che cresce col contesto. ` : "",
@@ -987,7 +999,8 @@ function renderModel(e) {
   if (localModel(e)) secs.push(h("div", { class: "md-sec" }, h("h3", {}, `Gira sulla tua ${S.index.hardware.gpu_name}?`), vramCalc(e)));
   if (e.quants && e.quants.length) {
     secs.push(h("div", { class: "md-sec" }, h("h3", {}, "Quantizzazioni pronte"),
-      h("div", { class: "chips" }, e.quants.map((q) => ext(`https://huggingface.co/${q.id}`, { class: "mlink" }, `${q.id} · ${q.format}`)))));
+      h("div", { class: "quants" }, e.quants.map((q) => ext(`https://huggingface.co/${q.id}`, { class: "mlink q-" + q.format.toLowerCase() },
+        h("b", {}, q.format + (q.nvfp4 && q.format === "GGUF" ? " NVFP4" : "")), ` ${q.id}`, q.official ? " · ufficiale" : "")))));
   }
   if (d.local_tips) secs.push(h("div", { class: "md-sec" }, h("h3", {}, "Consigli per l'uso locale"), h("p", {}, d.local_tips)));
   if (e.mentions && e.mentions.length) {

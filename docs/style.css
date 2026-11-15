@@ -331,3 +331,7 @@ textarea.task { width: 100%; margin-top: 10px; padding: 10px 12px; border: 1px s
 .fit-tight { color: var(--warn); font-weight: 600; }
 .tbl tr.rec td { background: var(--ok-soft); }
 .md-head .mtop { padding-right: 44px; }
+.quants { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+.mlink.q-nvfp4, .mlink.q-fp8 { border-color: var(--accent); }
+.mlink.q-nvfp4 b, .mlink.q-fp8 b { color: var(--accent); }
+.tbl tr.sep th { background: var(--surface-2); color: var(--text); font-size: 12px; padding: 7px 8px; }

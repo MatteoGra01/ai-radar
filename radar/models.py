@@ -117,22 +117,45 @@ def hf_config(repo: str) -> dict | None:
         return None
 
 
-def hf_quants(repo: str) -> list[dict]:
+QUANT_KEEP = {"GGUF": 3, "NVFP4": 2, "FP8": 2, "MXFP4": 1, "AWQ": 1, "GPTQ": 1, "MLX": 1, "altro": 1}
+
+
+def hf_quants(repo: str) -> list[dict] | None:
+    """Versioni quantizzate pronte su HF, le migliori per ogni formato (prima quelle ufficiali). None = errore."""
     try:
-        data = net.get_json(f"{HF}/api/models?filter=base_model:quantized:{repo}&sort=downloads&limit=12",
+        data = net.get_json(f"{HF}/api/models?filter=base_model:quantized:{quote(repo)}&sort=downloads&limit=60",
                             headers=hf_headers(), timeout=20, retries=1)
     except Exception:
-        return []
+        return None
+    base_org = repo.split("/")[0].lower()
     out = []
     for m in data:
-        tags = m.get("tags", [])
-        fmt = "GGUF" if "gguf" in tags else "MLX" if "mlx" in tags else "AWQ" if "awq" in tags else \
-              "GPTQ" if "gptq" in tags else "FP8" if "fp8" in m["id"].lower() else \
-              "NVFP4" if "nvfp4" in m["id"].lower() else "altro"
-        out.append({"id": m["id"], "format": fmt, "downloads": m.get("downloads", 0)})
-    # prima i GGUF (llama.cpp / Ollama / LM Studio), poi gli altri
-    out.sort(key=lambda q: (q["format"] != "GGUF", -q["downloads"]))
-    return out[:6]
+        tags = [t.lower() for t in m.get("tags", [])]
+        low = m["id"].lower()
+        nvfp4 = "nvfp4" in low or "nvfp4" in tags
+        fmt = ("GGUF" if "gguf" in tags else "MLX" if "mlx" in tags else "NVFP4" if nvfp4 else
+               "MXFP4" if "mxfp4" in low else "FP8" if ("fp8" in low or "fp8" in tags) else
+               "AWQ" if "awq" in tags or "awq" in low else "GPTQ" if "gptq" in tags or "gptq" in low else "altro")
+        out.append({"id": m["id"], "format": fmt, "nvfp4": nvfp4, "official": m["id"].split("/")[0].lower() == base_org,
+                    "downloads": m.get("downloads", 0)})
+    out.sort(key=lambda q: (not q["official"], -q["downloads"]))
+    kept, count = [], {}
+    for q in out:
+        if count.get(q["format"], 0) < QUANT_KEEP.get(q["format"], 1):
+            kept.append(q)
+            count[q["format"]] = count.get(q["format"], 0) + 1
+    order = list(QUANT_KEEP)
+    kept.sort(key=lambda q: (order.index(q["format"]) if q["format"] in order else 99, not q["official"], -q["downloads"]))
+    return kept
+
+
+def native_ready(e: dict, fmt: str) -> dict | None:
+    """Un checkpoint già pronto nel formato nativo (es. NVFP4, anche come GGUF NVFP4)?"""
+    qs = e.get("quants") or []
+    exact = [q for q in qs if q["format"] == fmt]  # prima un checkpoint nativo vero e proprio (vLLM/SGLang/TRT-LLM)
+    if exact:
+        return exact[0]
+    return next((q for q in qs if fmt == "NVFP4" and q.get("nvfp4")), None)  # poi una GGUF NVFP4 (llama.cpp)
 
 
 def entry_from_hf(api: dict, hw: dict, with_quants: bool = True) -> dict:
@@ -178,7 +201,10 @@ def entry_from_hf(api: dict, hw: dict, with_quants: bool = True) -> dict:
     if weights is False:
         e["note"] = "Repository senza file di pesi (segnaposto o rilascio non ancora avvenuto)."
     if with_quants and weights:
-        e["quants"] = hf_quants(repo)
+        q = hf_quants(repo)
+        if q is not None:
+            e["quants"] = q
+            e["quants_checked"] = datetime.now(timezone.utc).date().isoformat()
     return e
 
 

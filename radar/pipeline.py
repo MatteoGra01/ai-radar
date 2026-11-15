@@ -510,9 +510,32 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
     # 3b. benchmark indipendenti: Artificial Analysis (via OpenRouter) e valutazioni di OpenRouter
     bench, bench_meta = M.fetch_benchmarks(status)
     n_bench = M.sync_benchmarks(reg, or_index, bench, cfg, today)
-    for e in reg.models.values():  # verdetti GPU ricalcolati ogni giorno: stessa formula, hardware da config.toml
-        if e.get("params_b") and e.get("weights_available") is not False and e.get("kind") != "closed":
-            e["vram"] = estimate(e["params_b"], e.get("active_b"), e.get("arch"), cfg["hardware"], e.get("pipeline"))
+    # quantizzazioni pronte su HF (GGUF, NVFP4, FP8…) per tutti i modelli aperti, ricontrollate ogni settimana
+    local = [e for e in reg.models.values() if e.get("hf_id") and e.get("params_b") and e.get("weights_available") is not False
+             and e.get("kind") != "closed"]
+    qweek = (now - timedelta(days=7)).date().isoformat()
+    stale_q = sorted((e for e in local if (e.get("quants_checked") or "") < qweek),
+                     key=lambda e: e.get("quants_checked") or "")[:150]
+
+    def fetch_q(e):
+        q = M.hf_quants(e["hf_id"])
+        if q is not None:
+            e["quants"] = q
+            e["quants_checked"] = today
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        list(ex.map(fetch_q, stale_q))
+    # verdetti GPU ricalcolati ogni giorno per tutto il registro (stessa formula, hardware da config.toml),
+    # con l'indicazione se esiste già un checkpoint nel formato nativo consigliato
+    for e in local:
+        v = estimate(e["params_b"], e.get("active_b"), e.get("arch"), cfg["hardware"], e.get("pipeline"))
+        if v and v.get("native_best") and v.get("quantized"):
+            fmt = v["native_best"]
+            ready = M.native_ready(e, fmt)
+            v["native_ready"] = ready["id"] if ready else None
+            v["text"] += (f" — checkpoint {fmt} già su Hugging Face ({ready['id']})" if ready else
+                          f" — nessun checkpoint {fmt} pubblicato: va convertito (es. NVIDIA ModelOpt o llm-compressor)")
+        e["vram"] = v
+    log(f"Quantizzazioni controllate: {len(stale_q)} modelli; verdetti GPU ricalcolati: {len(local)}")
     for e in reg.models.values():
         e["score"] = M.priority(e, cfg)
     mentioned_today = {mid for it in new if it["rel"] >= 6 for mid in it.get("model_ids", [])}

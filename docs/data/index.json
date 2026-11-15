@@ -2,17 +2,22 @@
  "days": [
   {
    "date": "2026-11-15",
-   "headline": "Qwen3.8-27B quantizzato da Unsloth e DeepSeek-V4.1 su GPU 16 GB con tandem.cpp",
+   "headline": "Qwen3.8-27B quantizzato per RTX 5090 e DeepSeek-V4.1 su GPU consumer",
    "n_items": 150,
    "n_models": 52
   }
  ],
- "updated": "2026-11-15T17:35:03Z",
+ "updated": "2026-11-15T17:46:24Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
   "reserved_gb": 1.0,
   "margin_gb": 1.5,
+  "native_formats": [
+   "NVFP4",
+   "FP8"
+  ],
+  "prefer_native": true,
   "bandwidth_gbs": 1792,
   "system_ram_gb": 64,
   "ref_context": 32768,
@@ -24,11 +29,19 @@
  },
  "status": {
   "sources": {
+   "rss:Simon Willison": {
+    "ok": true,
+    "n": 2
+   },
+   "rss:Google DeepMind": {
+    "ok": true,
+    "n": 0
+   },
    "rss:Interconnects": {
     "ok": true,
     "n": 1
    },
-   "rss:NVIDIA Developer": {
+   "rss:Ollama Blog": {
     "ok": true,
     "n": 0
    },
@@ -36,19 +49,11 @@
     "ok": true,
     "n": 0
    },
-   "rss:Simon Willison": {
-    "ok": true,
-    "n": 2
-   },
    "rss:Hugging Face Blog": {
     "ok": true,
     "n": 0
    },
-   "rss:Ollama Blog": {
-    "ok": true,
-    "n": 0
-   },
-   "rss:Google DeepMind": {
+   "rss:NVIDIA Developer": {
     "ok": true,
     "n": 0
    },
@@ -56,13 +61,13 @@
     "ok": true,
     "n": 10
    },
-   "rss:Ollama releases": {
-    "ok": true,
-    "n": 0
-   },
    "rss:r/LocalLLaMA": {
     "ok": true,
     "n": 25
+   },
+   "rss:Ollama releases": {
+    "ok": true,
+    "n": 0
    },
    "rss:vLLM releases": {
     "ok": true,
@@ -74,7 +79,7 @@
    },
    "github": {
     "ok": true,
-    "n": 48
+    "n": 50
    },
    "openrouter": {
     "ok": true,
@@ -102,7 +107,7 @@
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 257
+    "n": 254
    },
    "papers:Alignment Forum": {
     "ok": true,
@@ -119,16 +124,13 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 2,
-   "cost_usd": 0.0019,
+   "calls": 0,
+   "cost_usd": 0.0,
    "failures": 0,
-   "models": {
-    "openrouter/deepseek/deepseek-v4.1-flash": 1,
-    "openrouter/anthropic/claude-haiku-5.5": 1
-   },
+   "models": {},
    "log": []
   },
-  "duration_s": 61
+  "duration_s": 75
  },
  "new_model_days": 14,
  "benchmarks_meta": {

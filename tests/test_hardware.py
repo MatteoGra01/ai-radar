@@ -44,6 +44,20 @@ class TestHardware(unittest.TestCase):
         self.assertAlmostEqual(q4["weights_gb"], 15.7, delta=0.2)
         self.assertGreater(q4["max_ctx"], 200_000)
 
+    def test_native_blackwell(self):
+        # 5090 = Blackwell: NVFP4/FP8 con accelerazione hardware. FP8 (~27 GB) non lascia margine, NVFP4 sì
+        a = arch_from_config(HYBRID)
+        v = estimate(27.78, None, a, {**HW, "native_formats": ["NVFP4", "FP8"]}, "image-text-to-text")
+        self.assertEqual(v["native_best"], "NVFP4")
+        self.assertEqual(v["best_quant"], "NVFP4")
+        self.assertEqual(v["gguf_best"], "Q6_K")
+        self.assertIn("NVFP4 (formato nativo", v["text"])
+        self.assertIn("GGUF Q6_K", v["text"])
+        nv = next(o for o in v["options"] if o["q"] == "NVFP4")
+        self.assertTrue(nv["comfy"] and nv["max_ctx"] > 200_000)
+        # piccolo modello: niente quantizzazione
+        self.assertFalse(estimate(1.7, None, None, {**HW, "native_formats": ["NVFP4"]}, "text-generation")["quantized"])
+
     def test_moe(self):
         a = arch_from_config(MOE)
         act = active_from_arch(a, 30.5)

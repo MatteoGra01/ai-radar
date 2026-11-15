@@ -33,6 +33,10 @@ gpu_name = "RTX 5090"
 vram_gb = 32            # GiB
 reserved_gb = 1.0       # VRAM occupata da desktop/driver, non usabile dal modello
 margin_gb = 1.5         # margine libero richiesto per la quantizzazione "consigliata" (sotto = "al limite")
+# Formati con accelerazione hardware della GPU (Blackwell: FP4 e FP8). Usati da vLLM, SGLang, TensorRT-LLM
+# e dalle GGUF NVFP4 di llama.cpp. prefer_native = il verdetto principale usa il formato nativo quando entra.
+native_formats = ["NVFP4", "FP8"]
+prefer_native = true
 bandwidth_gbs = 1792    # banda memoria GB/s (per stimare i token/s)
 system_ram_gb = 64      # RAM di sistema, per capire se un MoE gira con offload degli esperti
 ref_context = 32768     # contesto di riferimento per il verdetto "gira / non gira"

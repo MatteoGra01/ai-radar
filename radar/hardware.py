@@ -6,7 +6,7 @@ Formula (identica a quella di docs/app.js, usata dal calcolatore interattivo):
              (layer sliding-window limitati alla finestra, MLA = (kv_lora_rank + rope_dim) per token,
               layer lineari/SSM = stato costante)
   overhead = 0.75 GiB + 2% dei pesi (buffer di calcolo, contesto CUDA)
-I bit/peso sono quelli effettivi dei formati GGUF di llama.cpp.
+I bit/peso sono quelli effettivi dei formati GGUF di llama.cpp; FP8/NVFP4 includono le scale.
 """
 from __future__ import annotations
 
@@ -24,7 +24,7 @@ QUANTS = [
     ("Q3_K_M", 3.91),
     ("IQ2_M", 2.7),
 ]
-GOOD_QUANTS = {"BF16", "Q8_0", "Q6_K", "Q5_K_M", "Q4_K_M", "IQ4_XS"}
+GOOD_QUANTS = {"BF16", "Q8_0", "Q6_K", "Q5_K_M", "Q4_K_M", "IQ4_XS", "FP8", "NVFP4"}
 
 
 def _first(d: dict, *keys):
@@ -226,24 +226,30 @@ def _tok(t: int | None) -> str:
     return "500+" if t and t >= 500 else f"~{t}"
 
 
+NATIVE = {"FP8": 8.25, "NVFP4": 4.5}  # bit effettivi: FP8 + scale; FP4 + una scala FP8 ogni 16 valori
+
+
 def estimate(params_b: float | None, active_b: float | None, arch: dict | None, hw: dict,
              pipeline: str | None = None) -> dict | None:
+    """Verdetto per la GPU: GGUF (llama.cpp/Ollama/LM Studio) e formati con accelerazione hardware della GPU
+    (es. NVFP4/FP8 su Blackwell, per vLLM/SGLang/TensorRT-LLM)."""
     if not params_b:
         return None
     text_model = pipeline in TEXT_PIPES
     usable = hw["vram_gb"] - hw["reserved_gb"]
+    margin = float(hw.get("margin_gb", 1.5))  # spazio libero da lasciare (desktop, picchi, altri processi)
     ref = int(hw["ref_context"])
     max_pos = int(arch["max_ctx"]) if arch and arch.get("max_ctx") else None
     kv_known = bool(arch and (arch.get("mla_dim") or (arch.get("kv_heads") and arch.get("head_dim"))))
     is_moe = bool(active_b and active_b < params_b * 0.7)
     act = active_b or params_b
     eff = 0.7 if not is_moe else min(0.7, 0.15 + 0.03 * act)
+    gpu = hw["gpu_name"]
 
     def total_gb(w, ctx):
         return w + kv_bytes(arch, ctx) / GiB + 0.75 + 0.02 * w
 
-    table = []
-    for q, bpw in QUANTS:
+    def make_row(q, bpw, native=False):
         w = params_b * 1e9 * bpw / 8 / GiB
         rows = []
         for c in hw["contexts"]:
@@ -263,63 +269,64 @@ def estimate(params_b: float | None, active_b: float | None, arch: dict | None, 
             max_ctx = lo
         bytes_tok = act * 1e9 * bpw / 8 + kv_bytes(arch, 4096)
         tok_s = round(eff * hw["bandwidth_gbs"] * 1e9 / bytes_tok) if bytes_tok and text_model else None
-        table.append({"q": q, "bpw": bpw, "weights_gb": round(w, 1), "rows": rows,
-                      "max_ctx": max_ctx, "tok_s": tok_s})
+        return {"q": q, "bpw": bpw, "weights_gb": round(w, 1), "rows": rows, "max_ctx": max_ctx, "tok_s": tok_s,
+                "native": native}
 
-    gpu = hw["gpu_name"]
-    margin = float(hw.get("margin_gb", 1.5))  # spazio libero che vogliamo lasciare (desktop, picchi, altri processi)
+    table = [make_row(q, bpw) for q, bpw in QUANTS]
+    natives = sorted((make_row(f, NATIVE[f], True) for f in hw.get("native_formats", []) if f in NATIVE),
+                     key=lambda r: -r["bpw"])
     ref_ctx = min(ref, max_pos) if max_pos else ref
     ctx_ref = ref_ctx if kv_known else 0
-    fits_ref = [r for r in table if total_gb(r["weights_gb"], ctx_ref) <= usable]            # entra, anche al limite
-    comfy_ref = [r for r in table if total_gb(r["weights_gb"], ctx_ref) <= usable - margin]  # entra con margine
-    small_ctx = min(hw["contexts"])
-    fits_small = [r for r in table if total_gb(r["weights_gb"], small_ctx if kv_known else 0) <= usable]
+    fits = lambda r, c=ctx_ref: total_gb(r["weights_gb"], c) <= usable            # noqa: E731
+    comfy = lambda r: total_gb(r["weights_gb"], ctx_ref) <= usable - margin       # noqa: E731
+    options = [{"q": r["q"], "native": r["native"], "gb": round(total_gb(r["weights_gb"], ctx_ref), 1), "fits": fits(r),
+                "comfy": comfy(r), "max_ctx": r["max_ctx"], "tok_s": r["tok_s"]} for r in table + natives]
+    bf16 = table[0]
+    gguf_best = next((r for r in table if comfy(r)), None)
+    gguf_fit = next((r for r in table if fits(r)), None)
+    gguf_tight = gguf_fit if gguf_fit is not None and gguf_fit is not gguf_best else None
+    nat_best = next((r for r in natives if comfy(r)), None)
     q4 = next(r for r in table if r["q"] == "Q4_K_M")
-    native_gb = table[0]["weights_gb"]
-    options = [{"q": r["q"], "gb": round(total_gb(r["weights_gb"], ctx_ref), 1),
-                "fits": total_gb(r["weights_gb"], ctx_ref) <= usable,
-                "comfy": total_gb(r["weights_gb"], ctx_ref) <= usable - margin,
-                "max_ctx": r["max_ctx"], "tok_s": r["tok_s"]} for r in table]
-    tight = None
 
-    def ctx_txt(r):
+    def desc(r):
         if not text_model:
             return f"{r['weights_gb']} GB di pesi"
         if not kv_known:
-            return "contesto non stimabile"
-        mc = r["max_ctx"] or ref_ctx
-        return f"contesto fino a ~{_fmt_ctx(mc)}" + (f", {_tok(r['tok_s'])} tok/s" if r["tok_s"] else "")
+            return f"{r['weights_gb']} GB di pesi, contesto non stimabile"
+        return f"contesto fino a ~{_fmt_ctx(r['max_ctx'] or ref_ctx)}" + (f", {_tok(r['tok_s'])} tok/s" if r["tok_s"] else "")
 
     def short(r):
         return f"{r['q']} · {_fmt_ctx(r['max_ctx'])}" if text_model and r["max_ctx"] else r["q"]
 
-    if fits_ref:
-        best = comfy_ref[0] if comfy_ref else fits_ref[0]
-        if fits_ref[0] is not best:
-            tight = fits_ref[0]  # qualità più alta che però entra solo al limite
-        tight_txt = f"; {tight['q']} entra solo al limite (~{_fmt_ctx(tight['max_ctx'] or ref_ctx)})" if tight and text_model else \
-            (f"; {tight['q']} entra solo al limite" if tight else "")
-        if best["q"] == "BF16":
-            level = "ok"
-            text = f"Gira su {gpu} senza quantizzare (BF16), {ctx_txt(best)}"
-            label = "BF16 nativo" + (f" · {_fmt_ctx(best['max_ctx'])}" if text_model and best["max_ctx"] else "")
-        elif best["q"] in GOOD_QUANTS:
-            level = "ok"
-            text = (f"Serve quantizzazione (in BF16 i pesi sono ~{native_gb:.0f} GB): consigliata {best['q']}, "
-                    f"{ctx_txt(best)}{tight_txt}")
-            label = short(best)
-        else:
-            level = "warn"
-            text = f"Solo con quantizzazione aggressiva: {best['q']}, {ctx_txt(best)}"
-            label = short(best)
-    elif fits_small:
-        best = fits_small[0]
-        level = "warn"
-        text = f"Serve quantizzazione e contesto ridotto: {best['q']} fino a ~{_fmt_ctx(best['max_ctx'] or small_ctx)}"
-        label = f"{best['q']} · {_fmt_ctx(best['max_ctx'] or small_ctx)}"
+    primary, tight = None, None
+    if comfy(bf16):
+        primary = bf16
+        level = "ok"
+        text = f"Gira su {gpu} senza quantizzare (BF16), {desc(bf16)}"
+        label = "BF16 nativo" + (f" · {_fmt_ctx(bf16['max_ctx'])}" if text_model and bf16["max_ctx"] else "")
+    elif nat_best or gguf_best:
+        parts = []
+        if nat_best:
+            parts.append(f"{nat_best['q']} (formato nativo della {gpu}): {desc(nat_best)}")
+        if gguf_best:
+            parts.append(f"GGUF {gguf_best['q']}: {desc(gguf_best)}" + (f"; {gguf_tight['q']} al limite" if gguf_tight else ""))
+        tight = gguf_tight
+        primary = nat_best if (nat_best and hw.get("prefer_native", True)) else (gguf_best or nat_best)
+        good = primary["native"] or primary["q"] in GOOD_QUANTS
+        level = "ok" if good else "warn"
+        lead = f"Serve quantizzazione (in BF16 i pesi sono ~{bf16['weights_gb']:.0f} GB). " if good else \
+            "Solo con quantizzazione aggressiva. "
+        text = lead + " · ".join(parts)
+        label = short(primary)
     else:
-        best = None
-        if is_moe and q4["weights_gb"] <= usable + hw["system_ram_gb"] * 0.8:
+        small_ctx = min(hw["contexts"]) if kv_known else 0
+        squeeze = next((r for r in natives + table if fits(r, small_ctx)), None)
+        if squeeze:
+            primary = squeeze
+            level = "warn"
+            text = f"Serve quantizzazione e contesto ridotto: {squeeze['q']} fino a ~{_fmt_ctx(squeeze['max_ctx'] or small_ctx or ref_ctx)}"
+            label = f"{squeeze['q']} · {_fmt_ctx(squeeze['max_ctx'] or small_ctx or ref_ctx)}"
+        elif is_moe and q4["weights_gb"] <= usable + hw["system_ram_gb"] * 0.8:
             level = "warn"
             text = (f"MoE da {params_b:g}B ({act:g}B attivi): non entra in VRAM ma gira con offload degli esperti "
                     f"in RAM (~{q4['weights_gb']:.0f} GB in Q4_K_M, llama.cpp --n-cpu-moe). Velocità limitata dalla RAM")
@@ -332,14 +339,16 @@ def estimate(params_b: float | None, active_b: float | None, arch: dict | None, 
         "level": level,
         "label": label,
         "text": text,
-        "best_quant": best["q"] if best else None,
-        "quantized": bool(best and best["q"] != "BF16"),
+        "best_quant": primary["q"] if primary else None,
+        "quantized": bool(primary and primary["q"] != "BF16"),
+        "native_best": nat_best["q"] if nat_best else None,
+        "gguf_best": gguf_best["q"] if gguf_best else None,
         "tight": tight["q"] if tight else None,
-        "native_gb": native_gb,
+        "native_gb": bf16["weights_gb"],
         "ref_ctx": ref_ctx,
-        "tok_s": best["tok_s"] if best else None,
+        "tok_s": primary["tok_s"] if primary else None,
         "kv_known": kv_known,
         "is_moe": is_moe,
         "options": options,
-        "table": table,
+        "table": table + natives,
     }
