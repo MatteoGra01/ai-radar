@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T18:09:35Z",
+ "updated": "2026-11-15T18:41:23Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -718,9 +718,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 335,
+    "likes": 336,
     "downloads": 7329,
-    "trending": 319,
+    "trending": 320,
     "trend_rank": 9,
     "watched_org": true
    },
@@ -1767,7 +1767,7 @@
    "signals": {
     "likes": 584,
     "downloads": 10675,
-    "trending": 158,
+    "trending": 156,
     "trend_rank": 44
    },
    "vram": {
@@ -2682,9 +2682,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 1166,
+    "likes": 1167,
     "downloads": 571067,
-    "trending": 1055,
+    "trending": 1056,
     "trend_rank": 2,
     "watched_org": true
    },
@@ -2767,9 +2767,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 380,
+    "likes": 381,
     "downloads": 39862,
-    "trending": 340,
+    "trending": 341,
     "trend_rank": 7,
     "watched_org": true
    },
@@ -2847,9 +2847,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 2097,
+    "likes": 2098,
     "downloads": 46766,
-    "trending": 287,
+    "trending": 286,
     "trend_rank": 11,
     "watched_org": true
    },
@@ -3228,9 +3228,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 287,
+    "likes": 290,
     "downloads": 2098,
-    "trending": 271,
+    "trending": 274,
     "trend_rank": 13
    },
    "links": {
@@ -3370,7 +3370,7 @@
      "source": "r/LocalLLaMA"
     }
    ],
-   "score": 12.81,
+   "score": 12.82,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "Haru-4B è un modello base open-weight (Apache 2.0, circa 5,27B parametri) per dialogo vocale continuo full-duplex: ascolta e parla contemporaneamente, con un frame ogni 133 ms (7,5 Hz). Usa audio continuo a 64 dimensioni per frame, generato in un solo passo da una piccola testa MLP con MeanFlow, senza token audio discreti. È rilasciato per la ricerca, non come assistente generico; è adatto a sperimentare dialogo vocale a bassa latenza e multilingue.",
@@ -3414,7 +3414,7 @@
    "signals": {
     "likes": 316,
     "downloads": 28553,
-    "trending": 216,
+    "trending": 215,
     "trend_rank": 19
    },
    "links": {
@@ -3465,7 +3465,7 @@
    "signals": {
     "likes": 271,
     "downloads": 0,
-    "trending": 208,
+    "trending": 204,
     "trend_rank": 20
    },
    "links": {
@@ -35943,9 +35943,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 61,
+    "likes": 62,
     "downloads": 40,
-    "trending": 61,
+    "trending": 62,
     "trend_rank": 86
    },
    "links": {
@@ -35955,7 +35955,7 @@
    "quants": [],
    "first_seen": "2026-11-15",
    "mentions": [],
-   "score": 4.61,
+   "score": 4.62,
    "newer": null,
    "newer_checked": "2026-11-15",
    "deep": {
@@ -36589,6 +36589,84 @@
     "date": "2026-11-15",
     "by": "anthropic/claude-haiku-5.5"
    },
+   "updated": "2026-11-15"
+  },
+  "ann:villanova215ba3bbase": {
+   "id": "ann:villanova215ba3bbase",
+   "name": "Villanova2-15B-A3B-Base",
+   "org": "",
+   "kind": "announced",
+   "released": "2026-11-15",
+   "links": {
+    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/"
+   },
+   "note": "Nessun peso ufficiale su Hugging Face: esistono solo repo di terze parti o segnaposto (VillanovaAI/Villanova2-15B-A3B, VillanovaAI/Villanova2-2B, VillanovaAI/Villanova2-15B-A3B-VL).",
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "1278034560fb",
+     "rel": 10,
+     "date": "2026-11-15",
+     "title": "Villanova2: famiglia di modelli open-weight EU (15B-A3B MoE, 2B dense, VL)",
+     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
+     "source": "r/LocalLLaMA"
+    }
+   ],
+   "score": 9.5,
+   "newer": null,
+   "newer_checked": "2026-11-15",
+   "updated": "2026-11-15"
+  },
+  "ann:villanova215ba3bvl": {
+   "id": "ann:villanova215ba3bvl",
+   "name": "Villanova2-15B-A3B-VL",
+   "org": "",
+   "kind": "announced",
+   "released": "2026-11-15",
+   "links": {
+    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/"
+   },
+   "note": "Nessun peso ufficiale su Hugging Face: esistono solo repo di terze parti o segnaposto (VillanovaAI/Villanova2-15B-A3B-VL-GGUF).",
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "1278034560fb",
+     "rel": 10,
+     "date": "2026-11-15",
+     "title": "Villanova2: famiglia di modelli open-weight EU (15B-A3B MoE, 2B dense, VL)",
+     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
+     "source": "r/LocalLLaMA"
+    }
+   ],
+   "score": 9.5,
+   "newer": null,
+   "newer_checked": "2026-11-15",
+   "updated": "2026-11-15"
+  },
+  "ann:villanova22bbase": {
+   "id": "ann:villanova22bbase",
+   "name": "Villanova2-2B-Base",
+   "org": "",
+   "kind": "announced",
+   "released": "2026-11-15",
+   "links": {
+    "announcement": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/"
+   },
+   "note": "Nessun peso ufficiale su Hugging Face: esistono solo repo di terze parti o segnaposto (VillanovaAI/Villanova2-15B-A3B, VillanovaAI/Villanova2-2B, VillanovaAI/Villanova2-15B-A3B-VL).",
+   "first_seen": "2026-11-15",
+   "mentions": [
+    {
+     "item": "1278034560fb",
+     "rel": 10,
+     "date": "2026-11-15",
+     "title": "Villanova2: famiglia di modelli open-weight EU (15B-A3B MoE, 2B dense, VL)",
+     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xx1rbk/villanova2_a_villanovaai_collection/",
+     "source": "r/LocalLLaMA"
+    }
+   ],
+   "score": 9.5,
+   "newer": null,
+   "newer_checked": "2026-11-15",
    "updated": "2026-11-15"
   }
  }
