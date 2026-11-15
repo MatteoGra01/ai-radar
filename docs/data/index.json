@@ -7,7 +7,7 @@
    "n_models": 50
   }
  ],
- "updated": "2026-11-15T13:15:30Z",
+ "updated": "2026-11-15T13:16:20Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -27,14 +27,6 @@
     "ok": true,
     "n": 1
    },
-   "rss:Simon Willison": {
-    "ok": true,
-    "n": 2
-   },
-   "rss:Google DeepMind": {
-    "ok": true,
-    "n": 0
-   },
    "rss:OpenAI News": {
     "ok": true,
     "n": 0
@@ -43,21 +35,29 @@
     "ok": true,
     "n": 0
    },
+   "rss:Simon Willison": {
+    "ok": true,
+    "n": 2
+   },
    "rss:Hugging Face Blog": {
     "ok": true,
     "n": 0
    },
-   "hackernews": {
-    "ok": true,
-    "n": 7
-   },
-   "hf_papers": {
+   "rss:Google DeepMind": {
     "ok": true,
     "n": 0
    },
    "rss:NVIDIA Developer": {
     "ok": true,
     "n": 0
+   },
+   "hf_papers": {
+    "ok": true,
+    "n": 0
+   },
+   "hackernews": {
+    "ok": true,
+    "n": 7
    },
    "rss:Ollama releases": {
     "ok": true,
@@ -94,14 +94,14 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 16,
-   "cost_usd": 0.0158,
+   "calls": 15,
+   "cost_usd": 0.0122,
    "failures": 0,
    "models": {
-    "openrouter/anthropic/claude-haiku-5.5": 16
+    "openrouter/anthropic/claude-haiku-5.5": 15
    },
    "log": []
   },
-  "duration_s": 22
+  "duration_s": 17
  }
 }

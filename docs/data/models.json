@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T13:15:52Z",
+ "updated": "2026-11-15T13:16:37Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -174,7 +174,23 @@
    "mentions": [],
    "note": "OpenRouter indica pesi su Hugging Face, ma il repository non è (ancora) pubblico: verrà ricontrollato ogni giorno.",
    "score": 3.5,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "ERNIE 5.5 Flash Preview è un foundation model della famiglia ERNIE di Baidu, presentato con miglioramenti dichiarati in coding, capacità agentiche, knowledge work e deep research. Il testo fornito è troncato e riporta solo l'inizio della descrizione (280 miliardi di parametri totali). Per il lettore interessato all'esecuzione locale sembra più adatto ai casi di coding e agent/tool use, ma il testo non fornisce dettagli sufficienti per confermarlo.",
+    "features": [
+     "Foundation model della famiglia ERNIE, con miglioramenti dichiarati in coding, capacità agentiche, knowledge work e deep research",
+     "Dimensione dichiarata: 280 miliardi di parametri totali (il resto della descrizione è troncato)",
+     "Contesto da 1.024.000 token (dato già noto, non presente nel testo fornito)"
+    ],
+    "benchmarks": [],
+    "params": "280B totali",
+    "context": "1024000",
+    "availability": "Versione Preview gratuita (free) tramite Baidu, come indicato nel nome del modello; dettagli su pesi aperti, API e piattaforme non presenti nel testo fornito",
+    "local_tips": "",
+    "source": "https://openrouter.ai/baidu/ernie-5.5-flash-preview",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "or:baidu/ernie-light-dt-1.0-intl": {
    "id": "or:baidu/ernie-light-dt-1.0-intl",
@@ -199,7 +215,23 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 3.5,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "ERNIE-Light-DT-1.0 è un modello di Baidu basato su modelli GLM open-source, che integra risultati di ricerca del modello Lightning di Baidu Search. La novità dichiarata è Baidu Sparse Attention (BSA), un meccanismo di attenzione sparsa sviluppato da Baidu. Il testo fornito è però troncato e non specifica casi d'uso, quindi l'adattamento è non verificabile dal solo estratto.",
+    "features": [
+     "Basato su modelli GLM open-source",
+     "Integra risultati di ricerca del modello Lightning large model di Baidu Search",
+     "Baidu Sparse Attention (BSA): meccanismo di attenzione sparsa proprietario di Baidu"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "1024000",
+    "availability": "Pricing dichiarato (dati già noti): input 1.13, output 3.94 (unità non specificata nel testo). Pesi aperti, piattaforme e licenza non indicati nel testo fornito.",
+    "local_tips": "",
+    "source": "https://openrouter.ai/baidu/ernie-light-dt-1.0-intl",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "or:google/gemini-4-carbon": {
    "id": "or:google/gemini-4-carbon",
@@ -1831,7 +1863,24 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 6.5,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Gemini Omni 1.1 Flash è il modello multimodale di generazione e modifica video nativo di Google, successore generalmente disponibile di Gemini Omni Flash Preview. Il testo indica il supporto a text-to-video e image-to-video, oltre a funzioni di editing. È pensato per la produzione di contenuti video a partire da testo e immagini.",
+    "features": [
+     "Generazione video nativa multimodale (text-to-video e image-to-video)",
+     "Funzioni di editing video, descritte nel testo come parte del modello",
+     "Successore generalmente disponibile (GA) di Gemini Omni Flash Preview",
+     "Dettagli su architettura, contesto, reasoning, tool use e licenza non presenti nel testo fornito"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "Il testo non specifica pesi aperti, piattaforme o modalità di accesso; il prezzo non è riportato nel testo (i valori 'in: 1.5, out: 9.0' sono dati già noti forniti nel prompt, non verificati dal testo)",
+    "local_tips": "",
+    "source": "https://openrouter.ai/google/gemini-omni-1.1-flash",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ricursiveAI/Ripple-65B-Preview": {
    "id": "ricursiveAI/Ripple-65B-Preview",
@@ -2124,7 +2173,231 @@
     }
    ],
    "score": 6.49,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Ripple-65B Preview è un Transformer dense da 65B parametri (BF16, con checkpoint NVFP4), pretrainato su 12T token con contesto fino a 1M token, rilasciato sotto Apache 2.0. Si distingue soprattutto per le prestazioni su coding agentico (80.52 su Terminal-Bench 2.1), superando modelli open-weight MoE molto più grandi. È indicato per sviluppatori che vogliono un modello capace di ragionamento e agenti eseguibile in locale su hardware consumer o workstation.",
+    "features": [
+     "Architettura dense 65B con d_model 5120 e 80 layer, con passaggio da un'architettura llama-like a una Gemma 3N-like per la stabilità di training",
+     "Contesto massimo dichiarato di 1.048.576 token (1Mi), con fase di long context a 2M nel training",
+     "Modifiche architetturali: attenzione con molte teste, rapporto SWA/global aumentato e finestra SWA ridotta, FFN activation clipping, gated attention, global NoPE e value residuals",
+     "Ottimizzazione per coding e agenti: la fase di post-training è stata leggera e focalizzata su agentic coding (SFT, long-context SFT e RL)",
+     "Licenza Apache 2.0; è disponibile il checkpoint BF16 instruct, un checkpoint NVFP4 e un base model BF16 pretrain-only",
+     "Training senza MoE e senza quantizzazione, con MFU del 40% mantenuto con sharding semplice e senza kernel custom"
+    ],
+    "benchmarks": [
+     {
+      "name": "Terminal-Bench 2.1 (self-reported)",
+      "score": "80.5",
+      "vs": [
+       {
+        "model": "Reflection Beam 501B",
+        "score": "80.1"
+       },
+       {
+        "model": "Meta Muse Spark Open 816B",
+        "score": "76.4"
+       },
+       {
+        "model": "Thinking Machines Inkling 975B",
+        "score": "63.8"
+       }
+      ]
+     },
+     {
+      "name": "SWE-bench Verified",
+      "score": "76.5",
+      "vs": [
+       {
+        "model": "Reflection Beam 501B",
+        "score": "81.6"
+       },
+       {
+        "model": "Meta Muse Spark Open 816B",
+        "score": "78.7"
+       },
+       {
+        "model": "Thinking Machines Inkling 975B",
+        "score": "77.6"
+       }
+      ]
+     },
+     {
+      "name": "SWE-bench Pro v1.0",
+      "score": "61.42",
+      "vs": [
+       {
+        "model": "Reflection Beam 501B",
+        "score": "66.1"
+       },
+       {
+        "model": "Meta Muse Spark Open 816B",
+        "score": "58.2"
+       },
+       {
+        "model": "Thinking Machines Inkling 975B",
+        "score": "54.3"
+       }
+      ]
+     },
+     {
+      "name": "GPQA Diamond",
+      "score": "85.2",
+      "vs": [
+       {
+        "model": "Reflection Beam 501B",
+        "score": "90.6"
+       },
+       {
+        "model": "Meta Muse Spark Open 816B",
+        "score": "89.0"
+       },
+       {
+        "model": "Thinking Machines Inkling 975B",
+        "score": "87.2"
+       }
+      ]
+     },
+     {
+      "name": "MMLU-Pro",
+      "score": "84.2",
+      "vs": [
+       {
+        "model": "Meta Muse Spark Open 816B",
+        "score": "87.9"
+       },
+       {
+        "model": "Thinking Machines Inkling 975B",
+        "score": "87.3"
+       },
+       {
+        "model": "NVIDIA Nemotron 3 Ultra 550B",
+        "score": "86.8"
+       }
+      ]
+     },
+     {
+      "name": "AIME 2025",
+      "score": "98.3",
+      "vs": [
+       {
+        "model": "Meta Muse Spark Open 816B",
+        "score": "100.0"
+       },
+       {
+        "model": "Reflection Beam 501B",
+        "score": "99.6"
+       },
+       {
+        "model": "NVIDIA Nemotron 3 Ultra 550B",
+        "score": "94.2"
+       }
+      ]
+     },
+     {
+      "name": "AIME 2024",
+      "score": "97.1",
+      "vs": [
+       {
+        "model": "Meta Muse Spark Open 816B",
+        "score": "97.9"
+       },
+       {
+        "model": "Thinking Machines Inkling 975B",
+        "score": "97.5"
+       },
+       {
+        "model": "Reflection Beam 501B",
+        "score": "96.7"
+       }
+      ]
+     },
+     {
+      "name": "MMLU",
+      "score": "89.6",
+      "vs": [
+       {
+        "model": "Meta Muse Spark Open 816B",
+        "score": "92.6"
+       },
+       {
+        "model": "Reflection Beam 501B",
+        "score": "92.4"
+       },
+       {
+        "model": "NVIDIA Nemotron 3 Ultra 550B",
+        "score": "92.0"
+       }
+      ]
+     },
+     {
+      "name": "MATH (base, flex EM)",
+      "score": "59.1",
+      "vs": [
+       {
+        "model": "NVIDIA Nemotron 3 Ultra 550B",
+        "score": "82.0"
+       }
+      ]
+     },
+     {
+      "name": "HumanEval (base)",
+      "score": "70.9",
+      "vs": [
+       {
+        "model": "NVIDIA Nemotron 3 Ultra 550B",
+        "score": "83.8"
+       },
+       {
+        "model": "Poolside Laguna M.1 225B",
+        "score": "83.4"
+       }
+      ]
+     },
+     {
+      "name": "AA-LCR",
+      "score": "75.0",
+      "vs": [
+       {
+        "model": "Meta Muse Spark Open 816B",
+        "score": "80.7"
+       },
+       {
+        "model": "Thinking Machines Inkling 975B",
+        "score": "78.3"
+       },
+       {
+        "model": "Reflection Beam 501B",
+        "score": "78.2"
+       }
+      ]
+     },
+     {
+      "name": "IFBench",
+      "score": "79.2",
+      "vs": [
+       {
+        "model": "NVIDIA Nemotron 3 Ultra 550B",
+        "score": "81.7"
+       },
+       {
+        "model": "Thinking Machines Inkling 975B",
+        "score": "79.8"
+       },
+       {
+        "model": "Reflection Beam 501B",
+        "score": "79.6"
+       }
+      ]
+     }
+    ],
+    "params": "65B dense (65B totali / 65B attivi)",
+    "context": "1.048.576 token (1Mi)",
+    "availability": "Pesi aperti con licenza Apache 2.0 (checkpoint BF16 instruct, checkpoint NVFP4 e base model BF16 pretrain-only); nel testo sono indicati un colab per iniziare e la possibilità di esecuzione su NVIDIA DGX Spark; non sono indicati prezzi API nel testo (i valori di pricing forniti come dato noto non compaiono nel testo) né altre piattaforme",
+    "local_tips": "Il testo indica che il modello entra su hardware consumer come il NVIDIA DGX Spark, che il checkpoint NVFP4 è pensato per lo sviluppo locale con un colab di avvio, e che a 2xB200 batch=8 raggiunge 250 tok/s prima della quantizzazione o di kernel custom. Non sono indicati framework specifici (llama.cpp, vLLM, Ollama, LM Studio) né impostazioni di sampling.",
+    "source": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "tencent/Hy4": {
    "id": "tencent/Hy4",
@@ -2150,7 +2423,22 @@
    "mentions": [],
    "note": "OpenRouter indica pesi su Hugging Face, ma il repository non è (ancora) pubblico: verrà ricontrollato ogni giorno.",
    "score": 3.5,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Hy4 è la release ufficiale di Tencent che succede a Hy4 Preview, con miglioramenti dichiarati significativi, in particolare nelle capacità agentiche e nei task di produttività reale a lungo orizzonte. Il testo fornito è un estratto introduttivo: non contiene dettagli architetturali, benchmark o istruzioni d'uso sufficienti a valutarne l'idoneità per l'esecuzione locale.",
+    "features": [
+     "Release ufficiale che migliora Hy4 Preview, con gain dichiarati soprattutto sulle capacità agentiche",
+     "Orientamento a task di produttività reale e a lungo orizzonte (testo non dettagliato)"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "",
+    "local_tips": "",
+    "source": "https://openrouter.ai/tencent/hy4",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "Motif-Technologies/Motif-3": {
    "id": "Motif-Technologies/Motif-3",
@@ -2443,7 +2731,171 @@
     }
    ],
    "score": 4.97,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Motif 3 è un modello MoE decoder-only da 314B parametri totali con 13.2B attivi per token, sviluppato da Motif Technologies con architettura proprietaria (GDLA, PolyNorm per-expert, mHC, MTP). Offre un contesto nativo di 256K e punta forte su agentic tool use, terminal-based problem solving e coding. Adatto a workflow agentici e coding a lungo orizzonte, con pesi aperti sotto licenza MIT.",
+    "features": [
+     "Architettura MoE fine-grained: 384 expert routed con top-8 attivi per token più 1 shared expert, 53 layer (2 dense + 51 MoE)",
+     "Contesto nativo di 262.144 token (256K), addestrato con context parallelism window-aware",
+     "Attenzione GDLA (Grouped Differential Latent Attention) con gate in output, pensata per ridurre la KV-cache",
+     "Head MTP a 1 layer che abilita self-speculative decoding in inferenza",
+     "Pretraining su ~12.5T token con enfasi su coreano, reasoning, dati legali e finanziari; vocabolario da 220.160 token",
+     "Licenza MIT con pesi aperti e accesso senza richiesta"
+    ],
+    "benchmarks": [
+     {
+      "name": "SWE-Bench Verified",
+      "score": "76.2",
+      "vs": [
+       {
+        "model": "MiniMax-3",
+        "score": "75.0"
+       },
+       {
+        "model": "GLM-5.1",
+        "score": "76.4"
+       },
+       {
+        "model": "Qwen-3.7 max",
+        "score": "80.4"
+       }
+      ]
+     },
+     {
+      "name": "Terminal-Bench 2.1",
+      "score": "74.9",
+      "vs": [
+       {
+        "model": "MiniMax-3",
+        "score": "65.2"
+       },
+       {
+        "model": "GLM-5.1",
+        "score": "61.8"
+       },
+       {
+        "model": "Qwen-3.7 max",
+        "score": "75.0"
+       }
+      ]
+     },
+     {
+      "name": "GPQA Diamond",
+      "score": "83.4",
+      "vs": [
+       {
+        "model": "MiniMax-3",
+        "score": "92.9"
+       },
+       {
+        "model": "GLM-5.1",
+        "score": "86.8"
+       },
+       {
+        "model": "Qwen-3.7 max",
+        "score": "92.4"
+       }
+      ]
+     },
+     {
+      "name": "HLE",
+      "score": "37.0",
+      "vs": [
+       {
+        "model": "MiniMax-3",
+        "score": "39.0"
+       },
+       {
+        "model": "Qwen-3.7 max",
+        "score": "41.4"
+       },
+       {
+        "model": "DS-v4-Pro",
+        "score": "37.5"
+       }
+      ]
+     },
+     {
+      "name": "IMOAnswerBench",
+      "score": "83.2",
+      "vs": [
+       {
+        "model": "GLM-5.1",
+        "score": "83.8"
+       },
+       {
+        "model": "Qwen-3.7 max",
+        "score": "90.0"
+       },
+       {
+        "model": "DS-v4-Pro",
+        "score": "89.8"
+       }
+      ]
+     },
+     {
+      "name": "IFBench",
+      "score": "78.2",
+      "vs": [
+       {
+        "model": "MiniMax-3",
+        "score": "82.9"
+       },
+       {
+        "model": "GLM-5.1",
+        "score": "76.3"
+       },
+       {
+        "model": "Qwen-3.7 max",
+        "score": "79.1"
+       }
+      ]
+     },
+     {
+      "name": "AA-LCR",
+      "score": "72.3",
+      "vs": [
+       {
+        "model": "MiniMax-3",
+        "score": "80.3"
+       },
+       {
+        "model": "Kimi-K2.6",
+        "score": "76.7"
+       },
+       {
+        "model": "Qwen-3.7 max",
+        "score": "75.0"
+       }
+      ]
+     },
+     {
+      "name": "τ²-Bench Telecom",
+      "score": "94.7",
+      "vs": [
+       {
+        "model": "MiniMax-3",
+        "score": "88.9"
+       },
+       {
+        "model": "GLM-5.1",
+        "score": "97.7"
+       },
+       {
+        "model": "DS-v4-Pro",
+        "score": "96.2"
+       }
+      ]
+     }
+    ],
+    "params": "314B totali / 13.2B attivi per token (MoE)",
+    "context": "262144 (256K)",
+    "availability": "Pesi aperti su Hugging Face (Motif-Technologies/Motif-3), licenza MIT, accesso senza richiesta. Inferenza consigliata via vLLM (fork MotifTechnologies/vllm, immagine ghcr.io/motiftechnologies/vllm:v0.26.0-motif3). Il testo non riporta prezzi API.",
+    "local_tips": "Testato su B200 e H200; configurazioni vLLM con --quantization modelopt_blockfp8 e --speculative-config con num_speculative_tokens: 1 (ottimale secondo il testo), --trust-remote-code, --reasoning-parser e --tool-call-parser motif, --max-model-len 262144, --block-size 128. Sampling consigliato: temperature 1.0, top-p 0.95. Esiste un checkpoint quantizzato NVFP4 (Motif-Technologies/Motif-3-NVFP4) per footprint ridotto. Il testo non fornisce indicazioni per llama.cpp, Ollama o LM Studio né…",
+    "source": "https://huggingface.co/Motif-Technologies/Motif-3",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "or:z-ai/glm-5.3-flashx-legal": {
    "id": "or:z-ai/glm-5.3-flashx-legal",
@@ -2468,7 +2920,23 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 5.0,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "GLM-5.3-FlashX-Legal (GLM-Legal) è la variante di dominio legale di GLM-5.3-FlashX di Z.ai, un modello nativamente multimodale che accetta testo, immagini e video e produce testo. Rispetto alla base aggiunge mid-training e post-training con reinforcement learning specifici per il dominio legale. Il testo fornito è incompleto e non documenta benchmark o dettagli architetturali, quindi l'adeguatezza a casi d'uso legali non è verificabile dal solo estratto.",
+    "features": [
+     "Modello nativamente multimodale: input testo, immagini e video, output testo",
+     "Variante di dominio legale di GLM-5.3-FlashX con legal-domain mid-training e post-training con reinforcement learning",
+     "Dettagli su architettura, contesto, reasoning, tool use e licenza non presenti nell'estratto"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "",
+    "local_tips": "",
+    "source": "https://openrouter.ai/z-ai/glm-5.3-flashx-legal",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "MiniMaxAI/MiniMax-H3-Image": {
    "id": "MiniMaxAI/MiniMax-H3-Image",
@@ -2590,7 +3058,26 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 6.81,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "ZONOS3-Mini è un modello text-to-speech open-source di Zyphra con 100M parametri attivi (800M totali), che supporta clonazione vocale da un campione audio e design di personaggi (età, accento, timbro). Gira in tempo reale su telefoni e laptop, anche nel browser via WebGPU, con pesi rilasciati sotto licenza Apache 2.0. È adatto a giochi, narrazione e assistenti vocali, con controllo di emozione, ritmo e consegna fino a livello di singola parola.",
+    "features": [
+     "Backbone ibrido MoE (11 layer, dim 1024) con 9 layer Gated DeltaNet e 2 layer di attenzione globale, 64 esperti con top-2 routing, circa 100M parametri attivi per token",
+     "Clonazione vocale da clip di riferimento (fino a 60 s) oppure da un embedding speaker a 192 dimensioni, senza necessità di trascrizione",
+     "Controlli su loudness (LUFS), bandwidth e velocità di eloquio (byte UTF-8 al secondo), con output audio a 44.1 kHz e streaming",
+     "Supporto a 43 lingue, tra cui italiano, con normalizzazione del testo NeMo per 9 lingue principali",
+     "Codec a doppia codifica a 15 Hz con 10 codebook da 4096 voci (1 semantico + 9 acustici); generazione fino a 10 minuti di audio",
+     "Decoder iSTFT causale che renderizza l'audio man mano che i frame vengono generati; API compatibile OpenAI /v1/audio/speech via SGLang-Omni"
+    ],
+    "benchmarks": [],
+    "params": "800M totali, circa 100M attivi per token",
+    "context": "32.768 posizioni",
+    "availability": "Pesi aperti sotto Apache 2.0 (Hugging Face, GitHub Zyphra/ZONOS3-Mini); demo nel browser via WebGPU (Zonos Voice Studio e Lite); server SGLang-Omni su GPU NVIDIA; runtime nativi CUDA, MLX (Apple Silicon), C++/ggml (CPU, CUDA, Metal, Vulkan); hosting su Zyphra Cloud. Prezzo non indicato nel testo.",
+    "local_tips": "Framework: SGLang-Omni (server OpenAI-compatibile su porta 8000) oppure runtime nativi Zyphra con file GGUF in gguf/ e shard WebGPU in web/. Il decoder 'keep2_plain' è circa 3x più veloce in decodifica rispetto a 'full_mr' (default). Pesi nativi in bf16 (model.pth), teste del decoder in fp32; quantizzazioni GGUF specifiche non dettagliate nel testo. Il testo non riporta parametri di sampling raccomandati.",
+    "source": "https://huggingface.co/Zyphra/ZONOS3-Mini",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "moonshotai/Kimi-K3.1-Pro": {
    "id": "moonshotai/Kimi-K3.1-Pro",
@@ -3350,7 +3837,24 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 6.24,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Mirage è un modello di visione di Cactus-Compute, con pipeline image-text-to-text, rilasciato con licenza Apache-2.0. Il testo lo descrive come modello per la comprensione delle immagini e l'estrazione strutturata di informazioni, con funzioni di descrizione di scene, rilevamento oggetti, OCR, segmentazione e relazioni spaziali. Si installa tramite il pacchetto Python cactus-compute.",
+    "features": [
+     "Comprensione di immagini ed estrazione strutturata: descrizione di scene, object detection, OCR, segmentazione, relazioni spaziali e decisioni (secondo l'immagine overview della model card)",
+     "Pipeline image-text-to-text, licenza Apache-2.0",
+     "Uso tramite API Python: cactus.Mirage().describe(\"photo.png\"); engine e pesi vengono scaricati e cachati alla prima esecuzione",
+     "Repository con file mirage.cact, mirage.safetensors e la configurazione del modello"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "Pesi aperti su Hugging Face (Cactus-Compute/mirage); installazione con pip install -U cactus-compute; piattaforme supportate e binari runtime indicati nel repository Cactus-Compute/cactus; playground e dettagli sul blog di Cactus Compute; codice sorgente su GitHub (cactus-compute/cactus). Prezzo non indicato.",
+    "local_tips": "",
+    "source": "https://huggingface.co/Cactus-Compute/mirage",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "adventists-ai/Sophon-Realtime-v1": {
    "id": "adventists-ai/Sophon-Realtime-v1",
@@ -3827,7 +4331,45 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 5.19,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "Underdog Woof è un modello text-to-speech inglese compatto (40.6 MB, due voci: Juno e Mira) che gira su CPU con solo numpy, senza GPU né API. Dichiara un WER dell'1.42% sul dataset Gradium TTS Hard Cases, competitivo con modelli cloud e on-device molto più grandi. È adatto a chi vuole sintesi vocale locale ed efficiente su laptop, con licenza non commerciale.",
+    "features": [
+     "Due voci (Juno e Mira) nello stesso file di pesi da 40.6 MB, con audio a 24 kHz mono; il decoder audio è adattato dal codec Mimi di Kyutai",
+     "Normalizzazione testuale rule-based integrata per numeri, date, orari, valute e codici, senza dipendenze oltre la libreria standard",
+     "Esecuzione su singolo thread CPU senza GPU, con 402 MB di memoria di picco per la voce Juno, 13.8x tempo reale su Apple M5 Max",
+     "Suddivisione automatica del testo in frasi con rigenerazione dei take anomali (fino a 3 tentativi aggiuntivi) e controllo tramite seed",
+     "Versione a una voce (31.7 MB) disponibile nel browser su underdog.ai/woof",
+     "Licenza Underdog Non-Commercial License 1.0: uso libero per scopi personali, ricerca e non-profit, uso commerciale a pagamento"
+    ],
+    "benchmarks": [
+     {
+      "name": "Gradium TTS Hard Cases (English, 500 frasi) – WER",
+      "score": "1.42% (Mira); 1.53% (Juno)",
+      "vs": [
+       {
+        "model": "Fish Audio Drama 3",
+        "score": "1.89%"
+       },
+       {
+        "model": "Phonon 31m",
+        "score": "2.16%"
+       },
+       {
+        "model": "Deepgram Flux TTS",
+        "score": "2.39%"
+       }
+      ]
+     }
+    ],
+    "params": "38.24M totali (speech model 22.95M, audio decoder 15.3M)",
+    "context": "",
+    "availability": "Pesi aperti su Hugging Face (ConwayResearch/Underdog-Woof), installazione via pip install numpy; demo nel browser su underdog.ai/woof; uso commerciale tramite licenza (license@conway.tech); uso tramite underdog.ai gratuito",
+    "local_tips": "Installare solo numpy e scaricare il repo con hf download; eseguire con python -m underdog_woof o tramite classe Woof in Python; il normalizzatore può essere disattivato con normalize=False; il seed fissa l'output per lo stesso testo; sono indicati tre take massimi per frase in caso di durata anomala o silenzi",
+    "source": "https://huggingface.co/ConwayResearch/Underdog-Woof",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "MinimaLabs/KLM-1.6": {
    "id": "MinimaLabs/KLM-1.6",
@@ -4133,7 +4675,26 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 4.71,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "mithi-v1-flash è un modello text-to-speech di Oomni, da 99,1M parametri (197 MB), che sintetizza voce in 11 lingue indiane più l'inglese, con due voci (Satvik maschile, Charvi femminile) e output a 24 kHz mono. È rilasciato sotto licenza Apache-2.0, utilizzabile anche commercialmente, e pensato per uso locale anche su CPU.",
+    "features": [
+     "Architettura/dimensioni: TTS da 99,1M parametri, pesi bf16 in formato safetensors (197 MB), costruito su Maya2-native, Kokoro-82M e indic-bert (encoder in cartella indic_encoder/)",
+     "Lingue: hi, en, bn, gu, kn, ml, mr, or, pa, ta, te con due voci (satvik maschile, charvi femminile); il testo lungo viene letto frase per frase automaticamente",
+     "Output: audio WAV a 24 kHz mono; normalizzazione automatica di numeri, orari e valute in parole",
+     "Esecuzione: utilizzabile da riga di comando (inference.py) o via API Python (classe Mithi), con GPU o CPU; su CPU con 4 thread circa 3 s per frase media da 15 parole (~7 s di parlato), 8 s con 1 thread (server AMD EPYC 9554)",
+     "Licenza: Apache-2.0, con componenti tutti open source (Maya2-native Apache-2.0, Kokoro-82M Apache-2.0, indic-bert MIT, misaki Apache-2.0)",
+     "Limiti dichiarati: espressività e intonazione più piatte del parlato umano, velocità leggermente eccessiva in kn/ml/mr/or, pronuncia imprecisa per nomi rari e prestiti, nessuna valutazione pubblicata (né metriche automatiche né MOS)"
+    ],
+    "benchmarks": [],
+    "params": "99.1M",
+    "context": "",
+    "availability": "Pesi aperti su Hugging Face (Oomni/mithi-v1-flash), licenza Apache-2.0; installazione via pip install -r requirements.txt e download con hf download; esecuzione su GPU o CPU",
+    "local_tips": "Eseguibile su CPU con --device cpu e --threads N (senza --threads PyTorch usa tutti i core); nessuna quantizzazione ufficiale indicata (pesi già in bf16); richiede Python 3.10+ e il modello spaCy en_core_web_sm; espeak-ng incluso tramite espeakng-loader, senza installazione di sistema",
+    "source": "https://huggingface.co/Oomni/mithi-v1-flash",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "nvidia/MetricTrail": {
    "id": "nvidia/MetricTrail",
@@ -4165,7 +4726,26 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 4.79,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "MetricTrail è un modello di ricerca di NVIDIA per stimare il moto della camera e la profondità metrica per frame da lunghe sequenze RGB, pensato per visual odometry e ricostruzione 3D. Combina profondità metrica monoculare (MoGe-2), corrispondenze sparse apprese (DPVO) con feature congelate di DINOv3 e ottimizzazione geometrica locale. Adatto solo a ricerca e sviluppo, non commerciale.",
+    "features": [
+     "Architettura: DPVO con adapter residui di fusione su feature DINOv3-S/16 congelate, più profondità metrica MoGe-2 ViT-L come prior, con bundle adjustment esplicito su finestra attiva",
+     "Input/output: sequenze RGB ordinate o coppie stereo rettificate; output di traiettorie camera-to-world (c2w, w2c), intrinseci e profondità in metri cacheate; nessuna esportazione di point cloud o mesh",
+     "Calibrazione: supporta intrinseci forniti, stima RGB-only di un modello di camera condiviso e stereo calibrato con baseline orizzontale",
+     "Parametri appresi: circa 3,43 milioni nel checkpoint DINO-DPVO annunciato, esclusi DINOv3, MoGe-2 e modelli opzionali",
+     "Correzione di loop opzionale, eseguibile separatamente su CPU con candidati forniti dall'utente (nessun retrieval interno)",
+     "Licenza: pesi sotto NVIDIA License non commerciale; DPVO sotto MIT, codice NVIDIA sotto Apache-2.0, DINOv3 sotto licenza DINOv3"
+    ],
+    "benchmarks": [],
+    "params": "3,43M parametri appresi (checkpoint DINO-DPVO, esclusi backbone congelati e MoGe-2)",
+    "context": "",
+    "availability": "Repository con CLI; pesi del modello non inclusi nel repository sorgente, checkpoint DINO-DPVO previsto come rilascio separato su Hugging Face (nvidia/metrictrail, data indicata 11/05/2026). Uso solo ricerca/valutazione non commerciale. Richiede GPU CUDA (documentato A100, Linux x86_64) e build dal sorgente delle estensioni DPVO CUDA.",
+    "local_tips": "Ambiente documentato: Python 3.10, PyTorch 2.5.1, CUDA 12.4, xformers, yacs, OpenCV, Pillow, SciPy; eseguire con PYTHONNOUSERSITE=1; comando: python -m metrictrail.cli --config <file>, device predefinito cuda:0; opzioni --preflight, --stop-after {calibration,local}; compilare cuda_corr, cuda_ba e lietorch_backends da sorgente con nvcc ed Eigen 3.4.0; frame buffer predefinito 32.768; risoluzioni di riferimento KITTI 280x504 e Oxford 378x518. Nessuna quantizzazione ufficiale né framework tipo…",
+    "source": "https://huggingface.co/nvidia/MetricTrail",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "BAAI/PingPongRealWorldRL": {
    "id": "BAAI/PingPongRealWorldRL",
@@ -4197,7 +4777,26 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 4.36,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "PingPongRealWorldRL è un sistema di deployment e reinforcement learning online per un robot da ping-pong Unitree H2, non un modello linguistico. Combina un generatore di movimento CLoSD congelato, una policy di tracking congelata e un learner TD3 opzionale che corregge sette giunti del braccio destro usando l'esito reale della palla. Adatto a ricercatori di robotica e RL su hardware reale, non a inferenza LLM o RAG.",
+    "features": [
+     "Architettura multi-processo: predictor della palla, generatore di riferimento CLoSD (CUDA), policy di tracking a 50 Hz (182 -> 31 azioni), residual actor opzionale (213 -> 7) e bridge C++ a 1000 Hz verso H2 LowCmd, collegati via memoria condivisa H2BR",
+     "Residual RL online con TD3: l'actor per la correzione residua dei giunti del braccio destro viene aggiornato da episodi completi misurati sul robot, mentre base policy e generatore restano congelati",
+     "Modelli inclusi in formato ONNX/PT con metadati JSON; il residual ONNX deriva da una run con 100 palle di warmup e 10 online, e non può riprendere l'addestramento",
+     "Modalità di validazione offline con simulazione MuJoCo (run_sim_shm.py, --duration-s 9.0) prima dell'uso hardware; le istruzioni richiedono conferma esplicita e non avviano LowCmd",
+     "Licenza Apache-2.0 per il codice originale; i modelli e gli asset robotici di terze parti restano soggetti alle proprie licenze",
+     "Configurazione di default: 100 palle valide di warmup, 200 online, learning rate Actor 1e-6, 1500 update di warmup del Critic; RL disattivato salvo richiesta esplicita"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "Pesi aperti su Hugging Face (base policy ONNX, bundle CLoSD runtime, residual ONNX/JSON, asset MJCF e ready pose); codice sotto Apache-2.0. Richiede Linux, CUDA PyTorch, ambiente ROS/motion capture e robot Unitree H2 per l'uso reale. Nessuna API o prezzo.",
+    "local_tips": "Preflight con scripts/preflight.py e simulazione con run_sim_shm.py prima di qualsiasi test hardware; dry-run di tmux con scripts/launch_h2_tmux.sh --dry-run --deployment-version original --rl-mode train. Usare --deployment-version original; le versioni v1/v2 non sono incluse. Test di regressione completi e validazione build Linux risultano ancora pending nel testo. Il residual ONNX non è qualificato per hardware (hardware_qualified=false) e non va considerato una performance garantita.",
+    "source": "https://huggingface.co/BAAI/PingPongRealWorldRL",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ByteDance-Seed/Cola2": {
    "id": "ByteDance-Seed/Cola2",
@@ -4847,7 +5446,26 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 6.4,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "ZONOS3-Mini-hf è il port per 🤗 Transformers del TTS compatto di Zyphra, con circa 100M parametri attivi per token (800M totali nel backbone) e 43 lingue. Genera audio mono a 44.1 kHz su CPU o GPU usando solo torch e transformers, con codec iSTFT causale e encoder vocale MECT-B2 nello stesso checkpoint. È adatto a sintesi vocale multilingue e clonazione vocale da clip o embedding, eseguibile in locale.",
+    "features": [
+     "TTS multilingue con 43 lingue, incluse italiano, inglese, francese, tedesco, spagnolo, portoghese, cinese, giapponese, coreano e varie lingue indiane",
+     "Backbone da 11 layer, dimensione 1024, MoE latente con 64 esperti e top-2 routing dal layer 1; 9 layer Gated DeltaNet + 2 layer di attenzione globale",
+     "Contesto di 32.768 posizioni; audio tokenizzato a 15 Hz con 10 codebook da 4096 voci (1 semantico + 9 acustici)",
+     "Clonazione vocale tramite clip audio o embedding a 192 dimensioni (MECT-B2), oltre a 27 voci di release",
+     "Normalizzazione del testo opzionale tramite zyphra_textnorm per numeri, date, valute e unità in alcune lingue",
+     "Licenza Apache-2.0 per i pesi; codice remoto con attribuzioni a AntSpeaker, Qwen3-Next di Transformers e torchaudio"
+    ],
+    "benchmarks": [],
+    "params": "1.04B (dichiarato nei dati noti); circa 100M attivi per token e 800M totali nel backbone secondo il testo",
+    "context": "32.768 posizioni",
+    "availability": "Pesi aperti su Hugging Face (Zyphra/ZONOS3-Mini-hf), licenza Apache-2.0; utilizzabile via transformers con trust_remote_code=True. Disponibili anche lo studio nel browser, l'interfaccia Lite per clonazione vocale, Zyphra Cloud e i runtime nativi (CUDA, MLX, ggml, WebGPU) nel repository GitHub; prezzo non indicato",
+    "local_tips": "Installare transformers>=4.57, torch e soundfile; opzionalmente zyphra-textnorm. Il backbone è in bfloat16 come rilasciato (con transformers 4.x caricato in float32 salvo dtype=torch.bfloat16); codec e encoder vocale restano in float32; dtype=torch.float32 dà la numerica di riferimento su CPU. Parametri di campionamento di default: temperature 0.75, topk 80, top_p 0.69, min_p 0.0, repetition_penalty 2.4. speaker_cfg_scale>1 rafforza la voce al costo di un secondo passaggio LM per step. Non…",
+    "source": "https://huggingface.co/Zyphra/ZONOS3-Mini-hf",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "Zyphra/fusealign": {
    "id": "Zyphra/fusealign",
@@ -4879,7 +5497,147 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "score": 4.2,
-   "updated": "2026-11-15"
+   "updated": "2026-11-15",
+   "deep": {
+    "tldr": "FuseAlign multilingual (step 60000) è un forced aligner a livello di parola di Zyphra, riproduzione dell'architettura FuseAlign di Vaidya et al. (2026): dato un audio e la sua trascrizione predice inizio e fine di ogni parola su una griglia da 1 ms, con una probabilità di presenza. Addestrato su circa 25.000 h di audio in 73 lingue tramite noisy student e fine-tuning dal modello CJK. Adatto all'allineamento forzato multilingue, con prestazioni dichiarate superiori a Qwen3-ForcedAligner-0.6B su molti corpus inglesi e cinesi, ma non uniformemente su tutte le lingue FLEURS.",
+    "features": [
+     "Forced aligner word-level: start/end per parola su griglia 1 ms più probabilità di presenza (campo presence e placed)",
+     "Multilingue: noisy student addestrato 60.000 step su circa 25.000 h di audio in 73 lingue, inizializzato dal fine-tune CJK del modello multilingue",
+     "Supporto a long-form alignment e a una CLI C++/ggml (dettagli nel repository GitHub Zyphra/fusealign-multilingual)",
+     "Tre formati di pesi: PyTorch safetensors (1.34 GB), GGUF F32 (1.35 GB), GGUF Q8_0 (0.51 GB) con matmul transformer in Q8_0",
+     "Componenti integrate: encoder testuale Dia bf16 e Silero VAD F32 nei GGUF",
+     "Licenza Apache-2.0 (Dia-1.6B-0626 Apache-2.0; Silero VAD MIT)"
+    ],
+    "benchmarks": [
+     {
+      "name": "TIMIT (% confini >50 ms)",
+      "score": "7.92",
+      "vs": [
+       {
+        "model": "Qwen3-ForcedAligner-0.6B",
+        "score": "20.17"
+       }
+      ]
+     },
+     {
+      "name": "Buckeye (% confini >50 ms)",
+      "score": "7.23",
+      "vs": [
+       {
+        "model": "Qwen3-ForcedAligner-0.6B",
+        "score": "24.60"
+       }
+      ]
+     },
+     {
+      "name": "AMI-silver (% confini >50 ms)",
+      "score": "34.22",
+      "vs": [
+       {
+        "model": "Qwen3-ForcedAligner-0.6B",
+        "score": "58.22"
+       }
+      ]
+     },
+     {
+      "name": "TIMIT-long (% confini >50 ms)",
+      "score": "8.21",
+      "vs": [
+       {
+        "model": "Qwen3-ForcedAligner-0.6B",
+        "score": "20.04"
+       }
+      ]
+     },
+     {
+      "name": "BZNSYP Mandarin gold (% confini >50 ms)",
+      "score": "15.44",
+      "vs": [
+       {
+        "model": "Qwen3-ForcedAligner-0.6B",
+        "score": "28.04"
+       }
+      ]
+     },
+     {
+      "name": "Seoul Corpus Korean gold (% confini >50 ms)",
+      "score": "22.43",
+      "vs": [
+       {
+        "model": "Qwen3-ForcedAligner-0.6B",
+        "score": "33.58"
+       }
+      ]
+     },
+     {
+      "name": "FLEURS Mandarin (% confini >50 ms)",
+      "score": "17.97",
+      "vs": [
+       {
+        "model": "Qwen3-ForcedAligner-0.6B",
+        "score": "11.06"
+       }
+      ]
+     },
+     {
+      "name": "FLEURS Japanese (% confini >50 ms)",
+      "score": "13.34",
+      "vs": [
+       {
+        "model": "Qwen3-ForcedAligner-0.6B",
+        "score": "8.38"
+       }
+      ]
+     },
+     {
+      "name": "FLEURS Korean (% confini >50 ms)",
+      "score": "7.80",
+      "vs": [
+       {
+        "model": "Qwen3-ForcedAligner-0.6B",
+        "score": "11.53"
+       }
+      ]
+     },
+     {
+      "name": "FLEURS Spanish (% confini >50 ms)",
+      "score": "15.43",
+      "vs": [
+       {
+        "model": "Qwen3-ForcedAligner-0.6B",
+        "score": "11.71"
+       }
+      ]
+     },
+     {
+      "name": "FLEURS Portuguese (% confini >50 ms)",
+      "score": "9.20",
+      "vs": [
+       {
+        "model": "Qwen3-ForcedAligner-0.6B",
+        "score": "10.24"
+       }
+      ]
+     },
+     {
+      "name": "FLEURS French (% confini >50 ms)",
+      "score": "13.34",
+      "vs": [
+       {
+        "model": "Qwen3-ForcedAligner-0.6B",
+        "score": "12.35"
+       }
+      ]
+     }
+    ],
+    "params": "",
+    "context": "",
+    "availability": "Pesi aperti su Hugging Face (Zyphra/fusealign-multilingual): pacchetto PyTorch via torch.hub (modulo fusealign_hub), GGUF F32 e GGUF Q8_0 per ggml; codice e CLI C++/ggml su GitHub. Licenza Apache-2.0. Nessun prezzo o API dichiarati.",
+    "local_tips": "Uso PyTorch con device=\"cuda\" tramite torch.hub.load(\"Zyphra/fusealign-multilingual\", \"fusealign\", trust_repo=True); la chiamata align(wav, sr, transcript) restituisce una lista di WordAlignment. Quantizzazioni ufficiali: F32 e Q8_0 in GGUF per ggml/CLI C++. Il testo nota che nel confronto la baseline Qwen3-FA è stata eseguita su clip intere, mentre FuseAlign una clip per forward pass su CUDA.",
+    "source": "https://huggingface.co/Zyphra/fusealign",
+    "date": "2026-11-15",
+    "by": "anthropic/claude-haiku-5.5"
+   }
   },
   "ann:claudemythos52": {
    "id": "ann:claudemythos52",
