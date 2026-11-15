@@ -36,7 +36,6 @@ jobs:
       - name: Genera la rassegna
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          AA_API_KEY: ${{ secrets.AA_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DAYS: ${{ inputs.days }}

@@ -50,7 +50,7 @@ min_relevance = 3        # sotto questa soglia (0-10) le notizie vengono scartat
 # ~0,02-0,05 $, circa 1 $/mese. max_cost_per_run_usd è un tetto di sicurezza: superato, si usano solo i gratuiti.
 # Solo modelli gratuiti (models = ["auto:free"]): 50 richieste/giorno, 1000 se hai acquistato ≥10 $ di crediti.
 max_cost_per_run_usd = 0.30
-max_calls_per_run = 60
+max_calls_per_run = 100
 triage_items = 160       # quante notizie (le più promettenti) mandare all'LLM per la valutazione
 triage_batch = 12        # notizie per chiamata
 max_deep_dives = 16      # schede modello approfondite (benchmark, feature) per esecuzione
@@ -72,6 +72,113 @@ models = ["deepseek/deepseek-v4.1-flash", "openai/gpt-6-luna", "auto:free"]
 deep_models = ["anthropic/claude-haiku-5.5", "deepseek/deepseek-v4.1-flash", "auto:free"]
 # Ordine di preferenza tra i modelli gratuiti di riserva (sottostringhe dell'id).
 prefer = ["nemotron-3-ultra", "nemotron-3.5-super", "particle-1", "dots-3", "north-mini", "nemotron-3.5-lightning"]
+
+[site]
+# Modello usato dal sito (nel tuo browser) per il consiglio nel confronto tra modelli
+advice_model = "anthropic/claude-haiku-5.5"
+
+[papers]
+days_kept = 60           # quanti giorni di paper tenere nella sezione Paper
+lookback_days = 4        # finestra di raccolta giornaliera (arXiv pubblica con 1-2 giorni di ritardo)
+max_per_run = 400        # paper nuovi valutati dall LLM per esecuzione (~0,001 $ ogni 12 paper)
+arxiv_per_topic = 30     # paper più recenti presi da arXiv per ogni argomento
+default_topics = ["interp", "alignment", "efficiency", "retrieval", "agents", "reasoning"]
+feeds = [
+  { name = "Alignment Forum", url = "https://www.alignmentforum.org/feed.xml" },
+]
+
+# Argomenti: id, etichetta, descrizione per l'LLM, frasi cercate su arXiv (titolo/abstract)
+[[papers.topics]]
+id = "alignment"
+label = "Allineamento"
+desc = "alignment, RLHF/RLAIF, preference optimization, reward hacking, scalable oversight, specification gaming"
+arxiv = ["alignment", "RLHF", "reward hacking", "scalable oversight", "preference optimization"]
+
+[[papers.topics]]
+id = "interp"
+label = "Interpretabilità meccanicistica"
+desc = "mechanistic interpretability, sparse autoencoders, circuits, probing, steering, feature attribution"
+arxiv = ["mechanistic interpretability", "sparse autoencoder", "circuit discovery", "activation steering", "probing"]
+
+[[papers.topics]]
+id = "safety"
+label = "Sicurezza e red teaming"
+desc = "AI safety, jailbreak, red teaming, deception, sandbagging, dangerous capabilities, monitoring"
+arxiv = ["jailbreak", "red teaming", "AI safety", "deceptive alignment", "sandbagging"]
+
+[[papers.topics]]
+id = "reasoning"
+label = "Ragionamento e RL"
+desc = "reasoning, chain-of-thought, test-time compute, reinforcement learning with verifiable rewards"
+arxiv = ["reasoning models", "chain-of-thought", "test-time compute", "verifiable rewards"]
+
+[[papers.topics]]
+id = "agents"
+label = "Agenti e tool use"
+desc = "LLM agents, tool use, computer use, coding agents, multi-agent systems, memory for agents"
+arxiv = ["LLM agents", "tool use", "computer use agent", "coding agent", "multi-agent"]
+
+[[papers.topics]]
+id = "efficiency"
+label = "Efficienza e quantizzazione"
+desc = "quantization, KV cache, speculative decoding, distillation, pruning, efficient inference, serving"
+arxiv = ["quantization", "KV cache", "speculative decoding", "efficient inference", "knowledge distillation"]
+
+[[papers.topics]]
+id = "architecture"
+label = "Architetture"
+desc = "attention variants, state space models, mixture of experts, linear attention, long context, tokenization"
+arxiv = ["mixture of experts", "state space model", "linear attention", "long context", "tokenizer"]
+
+[[papers.topics]]
+id = "retrieval"
+label = "Embedding e retrieval"
+desc = "embeddings, representation geometry, retrieval-augmented generation, rerankers, embedding translation (vec2vec)"
+arxiv = ["text embeddings", "retrieval-augmented generation", "dense retrieval", "reranker", "embedding space"]
+
+[[papers.topics]]
+id = "multimodal"
+label = "Multimodale"
+desc = "vision-language models, video understanding, speech and audio models, omni models"
+arxiv = ["vision-language model", "multimodal large language model", "speech language model"]
+
+[[papers.topics]]
+id = "generative"
+label = "Immagini e video generativi"
+desc = "diffusion, flow matching, image generation and editing, video generation"
+arxiv = ["diffusion model", "flow matching", "video generation", "image editing"]
+
+[[papers.topics]]
+id = "evaluation"
+label = "Valutazione e benchmark"
+desc = "benchmarks, evaluation methodology, contamination, LLM-as-judge"
+arxiv = ["benchmark", "evaluation of large language models", "LLM-as-a-judge", "data contamination"]
+
+[[papers.topics]]
+id = "training"
+label = "Dati e training"
+desc = "pretraining, synthetic data, scaling laws, data curation, fine-tuning methods, optimizers"
+arxiv = ["pretraining", "synthetic data", "scaling laws", "data curation", "fine-tuning"]
+
+[[papers.topics]]
+id = "robotics"
+label = "Robotica ed embodied"
+desc = "robotics, vision-language-action models, embodied agents, world models"
+arxiv = ["vision-language-action", "robot learning", "embodied agent", "world model"]
+
+[embeddings]
+# Leaderboard MTEB ufficiale. language_scores = aggiunge il punteggio sulla lingua scelta (task in quella lingua).
+language = "Italian"
+top_n = 150              # modelli per benchmark (più tutti quelli usciti di recente)
+new_days = 45            # "nuovo" = uscito negli ultimi N giorni
+benchmarks = [
+  { name = "MTEB(Multilingual, v2)", label = "Multilingue", language_scores = true },
+  { name = "MTEB(eng, v2)", label = "Inglese" },
+  { name = "MTEB(Europe, v1)", label = "Europa", language_scores = true },
+  { name = "MTEB(Code, v1)", label = "Codice" },
+  { name = "LongEmbed", label = "Documenti lunghi" },
+  { name = "BRIGHT", label = "Retrieval con ragionamento" },
+]
 
 # Esempio di provider alternativo (decommenta e imposta la variabile d'ambiente):
 # [[llm.providers]]

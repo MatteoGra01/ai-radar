@@ -44,7 +44,8 @@ class Registry:
             self.models = json.loads(path.read_text()).get("models", {})
         self.touched: set[str] = set()  # nuovi o aggiornati in questa esecuzione
 
-    def add(self, e: dict, today: str) -> dict:
+    def add(self, e: dict, today: str, touch: bool = True) -> dict:
+        """touch=False: aggiunge al registro senza segnarlo come novità del giorno (es. modelli della classifica)."""
         cur = self.models.get(e["id"])
         if cur:
             for k, v in e.items():
@@ -58,7 +59,8 @@ class Registry:
         e.setdefault("first_seen", today)
         e.setdefault("mentions", [])
         self.models[e["id"]] = e
-        self.touched.add(e["id"])
+        if touch:
+            self.touched.add(e["id"])
         return e
 
     def find(self, name: str) -> dict | None:
@@ -78,7 +80,13 @@ class Registry:
 
     def save(self):
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        data = {"updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "models": self.models}
+        slim = {}
+        for k, e in self.models.items():
+            e = dict(e)
+            if isinstance(e.get("vram"), dict):
+                e["vram"] = {kk: vv for kk, vv in e["vram"].items() if kk != "table"}
+            slim[k] = e
+        data = {"updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "models": slim}
         self.path.write_text(json.dumps(data, ensure_ascii=False, indent=1))
 
 
@@ -317,17 +325,26 @@ def search_hf(name: str, cfg: dict) -> tuple[dict | None, list[str]]:
     except Exception:
         return None, []
     orgs = {o.lower() for o in cfg["sources"].get("hf_orgs", [])}
-    good, others = [], []
+    good, official_variants, others = [], [], []
     for m in res:
         if n not in norm_name(m["id"]):
             continue
-        if is_variant(m) or has_weights(m.get("siblings")) is False:
-            others.append(m["id"])
+        author = m["id"].split("/")[0].lower()
+        official = author in orgs or (len(norm_name(author)) >= 3 and norm_name(author) in n)
+        weights = has_weights(m.get("siblings"))
+        if is_variant(m) or weights is False:
+            # un produttore può pubblicare direttamente solo la versione quantizzata (es. Edge0/Edge0-145B-NVFP4)
+            if official and weights:
+                official_variants.append(m)
+            elif not official:
+                others.append(m["id"])
             continue
         good.append(m)
     good.sort(key=lambda m: (m["id"].split("/")[0].lower() not in orgs, -m.get("likes", 0)))
     if good and (good[0]["id"].split("/")[0].lower() in orgs or good[0].get("likes", 0) >= 50):
         return good[0], others
+    if official_variants:
+        return max(official_variants, key=lambda m: m.get("likes", 0)), others
     return None, others
 
 
@@ -346,51 +363,189 @@ def family_placeholders(name: str) -> list[str]:
     return [m["id"] for m in res if pat.search(m["id"].split("/")[-1])][:5]
 
 
-# ───────────────────────── Artificial Analysis (opzionale) ─────────────────────────
+# ───────────────────────── Benchmark indipendenti (Artificial Analysis + OpenRouter) ─────────────────────────
 
-AA_KEYS = re.compile(r"(index|bench|gpqa|mmlu|hle|aime|swe|livecode|scicode|math|ifbench|lcr|tau|terminal|arena|elo)", re.I)
-
-
-def aa_models(status: dict) -> list[dict]:
-    key = os.environ.get("AA_API_KEY")
+def fetch_benchmarks(status: dict) -> tuple[dict, dict]:
+    """Endpoint Benchmarks di OpenRouter: indici di Artificial Analysis (intelligence, coding, agentic) e valutazioni
+    proprie di OpenRouter (GPQA, tau-bench…). Restituisce ({permaslug: dati}, meta)."""
+    key = os.environ.get("OPENROUTER_API_KEY")
     if not key:
-        return []
-    try:
-        data = net.get_json("https://artificialanalysis.ai/api/v2/language/models/free",
-                            headers={"x-api-key": key}, timeout=30, retries=1)
-    except Exception as e:
-        status["artificial_analysis"] = {"ok": False, "error": str(e)[:200]}
-        return []
-    rows = data.get("data") if isinstance(data, dict) else data
-    out = []
-    for r in rows or []:
-        if not isinstance(r, dict):
+        return {}, {}
+    out: dict[str, dict] = {}
+    meta = {}
+    for source in ("artificial-analysis", "openrouter"):
+        try:
+            data = net.get_json(f"https://openrouter.ai/api/v1/benchmarks?source={source}",
+                                headers={"Authorization": f"Bearer {key}"}, timeout=40, retries=1)
+        except Exception as e:
+            status[f"benchmarks:{source}"] = {"ok": False, "error": str(e)[:200]}
             continue
-        name = r.get("name") or r.get("model_name") or r.get("slug")
-        ev = r.get("evaluations") if isinstance(r.get("evaluations"), dict) else \
-            {k: v for k, v in r.items() if isinstance(v, (int, float)) and AA_KEYS.search(k)}
-        ev = {k: v for k, v in (ev or {}).items() if isinstance(v, (int, float))}
-        if name and ev:
-            out.append({"name": name, "slug": r.get("slug"), "evals": ev})
-    status["artificial_analysis"] = {"ok": True, "n": len(out)}
-    return out
+        rows = data.get("data") or []
+        status[f"benchmarks:{source}"] = {"ok": True, "n": len(rows)}
+        if source == "artificial-analysis":
+            meta = data.get("meta") or {}
+        for r in rows:
+            slug = r.get("model_permaslug")
+            if not slug:
+                continue
+            b = out.setdefault(slug, {"slug": slug, "name": r.get("display_name")})
+            if source == "artificial-analysis":
+                cur = b.get("aa")
+                if cur is None or (r.get("intelligence_index") or -1) > (cur.get("intelligence") or -1):
+                    m = re.search(r"\(([^)]*)\)\s*$", r.get("display_name") or "")
+                    b["aa"] = {"intelligence": r.get("intelligence_index"), "coding": r.get("coding_index"),
+                               "agentic": r.get("agentic_index"), "variant": m.group(1) if m else None}
+                    b["name"] = re.sub(r"\s*\([^)]*\)\s*$", "", r.get("display_name") or "") or b["name"]
+                elif cur:  # varianti con lo stesso slug: completa gli indici mancanti
+                    for k, src in (("coding", "coding_index"), ("agentic", "agentic_index")):
+                        if cur.get(k) is None and r.get(src) is not None:
+                            cur[k] = r[src]
+            else:
+                bt = r.get("benchmark_type") or ""
+                if bt.startswith("search") or r.get("accuracy") is None:
+                    continue
+                b.setdefault("or_evals", {})[bt] = round(float(r["accuracy"]) * 100, 1)
+    return out, meta
 
 
-def attach_aa(registry: Registry, aa: list[dict]):
-    if not aa:
-        return
-    for e in registry.models.values():
-        if e["kind"] not in ("closed", "open", "announced"):
+def sync_benchmarks(reg: Registry, or_index: list[dict], bench: dict, cfg: dict, today: str) -> int:
+    """Collega i punteggi ai modelli del registro (via slug OpenRouter ↔ id Hugging Face). I modelli in classifica
+    non ancora nel registro vengono aggiunti (senza segnarli come novità), così si possono confrontare."""
+    if not bench:
+        return 0
+    hw = cfg["hardware"]
+    by_slug = {}
+    for m in or_index:
+        for s in (m.get("canonical_slug"), m["_base"]):
+            if s:
+                by_slug[s] = m
+    org_labels = {}  # "qwen" -> "Qwen", "z-ai" -> "Z.ai" (dai nomi visualizzati di OpenRouter)
+    for m in or_index:
+        label = (m.get("name") or "").partition(": ")[0]
+        if label and ": " in (m.get("name") or ""):
+            org_labels.setdefault(m["_base"].split("/")[0], label)
+    for e in reg.models.values():  # i punteggi sono ricalcolati ogni giorno
+        e.pop("aa", None)
+        e.pop("or_evals", None)
+    to_enrich, linked = [], 0
+    for slug, b in bench.items():
+        if not b.get("aa") and not b.get("or_evals"):
             continue
-        n = norm_name(e["name"])
-        if len(n) < 5:
-            continue
-        cands = [a for a in aa if norm_name(a["name"]) == n or norm_name(a["name"]).startswith(n)]
-        if not cands:
-            continue
-        best = max(cands, key=lambda a: next((v for k, v in a["evals"].items() if "intelligence" in k), 0))
-        e["aa"] = {"name": best["name"], "evals": best["evals"],
-                   "url": f"https://artificialanalysis.ai/models/{best['slug']}" if best.get("slug") else None}
+        m = by_slug.get(slug)
+        if m:
+            ore = entry_from_or(m)
+            e = reg.models.get(ore["id"])
+            if e is None:
+                e = reg.add(ore, today, touch=False)
+                if ore.get("hf_id"):
+                    to_enrich.append(e)
+        else:
+            org, _, rest = slug.partition("/")
+            dm = re.search(r"-(\d{4})(\d{2})(\d{2})$", rest)
+            eid = f"aa:{slug}"
+            nb = norm_name(b["name"] or "")
+            # stesso modello già nel registro con un altro id (es. da Hugging Face)? Unisci invece di duplicare
+            same = next((x for x in reg.models.values() if not x["id"].startswith("aa:") and nb and
+                         nb in (norm_name(x["name"]), norm_name(x.get("hf_id") or ""))), None)
+            if same:
+                reg.models.pop(eid, None)
+                e = same
+            else:
+                e = reg.models.get(eid) or reg.add({
+                    "id": eid, "name": b["name"] or rest, "org": org_labels.get(org, org), "kind": "closed",
+                    "released": f"{dm.group(1)}-{dm.group(2)}-{dm.group(3)}" if dm else None,
+                    "links": {}}, today, touch=False)
+                e["org"] = org_labels.get(org, e.get("org") or org)
+        if b.get("aa"):
+            if not e.get("aa") or (b["aa"].get("intelligence") or -1) > (e["aa"].get("intelligence") or -1):
+                e["aa"] = {**b["aa"], "slug": slug}
+        if b.get("or_evals"):
+            e.setdefault("or_evals", {}).update(b["or_evals"])
+        linked += 1
+
+    def enrich(e):
+        api = hf_model(e["hf_id"])
+        if not api:
+            return
+        try:
+            hfe = entry_from_hf(api, hw, with_quants=False)
+        except Exception:
+            return
+        for k in ("params_b", "params_source", "active_b", "arch", "vram", "license", "pipeline", "weights_available"):
+            if hfe.get(k) is not None:
+                e[k] = hfe[k]
+        e.setdefault("links", {})["hf"] = hfe["links"]["hf"]
+        e.setdefault("signals", {}).update(hfe.get("signals", {}))
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        list(ex.map(enrich, to_enrich))
+    return linked
+
+
+# ───────────────────────── versioni più recenti ─────────────────────────
+
+_SIZE = re.compile(r"(?i)(?<![a-z0-9])a?\d+(?:\.\d+)?[bmt](?![a-z])")
+_TAGS = re.compile(r"(?i)\b(it|instruct|chat|base|hf|preview|exp|latest|\d{4,8})\b")
+
+
+def parse_version(name: str) -> dict | None:
+    """'granite-4.1-8b' -> famiglia 'granite', versione (4,1), taglia '8b'. None se il nome non ha una versione."""
+    base = (name or "").split("/")[-1].split(":")[-1].strip()
+    m = re.match(r"^(.*?[A-Za-z][A-Za-z._\- ]*?)[\s_\-]?[vV]?(\d+(?:\.\d+)*)(.*)$", base)
+    if not m:
+        return None
+    fam, ver, suf = m.group(1), m.group(2), m.group(3)
+    if re.match(r"^[bBmMtT](?![a-zA-Z])", suf):  # "gpt-oss-120b": è una taglia, non una versione
+        return None
+    sizes = [s.lower() for s in _SIZE.findall(suf)]
+    rest = _TAGS.sub(" ", _SIZE.sub(" ", suf))
+    return {"fam": re.sub(r"[^a-z0-9]", "", fam.lower()), "fam_raw": fam.strip(" -_."),
+            "ver": tuple(int(x) for x in ver.split(".")),
+            "size": next((s for s in sizes if not s.startswith("a")), None),  # "A3B" = parametri attivi, non la taglia
+            "suf": re.sub(r"[^a-z0-9]", "", rest.lower())}
+
+
+def _is_newer(cur: dict, cand: dict) -> bool:
+    if cand["fam"] != cur["fam"] or cand["suf"] != cur["suf"] or cand["ver"] <= cur["ver"]:
+        return False
+    if cur["size"] and cand["size"] != cur["size"]:
+        return False
+    return True
+
+
+def find_newer(e: dict, or_index: list[dict], cache: dict) -> dict | None:
+    """Cerca una versione più recente della stessa famiglia dello stesso produttore (stessa taglia)."""
+    cur = parse_version(e.get("hf_id") or e["name"])
+    if not cur or not cur["fam"]:
+        return None
+    best = None
+    if e.get("hf_id"):
+        org = e["hf_id"].split("/")[0]
+        key = (org.lower(), cur["fam"])
+        if key not in cache:
+            try:
+                cache[key] = net.get_json(f"{HF}/api/models?author={quote(org)}&search={quote(cur['fam_raw'])}"
+                                          f"&sort=createdAt&limit=100", headers=hf_headers(), timeout=20, retries=1)
+            except Exception:
+                cache[key] = []
+        for m in cache[key]:
+            if is_variant(m):
+                continue
+            pv = parse_version(m["id"])
+            if pv and _is_newer(cur, pv) and (best is None or pv["ver"] > best[0]):
+                best = (pv["ver"], {"id": m["id"], "name": m["id"].split("/")[-1],
+                                    "released": (m.get("createdAt") or "")[:10], "url": f"{HF}/{m['id']}"})
+    if e.get("or_id"):
+        org = e["or_id"].split("/")[0]
+        for m in or_index:
+            if m["_base"].split("/")[0] != org:
+                continue
+            nm = (m.get("name") or "").partition(": ")[2] or m["_base"]
+            pv = parse_version(nm)
+            if pv and _is_newer(cur, pv) and (best is None or pv["ver"] > best[0]):
+                best = (pv["ver"], {"id": m.get("hugging_face_id") or f"or:{m['_base']}", "name": nm,
+                                    "released": datetime.fromtimestamp(m.get("created", 0), tz=timezone.utc).date().isoformat(),
+                                    "url": f"https://openrouter.ai/{m['_base']}"})
+    return best[1] if best else None
 
 
 # ───────────────────────── priorità ─────────────────────────

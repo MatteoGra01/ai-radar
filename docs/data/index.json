@@ -2,12 +2,12 @@
  "days": [
   {
    "date": "2026-11-15",
-   "headline": "Qwen3.8-27B quantizzato per RTX 5090, DeepSeek-V4.1 su GPU 16 GB via tandem.cpp",
-   "n_items": 146,
+   "headline": "Quantizzazioni Qwen3.8-27B di Unsloth e DeepSeek-V4.1 su GPU 16 GB con tandem.cpp",
+   "n_items": 150,
    "n_models": 50
   }
  ],
- "updated": "2026-11-15T13:16:20Z",
+ "updated": "2026-11-15T16:39:15Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -23,6 +23,10 @@
  },
  "status": {
   "sources": {
+   "rss:Simon Willison": {
+    "ok": true,
+    "n": 2
+   },
    "rss:Interconnects": {
     "ok": true,
     "n": 1
@@ -35,15 +39,11 @@
     "ok": true,
     "n": 0
    },
-   "rss:Simon Willison": {
-    "ok": true,
-    "n": 2
-   },
-   "rss:Hugging Face Blog": {
+   "rss:Google DeepMind": {
     "ok": true,
     "n": 0
    },
-   "rss:Google DeepMind": {
+   "rss:Hugging Face Blog": {
     "ok": true,
     "n": 0
    },
@@ -51,17 +51,13 @@
     "ok": true,
     "n": 0
    },
-   "hf_papers": {
+   "rss:Ollama releases": {
     "ok": true,
     "n": 0
    },
    "hackernews": {
     "ok": true,
-    "n": 7
-   },
-   "rss:Ollama releases": {
-    "ok": true,
-    "n": 0
+    "n": 10
    },
    "rss:r/LocalLLaMA": {
     "ok": true,
@@ -69,7 +65,7 @@
    },
    "rss:vLLM releases": {
     "ok": true,
-    "n": 1
+    "n": 0
    },
    "rss:Transformers releases": {
     "ok": true,
@@ -90,18 +86,61 @@
    "hf_orgs": {
     "ok": true,
     "n": 36
+   },
+   "benchmarks:artificial-analysis": {
+    "ok": true,
+    "n": 179
+   },
+   "benchmarks:openrouter": {
+    "ok": true,
+    "n": 310
+   },
+   "papers:hf": {
+    "ok": true,
+    "n": 0
+   },
+   "papers:arxiv": {
+    "ok": true,
+    "n": 0
+   },
+   "papers:Alignment Forum": {
+    "ok": true,
+    "n": 0
+   },
+   "embeddings:mteb": {
+    "ok": true,
+    "n": 533
+   },
+   "embeddings:hf": {
+    "ok": true,
+    "n": 3
    }
   },
   "llm": {
    "enabled": true,
-   "calls": 15,
-   "cost_usd": 0.0122,
+   "calls": 5,
+   "cost_usd": 0.0059,
    "failures": 0,
    "models": {
-    "openrouter/anthropic/claude-haiku-5.5": 15
+    "openrouter/deepseek/deepseek-v4.1-flash": 1,
+    "openrouter/anthropic/claude-haiku-5.5": 4
    },
    "log": []
   },
-  "duration_s": 17
+  "duration_s": 98
+ },
+ "new_model_days": 14,
+ "benchmarks_meta": {
+  "as_of": "2026-11-14T12:00:44.416Z",
+  "version": "v1",
+  "source": "artificial-analysis",
+  "source_url": "https://artificialanalysis.ai",
+  "citation": "Source: Artificial Analysis (artificialanalysis.ai) via OpenRouter (openrouter.ai/rankings).",
+  "model_count": 179,
+  "task_type": null
+ },
+ "site": {
+  "advice_model": "anthropic/claude-haiku-5.5",
+  "profile": "Sviluppatore/ricercatore ML in Italia. Ho una NVIDIA RTX 5090 (32 GB VRAM) e voglio sapere\nsubito quali nuovi modelli open-weight posso far girare in locale (llama.cpp, vLLM, Ollama, LM Studio),\ncon che quantizzazione e con quanto contesto.\nSeguo anche i modelli frontier closed (Claude, GPT, Gemini, Qwen-Max...): mi interessano benchmark,\nprezzi, context window e nuove funzionalità delle API.\nInteressi specifici: embedding e retrieval, RAG, tecniche tipo vec2vec (traduzione tra spazi di embedding),\ninterpretabilità, quantizzazione, inference efficiente, fine-tuning su GPU consumer, agenti e coding tools,\nnuove librerie/tool open source davvero utili.\nNon mi interessano: gossip, finanziamenti e business se non cambiano cosa posso usare, merge/finetune\n\"uncensored\" di bassa qualità, prompt pack, clickbait."
  }
 }

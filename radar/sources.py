@@ -175,7 +175,7 @@ def github_repos(cfg: dict, since: datetime, status: dict) -> list[dict]:
 # ───────────────────────── orchestrazione ─────────────────────────
 
 def collect_news(cfg: dict, since: datetime, status: dict) -> list[dict]:
-    jobs = {"rss": rss_feeds, "hackernews": hackernews, "hf_papers": hf_papers, "github": github_repos}
+    jobs = {"rss": rss_feeds, "hackernews": hackernews, "github": github_repos}
     items: list[dict] = []
     with ThreadPoolExecutor(max_workers=4) as ex:
         futs = {ex.submit(fn, cfg, since, status): name for name, fn in jobs.items()}

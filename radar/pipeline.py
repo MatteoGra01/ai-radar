@@ -12,6 +12,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from . import models as M
+from . import embeddings as EM
+from . import papers as PA
 from .llm import LLM
 from .sources import collect_news
 from .textutil import norm_name, one_line
@@ -64,8 +66,8 @@ Regole:
 - title: titolo italiano chiaro e informativo (max 90 caratteri), conserva nomi propri e numeri.
 - summary: 1-2 frasi italiane con i fatti concreti (cosa, chi, numeri chiave). Non aggiungere nulla che non sia nel testo.
 - why: se rel >= 6, una frase su perché interessa a questo lettore; altrimenti "". Non dare per scontato che un modello abbia pesi aperti, si possa scaricare o giri in locale se il testo non lo dice esplicitamente (es. i modelli "Max", "Preview" o via API di solito sono closed).
-- models: nomi esatti dei modelli AI NUOVI annunciati o rilasciati nell'elemento (es. "Qwen4-Max Preview"); [] se nessuno. Non elencare modelli citati solo come confronto.
-- release: true solo se l'elemento annuncia direttamente il rilascio di un nuovo modello o versione.
+- models: nomi esatti dei modelli AI di cui l'elemento parla in modo centrale, nuovi o già esistenti (es. "Qwen4-Max Preview", "Granite 4.1 8B"); [] se nessuno. Non elencare modelli citati solo come confronto.
+- release: true SOLO se l'elemento annuncia un modello mai uscito prima. Una nuova funzionalità, un aggiornamento, nuove quantizzazioni, un tutorial o un articolo su un modello già esistente NON sono un rilascio: release false e cat "feature" o "guida".
 
 Rispondi con {{"items": [ ... ]}} contenente tutti gli elementi.
 
@@ -95,8 +97,13 @@ DIGEST_RULES = """Data: {date}.
 Notizie più rilevanti di oggi (rel = rilevanza 0-10):
 {news}
 
-Modelli nuovi o aggiornati oggi:
+Modelli nuovi o citati oggi (NUOVO = uscito negli ultimi giorni; gli altri sono modelli già esistenti citati nelle notizie):
 {models}
+
+Paper più rilevanti per gli argomenti del lettore:
+{papers}
+
+Regole: presenta come novità solo i modelli marcati NUOVO; per gli altri parla dell'aggiornamento o della notizia, senza dire che "escono" o "vengono rilasciati". Se per un modello esiste una versione più recente, dillo.
 
 Restituisci:
 {{"headline": "titolo della giornata (max 80 caratteri)",
@@ -270,6 +277,19 @@ def refresh_pending(reg: M.Registry, or_index: list, cfg: dict, today: str):
                 e["kind"] = "open" if ore.get("hf_id") else "closed"
                 e["updated"] = today
                 reg.touched.add(e["id"])
+                continue
+            api, _ = M.search_hf(e["name"], cfg)  # sono usciti i pesi su Hugging Face?
+            if api:
+                try:
+                    hfe = M.entry_from_hf(api, hw)
+                except Exception:
+                    continue
+                for k, v in hfe.items():
+                    if k not in ("id", "name", "org", "first_seen", "mentions", "deep", "released") and v not in (None, "", [], {}):
+                        e[k] = {**e.get(k, {}), **v} if k == "links" else v
+                e.pop("note", None)
+                e["updated"] = today
+                reg.touched.add(e["id"])
 
 
 def discover_models(reg: M.Registry, or_index: list, cfg: dict, status: dict, today: str):
@@ -397,19 +417,33 @@ def item_out(it: dict) -> dict:
     }
 
 
-def make_digest(llm: LLM, cfg: dict, date: str, items: list[dict], models_today: list[dict]):
+def model_line(e: dict, new_cut: str) -> str:
+    fresh = (e.get("released") or e.get("first_seen") or "") >= new_cut
+    parts = [e.get("org", ""), e["kind"], ("NUOVO" if fresh else f"già uscito il {e.get('released') or '?'}")]
+    if e.get("params_b"):
+        parts.append(f"{e['params_b']:g}B" + (f" ({e['active_b']:g}B attivi)" if e.get("active_b") else ""))
+    if e.get("vram"):
+        parts.append(f"verdetto GPU: {e['vram']['text']}")
+    if (e.get("pricing") or {}).get("in") is not None:
+        parts.append(f"prezzo ${e['pricing']['in']}/${e['pricing']['out']} per M token")
+    if (e.get("aa") or {}).get("intelligence"):
+        parts.append(f"AA Intelligence Index {e['aa']['intelligence']}")
+    if e.get("newer"):
+        parts.append(f"ATTENZIONE: esiste la versione più recente {e['newer']['name']} ({e['newer']['released']})")
+    return f"- {e['name']} (" + ", ".join(p for p in parts if p) + ")"
+
+
+def make_digest(llm: LLM, cfg: dict, date: str, items: list[dict], models_today: list[dict],
+                papers: list[dict] | None = None, new_cut: str = ""):
     if not llm.available or not items:
         return None
     top = sorted(items, key=lambda i: (-i["rel"], -i["engagement"]))[:25]
     news = "\n".join(f"- [rel {i['rel']}] {i['title']} — {i['summary']}" for i in top)
-    mods = "\n".join(
-        f"- {e['name']} ({e.get('org', '')}, {e['kind']}"
-        + (f", {e['params_b']:g}B" if e.get("params_b") else "")
-        + (f", verdetto GPU: {e['vram']['text']}" if e.get("vram") else "")
-        + (f", prezzo ${e['pricing']['in']}/${e['pricing']['out']} per M token" if (e.get("pricing") or {}).get("in") else "")
-        + ")" for e in models_today[:12]) or "(nessuno)"
+    mods = "\n".join(model_line(e, new_cut) for e in models_today[:14]) or "(nessuno)"
+    paps = "\n".join(f"- [imp {p.get('imp')}] {p.get('title_it') or p['title']} — {p.get('summary_it') or ''}"
+                      for p in (papers or [])[:5]) or "(nessuno)"
     sysmsg = system_prompt(cfg, "Scrivi l'apertura della rassegna AI quotidiana per questo lettore: concreta, senza enfasi.")
-    res = llm.chat_json(sysmsg, DIGEST_RULES.format(date=date, news=news, models=mods, gpu=cfg["hardware"]["gpu_name"]),
+    res = llm.chat_json(sysmsg, DIGEST_RULES.format(date=date, news=news, models=mods, papers=paps, gpu=cfg["hardware"]["gpu_name"]),
                         max_tokens=2000, tier="deep", label="editoriale", validate=lambda r: isinstance(r, dict) and r.get("bullets"))
     if not res:
         return None
@@ -471,19 +505,45 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
                                          "source": it["source_name"]})
                 e["mentions"] = e["mentions"][:8]
     refresh_pending(reg, or_index, cfg, today)
+
+    # 3b. benchmark indipendenti: Artificial Analysis (via OpenRouter) e valutazioni di OpenRouter
+    bench, bench_meta = M.fetch_benchmarks(status)
+    n_bench = M.sync_benchmarks(reg, or_index, bench, cfg, today)
     for e in reg.models.values():
         e["score"] = M.priority(e, cfg)
     mentioned_today = {mid for it in new if it["rel"] >= 6 for mid in it.get("model_ids", [])}
     today_ids = (reg.touched | mentioned_today) & set(reg.models)
-    models_today = sorted((reg.models[i] for i in today_ids), key=lambda e: -e["score"])
-    log(f"Modelli: {len(reg.models)} nel registro, {len(reg.touched)} nuovi/aggiornati, {len(mentioned_today)} citati oggi")
-
-    # 4. approfondimenti (benchmark, feature) sui modelli più importanti
     day_path = data_dir / "days" / f"{today}.json"
     prev = load_json(day_path, None)
     if prev:  # seconda esecuzione nello stesso giorno: considera anche i modelli già in pagina
         today_ids |= set(prev.get("models", [])) & set(reg.models)
-        models_today = sorted((reg.models[i] for i in today_ids), key=lambda e: -e["score"])
+        today_ids |= {s["id"] for s in prev.get("models_superseded", [])} & set(reg.models)
+    models_today = sorted((reg.models[i] for i in today_ids), key=lambda e: -e["score"])
+    log(f"Modelli: {len(reg.models)} nel registro, {len(reg.touched)} nuovi/aggiornati, "
+        f"{len(mentioned_today)} citati oggi, {n_bench} con benchmark indipendenti")
+
+    # 3c. esiste una versione più recente? (modelli di oggi + controllo settimanale del resto del registro)
+    week_ago = (now - timedelta(days=7)).date().isoformat()
+    to_check = list(models_today) + [e for e in reg.models.values() if e["id"] not in today_ids
+                                     and (e.get("newer_checked") or "") < week_ago][:400]
+    cache: dict = {}
+
+    def check(e):
+        try:
+            e["newer"] = M.find_newer(e, or_index, cache)
+        except Exception:
+            e["newer"] = None
+        e["newer_checked"] = today
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        list(ex.map(check, to_check))
+    # in prima pagina solo le ultime versioni: un modello superato da uno più recente della stessa famiglia sparisce
+    superseded_today = [e for e in models_today if e.get("newer")]
+    models_today = [e for e in models_today if not e.get("newer")]
+    if superseded_today:
+        log("Nascosti perché superati: " + ", ".join(f"{e['name']} → {e['newer']['name']}" for e in superseded_today))
+    new_cut = (now - timedelta(days=int(cfg["run"]["new_model_days"]))).date().isoformat()
+
+    # 4. approfondimenti (benchmark, feature) sui modelli più importanti
     if refresh_deep:
         for e in models_today:
             e.pop("deep", None)
@@ -491,7 +551,22 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
     cands = sorted((e for e in models_today if not e.get("deep") and e["kind"] != "placeholder"),
                    key=lambda e: (-max([m.get("rel", 0) for m in e.get("mentions", []) if m.get("date", "") >= (now - timedelta(days=7)).date().isoformat()] or [0]), -e["score"]))
     n_deep = deep_dives(llm, reg, cfg, items_by_id, today, cands)
-    M.attach_aa(reg, M.aa_models(status))
+
+    # 4b. paper per argomento
+    papers_first = not (data_dir / "papers.json").exists()
+    # arXiv rende visibili i paper con 1-2 giorni di ritardo: finestra più larga, i duplicati sono già esclusi per id
+    p_days = int(cfg["run"]["bootstrap_days"]) if (papers_first or bootstrap_days) else int(cfg["papers"].get("lookback_days", 4))
+    p_since = now - timedelta(days=p_days)
+    pdata = PA.update(root, cfg, llm, system_prompt, status, p_since, today)
+    deftop = set(pdata.get("default_topics", []))
+    top_papers = sorted((p for p in pdata["papers"].values() if p.get("first_seen") == today
+                         and (not deftop or deftop & set(p.get("topics", [])))), key=lambda p: -p["score"])
+
+    # 4c. modelli di embedding (leaderboard MTEB)
+    try:
+        EM.update(root, cfg, status, today)
+    except Exception as ex:
+        status["embeddings:mteb"] = {"ok": False, "error": str(ex)[:200]}
 
     # 5. pagina del giorno
     if n_triaged:
@@ -506,7 +581,8 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
         out_items += [i for i in prev.get("items", []) if i["id"] not in known]
     out_items.sort(key=lambda i: (-i["rel"], -i["engagement"]))
     out_items = out_items[: int(cfg["run"]["max_items_per_day"])]
-    digest = make_digest(llm, cfg, today, out_items, models_today) if (new or not prev or refresh_deep) else None
+    digest = make_digest(llm, cfg, today, out_items, models_today, top_papers, new_cut) \
+        if (new or not prev or refresh_deep) else None
     if digest is None and prev:
         digest = prev.get("digest")
 
@@ -516,7 +592,11 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
         "digest": digest,
         "items": out_items,
         "models": [e["id"] for e in models_today],
-        "stats": {"collected": len(items), "new": len(new), "triaged": n_triaged, "deep_dives": n_deep},
+        "models_new": [e["id"] for e in models_today if (e.get("released") or e.get("first_seen") or "") >= new_cut],
+        "models_cited": [e["id"] for e in models_today if (e.get("released") or e.get("first_seen") or "") < new_cut],
+        "models_superseded": [{"id": e["id"], "name": e["name"], "newer": e["newer"]} for e in superseded_today],
+        "stats": {"collected": len(items), "new": len(new), "triaged": n_triaged, "deep_dives": n_deep,
+                  "papers_new": sum(1 for p in pdata["papers"].values() if p.get("first_seen") == today)},
     }
     save_json(day_path, day)
     for mid in reg.touched:
@@ -537,6 +617,10 @@ def run(root: Path, cfg: dict, *, use_llm: bool = True, bootstrap_days: int | No
     index.update({
         "updated": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "hardware": cfg["hardware"],
+        "new_model_days": int(cfg["run"]["new_model_days"]),
+        "benchmarks_meta": bench_meta or index.get("benchmarks_meta"),
+        "site": {"advice_model": cfg.get("site", {}).get("advice_model", "anthropic/claude-haiku-5.5"),
+                 "profile": cfg["profile"].get("description", "").strip()},
         "status": {
             "sources": status,
             "llm": {"enabled": bool(llm.providers and any(p.key for p in llm.providers)), "calls": llm.calls,

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Radar</title>
-  <meta name="description" content="Rassegna quotidiana personale su nuovi modelli AI, benchmark e funzionalità">
+  <meta name="description" content="Rassegna quotidiana personale su nuovi modelli AI, benchmark, paper e funzionalità">
   <meta name="robots" content="noindex">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='none' stroke='%234f46e5' stroke-width='3'/><circle cx='16' cy='16' r='7' fill='none' stroke='%234f46e5' stroke-width='3'/><circle cx='16' cy='16' r='2.5' fill='%234f46e5'/></svg>">
   <link rel="stylesheet" href="style.css">
@@ -14,15 +14,20 @@
     <div class="wrap top-inner">
       <a class="brand" href="#">
         <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" /><circle cx="16" cy="16" r="6.5" /><circle cx="16" cy="16" r="2.2" class="dot"/></svg>
-        AI Radar
+        <span>AI Radar</span>
       </a>
       <nav class="tabs" aria-label="Sezioni">
         <a href="#v=day" data-view="day">Oggi</a>
         <a href="#v=models" data-view="models">Modelli</a>
+        <a href="#v=leaderboard" data-view="leaderboard">Classifica</a>
+        <a href="#v=papers" data-view="papers">Paper</a>
+        <a href="#v=embeddings" data-view="embeddings">Embedding</a>
+        <a href="#v=compare" data-view="compare">Confronto<span id="cmp-count" class="tab-badge" hidden></span></a>
         <a href="#v=archive" data-view="archive">Archivio</a>
       </nav>
       <div class="top-right">
         <span id="gpu" class="gpu-chip" title="Hardware usato per i verdetti"></span>
+        <button id="settings" class="icon-btn" type="button" aria-label="Impostazioni" title="Impostazioni">⚙</button>
         <button id="theme" class="icon-btn" type="button" aria-label="Cambia tema" title="Tema">◐</button>
       </div>
     </div>
@@ -34,10 +39,19 @@
 
   <footer class="wrap foot" id="foot"></footer>
 
+  <div id="cmpbar" class="cmpbar" hidden></div>
+
   <dialog id="modal" aria-label="Dettaglio modello">
     <div class="modal-inner">
       <button class="icon-btn modal-close" type="button" aria-label="Chiudi">✕</button>
       <div id="modal-body"></div>
+    </div>
+  </dialog>
+
+  <dialog id="settings-dlg" aria-label="Impostazioni">
+    <div class="modal-inner">
+      <button class="icon-btn modal-close" type="button" aria-label="Chiudi">✕</button>
+      <div id="settings-body"></div>
     </div>
   </dialog>
 
