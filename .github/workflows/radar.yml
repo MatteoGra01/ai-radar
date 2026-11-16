@@ -1,8 +1,12 @@
 name: AI Radar giornaliero
 
 on:
+  # GitHub non garantisce l'orario dei cron (possono slittare o saltare): oltre all'orario principale ci sono
+  # due riserve, che non fanno nulla se la rassegna del giorno esiste già.
   schedule:
-    - cron: "15 5 * * *"   # ogni giorno alle 05:15 UTC (06:15 in inverno, 07:15 in estate)
+    - cron: "23 5 * * *"   # 05:23 UTC = 06:23 in inverno, 07:23 in estate
+    - cron: "47 6 * * *"   # riserva
+    - cron: "17 9 * * *"   # riserva
   workflow_dispatch:
     inputs:
       days:
@@ -29,11 +33,22 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - name: Rassegna di oggi già fatta?
+        id: guard
+        run: |
+          D=$(TZ=Europe/Rome date +%F)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ -f "docs/data/days/$D.json" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "La rassegna del $D esiste già: questa esecuzione di riserva non fa nulla."
+          fi
+
       - uses: actions/setup-python@v7
+        if: steps.guard.outputs.skip != 'true'
         with:
           python-version: "3.13"
 
       - name: Genera la rassegna
+        if: steps.guard.outputs.skip != 'true'
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -42,6 +57,7 @@ jobs:
         run: python -m radar run ${DAYS:+--days "$DAYS"}
 
       - name: Salva dati e stato nel repository
+        if: steps.guard.outputs.skip != 'true'
         run: |
           git config user.name "ai-radar-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -50,15 +66,19 @@ jobs:
           git push
 
       - name: Versione dei file del sito (evita che il browser usi app.js/style.css vecchi in cache)
+        if: steps.guard.outputs.skip != 'true'
         run: |
           V=${GITHUB_SHA::8}-${GITHUB_RUN_NUMBER}
           sed -i "s|src=\"app.js\"|src=\"app.js?v=$V\"|; s|href=\"style.css\"|href=\"style.css?v=$V\"|" docs/index.html
 
       - uses: actions/configure-pages@v6
+        if: steps.guard.outputs.skip != 'true'
 
       - uses: actions/upload-pages-artifact@v5
+        if: steps.guard.outputs.skip != 'true'
         with:
           path: docs
 
       - id: deploy
+        if: steps.guard.outputs.skip != 'true'
         uses: actions/deploy-pages@v5
