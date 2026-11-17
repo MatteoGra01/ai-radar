@@ -1,6 +1,12 @@
 {
  "days": [
   {
+   "date": "2026-11-17",
+   "headline": "llama.cpp +41% su RTX 5090 con la rotazione K/V; Clover 2 e Nemotron Sigma tra le novità",
+   "n_items": 37,
+   "n_models": 26
+  },
+  {
    "date": "2026-11-16",
    "headline": "Qwen4-Max in primo piano, nuovi modelli locali e ottimizzazioni MoE su GPU consumer",
    "n_items": 15,
@@ -13,7 +19,7 @@
    "n_models": 57
   }
  ],
- "updated": "2026-11-16T09:13:43Z",
+ "updated": "2026-11-17T13:51:06Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -37,7 +43,7 @@
  },
  "status": {
   "sources": {
-   "rss:Hugging Face Blog": {
+   "rss:Interconnects": {
     "ok": true,
     "n": 0
    },
@@ -45,41 +51,41 @@
     "ok": true,
     "n": 0
    },
-   "rss:Simon Willison": {
+   "rss:Ollama releases": {
     "ok": true,
-    "n": 5
+    "n": 1
    },
    "rss:Google DeepMind": {
     "ok": true,
     "n": 0
    },
-   "rss:Ollama releases": {
-    "ok": true,
-    "n": 0
-   },
    "rss:OpenAI News": {
+    "ok": true,
+    "n": 7
+   },
+   "rss:Simon Willison": {
     "ok": true,
     "n": 2
    },
-   "rss:Interconnects": {
+   "rss:Hugging Face Blog": {
     "ok": true,
     "n": 0
    },
-   "rss:NVIDIA Developer": {
+   "rss:vLLM releases": {
     "ok": true,
-    "n": 0
-   },
-   "hackernews": {
-    "ok": true,
-    "n": 8
+    "n": 1
    },
    "rss:r/LocalLLaMA": {
     "ok": true,
     "n": 25
    },
-   "rss:vLLM releases": {
+   "hackernews": {
     "ok": true,
-    "n": 1
+    "n": 10
+   },
+   "rss:NVIDIA Developer": {
+    "ok": true,
+    "n": 4
    },
    "rss:Transformers releases": {
     "ok": true,
@@ -87,11 +93,11 @@
    },
    "github": {
     "ok": true,
-    "n": 58
+    "n": 61
    },
    "openrouter": {
     "ok": true,
-    "n": 468
+    "n": 470
    },
    "hf_trending": {
     "ok": true,
@@ -111,11 +117,11 @@
    },
    "papers:hf": {
     "ok": true,
-    "n": 75
+    "n": 102
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 267
+    "n": 318
    },
    "papers:Alignment Forum": {
     "ok": true,
@@ -127,21 +133,21 @@
    },
    "embeddings:hf": {
     "ok": true,
-    "n": 2
+    "n": 4
    }
   },
   "llm": {
    "enabled": true,
-   "calls": 29,
-   "cost_usd": 0.0472,
+   "calls": 52,
+   "cost_usd": 0.0883,
    "failures": 0,
    "models": {
-    "openrouter/deepseek/deepseek-v4.1-flash": 25,
-    "openrouter/anthropic/claude-haiku-5.5": 4
+    "openrouter/deepseek/deepseek-v4.1-flash": 38,
+    "openrouter/anthropic/claude-haiku-5.5": 14
    },
    "log": []
   },
-  "duration_s": 143
+  "duration_s": 179
  },
  "new_model_days": 14,
  "benchmarks_meta": {
