@@ -13,6 +13,11 @@ on:
         description: "Finestra in giorni (vuoto = automatica)"
         required: false
         default: ""
+      automatico:
+        description: "Avvio da pianificatore esterno: non fa nulla se la rassegna di oggi esiste già"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -37,7 +42,8 @@ jobs:
         id: guard
         run: |
           D=$(TZ=Europe/Rome date +%F)
-          if [ "${{ github.event_name }}" = "schedule" ] && [ -f "docs/data/days/$D.json" ]; then
+          AUTO=${{ github.event_name == 'schedule' || inputs.automatico == true }}
+          if [ "$AUTO" = "true" ] && [ -f "docs/data/days/$D.json" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "La rassegna del $D esiste già: questa esecuzione di riserva non fa nulla."
           fi

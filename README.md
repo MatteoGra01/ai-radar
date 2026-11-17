@@ -128,6 +128,9 @@ state/seen.json   notizie già viste (evita duplicati tra un giorno e l'altro)
 - GitHub non garantisce l'orario dei workflow pianificati (possono slittare anche di un'ora o saltare): per questo
   oltre all'orario principale (06:23 in inverno) ci sono due riserve (07:47 e 10:17), che non fanno nulla se la
   rassegna del giorno esiste già. Puoi sempre lanciarla a mano da *Actions → Run workflow*.
+  Sui repo nuovi i cron di GitHub possono saltare per giorni interi: per un avvio affidabile un pianificatore esterno
+  può lanciare il workflow (`workflow_dispatch`) con `automatico=true`, che come le riserve non fa nulla se la
+  rassegna del giorno esiste già.
 - GitHub sospende i workflow pianificati dei repo senza attività per 60 giorni: i commit giornalieri del bot
   contano come attività, ma se vedi il workflow disattivato basta riattivarlo da *Actions*.
 - I benchmark sono quelli **dichiarati** nelle fonti (estratti dall'LLM con l'istruzione di non inventare):
