@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T14:18:04Z",
+ "updated": "2026-11-19T09:47:44Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -54,6 +54,14 @@
    },
    "first_seen": "2026-11-15",
    "mentions": [
+    {
+     "item": "c3c7756f62d4",
+     "rel": 8,
+     "date": "2026-11-18",
+     "title": "llm-gemini 0.38 supporta Gemini 4 Neon e chiarisce i prezzi",
+     "url": "https://simonwillison.net/2026/Nov/18/llm-gemini/",
+     "source": "Simon Willison"
+    },
     {
      "item": "d40fca9fd5e1",
      "rel": 7,
@@ -155,7 +163,7 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "newer": null,
-   "newer_checked": "2026-11-15",
+   "newer_checked": "2026-11-19",
    "aa": {
     "intelligence": 53.9,
     "coding": null,
@@ -277,6 +285,14 @@
    "first_seen": "2026-11-15",
    "mentions": [
     {
+     "item": "c3c7756f62d4",
+     "rel": 8,
+     "date": "2026-11-18",
+     "title": "llm-gemini 0.38 supporta Gemini 4 Neon e chiarisce i prezzi",
+     "url": "https://simonwillison.net/2026/Nov/18/llm-gemini/",
+     "source": "Simon Willison"
+    },
+    {
      "item": "a525fa830b85",
      "rel": 8,
      "date": "2026-11-10",
@@ -371,7 +387,7 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "newer": null,
-   "newer_checked": "2026-11-15",
+   "newer_checked": "2026-11-19",
    "aa": {
     "intelligence": 60,
     "coding": null,
@@ -2682,8 +2698,8 @@
    "active_source": "dichiarato",
    "aa": {
     "intelligence": null,
-    "coding": 63.5,
-    "agentic": 28.4,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "motif-technologies/motif-3"
    }
@@ -2837,9 +2853,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 534,
+    "likes": 562,
     "downloads": 114126,
-    "trending": 126.5,
+    "trending": 120,
     "trend_rank": 7,
     "watched_org": true
    },
@@ -2856,7 +2872,7 @@
    ],
    "first_seen": "2026-11-15",
    "mentions": [],
-   "score": 6.96,
+   "score": 6.98,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "ZONOS3-Mini è un modello text-to-speech open-source di Zyphra con 100M parametri attivi (800M totali), che supporta clonazione vocale da un campione audio e design di personaggi (età, accento, timbro). Gira in tempo reale su telefoni e laptop, anche nel browser via WebGPU, con pesi rilasciati sotto licenza Apache 2.0. È adatto a giochi, narrazione e assistenti vocali, con controllo di emozione, ritmo e consegna fino a livello di singola parola.",
@@ -3309,9 +3325,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 597,
+    "likes": 1506,
     "downloads": 5314,
-    "trending": 449,
+    "trending": 291.5,
     "trend_rank": 13
    },
    "links": {
@@ -3453,7 +3469,7 @@
      "source": "r/LocalLLaMA"
     }
    ],
-   "score": 13.1,
+   "score": 13.46,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "Haru-4B è un modello base open-weight (Apache 2.0, circa 5,27B parametri) per dialogo vocale continuo full-duplex: ascolta e parla contemporaneamente, con un frame ogni 133 ms (7,5 Hz). Usa audio continuo a 64 dimensioni per frame, generato in un solo passo da una piccola testa MLP con MeanFlow, senza token audio discreti. È rilasciato per la ricerca, non come assistente generico; è adatto a sperimentare dialogo vocale a bassa latenza e multilingue.",
@@ -3499,9 +3515,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 437,
+    "likes": 457,
     "downloads": 39750,
-    "trending": 86.5,
+    "trending": 78,
     "trend_rank": 19
    },
    "links": {
@@ -3511,7 +3527,7 @@
    "quants": [],
    "first_seen": "2026-11-15",
    "mentions": [],
-   "score": 6.38,
+   "score": 6.39,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "Mirage è un modello di visione di Cactus-Compute, con pipeline image-text-to-text, rilasciato con licenza Apache-2.0. Il testo lo descrive come modello per la comprensione delle immagini e l'estrazione strutturata di informazioni, con funzioni di descrizione di scene, rilevamento oggetti, OCR, segmentazione e relazioni spaziali. Si installa tramite il pacchetto Python cactus-compute.",
@@ -5670,8 +5686,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 20.1,
-    "coding": 68.1,
-    "agentic": 45.8,
+    "coding": null,
+    "agentic": null,
     "variant": "Xhigh",
     "slug": "qwen/qwen3.8-27b-20260814"
    },
@@ -6166,7 +6182,7 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 9.5,
+    "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "ibm-granite/granite-4.1-8b-20260429"
@@ -8015,8 +8031,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": 56.9,
-    "coding": 76.9,
-    "agentic": 51,
+    "coding": null,
+    "agentic": null,
     "variant": "Max",
     "slug": "openai/gpt-6-astra-20260903"
    },
@@ -8110,14 +8126,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 71.8,
-    "agentic": 49.1,
-    "variant": null,
-    "slug": "qwen/qwen3.8-max-20260803"
-   }
+   "newer_checked": "2026-11-15"
   },
   "or:openai/gpt-6.1-terra": {
    "id": "or:openai/gpt-6.1-terra",
@@ -8177,10 +8186,19 @@
     "openrouter": "https://openrouter.ai/google/gemini-4-argon"
    },
    "first_seen": "2026-11-15",
-   "mentions": [],
-   "score": 6.5,
+   "mentions": [
+    {
+     "item": "c3c7756f62d4",
+     "rel": 8,
+     "date": "2026-11-18",
+     "title": "llm-gemini 0.38 supporta Gemini 4 Neon e chiarisce i prezzi",
+     "url": "https://simonwillison.net/2026/Nov/18/llm-gemini/",
+     "source": "Simon Willison"
+    }
+   ],
+   "score": 12.9,
    "newer": null,
-   "newer_checked": "2026-11-15",
+   "newer_checked": "2026-11-19",
    "aa": {
     "intelligence": 50.4,
     "coding": null,
@@ -8191,6 +8209,25 @@
    "or_evals": {
     "gpqa_diamond": 96.5,
     "tau_bench_verified_airline": 78.7
+   },
+   "deep": {
+    "tldr": "Il testo non riguarda Gemini 4 Argon: è un post del blog di Simon Willison sul rilascio di llm-gemini 0.38 (18 novembre 2026), che annuncia Gemini 4 Neon e discute la confusa politica di prezzo della serie Gemini 4 (Hydrogen, Argon, Carbon, Neon). Argon viene menzionato solo di sfuggita, come modello con lo stesso prezzo di Carbon, poi escluso dalla comparazione; non sono forniti dati tecnici su di esso.",
+    "features": [
+     "Argon è citato come parte della linea Gemini 4 (insieme a Hydrogen e Carbon), con prezzo uguale a Carbon prima dello sconto; il testo non ne descrive architettura, contesto o capacità",
+     "Gemini 4 Neon è il modello annunciato nel post, disponibile a low, medium e high reasoning effort",
+     "Prezzi citati: Neon $3/$15 per milione di token input/output; Carbon attualmente $2/$10 (scontato, previsto $4/$20 dal 1° dicembre); Hydrogen $1.50/$7.50 (previsto $1/$... con raddoppio/riduzione indicati nel testo)",
+     "Il post riporta un test di generazione di animazione Three.js con Gemini 4 Neon in Google Antigravity (effort 'extra'), non un benchmark",
+     "Nessuna informazione su licenza, pesi aperti o novità tecniche di Argon"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "Gemini 4 Argon è menzionato solo come modello con prezzo API (in riferimento alla serie Gemini 4); il testo non specifica disponibilità autonoma. Le API commerciali Gemini 4 Neon/Carbon/Hydrogen sono citate con i prezzi sopra indicati.",
+    "local_tips": "",
+    "hw_claims": "",
+    "source": "https://simonwillison.net/2026/Nov/18/llm-gemini/",
+    "date": "2026-11-19",
+    "by": "anthropic/claude-haiku-5.5"
    }
   },
   "or:anthropic/claude-fable-5.1": {
@@ -8225,8 +8262,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": 50,
-    "coding": 80.7,
-    "agentic": 57.2,
+    "coding": null,
+    "agentic": null,
     "variant": "Xhigh, Default Fallback",
     "slug": "anthropic/claude-fable-5.1-20260831"
    },
@@ -8267,8 +8304,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": 44.2,
-    "coding": 78,
-    "agentic": 56.5,
+    "coding": null,
+    "agentic": null,
     "variant": "Max",
     "slug": "anthropic/claude-opus-5-20260723"
    },
@@ -8379,8 +8416,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": 36.6,
-    "coding": 75.8,
-    "agentic": 55.5,
+    "coding": null,
+    "agentic": null,
     "variant": "Max",
     "slug": "meta/muse-spark-1.3-20260902"
    }
@@ -8443,15 +8480,24 @@
     "openrouter": "https://openrouter.ai/x-ai/grok-4.7"
    },
    "first_seen": "2026-11-15",
-   "mentions": [],
-   "score": 5.0,
+   "mentions": [
+    {
+     "item": "73169ca55043",
+     "rel": 6,
+     "date": "2026-11-09",
+     "title": "orgo-teammates: colleghi AI self-hosted con computer cloud e memoria",
+     "url": "https://github.com/nickvasilescu/orgo-teammates",
+     "source": "GitHub"
+    }
+   ],
+   "score": 9.8,
    "newer": {
     "id": "or:x-ai/grok-4.20",
     "name": "Grok 4.20",
     "released": "2026-03-31",
     "url": "https://openrouter.ai/x-ai/grok-4.20"
    },
-   "newer_checked": "2026-11-15",
+   "newer_checked": "2026-11-19",
    "aa": {
     "intelligence": 35.5,
     "coding": null,
@@ -8491,8 +8537,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": 33.7,
-    "coding": 76.2,
-    "agentic": 56,
+    "coding": null,
+    "agentic": null,
     "variant": "0902",
     "slug": "qwen/qwen3.8-max-20260902"
    }
@@ -8529,8 +8575,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": 32.3,
-    "coding": 76.7,
-    "agentic": 43.2,
+    "coding": null,
+    "agentic": null,
     "variant": "Max",
     "slug": "openai/gpt-5.6-terra-20260709"
    },
@@ -8790,8 +8836,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 31.7,
-    "coding": 74.8,
-    "agentic": 53.1,
+    "coding": null,
+    "agentic": null,
     "variant": "Max",
     "slug": "z-ai/glm-5.3-20260816"
    },
@@ -8832,8 +8878,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": 31,
-    "coding": 75.9,
-    "agentic": 52.5,
+    "coding": null,
+    "agentic": null,
     "variant": "Xhigh",
     "slug": "x-ai/grok-4.6-20260810"
    },
@@ -8869,8 +8915,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": 30.8,
-    "coding": 76.3,
-    "agentic": 40.2,
+    "coding": null,
+    "agentic": null,
     "variant": "High",
     "slug": "google/gemini-3.8-flash-20260902"
    },
@@ -10057,7 +10103,7 @@
    "aa": {
     "intelligence": 14.2,
     "coding": null,
-    "agentic": 28.8,
+    "agentic": null,
     "variant": null,
     "slug": "upstage/solar-pro4-20260810"
    },
@@ -10361,8 +10407,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 27.8,
-    "coding": 71.5,
-    "agentic": 50.9,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "z-ai/glm-5.3-flash-20260826"
    },
@@ -11083,7 +11129,7 @@
      "downloads": 396
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-19",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -11132,8 +11178,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": 23.8,
-    "coding": 71.4,
-    "agentic": 42.1,
+    "coding": null,
+    "agentic": null,
     "variant": "Max",
     "slug": "openai/gpt-5.6-luna-20260709"
    },
@@ -11365,8 +11411,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 23.1,
-    "coding": 68.8,
-    "agentic": 41.3,
+    "coding": null,
+    "agentic": null,
     "variant": "Max",
     "slug": "deepseek/deepseek-v4-pro-20260813"
    },
@@ -11802,8 +11848,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 18.9,
-    "coding": 58.6,
-    "agentic": 29.5,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "minimax/minimax-m3-20260531"
    },
@@ -12298,8 +12344,8 @@
    ],
    "aa": {
     "intelligence": 17.4,
-    "coding": 72,
-    "agentic": 29.3,
+    "coding": null,
+    "agentic": null,
     "variant": "Low",
     "slug": "moonshotai/kimi-k3-20260715"
    },
@@ -12454,7 +12500,7 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 130,
+    "likes": 133,
     "downloads": 74627,
     "trending": null
    },
@@ -12527,7 +12573,7 @@
      "downloads": 347
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-19",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
@@ -12795,8 +12841,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 12.9,
-    "coding": 52.9,
-    "agentic": 23.5,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "thinkingmachines/inkling-small-20260730"
    },
@@ -13049,8 +13095,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 12.5,
-    "coding": 52.1,
-    "agentic": 22.5,
+    "coding": null,
+    "agentic": null,
     "variant": "Xhigh",
     "slug": "thinkingmachines/inkling-20260715"
    },
@@ -13271,15 +13317,15 @@
      "downloads": 2789
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-19",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
    ],
    "aa": {
     "intelligence": 11.8,
-    "coding": 49.3,
-    "agentic": 20.1,
+    "coding": null,
+    "agentic": null,
     "variant": "Reasoning",
     "slug": "nvidia/nemotron-3-ultra-550b-a55b-20260604"
    }
@@ -13311,8 +13357,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": 11.7,
-    "coding": 49.3,
-    "agentic": 14.3,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "google/gemini-3.5-flash-lite-20260721"
    },
@@ -13353,8 +13399,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": 7.4,
-    "coding": 43.9,
-    "agentic": 8,
+    "coding": null,
+    "agentic": null,
     "variant": "Reasoning",
     "slug": "anthropic/claude-4.5-haiku-20251001"
    },
@@ -13600,8 +13646,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 6.3,
-    "coding": 49,
-    "agentic": 8.5,
+    "coding": null,
+    "agentic": null,
     "variant": "High",
     "slug": "meta/muse-glimmer-30b-20260810"
    },
@@ -13642,8 +13688,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": 6.2,
-    "coding": 34.7,
-    "agentic": 1.6,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "google/gemini-3.1-flash-lite-preview-20260303"
    }
@@ -13864,8 +13910,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 6.2,
-    "coding": 27.8,
-    "agentic": 1,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "cohere/command-a-plus-05-2026"
    }
@@ -14101,8 +14147,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 5.5,
-    "coding": 26.8,
-    "agentic": 3.5,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "nvidia/nemotron-3.5-lightning-20260807"
    },
@@ -14529,8 +14575,8 @@
    },
    "aa": {
     "intelligence": 5.1,
-    "coding": 22.4,
-    "agentic": 1.3,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "ibm-granite/granite-4.2-8b-20260831"
    },
@@ -14802,8 +14848,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 4.6,
-    "coding": 46.9,
-    "agentic": 7,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "mistralai/mistral-medium-3.5-20260430"
    }
@@ -15059,8 +15105,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 4.4,
-    "coding": 43.4,
-    "agentic": 4.2,
+    "coding": null,
+    "agentic": null,
     "variant": "Reasoning",
     "slug": "google/gemma-4-31b-it-20260402"
    },
@@ -15305,8 +15351,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 4.3,
-    "coding": 26.6,
-    "agentic": 0.8,
+    "coding": null,
+    "agentic": null,
     "variant": "Reasoning",
     "slug": "mistralai/mistral-small-2603"
    },
@@ -15538,8 +15584,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 3.8,
-    "coding": 30.4,
-    "agentic": 3.7,
+    "coding": null,
+    "agentic": null,
     "variant": "High",
     "slug": "openai/gpt-oss-120b"
    },
@@ -15793,8 +15839,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": 3.4,
-    "coding": 36.5,
-    "agentic": 1.1,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "cohere/north-mini-code-20260617"
    }
@@ -15829,13 +15875,6 @@
     "url": "https://openrouter.ai/openai/gpt-6.1-sol"
    },
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 78.3,
-    "agentic": 47.4,
-    "variant": "Xhigh",
-    "slug": "openai/gpt-5.6-sol-20260709"
-   },
    "or_evals": {
     "gpqa_diamond": 92.4,
     "tau_bench_verified_airline": 73.3
@@ -15871,13 +15910,6 @@
     "url": "https://openrouter.ai/anthropic/claude-fable-5.2"
    },
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 76.5,
-    "agentic": 50.7,
-    "variant": "Max, Opus 4.8 Fallback",
-    "slug": "anthropic/claude-5-fable-20260609"
-   },
    "or_evals": {
     "gpqa_diamond": 87.8,
     "tau_bench_verified_airline": 79.0
@@ -15913,13 +15945,6 @@
     "url": "https://openrouter.ai/google/gemini-3.8-flash"
    },
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 76.1,
-    "agentic": 35.2,
-    "variant": "High",
-    "slug": "google/gemini-3.7-flash-20260813"
-   },
    "or_evals": {
     "gpqa_diamond": 93.9,
     "tau_bench_verified_airline": 77.2
@@ -15950,13 +15975,6 @@
    "score": 6.5,
    "newer": null,
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 74.9,
-    "agentic": 36.4,
-    "variant": "Xhigh",
-    "slug": "openai/gpt-5.5-20260423"
-   },
    "or_evals": {
     "gpqa_diamond": 93.9,
     "tau_bench_verified_airline": 73.7
@@ -15992,13 +16010,6 @@
     "url": "https://openrouter.ai/anthropic/claude-opus-5.5"
    },
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 74.3,
-    "agentic": 41.9,
-    "variant": "Max",
-    "slug": "anthropic/claude-4.8-opus-20260528"
-   },
    "or_evals": {
     "gpqa_diamond": 89.7,
     "tau_bench_verified_airline": 76.8
@@ -16034,13 +16045,6 @@
     "url": "https://openrouter.ai/anthropic/claude-opus-5.5"
    },
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 73.6,
-    "agentic": 38.6,
-    "variant": "Max",
-    "slug": "anthropic/claude-4.7-opus-20260416"
-   },
    "or_evals": {
     "gpqa_diamond": 89.5,
     "tau_bench_verified_airline": 76.4
@@ -16075,14 +16079,7 @@
     "released": "2026-03-31",
     "url": "https://openrouter.ai/x-ai/grok-4.20"
    },
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 72.4,
-    "agentic": 41.2,
-    "variant": "High",
-    "slug": "x-ai/grok-4.5-20260708"
-   }
+   "newer_checked": "2026-11-15"
   },
   "or:meta/muse-spark-1.2": {
    "id": "or:meta/muse-spark-1.2",
@@ -16113,14 +16110,7 @@
     "released": "2026-09-02",
     "url": "https://openrouter.ai/meta/muse-spark-1.3"
    },
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 72.2,
-    "agentic": 43.2,
-    "variant": "Xhigh",
-    "slug": "meta/muse-spark-1.2-20260805"
-   }
+   "newer_checked": "2026-11-15"
   },
   "Qwen/Qwen3.8-2.4T-A95B": {
    "id": "Qwen/Qwen3.8-2.4T-A95B",
@@ -16366,8 +16356,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 71.9,
-    "agentic": 50.1,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "qwen/qwen3.8-2.4t-a95b-20260812"
    },
@@ -16406,13 +16396,6 @@
     "url": "https://openrouter.ai/anthropic/claude-sonnet-5.5"
    },
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 71.5,
-    "agentic": 43.6,
-    "variant": "Max",
-    "slug": "anthropic/claude-sonnet-5-20260630"
-   },
    "or_evals": {
     "gpqa_diamond": 85.3,
     "tau_bench_verified_airline": 74.5
@@ -16447,14 +16430,7 @@
     "released": "2026-09-02",
     "url": "https://openrouter.ai/meta/muse-spark-1.3"
    },
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 71.3,
-    "agentic": 25.8,
-    "variant": "Xhigh",
-    "slug": "meta/muse-spark-1.1-20260709"
-   }
+   "newer_checked": "2026-11-15"
   },
   "or:openai/gpt-5.4": {
    "id": "or:openai/gpt-5.4",
@@ -16486,13 +16462,6 @@
     "url": "https://openrouter.ai/openai/gpt-5.5"
    },
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 71.1,
-    "agentic": null,
-    "variant": "Xhigh",
-    "slug": "openai/gpt-5.4-20260305"
-   },
    "or_evals": {
     "gpqa_diamond": 90.2,
     "tau_bench_verified_airline": 75.0
@@ -16528,13 +16497,6 @@
     "url": "https://openrouter.ai/google/gemini-3.8-flash"
    },
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 70.1,
-    "agentic": 26,
-    "variant": "High",
-    "slug": "google/gemini-3.5-flash-20260519"
-   },
    "or_evals": {
     "gpqa_diamond": 92.3,
     "tau_bench_verified_airline": 72.7
@@ -16570,13 +16532,6 @@
     "url": "https://openrouter.ai/google/gemini-3.8-flash"
    },
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 69.2,
-    "agentic": 29,
-    "variant": "High",
-    "slug": "google/gemini-3.6-flash-20260721"
-   },
    "or_evals": {
     "gpqa_diamond": 92.8,
     "tau_bench_verified_airline": 75.3
@@ -16831,8 +16786,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 69.1,
-    "agentic": 41,
+    "coding": null,
+    "agentic": null,
     "variant": "Max",
     "slug": "deepseek/deepseek-v4-flash-20260731"
    },
@@ -17104,8 +17059,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 68.8,
-    "agentic": 38.4,
+    "coding": null,
+    "agentic": null,
     "variant": "Max",
     "slug": "z-ai/glm-5.2-20260616"
    },
@@ -17141,9 +17096,9 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 68.8,
-    "agentic": 8.2,
-    "variant": null,
+    "coding": null,
+    "agentic": null,
+    "variant": "High",
     "slug": "google/gemini-3.1-pro-preview-20260219"
    },
    "or_evals": {
@@ -17181,13 +17136,6 @@
     "url": "https://openrouter.ai/qwen/qwen3.8-max-0902"
    },
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 66,
-    "agentic": 22.5,
-    "variant": null,
-    "slug": "qwen/qwen3.7-max-20260520"
-   },
    "or_evals": {
     "gpqa_diamond": 90.9,
     "tau_bench_verified_airline": 72.0
@@ -17435,13 +17383,6 @@
    "quants_checked": "2026-11-15",
    "gated": false,
    "hf_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 65,
-    "agentic": 47.5,
-    "variant": "Max",
-    "slug": "deepseek/deepseek-v4-flash-vision-exp-20260821"
-   },
    "or_evals": {
     "gpqa_diamond": 88.0,
     "tau_bench_verified_airline": 74.8
@@ -17479,8 +17420,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 63,
-    "agentic": 31.8,
+    "coding": null,
+    "agentic": null,
     "variant": "Max",
     "slug": "anthropic/claude-4.6-sonnet-20260217"
    },
@@ -17738,9 +17679,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 61.8,
-    "agentic": 20.5,
-    "variant": "Reasoning",
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
     "slug": "moonshotai/kimi-k2.6-20260420"
    },
    "or_evals": {
@@ -17978,8 +17919,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 60.8,
-    "agentic": 21,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "moonshotai/kimi-k2.7-code-20260612"
    },
@@ -18209,9 +18150,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 60.2,
-    "agentic": 21.3,
-    "variant": "Reasoning",
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
     "slug": "xiaomi/mimo-v2.5-pro-20260422"
    },
    "or_evals": {
@@ -18230,14 +18171,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 59.5,
-    "agentic": null,
-    "variant": null,
-    "slug": "kwaipilot/kat-coder-pro-v2-20260327"
-   }
+   "newer_checked": "2026-11-15"
   },
   "aa:nex-agi/nex-n2-pro": {
    "id": "aa:nex-agi/nex-n2-pro",
@@ -18253,8 +18187,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 59.1,
-    "agentic": 23.7,
+    "coding": null,
+    "agentic": null,
     "variant": "Based on Qwen3.5-397B-A17B",
     "slug": "nex-agi/nex-n2-pro"
    }
@@ -18466,8 +18400,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 58.8,
-    "agentic": 24.1,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "tencent/hy3-preview-20260421"
    }
@@ -18681,8 +18615,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 57,
-    "agentic": 28.7,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "inclusionai/ling-3.0-flash-vl-20260910"
    },
@@ -18928,8 +18862,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 56.8,
-    "agentic": 15.8,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "xiaomi/mimo-v2.5-20260422"
    },
@@ -19187,9 +19121,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 56.2,
-    "agentic": 22.2,
-    "variant": "Max",
+    "coding": null,
+    "agentic": null,
+    "variant": "High",
     "slug": "deepseek/deepseek-v4-flash-20260423"
    },
    "or_evals": {
@@ -19224,8 +19158,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 56.1,
-    "agentic": 17.9,
+    "coding": null,
+    "agentic": null,
     "variant": "Xhigh",
     "slug": "openai/gpt-5.4-mini-20260317"
    },
@@ -19259,13 +19193,6 @@
    "score": 6.5,
    "newer": null,
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 56.1,
-    "agentic": 16,
-    "variant": "Xhigh",
-    "slug": "openai/gpt-5.4-nano-20260317"
-   },
    "or_evals": {
     "gpqa_diamond": 77.7,
     "tau_bench_verified_airline": 64.7
@@ -19296,13 +19223,6 @@
    "score": 6.5,
    "newer": null,
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 55.9,
-    "agentic": 17.5,
-    "variant": null,
-    "slug": "qwen/qwen3.7-plus-20260602"
-   },
    "or_evals": {
     "gpqa_diamond": 87.9,
     "tau_bench_verified_airline": 70.3
@@ -19564,9 +19484,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 55.8,
-    "agentic": 23.9,
-    "variant": "Reasoning",
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
     "slug": "z-ai/glm-5.1-20260406"
    },
    "or_evals": {
@@ -19588,8 +19508,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 55.6,
-    "agentic": 27.9,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "inclusionai/ling-3.0-flash-fin-20260827"
    },
@@ -19627,14 +19547,7 @@
     "released": "2026-06-03",
     "url": "https://openrouter.ai/qwen/qwen3.7-plus"
    },
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 54.5,
-    "agentic": null,
-    "variant": null,
-    "slug": "qwen/qwen3.6-plus-04-02"
-   }
+   "newer_checked": "2026-11-15"
   },
   "Qwen/Qwen3.6-27B": {
    "id": "Qwen/Qwen3.6-27B",
@@ -19885,9 +19798,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 53.7,
-    "agentic": 18.5,
-    "variant": "Reasoning",
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
     "slug": "qwen/qwen3.6-27b-20260422"
    },
    "or_evals": {
@@ -20158,8 +20071,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 52.6,
-    "agentic": 15.3,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "minimax/minimax-m2.7-20260318"
    },
@@ -20200,9 +20113,9 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 52.1,
-    "agentic": 15.8,
-    "variant": "Reasoning",
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
     "slug": "anthropic/claude-4.5-sonnet-20250929"
    },
    "or_evals": {
@@ -20234,14 +20147,7 @@
    "mentions": [],
    "score": 5.0,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 51.5,
-    "agentic": null,
-    "variant": null,
-    "slug": "x-ai/grok-build-0.1-20260520"
-   }
+   "newer_checked": "2026-11-15"
   },
   "inclusionAI/Ling-3.0-flash": {
    "id": "inclusionAI/Ling-3.0-flash",
@@ -20499,8 +20405,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 50.6,
-    "agentic": 19.3,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "inclusionai/ling-3.0-flash-20260723"
    },
@@ -20523,7 +20429,7 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 49.8,
+    "coding": null,
     "agentic": null,
     "variant": "Non-reasoning",
     "slug": "xiaomi/mimo-v2-flash-20251210"
@@ -20561,7 +20467,7 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 49.4,
+    "coding": null,
     "agentic": null,
     "variant": "High",
     "slug": "openai/gpt-5.1-20251113"
@@ -20829,9 +20735,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 48.2,
-    "agentic": 8.3,
-    "variant": "Reasoning",
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
     "slug": "qwen/qwen3.5-397b-a17b-20260216"
    },
    "or_evals": {
@@ -21088,9 +20994,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 46.8,
+    "coding": null,
     "agentic": null,
-    "variant": "Reasoning",
+    "variant": "Non-reasoning",
     "slug": "moonshotai/kimi-k2.5-0127"
    },
    "or_evals": {
@@ -21109,14 +21015,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 46.7,
-    "agentic": null,
-    "variant": "Mar' 25",
-    "slug": "google/gemini-2.5-pro-exp-03-25"
-   }
+   "newer_checked": "2026-11-15"
   },
   "zai-org/GLM-4.6": {
    "id": "zai-org/GLM-4.6",
@@ -21374,9 +21273,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 45.8,
+    "coding": null,
     "agentic": null,
-    "variant": "Reasoning",
+    "variant": "Non-reasoning",
     "slug": "z-ai/glm-4.6"
    },
    "or_evals": {
@@ -21635,9 +21534,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 45.7,
-    "agentic": 7.6,
-    "variant": "Reasoning",
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
     "slug": "qwen/qwen3.5-122b-a10b-20260224"
    },
    "or_evals": {
@@ -21833,8 +21732,8 @@
    ],
    "aa": {
     "intelligence": null,
-    "coding": 45.3,
-    "agentic": 14,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "meituan/longcat-2.0-20260720"
    }
@@ -22102,9 +22001,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 45.3,
+    "coding": null,
     "agentic": null,
-    "variant": "Reasoning",
+    "variant": "Non-reasoning",
     "slug": "z-ai/glm-4.7-20251222"
    },
    "or_evals": {
@@ -22363,7 +22262,7 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 44.2,
+    "coding": null,
     "agentic": null,
     "variant": "Reasoning",
     "slug": "deepseek/deepseek-v3.2-20251201"
@@ -22596,9 +22495,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 43.5,
-    "agentic": 6.8,
-    "variant": "Reasoning",
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
     "slug": "deepseek/deepseek-v3.1-terminus"
    },
    "or_evals": {
@@ -22620,8 +22519,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 42.8,
-    "agentic": 10.7,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "inclusionai/ring-2.6-1t-20260508"
    }
@@ -22655,14 +22554,7 @@
     "released": "2026-03-31",
     "url": "https://openrouter.ai/x-ai/grok-4.20"
    },
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 42.2,
-    "agentic": 15.5,
-    "variant": "High",
-    "slug": "x-ai/grok-4.3-20260430"
-   }
+   "newer_checked": "2026-11-15"
   },
   "Qwen/Qwen3.6-35B-A3B": {
    "id": "Qwen/Qwen3.6-35B-A3B",
@@ -23126,9 +23018,9 @@
    },
    "aa": {
     "intelligence": null,
-    "coding": 41.9,
-    "agentic": 13.1,
-    "variant": "Reasoning",
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
     "slug": "qwen/qwen3.6-35b-a3b-20260415"
    },
    "or_evals": {
@@ -23147,14 +23039,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 39.7,
-    "agentic": null,
-    "variant": null,
-    "slug": "openai/o1-2024-12-17"
-   }
+   "newer_checked": "2026-11-15"
   },
   "stepfun-ai/Step-3.7-Flash": {
    "id": "stepfun-ai/Step-3.7-Flash",
@@ -23393,7 +23278,7 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 39.6,
+    "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "stepfun/step-3.7-flash-20260528"
@@ -23885,9 +23770,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 39.3,
-    "agentic": 2.9,
-    "variant": "Reasoning",
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
     "slug": "google/gemma-4-26b-a4b-it-20260403"
    },
    "or_evals": {
@@ -23927,10 +23812,10 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 37.8,
+    "coding": null,
     "agentic": null,
-    "variant": "High",
-    "slug": "openai/gpt-5-2025-08-07"
+    "variant": "ChatGPT",
+    "slug": "openai/gpt-5-chat-2025-08-07"
    },
    "or_evals": {
     "gpqa_diamond": 85.7,
@@ -24117,8 +24002,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 37.7,
-    "agentic": 1.7,
+    "coding": null,
+    "agentic": null,
     "variant": "Reasoning",
     "slug": "nvidia/nemotron-3-super-120b-a12b-20230311"
    }
@@ -24135,13 +24020,6 @@
    "score": 2.0,
    "newer": null,
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 37.6,
-    "agentic": null,
-    "variant": "Reasoning",
-    "slug": "anthropic/claude-4-sonnet-20250522"
-   },
    "or_evals": {
     "gpqa_diamond": 78.6,
     "tau_bench_verified_airline": 70.0
@@ -24404,7 +24282,7 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 37,
+    "coding": null,
     "agentic": null,
     "variant": "Non-reasoning",
     "slug": "qwen/qwen3.5-35b-a3b-20260224"
@@ -24679,8 +24557,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 36.2,
-    "agentic": 0.9,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "qwen/qwen3-coder-next-2025-02-03"
    },
@@ -24721,8 +24599,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 33.3,
-    "agentic": 1.6,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "google/gemini-2.5-pro"
    },
@@ -24959,8 +24837,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 31.3,
-    "agentic": 2.3,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "mistralai/devstral-2512"
    }
@@ -24976,14 +24854,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 31.1,
-    "agentic": 1.6,
-    "variant": null,
-    "slug": "inception/mercury-2-20260304"
-   }
+   "newer_checked": "2026-11-15"
   },
   "aa:anthropic/claude-3.5-sonnet": {
    "id": "aa:anthropic/claude-3.5-sonnet",
@@ -24996,14 +24867,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 30.2,
-    "agentic": null,
-    "variant": "Oct '24",
-    "slug": "anthropic/claude-3.5-sonnet"
-   }
+   "newer_checked": "2026-11-15"
   },
   "aa:mistralai/devstral-small-2507": {
    "id": "aa:mistralai/devstral-small-2507",
@@ -25019,9 +24883,9 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 29.3,
-    "agentic": 2,
-    "variant": null,
+    "coding": null,
+    "agentic": null,
+    "variant": "Jul '25",
     "slug": "mistralai/devstral-small-2507"
    }
   },
@@ -25499,9 +25363,9 @@
    },
    "aa": {
     "intelligence": null,
-    "coding": 28.7,
-    "agentic": 1.2,
-    "variant": "Reasoning",
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
     "slug": "qwen/qwen3.5-9b-20260310"
    },
    "or_evals": {
@@ -25725,8 +25589,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 26.5,
-    "agentic": 4.4,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "inclusionai/ling-3.0-tiny-20260806"
    }
@@ -25745,8 +25609,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 26.3,
-    "agentic": 1.2,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "mistralai/mistral-small"
    }
@@ -25762,14 +25626,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 26,
-    "agentic": null,
-    "variant": "June '24",
-    "slug": "anthropic/claude-3.5-sonnet-20240620"
-   }
+   "newer_checked": "2026-11-15"
   },
   "aa:arcee-ai/trinity-large-thinking": {
    "id": "aa:arcee-ai/trinity-large-thinking",
@@ -25785,8 +25642,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 25.8,
-    "agentic": 1,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "arcee-ai/trinity-large-thinking"
    }
@@ -25805,7 +25662,7 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 25.3,
+    "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "inclusionai/ling-2.6-flash-20260421"
@@ -25822,14 +25679,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 24.6,
-    "agentic": 1.1,
-    "variant": "Jan '25",
-    "slug": "deepseek/deepseek-r1"
-   }
+   "newer_checked": "2026-11-15"
   },
   "or:openai/gpt-4o-2024-05-13": {
    "id": "or:openai/gpt-4o-2024-05-13",
@@ -25855,14 +25705,7 @@
    "mentions": [],
    "score": 6.5,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 24.2,
-    "agentic": null,
-    "variant": "May '24",
-    "slug": "openai/gpt-4o-2024-05-13"
-   }
+   "newer_checked": "2026-11-15"
   },
   "aa:google/gemini-pro-1.5": {
    "id": "aa:google/gemini-pro-1.5",
@@ -25875,14 +25718,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 23.6,
-    "agentic": null,
-    "variant": "Sep '24",
-    "slug": "google/gemini-pro-1.5"
-   }
+   "newer_checked": "2026-11-15"
   },
   "deepseek-ai/DeepSeek-V3": {
    "id": "deepseek-ai/DeepSeek-V3",
@@ -26123,13 +25959,6 @@
    "quants_checked": "2026-11-15",
    "gated": false,
    "hf_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 23,
-    "agentic": 0.8,
-    "variant": "Dec '24",
-    "slug": "deepseek/deepseek-chat"
-   },
    "or_evals": {
     "gpqa_diamond": 62.1,
     "tau_bench_verified_airline": 39.8
@@ -26159,14 +25988,7 @@
    "mentions": [],
    "score": 5.0,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 23,
-    "agentic": null,
-    "variant": "High",
-    "slug": "amazon/nova-2-lite-v1"
-   }
+   "newer_checked": "2026-11-15"
   },
   "Qwen/Qwen3-235B-A22B-Thinking-2507": {
    "id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
@@ -26426,8 +26248,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 22.1,
-    "agentic": 1.3,
+    "coding": null,
+    "agentic": null,
     "variant": "Reasoning",
     "slug": "qwen/qwen3-235b-a22b-thinking-2507"
    },
@@ -26460,14 +26282,7 @@
    "mentions": [],
    "score": 6.5,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 21.5,
-    "agentic": null,
-    "variant": null,
-    "slug": "openai/gpt-4-turbo"
-   }
+   "newer_checked": "2026-11-15"
   },
   "deepseek-ai/DeepSeek-V3-0324": {
    "id": "deepseek-ai/DeepSeek-V3-0324",
@@ -26695,13 +26510,6 @@
    "quants_checked": "2026-11-15",
    "gated": false,
    "hf_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 21.2,
-    "agentic": 0.8,
-    "variant": null,
-    "slug": "deepseek/deepseek-chat-v3-0324"
-   },
    "or_evals": {
     "gpqa_diamond": 54.6,
     "tau_bench_verified_airline": 45.0
@@ -26930,7 +26738,7 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 21,
+    "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "moonshotai/kimi-k2-thinking-20251106"
@@ -27153,8 +26961,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 20.7,
-    "agentic": 1.2,
+    "coding": null,
+    "agentic": null,
     "variant": "High",
     "slug": "openai/gpt-oss-20b"
    },
@@ -27195,8 +27003,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 20.5,
-    "agentic": 1.9,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "mistralai/mistral-medium-3.1"
    }
@@ -27231,13 +27039,6 @@
     "url": "https://openrouter.ai/openai/gpt-5.4-mini"
    },
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 20.2,
-    "agentic": null,
-    "variant": null,
-    "slug": "openai/gpt-4.1-mini-2025-04-14"
-   },
    "or_evals": {
     "gpqa_diamond": 65.2,
     "tau_bench_verified_airline": 44.3
@@ -27411,7 +27212,7 @@
    ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-19",
    "hf_checked": "2026-11-15",
    "checks": [
     "Parametri dedotti dal nome del repository (non dai metadati dei pesi).",
@@ -27419,8 +27220,8 @@
    ],
    "aa": {
     "intelligence": null,
-    "coding": 20.1,
-    "agentic": 1,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "mistralai/mistral-large-2512"
    }
@@ -27436,14 +27237,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 19.5,
-    "agentic": null,
-    "variant": null,
-    "slug": "anthropic/claude-3-opus"
-   }
+   "newer_checked": "2026-11-15"
   },
   "aa:qwen/qwen3-next-80b-a3b-thinking-2509": {
    "id": "aa:qwen/qwen3-next-80b-a3b-thinking-2509",
@@ -27459,7 +27253,7 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 17.4,
+    "coding": null,
     "agentic": null,
     "variant": "Reasoning",
     "slug": "qwen/qwen3-next-80b-a3b-thinking-2509"
@@ -27476,14 +27270,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 16.3,
-    "agentic": 0.9,
-    "variant": "High",
-    "slug": "openai/o3-mini-high-2025-01-31"
-   }
+   "newer_checked": "2026-11-15"
   },
   "meta-llama/Llama-4-Maverick-17B-128E-Instruct": {
    "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
@@ -27623,8 +27410,8 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 526,
-    "downloads": 13456,
+    "likes": 527,
+    "downloads": 13897,
     "trending": null
    },
    "score": 9.95,
@@ -27635,21 +27422,21 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 29579
+     "downloads": 29005
     },
     {
      "id": "unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF-UD",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1634
+     "downloads": 1625
     },
     {
      "id": "DevQuasar-12/meta-llama.Llama-4-Maverick-17B-128E-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 765
+     "downloads": 781
     },
     {
      "id": "RedHatAI/Llama-4-Maverick-17B-128E-Instruct-NVFP4",
@@ -27663,7 +27450,7 @@
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 250
+     "downloads": 248
     },
     {
      "id": "RedHatAI/Llama-4-Maverick-17B-128E-Instruct-FP8",
@@ -27691,20 +27478,20 @@
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 16302
+     "downloads": 16311
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-19",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
    "aa": {
     "intelligence": null,
-    "coding": 16.3,
-    "agentic": 0.6,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "meta-llama/llama-4-maverick-17b-128e-instruct"
    },
@@ -27727,8 +27514,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 16.2,
-    "agentic": 1.4,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "upstage/solar-pro-3"
    }
@@ -27744,14 +27531,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 15.9,
-    "agentic": null,
-    "variant": null,
-    "slug": "anthropic/claude-3-5-haiku"
-   }
+   "newer_checked": "2026-11-15"
   },
   "or:openai/gpt-5-mini": {
    "id": "or:openai/gpt-5-mini",
@@ -27785,8 +27565,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 15.6,
-    "agentic": 6.8,
+    "coding": null,
+    "agentic": null,
     "variant": "High",
     "slug": "openai/gpt-5-mini-2025-08-07"
    },
@@ -28044,13 +27824,6 @@
    "quants_checked": "2026-11-15",
    "gated": false,
    "hf_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 15.3,
-    "agentic": 0.9,
-    "variant": "Reasoning",
-    "slug": "qwen/qwen3-32b-04-28"
-   },
    "or_evals": {
     "gpqa_diamond": 60.9,
     "tau_bench_verified_airline": 47.0
@@ -28285,8 +28058,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 14.4,
-    "agentic": 1.1,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "mistralai/ministral-14b-2512"
    }
@@ -28543,9 +28316,9 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 14.4,
-    "agentic": 1,
-    "variant": "Reasoning",
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
     "slug": "nvidia/nemotron-3-nano-30b-a3b"
    },
    "or_evals": {
@@ -28564,14 +28337,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 14,
-    "agentic": null,
-    "variant": null,
-    "slug": "anthropic/claude-2.1"
-   }
+   "newer_checked": "2026-11-15"
   },
   "Qwen/Qwen3-14B": {
    "id": "Qwen/Qwen3-14B",
@@ -28822,13 +28588,6 @@
    "quants_checked": "2026-11-15",
    "gated": false,
    "hf_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 13.8,
-    "agentic": 0.9,
-    "variant": "Reasoning",
-    "slug": "qwen/qwen3-14b-04-28"
-   },
    "or_evals": {
     "gpqa_diamond": 59.2,
     "tau_bench_verified_airline": 44.0
@@ -29079,7 +28838,7 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 13.8,
+    "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning-20260428"
@@ -29114,14 +28873,7 @@
     "released": "2026-04-24",
     "url": "https://openrouter.ai/openai/gpt-5.5"
    },
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 13.1,
-    "agentic": null,
-    "variant": null,
-    "slug": "openai/gpt-4"
-   }
+   "newer_checked": "2026-11-15"
   },
   "aa:anthropic/claude-2": {
    "id": "aa:anthropic/claude-2",
@@ -29134,14 +28886,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 12.9,
-    "agentic": null,
-    "variant": null,
-    "slug": "anthropic/claude-2"
-   }
+   "newer_checked": "2026-11-15"
   },
   "aa:qwen/qwen3-30b-a3b-thinking-2507": {
    "id": "aa:qwen/qwen3-30b-a3b-thinking-2507",
@@ -29157,8 +28902,8 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 12.1,
-    "agentic": 0.9,
+    "coding": null,
+    "agentic": null,
     "variant": "Reasoning",
     "slug": "qwen/qwen3-30b-a3b-thinking-2507"
    }
@@ -29308,8 +29053,8 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 3212,
-    "downloads": 344082,
+    "likes": 3215,
+    "downloads": 343595,
     "trending": null
    },
    "score": 11.66,
@@ -29320,75 +29065,75 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 217280
+     "downloads": 218784
     },
     {
      "id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 46595
+     "downloads": 46812
     },
     {
      "id": "MaziyarPanahi/Llama-3.3-70B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 39256
+     "downloads": 39206
     },
     {
      "id": "RedHatAI/Llama-3.3-70B-Instruct-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 51090
+     "downloads": 48316
     },
     {
      "id": "amd/Llama-3.3-70B-Instruct-FP8-KV",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 6083
+     "downloads": 6050
     },
     {
      "id": "amd/Llama-3.3-70B-Instruct-MXFP4-Preview",
      "format": "MXFP4",
      "nvfp4": false,
      "official": false,
-     "downloads": 958
+     "downloads": 974
     },
     {
      "id": "kosbu/Llama-3.3-70B-Instruct-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 85566
+     "downloads": 85720
     },
     {
      "id": "mlx-community/Llama-3.3-70B-Instruct-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 6298
+     "downloads": 6265
     },
     {
      "id": "unsloth/Llama-3.3-70B-Instruct-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 8486
+     "downloads": 8448
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-19",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
    "aa": {
     "intelligence": null,
-    "coding": 11.9,
+    "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "meta-llama/llama-3.3-70b-instruct"
@@ -29423,13 +29168,6 @@
    "score": 6.5,
    "newer": null,
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 11.4,
-    "agentic": null,
-    "variant": null,
-    "slug": "openai/gpt-4o-mini"
-   },
    "or_evals": {
     "gpqa_diamond": 43.6,
     "tau_bench_verified_airline": 30.7
@@ -29465,13 +29203,6 @@
     "url": "https://openrouter.ai/openai/gpt-5.4-nano"
    },
    "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 11.1,
-    "agentic": null,
-    "variant": null,
-    "slug": "openai/gpt-4.1-nano-2025-04-14"
-   },
    "or_evals": {
     "gpqa_diamond": 49.1,
     "tau_bench_verified_airline": 11.0
@@ -29488,14 +29219,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 10.7,
-    "agentic": null,
-    "variant": null,
-    "slug": "openai/gpt-3.5-turbo"
-   }
+   "newer_checked": "2026-11-15"
   },
   "google/gemma-3-27b-it": {
    "id": "google/gemma-3-27b-it",
@@ -29645,8 +29369,8 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 2069,
-    "downloads": 299183,
+    "likes": 2070,
+    "downloads": 290974,
     "trending": null
    },
    "score": 18.08,
@@ -29657,49 +29381,49 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": true,
-     "downloads": 217
+     "downloads": 210
     },
     {
      "id": "unsloth/gemma-3-27b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 52156
+     "downloads": 52275
     },
     {
      "id": "MaziyarPanahi/gemma-3-27b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 38366
+     "downloads": 38406
     },
     {
      "id": "RedHatAI/gemma-3-27b-it-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 63472
+     "downloads": 63475
     },
     {
      "id": "leon-se/gemma-3-27b-it-FP8-Dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 2660
+     "downloads": 2497
     },
     {
      "id": "gaunernst/gemma-3-27b-it-int4-awq",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 842302
+     "downloads": 878640
     },
     {
      "id": "ISTA-DASLab/gemma-3-27b-it-GPTQ-4b-128g",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 15985
+     "downloads": 15915
     },
     {
      "id": "Outlier-Ai/gemma-3-27b-it-MLX-4bit",
@@ -29713,12 +29437,12 @@
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 10565
+     "downloads": 10437
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-17",
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-19",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -29744,8 +29468,8 @@
    },
    "aa": {
     "intelligence": null,
-    "coding": 10.1,
-    "agentic": 0.1,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "google/gemma-3-27b-it"
    }
@@ -29978,8 +29702,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 9.7,
-    "agentic": 0.6,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "mistralai/ministral-8b-2512"
    }
@@ -29995,14 +29719,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 9,
-    "agentic": 0.8,
-    "variant": "Reasoning",
-    "slug": "qwen/qwen3-8b-04-28"
-   }
+   "newer_checked": "2026-11-15"
   },
   "meta-llama/Llama-4-Scout-17B-16E-Instruct": {
    "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
@@ -30150,7 +29867,7 @@
    "weights_available": true,
    "signals": {
     "likes": 1392,
-    "downloads": 109745,
+    "downloads": 109835,
     "trending": null
    },
    "score": 11.33,
@@ -30161,83 +29878,83 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 37224
+     "downloads": 37060
     },
     {
      "id": "bartowski/meta-llama_Llama-4-Scout-17B-16E-Instruct-old-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 5000
+     "downloads": 4963
     },
     {
      "id": "ggml-org/Llama-4-Scout-17B-16E-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1974
+     "downloads": 1988
     },
     {
      "id": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 1092
+     "downloads": 1097
     },
     {
      "id": "nvidia/Llama-4-Scout-17B-16E-Instruct-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 403
+     "downloads": 405
     },
     {
      "id": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 4419
+     "downloads": 4409
     },
     {
      "id": "nvidia/Llama-4-Scout-17B-16E-Instruct-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 4064
+     "downloads": 4209
     },
     {
      "id": "kishizaki-sci/Llama-4-Scout-17B-16E-Instruct-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 55
+     "downloads": 52
     },
     {
      "id": "lmstudio-community/Llama-4-Scout-17B-16E-MLX-text-8bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 1808
+     "downloads": 1820
     },
     {
      "id": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-quantized.w4a16",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 8849
+     "downloads": 8112
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-19",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
    "aa": {
     "intelligence": null,
-    "coding": 8.2,
-    "agentic": 0.5,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "meta-llama/llama-4-scout-17b-16e-instruct"
    }
@@ -30253,14 +29970,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-15",
-   "aa": {
-    "intelligence": null,
-    "coding": 7.8,
-    "agentic": null,
-    "variant": null,
-    "slug": "anthropic/claude-instant-1"
-   }
+   "newer_checked": "2026-11-15"
   },
   "aa:liquid/lfm-2.5-2.6b-20260811": {
    "id": "aa:liquid/lfm-2.5-2.6b-20260811",
@@ -30276,7 +29986,7 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 7.7,
+    "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "liquid/lfm-2.5-2.6b-20260811"
@@ -30421,7 +30131,7 @@
    "weights_available": true,
    "signals": {
     "likes": 924,
-    "downloads": 408955,
+    "downloads": 408361,
     "trending": null
    },
    "score": 12.17,
@@ -30432,21 +30142,21 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": true,
-     "downloads": 1516
+     "downloads": 1520
     },
     {
      "id": "unsloth/gemma-3-12b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 86188
+     "downloads": 88162
     },
     {
      "id": "MaziyarPanahi/gemma-3-12b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 39563
+     "downloads": 39603
     },
     {
      "id": "NeoChen1024/gemma-3-12b-it-NVFP4",
@@ -30460,35 +30170,35 @@
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 2785
+     "downloads": 2752
     },
     {
      "id": "leon-se/gemma-3-12b-it-FP8-Dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 361
+     "downloads": 362
     },
     {
      "id": "gaunernst/gemma-3-12b-it-int4-awq",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 123467
+     "downloads": 122990
     },
     {
      "id": "ISTA-DASLab/gemma-3-12b-it-GPTQ-4b-128g",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 839
+     "downloads": 833
     },
     {
      "id": "abhishekchohan/gemma-3-12b-it-quantized-W4A16",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 114609
+     "downloads": 114615
     }
    ],
    "newer": {
@@ -30498,15 +30208,15 @@
     "url": "https://huggingface.co/google/gemma-4-12B"
    },
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-19",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
    "aa": {
     "intelligence": null,
-    "coding": 5.8,
-    "agentic": 0.1,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "google/gemma-3-12b-it"
    },
@@ -30669,7 +30379,7 @@
    ],
    "aa": {
     "intelligence": null,
-    "coding": 5.4,
+    "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "meta-llama/llama-3.1-8b-instruct"
@@ -30907,8 +30617,8 @@
    "hf_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 4.8,
-    "agentic": 0.8,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "mistralai/ministral-3b-2512"
    }
@@ -30927,7 +30637,7 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 3.8,
+    "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "microsoft/phi-4-mini-instruct"
@@ -30947,7 +30657,7 @@
    "newer_checked": "2026-11-15",
    "aa": {
     "intelligence": null,
-    "coding": 3.2,
+    "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "google/gemma-3n-e4b-it"
@@ -31091,8 +30801,8 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 1682,
-    "downloads": 991441,
+    "likes": 1685,
+    "downloads": 984775,
     "trending": null
    },
    "score": 12.4,
@@ -31103,28 +30813,28 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": true,
-     "downloads": 5763
+     "downloads": 5575
     },
     {
      "id": "unsloth/gemma-3-4b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 177987
+     "downloads": 180360
     },
     {
      "id": "ggml-org/gemma-3-4b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 112709
+     "downloads": 116865
     },
     {
      "id": "RedHatAI/gemma-3-4b-it-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 844
+     "downloads": 791
     },
     {
      "id": "unsloth/gemma-3-4b-it-FP8-Dynamic",
@@ -31152,19 +30862,19 @@
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 19071
+     "downloads": 19094
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-19",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
    "aa": {
     "intelligence": null,
-    "coding": 2.7,
+    "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "google/gemma-3-4b-it"
@@ -31924,8 +31634,8 @@
    "active_source": "dichiarato",
    "aa": {
     "intelligence": 28.6,
-    "coding": 73.1,
-    "agentic": 53.6,
+    "coding": null,
+    "agentic": null,
     "variant": null,
     "slug": "qwen/qwen3.8-flash-20260826"
    },
@@ -36859,11 +36569,11 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 3038,
-    "downloads": 823833,
+    "likes": 3045,
+    "downloads": 820169,
     "trending": null
    },
-   "score": 12.63,
+   "score": 12.64,
    "gated": true,
    "quants": [
     {
@@ -36871,54 +36581,54 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 212696
+     "downloads": 205655
     },
     {
      "id": "bartowski/Llama-3.2-3B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 183713
+     "downloads": 196640
     },
     {
      "id": "lmstudio-community/Llama-3.2-3B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 49709
+     "downloads": 47265
     },
     {
      "id": "RedHatAI/Llama-3.2-3B-Instruct-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 69625
+     "downloads": 51419
     },
     {
      "id": "RedHatAI/Llama-3.2-3B-Instruct-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 1810
+     "downloads": 1822
     },
     {
      "id": "fbaldassarri/meta-llama_Llama-3.2-3B-Instruct-auto_round-int4-gs128-asym",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 365
+     "downloads": 366
     },
     {
      "id": "unsloth/Llama-3.2-3B-Instruct-unsloth-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 32954
+     "downloads": 31938
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-19",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
@@ -37242,8 +36952,8 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 9017,
-    "downloads": 4149614,
+    "likes": 9035,
+    "downloads": 4113897,
     "trending": null
    },
    "links": {
@@ -37364,21 +37074,21 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 280250
+     "downloads": 273301
     },
     {
      "id": "lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 54043
+     "downloads": 52865
     },
     {
      "id": "MaziyarPanahi/Meta-Llama-3.1-8B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 42141
+     "downloads": 42237
     },
     {
      "id": "GaleneAI/llama-3.1-nemoguard-8b-content-safety-merged-NVFP4",
@@ -37399,14 +37109,14 @@
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 69761
+     "downloads": 70074
     },
     {
      "id": "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 13221
+     "downloads": 13530
     },
     {
      "id": "cyankiwi/Llama-3.1-8B-Instruct-AWQ-INT4",
@@ -37420,21 +37130,21 @@
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 15590
+     "downloads": 15398
     },
     {
      "id": "mlx-community/Llama-3.1-8B-Instruct-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 4680
+     "downloads": 4630
     },
     {
      "id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 81898
+     "downloads": 82636
     }
    ],
    "first_seen": "2026-11-15",
@@ -37443,7 +37153,7 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "updated": "2026-11-15",
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-19",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
@@ -37466,9 +37176,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 268,
+    "likes": 304,
     "downloads": 4430,
-    "trending": 193,
+    "trending": 219,
     "trend_rank": 86
    },
    "links": {
@@ -37478,7 +37188,7 @@
    "quants": [],
    "first_seen": "2026-11-15",
    "mentions": [],
-   "score": 5.19,
+   "score": 5.24,
    "newer": null,
    "newer_checked": "2026-11-15",
    "deep": {
@@ -38253,9 +37963,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 243,
+    "likes": 284,
     "downloads": 1226,
-    "trending": 175,
+    "trending": 199,
     "watched_org": true
    },
    "links": {
@@ -38270,7 +37980,7 @@
    "checks": [
     "Numero di parametri non determinato: niente stima della VRAM."
    ],
-   "score": 6.65,
+   "score": 6.71,
    "newer": null,
    "newer_checked": "2026-11-15",
    "deep": {
@@ -39366,9 +39076,9 @@
    "arch": null,
    "weights_available": false,
    "signals": {
-    "likes": 74,
+    "likes": 97,
     "downloads": 0,
-    "trending": 64,
+    "trending": 33.5,
     "trend_rank": 93
    },
    "links": {
@@ -39379,7 +39089,7 @@
    "first_seen": "2026-11-16",
    "mentions": [],
    "hf_checked": "2026-11-16",
-   "score": 2.69,
+   "score": 2.79,
    "newer": null,
    "newer_checked": "2026-11-16",
    "updated": "2026-11-16"
@@ -39802,9 +39512,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 126,
+    "likes": 150,
     "downloads": 678,
-    "trending": 105,
+    "trending": 118,
     "trend_rank": 25
    },
    "links": {
@@ -39946,7 +39656,7 @@
    "first_seen": "2026-11-17",
    "mentions": [],
    "hf_checked": "2026-11-17",
-   "score": 4.89,
+   "score": 4.96,
    "newer": null,
    "newer_checked": "2026-11-17",
    "updated": "2026-11-17"
@@ -39988,9 +39698,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 100,
+    "likes": 116,
     "downloads": 277,
-    "trending": 82,
+    "trending": 89,
     "trend_rank": 41
    },
    "links": {
@@ -40110,7 +39820,7 @@
    "first_seen": "2026-11-17",
    "mentions": [],
    "hf_checked": "2026-11-17",
-   "score": 7.8,
+   "score": 7.86,
    "newer": null,
    "newer_checked": "2026-11-17",
    "updated": "2026-11-17"
@@ -40280,9 +39990,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 83,
+    "likes": 113,
     "downloads": 42,
-    "trending": 72,
+    "trending": 93,
     "trend_rank": 75
    },
    "links": {
@@ -40405,7 +40115,7 @@
    "checks": [
     "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
    ],
-   "score": 6.73,
+   "score": 6.85,
    "newer": null,
    "newer_checked": "2026-11-17",
    "updated": "2026-11-17"
@@ -40486,9 +40196,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 53,
+    "likes": 54,
     "downloads": 599,
-    "trending": 43,
+    "trending": 33,
     "trend_rank": 85
    },
    "links": {
@@ -40609,7 +40319,7 @@
    "first_seen": "2026-11-17",
    "mentions": [],
    "hf_checked": "2026-11-17",
-   "score": 7.56,
+   "score": 7.57,
    "newer": null,
    "newer_checked": "2026-11-17",
    "updated": "2026-11-17"
@@ -43321,8 +43031,8 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 577,
-    "downloads": 878328,
+    "likes": 582,
+    "downloads": 875583,
     "trending": null
    },
    "links": {
@@ -43444,47 +43154,55 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 61346
+     "downloads": 61157
     },
     {
      "id": "IsValorum/Qwen3.8-27B-EfficientThink-VAL-APEX-I-MiniPlus-V3-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 5540
+     "downloads": 5504
     },
     {
      "id": "IsValorum/Qwen3.8-27B-EfficientThink-VAL-APEX-I-NanoPlus-V3-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 3970
+     "downloads": 3978
     },
     {
      "id": "Atlas3D/Qwen3.8-27B-Coder390-recal-NVFP4-NInfer",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 24
+     "downloads": 26
     },
     {
      "id": "tc3oliver/Qwen3.8-27B-Coder390-oQ4e-MTP-Text",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 1795
+     "downloads": 1674
     },
     {
      "id": "XyX824/Qwen3.8-27B-Coder390-EfficientThink-Opus5.5-GPT6Astra-Grok4.7-DSV4Pro-K3-SFT-RLOO-MTP-DFlash2-M",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 415
+     "downloads": 431
     }
    ],
-   "quants_checked": "2026-11-17",
+   "quants_checked": "2026-11-19",
    "first_seen": "2026-11-17",
    "mentions": [
+    {
+     "item": "9491587c1875",
+     "rel": 7,
+     "date": "2026-11-19",
+     "title": "Gemini 4 Neon visto come concorrente di Opus 5.5",
+     "url": "https://micjm.com/blog/gemini-4-neon-looks-like-a-top-model/",
+     "source": "Hacker News"
+    },
     {
      "item": "660f46fff0b6",
      "rel": 7,
@@ -43501,7 +43219,7 @@
    ],
    "score": 13.09,
    "newer": null,
-   "newer_checked": "2026-11-17",
+   "newer_checked": "2026-11-19",
    "deep": {
     "tldr": "Qwen3.8-27B-Coder390-EfficientThink è un fine-tune open-weight (Apache-2.0, 27B) del Qwen3.8-27B ufficiale, post-addestrato con SFT e RLOO per ridurre il problema del modello che continua a ragionare senza fermarsi fino al limite di contesto. Il testo dichiara cinque tier safetensors (BF16, FP8, NVFP4, NInfer, INT4/INT8) e varianti GGUF, con scores pari o superiori all'originale su GPQA, MMLU e LiveCodeBench, adatto a chi vuole un modello da 27B per ragionamento e coding eseguibile in locale.",
     "features": [
@@ -44852,13 +44570,6 @@
      "source": "OpenAI News"
     }
    ],
-   "aa": {
-    "intelligence": 62.1,
-    "coding": null,
-    "agentic": null,
-    "variant": "Max",
-    "slug": "openai/gpt-6.2-astra-20261117"
-   },
    "score": 13.7,
    "newer": null,
    "newer_checked": "2026-11-18",
@@ -44903,7 +44614,14 @@
     "date": "2026-11-18",
     "by": "anthropic/claude-haiku-5.5"
    },
-   "updated": "2026-11-18"
+   "updated": "2026-11-18",
+   "aa": {
+    "intelligence": 62.1,
+    "coding": null,
+    "agentic": null,
+    "variant": "Max",
+    "slug": "openai/gpt-6.2-astra-20261117"
+   }
   },
   "or:openai/gpt-6.2-sol-pro": {
    "id": "or:openai/gpt-6.2-sol-pro",
@@ -44988,13 +44706,6 @@
      "source": "OpenAI News"
     }
    ],
-   "aa": {
-    "intelligence": 57.3,
-    "coding": null,
-    "agentic": null,
-    "variant": "Max",
-    "slug": "openai/gpt-6.2-sol-20261117"
-   },
    "score": 13.7,
    "newer": null,
    "newer_checked": "2026-11-18",
@@ -45018,7 +44729,14 @@
     "date": "2026-11-18",
     "by": "anthropic/claude-haiku-5.5"
    },
-   "updated": "2026-11-18"
+   "updated": "2026-11-18",
+   "aa": {
+    "intelligence": 57.3,
+    "coding": null,
+    "agentic": null,
+    "variant": "Max",
+    "slug": "openai/gpt-6.2-sol-20261117"
+   }
   },
   "tencent/Hy4-flash": {
    "id": "tencent/Hy4-flash",
@@ -45071,9 +44789,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 173,
+    "likes": 273,
     "downloads": 159,
-    "trending": 156,
+    "trending": 245,
     "trend_rank": 13,
     "watched_org": true
    },
@@ -45233,9 +44951,9 @@
    "quants_checked": "2026-11-18",
    "hf_checked": "2026-11-18",
    "checks": [
-    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+    "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
    ],
-   "score": 8.52,
+   "score": 8.69,
    "newer": null,
    "newer_checked": "2026-11-18",
    "deep": {
@@ -45348,9 +45066,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 303,
+    "likes": 350,
     "downloads": 964,
-    "trending": 132.5,
+    "trending": 149.5,
     "trend_rank": 15
    },
    "links": {
@@ -45530,7 +45248,7 @@
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
-   "score": 8.23,
+   "score": 8.29,
    "newer": null,
    "newer_checked": "2026-11-18",
    "updated": "2026-11-18"
@@ -45647,7 +45365,7 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 14,
+    "likes": 21,
     "downloads": 129,
     "trending": null,
     "watched_org": true
@@ -45777,9 +45495,9 @@
    "mentions": [],
    "hf_checked": "2026-11-18",
    "checks": [
-    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+    "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
    ],
-   "score": 6.56,
+   "score": 6.71,
    "newer": null,
    "newer_checked": "2026-11-18",
    "deep": {
@@ -46029,16 +45747,16 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "upstage/solar-mini4-20260922"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "moonshotai/Kimi-K2-Instruct": {
    "id": "moonshotai/Kimi-K2-Instruct",
@@ -46063,13 +45781,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": "High",
-    "slug": "moonshotai/kimi-k2"
-   },
    "params_b": 1026.41,
    "params_source": "safetensors",
    "active_b": 32.9,
@@ -46272,7 +45983,14 @@
     "released": "2026-06-13",
     "url": "https://huggingface.co/moonshotai/Kimi-K3"
    },
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": "High",
+    "slug": "moonshotai/kimi-k2"
+   }
   },
   "aa:allenai/olmo-3.1-32b-think-20251215": {
    "id": "aa:allenai/olmo-3.1-32b-think-20251215",
@@ -46283,16 +46001,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "allenai/olmo-3.1-32b-think-20251215"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:allenai/olmo-2-0325-32b-instruct": {
    "id": "aa:allenai/olmo-2-0325-32b-instruct",
@@ -46303,16 +46021,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "allenai/olmo-2-0325-32b-instruct"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:allenai/olmo-3-32b-think-20251121": {
    "id": "aa:allenai/olmo-3-32b-think-20251121",
@@ -46323,16 +46041,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "allenai/olmo-3-32b-think-20251121"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:allenai/olmo-3-7b-think-20251121": {
    "id": "aa:allenai/olmo-3-7b-think-20251121",
@@ -46343,16 +46061,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "allenai/olmo-3-7b-think-20251121"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:allenai/olmo-7b-instruct": {
    "id": "aa:allenai/olmo-7b-instruct",
@@ -46363,16 +46081,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "allenai/olmo-7b-instruct"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:prime-intellect/intellect-3-20251126": {
    "id": "aa:prime-intellect/intellect-3-20251126",
@@ -46383,16 +46101,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Based on GLM-4.5-Air",
     "slug": "prime-intellect/intellect-3-20251126"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:allenai/molmo-2-8b-20260109": {
    "id": "aa:allenai/molmo-2-8b-20260109",
@@ -46403,16 +46121,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "allenai/molmo-2-8b-20260109"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:nvidia/nemotron-nano-12b-v2-vl": {
    "id": "aa:nvidia/nemotron-nano-12b-v2-vl",
@@ -46423,16 +46141,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Non-reasoning",
     "slug": "nvidia/nemotron-nano-12b-v2-vl"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:nvidia/nemotron-nano-9b-v2": {
    "id": "aa:nvidia/nemotron-nano-9b-v2",
@@ -46443,16 +46161,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Non-reasoning",
     "slug": "nvidia/nemotron-nano-9b-v2"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:baidu/ernie-4.5-300b-a47b": {
    "id": "aa:baidu/ernie-4.5-300b-a47b",
@@ -46463,16 +46181,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "baidu/ernie-4.5-300b-a47b"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:ibm-granite/granite-4.0-h-micro": {
    "id": "aa:ibm-granite/granite-4.0-h-micro",
@@ -46483,16 +46201,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "ibm-granite/granite-4.0-h-micro"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "zai-org/GLM-4.5": {
    "id": "zai-org/GLM-4.5",
@@ -46517,13 +46235,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": "Reasoning",
-    "slug": "z-ai/glm-4.5"
-   },
    "params_b": 358.34,
    "params_source": "safetensors",
    "active_b": 39.2,
@@ -46726,7 +46437,14 @@
     "released": "2026-08-25",
     "url": "https://huggingface.co/zai-org/GLM-5.3"
    },
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": "Reasoning",
+    "slug": "z-ai/glm-4.5"
+   }
   },
   "zai-org/GLM-4.5-Air": {
    "id": "zai-org/GLM-4.5-Air",
@@ -46751,13 +46469,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": null,
-    "slug": "z-ai/glm-4.5-air"
-   },
    "params_b": 110.47,
    "params_source": "safetensors",
    "active_b": 17.0,
@@ -46990,7 +46701,14 @@
    "quants_checked": "2026-11-18",
    "score": 9.53,
    "newer": null,
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": null,
+    "slug": "z-ai/glm-4.5-air"
+   }
   },
   "aa:nvidia/llama-3.3-nemotron-super-49b-v1.5": {
    "id": "aa:nvidia/llama-3.3-nemotron-super-49b-v1.5",
@@ -47001,16 +46719,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Reasoning",
     "slug": "nvidia/llama-3.3-nemotron-super-49b-v1.5"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:nvidia/llama-3.1-nemotron-ultra-253b-v1": {
    "id": "aa:nvidia/llama-3.1-nemotron-ultra-253b-v1",
@@ -47021,16 +46739,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Reasoning",
     "slug": "nvidia/llama-3.1-nemotron-ultra-253b-v1"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:nvidia/llama-3.3-nemotron-super-49b-v1": {
    "id": "aa:nvidia/llama-3.3-nemotron-super-49b-v1",
@@ -47041,16 +46759,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Non-reasoning",
     "slug": "nvidia/llama-3.3-nemotron-super-49b-v1"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "zai-org/GLM-4.5V": {
    "id": "zai-org/GLM-4.5V",
@@ -47075,13 +46793,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": "Non-reasoning",
-    "slug": "z-ai/glm-4.5v"
-   },
    "params_b": 107.71,
    "params_source": "safetensors",
    "active_b": 14.3,
@@ -47284,7 +46995,14 @@
     "released": "2025-12-07",
     "url": "https://huggingface.co/zai-org/GLM-4.6V"
    },
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
+    "slug": "z-ai/glm-4.5v"
+   }
   },
   "aa:google/gemma-3-1b-it": {
    "id": "aa:google/gemma-3-1b-it",
@@ -47295,16 +47013,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "google/gemma-3-1b-it"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:google/gemma-3n-e2b-it": {
    "id": "aa:google/gemma-3n-e2b-it",
@@ -47315,16 +47033,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "google/gemma-3n-e2b-it"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "microsoft/phi-4": {
    "id": "microsoft/phi-4",
@@ -47349,13 +47067,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": null,
-    "slug": "microsoft/phi-4"
-   },
    "params_b": 14.66,
    "params_source": "safetensors",
    "arch": {
@@ -47567,7 +47278,14 @@
    "quants_checked": "2026-11-18",
    "score": 12.53,
    "newer": null,
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": null,
+    "slug": "microsoft/phi-4"
+   }
   },
   "aa:microsoft/phi-4-multimodal-instruct": {
    "id": "aa:microsoft/phi-4-multimodal-instruct",
@@ -47578,16 +47296,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "microsoft/phi-4-multimodal-instruct"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:qwen/qwen3-vl-235b-a22b-thinking": {
    "id": "aa:qwen/qwen3-vl-235b-a22b-thinking",
@@ -47598,16 +47316,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Reasoning",
     "slug": "qwen/qwen3-vl-235b-a22b-thinking"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:qwen/qwen3-vl-30b-a3b-thinking": {
    "id": "aa:qwen/qwen3-vl-30b-a3b-thinking",
@@ -47618,16 +47336,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Reasoning",
     "slug": "qwen/qwen3-vl-30b-a3b-thinking"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:qwen/qwen3-vl-32b-instruct": {
    "id": "aa:qwen/qwen3-vl-32b-instruct",
@@ -47638,16 +47356,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Reasoning",
     "slug": "qwen/qwen3-vl-32b-instruct"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:qwen/qwen3-vl-8b-thinking": {
    "id": "aa:qwen/qwen3-vl-8b-thinking",
@@ -47658,16 +47376,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Reasoning",
     "slug": "qwen/qwen3-vl-8b-thinking"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:stepfun/step-3.5-flash": {
    "id": "aa:stepfun/step-3.5-flash",
@@ -47678,16 +47396,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "stepfun/step-3.5-flash"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:deepseek/deepseek-r1-0528-qwen3-8b": {
    "id": "aa:deepseek/deepseek-r1-0528-qwen3-8b",
@@ -47698,16 +47416,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "deepseek/deepseek-r1-0528-qwen3-8b"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "NousResearch/Hermes-4-405B": {
    "id": "NousResearch/Hermes-4-405B",
@@ -47732,13 +47450,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": "Non-reasoning",
-    "slug": "nousresearch/hermes-4-405b"
-   },
    "params_b": 405.85,
    "params_source": "safetensors",
    "arch": {
@@ -47928,7 +47639,14 @@
    "quants_checked": "2026-11-18",
    "score": 4.79,
    "newer": null,
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
+    "slug": "nousresearch/hermes-4-405b"
+   }
   },
   "aa:nousresearch/hermes-4-70b": {
    "id": "aa:nousresearch/hermes-4-70b",
@@ -47939,16 +47657,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Reasoning",
     "slug": "nousresearch/hermes-4-70b"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "deepseek-ai/DeepSeek-V3.2-Exp": {
    "id": "deepseek-ai/DeepSeek-V3.2-Exp",
@@ -47973,13 +47691,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": "Non-reasoning",
-    "slug": "deepseek/deepseek-v3.2-exp"
-   },
    "params_b": 685.4,
    "params_source": "safetensors",
    "active_b": 51.9,
@@ -48135,7 +47846,14 @@
    "quants_checked": "2026-11-18",
    "score": 8.71,
    "newer": null,
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": "Non-reasoning",
+    "slug": "deepseek/deepseek-v3.2-exp"
+   }
   },
   "aa:bytedance/seed-oss-36b-instruct": {
    "id": "aa:bytedance/seed-oss-36b-instruct",
@@ -48146,16 +47864,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "bytedance/seed-oss-36b-instruct"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:nvidia/llama-3.1-nemotron-70b-instruct": {
    "id": "aa:nvidia/llama-3.1-nemotron-70b-instruct",
@@ -48166,16 +47884,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "nvidia/llama-3.1-nemotron-70b-instruct"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "Qwen/Qwen3-Coder-30B-A3B-Instruct": {
    "id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
@@ -48200,13 +47918,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": null,
-    "slug": "qwen/qwen3-coder-30b-a3b-instruct"
-   },
    "params_b": 30.53,
    "params_source": "safetensors",
    "active_b": 3.0,
@@ -48419,7 +48130,14 @@
    "quants_checked": "2026-11-18",
    "score": 12.32,
    "newer": null,
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": null,
+    "slug": "qwen/qwen3-coder-30b-a3b-instruct"
+   }
   },
   "aa:deepcogito/cogito-v2.1-671b-20251118": {
    "id": "aa:deepcogito/cogito-v2.1-671b-20251118",
@@ -48430,16 +48148,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Reasoning",
     "slug": "deepcogito/cogito-v2.1-671b-20251118"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:inclusionai/ling-2.6-1t-20260423": {
    "id": "aa:inclusionai/ling-2.6-1t-20260423",
@@ -48450,16 +48168,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "inclusionai/ling-2.6-1t-20260423"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:meta-llama/llama-3.1-405b-instruct": {
    "id": "aa:meta-llama/llama-3.1-405b-instruct",
@@ -48470,16 +48188,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "meta-llama/llama-3.1-405b-instruct"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:meta-llama/llama-3.2-11b-vision-instruct": {
    "id": "aa:meta-llama/llama-3.2-11b-vision-instruct",
@@ -48490,16 +48208,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Vision",
     "slug": "meta-llama/llama-3.2-11b-vision-instruct"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:meta-llama/llama-3.2-90b-vision-instruct": {
    "id": "aa:meta-llama/llama-3.2-90b-vision-instruct",
@@ -48510,16 +48228,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Vision",
     "slug": "meta-llama/llama-3.2-90b-vision-instruct"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:nousresearch/deephermes-3-mistral-24b-preview": {
    "id": "aa:nousresearch/deephermes-3-mistral-24b-preview",
@@ -48530,16 +48248,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Non-reasoning",
     "slug": "nousresearch/deephermes-3-mistral-24b-preview"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:perplexity/r1-1776": {
    "id": "aa:perplexity/r1-1776",
@@ -48550,16 +48268,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "perplexity/r1-1776"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "RekaAI/reka-flash-3": {
    "id": "RekaAI/reka-flash-3",
@@ -48584,13 +48302,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": null,
-    "slug": "rekaai/reka-flash-3"
-   },
    "params_b": 20.91,
    "params_source": "safetensors",
    "arch": {
@@ -48785,7 +48496,14 @@
     "released": "2025-05-28",
     "url": "https://huggingface.co/RekaAI/reka-flash-3.1"
    },
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": null,
+    "slug": "rekaai/reka-flash-3"
+   }
   },
   "aa:deepseek/deepseek-r1-distill-llama-70b": {
    "id": "aa:deepseek/deepseek-r1-distill-llama-70b",
@@ -48796,16 +48514,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "deepseek/deepseek-r1-distill-llama-70b"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:liquid/lfm-2.2-6b": {
    "id": "aa:liquid/lfm-2.2-6b",
@@ -48816,16 +48534,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "liquid/lfm-2.2-6b"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "CohereForAI/c4ai-command-a-03-2025": {
    "id": "CohereForAI/c4ai-command-a-03-2025",
@@ -48850,13 +48568,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": null,
-    "slug": "cohere/command-a-03-2025"
-   },
    "params_b": 111.06,
    "params_source": "safetensors",
    "vram": {
@@ -48992,7 +48703,14 @@
    "quants_checked": "2026-11-18",
    "score": 10.84,
    "newer": null,
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": null,
+    "slug": "cohere/command-a-03-2025"
+   }
   },
   "aa:liquid/lfm2-8b-a1b": {
    "id": "aa:liquid/lfm2-8b-a1b",
@@ -49003,16 +48721,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "liquid/lfm2-8b-a1b"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:nousresearch/deephermes-3-llama-3-8b-preview": {
    "id": "aa:nousresearch/deephermes-3-llama-3-8b-preview",
@@ -49023,16 +48741,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Non-reasoning",
     "slug": "nousresearch/deephermes-3-llama-3-8b-preview"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:minimax/minimax-m2.1": {
    "id": "aa:minimax/minimax-m2.1",
@@ -49043,16 +48761,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "minimax/minimax-m2.1"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:minimax/minimax-m2": {
    "id": "aa:minimax/minimax-m2",
@@ -49063,16 +48781,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "minimax/minimax-m2"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "moonshotai/Kimi-K2-Instruct-0905": {
    "id": "moonshotai/Kimi-K2-Instruct-0905",
@@ -49097,13 +48815,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": null,
-    "slug": "moonshotai/kimi-k2-0905"
-   },
    "params_b": 1026.41,
    "params_source": "safetensors",
    "active_b": 32.9,
@@ -49306,7 +49017,14 @@
     "released": "2026-06-13",
     "url": "https://huggingface.co/moonshotai/Kimi-K3"
    },
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": null,
+    "slug": "moonshotai/kimi-k2-0905"
+   }
   },
   "aa:liquid/lfm-2-24b-a2b-20260224": {
    "id": "aa:liquid/lfm-2-24b-a2b-20260224",
@@ -49317,16 +49035,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "liquid/lfm-2-24b-a2b-20260224"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:liquid/lfm-2.5-1.2b-instruct-20260120": {
    "id": "aa:liquid/lfm-2.5-1.2b-instruct-20260120",
@@ -49337,16 +49055,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "liquid/lfm-2.5-1.2b-instruct-20260120"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:liquid/lfm-2.5-1.2b-thinking-20260120": {
    "id": "aa:liquid/lfm-2.5-1.2b-thinking-20260120",
@@ -49357,16 +49075,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "liquid/lfm-2.5-1.2b-thinking-20260120"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:ai21/jamba-large-1.7": {
    "id": "aa:ai21/jamba-large-1.7",
@@ -49377,16 +49095,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "ai21/jamba-large-1.7"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:ai21/jamba-mini-1.7": {
    "id": "aa:ai21/jamba-mini-1.7",
@@ -49397,16 +49115,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "ai21/jamba-mini-1.7"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:qwen/qwen3-max-thinking-20260123": {
    "id": "aa:qwen/qwen3-max-thinking-20260123",
@@ -49417,16 +49135,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Preview",
     "slug": "qwen/qwen3-max-thinking-20260123"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:qwen/qwen3-max": {
    "id": "aa:qwen/qwen3-max",
@@ -49437,16 +49155,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "qwen/qwen3-max"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "or:amazon/nova-premier-v1": {
    "id": "or:amazon/nova-premier-v1",
@@ -49470,16 +49188,16 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 5.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "amazon/nova-premier-v1"
-   },
-   "score": 5.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "or:amazon/nova-lite-v1": {
    "id": "or:amazon/nova-lite-v1",
@@ -49503,16 +49221,16 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 5.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "amazon/nova-lite-v1"
-   },
-   "score": 5.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "or:amazon/nova-pro-v1": {
    "id": "or:amazon/nova-pro-v1",
@@ -49536,16 +49254,16 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 5.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "amazon/nova-pro-v1"
-   },
-   "score": 5.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:mistralai/devstral-medium-2507": {
    "id": "aa:mistralai/devstral-medium-2507",
@@ -49556,16 +49274,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "mistralai/devstral-medium-2507"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:x-ai/grok-3-mini-beta": {
    "id": "aa:x-ai/grok-3-mini-beta",
@@ -49576,16 +49294,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "High",
     "slug": "x-ai/grok-3-mini-beta"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:x-ai/grok-4-07-09": {
    "id": "aa:x-ai/grok-4-07-09",
@@ -49596,16 +49314,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "x-ai/grok-4-07-09"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:x-ai/grok-4-fast": {
    "id": "aa:x-ai/grok-4-fast",
@@ -49616,16 +49334,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Non-reasoning",
     "slug": "x-ai/grok-4-fast"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:x-ai/grok-4.1-fast": {
    "id": "aa:x-ai/grok-4.1-fast",
@@ -49636,16 +49354,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Non-reasoning",
     "slug": "x-ai/grok-4.1-fast"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:openai/gpt-5-codex": {
    "id": "aa:openai/gpt-5-codex",
@@ -49656,16 +49374,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "High",
     "slug": "openai/gpt-5-codex"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "or:openai/o3": {
    "id": "or:openai/o3",
@@ -49689,16 +49407,16 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 6.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "openai/o3-2025-04-16"
-   },
-   "score": 6.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:x-ai/grok-code-fast-1": {
    "id": "aa:x-ai/grok-code-fast-1",
@@ -49709,16 +49427,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "x-ai/grok-code-fast-1"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "or:openai/gpt-5.2": {
    "id": "or:openai/gpt-5.2",
@@ -49742,13 +49460,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": "Medium",
-    "slug": "openai/gpt-5.2-20251211"
-   },
    "score": 6.5,
    "newer": {
     "id": "or:openai/gpt-5.5",
@@ -49756,7 +49467,14 @@
     "released": "2026-04-24",
     "url": "https://openrouter.ai/openai/gpt-5.5"
    },
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": "Medium",
+    "slug": "openai/gpt-5.2-20251211"
+   }
   },
   "or:openai/gpt-5.1-codex": {
    "id": "or:openai/gpt-5.1-codex",
@@ -49780,13 +49498,6 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": "High",
-    "slug": "openai/gpt-5.1-codex-20251113"
-   },
    "score": 6.5,
    "newer": {
     "id": "or:openai/gpt-5.3-codex",
@@ -49794,7 +49505,14 @@
     "released": "2026-02-24",
     "url": "https://openrouter.ai/openai/gpt-5.3-codex"
    },
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-18",
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": "High",
+    "slug": "openai/gpt-5.1-codex-20251113"
+   }
   },
   "or:x-ai/grok-4.20": {
    "id": "or:x-ai/grok-4.20",
@@ -49818,16 +49536,16 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 5.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "Reasoning",
     "slug": "x-ai/grok-4.20-20260309"
-   },
-   "score": 5.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:deepseek/deepseek-v3.2-speciale-20251201": {
    "id": "aa:deepseek/deepseek-v3.2-speciale-20251201",
@@ -49838,16 +49556,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "deepseek/deepseek-v3.2-speciale-20251201"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "or:openai/gpt-5.1-codex-mini": {
    "id": "or:openai/gpt-5.1-codex-mini",
@@ -49871,16 +49589,16 @@
    },
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 6.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "High",
     "slug": "openai/gpt-5.1-codex-mini-20251113"
-   },
-   "score": 6.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:kwaipilot/kat-coder-pro-v1": {
    "id": "aa:kwaipilot/kat-coder-pro-v1",
@@ -49891,16 +49609,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "kwaipilot/kat-coder-pro-v1"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:liquid/d1.2-ultra-20261116": {
    "id": "aa:liquid/d1.2-ultra-20261116",
@@ -49911,16 +49629,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "liquid/d1.2-ultra-20261116"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:liquid/d1-ultra-20261015": {
    "id": "aa:liquid/d1-ultra-20261015",
@@ -49931,16 +49649,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "liquid/d1-ultra-20261015"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:perplexity/pplx-decider-v1.3-20261112": {
    "id": "aa:perplexity/pplx-decider-v1.3-20261112",
@@ -49951,16 +49669,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "perplexity/pplx-decider-v1.3-20261112"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:perplexity/pplx-decider-v1.2-20261016": {
    "id": "aa:perplexity/pplx-decider-v1.2-20261016",
@@ -49971,16 +49689,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "perplexity/pplx-decider-v1.2-20261016"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:liquid/d1.2-20261116": {
    "id": "aa:liquid/d1.2-20261116",
@@ -49991,16 +49709,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "liquid/d1.2-20261116"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:microsoft/microsoft-decision-1.1-20261117": {
    "id": "aa:microsoft/microsoft-decision-1.1-20261117",
@@ -50011,16 +49729,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "microsoft/microsoft-decision-1.1-20261117"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:liquid/d1.1-20261027": {
    "id": "aa:liquid/d1.1-20261027",
@@ -50031,16 +49749,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "liquid/d1.1-20261027"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:typesafe/jev-1.14-20261014": {
    "id": "aa:typesafe/jev-1.14-20261014",
@@ -50051,16 +49769,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "typesafe/jev-1.14-20261014"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:perplexity/pplx-decider-flash-v1.3-20261112": {
    "id": "aa:perplexity/pplx-decider-flash-v1.3-20261112",
@@ -50071,16 +49789,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "perplexity/pplx-decider-flash-v1.3-20261112"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:inception/mercury-decide-20260930": {
    "id": "aa:inception/mercury-decide-20260930",
@@ -50091,16 +49809,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "inception/mercury-decide-20260930"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:microsoft/microsoft-decision-1-20261009": {
    "id": "aa:microsoft/microsoft-decision-1-20261009",
@@ -50111,16 +49829,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "microsoft/microsoft-decision-1-20261009"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:nace-ai/drex-v2.0-20261009": {
    "id": "aa:nace-ai/drex-v2.0-20261009",
@@ -50131,16 +49849,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "nace-ai/drex-v2.0-20261009"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:liquid/d1-20260930": {
    "id": "aa:liquid/d1-20260930",
@@ -50151,16 +49869,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "liquid/d1-20260930"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:cloudflare/clef": {
    "id": "aa:cloudflare/clef",
@@ -50171,16 +49889,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "cloudflare/clef"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:perplexity/pplx-decider-flash-v1.2-20261016": {
    "id": "aa:perplexity/pplx-decider-flash-v1.2-20261016",
@@ -50191,16 +49909,16 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "perplexity/pplx-decider-flash-v1.2-20261016"
-   },
-   "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18"
+   }
   },
   "aa:cloudflare/clef-omni-20261009": {
    "id": "aa:cloudflare/clef-omni-20261009",
@@ -50211,16 +49929,1945 @@
    "links": {},
    "first_seen": "2026-11-18",
    "mentions": [],
+   "score": 2.0,
+   "newer": null,
+   "newer_checked": "2026-11-18",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "cloudflare/clef-omni-20261009"
+   }
+  },
+  "or:google/gemini-4-neon": {
+   "id": "or:google/gemini-4-neon",
+   "name": "Gemini 4 Neon",
+   "org": "Google",
+   "kind": "closed",
+   "released": "2026-11-18",
+   "or_id": "google/gemini-4-neon",
+   "hf_id": null,
+   "context": 1048576,
+   "modality": "text+image+file+audio+video->text",
+   "pricing": {
+    "in": 3.0,
+    "out": 15.0
    },
-   "score": 2.0,
+   "free_on_openrouter": false,
+   "knowledge_cutoff": null,
+   "description": "Gemini 4 Neon is a fast, mid-priced model in the Gemini 4 family from Google, built for coding and agentic work. It is suited for repository and terminal coding, web...",
+   "links": {
+    "openrouter": "https://openrouter.ai/google/gemini-4-neon"
+   },
+   "first_seen": "2026-11-19",
+   "mentions": [
+    {
+     "item": "c3c7756f62d4",
+     "rel": 8,
+     "date": "2026-11-18",
+     "title": "llm-gemini 0.38 supporta Gemini 4 Neon e chiarisce i prezzi",
+     "url": "https://simonwillison.net/2026/Nov/18/llm-gemini/",
+     "source": "Simon Willison"
+    },
+    {
+     "item": "9491587c1875",
+     "rel": 7,
+     "date": "2026-11-19",
+     "title": "Gemini 4 Neon visto come concorrente di Opus 5.5",
+     "url": "https://micjm.com/blog/gemini-4-neon-looks-like-a-top-model/",
+     "source": "Hacker News"
+    },
+    {
+     "item": "b898a1b2127c",
+     "rel": 9,
+     "date": "2026-11-18",
+     "title": "Google DeepMind annuncia Gemini 4 Neon",
+     "url": "https://deepmind.google/blog/introducing-gemini-4-neon/",
+     "source": "Google DeepMind"
+    },
+    {
+     "item": "b2c084a41275",
+     "rel": 9,
+     "date": "2026-11-18",
+     "title": "Gemini 4 Neon debutta su Hacker News con 813 punti",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+     "source": "Hacker News"
+    }
+   ],
+   "aa": {
+    "intelligence": 61.4,
+    "coding": null,
+    "agentic": null,
+    "variant": "Xhigh",
+    "slug": "google/gemini-4-neon-20261118"
+   },
+   "score": 13.7,
    "newer": null,
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-19",
+   "deep": {
+    "tldr": "Gemini 4 Neon è il modello di Google DeepMind di fascia media della famiglia Gemini 4 (accanto a Carbon per i compiti più complessi e Hydrogen per l'esecuzione veloce), pensato per coding agentico, lavoro di knowledge work e workflow scientifici con un buon rapporto tra prestazioni e costo. Rispetto ai modelli comparabili dichiara punteggi migliori sull'Artificial Analysis Intelligence Index e sul Vals Index, maggiore steerability e un tasso di fabbricazione dei risultati tra i più bassi. È adatto a sviluppo software, analisi di documenti e spreadsheet, e task di cyber-difesa; non viene rilasciato con pesi aperti.",
+    "features": [
+     "Contesto di 1 milione di token con input multimodali (spreadsheet, PDF, grafici, audio, video) e output strutturati",
+     "Quattro livelli di thinking (fino a xhigh) per regolare intelligenza e spesa di token per task; a livello high costa il 32% in meno per task rispetto a Carbon",
+     "Orchestrazione di subagenti paralleli (Hydrogen) in Google Antigravity e cache dell'input con sconto del 95% ($0.15 per milione di token)",
+     "Migliore steerability (correzioni a metà task) e riduzione dell'under-service del 43–56% e dell'overreach del 15–35% rispetto a Carbon",
+     "Varianti per cyber-difesa (Neon for cyber) con accesso riservato ai membri del Fairwind Program",
+     "Protezioni contro prompt injection indiretta: 0.0% di attack success rate sul benchmark IPI di Gray Swan al thinking più alto"
+    ],
+    "benchmarks": [
+     {
+      "name": "Artificial Analysis Intelligence Index (xhigh)",
+      "score": "61",
+      "vs": []
+     },
+     {
+      "name": "Vals Index",
+      "score": "70.9%",
+      "vs": []
+     },
+     {
+      "name": "Artificial Analysis Coding Agent Index",
+      "score": "58.6",
+      "vs": []
+     },
+     {
+      "name": "Terminal-Bench 4.1",
+      "score": "65.2%",
+      "vs": []
+     },
+     {
+      "name": "Terminal-Bench Science",
+      "score": "70.5%",
+      "vs": []
+     },
+     {
+      "name": "FrontierCode 2.0 (default high)",
+      "score": "46.2%",
+      "vs": []
+     },
+     {
+      "name": "SWE-sweep (Antigravity harness)",
+      "score": "39.0%",
+      "vs": []
+     },
+     {
+      "name": "SWE-sweep (mini-SWE harness)",
+      "score": "12.8%",
+      "vs": []
+     },
+     {
+      "name": "HLE-Diamond",
+      "score": "71.3%",
+      "vs": []
+     },
+     {
+      "name": "Agents' Last Exam v1.1",
+      "score": "75.8%",
+      "vs": []
+     },
+     {
+      "name": "Vending-Bench 2",
+      "score": "$16,843",
+      "vs": []
+     },
+     {
+      "name": "SEC-bench Pro",
+      "score": "90.5%",
+      "vs": []
+     }
+    ],
+    "params": "",
+    "context": "1048576 token (1 milione)",
+    "availability": "Pesi aperti: non dichiarati. API: Gemini API (tier a pagamento) in Google AI Studio e Android Studio; Gemini for business (API e menu dei modelli); Google Antigravity per abbonati Google AI Pro/Ultra; app Gemini per abbonati Pro/Ultra. Prezzo: $3 per milione di token in input ($0.15 in cache), $15 per milione di token in output. Versione Neon for cyber per membri Fairwind Program.",
+    "local_tips": "",
+    "hw_claims": "",
+    "source": "https://deepmind.google/blog/introducing-gemini-4-neon/",
+    "date": "2026-11-19",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-19"
+  },
+  "inworld/voice-isolator": {
+   "id": "inworld/voice-isolator",
+   "name": "voice-isolator",
+   "org": "inworld",
+   "kind": "open",
+   "released": "2026-11-14",
+   "hf_id": "inworld/voice-isolator",
+   "pipeline": "audio-to-audio",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 136,
+    "downloads": 0,
+    "trending": 126,
+    "trend_rank": 17
+   },
+   "links": {
+    "hf": "https://huggingface.co/inworld/voice-isolator"
+   },
+   "vram": null,
+   "quants": [
+    {
+     "id": "mrfakename/voice-isolator-onnx",
+     "format": "altro",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 0
+    }
+   ],
+   "quants_checked": "2026-11-19",
+   "first_seen": "2026-11-19",
+   "mentions": [],
+   "hf_checked": "2026-11-19",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ],
+   "score": 4.92,
+   "newer": null,
+   "newer_checked": "2026-11-19",
+   "deep": {
+    "tldr": "Voice Isolator di Inworld è un modello audio-to-audio open-weight (Apache-2.0) per isolare la voce da registrazioni rumorose e audio dal vivo a 48 kHz. Esistono due checkpoint: uno offline a massima qualità (64M parametri) per registrazioni, dataset vocali e pipeline in cui deve restare l'identità dello speaker, e uno realtime causale (58M parametri) con 20 ms di look-ahead per chiamate e stream. Non è un selettore di speaker né un modello di restauro: il restauro è previsto per la versione 2.",
+    "features": [
+     "Architettura band-split dual-path network sullo STFT (n_fft 2048, hop 480 a 48 kHz, frame da 10 ms), con 46 bande e token di larghezza 512",
+     "Sette blocchi alternati tra attenzione temporale con rotary position ed exclusive self attention, e Mamba (stato 16) lungo il tempo e tra le bande",
+     "Due checkpoint: voice-isolator-v1 offline (contesto di chunk da 8 s con overlap di 2 s) e voice-isolator-v1-realtime causale con latenza algoritmica di 63 ms a 20 ms di look-ahead",
+     "Input monocanale a 48 kHz; output WAV float32 che ricostruisce l'input allineato, con possibilità di estrarre il residuo di rumore o di base musicale",
+     "Strumenti inclusi: CLI voice-isolate, API Python, demo interattiva con modalità Offline e Online, e benchmark VIBE",
+     "Licenza Apache-2.0 per codice e pesi, con notice di terze parti; download dei pesi con verifica dei checksum"
+    ],
+    "benchmarks": [],
+    "params": "64.0M (offline, voice-isolator-v1); 58.2M (realtime)",
+    "context": "",
+    "availability": "Pesi aperti e codice su GitHub (inworld-ai/voice-isolator) sotto Apache-2.0; installabile via pip come inworld-voice-isolation; pesi scaricati al primo utilizzo. Nessun prezzo API dichiarato.",
+    "local_tips": "Motori: PyTorch con CUDA se disponibile, backend Metal (mps) su Mac Apple silicon con PyTorch 2.6 o successivo, altrimenti CPU; selezionabile con --device. Modalità offline o streaming selezionabile con --mode e --lookahead (0, 20 o 40 ms per il realtime). Nessuna quantizzazione ufficiale dichiarata.",
+    "hw_claims": "Testato su GPU NVIDIA Ampere, Hopper e Blackwell (A100, H100, B200, B300) e su CPU. Le GPU più piccole non sono ancora testate. Nessun requisito di VRAM o RAM dichiarato, nessuna velocità misurata nel testo.",
+    "source": "https://huggingface.co/inworld/voice-isolator",
+    "date": "2026-11-19",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-19"
+  },
+  "microsoft/Aion-1.0-Instruct-2.3B": {
+   "id": "microsoft/Aion-1.0-Instruct-2.3B",
+   "name": "Aion-1.0-Instruct-2.3B",
+   "org": "microsoft",
+   "kind": "open",
+   "released": "2026-11-18",
+   "hf_id": "microsoft/Aion-1.0-Instruct-2.3B",
+   "pipeline": "text-generation",
+   "license": "mit",
+   "gated": false,
+   "params_b": 2.29,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": 32768,
+   "arch": {
+    "layers": 28,
+    "hidden": 2048,
+    "heads": 24,
+    "kv_heads": 8,
+    "head_dim": 128,
+    "full_layers": 7,
+    "sliding_layers": 21,
+    "window": 2048,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 8192,
+    "vocab": 200029,
+    "tied": true,
+    "max_ctx": 32768
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 39,
+    "downloads": 0,
+    "trending": 39,
+    "trend_rank": 60,
+    "watched_org": true
+   },
+   "links": {
+    "hf": "https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo · 32k",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~32k, ~257 tok/s",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 4.3,
+    "ref_ctx": 32768,
+    "tok_s": 257,
+    "kv_known": true,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 6.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 257
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 4.1,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 460
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 3.5,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 578
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 3.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 653
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 3.1,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 746
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 2.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 831
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 2.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 888
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 2.5,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 1176
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 4.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 472
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 3.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 793
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "AtomicChat/Aion-1.0-Instruct-2.3B-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 0
+    },
+    {
+     "id": "Xylolabs/Aion-1.0-Instruct-2.3B-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 0
+    },
+    {
+     "id": "AlphaOxO/Aion-1.0-Instruct-2.3B-8bits-mlx",
+     "format": "MLX",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 0
+    },
+    {
+     "id": "microsoft/Aion-1.0-Instruct-2.3B-ONNX-WebGPU",
+     "format": "altro",
+     "nvfp4": false,
+     "official": true,
+     "downloads": 0
+    }
+   ],
+   "quants_checked": "2026-11-19",
+   "first_seen": "2026-11-19",
+   "mentions": [],
+   "hf_checked": "2026-11-19",
+   "score": 8.94,
+   "newer": null,
+   "newer_checked": "2026-11-19",
+   "deep": {
+    "tldr": "Aion-1.0-Instruct-2.3B è un piccolo modello linguistico (SLM) instruction-tuned di Microsoft, base del futuro SLM di Windows, con pesi aperti sotto licenza MIT. Ha una context window di 32K token e un'architettura ibrida con attenzione a finestra scorrevole e full-attention, pensato per l'inferenza on-device con focus su riassunto, riscrittura e chat. Il testo dichiara esplicitamente limiti di conoscenza del mondo e di ragionamento complesso rispetto ai modelli più grandi.",
+    "features": [
+     "Architettura ibrida: 28 layer, di cui 21 con sliding-window attention (finestra 2048) e 7 full-attention; GQA con 24 query head e 8 key/value head (head dim 128)",
+     "Context length di 32.768 token, con scaling RoPE/YaRN (fattore 16) sui layer full-attention",
+     "Supporto dichiarato per 8 lingue: inglese, tedesco, spagnolo, portoghese, italiano, francese, cinese e giapponese (circa 6% dei dati di training multilingua)",
+     "Supporto al tool calling tramite schemi injettati nel system prompt e chat template dedicato",
+     "Licenza MIT; pesi pubblicati in bfloat16 con formati dichiarati PyTorch, ONNX e GGUF, quantizzazioni annunciate come successive",
+     "Knowledge cutoff dichiarato al 2025-12; dati di training che estendono quelli di Phi Silica con sintesi per matematica, coding e common sense"
+    ],
+    "benchmarks": [
+     {
+      "name": "MMLU",
+      "score": "55.15",
+      "vs": []
+     },
+     {
+      "name": "MMLU-Pro",
+      "score": "33.35",
+      "vs": []
+     },
+     {
+      "name": "GPQA",
+      "score": "28.18",
+      "vs": []
+     },
+     {
+      "name": "GSM8K",
+      "score": "74.91",
+      "vs": []
+     },
+     {
+      "name": "MATH-500",
+      "score": "48.00",
+      "vs": []
+     },
+     {
+      "name": "IFEval",
+      "score": "83.90",
+      "vs": []
+     },
+     {
+      "name": "IFBench",
+      "score": "32.00",
+      "vs": []
+     },
+     {
+      "name": "Multi-IF",
+      "score": "64.70",
+      "vs": []
+     },
+     {
+      "name": "MMMLU",
+      "score": "45.51",
+      "vs": []
+     },
+     {
+      "name": "GSMPlus",
+      "score": "49.56",
+      "vs": []
+     },
+     {
+      "name": "chrF++",
+      "score": "43.18",
+      "vs": []
+     }
+    ],
+    "params": "~2.29B (embedding input/output tied)",
+    "context": "32.768 token",
+    "availability": "Pesi aperti su Hugging Face sotto licenza MIT; il testo cita anche il repository GitHub microsoft/Aion-Instruct-Preview-Sample. Integrazione in Windows come SLM OS prevista entro fine gennaio 2027 insieme a un modello di content moderation. Nessun prezzo API nel testo.",
+    "local_tips": "Richiede trust_remote_code=True e transformers 5.x per l'export; esempio di caricamento con dtype='auto' e device_map='auto'. Chat template incluso (chat_template.jinja) con EOS token specifico. Il testo annuncia quantizzazioni future ma non indica quelle già disponibili né impostazioni di sampling consigliate.",
+    "hw_claims": "",
+    "source": "https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B",
+    "date": "2026-11-19",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-19"
+  },
+  "KittenML/kitten-tts-2-mini": {
+   "id": "KittenML/kitten-tts-2-mini",
+   "name": "kitten-tts-2-mini",
+   "org": "KittenML",
+   "kind": "open",
+   "released": "2026-11-13",
+   "hf_id": "KittenML/kitten-tts-2-mini",
+   "pipeline": "text-to-speech",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 37,
+    "downloads": 3887,
+    "trending": 37,
+    "trend_rank": 69
+   },
+   "links": {
+    "hf": "https://huggingface.co/KittenML/kitten-tts-2-mini"
+   },
+   "vram": null,
+   "quants": [],
+   "quants_checked": "2026-11-19",
+   "first_seen": "2026-11-19",
+   "mentions": [],
+   "hf_checked": "2026-11-19",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ],
+   "score": 4.42,
+   "newer": null,
+   "newer_checked": "2026-11-19",
+   "deep": {
+    "tldr": "Kitten TTS 2 Mini è un modello text-to-speech open-weight da 82M parametri con supporto a 16 lingue e 118 voci, distribuito con licenza Apache-2.0. Gira su CPU tramite ONNX (int8 o int4) senza bisogno di PyTorch, ed è quindi adatto a inferenza leggera in locale o su dispositivi con risorse limitate; è disponibile anche la variante PyTorch float32 per GPU.",
+    "features": [
+     "82M parametri, 24 kHz, supporto a 16 lingue (en, de, es, it, pt, ru, hi, da, fi, fr, ja, ko, nl, sv, sw, tr)",
+     "118 voci; le voci inglesi parlano anche de, es, it, pt, ru sotto lo stesso nome tramite il parametro language",
+     "Pesi ONNX int8 (82.7 MB) o int4 (47.5 MB), eseguibili su CPU con ONNX Runtime (int4 richiede onnxruntime>=1.20)",
+     "Backend PyTorch con pesi float32 opzionale, eseguibile su GPU con device=\"cuda\"",
+     "Controllo di voce tramite nome o descrizione, velocità regolabile con speed, download selettivo dei soli file necessari",
+     "Licenza Apache-2.0 (modelli, voice pack e file G2P inclusi)"
+    ],
+    "benchmarks": [],
+    "params": "82M",
+    "context": "",
+    "availability": "Pesi aperti su KittenML/kitten-tts-2-mini; installazione tramite pip install kittenml; formati ONNX int8/int4 e PyTorch float32; licenza Apache-2.0",
+    "local_tips": "Usare backend=\"onnx\" (default) con weights=\"int8\" (default) o weights=\"int4\" per la quantizzazione più compatta; per GPU usare backend=\"torch\" con device=\"cuda\"; int4 richiede onnxruntime>=1.20",
+    "hw_claims": "Pesi int8 ONNX da 82.7 MB e int4 da 47.5 MB, entrambi eseguibili su CPU; nessuna necessità di PyTorch per il percorso ONNX; backend PyTorch float32 indicato per GPU CUDA. Nessun requisito di VRAM o RAM né velocità misurate dichiarati nel testo.",
+    "source": "https://huggingface.co/KittenML/kitten-tts-2-mini",
+    "date": "2026-11-19",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-19"
+  },
+  "mehdi-hf/cilla-mini": {
+   "id": "mehdi-hf/cilla-mini",
+   "name": "cilla-mini",
+   "org": "mehdi-hf",
+   "kind": "open",
+   "released": "2026-11-16",
+   "hf_id": "mehdi-hf/cilla-mini",
+   "pipeline": "text-to-speech",
+   "license": "cc-by-nc-4.0",
+   "gated": true,
+   "params_b": 0.03,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 37,
+    "downloads": 0,
+    "trending": 35,
+    "trend_rank": 77
+   },
+   "links": {
+    "hf": "https://huggingface.co/mehdi-hf/cilla-mini"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), 0.1 GB di pesi",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 0.1,
+    "ref_ctx": 32768,
+    "tok_s": null,
+    "kv_known": false,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     }
+    ]
+   },
+   "quants": [],
+   "quants_checked": "2026-11-19",
+   "first_seen": "2026-11-19",
+   "mentions": [],
+   "hf_checked": "2026-11-19",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "score": 6.42,
+   "newer": null,
+   "newer_checked": "2026-11-19",
+   "updated": "2026-11-19"
+  },
+  "mehdi-hf/cilla-lite": {
+   "id": "mehdi-hf/cilla-lite",
+   "name": "cilla-lite",
+   "org": "mehdi-hf",
+   "kind": "open",
+   "released": "2026-11-14",
+   "hf_id": "mehdi-hf/cilla-lite",
+   "pipeline": "text-to-speech",
+   "license": "cc-by-nc-4.0",
+   "gated": true,
+   "params_b": 0.11,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 42,
+    "downloads": 0,
+    "trending": 33,
+    "trend_rank": 84
+   },
+   "links": {
+    "hf": "https://huggingface.co/mehdi-hf/cilla-lite"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), 0.2 GB di pesi",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 0.2,
+    "ref_ctx": 32768,
+    "tok_s": null,
+    "kv_known": false,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 1.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     }
+    ]
+   },
+   "quants": [],
+   "quants_checked": "2026-11-19",
+   "first_seen": "2026-11-19",
+   "mentions": [],
+   "hf_checked": "2026-11-19",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "score": 6.47,
+   "newer": null,
+   "newer_checked": "2026-11-19",
+   "updated": "2026-11-19"
+  },
+  "Agnes-AI/Agnes-2.5-Pro-Theta": {
+   "id": "Agnes-AI/Agnes-2.5-Pro-Theta",
+   "name": "Agnes-2.5-Pro-Theta",
+   "org": "Agnes-AI",
+   "kind": "open",
+   "released": "2026-11-15",
+   "hf_id": "Agnes-AI/Agnes-2.5-Pro-Theta",
+   "pipeline": "image-text-to-text",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 187.76,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 33,
+    "downloads": 704,
+    "trending": 33,
+    "trend_rank": 85
+   },
+   "links": {
+    "hf": "https://huggingface.co/Agnes-AI/Agnes-2.5-Pro-Theta"
+   },
+   "vram": {
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · IQ2_M",
+    "text": "Non entra tutto in VRAM (106 GB in Q4_K_M), ma gira con offload in RAM: IQ2_M con ~30 GB in VRAM + ~31 GB in RAM (llama.cpp -ngl parziale, o --n-cpu-moe se è un MoE); parametri attivi non noti: ~1 tok/s se denso, molto di più se è un MoE",
+    "best_quant": null,
+    "quantized": false,
+    "native_best": null,
+    "gguf_best": null,
+    "tight": null,
+    "native_gb": 349.7,
+    "ref_ctx": 32768,
+    "tok_s": null,
+    "kv_known": false,
+    "is_moe": false,
+    "offload": {
+     "q": "IQ2_M",
+     "vram_gb": 29.5,
+     "ram_gb": 31.4,
+     "tok_s": 1,
+     "moe": false,
+     "active_known": false
+    },
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 357.4,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 3
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 190.3,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 6
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 147.0,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 8
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 127.6,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 9
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 108.9,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 11
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 95.5,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 13
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 88.0,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 14
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 60.9,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 20
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 184.7,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 6
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 101.1,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 12
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "2beng2/Agnes-2.5-Pro-Theta-NVFP4-DQ6_K-Basalt",
+     "format": "NVFP4",
+     "nvfp4": true,
+     "official": false,
+     "downloads": 25
+    },
+    {
+     "id": "2beng2/Agnes-2.5-Pro-Theta-IQ4_XS-Basalt",
+     "format": "altro",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 25
+    }
+   ],
+   "quants_checked": "2026-11-19",
+   "first_seen": "2026-11-19",
+   "mentions": [],
+   "hf_checked": "2026-11-19",
+   "checks": [
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "score": 6.38,
+   "newer": null,
+   "newer_checked": "2026-11-19",
+   "deep": {
+    "tldr": "Agnes 2.5 Pro Theta è un checkpoint multimodale mixture-of-experts da circa 187.8B parametri totali, distribuito con implementazione, tokenizer, chat template e processori di immagini/video, in pesi BF16 per inferenza locale via Transformers. Rispetto al testo, le novità dichiarate sono la configurazione a 262.144 token di contesto e la combinazione di input testo, immagini e frame video con output testuale. Il testo la presenta adatta a ragionamento conversazionale, problem solving scientifico, coding e comprensione visiva, ma l'esecuzione locale richiede hardware molto consistente.",
+    "features": [
+     "Architettura mixture-of-experts multimodale: 52 layer decoder testuali, 512 expert instradati per blocco MoE con top-10 routing e un ramo di shared expert",
+     "Contesto configurato fino a 262.144 token, che il testo precisa essere un limite di configurazione e non un benchmark su tutte le lunghezze",
+     "Input multimodale (testo, immagini, frame video tramite processori forniti) con output solo testuale; lingue evidenziate: inglese e cinese",
+     "Supporto a modalità di ragionamento tramite chat template con parametri reasoning_effort ed enable_thinking",
+     "Pesi BF16 in 105 shard Safetensors con indice; richiede trust_remote_code=True per il codice Transformers personalizzato",
+     "Licenza Apache License 2.0"
+    ],
+    "benchmarks": [
+     {
+      "name": "GPQA Diamond",
+      "score": "92.9",
+      "vs": [
+       {
+        "model": "Nemotron 3.5 Super VL 120B",
+        "score": "89.5"
+       },
+       {
+        "model": "Qwen3.8-27B",
+        "score": "88.9"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash-1017",
+        "score": "92.8"
+       }
+      ]
+     },
+     {
+      "name": "LiveCodeBench v6",
+      "score": "90.5",
+      "vs": [
+       {
+        "model": "Nemotron 3.5 Super VL 120B",
+        "score": "88.2"
+       },
+       {
+        "model": "Qwen3.8-27B",
+        "score": "90.3"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash-1017",
+        "score": "89.7"
+       }
+      ]
+     },
+     {
+      "name": "AA-LCR",
+      "score": "84.7",
+      "vs": [
+       {
+        "model": "Nemotron 3.5 Super VL 120B",
+        "score": "68.6"
+       },
+       {
+        "model": "Qwen3.8-27B",
+        "score": "72.6"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash-1017",
+        "score": "80.4"
+       }
+      ]
+     },
+     {
+      "name": "SWE-bench Pro",
+      "score": "64.1",
+      "vs": [
+       {
+        "model": "Nemotron 3.5 Super VL 120B",
+        "score": "51.8"
+       },
+       {
+        "model": "Qwen3.8-27B",
+        "score": "61.7"
+       },
+       {
+        "model": "GLM-5.3-Flash",
+        "score": "59.7"
+       }
+      ]
+     },
+     {
+      "name": "HLE-Diamond",
+      "score": "16.8",
+      "vs": [
+       {
+        "model": "Nemotron 3.5 Super VL 120B",
+        "score": "8.8"
+       },
+       {
+        "model": "Qwen3.8-27B",
+        "score": "15.3"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash-1017",
+        "score": "25.3"
+       }
+      ]
+     },
+     {
+      "name": "IFBench",
+      "score": "82.6",
+      "vs": [
+       {
+        "model": "Nemotron 3.5 Super VL 120B",
+        "score": "70.9"
+       },
+       {
+        "model": "Qwen3.8-27B",
+        "score": "80.1"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash-1017",
+        "score": "76.3"
+       }
+      ]
+     },
+     {
+      "name": "SciCode",
+      "score": "56.0",
+      "vs": [
+       {
+        "model": "Nemotron 3.5 Super VL 120B",
+        "score": "47.1"
+       },
+       {
+        "model": "Qwen3.8-27B",
+        "score": "47.9"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash-1017",
+        "score": "57.6"
+       }
+      ]
+     },
+     {
+      "name": "GDP.pdf",
+      "score": "16.2",
+      "vs": [
+       {
+        "model": "Nemotron 3.5 Super VL 120B",
+        "score": "8.0"
+       },
+       {
+        "model": "Qwen3.8-27B",
+        "score": "16.4"
+       },
+       {
+        "model": "DeepSeek-V4.1-Flash-1017",
+        "score": "17.2"
+       }
+      ]
+     }
+    ],
+    "params": "187.8B totali (187.763.545.616 parametri), mixture-of-experts; il testo non dichiara il numero di parametri attivi per…",
+    "context": "262.144 token (limite di configurazione)",
+    "availability": "Pesi aperti BF16 distribuiti come repository locale con Transformers (trust_remote_code=True), licenza Apache 2.0; il testo non riporta API, prezzi o piattaforme ospitanti",
+    "local_tips": "Sampling di default in generation_config.json: do_sample=true, temperature=1.0, top_p=0.95, top_k=20; esempi con device_map=\"auto\", attn_implementation=\"eager\", experts_implementation=\"grouped_mm\", dtype bfloat16; il testo non menziona quantizzazioni ufficiali né framework come llama.cpp, vLLM o Ollama, e avverte che la compatibilità con motori di serving ottimizzati va verificata",
+    "hw_claims": "Payload dei pesi non quantizzati: 375,5 GB (~349,7 GiB) escluso l'header dei file; storage consigliato almeno 400 GB; configurazione pratica indicata come sistema con 4 × GPU di classe H200 (capacità di partenza, non misurata); RAM abbondante per il caricamento, con lookup table lessicale di grandi dimensioni; nessuna velocità di inferenza misurata; versioni di test: PyTorch 2.14.1+cu130,…",
+    "source": "https://huggingface.co/Agnes-AI/Agnes-2.5-Pro-Theta",
+    "date": "2026-11-19",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-19"
+  },
+  "microsoft/Aion-1.0-Instruct-2.3B-ONNX-WebGPU": {
+   "id": "microsoft/Aion-1.0-Instruct-2.3B-ONNX-WebGPU",
+   "name": "Aion-1.0-Instruct-2.3B-ONNX-WebGPU",
+   "org": "microsoft",
+   "kind": "open",
+   "released": "2026-11-18",
+   "hf_id": "microsoft/Aion-1.0-Instruct-2.3B-ONNX-WebGPU",
+   "pipeline": "text-generation",
+   "license": "mit",
+   "gated": false,
+   "params_b": 2.3,
+   "params_source": "nome",
+   "active_b": null,
+   "context": 32768,
+   "arch": {
+    "layers": 28,
+    "hidden": 2048,
+    "heads": 24,
+    "kv_heads": 8,
+    "head_dim": 128,
+    "full_layers": 7,
+    "sliding_layers": 21,
+    "window": 2048,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 8192,
+    "vocab": 200029,
+    "tied": true,
+    "max_ctx": 32768
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 3,
+    "downloads": 0,
+    "trending": null,
+    "watched_org": true
+   },
+   "links": {
+    "hf": "https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B-ONNX-WebGPU"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo · 32k",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~32k, ~256 tok/s",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 4.3,
+    "ref_ctx": 32768,
+    "tok_s": 256,
+    "kv_known": true,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 6.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 256
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 4.1,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 458
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 3.6,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 576
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 3.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 650
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 3.1,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 743
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 2.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 828
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 2.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 885
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 2.5,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 1172
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 4.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 471
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 3.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 790
+     }
+    ]
+   },
+   "quants": [],
+   "quants_checked": "2026-11-19",
+   "first_seen": "2026-11-19",
+   "mentions": [],
+   "hf_checked": "2026-11-19",
+   "checks": [
+    "Parametri dedotti dal nome del repository (non dai metadati dei pesi)."
+   ],
+   "score": 7.04,
+   "newer": null,
+   "newer_checked": "2026-11-19",
+   "deep": {
+    "tldr": "Aion-1.0-Instruct-2.3B-ONNX-WebGPU è la versione ONNX quantizzata a INT4 (pesi) di Aion Instruct v1 di Microsoft, pensata per l'esecuzione su GPU tramite WebGPU, sia nel browser sia in nativo. Il testo non riporta benchmark né confronti con altri modelli. È adatta a chi vuole far girare un piccolo modello instruct (circa 2.3B parametri, contesto 32k) on-device tramite ONNX Runtime GenAI con provider WebGPU.",
+    "features": [
+     "Decoder ONNX (opset 21, contrib ops com.microsoft) con pesi INT4 block-wise da checkpoint QAT, attivazioni, norme, logit e KV cache in FP16",
+     "Attenzione GroupQueryAttention con RoPE fuso: 21 layer a sliding window (finestra 2048) e 7 layer full attention",
+     "Contesto dichiarato di 32.768 token, con max_length predefinito di 4.096 in genai_config.json",
+     "Lingue dichiarate: inglese, tedesco, spagnolo, portoghese, italiano, francese, cinese, giapponese",
+     "Licenza MIT, come il modello base",
+     "Esecuzione su GPU via WebGPU (browser e nativo) oppure su CPU omettendo il provider WebGPU"
+    ],
+    "benchmarks": [],
+    "params": "~2.29B (modello base); pesi quantizzati ~1.3 GB",
+    "context": "32.768 token",
+    "availability": "Pesi aperti su Hugging Face (microsoft/Aion-1.0-Instruct-2.3B-ONNX-WebGPU), licenza MIT. Altre versioni: GGUF per llama.cpp (asgmodels/Aion-Instruct-v1-GGUF), ONNX NPU (asgmodels/Aion-Instruct-v1-ONNX-NPU), originale bfloat16 per Transformers (microsoft/Aion-1.0-Instruct-2.3B). Contatto: aioninstruct@microsoft.com",
+    "local_tips": "Framework ufficiale: ONNX Runtime GenAI 0.14.1 con onnxruntime-webgpu 1.27.0 (installare onnxruntime-genai con --no-deps). Provider: 'webgpu' (rimuovendo clear_providers/append_provider si usa la CPU). Formato chat: chat_template.jinja incluso. max_length alzabile fino a 32.768, con KV cache pre-allocata più grande. Quantizzazione ufficiale: INT4 block-wise (MatMulNBits block 32; embedding/LM head block 64), attivazioni FP16. Parametri di sampling non specificati nel testo.",
+    "hw_claims": "Dimensione dei file ~1.3 GB; GPU target: via WebGPU (nessuna GPU specifica o VRAM indicata); motore: ONNX Runtime GenAI / ONNX Runtime Web con provider WebGPU; KV cache FP16 con shape [batch, 8, seq, 128] su 28 layer; logits [batch, 1, 200029]. Nessuna velocità misurata o requisito di RAM/VRAM dichiarato esplicitamente.",
+    "source": "https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B-ONNX-WebGPU",
+    "date": "2026-11-19",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-19"
+  },
+  "inclusionAI/invoker-render-1.0": {
+   "id": "inclusionAI/invoker-render-1.0",
+   "name": "invoker-render-1.0",
+   "org": "inclusionAI",
+   "kind": "open",
+   "released": "2026-11-16",
+   "hf_id": "inclusionAI/invoker-render-1.0",
+   "pipeline": "video-to-video",
+   "license": "other",
+   "gated": false,
+   "params_b": 33.12,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": null,
+   "arch": {
+    "layers": 50,
+    "hidden": 5376,
+    "heads": 56,
+    "kv_heads": 56,
+    "head_dim": 96,
+    "full_layers": 50,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": null,
+    "vocab": null,
+    "tied": false,
+    "max_ctx": null
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 8,
+    "downloads": 1989,
+    "trending": null,
+    "watched_org": true
+   },
+   "links": {
+    "hf": "https://huggingface.co/inclusionAI/invoker-render-1.0"
+   },
+   "vram": {
+    "level": "warn",
+    "mode": "quant",
+    "label": "NVFP4 · 11k",
+    "text": "Serve quantizzazione e contesto ridotto: NVFP4 fino a ~11k · In alternativa GPU + RAM: Q4_K_M con ~34 GB in VRAM + ~19 GB in RAM (llama.cpp -ngl parziale)",
+    "best_quant": "NVFP4",
+    "quantized": true,
+    "native_best": null,
+    "gguf_best": null,
+    "tight": null,
+    "native_gb": 61.7,
+    "ref_ctx": 32768,
+    "tok_s": null,
+    "kv_known": true,
+    "is_moe": false,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 33.9,
+     "ram_gb": 18.7,
+     "tok_s": null,
+     "moe": false,
+     "active_known": true
+    },
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 96.5,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 67.0,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 59.4,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": 4350,
+      "tok_s": null
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 55.9,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": 7676,
+      "tok_s": null
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 52.6,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": 11002,
+      "tok_s": null
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 50.3,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": 13305,
+      "tok_s": null
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 49.0,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": 14841,
+      "tok_s": null
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 44.2,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": 19446,
+      "tok_s": null
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 66.0,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 51.3,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": 12282,
+      "tok_s": null
+     }
+    ]
+   },
+   "quants": [],
+   "quants_checked": "2026-11-19",
+   "first_seen": "2026-11-19",
+   "mentions": [],
+   "hf_checked": "2026-11-19",
+   "score": 5.36,
+   "newer": null,
+   "newer_checked": "2026-11-19",
+   "deep": {
+    "tldr": "Invoker-Render è un modello video-to-video della famiglia Code World Model 2.0 di inclusionAI, che genera l'aspetto visivo a partire da proxy strutturali (camera, layout, moto degli oggetti) fissati da un motore upstream. Il repository ospita i pesi DiT causal streaming per generazione video controllabile e potenzialmente infinita. È pensato per sessioni interattive e di lunga durata guidate da proxy e da un'immagine di riferimento dell'aspetto.",
+    "features": [
+     "Architettura DiT causal streaming (MiniMaxH3Transformer3DModel) con ancoraggio di aspetto fisso e finestra di storia limitata, per sessioni lunghe quanto i frame proxy arrivano",
+     "Multimodalità: input di proxy video a 24 FPS, un'immagine RGB di riferimento 1344×768 e testo; supporta mappe semantiche, box 3D sparsi, maschere dei soggetti, geometria ombreggiata e box con scheletri",
+     "Inferenza causale in quattro passi tramite il codice companion CodeWorldModel, costruito su MiniMax-H3, SGLang e SGLang-Omni; profilo production su otto GPU NVIDIA su un nodo",
+     "Deployment interattivo con servizio di sessione WebSocket, client da file e client browser",
+     "Adapter LoRA del teacher bidirezionale (teacher-live.safetensors, circa 2,3 GB) su base MiniMax-H3, da non applicare sui pesi causali",
+     "Licenza: Apache-2.0 e CC BY-NC 4.0 (uso non commerciale)"
+    ],
+    "benchmarks": [],
+    "params": "33.12B parametri (pesi FP32, 29 shard safetensors, 638 tensori, circa 132.5 GB, non quantizzati)",
+    "context": "",
+    "availability": "Pesi aperti su repository (pesi DiT causal in root e LoRA del teacher bidirezionale); codice di inferenza nel repository CodeWorldModel su GitHub; paper su arXiv e homepage del progetto. VAE, Qwen, decoder causal e silence tensors non sono inclusi e vanno preparati separatamente. Nessun prezzo o API dichiarati.",
+    "local_tips": "Seguire README.md e docs/INFERENCE.md del repository CodeWorldModel per ambiente e bundle di inferenza; usare invoker_render.py per l'inferenza da file. Input richiesti: immagine 1344×768, proxy a 24 FPS, testo; per l'inferenza da file servono 17*N+5 frame proxy (minimo 39). Nessuna quantizzazione ufficiale dichiarata (pesi FP32 non quantizzati).",
+    "hw_claims": "Il profilo production dichiarato usa otto GPU NVIDIA su un nodo. Pesi FP32 non quantizzati di circa 132.5 GB su disco. Nessuna VRAM per singola GPU, nessuna RAM, nessun offload o velocità misurata dichiarati nel testo; per RTX 5090 da 32 GB il testo non indica esecuzione fattibile in locale.",
+    "source": "https://huggingface.co/inclusionAI/invoker-render-1.0",
+    "date": "2026-11-19",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-19"
+  },
+  "CohereLabs/c4ai-command-a-03-2025": {
+   "id": "CohereLabs/c4ai-command-a-03-2025",
+   "name": "c4ai-command-a-03-2025",
+   "org": "CohereLabs",
+   "kind": "open",
+   "released": "2025-03-11",
+   "hf_id": "CohereLabs/c4ai-command-a-03-2025",
+   "pipeline": "text-generation",
+   "license": "cc-by-nc-4.0",
+   "gated": true,
+   "params_b": 111.06,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 397,
+    "downloads": 2005,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/CohereLabs/c4ai-command-a-03-2025"
+   },
+   "vram": {
+    "level": "warn",
+    "mode": "offload",
+    "label": "GPU + RAM · Q4_K_M",
+    "text": "Non entra tutto in VRAM (63 GB in Q4_K_M), ma gira con offload in RAM: Q4_K_M con ~30 GB in VRAM + ~35 GB in RAM (llama.cpp -ngl parziale, o --n-cpu-moe se è un MoE); parametri attivi non noti: ~1 tok/s se denso, molto di più se è un MoE",
+    "best_quant": null,
+    "quantized": false,
+    "native_best": null,
+    "gguf_best": null,
+    "tight": null,
+    "native_gb": 206.9,
+    "ref_ctx": 32768,
+    "tok_s": null,
+    "kv_known": false,
+    "is_moe": false,
+    "offload": {
+     "q": "Q4_K_M",
+     "vram_gb": 29.5,
+     "ram_gb": 35.2,
+     "tok_s": 1,
+     "moe": false,
+     "active_known": false
+    },
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 211.8,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 6
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 112.8,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 11
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 87.2,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 14
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 75.8,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 16
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 64.7,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 19
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 56.7,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 21
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 52.4,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 23
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 36.3,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 33
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 109.6,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 11
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 60.1,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": 20
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "bartowski/CohereForAI_c4ai-command-a-03-2025-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 1132
+    },
+    {
+     "id": "MaziyarPanahi/c4ai-command-a-03-2025-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 566
+    },
+    {
+     "id": "mradermacher/c4ai-command-a-03-2025-i1-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 552
+    },
+    {
+     "id": "Firworks/c4ai-command-a-03-2025-nvfp4",
+     "format": "NVFP4",
+     "nvfp4": true,
+     "official": false,
+     "downloads": 17
+    },
+    {
+     "id": "aikitoria/c4ai-command-a-03-2025-FP8-Dynamic",
+     "format": "FP8",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 20
+    },
+    {
+     "id": "gghfez/command-a-03-2025-AWQ",
+     "format": "AWQ",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 41
+    },
+    {
+     "id": "Bedovyy/c4ai-command-a-03-2025-gptqmodel-4bit",
+     "format": "GPTQ",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 17
+    },
+    {
+     "id": "mlx-community/c4ai-command-a-03-2025-4bit",
+     "format": "MLX",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 94
+    },
+    {
+     "id": "unsloth/c4ai-command-a-03-2025-bnb-4bit",
+     "format": "altro",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 459
+    }
+   ],
+   "quants_checked": "2026-11-19",
+   "first_seen": "2026-11-19",
+   "mentions": [],
+   "hf_checked": "2026-11-19",
+   "checks": [
+    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "score": 7.84,
+   "newer": null,
+   "newer_checked": "2026-11-19",
+   "updated": "2026-11-19"
+  },
+  "ann:genie4": {
+   "id": "ann:genie4",
+   "name": "Genie 4",
+   "org": "",
+   "kind": "announced",
+   "released": "2026-11-18",
+   "links": {
+    "announcement": "https://deepmind.google/blog/genie-4-is-now-available/"
+   },
+   "first_seen": "2026-11-19",
+   "mentions": [
+    {
+     "item": "50e3ea47cbae",
+     "rel": 9,
+     "date": "2026-11-18",
+     "title": "Genie 4 di Google DeepMind ora disponibile",
+     "url": "https://deepmind.google/blog/genie-4-is-now-available/",
+     "source": "Google DeepMind"
+    }
+   ],
+   "score": 8.7,
+   "newer": null,
+   "newer_checked": "2026-11-19",
+   "deep": {
+    "tldr": "Genie 4 è il nuovo modello di world model di Google DeepMind, reso disponibile tramite Project Genie per gli abbonati Google AI Ultra, per generare e modificare in tempo reale mondi interattivi. Rispetto a Genie 3 introduce la modifica dell'ambiente tramite prompt testuali durante la sessione e audio nativo in tempo reale. È adatto alla creazione di esperienze interattive e contenuti creativi, non a inferenza locale o uso come LLM.",
+    "features": [
+     "Modifica in tempo reale dell'ambiente tramite prompt in linguaggio naturale durante la navigazione (meteo, personaggi, azione)",
+     "Audio nativo in tempo reale che si adatta alla scena (ambient soundscapes e dialoghi dei personaggi)",
+     "Fedeltà visiva, fisica e interattività dichiarate come le più alte della serie Genie",
+     "Project Genie agent: costruzione di mondi tramite conversazione, con orchestrazione di modelli multimodali Google e integrazione di Gemini durante la sessione",
+     "Galleria della community per pubblicare, esplorare e remixare mondi; watermark SynthID su video e audio",
+     "Accesso riservato a Google AI Ultra; Google AI Pro può iscriversi alla lista d'attesa"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "Accesso tramite il sito Project Genie per abbonati Google AI Ultra eligible; lista d'attesa per Google AI Pro. Nessun peso aperto, nessuna API o prezzo dichiarati nel testo.",
+    "local_tips": "",
+    "hw_claims": "",
+    "source": "https://deepmind.google/blog/genie-4-is-now-available/",
+    "date": "2026-11-19",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-19"
+  },
+  "ann:daisyrose27b": {
+   "id": "ann:daisyrose27b",
+   "name": "DaisyRose-27B",
+   "org": "",
+   "kind": "announced",
+   "released": "2026-11-18",
+   "links": {
+    "announcement": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin"
+   },
+   "note": "Pesi ufficiali non ancora individuati su Hugging Face. Repository correlati (non del produttore o senza pesi, da verificare): RadixArk/DaisyRose-27B, bartowski/RadixArk_DaisyRose-27B-GGUF, RadixArk/DaisyRose-27B-NVFP4.",
+   "first_seen": "2026-11-19",
+   "mentions": [
+    {
+     "item": "f689168723dc",
+     "rel": 8,
+     "date": "2026-11-18",
+     "title": "DaisyRose-27B: verso una nuova frontiera di efficienza nel post-training",
+     "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+     "source": "Hugging Face Blog"
+    }
+   ],
+   "score": 7.9,
+   "newer": null,
+   "newer_checked": "2026-11-19",
+   "deep": {
+    "tldr": "DaisyRose-27B è il primo modello di RadixArk, costruito su Qwen3.8-27B e addestrato con reinforcement learning tramite il framework Miles su task agentici a lungo orizzonte (sessioni fino a 1M token), usando 1.200 task curati in 18 giorni su 144 H200. Dichiara miglioramenti su Terminal-Bench 4.1 e su vari benchmark di ragionamento, instruction following e coding. È orientato a workflow agentici e di coding, con pesi aperti Apache 2.0.",
+    "features": [
+     "Architettura e tokenizer ereditati da Qwen3.8-27B, inclusa la comprensione di immagini (multimodalità)",
+     "Context window di 256K token; le sessioni di training arrivano a 1M token tramite harness summarization",
+     "Reasoning attivo di default: il ragionamento è restituito in reasoning_content e la risposta finale in content",
+     "Checkpoint disponibili in BF16, FP8 e NVFP4 sotto licenza Apache 2.0",
+     "Training con reinforcement learning asincrono tramite il framework open-source Miles e backend interno ottimizzato per l'addestramento agentico",
+     "Servizio di sandbox basato su AgentENV per l'esecuzione e la valutazione degli agenti; raccomandato il serving con SGLang e speculative decoding DSpark"
+    ],
+    "benchmarks": [
+     {
+      "name": "Terminal-Bench 4.1 (pass@1)",
+      "score": "12.0",
+      "vs": [
+       {
+        "model": "Qwen3.8-27B",
+        "score": "5.6"
+       }
+      ]
+     },
+     {
+      "name": "Terminal-Bench 2.1",
+      "score": "75.5",
+      "vs": [
+       {
+        "model": "Qwen3.8-27B",
+        "score": "73.0"
+       }
+      ]
+     },
+     {
+      "name": "DeepSWE v1.1",
+      "score": "46.2",
+      "vs": [
+       {
+        "model": "Qwen3.8-27B",
+        "score": "42.2"
+       }
+      ]
+     },
+     {
+      "name": "SWE-Bench Pro v2",
+      "score": "94.7",
+      "vs": [
+       {
+        "model": "Qwen3.8-27B",
+        "score": "91.3"
+       }
+      ]
+     },
+     {
+      "name": "HLE (text-only)",
+      "score": "34.3",
+      "vs": [
+       {
+        "model": "Qwen3.8-27B",
+        "score": "33.9"
+       }
+      ]
+     },
+     {
+      "name": "IFBench",
+      "score": "82.4",
+      "vs": [
+       {
+        "model": "Qwen3.8-27B",
+        "score": "79.5"
+       }
+      ]
+     },
+     {
+      "name": "GPQA Diamond",
+      "score": "90.7",
+      "vs": [
+       {
+        "model": "Qwen3.8-27B",
+        "score": "89.2"
+       }
+      ]
+     }
+    ],
+    "params": "27B dense",
+    "context": "256K token",
+    "availability": "Pesi aperti su piattaforma Hugging Face sotto licenza Apache 2.0 nei formati BF16, FP8 e NVFP4; servibile con SGLang (guida nel cookbook SGLang), client compatibile OpenAI su porta 30000. Nel testo non sono indicati prezzi API né altre piattaforme.",
+    "local_tips": "Raccomandato SGLang con DSpark speculative decoding; parametri di sampling dell'esempio: temperature=1.0, top_p=0.95, top_k=20, min_p=0.0. Il modello ragiona di default prima di rispondere. Checkpoint ufficiali disponibili: BF16, FP8, NVFP4. Il testo rimanda al cookbook SGLang per configurazioni per GPU e formato di checkpoint.",
+    "hw_claims": "Nel testo non sono dichiarati requisiti VRAM o RAM per l'esecuzione locale. Il training è stato eseguito su 144 H200 (128 per l'inferenza degli agenti e 16 per il trainer, con 63.000 GPU-hours complessive), ma questo riguarda l'addestramento e non l'inferenza locale. Non sono riportate velocità di inferenza misurate su hardware consumer.",
+    "source": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+    "date": "2026-11-19",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-19"
   }
  },
  "aliases": {
