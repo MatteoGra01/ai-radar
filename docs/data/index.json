@@ -1,6 +1,12 @@
 {
  "days": [
   {
+   "date": "2026-11-21",
+   "headline": "Inkling 2 Mini su Ollama e Transformers: 26B che gira su RTX 5090",
+   "n_items": 21,
+   "n_models": 12
+  },
+  {
    "date": "2026-11-20",
    "headline": "Gemini 4 Neon in testa al Models Engineering Index; novità locali su RTX 5090 limitate",
    "n_items": 21,
@@ -37,7 +43,7 @@
    "n_models": 57
   }
  ],
- "updated": "2026-11-20T14:08:44Z",
+ "updated": "2026-11-21T13:33:53Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -61,61 +67,61 @@
  },
  "status": {
   "sources": {
+   "rss:Simon Willison": {
+    "ok": true,
+    "n": 2
+   },
    "rss:r/LocalLLaMA": {
     "ok": false,
     "error": "HTTP 404 su https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day"
    },
-   "rss:Hugging Face Blog": {
+   "rss:OpenAI News": {
     "ok": true,
     "n": 1
    },
-   "rss:Ollama Blog": {
+   "rss:Hugging Face Blog": {
     "ok": true,
     "n": 0
-   },
-   "rss:OpenAI News": {
-    "ok": true,
-    "n": 0
-   },
-   "rss:Simon Willison": {
-    "ok": true,
-    "n": 2
    },
    "rss:Interconnects": {
     "ok": true,
     "n": 0
    },
-   "rss:NVIDIA Developer": {
+   "rss:Ollama Blog": {
     "ok": true,
-    "n": 3
-   },
-   "hackernews": {
-    "ok": true,
-    "n": 16
+    "n": 0
    },
    "rss:Google DeepMind": {
     "ok": true,
     "n": 0
    },
-   "rss:Ollama releases": {
-    "ok": true,
-    "n": 1
-   },
-   "rss:Transformers releases": {
+   "rss:NVIDIA Developer": {
     "ok": true,
     "n": 0
+   },
+   "hackernews": {
+    "ok": true,
+    "n": 12
+   },
+   "rss:Ollama releases": {
+    "ok": true,
+    "n": 3
    },
    "rss:vLLM releases": {
     "ok": true,
     "n": 0
    },
+   "rss:Transformers releases": {
+    "ok": true,
+    "n": 1
+   },
    "github": {
     "ok": true,
-    "n": 68
+    "n": 73
    },
    "openrouter": {
     "ok": true,
-    "n": 477
+    "n": 476
    },
    "hf_trending": {
     "ok": true,
@@ -127,19 +133,19 @@
    },
    "benchmarks:artificial-analysis": {
     "ok": true,
-    "n": 254
+    "n": 255
    },
    "benchmarks:openrouter": {
     "ok": true,
-    "n": 310
+    "n": 308
    },
    "papers:hf": {
     "ok": true,
-    "n": 211
+    "n": 183
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 358
+    "n": 351
    },
    "papers:Alignment Forum": {
     "ok": true,
@@ -156,25 +162,25 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 43,
-   "cost_usd": 0.0636,
+   "calls": 21,
+   "cost_usd": 0.0285,
    "failures": 0,
    "models": {
-    "openrouter/deepseek/deepseek-v4.1-flash": 33,
-    "openrouter/anthropic/claude-haiku-5.5": 10
+    "openrouter/deepseek/deepseek-v4.1-flash": 14,
+    "openrouter/anthropic/claude-haiku-5.5": 7
    },
    "log": []
   },
-  "duration_s": 260
+  "duration_s": 111
  },
  "new_model_days": 14,
  "benchmarks_meta": {
-  "as_of": "2026-11-20T00:00:35.305Z",
+  "as_of": "2026-11-21T12:00:30.823Z",
   "version": "v1",
   "source": "artificial-analysis",
   "source_url": "https://artificialanalysis.ai",
   "citation": "Source: Artificial Analysis (artificialanalysis.ai) via OpenRouter (openrouter.ai/rankings).",
-  "model_count": 254,
+  "model_count": 255,
   "task_type": null
  },
  "site": {
