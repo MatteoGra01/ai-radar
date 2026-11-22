@@ -1,6 +1,12 @@
 {
  "days": [
   {
+   "date": "2026-11-22",
+   "headline": "PiBot agenti locali, fast-anything e quattro modelli nuovi per la RTX 5090",
+   "n_items": 10,
+   "n_models": 4
+  },
+  {
    "date": "2026-11-21",
    "headline": "Inkling 2 Mini su Ollama e Transformers: 26B che gira su RTX 5090",
    "n_items": 21,
@@ -43,7 +49,7 @@
    "n_models": 57
   }
  ],
- "updated": "2026-11-21T13:33:53Z",
+ "updated": "2026-11-22T13:26:57Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -67,15 +73,19 @@
  },
  "status": {
   "sources": {
-   "rss:Simon Willison": {
+   "rss:Google DeepMind": {
     "ok": true,
-    "n": 2
+    "n": 0
    },
    "rss:r/LocalLLaMA": {
     "ok": false,
     "error": "HTTP 404 su https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day"
    },
    "rss:OpenAI News": {
+    "ok": true,
+    "n": 0
+   },
+   "rss:Simon Willison": {
     "ok": true,
     "n": 1
    },
@@ -87,25 +97,21 @@
     "ok": true,
     "n": 0
    },
-   "rss:Ollama Blog": {
-    "ok": true,
-    "n": 0
-   },
-   "rss:Google DeepMind": {
-    "ok": true,
-    "n": 0
-   },
    "rss:NVIDIA Developer": {
+    "ok": true,
+    "n": 0
+   },
+   "rss:Ollama Blog": {
     "ok": true,
     "n": 0
    },
    "hackernews": {
     "ok": true,
-    "n": 12
+    "n": 6
    },
    "rss:Ollama releases": {
     "ok": true,
-    "n": 3
+    "n": 0
    },
    "rss:vLLM releases": {
     "ok": true,
@@ -117,7 +123,7 @@
    },
    "github": {
     "ok": true,
-    "n": 73
+    "n": 72
    },
    "openrouter": {
     "ok": true,
@@ -141,11 +147,11 @@
    },
    "papers:hf": {
     "ok": true,
-    "n": 183
+    "n": 141
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 351
+    "n": 322
    },
    "papers:Alignment Forum": {
     "ok": true,
@@ -162,16 +168,16 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 21,
-   "cost_usd": 0.0285,
+   "calls": 13,
+   "cost_usd": 0.0141,
    "failures": 0,
    "models": {
-    "openrouter/deepseek/deepseek-v4.1-flash": 14,
-    "openrouter/anthropic/claude-haiku-5.5": 7
+    "openrouter/deepseek/deepseek-v4.1-flash": 8,
+    "openrouter/anthropic/claude-haiku-5.5": 5
    },
    "log": []
   },
-  "duration_s": 111
+  "duration_s": 104
  },
  "new_model_days": 14,
  "benchmarks_meta": {

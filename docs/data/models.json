@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T13:35:44Z",
+ "updated": "2026-11-22T13:28:41Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -3051,9 +3051,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 625,
-    "downloads": 154251,
-    "trending": 86,
+    "likes": 598,
+    "downloads": 164668,
+    "trending": 71,
     "trend_rank": 7,
     "watched_org": true
    },
@@ -3070,7 +3070,7 @@
    ],
    "first_seen": "2026-11-15",
    "mentions": [],
-   "score": 7.02,
+   "score": 7.0,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "ZONOS3-Mini è un modello text-to-speech open-source di Zyphra con 100M parametri attivi (800M totali), che supporta clonazione vocale da un campione audio e design di personaggi (età, accento, timbro). Gira in tempo reale su telefoni e laptop, anche nel browser via WebGPU, con pesi rilasciati sotto licenza Apache 2.0. È adatto a giochi, narrazione e assistenti vocali, con controllo di emozione, ritmo e consegna fino a livello di singola parola.",
@@ -3523,9 +3523,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 812,
-    "downloads": 8120,
-    "trending": 628,
+    "likes": 858,
+    "downloads": 8608,
+    "trending": 294,
     "trend_rank": 13
    },
    "links": {
@@ -3667,7 +3667,7 @@
      "source": "r/LocalLLaMA"
     }
    ],
-   "score": 13.22,
+   "score": 13.24,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "Haru-4B è un modello base open-weight (Apache 2.0, circa 5,27B parametri) per dialogo vocale continuo full-duplex: ascolta e parla contemporaneamente, con un frame ogni 133 ms (7,5 Hz). Usa audio continuo a 64 dimensioni per frame, generato in un solo passo da una piccola testa MLP con MeanFlow, senza token audio discreti. È rilasciato per la ricerca, non come assistente generico; è adatto a sperimentare dialogo vocale a bassa latenza e multilingue.",
@@ -4992,7 +4992,7 @@
    "weights_available": true,
    "signals": {
     "likes": 12,
-    "downloads": 1856,
+    "downloads": 2084,
     "trending": null,
     "watched_org": true
    },
@@ -11254,11 +11254,11 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 763,
-    "downloads": 12946,
+    "likes": 765,
+    "downloads": 11037,
     "trending": null
    },
-   "score": 8.59,
+   "score": 8.6,
    "newer": null,
    "newer_checked": "2026-11-15",
    "gated": true,
@@ -11268,66 +11268,66 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 9195
+     "downloads": 8890
     },
     {
      "id": "ggml-org/Muse-Spark-Open-816B-A42B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 3983
+     "downloads": 4338
     },
     {
      "id": "Interchained/Muse-Spark-Open-816B-A42B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1289
+     "downloads": 1254
     },
     {
      "id": "meta-models/Muse-Spark-Open-816B-A42B-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": true,
-     "downloads": 87078
+     "downloads": 100946
     },
     {
      "id": "unsloth/Muse-Spark-Open-816B-A42B-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 2416
+     "downloads": 2308
     },
     {
      "id": "amd/Muse-Spark-Open-816B-A42B-Quark-PTPC-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 1163
+     "downloads": 926
     },
     {
      "id": "amd/Muse-Spark-Open-816B-A42B-Quark-MXFP4",
      "format": "MXFP4",
      "nvfp4": false,
      "official": false,
-     "downloads": 12395
+     "downloads": 12027
     },
     {
      "id": "mlx-community/Muse-Spark-Open-816B-A42B-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 2433
+     "downloads": 2386
     },
     {
      "id": "intel-ai/Muse-Spark-Open-816B-A42B-INT4",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 323
+     "downloads": 312
     }
    ],
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -12698,11 +12698,11 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 134,
-    "downloads": 80965,
+    "likes": 138,
+    "downloads": 79008,
     "trending": null
    },
-   "score": 10.42,
+   "score": 10.43,
    "newer": null,
    "newer_checked": "2026-11-15",
    "gated": false,
@@ -12712,66 +12712,66 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 91569
+     "downloads": 85965
     },
     {
      "id": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 54847
+     "downloads": 56026
     },
     {
      "id": "AtomicChat/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 4473
+     "downloads": 4425
     },
     {
      "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": true,
-     "downloads": 131701
+     "downloads": 136220
     },
     {
      "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr",
      "format": "NVFP4",
      "nvfp4": true,
      "official": true,
-     "downloads": 5109
+     "downloads": 4897
     },
     {
      "id": "RedHatAI/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 1139
+     "downloads": 1107
     },
     {
      "id": "RelaxingSnorlax/nemotron35-dspark-5l-fp8dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 114
+     "downloads": 97
     },
     {
      "id": "Duckets/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-MLX-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 2141
+     "downloads": 2140
     },
     {
      "id": "xv0y5ncu/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GLQ-trellis-3inst-3bpw",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 362
+     "downloads": 365
     }
    ],
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
@@ -13442,8 +13442,8 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 388,
-    "downloads": 965071,
+    "likes": 389,
+    "downloads": 918295,
     "trending": null
    },
    "score": 9.83,
@@ -13456,66 +13456,66 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 7485
+     "downloads": 7589
     },
     {
      "id": "DevQuasar/nvidia.NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 947
+     "downloads": 929
     },
     {
      "id": "vultr/NVIDIA-Nemotron-3-Ultra-550B-A55B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 667
+     "downloads": 854
     },
     {
      "id": "OpenYourMind/OpenYourMind-NVIDIA-Nemotron-3-Ultra-550B-A55B-abliterated-uncensored-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 89261
+     "downloads": 99134
     },
     {
      "id": "RedHatAI/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 269
+     "downloads": 261
     },
     {
      "id": "RedHatAI/NVIDIA-Nemotron-3-Ultra-550B-A55B-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 564
+     "downloads": 549
     },
     {
      "id": "RedHatAI/NVIDIA-Nemotron-3-Ultra-550B-A55B-FP8-block",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 296
+     "downloads": 306
     },
     {
      "id": "mlx-community/Nemotron-3-Ultra-550B-A55B-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 379
+     "downloads": 376
     },
     {
      "id": "RedHatAI/NVIDIA-Nemotron-3-Ultra-550B-A55B-quantized.w4a16",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 2344
+     "downloads": 2326
     }
    ],
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
@@ -27374,7 +27374,7 @@
    "weights_available": true,
    "signals": {
     "likes": 260,
-    "downloads": 2855,
+    "downloads": 2766,
     "trending": null
    },
    "score": 8.67,
@@ -27385,26 +27385,26 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 4001
+     "downloads": 4021
     },
     {
      "id": "bartowski/mistralai_Mistral-Large-3-675B-Instruct-2512-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1722
+     "downloads": 1737
     },
     {
      "id": "mradermacher/Mistral-Large-3-675B-Instruct-2512-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 556
+     "downloads": 555
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "hf_checked": "2026-11-15",
    "checks": [
     "Parametri dedotti dal nome del repository (non dai metadati dei pesi).",
@@ -27603,7 +27603,7 @@
    "weights_available": true,
    "signals": {
     "likes": 528,
-    "downloads": 14980,
+    "downloads": 15515,
     "trending": null
    },
    "score": 9.95,
@@ -27614,68 +27614,68 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 28903
+     "downloads": 28550
     },
     {
      "id": "unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF-UD",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1591
+     "downloads": 1617
     },
     {
      "id": "DevQuasar-12/meta-llama.Llama-4-Maverick-17B-128E-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 873
+     "downloads": 950
     },
     {
      "id": "RedHatAI/Llama-4-Maverick-17B-128E-Instruct-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 637
+     "downloads": 625
     },
     {
      "id": "RedHatAI/Llama-4-Maverick-17B-128E-Instruct-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 258
+     "downloads": 276
     },
     {
      "id": "unsloth/Llama-4-Maverick-17B-128E-Instruct-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 238
+     "downloads": 224
     },
     {
      "id": "kishizaki-sci/Llama-4-Maverick-17B-128E-Instruct-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 22
+     "downloads": 20
     },
     {
      "id": "baa-ai/Llama-4-Maverick-17B-128E-Instruct-RAM-170GB-MLX",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 197
+     "downloads": 189
     },
     {
      "id": "RedHatAI/Llama-4-Maverick-17B-128E-Instruct-quantized.w4a16",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 16305
+     "downloads": 16367
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -29245,8 +29245,8 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 3220,
-    "downloads": 342289,
+    "likes": 3223,
+    "downloads": 298928,
     "trending": null
    },
    "score": 11.66,
@@ -29257,75 +29257,75 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 226280
+     "downloads": 230183
     },
     {
      "id": "MaziyarPanahi/Llama-3.3-70B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 50799
+     "downloads": 51877
     },
     {
      "id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 47223
+     "downloads": 47621
     },
     {
      "id": "Kaleto/Llama-3.3-70B-Instruct-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 62
+     "downloads": 66
     },
     {
      "id": "RedHatAI/Llama-3.3-70B-Instruct-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 44748
+     "downloads": 42845
     },
     {
      "id": "amd/Llama-3.3-70B-Instruct-FP8-KV",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 6597
+     "downloads": 6561
     },
     {
      "id": "amd/Llama-3.3-70B-Instruct-MXFP4-Preview",
      "format": "MXFP4",
      "nvfp4": false,
      "official": false,
-     "downloads": 976
+     "downloads": 965
     },
     {
      "id": "kosbu/Llama-3.3-70B-Instruct-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 85876
+     "downloads": 85948
     },
     {
      "id": "mlx-community/Llama-3.3-70B-Instruct-3bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 11499
+     "downloads": 22747
     },
     {
      "id": "unsloth/Llama-3.3-70B-Instruct-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 8216
+     "downloads": 8131
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -29569,7 +29569,7 @@
    "weights_available": true,
    "signals": {
     "likes": 2072,
-    "downloads": 271060,
+    "downloads": 260451,
     "trending": null
    },
    "score": 18.08,
@@ -29580,68 +29580,68 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": true,
-     "downloads": 296
+     "downloads": 311
     },
     {
      "id": "unsloth/gemma-3-27b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 51430
+     "downloads": 54617
     },
     {
      "id": "MaziyarPanahi/gemma-3-27b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 50015
+     "downloads": 51873
     },
     {
      "id": "RedHatAI/gemma-3-27b-it-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 63396
+     "downloads": 63174
     },
     {
      "id": "leon-se/gemma-3-27b-it-FP8-Dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 2241
+     "downloads": 2234
     },
     {
      "id": "gaunernst/gemma-3-27b-it-int4-awq",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 931949
+     "downloads": 948118
     },
     {
      "id": "ISTA-DASLab/gemma-3-27b-it-GPTQ-4b-128g",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 16024
+     "downloads": 15984
     },
     {
      "id": "Outlier-Ai/gemma-3-27b-it-MLX-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 1224
+     "downloads": 1253
     },
     {
      "id": "RedHatAI/gemma-3-27b-it-quantized.w4a16",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 10508
+     "downloads": 10525
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-17",
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -30065,8 +30065,8 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 1392,
-    "downloads": 110640,
+    "likes": 1393,
+    "downloads": 111404,
     "trending": null
    },
    "score": 11.33,
@@ -30077,75 +30077,75 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 36526
+     "downloads": 35496
     },
     {
      "id": "bartowski/meta-llama_Llama-4-Scout-17B-16E-Instruct-old-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 7699
+     "downloads": 7703
     },
     {
      "id": "ggml-org/Llama-4-Scout-17B-16E-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 2042
+     "downloads": 1909
     },
     {
      "id": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 1030
+     "downloads": 1011
     },
     {
      "id": "nvidia/Llama-4-Scout-17B-16E-Instruct-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 395
+     "downloads": 399
     },
     {
      "id": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 4378
+     "downloads": 4369
     },
     {
      "id": "nvidia/Llama-4-Scout-17B-16E-Instruct-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 3544
+     "downloads": 3149
     },
     {
      "id": "kishizaki-sci/Llama-4-Scout-17B-16E-Instruct-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 48
+     "downloads": 47
     },
     {
      "id": "lmstudio-community/Llama-4-Scout-17B-16E-MLX-text-8bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 1784
+     "downloads": 1780
     },
     {
      "id": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-quantized.w4a16",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 7753
+     "downloads": 8303
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -30330,7 +30330,7 @@
    "weights_available": true,
    "signals": {
     "likes": 925,
-    "downloads": 405116,
+    "downloads": 406166,
     "trending": null
    },
    "score": 12.17,
@@ -30341,63 +30341,63 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": true,
-     "downloads": 1585
+     "downloads": 1732
     },
     {
      "id": "unsloth/gemma-3-12b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 91552
+     "downloads": 93250
     },
     {
      "id": "MaziyarPanahi/gemma-3-12b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 51352
+     "downloads": 52589
     },
     {
      "id": "NeoChen1024/gemma-3-12b-it-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 787
+     "downloads": 783
     },
     {
      "id": "RedHatAI/gemma-3-12b-it-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 2544
+     "downloads": 2467
     },
     {
      "id": "leon-se/gemma-3-12b-it-FP8-Dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 364
+     "downloads": 365
     },
     {
      "id": "gaunernst/gemma-3-12b-it-int4-awq",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 120234
+     "downloads": 116129
     },
     {
      "id": "ISTA-DASLab/gemma-3-12b-it-GPTQ-4b-128g",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 811
+     "downloads": 794
     },
     {
      "id": "abhishekchohan/gemma-3-12b-it-quantized-W4A16",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 104138
+     "downloads": 96959
     }
    ],
    "newer": {
@@ -30407,7 +30407,7 @@
     "url": "https://huggingface.co/google/gemma-4-12B"
    },
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -31000,8 +31000,8 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 1694,
-    "downloads": 1055151,
+    "likes": 1697,
+    "downloads": 1100073,
     "trending": null
    },
    "score": 12.41,
@@ -31012,61 +31012,61 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": true,
-     "downloads": 5402
+     "downloads": 5363
     },
     {
      "id": "unsloth/gemma-3-4b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 184991
+     "downloads": 186657
     },
     {
      "id": "ggml-org/gemma-3-4b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 125406
+     "downloads": 127300
     },
     {
      "id": "RedHatAI/gemma-3-4b-it-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 768
+     "downloads": 765
     },
     {
      "id": "unsloth/gemma-3-4b-it-FP8-Dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 188
+     "downloads": 175
     },
     {
      "id": "gaunernst/gemma-3-4b-it-int4-awq",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 763
+     "downloads": 742
     },
     {
      "id": "dongchengli/gemma-3-4b-it-text-int4-gptq",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 3944
+     "downloads": 3957
     },
     {
      "id": "unsloth/gemma-3-4b-it-unsloth-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 19152
+     "downloads": 19125
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "hf_checked": "2026-11-15",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -36776,8 +36776,8 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 3057,
-    "downloads": 723212,
+    "likes": 3062,
+    "downloads": 664121,
     "trending": null
    },
    "score": 12.64,
@@ -36788,35 +36788,35 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 199854
+     "downloads": 196381
     },
     {
      "id": "unsloth/Llama-3.2-3B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 190947
+     "downloads": 184202
     },
     {
      "id": "MaziyarPanahi/Llama-3.2-3B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 52441
+     "downloads": 53538
     },
     {
      "id": "RedHatAI/Llama-3.2-3B-Instruct-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 14813
+     "downloads": 3710
     },
     {
      "id": "RedHatAI/Llama-3.2-3B-Instruct-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 1819
+     "downloads": 1743
     },
     {
      "id": "fbaldassarri/meta-llama_Llama-3.2-3B-Instruct-auto_round-int4-gs128-asym",
@@ -36830,12 +36830,12 @@
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 31269
+     "downloads": 30499
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-15",
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
@@ -37159,8 +37159,8 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 9054,
-    "downloads": 4070382,
+    "likes": 9069,
+    "downloads": 3994051,
     "trending": null
    },
    "links": {
@@ -37281,77 +37281,77 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 349531
+     "downloads": 339893
     },
     {
      "id": "MaziyarPanahi/Meta-Llama-3.1-8B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 53567
+     "downloads": 54648
     },
     {
      "id": "lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 45443
+     "downloads": 41691
     },
     {
      "id": "GaleneAI/llama-3.1-nemoguard-8b-content-safety-merged-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 78067
+     "downloads": 83134
     },
     {
      "id": "RedHatAI/Llama-3.1-8B-Instruct-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 15196
+     "downloads": 15452
     },
     {
      "id": "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 69554
+     "downloads": 69339
     },
     {
      "id": "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 15433
+     "downloads": 15369
     },
     {
      "id": "cyankiwi/Llama-3.1-8B-Instruct-AWQ-INT4",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 620
+     "downloads": 616
     },
     {
      "id": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w4a16",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 14734
+     "downloads": 14595
     },
     {
      "id": "mlx-community/Llama-3.1-8B-Instruct-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 4505
+     "downloads": 4390
     },
     {
      "id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 69386
+     "downloads": 60370
     }
    ],
    "first_seen": "2026-11-15",
@@ -37360,7 +37360,7 @@
    "newer": null,
    "newer_checked": "2026-11-15",
    "updated": "2026-11-15",
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
@@ -37383,9 +37383,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 393,
-    "downloads": 9323,
-    "trending": 246,
+    "likes": 388,
+    "downloads": 10768,
+    "trending": 107.5,
     "trend_rank": 86
    },
    "links": {
@@ -37395,7 +37395,7 @@
    "quants": [],
    "first_seen": "2026-11-15",
    "mentions": [],
-   "score": 5.34,
+   "score": 5.33,
    "newer": null,
    "newer_checked": "2026-11-15",
    "deep": {
@@ -38113,7 +38113,7 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 7,
+    "likes": 8,
     "downloads": 0,
     "trending": null,
     "watched_org": true
@@ -38125,7 +38125,7 @@
    "quants": [],
    "first_seen": "2026-11-15",
    "mentions": [],
-   "score": 4.31,
+   "score": 4.36,
    "newer": null,
    "newer_checked": "2026-11-15",
    "deep": {
@@ -38170,9 +38170,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 400,
-    "downloads": 3031,
-    "trending": 253,
+    "likes": 407,
+    "downloads": 3483,
+    "trending": 138.5,
     "watched_org": true
    },
    "links": {
@@ -38187,7 +38187,7 @@
    "checks": [
     "Numero di parametri non determinato: niente stima della VRAM."
    ],
-   "score": 6.84,
+   "score": 6.85,
    "newer": null,
    "newer_checked": "2026-11-15",
    "deep": {
@@ -39338,8 +39338,8 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 3,
-    "downloads": 75,
+    "likes": 5,
+    "downloads": 204,
     "trending": null,
     "watched_org": true
    },
@@ -39463,7 +39463,7 @@
    "checks": [
     "MoE senza numero di parametri attivi: velocità stimata come modello denso."
    ],
-   "score": 6.04,
+   "score": 6.2,
    "newer": null,
    "newer_checked": "2026-11-16",
    "deep": {
@@ -39719,9 +39719,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 261,
-    "downloads": 1201,
-    "trending": 63.5,
+    "likes": 265,
+    "downloads": 1336,
+    "trending": 64.5,
     "trend_rank": 25
    },
    "links": {
@@ -39905,9 +39905,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 167,
-    "downloads": 995,
-    "trending": 48.5,
+    "likes": 237,
+    "downloads": 1103,
+    "trending": 49.5,
     "trend_rank": 41
    },
    "links": {
@@ -40027,7 +40027,7 @@
    "first_seen": "2026-11-17",
    "mentions": [],
    "hf_checked": "2026-11-17",
-   "score": 8.0,
+   "score": 8.14,
    "newer": null,
    "newer_checked": "2026-11-17",
    "updated": "2026-11-17"
@@ -40197,9 +40197,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 261,
-    "downloads": 199,
-    "trending": 62.5,
+    "likes": 283,
+    "downloads": 225,
+    "trending": 70,
     "trend_rank": 75
    },
    "links": {
@@ -40322,7 +40322,7 @@
    "checks": [
     "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
    ],
-   "score": 7.18,
+   "score": 7.21,
    "newer": null,
    "newer_checked": "2026-11-17",
    "updated": "2026-11-17"
@@ -40548,7 +40548,7 @@
    "arch": null,
    "weights_available": false,
    "signals": {
-    "likes": 10,
+    "likes": 13,
     "downloads": 0,
     "trending": null,
     "watched_org": true
@@ -40561,7 +40561,7 @@
    "first_seen": "2026-11-17",
    "mentions": [],
    "hf_checked": "2026-11-17",
-   "score": 2.44,
+   "score": 2.53,
    "newer": null,
    "newer_checked": "2026-11-17",
    "updated": "2026-11-17"
@@ -44996,9 +44996,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 563,
-    "downloads": 5588,
-    "trending": 365,
+    "likes": 578,
+    "downloads": 6617,
+    "trending": 407,
     "trend_rank": 13,
     "watched_org": true
    },
@@ -45160,7 +45160,7 @@
    "checks": [
     "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
    ],
-   "score": 8.98,
+   "score": 8.99,
    "newer": null,
    "newer_checked": "2026-11-18",
    "deep": {
@@ -45273,9 +45273,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 432,
-    "downloads": 1745,
-    "trending": 177,
+    "likes": 476,
+    "downloads": 1863,
+    "trending": 189.5,
     "trend_rank": 15
    },
    "links": {
@@ -45455,7 +45455,7 @@
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
-   "score": 8.37,
+   "score": 8.41,
    "newer": null,
    "newer_checked": "2026-11-18",
    "updated": "2026-11-18"
@@ -45477,9 +45477,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 187,
+    "likes": 185,
     "downloads": 0,
-    "trending": 40,
+    "trending": 40.5,
     "trend_rank": 74
    },
    "links": {
@@ -45494,7 +45494,7 @@
    "checks": [
     "Numero di parametri non determinato: niente stima della VRAM."
    ],
-   "score": 5.05,
+   "score": 5.04,
    "newer": null,
    "newer_checked": "2026-11-18",
    "deep": {
@@ -50336,9 +50336,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 520,
+    "likes": 572,
     "downloads": 0,
-    "trending": 343,
+    "trending": 424,
     "trend_rank": 17
    },
    "links": {
@@ -50361,7 +50361,7 @@
    "checks": [
     "Numero di parametri non determinato: niente stima della VRAM."
    ],
-   "score": 5.45,
+   "score": 5.48,
    "newer": null,
    "newer_checked": "2026-11-19",
    "deep": {
@@ -50423,9 +50423,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 182,
-    "downloads": 3099,
-    "trending": 90,
+    "likes": 218,
+    "downloads": 3836,
+    "trending": 51.5,
     "trend_rank": 60,
     "watched_org": true
    },
@@ -50575,7 +50575,7 @@
    "first_seen": "2026-11-19",
    "mentions": [],
    "hf_checked": "2026-11-19",
-   "score": 9.54,
+   "score": 9.61,
    "newer": null,
    "newer_checked": "2026-11-19",
    "deep": {
@@ -51381,7 +51381,7 @@
    "weights_available": true,
    "signals": {
     "likes": 12,
-    "downloads": 127,
+    "downloads": 143,
     "trending": null,
     "watched_org": true
    },
@@ -51567,8 +51567,8 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 23,
-    "downloads": 53610,
+    "likes": 25,
+    "downloads": 54687,
     "trending": null,
     "watched_org": true
    },
@@ -51696,7 +51696,7 @@
    "first_seen": "2026-11-19",
    "mentions": [],
    "hf_checked": "2026-11-19",
-   "score": 5.74,
+   "score": 5.77,
    "newer": null,
    "newer_checked": "2026-11-19",
    "deep": {
@@ -51867,21 +51867,21 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1102
-    },
-    {
-     "id": "mradermacher/c4ai-command-a-03-2025-i1-GGUF",
-     "format": "GGUF",
-     "nvfp4": false,
-     "official": false,
-     "downloads": 561
+     "downloads": 1079
     },
     {
      "id": "MaziyarPanahi/c4ai-command-a-03-2025-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 560
+     "downloads": 515
+    },
+    {
+     "id": "mradermacher/c4ai-command-a-03-2025-i1-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 510
     },
     {
      "id": "Firworks/c4ai-command-a-03-2025-nvfp4",
@@ -51895,14 +51895,14 @@
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 20
+     "downloads": 19
     },
     {
      "id": "gghfez/command-a-03-2025-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 40
+     "downloads": 41
     },
     {
      "id": "Bedovyy/c4ai-command-a-03-2025-gptqmodel-4bit",
@@ -51916,17 +51916,17 @@
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 100
+     "downloads": 104
     },
     {
      "id": "unsloth/c4ai-command-a-03-2025-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 437
+     "downloads": 426
     }
    ],
-   "quants_checked": "2026-11-21",
+   "quants_checked": "2026-11-22",
    "first_seen": "2026-11-19",
    "mentions": [],
    "hf_checked": "2026-11-19",
@@ -52382,7 +52382,7 @@
    "weights_available": true,
    "signals": {
     "likes": 9,
-    "downloads": 482,
+    "downloads": 609,
     "trending": null,
     "watched_org": true
    },
@@ -52704,8 +52704,8 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 9,
-    "downloads": 259,
+    "likes": 13,
+    "downloads": 497,
     "trending": null,
     "watched_org": true
    },
@@ -52855,7 +52855,7 @@
    "first_seen": "2026-11-20",
    "mentions": [],
    "hf_checked": "2026-11-20",
-   "score": 7.4,
+   "score": 7.53,
    "newer": null,
    "newer_checked": "2026-11-20",
    "deep": {
@@ -53503,8 +53503,8 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 19,
-    "downloads": 236,
+    "likes": 20,
+    "downloads": 370,
     "trending": null,
     "watched_org": true
    },
@@ -53628,7 +53628,7 @@
    "checks": [
     "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
    ],
-   "score": 6.67,
+   "score": 6.69,
    "newer": null,
    "newer_checked": "2026-11-20",
    "deep": {
@@ -53811,8 +53811,8 @@
    "context": 1048576,
    "modality": "text+image->text",
    "pricing": {
-    "in": 0.1,
-    "out": 0.4
+    "in": 0.075,
+    "out": 0.3
    },
    "free_on_openrouter": false,
    "knowledge_cutoff": null,
@@ -53877,9 +53877,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 1266,
-    "downloads": 7944,
-    "trending": 994,
+    "likes": 4010,
+    "downloads": 23543,
+    "trending": 807.5,
     "trend_rank": 1,
     "watched_org": true
    },
@@ -54038,15 +54038,8 @@
     }
    ],
    "quants_checked": "2026-11-21",
-   "aa": {
-    "intelligence": 20.1,
-    "coding": null,
-    "agentic": null,
-    "variant": null,
-    "slug": "thinkingmachines/inkling-2-mini-20261120"
-   },
    "hf_checked": "2026-11-21",
-   "score": 17.49,
+   "score": 17.94,
    "newer": null,
    "newer_checked": "2026-11-21",
    "deep": {
@@ -54075,7 +54068,14 @@
     "date": "2026-11-21",
     "by": "anthropic/claude-haiku-5.5"
    },
-   "updated": "2026-11-21"
+   "updated": "2026-11-21",
+   "aa": {
+    "intelligence": 20.1,
+    "coding": null,
+    "agentic": null,
+    "variant": null,
+    "slug": "thinkingmachines/inkling-2-mini-20261120"
+   }
   },
   "RadixArk/DaisyRose-27B": {
    "id": "RadixArk/DaisyRose-27B",
@@ -54492,9 +54492,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 75,
+    "likes": 82,
     "downloads": 0,
-    "trending": 51,
+    "trending": 27.5,
     "trend_rank": 50
    },
    "links": {
@@ -54517,7 +54517,7 @@
    "checks": [
     "Numero di parametri non determinato: niente stima della VRAM."
    ],
-   "score": 4.69,
+   "score": 4.73,
    "newer": null,
    "newer_checked": "2026-11-21",
    "deep": {
@@ -54660,7 +54660,7 @@
    "weights_available": false,
    "signals": {
     "likes": 0,
-    "downloads": 8,
+    "downloads": 11,
     "trending": null,
     "watched_org": true
    },
@@ -54729,7 +54729,7 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 5,
+    "likes": 6,
     "downloads": 0,
     "trending": null,
     "watched_org": true
@@ -54746,7 +54746,7 @@
    "checks": [
     "Numero di parametri non determinato: niente stima della VRAM."
    ],
-   "score": 5.2,
+   "score": 5.26,
    "newer": {
     "id": "inclusionAI/Duo-1.2-causal-base",
     "name": "Duo-1.2-causal-base",
@@ -54793,9 +54793,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 21,
-    "downloads": 382,
-    "trending": null,
+    "likes": 34,
+    "downloads": 1200,
+    "trending": 33,
     "watched_org": true
    },
    "links": {
@@ -54931,7 +54931,7 @@
    "first_seen": "2026-11-21",
    "mentions": [],
    "hf_checked": "2026-11-21",
-   "score": 7.71,
+   "score": 8.89,
    "newer": null,
    "newer_checked": "2026-11-21",
    "deep": {
@@ -55094,8 +55094,8 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 8,
-    "downloads": 141,
+    "likes": 11,
+    "downloads": 252,
     "trending": null,
     "watched_org": true
    },
@@ -55111,7 +55111,7 @@
    "checks": [
     "Numero di parametri non determinato: niente stima della VRAM."
    ],
-   "score": 4.36,
+   "score": 4.47,
    "newer": null,
    "newer_checked": "2026-11-21",
    "deep": {
@@ -55145,16 +55145,929 @@
    "links": {},
    "first_seen": "2026-11-21",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-21",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "tencent/hy3-preview-20260421"
+   }
+  },
+  "Pinkstack/LiliPixel-V1-190M": {
+   "id": "Pinkstack/LiliPixel-V1-190M",
+   "name": "LiliPixel-V1-190M",
+   "org": "Pinkstack",
+   "kind": "open",
+   "released": "2026-11-19",
+   "hf_id": "Pinkstack/LiliPixel-V1-190M",
+   "pipeline": "text-to-image",
+   "license": "openmdw-1.1",
+   "gated": false,
+   "params_b": 0.19,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 37,
+    "downloads": 216,
+    "trending": 35,
+    "trend_rank": 68
    },
-   "score": 3.5,
+   "links": {
+    "hf": "https://huggingface.co/Pinkstack/LiliPixel-V1-190M"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), 0.4 GB di pesi",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 0.4,
+    "ref_ctx": 32768,
+    "tok_s": null,
+    "kv_known": false,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 1.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 1.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 1.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "CharlZKP/LiliPixel-V1-190M-ONNX",
+     "format": "altro",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 0
+    }
+   ],
+   "quants_checked": "2026-11-22",
+   "first_seen": "2026-11-22",
+   "mentions": [],
+   "hf_checked": "2026-11-22",
+   "checks": [
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "score": 6.42,
    "newer": null,
-   "newer_checked": "2026-11-21"
+   "newer_checked": "2026-11-22",
+   "deep": {
+    "tldr": "LiliPixel-V1-190M è un modello text-to-image diffusion transformer (single-stream DiT, flow matching) addestrato da zero per generare pixel art a risoluzione nativa 16x16, 32x32 o 64x64. Il modello dichiara circa 191M parametri addestrabili e circa 1GB di memoria con inferenza BF16 lossless, più un text encoder congelato (MongoDB/voyage-4-nano, ~346M) scaricato automaticamente. È adatto a sprite e piccole scene in pixel art, non a scene complesse o testo.",
+    "features": [
+     "Architettura single-stream DiT: 24 layer, larghezza 768, 16 teste; token di caption e immagine condividono una sequenza con self-attention completa",
+     "Objective rectified flow matching con timestep logit-normal e target di velocità; sampler Euler a 30/50 step con CFG 3.0 di default",
+     "Tre modalità di risoluzione (16x16, 32x32, 64x64) con patch size 1 o 2; a 16/32 le immagini hanno sfondo trasparente (RGBA), a 64 sono RGB, con un toggle 'realistic photo' opzionale",
+     "Text encoder congelato con massimo 96 token (prompt più lunghi vengono troncati); pesi del modello HF-compatibili e EMA",
+     "Integrazione ComfyUI tramite custom node single-file e workflow di esempio, oltre al pipeline diffusers con trust_remote_code=True",
+     "Licenza openmdw-1.1 e dataset di training dichiarati con licenze specifiche (CC0, MIT, CC BY 4.0)"
+    ],
+    "benchmarks": [],
+    "params": "191M parametri addestrabili (modello); il text encoder MongoDB/voyage-4-nano ha circa 346M parametri ed è esterno ai…",
+    "context": "Massimo 96 token di testo; prompt più lunghi vengono troncati",
+    "availability": "Pesi aperti su Hugging Face (Pinkstack/LiliPixel-V1-190M), licenza openmdw-1.1; uso tramite diffusers (custom_pipeline) o custom node ComfyUI; richiede internet al primo caricamento per scaricare modello e text encoder",
+    "local_tips": "Generare almeno 4 immagini per batch e selezionare la migliore; 30 step per 16/32 e 50 step per 64 (30 più veloce ma qualità inferiore); CFG 3.0 di default, 3.5+ per prompt specifici; per i 16/32 aggiungere ', transparent background' al prompt, per il realismo a 64 far precedere 'realistic photo, '; in ComfyUI steps=0 seleziona automaticamente 30/50 step; alpha_cutoff 0.5 per bordi netti; il training usa dtype BF16",
+    "hw_claims": "Circa 1GB di memoria con inferenza BF16 lossless (testo: 'roughly just 1GB of memory with lossless BF16 inference'); GPU usata non specificata; generazione su GPU o anche CPU descritta come 'near-instant' senza numeri di velocità; nessun dato su VRAM esatta, RAM, offload o quantizzazioni ufficiali",
+    "source": "https://huggingface.co/Pinkstack/LiliPixel-V1-190M",
+    "date": "2026-11-22",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-22"
+  },
+  "FrontiersMind/NandiBERT-150M": {
+   "id": "FrontiersMind/NandiBERT-150M",
+   "name": "NandiBERT-150M",
+   "org": "FrontiersMind",
+   "kind": "open",
+   "released": "2026-11-18",
+   "hf_id": "FrontiersMind/NandiBERT-150M",
+   "pipeline": "fill-mask",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 0.22,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": 16384,
+   "arch": {
+    "layers": 28,
+    "hidden": 768,
+    "heads": 6,
+    "kv_heads": 2,
+    "head_dim": 128,
+    "full_layers": 28,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 1280,
+    "vocab": 100352,
+    "tied": false,
+    "max_ctx": 16384
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 32,
+    "downloads": 243,
+    "trending": 29,
+    "trend_rank": 87
+   },
+   "links": {
+    "hf": "https://huggingface.co/FrontiersMind/NandiBERT-150M"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), 0.4 GB di pesi",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 0.4,
+    "ref_ctx": 16384,
+    "tok_s": null,
+    "kv_known": true,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 1.6,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": null
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 1.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": null
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 1.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": null
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 1.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": null
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 1.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": null
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 1.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": null
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 1.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": null
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 1.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": null
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 1.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": null
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 1.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": null
+     }
+    ]
+   },
+   "quants": [],
+   "quants_checked": "2026-11-22",
+   "first_seen": "2026-11-22",
+   "mentions": [],
+   "hf_checked": "2026-11-22",
+   "score": 6.37,
+   "newer": null,
+   "newer_checked": "2026-11-22",
+   "deep": {
+    "tldr": "NandiBERT-150M è un encoder bidirezionale open-weight (Apache-2.0) della famiglia NandiBERT, pensato per inglese e lingue indiche in un unico modello. Ha 16K di contesto e un vocabolario multilingue da 100K token con embedding fattorizzati. È adatto a classificazione, NER, reranking e retrieval tramite fine-tuning, con caricamento via Hugging Face transformers (trust_remote_code=True).",
+    "features": [
+     "Architettura encoder bidirezionale: 28 layer, hidden size 768, grouped-query attention, QK-norm e SwiGLU",
+     "Contesto da 16.384 token con vocabolario multilingue condiviso da 100K token",
+     "Embedding fattorizzati a rango 192: la tabella scende da 77M a 19M parametri",
+     "Copertura di inglese, 13 lingue indiche in scrittura nativa (11 anche romanizzate), lingue del Sud-est asiatico e del Medio Oriente",
+     "Licenza Apache-2.0; pesi caricabili con transformers 5.x",
+     "Head MLM riutilizzabile in AutoModelForSequenceClassification e AutoModelForTokenClassification; per NER si consiglia learning rate 3e-5"
+    ],
+    "benchmarks": [
+     {
+      "name": "IndicSentiment",
+      "score": "91.3",
+      "vs": [
+       {
+        "model": "IndicBERT-v2",
+        "score": "91.2"
+       }
+      ]
+     },
+     {
+      "name": "Naamapadam NER (f1)",
+      "score": "77.4",
+      "vs": [
+       {
+        "model": "IndicBERT-v2",
+        "score": "73.2"
+       }
+      ]
+     },
+     {
+      "name": "IndicQA (f1)",
+      "score": "46",
+      "vs": [
+       {
+        "model": "IndicBERT-v2",
+        "score": "48.3"
+       }
+      ]
+     },
+     {
+      "name": "Average (Indic)",
+      "score": "67.37",
+      "vs": [
+       {
+        "model": "IndicBERT-v2",
+        "score": "66.57"
+       }
+      ]
+     },
+     {
+      "name": "GLUE",
+      "score": "87.1",
+      "vs": [
+       {
+        "model": "UltraBERT-150M",
+        "score": "89.5"
+       },
+       {
+        "model": "Ettin-Encoder-150M",
+        "score": "88.9"
+       },
+       {
+        "model": "ModernBERT-base",
+        "score": "88.4"
+       }
+      ]
+     },
+     {
+      "name": "SQuAD 2.0",
+      "score": "87.6",
+      "vs": [
+       {
+        "model": "UltraBERT-150M",
+        "score": "89.2"
+       },
+       {
+        "model": "Ettin-Encoder-150M",
+        "score": "87.4"
+       },
+       {
+        "model": "ModernBERT-base",
+        "score": "86.7"
+       }
+      ]
+     },
+     {
+      "name": "BEIR",
+      "score": "71.2",
+      "vs": [
+       {
+        "model": "UltraBERT-150M",
+        "score": "73"
+       },
+       {
+        "model": "Ettin-Encoder-150M",
+        "score": "70.3"
+       },
+       {
+        "model": "ModernBERT-base",
+        "score": "68"
+       }
+      ]
+     },
+     {
+      "name": "MLDR",
+      "score": "49.4",
+      "vs": [
+       {
+        "model": "UltraBERT-150M",
+        "score": "55.4"
+       },
+       {
+        "model": "Ettin-Encoder-150M",
+        "score": "47.1"
+       },
+       {
+        "model": "ModernBERT-base",
+        "score": "46.1"
+       }
+      ]
+     },
+     {
+      "name": "LongEmbed",
+      "score": "71.1",
+      "vs": [
+       {
+        "model": "UltraBERT-150M",
+        "score": "72"
+       },
+       {
+        "model": "Ettin-Encoder-150M",
+        "score": "60.1"
+       },
+       {
+        "model": "ModernBERT-base",
+        "score": "63.2"
+       }
+      ]
+     },
+     {
+      "name": "Average (English/Multi-lingual)",
+      "score": "62.20",
+      "vs": [
+       {
+        "model": "UltraBERT-150M",
+        "score": "64.59"
+       },
+       {
+        "model": "Ettin-Encoder-150M",
+        "score": "61.48"
+       },
+       {
+        "model": "ModernBERT-base",
+        "score": "60.69"
+       }
+      ]
+     }
+    ],
+    "params": "146M (encoder fine-tunabile); 224M nel file del checkpoint includendo l'head MLM untied da 77M",
+    "context": "16384 token (16K)",
+    "availability": "Pesi aperti su Hugging Face (FrontiersMind/NandiBERT-150M), licenza Apache-2.0; caricamento con transformers 5.x e trust_remote_code=True; technical report indicato come 'Coming Soon'",
+    "local_tips": "Caricamento consigliato in bfloat16 con device_map=\"cuda\"; per NER usare learning rate 3e-5 (5e-6 peggiora molto i risultati); per fine-tuning senza head MLM passare classifier_head=None a from_pretrained; per input word-level usare is_split_into_words=True e word_ids() per il mapping",
+    "hw_claims": "",
+    "source": "https://huggingface.co/FrontiersMind/NandiBERT-150M",
+    "date": "2026-11-22",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-22"
+  },
+  "SupraLabs/Supra2.5-Pro-Instruct": {
+   "id": "SupraLabs/Supra2.5-Pro-Instruct",
+   "name": "Supra2.5-Pro-Instruct",
+   "org": "SupraLabs",
+   "kind": "open",
+   "released": "2026-11-16",
+   "hf_id": "SupraLabs/Supra2.5-Pro-Instruct",
+   "pipeline": "text-generation",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 0.07,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": 512,
+   "arch": {
+    "layers": 12,
+    "hidden": 640,
+    "heads": 10,
+    "kv_heads": 10,
+    "head_dim": 64,
+    "full_layers": 12,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 1600,
+    "vocab": 16384,
+    "tied": true,
+    "max_ctx": 512
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 30,
+    "downloads": 2180,
+    "trending": 28,
+    "trend_rank": 93
+   },
+   "links": {
+    "hf": "https://huggingface.co/SupraLabs/Supra2.5-Pro-Instruct"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo · 512",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~512, 500+ tok/s",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 0.1,
+    "ref_ctx": 512,
+    "tok_s": 4719,
+    "kv_known": true,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 512,
+      "tok_s": 4719
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 512,
+      "tok_s": 6266
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 512,
+      "tok_s": 6846
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 512,
+      "tok_s": 7143
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 512,
+      "tok_s": 7455
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 512,
+      "tok_s": 7695
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 512,
+      "tok_s": 7838
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 512,
+      "tok_s": 8393
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 0.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 512,
+      "tok_s": 6335
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 0.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 512,
+      "tok_s": 7593
+     }
+    ]
+   },
+   "quants": [],
+   "quants_checked": "2026-11-22",
+   "first_seen": "2026-11-22",
+   "mentions": [],
+   "hf_checked": "2026-11-22",
+   "score": 7.34,
+   "newer": null,
+   "newer_checked": "2026-11-22",
+   "deep": {
+    "tldr": "Supra2.5-Pro-Instruct è una versione instruction-tuned (ChatML) di Supra2.5-Pro-Base da 65M parametri, rilasciata con licenza Apache-2.0 e pensata per chat locale leggera. Il testo dichiara esplicitamente che il modello non è stato allineato sulla sicurezza né ottimizzato sulle preferenze, quindi va protetto con un filtro esterno. È adatto a chat di base, coding e matematica elementare, non a task complessi o a uso in produzione senza guardrail.",
+    "features": [
+     "Instruction-tuning di 2 epoche su circa 9000 conversazioni sintetiche generate con DeepSeek V4.1 Flash 1017 (non-reasoning), con prompt in parte da SmolTalk2",
+     "Formato chat basato su ChatML",
+     "Licenza Apache-2.0",
+     "Nessun allineamento di sicurezza né preference optimization dichiarato",
+     "GGUF disponibili in F16, Q8_0 e Q4_K_M",
+     "Contesto dichiarato nei metadati: 512 token"
+    ],
+    "benchmarks": [],
+    "params": "65M",
+    "context": "512",
+    "availability": "Pesi aperti su Hugging Face (SupraLabs/Supra2.5-Pro-Instruct), con GGUF in F16, Q8_0 e Q4_K_M; uso locale. Nessuna API o prezzo indicato.",
+    "local_tips": "Il modello si usa come Supra2-Medium-Instruct con template ChatML. Sono disponibili le quantizzazioni GGUF F16, Q8_0 e Q4_K_M. Non sono indicati parametri di sampling né framework specifici.",
+    "hw_claims": "",
+    "source": "https://huggingface.co/SupraLabs/Supra2.5-Pro-Instruct",
+    "date": "2026-11-22",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-22"
+  },
+  "tencent/WeMM-Video-35BA3B": {
+   "id": "tencent/WeMM-Video-35BA3B",
+   "name": "WeMM-Video-35BA3B",
+   "org": "tencent",
+   "kind": "open",
+   "released": "2026-11-17",
+   "hf_id": "tencent/WeMM-Video-35BA3B",
+   "pipeline": "video-text-to-text",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 36.18,
+   "params_source": "safetensors",
+   "active_b": 5.0,
+   "context": 262144,
+   "arch": {
+    "layers": 40,
+    "hidden": 2048,
+    "heads": 16,
+    "kv_heads": 2,
+    "head_dim": 256,
+    "full_layers": 10,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 30,
+    "linear_state_bytes": 2097152,
+    "mla_dim": null,
+    "experts": 256,
+    "experts_active": 8,
+    "moe_inter": 512,
+    "dense_layers": 0,
+    "inter": null,
+    "vocab": 248320,
+    "tied": false,
+    "max_ctx": 262144
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 28,
+    "downloads": 359,
+    "trending": 28,
+    "trend_rank": 94
+   },
+   "links": {
+    "hf": "https://huggingface.co/tencent/WeMM-Video-35BA3B"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "quant",
+    "label": "NVFP4",
+    "text": "Serve quantizzazione (in BF16 i pesi sono ~67 GB). NVFP4 (formato nativo della RTX 5090): 19.0 GB di pesi · GGUF Q5_K_M: 24.0 GB di pesi; Q6_K al limite — checkpoint NVFP4 già su Hugging Face (tencent/WeMM-Video-35BA3B-NVFP4)",
+    "best_quant": "NVFP4",
+    "quantized": true,
+    "native_best": "NVFP4",
+    "gguf_best": "Q5_K_M",
+    "tight": "Q6_K",
+    "native_gb": 67.4,
+    "ref_ctx": 32768,
+    "tok_s": null,
+    "kv_known": true,
+    "is_moe": true,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 70.2,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 37.9,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 29.6,
+      "fits": true,
+      "comfy": false,
+      "max_ctx": 105267,
+      "tok_s": null
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 25.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 262144,
+      "tok_s": null
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 22.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 262144,
+      "tok_s": null
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 19.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 262144,
+      "tok_s": null
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 18.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 262144,
+      "tok_s": null
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 13.1,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 262144,
+      "tok_s": null
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 36.8,
+      "fits": false,
+      "comfy": false,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 20.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 262144,
+      "tok_s": null
+     }
+    ],
+    "native_ready": "tencent/WeMM-Video-35BA3B-NVFP4"
+   },
+   "quants": [
+    {
+     "id": "tencent/WeMM-Video-35BA3B-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": true,
+     "downloads": 2928
+    },
+    {
+     "id": "tencent/WeMM-Video-35BA3B-NVFP4",
+     "format": "NVFP4",
+     "nvfp4": true,
+     "official": true,
+     "downloads": 213
+    },
+    {
+     "id": "tencent/WeMM-Video-35BA3B-FP8",
+     "format": "FP8",
+     "nvfp4": false,
+     "official": true,
+     "downloads": 175
+    },
+    {
+     "id": "tencent/WeMM-Video-35BA3B-AWQ",
+     "format": "AWQ",
+     "nvfp4": false,
+     "official": true,
+     "downloads": 188
+    },
+    {
+     "id": "vanch007/WeMM-Video-35BA3B-mlx-8bit",
+     "format": "MLX",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 105
+    }
+   ],
+   "quants_checked": "2026-11-22",
+   "first_seen": "2026-11-22",
+   "mentions": [],
+   "hf_checked": "2026-11-22",
+   "score": 7.82,
+   "newer": null,
+   "newer_checked": "2026-11-22",
+   "deep": {
+    "tldr": "WeMM-Video-35B-A3B è un checkpoint mixture-of-experts da 35B parametri totali (3B attivi) della famiglia WeMM-Video di Tencent, bilingue cinese-inglese, per la comprensione e il ragionamento congiunti audio-visivo. Accetta testo, immagini, audio e video (con o senza colonna sonora) e genera risposte testuali. Il testo dichiara un nuovo stato dell'arte open-source sulla comprensione omni-modale dei video, con licenza Apache 2.0.",
+    "features": [
+     "Architettura MoE: 35B parametri totali, 3B attivi per token; encoder visivo e audio producono token elaborati insieme al testo dal modello linguistico",
+     "Contesto dichiarato di 262144 token (dato da campi noti; il testo non indica un valore massimo esplicito)",
+     "Multimodalità: testo, immagini, audio, video silenzioso e video con colonna sonora (video_audio), con timestamp sui frame",
+     "Modalità Instruct (default) e Thinking, selezionabili con enable_thinking nel chat template",
+     "Pretraining su circa 1,2 trilioni di token multimodali, post-training con multi-teacher OPD, MrDPO anti-ripetizione e reinforcement learning specialistico",
+     "Licenza Apache License 2.0; varianti quantizzate ufficiali FP8 Block128, AWQ W4A16, GGUF Q4_K_M e NVFP4 W4A16"
+    ],
+    "benchmarks": [],
+    "params": "35B totali / 3B attivi (mixture-of-experts)",
+    "context": "262144",
+    "availability": "Pesi aperti su Hugging Face (tencent/WeMM-Video-35BA3B), pesi BF16 Safetensors da 67,39 GiB, con varianti quantizzate; codice su GitHub; serving tramite vLLM e SGLang con endpoint compatibili OpenAI; nessun dato su API ufficiali o prezzi",
+    "local_tips": "Usare processor.apply_chat_template con enable_thinking=False per risposte dirette o True per il ragionamento; generazione con do_sample=False e max_new_tokens=128 negli esempi; patch di runtime WeMM per vLLM/SGLang (vLLM 0.18.0 patchato nel comando, anche vLLM 0.31.0 per BF16; SGLang 0.5.16 o 0.5.19); parametri video consigliati fps, min_frames, max_frames e total_pixels; opzione --revision per fissare il commit; --no-enable-prefix-caching e --mamba-ssm-cache-dtype float32 nel comando vLLM;…",
+    "hw_claims": "Il testo non dichiara VRAM o RAM minime. Esempi di serving con tensor parallelism su 2 GPU (--tensor-parallel-size 2 per vLLM, --tp-size 2 per SGLang). Validazione dichiarata: vLLM patchato caricato su H20 con controlli di generazione su testo, immagini, audio e video con colonna sonora; caricamento diretto con Transformers e controllo di generazione testuale su CPU. Nessuna velocità misurata nel…",
+    "source": "https://huggingface.co/tencent/WeMM-Video-35BA3B",
+    "date": "2026-11-22",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-22"
   }
  },
  "aliases": {
