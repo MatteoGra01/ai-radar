@@ -1,6 +1,12 @@
 {
  "days": [
   {
+   "date": "2026-11-23",
+   "headline": "Playbook per MoE su GPU consumer e nuovi modelli open-weight: cosa gira sulla 5090",
+   "n_items": 13,
+   "n_models": 11
+  },
+  {
    "date": "2026-11-22",
    "headline": "PiBot agenti locali, fast-anything e quattro modelli nuovi per la RTX 5090",
    "n_items": 10,
@@ -49,7 +55,7 @@
    "n_models": 57
   }
  ],
- "updated": "2026-11-22T13:26:57Z",
+ "updated": "2026-11-23T16:09:09Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -73,7 +79,7 @@
  },
  "status": {
   "sources": {
-   "rss:Google DeepMind": {
+   "rss:Interconnects": {
     "ok": true,
     "n": 0
    },
@@ -85,19 +91,7 @@
     "ok": true,
     "n": 0
    },
-   "rss:Simon Willison": {
-    "ok": true,
-    "n": 1
-   },
-   "rss:Hugging Face Blog": {
-    "ok": true,
-    "n": 0
-   },
-   "rss:Interconnects": {
-    "ok": true,
-    "n": 0
-   },
-   "rss:NVIDIA Developer": {
+   "rss:Google DeepMind": {
     "ok": true,
     "n": 0
    },
@@ -105,9 +99,21 @@
     "ok": true,
     "n": 0
    },
+   "rss:Simon Willison": {
+    "ok": true,
+    "n": 1
+   },
+   "rss:Hugging Face Blog": {
+    "ok": true,
+    "n": 1
+   },
    "hackernews": {
     "ok": true,
-    "n": 6
+    "n": 10
+   },
+   "rss:NVIDIA Developer": {
+    "ok": true,
+    "n": 0
    },
    "rss:Ollama releases": {
     "ok": true,
@@ -119,15 +125,15 @@
    },
    "rss:Transformers releases": {
     "ok": true,
-    "n": 1
+    "n": 0
    },
    "github": {
     "ok": true,
-    "n": 72
+    "n": 71
    },
    "openrouter": {
     "ok": true,
-    "n": 476
+    "n": 477
    },
    "hf_trending": {
     "ok": true,
@@ -147,15 +153,15 @@
    },
    "papers:hf": {
     "ok": true,
-    "n": 141
+    "n": 122
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 322
+    "n": 303
    },
    "papers:Alignment Forum": {
     "ok": true,
-    "n": 1
+    "n": 0
    },
    "embeddings:mteb": {
     "ok": true,
@@ -163,25 +169,25 @@
    },
    "embeddings:hf": {
     "ok": true,
-    "n": 7
+    "n": 6
    }
   },
   "llm": {
    "enabled": true,
-   "calls": 13,
-   "cost_usd": 0.0141,
+   "calls": 43,
+   "cost_usd": 0.0706,
    "failures": 0,
    "models": {
-    "openrouter/deepseek/deepseek-v4.1-flash": 8,
-    "openrouter/anthropic/claude-haiku-5.5": 5
+    "openrouter/deepseek/deepseek-v4.1-flash": 31,
+    "openrouter/anthropic/claude-haiku-5.5": 12
    },
    "log": []
   },
-  "duration_s": 104
+  "duration_s": 174
  },
  "new_model_days": 14,
  "benchmarks_meta": {
-  "as_of": "2026-11-21T12:00:30.823Z",
+  "as_of": "2026-11-23T12:00:30.765Z",
   "version": "v1",
   "source": "artificial-analysis",
   "source_url": "https://artificialanalysis.ai",
