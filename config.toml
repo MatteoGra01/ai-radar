@@ -217,7 +217,7 @@ hf_orgs = [
   "moonshotai", "zai-org", "MiniMaxAI", "ibm-granite", "allenai", "LiquidAI", "tencent", "baidu",
   "inclusionAI", "stepfun-ai", "XiaomiMiMo", "meituan-longcat", "thinkingmachines", "NousResearch",
   "black-forest-labs", "Lightricks", "jinaai", "BAAI", "nomic-ai", "Alibaba-NLP", "mixedbread-ai",
-  "HuggingFaceTB", "apple", "ByteDance-Seed", "cohere", "CohereLabs", "arcee-ai", "Zyphra",
+  "HuggingFaceTB", "apple", "ByteDance-Seed", "cohere", "CohereLabs", "arcee-ai", "Zyphra", "Nanbeige",
 ]
 
 # Feed RSS/Atom. weight = importanza della fonte (0.5 rumorosa … 1.5 molto affidabile)
