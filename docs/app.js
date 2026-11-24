@@ -645,8 +645,10 @@ function viewLeaderboard() {
   const meta = S.index.benchmarks_meta || {};
   const gpu = S.index.hardware.gpu_name;
   const q = S.lbQ.trim().toLowerCase();
-  let rows = Object.values(S.models).filter((e) => e.aa && (e.aa.intelligence != null || e.aa.coding != null || e.aa.agentic != null));
+  // Anche i modelli che Artificial Analysis elenca ma senza indici (celle «n.v.»): vanno in fondo, ma restano confrontabili e filtrabili
+  let rows = Object.values(S.models).filter((e) => e.aa);
   const total = rows.length;
+  const scored = rows.filter((e) => e.aa.intelligence != null || e.aa.coding != null || e.aa.agentic != null).length;
   const hidden = rows.filter((e) => e.newer).length;
   rows = rows.filter((e) => {
     if (S.latestOnly && e.newer) return false;
@@ -679,7 +681,7 @@ function viewLeaderboard() {
     h("div", { class: "ibar " + (cls || "") }, h("i", { style: `width:${Math.max(2, v / max * 100)}%` }), h("b", {}, fmtNum(v)));
   return [
     h("div", { class: "section-head" }, h("h2", {}, "Classifica"),
-      h("span", { class: "muted" }, `${total} modelli con indici di Artificial Analysis · clicca le colonne per ordinare`)),
+      h("span", { class: "muted" }, `${total} modelli di Artificial Analysis, ${scored} con indici (gli altri sono in fondo, «n.v.») · clicca le colonne per ordinare`)),
     h("div", { class: "filters" },
       chip("all", "Tutti"), chip("open", "Pesi aperti"), chip("gpu", `Girano sulla ${gpu}`), chip("api", "Solo API"), chip("new", "Nuovi"),
       h("input", { class: "search", type: "search", placeholder: "Cerca…", value: S.lbQ, "aria-label": "Cerca in classifica",
