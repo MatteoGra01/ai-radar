@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T09:24:13Z",
+ "updated": "2026-11-24T11:18:37Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -196,7 +196,7 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "note": "OpenRouter indica pesi su Hugging Face, ma il repository non è (ancora) pubblico: verrà ricontrollato ogni giorno.",
-   "score": 7.5,
+   "score": 7.53,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "ERNIE 5.5 Flash Preview è un foundation model della famiglia ERNIE di Baidu, presentato con miglioramenti dichiarati in coding, capacità agentiche, knowledge work e deep research. Il testo fornito è troncato e riporta solo l'inizio della descrizione (280 miliardi di parametri totali). Per il lettore interessato all'esecuzione locale sembra più adatto ai casi di coding e agent/tool use, ma il testo non fornisce dettagli sufficienti per confermarlo.",
@@ -247,9 +247,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 164,
-    "downloads": 0,
-    "trending": 50,
+    "likes": 178,
+    "downloads": 75,
+    "trending": 56.5,
     "trend_rank": 58,
     "watched_org": true
    },
@@ -3676,9 +3676,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 945,
-    "downloads": 9087,
-    "trending": 245,
+    "likes": 947,
+    "downloads": 9575,
+    "trending": 242,
     "trend_rank": 13
    },
    "links": {
@@ -5280,7 +5280,7 @@
    "weights_available": true,
    "signals": {
     "likes": 14,
-    "downloads": 2354,
+    "downloads": 2611,
     "trending": null,
     "watched_org": true
    },
@@ -11566,7 +11566,7 @@
    "weights_available": true,
    "signals": {
     "likes": 767,
-    "downloads": 11055,
+    "downloads": 11085,
     "trending": null
    },
    "score": 8.6,
@@ -11579,63 +11579,63 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 8847
+     "downloads": 8865
     },
     {
      "id": "ggml-org/Muse-Spark-Open-816B-A42B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 4720
+     "downloads": 5073
     },
     {
      "id": "Interchained/Muse-Spark-Open-816B-A42B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1217
+     "downloads": 1162
     },
     {
      "id": "meta-models/Muse-Spark-Open-816B-A42B-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": true,
-     "downloads": 104030
+     "downloads": 109352
     },
     {
      "id": "unsloth/Muse-Spark-Open-816B-A42B-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 2244
+     "downloads": 2226
     },
     {
      "id": "amd/Muse-Spark-Open-816B-A42B-Quark-PTPC-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 886
+     "downloads": 889
     },
     {
      "id": "amd/Muse-Spark-Open-816B-A42B-Quark-MXFP4",
      "format": "MXFP4",
      "nvfp4": false,
      "official": false,
-     "downloads": 12099
+     "downloads": 11828
     },
     {
      "id": "mlx-community/Muse-Spark-Open-816B-A42B-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 2324
+     "downloads": 2311
     },
     {
      "id": "intel-ai/Muse-Spark-Open-816B-A42B-INT4",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 286
+     "downloads": 283
     }
    ],
    "quants_checked": "2026-11-24",
@@ -13010,7 +13010,7 @@
    "weights_available": true,
    "signals": {
     "likes": 141,
-    "downloads": 77219,
+    "downloads": 78311,
     "trending": null
    },
    "score": 10.44,
@@ -13023,63 +13023,63 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 94893
+     "downloads": 94165
     },
     {
      "id": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 57595
+     "downloads": 58032
     },
     {
-     "id": "AtomicChat/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+     "id": "vultr/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 4423
+     "downloads": 4378
     },
     {
      "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": true,
-     "downloads": 136319
+     "downloads": 136546
     },
     {
      "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr",
      "format": "NVFP4",
      "nvfp4": true,
      "official": true,
-     "downloads": 4743
+     "downloads": 4672
     },
     {
      "id": "RedHatAI/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 1093
+     "downloads": 1025
     },
     {
      "id": "RelaxingSnorlax/nemotron35-dspark-5l-fp8dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 95
+     "downloads": 89
     },
     {
      "id": "Duckets/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-MLX-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 2131
+     "downloads": 2074
     },
     {
      "id": "xv0y5ncu/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GLQ-trellis-3inst-3bpw",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 369
+     "downloads": 378
     }
    ],
    "quants_checked": "2026-11-24",
@@ -13791,7 +13791,7 @@
    "weights_available": true,
    "signals": {
     "likes": 390,
-    "downloads": 849867,
+    "downloads": 798730,
     "trending": null
    },
    "score": 9.83,
@@ -13804,63 +13804,63 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 7778
+     "downloads": 8179
     },
     {
      "id": "vultr/NVIDIA-Nemotron-3-Ultra-550B-A55B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 962
+     "downloads": 1029
     },
     {
      "id": "DevQuasar/nvidia.NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 839
+     "downloads": 862
     },
     {
      "id": "OpenYourMind/OpenYourMind-NVIDIA-Nemotron-3-Ultra-550B-A55B-abliterated-uncensored-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 107863
+     "downloads": 116126
     },
     {
      "id": "RedHatAI/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 255
+     "downloads": 244
     },
     {
      "id": "RedHatAI/NVIDIA-Nemotron-3-Ultra-550B-A55B-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 538
+     "downloads": 559
     },
     {
      "id": "RedHatAI/NVIDIA-Nemotron-3-Ultra-550B-A55B-FP8-block",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 293
+     "downloads": 287
     },
     {
      "id": "mlx-community/Nemotron-3-Ultra-550B-A55B-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 399
+     "downloads": 419
     },
     {
      "id": "RedHatAI/NVIDIA-Nemotron-3-Ultra-550B-A55B-quantized.w4a16",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 2436
+     "downloads": 2462
     }
    ],
    "quants_checked": "2026-11-24",
@@ -31378,7 +31378,7 @@
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 3975
+     "downloads": 3386
     },
     {
      "id": "unsloth/gemma-3-4b-it-unsloth-bnb-4bit",
@@ -37659,7 +37659,7 @@
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 609
+     "downloads": 603
     },
     {
      "id": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w4a16",
@@ -37713,8 +37713,8 @@
    "weights_available": true,
    "signals": {
     "likes": 436,
-    "downloads": 12310,
-    "trending": 59,
+    "downloads": 13673,
+    "trending": 58,
     "trend_rank": 86
    },
    "links": {
@@ -38521,8 +38521,8 @@
    "weights_available": true,
    "signals": {
     "likes": 476,
-    "downloads": 4083,
-    "trending": 107,
+    "downloads": 4665,
+    "trending": 103.5,
     "watched_org": true
    },
    "links": {
@@ -39716,7 +39716,7 @@
    "weights_available": true,
    "signals": {
     "likes": 5,
-    "downloads": 235,
+    "downloads": 272,
     "trending": null,
     "watched_org": true
    },
@@ -40097,8 +40097,8 @@
    "weights_available": true,
    "signals": {
     "likes": 317,
-    "downloads": 1437,
-    "trending": 34,
+    "downloads": 1586,
+    "trending": 30.5,
     "trend_rank": 25
    },
    "links": {
@@ -40574,9 +40574,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 567,
-    "downloads": 350,
-    "trending": 66.5,
+    "likes": 568,
+    "downloads": 436,
+    "trending": 66,
     "trend_rank": 75
    },
    "links": {
@@ -45348,9 +45348,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 661,
-    "downloads": 7696,
-    "trending": 226,
+    "likes": 663,
+    "downloads": 9167,
+    "trending": 227,
     "trend_rank": 13,
     "watched_org": true
    },
@@ -45625,9 +45625,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 654,
-    "downloads": 2036,
-    "trending": 210.5,
+    "likes": 658,
+    "downloads": 2696,
+    "trending": 212.5,
     "trend_rank": 15
    },
    "links": {
@@ -45807,7 +45807,7 @@
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
-   "score": 8.53,
+   "score": 8.54,
    "newer": null,
    "newer_checked": "2026-11-18",
    "updated": "2026-11-18"
@@ -50681,9 +50681,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 759,
-    "downloads": 0,
-    "trending": 583,
+    "likes": 768,
+    "downloads": 12733,
+    "trending": 592,
     "trend_rank": 17
    },
    "links": {
@@ -50706,7 +50706,7 @@
    "checks": [
     "Numero di parametri non determinato: niente stima della VRAM."
    ],
-   "score": 5.59,
+   "score": 5.6,
    "newer": null,
    "newer_checked": "2026-11-19",
    "deep": {
@@ -50769,7 +50769,7 @@
    "weights_available": true,
    "signals": {
     "likes": 277,
-    "downloads": 4747,
+    "downloads": 5476,
     "trending": 54.5,
     "trend_rank": 60,
     "watched_org": true
@@ -51726,7 +51726,7 @@
    "weights_available": true,
    "signals": {
     "likes": 13,
-    "downloads": 154,
+    "downloads": 175,
     "trending": null,
     "watched_org": true
    },
@@ -53242,8 +53242,8 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 10,
-    "downloads": 351,
+    "likes": 11,
+    "downloads": 468,
     "trending": null,
     "watched_org": true
    },
@@ -53367,7 +53367,7 @@
    "checks": [
     "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
    ],
-   "score": 7.44,
+   "score": 7.47,
    "newer": null,
    "newer_checked": "2026-11-20",
    "deep": {
@@ -53849,7 +53849,7 @@
    "weights_available": true,
    "signals": {
     "likes": 24,
-    "downloads": 550,
+    "downloads": 780,
     "trending": null,
     "watched_org": true
    },
@@ -54230,9 +54230,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 5590,
-    "downloads": 41888,
-    "trending": 1161.5,
+    "likes": 5616,
+    "downloads": 69042,
+    "trending": 1174,
     "trend_rank": 1,
     "watched_org": true
    },
@@ -54845,9 +54845,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 106,
-    "downloads": 0,
-    "trending": 34,
+    "likes": 107,
+    "downloads": 1821,
+    "trending": 34.5,
     "trend_rank": 50
    },
    "links": {
@@ -55146,9 +55146,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 83,
-    "downloads": 1755,
-    "trending": 64,
+    "likes": 84,
+    "downloads": 2564,
+    "trending": 65,
     "watched_org": true
    },
    "links": {
@@ -55284,7 +55284,7 @@
    "first_seen": "2026-11-21",
    "mentions": [],
    "hf_checked": "2026-11-21",
-   "score": 9.23,
+   "score": 9.24,
    "newer": null,
    "newer_checked": "2026-11-21",
    "deep": {
@@ -56459,9 +56459,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 130,
-    "downloads": 397,
-    "trending": 107,
+    "likes": 134,
+    "downloads": 1070,
+    "trending": 111,
     "trend_rank": 24
    },
    "links": {
@@ -56589,7 +56589,7 @@
    "first_seen": "2026-11-23",
    "mentions": [],
    "hf_checked": "2026-11-23",
-   "score": 7.41,
+   "score": 7.42,
    "newer": null,
    "newer_checked": "2026-11-23",
    "deep": {
@@ -56657,9 +56657,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 93,
-    "downloads": 206,
-    "trending": 74,
+    "likes": 94,
+    "downloads": 719,
+    "trending": 75,
     "trend_rank": 53,
     "watched_org": true
    },
@@ -56852,7 +56852,7 @@
    "weights_available": true,
    "signals": {
     "likes": 34,
-    "downloads": 6630,
+    "downloads": 8989,
     "trending": 34,
     "trend_rank": 92
    },
@@ -57134,9 +57134,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 138,
-    "downloads": 0,
-    "trending": 126,
+    "likes": 144,
+    "downloads": 733,
+    "trending": 132,
     "watched_org": true
    },
    "links": {
@@ -57263,7 +57263,7 @@
    "first_seen": "2026-11-23",
    "mentions": [],
    "hf_checked": "2026-11-23",
-   "score": 7.43,
+   "score": 7.45,
    "newer": null,
    "newer_checked": "2026-11-23",
    "deep": {
@@ -57547,9 +57547,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 59,
-    "downloads": 4,
-    "trending": 58,
+    "likes": 64,
+    "downloads": 272,
+    "trending": 63,
     "trend_rank": 51
    },
    "links": {
@@ -57698,7 +57698,7 @@
    "first_seen": "2026-11-24",
    "mentions": [],
    "hf_checked": "2026-11-24",
-   "score": 6.6,
+   "score": 6.63,
    "newer": null,
    "newer_checked": "2026-11-24",
    "deep": {
@@ -57960,7 +57960,7 @@
    "weights_available": true,
    "signals": {
     "likes": 22,
-    "downloads": 0,
+    "downloads": 27,
     "trending": null,
     "watched_org": true
    },
@@ -58090,7 +58090,7 @@
    "mentions": [],
    "hf_checked": "2026-11-24",
    "checks": [
-    "MoE senza numero di parametri attivi: velocità stimata come modello denso."
+    "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
    ],
    "score": 5.73,
    "newer": null,
@@ -58428,16 +58428,16 @@
    "links": {},
    "first_seen": "2026-11-24",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-24",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": "High",
     "slug": "moonshotai/kimi-k2"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-24"
+   }
   },
   "aa:moonshotai/kimi-k2-thinking-20251106": {
    "id": "aa:moonshotai/kimi-k2-thinking-20251106",
@@ -58448,16 +58448,16 @@
    "links": {},
    "first_seen": "2026-11-24",
    "mentions": [],
+   "score": 3.5,
+   "newer": null,
+   "newer_checked": "2026-11-24",
    "aa": {
     "intelligence": null,
     "coding": null,
     "agentic": null,
     "variant": null,
     "slug": "moonshotai/kimi-k2-thinking-20251106"
-   },
-   "score": 3.5,
-   "newer": null,
-   "newer_checked": "2026-11-24"
+   }
   }
  },
  "aliases": {
