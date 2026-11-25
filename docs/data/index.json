@@ -1,6 +1,12 @@
 {
  "days": [
   {
+   "date": "2026-11-25",
+   "headline": "Cosmos 3 Nano in locale, Hy-MT3 e Raon-1-mini: novità per la tua RTX 5090",
+   "n_items": 25,
+   "n_models": 13
+  },
+  {
    "date": "2026-11-24",
    "headline": "NariQ: Qwen3.8-27B a 3 bit in 10 GB, qualità quasi BF16",
    "n_items": 18,
@@ -61,7 +67,7 @@
    "n_models": 57
   }
  ],
- "updated": "2026-11-24T11:16:35Z",
+ "updated": "2026-11-25T15:45:47Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -85,61 +91,61 @@
  },
  "status": {
   "sources": {
-   "rss:NVIDIA Developer": {
-    "ok": true,
-    "n": 2
-   },
-   "rss:Interconnects": {
-    "ok": true,
-    "n": 0
-   },
    "rss:r/LocalLLaMA": {
     "ok": false,
     "error": "HTTP 404 su https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day"
-   },
-   "rss:Simon Willison": {
-    "ok": true,
-    "n": 4
    },
    "rss:Ollama Blog": {
     "ok": true,
     "n": 0
    },
-   "rss:OpenAI News": {
-    "ok": true,
-    "n": 3
-   },
-   "rss:Hugging Face Blog": {
-    "ok": true,
-    "n": 1
-   },
-   "hackernews": {
-    "ok": true,
-    "n": 9
-   },
-   "rss:Google DeepMind": {
-    "ok": true,
-    "n": 1
-   },
    "rss:Ollama releases": {
-    "ok": true,
-    "n": 2
-   },
-   "rss:vLLM releases": {
-    "ok": true,
-    "n": 1
-   },
-   "rss:Transformers releases": {
     "ok": true,
     "n": 0
    },
+   "rss:Hugging Face Blog": {
+    "ok": true,
+    "n": 2
+   },
+   "rss:OpenAI News": {
+    "ok": true,
+    "n": 2
+   },
+   "rss:Simon Willison": {
+    "ok": true,
+    "n": 2
+   },
+   "rss:Google DeepMind": {
+    "ok": true,
+    "n": 0
+   },
+   "rss:NVIDIA Developer": {
+    "ok": true,
+    "n": 4
+   },
+   "rss:Interconnects": {
+    "ok": true,
+    "n": 0
+   },
+   "hackernews": {
+    "ok": true,
+    "n": 18
+   },
+   "rss:vLLM releases": {
+    "ok": true,
+    "n": 0
+   },
+   "rss:Transformers releases": {
+    "ok": true,
+    "n": 1
+   },
    "github": {
     "ok": true,
-    "n": 64
+    "n": 59
    },
    "openrouter": {
     "ok": true,
-    "n": 473
+    "n": 472
    },
    "hf_trending": {
     "ok": true,
@@ -159,11 +165,11 @@
    },
    "papers:hf": {
     "ok": true,
-    "n": 126
+    "n": 150
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 343
+    "n": 357
    },
    "papers:Alignment Forum": {
     "ok": true,
@@ -180,19 +186,20 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 10,
-   "cost_usd": 0.0192,
+   "calls": 47,
+   "cost_usd": 0.0672,
    "failures": 0,
    "models": {
-    "openrouter/deepseek/deepseek-v4.1-flash": 10
+    "openrouter/deepseek/deepseek-v4.1-flash": 38,
+    "openrouter/anthropic/claude-haiku-5.5": 9
    },
    "log": []
   },
-  "duration_s": 122
+  "duration_s": 157
  },
  "new_model_days": 14,
  "benchmarks_meta": {
-  "as_of": "2026-11-24T00:00:32.513Z",
+  "as_of": "2026-11-25T12:00:35.358Z",
   "version": "v1",
   "source": "artificial-analysis",
   "source_url": "https://artificialanalysis.ai",
