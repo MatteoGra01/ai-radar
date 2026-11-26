@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T15:48:24Z",
+ "updated": "2026-11-26T09:21:21Z",
  "models": {
   "inclusionAI/Ling-3.2-flash": {
    "id": "inclusionAI/Ling-3.2-flash",
@@ -196,7 +196,7 @@
    "first_seen": "2026-11-15",
    "mentions": [],
    "note": "OpenRouter indica pesi su Hugging Face, ma il repository non è (ancora) pubblico: verrà ricontrollato ogni giorno.",
-   "score": 7.7,
+   "score": 7.75,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "ERNIE 5.5 Flash Preview è un foundation model della famiglia ERNIE di Baidu, presentato con miglioramenti dichiarati in coding, capacità agentiche, knowledge work e deep research. Il testo fornito è troncato e riporta solo l'inizio della descrizione (280 miliardi di parametri totali). Per il lettore interessato all'esecuzione locale sembra più adatto ai casi di coding e agent/tool use, ma il testo non fornisce dettagli sufficienti per confermarlo.",
@@ -247,9 +247,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 278,
+    "likes": 317,
     "downloads": 1193,
-    "trending": 93.5,
+    "trending": 101.5,
     "trend_rank": 58,
     "watched_org": true
    },
@@ -1321,7 +1321,7 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": 64.8,
     "coding": null,
@@ -3684,9 +3684,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 989,
+    "likes": 1035,
     "downloads": 10026,
-    "trending": 193,
+    "trending": 150,
     "trend_rank": 13
    },
    "links": {
@@ -3856,7 +3856,7 @@
      "source": "r/LocalLLaMA"
     }
    ],
-   "score": 13.3,
+   "score": 13.31,
    "updated": "2026-11-15",
    "deep": {
     "tldr": "Haru-4B è un modello base open-weight (Apache 2.0, circa 5,27B parametri) per dialogo vocale continuo full-duplex: ascolta e parla contemporaneamente, con un frame ogni 133 ms (7,5 Hz). Usa audio continuo a 64 dimensioni per frame, generato in un solo passo da una piccola testa MLP con MeanFlow, senza token audio discreti. È rilasciato per la ricerca, non come assistente generico; è adatto a sperimentare dialogo vocale a bassa latenza e multilingue.",
@@ -11573,7 +11573,7 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 768,
+    "likes": 770,
     "downloads": 10916,
     "trending": null
    },
@@ -11646,7 +11646,7 @@
      "downloads": 292
     }
    ],
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "hf_checked": "2026-11-23",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -13090,7 +13090,7 @@
      "downloads": 383
     }
    ],
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "hf_checked": "2026-11-23",
    "checks": [
     "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
@@ -13871,7 +13871,7 @@
      "downloads": 2348
     }
    ],
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "hf_checked": "2026-11-23",
    "checks": [
     "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
@@ -27736,7 +27736,7 @@
    ],
    "newer": null,
    "newer_checked": "2026-11-23",
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "hf_checked": "2026-11-23",
    "checks": [
     "Parametri dedotti dal nome del repository (non dai metadati dei pesi).",
@@ -27934,8 +27934,8 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 530,
-    "downloads": 16671,
+    "likes": 531,
+    "downloads": 17234,
     "trending": null
    },
    "score": 9.95,
@@ -27946,35 +27946,35 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 28483
+     "downloads": 29474
     },
     {
      "id": "unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF-UD",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1966
+     "downloads": 2056
     },
     {
      "id": "DevQuasar-12/meta-llama.Llama-4-Maverick-17B-128E-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1081
+     "downloads": 1149
     },
     {
      "id": "RedHatAI/Llama-4-Maverick-17B-128E-Instruct-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 601
+     "downloads": 598
     },
     {
      "id": "RedHatAI/Llama-4-Maverick-17B-128E-Instruct-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 284
+     "downloads": 287
     },
     {
      "id": "unsloth/Llama-4-Maverick-17B-128E-Instruct-FP8",
@@ -27988,7 +27988,7 @@
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 18
+     "downloads": 19
     },
     {
      "id": "baa-ai/Llama-4-Maverick-17B-128E-Instruct-RAM-170GB-MLX",
@@ -28002,12 +28002,12 @@
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 17017
+     "downloads": 17204
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-23",
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "hf_checked": "2026-11-23",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -29577,8 +29577,8 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 3232,
-    "downloads": 118057,
+    "likes": 3234,
+    "downloads": 114080,
     "trending": null
    },
    "score": 11.66,
@@ -29589,21 +29589,21 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 246214
+     "downloads": 244853
     },
     {
      "id": "MaziyarPanahi/Llama-3.3-70B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 59902
+     "downloads": 60788
     },
     {
      "id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 48562
+     "downloads": 48532
     },
     {
      "id": "Kaleto/Llama-3.3-70B-Instruct-NVFP4",
@@ -29617,47 +29617,47 @@
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 43330
+     "downloads": 42802
     },
     {
      "id": "amd/Llama-3.3-70B-Instruct-FP8-KV",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 7333
+     "downloads": 7688
     },
     {
      "id": "amd/Llama-3.3-70B-Instruct-MXFP4-Preview",
      "format": "MXFP4",
      "nvfp4": false,
      "official": false,
-     "downloads": 1102
+     "downloads": 1103
     },
     {
      "id": "kosbu/Llama-3.3-70B-Instruct-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 86071
+     "downloads": 86195
     },
     {
      "id": "mlx-community/Llama-3.3-70B-Instruct-3bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 32208
+     "downloads": 32285
     },
     {
      "id": "unsloth/Llama-3.3-70B-Instruct-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 7566
+     "downloads": 7615
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-23",
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "hf_checked": "2026-11-23",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -29900,8 +29900,8 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 2075,
-    "downloads": 245575,
+    "likes": 2076,
+    "downloads": 249270,
     "trending": null
    },
    "score": 18.09,
@@ -29912,49 +29912,49 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": true,
-     "downloads": 325
+     "downloads": 341
     },
     {
      "id": "MaziyarPanahi/gemma-3-27b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 59820
+     "downloads": 60780
     },
     {
      "id": "unsloth/gemma-3-27b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 57949
+     "downloads": 60150
     },
     {
      "id": "RedHatAI/gemma-3-27b-it-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 62960
+     "downloads": 62846
     },
     {
      "id": "leon-se/gemma-3-27b-it-FP8-Dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 2264
+     "downloads": 2378
     },
     {
      "id": "gaunernst/gemma-3-27b-it-int4-awq",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 986055
+     "downloads": 1018881
     },
     {
      "id": "ISTA-DASLab/gemma-3-27b-it-GPTQ-4b-128g",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 15938
+     "downloads": 15873
     },
     {
      "id": "Outlier-Ai/gemma-3-27b-it-MLX-4bit",
@@ -29964,16 +29964,16 @@
      "downloads": 1329
     },
     {
-     "id": "RedHatAI/gemma-3-27b-it-quantized.w4a16",
+     "id": "unsloth/gemma-3-27b-it-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 10411
+     "downloads": 5905
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-25",
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "hf_checked": "2026-11-23",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -30407,7 +30407,7 @@
    "weights_available": true,
    "signals": {
     "likes": 1400,
-    "downloads": 111761,
+    "downloads": 110587,
     "trending": null
    },
    "score": 16.93,
@@ -30418,86 +30418,79 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 33879
+     "downloads": 32994
     },
     {
      "id": "bartowski/meta-llama_Llama-4-Scout-17B-16E-Instruct-old-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 7456
+     "downloads": 7364
     },
     {
      "id": "ggml-org/Llama-4-Scout-17B-16E-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1839
+     "downloads": 1892
     },
     {
      "id": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 996
+     "downloads": 988
     },
     {
      "id": "nvidia/Llama-4-Scout-17B-16E-Instruct-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 393
+     "downloads": 392
     },
     {
      "id": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 4364
+     "downloads": 4352
     },
     {
      "id": "nvidia/Llama-4-Scout-17B-16E-Instruct-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 2995
+     "downloads": 2819
     },
     {
      "id": "kishizaki-sci/Llama-4-Scout-17B-16E-Instruct-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 38
+     "downloads": 34
     },
     {
      "id": "lmstudio-community/Llama-4-Scout-17B-16E-MLX-text-8bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 1746
+     "downloads": 1718
     },
     {
      "id": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-quantized.w4a16",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 8886
+     "downloads": 8814
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-25",
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "hf_checked": "2026-11-23",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
-   "aa": {
-    "intelligence": null,
-    "coding": null,
-    "agentic": null,
-    "variant": null,
-    "slug": "meta-llama/llama-4-scout-17b-16e-instruct"
-   },
    "deep": {
     "tldr": "Il testo fornito è le note di rilascio della patch v5.24.1 di huggingface/transformers, non una model card o un annuncio di Llama-4-Scout-17B-16E-Instruct. Non descrive il modello né le sue caratteristiche. Riporta solo correzioni per vLLM, problemi distribuiti e fix su Llama4 e dory.",
     "features": [],
@@ -30510,6 +30503,13 @@
     "source": "https://github.com/huggingface/transformers/releases/tag/v5.24.1",
     "date": "2026-11-25",
     "by": "anthropic/claude-haiku-5.5"
+   },
+   "aa": {
+    "intelligence": null,
+    "coding": null,
+    "agentic": null,
+    "variant": null,
+    "slug": "meta-llama/llama-4-scout-17b-16e-instruct"
    }
   },
   "aa:anthropic/claude-instant-1": {
@@ -30683,8 +30683,8 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 927,
-    "downloads": 413481,
+    "likes": 928,
+    "downloads": 412511,
     "trending": null
    },
    "score": 12.17,
@@ -30695,63 +30695,63 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": true,
-     "downloads": 1758
+     "downloads": 1767
     },
     {
      "id": "unsloth/gemma-3-12b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 101236
+     "downloads": 102650
     },
     {
      "id": "MaziyarPanahi/gemma-3-12b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 60623
+     "downloads": 61733
     },
     {
      "id": "NeoChen1024/gemma-3-12b-it-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 777
+     "downloads": 776
     },
     {
      "id": "RedHatAI/gemma-3-12b-it-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 2374
+     "downloads": 2313
     },
     {
      "id": "leon-se/gemma-3-12b-it-FP8-Dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 370
+     "downloads": 369
     },
     {
      "id": "gaunernst/gemma-3-12b-it-int4-awq",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 103635
+     "downloads": 99122
     },
     {
      "id": "ISTA-DASLab/gemma-3-12b-it-GPTQ-4b-128g",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 745
+     "downloads": 732
     },
     {
      "id": "abhishekchohan/gemma-3-12b-it-quantized-W4A16",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 75565
+     "downloads": 68349
     }
    ],
    "newer": {
@@ -30761,7 +30761,7 @@
     "url": "https://huggingface.co/google/gemma-4-12B"
    },
    "newer_checked": "2026-11-23",
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "hf_checked": "2026-11-23",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -31361,8 +31361,8 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 1711,
-    "downloads": 1176301,
+    "likes": 1713,
+    "downloads": 1155723,
     "trending": null
    },
    "score": 12.41,
@@ -31373,35 +31373,35 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": true,
-     "downloads": 5096
+     "downloads": 5012
     },
     {
      "id": "unsloth/gemma-3-4b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 190648
+     "downloads": 190884
     },
     {
      "id": "ggml-org/gemma-3-4b-it-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 130845
+     "downloads": 133286
     },
     {
      "id": "RedHatAI/gemma-3-4b-it-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 735
+     "downloads": 729
     },
     {
      "id": "gaunernst/gemma-3-4b-it-int4-awq",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 683
+     "downloads": 700
     },
     {
      "id": "dongchengli/gemma-3-4b-it-text-int4-gptq",
@@ -31415,12 +31415,12 @@
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 18420
+     "downloads": 18249
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-23",
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "hf_checked": "2026-11-23",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
@@ -37136,7 +37136,7 @@
    "weights_available": true,
    "signals": {
     "likes": 3087,
-    "downloads": 653412,
+    "downloads": 627243,
     "trending": null
    },
    "score": 12.64,
@@ -37147,54 +37147,54 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 199706
+     "downloads": 199998
     },
     {
      "id": "unsloth/Llama-3.2-3B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 165306
+     "downloads": 159329
     },
     {
      "id": "MaziyarPanahi/Llama-3.2-3B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 61485
+     "downloads": 62400
     },
     {
      "id": "RedHatAI/Llama-3.2-3B-Instruct-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 3382
+     "downloads": 3218
     },
     {
      "id": "RedHatAI/Llama-3.2-3B-Instruct-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 1829
+     "downloads": 1774
     },
     {
      "id": "fbaldassarri/meta-llama_Llama-3.2-3B-Instruct-auto_round-int4-gs128-asym",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 372
+     "downloads": 374
     },
     {
      "id": "unsloth/Llama-3.2-3B-Instruct-unsloth-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 37286
+     "downloads": 36814
     }
    ],
    "newer": null,
    "newer_checked": "2026-11-23",
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
@@ -37518,8 +37518,8 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 9109,
-    "downloads": 3888767,
+    "likes": 9118,
+    "downloads": 3855296,
     "trending": null
    },
    "links": {
@@ -37640,21 +37640,21 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 389683
+     "downloads": 382131
     },
     {
      "id": "MaziyarPanahi/Meta-Llama-3.1-8B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 62386
+     "downloads": 62970
     },
     {
      "id": "lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 36610
+     "downloads": 34575
     },
     {
      "id": "GaleneAI/llama-3.1-nemoguard-8b-content-safety-merged-NVFP4",
@@ -37668,21 +37668,21 @@
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 17126
+     "downloads": 17328
     },
     {
      "id": "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 69680
+     "downloads": 69312
     },
     {
      "id": "RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 15246
+     "downloads": 14989
     },
     {
      "id": "cyankiwi/Llama-3.1-8B-Instruct-AWQ-INT4",
@@ -37696,21 +37696,21 @@
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 14645
+     "downloads": 14523
     },
     {
      "id": "mlx-community/Llama-3.1-8B-Instruct-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 4314
+     "downloads": 4254
     },
     {
      "id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 58143
+     "downloads": 57619
     }
    ],
    "first_seen": "2026-11-15",
@@ -37719,7 +37719,7 @@
    "newer": null,
    "newer_checked": "2026-11-23",
    "updated": "2026-11-15",
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
@@ -38550,9 +38550,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 500,
+    "likes": 532,
     "downloads": 5135,
-    "trending": 74,
+    "trending": 67,
     "watched_org": true
    },
    "links": {
@@ -38567,7 +38567,7 @@
    "checks": [
     "Numero di parametri non determinato: niente stima della VRAM."
    ],
-   "score": 6.93,
+   "score": 6.95,
    "newer": null,
    "newer_checked": "2026-11-23",
    "deep": {
@@ -39753,7 +39753,7 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 5,
+    "likes": 6,
     "downloads": 307,
     "trending": null,
     "watched_org": true
@@ -39878,7 +39878,7 @@
    "checks": [
     "MoE senza numero di parametri attivi: velocità stimata come modello denso."
    ],
-   "score": 6.2,
+   "score": 6.26,
    "newer": null,
    "newer_checked": "2026-11-24",
    "deep": {
@@ -45340,7 +45340,7 @@
    "mentions": [],
    "score": 6.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "deep": {
     "tldr": "GPT-6.2 Sol Pro è una variante di GPT-6.2 Sol servita con reasoning.mode impostato su 'pro', per risposte di qualità superiore su task complessi. Il testo non dichiara nuove architetture né benchmark: la differenza è nel modo di ragionamento e nel costo, che il testo segnala come molto più alto.",
     "features": [
@@ -45401,7 +45401,7 @@
    ],
    "score": 13.7,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "deep": {
     "tldr": "GPT-6.2 Sol è il modello efficiente e versatile per il lavoro quotidiano di OpenAI, disponibile via API come gpt-6.2-sol, insieme al frontier GPT-6.2 Astra. Secondo il testo costa 2$/10$ per milione di token (input/output), lo stesso prezzo di 6.1 Sol e 6 Sol e la metà di GPT-5.6 Sol. È indicato per il lavoro di tutti i giorni; il testo non riporta benchmark numerici per Sol né dati di esecuzione locale.",
     "features": [
@@ -45482,9 +45482,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 689,
+    "likes": 717,
     "downloads": 10479,
-    "trending": 149.5,
+    "trending": 116.5,
     "trend_rank": 13,
     "watched_org": true
    },
@@ -45606,49 +45606,77 @@
    },
    "quants": [
     {
+     "id": "peasantsmith/Hy4-Flash-Maya-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 320955
+    },
+    {
      "id": "AngelSlim/Hy4-flash-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 744
+     "downloads": 154473
     },
     {
-     "id": "Xylolabs/Hy4-flash-GGUF",
+     "id": "alesha-pro/Hy4-flash-Uncensored-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 0
-    },
-    {
-     "id": "AtomicChat/Hy4-flash-GGUF",
-     "format": "GGUF",
-     "nvfp4": false,
-     "official": false,
-     "downloads": 0
+     "downloads": 119133
     },
     {
      "id": "Avifenesh/Hy4-flash-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 0
+     "downloads": 700
     },
     {
-     "id": "TensorFold/Hy4-flash-MLX-4bit-MTP",
-     "format": "MLX",
+     "id": "Maximilian228/Hy4-flash-NVFP4-GPTQ-Basalt",
+     "format": "NVFP4",
+     "nvfp4": true,
+     "official": false,
+     "downloads": 548
+    },
+    {
+     "id": "leoncca/Hy4-flash-AWQ-g32",
+     "format": "AWQ",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 105
+    },
+    {
+     "id": "Dankpaws/Hy4-flash-DankAttn-g64-gptq-v3",
+     "format": "GPTQ",
      "nvfp4": false,
      "official": false,
      "downloads": 0
+    },
+    {
+     "id": "Jundot/Hy4-flash-oQ4h-mtp",
+     "format": "MLX",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 1250
+    },
+    {
+     "id": "infosave/Hy4-flash-cmf",
+     "format": "altro",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 647
     }
    ],
-   "quants_checked": "2026-11-18",
-   "hf_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
+   "hf_checked": "2026-11-26",
    "checks": [
     "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
    ],
-   "score": 9.05,
+   "score": 9.07,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "deep": {
     "tldr": "Hy4-flash è il modello MoE open-weight di Tencent da 220B parametri totali (12B attivi per token), multimodale (testo+immagini in input), con finestra di contesto fino a 1M token. Introduce architettura ibrida di attenzione, LatentMoE e Engram (embedding n-gram), ed è pensato come modello economico per attività di produttività quotidiana (deep search, documenti, slide, computer use). Per compiti di ingegneria del software a lungo orizzonte il testo consiglia invece Hy4.",
     "features": [
@@ -45751,7 +45779,7 @@
    "hf_id": "sensenova/SenseNova-Loop-9B",
    "pipeline": "image-text-to-text",
    "license": "apache-2.0",
-   "gated": true,
+   "gated": false,
    "params_b": 9.41,
    "params_source": "safetensors",
    "active_b": null,
@@ -45759,9 +45787,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 699,
+    "likes": 752,
     "downloads": 3268,
-    "trending": 91.5,
+    "trending": 87,
     "trend_rank": 15
    },
    "links": {
@@ -45878,72 +45906,86 @@
    },
    "quants": [
     {
+     "id": "sensenova/SenseNova-Loop-9B-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": true,
+     "downloads": 117621
+    },
+    {
      "id": "guideboardlabs/SenseNova-Loop-9B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 6281
+     "downloads": 17042
     },
     {
-     "id": "drofn/SenseNova-Loop-9B-8GB-GGUF",
+     "id": "AtomicChat/SenseNova-Loop-9B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1471
+     "downloads": 7928
     },
     {
-     "id": "rwitz/sensenova-loop-9b-recaptcha-gguf",
-     "format": "GGUF",
-     "nvfp4": false,
-     "official": false,
-     "downloads": 80
-    },
-    {
-     "id": "balllvin/SenseNova-Loop-9B-NVFP4",
+     "id": "Kaleto/SenseNova-Loop-9B-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 0
+     "downloads": 212
+    },
+    {
+     "id": "Kaleto/SenseNova-Loop-9B-NVFP4-MLP",
+     "format": "NVFP4",
+     "nvfp4": true,
+     "official": false,
+     "downloads": 158
     },
     {
      "id": "letechlead/SenseNova-Loop-9B-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 52
+     "downloads": 235
+    },
+    {
+     "id": "igerry/SenseNova-Loop-9B-FP8",
+     "format": "FP8",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 32
     },
     {
      "id": "sensenova/SenseNova-Loop-9B-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": true,
-     "downloads": 0
+     "downloads": 1051
     },
     {
-     "id": "netprojects/SenseNova-Loop-9B-MLX-8bit",
+     "id": "netprojects/SenseNova-Loop-9B-MLX-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 196
+     "downloads": 1412
     },
     {
-     "id": "qwegnai/SenseNova-Loop-9B-hq4g32",
+     "id": "infosave/SenseNova-Loop-9B-cmf",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 0
+     "downloads": 592
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "first_seen": "2026-11-18",
    "mentions": [],
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "checks": [
-    "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
    ],
-   "score": 8.56,
+   "score": 8.59,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "updated": "2026-11-18"
   },
   "thejagstudio/tessera-small": {
@@ -45963,7 +46005,7 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 227,
+    "likes": 252,
     "downloads": 0,
     "trending": 42,
     "trend_rank": 74
@@ -45976,13 +46018,13 @@
    "quants_checked": "2026-11-18",
    "first_seen": "2026-11-18",
    "mentions": [],
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "checks": [
     "Numero di parametri non determinato: niente stima della VRAM."
    ],
-   "score": 5.12,
+   "score": 5.16,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "deep": {
     "tldr": "Tessera-small è un modello da 47,6M parametri per generare pixel art 16×16 da prompt testuali, basato su un transformer bidirezionale di diffusione mascherata che predice tutti i 256 pixel in parallelo in circa 16 step, senza VAE né autoregressione. È adatto a esperimenti e ricerca non commerciali su generazione di sprite, con licenza CC BY-NC 4.0 che vieta l'uso commerciale senza licenza separata.",
     "features": [
@@ -46058,8 +46100,8 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 21,
-    "downloads": 129,
+    "likes": 25,
+    "downloads": 1280,
     "trending": null,
     "watched_org": true
    },
@@ -46183,16 +46225,16 @@
     ]
    },
    "quants": [],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "first_seen": "2026-11-18",
    "mentions": [],
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "checks": [
     "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
    ],
-   "score": 6.71,
+   "score": 6.77,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "deep": {
     "tldr": "Hy4-flash-base è il modello base pre-addestrato (non instruction-tuned) della famiglia Hy4 di Tencent: un MoE da circa 220B parametri totali con 12B attivi per token, multimodale (testo e immagini) e con contesto fino a 1M token. Dichiarato come il modello Hy più economico finora, pensato per produttività quotidiana e lavori agentici.",
     "features": [
@@ -46400,7 +46442,7 @@
    "arch": null,
    "weights_available": false,
    "signals": {
-    "likes": 1,
+    "likes": 2,
     "downloads": 0,
     "trending": null,
     "watched_org": true
@@ -46412,10 +46454,10 @@
    "note": "Repository senza file di pesi (segnaposto o rilascio non ancora avvenuto).",
    "first_seen": "2026-11-18",
    "mentions": [],
-   "hf_checked": "2026-11-18",
-   "score": 1.77,
+   "hf_checked": "2026-11-26",
+   "score": 1.93,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "updated": "2026-11-18"
   },
   "or:upstage/solar-mini4": {
@@ -46441,8 +46483,13 @@
    "first_seen": "2026-11-18",
    "mentions": [],
    "score": 2.0,
-   "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer": {
+    "id": "or:upstage/solar-mini-4-5",
+    "name": "Solar Mini 4.5 (Preview)",
+    "released": "2026-11-24",
+    "url": "https://openrouter.ai/upstage/solar-mini-4-5"
+   },
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -46611,64 +46658,64 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 3007,
-    "downloads": 238408,
+    "likes": 3009,
+    "downloads": 209455,
     "trending": null
    },
    "gated": false,
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "quants": [
     {
      "id": "unsloth/Kimi-K2-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 19627
+     "downloads": 19694
     },
     {
      "id": "DevQuasar/moonshotai.Kimi-K2-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1042
+     "downloads": 1320
     },
     {
      "id": "jobs-git/Kimi-K2-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 843
+     "downloads": 850
     },
     {
      "id": "unsloth/Kimi-K2-Instruct",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 209
+     "downloads": 167
     },
     {
      "id": "UnicornChan/Kimi-K2-GPTQ-4b-128g-experts",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 302
+     "downloads": 164
     },
     {
      "id": "mlx-community/Kimi-K2-Instruct-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 1515
+     "downloads": 1473
     },
     {
      "id": "luisra/Kimi-K2-Instruct-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 181
+     "downloads": 103
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "score": 10.63,
    "newer": {
     "id": "moonshotai/Kimi-K3",
@@ -46676,7 +46723,7 @@
     "released": "2026-06-13",
     "url": "https://huggingface.co/moonshotai/Kimi-K3"
    },
-   "newer_checked": "2026-11-18"
+   "newer_checked": "2026-11-26"
   },
   "aa:allenai/olmo-3.1-32b-think-20251215": {
    "id": "aa:allenai/olmo-3.1-32b-think-20251215",
@@ -46689,7 +46736,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -46709,7 +46756,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -46729,7 +46776,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -46749,7 +46796,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -46769,7 +46816,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -46789,7 +46836,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -46809,7 +46856,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -46829,7 +46876,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -46849,7 +46896,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -46869,7 +46916,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -46889,7 +46936,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -47058,64 +47105,64 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 1440,
-    "downloads": 125499,
+    "likes": 1439,
+    "downloads": 141193,
     "trending": null
    },
    "gated": false,
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "quants": [
     {
      "id": "unsloth/GLM-4.5-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 9832
+     "downloads": 10361
     },
     {
      "id": "bartowski/zai-org_GLM-4.5-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 871
+     "downloads": 932
     },
     {
      "id": "lmstudio-community/GLM-4.5-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 287
+     "downloads": 279
     },
     {
      "id": "QuantTrio/GLM-4.5-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 61
+     "downloads": 68
     },
     {
      "id": "QuantTrio/GLM-4.5-GPTQ-Int4-Int8Mix",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 69
+     "downloads": 62
     },
     {
      "id": "mlx-community/GLM-4.5-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 119
+     "downloads": 130
     },
     {
-     "id": "bullerwins/GLM-4.5-exl3-5.0bpw",
+     "id": "bullerwins/GLM-4.5-exl3-3.0bpw",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 17
+     "downloads": 18
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "score": 8.84,
    "newer": {
     "id": "zai-org/GLM-5.3",
@@ -47123,7 +47170,7 @@
     "released": "2026-08-25",
     "url": "https://huggingface.co/zai-org/GLM-5.3"
    },
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -47300,81 +47347,81 @@
    "weights_available": true,
    "signals": {
     "likes": 650,
-    "downloads": 1130363,
+    "downloads": 628105,
     "trending": null
    },
    "gated": false,
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "quants": [
     {
      "id": "unsloth/GLM-4.5-Air-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 141542
+     "downloads": 132831
     },
     {
      "id": "bartowski/zai-org_GLM-4.5-Air-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 4936
+     "downloads": 4881
     },
     {
-     "id": "auRose94/GLM-4.5-Air-ninths-k63-e99-GGUF",
+     "id": "tachyphylaxis/Huihui-GLM-4.5-Air-abliterated-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1156
+     "downloads": 862
     },
     {
      "id": "Firworks/GLM-4.5-Air-nvfp4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 162
+     "downloads": 164
     },
     {
      "id": "soundsgoodai/GLM-4.5-Air-NVFP4-KV-cache-FP8",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 30
+     "downloads": 31
     },
     {
      "id": "ArliAI/GLM-4.5-Air-Derestricted-FP8",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 83
+     "downloads": 110
     },
     {
      "id": "Keozon/GLM-4.5-Air-fp8_e4m3-quark-gfx1100",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 24
+     "downloads": 26
     },
     {
-     "id": "QuantTrio/GLM-4.5-Air-AWQ-FP16Mix",
+     "id": "cyankiwi/GLM-4.5-Air-AWQ-4bit",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 11915
+     "downloads": 13585
     },
     {
      "id": "avtc/GLM-4.5-Air-GPTQMODEL-W4A16",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 132
+     "downloads": 92
     },
     {
      "id": "lmstudio-community/GLM-4.5-Air-MLX-8bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 1125
+     "downloads": 1131
     },
     {
      "id": "turboderp/GLM-4.5-Air-exl3",
@@ -47384,10 +47431,10 @@
      "downloads": 49
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "score": 9.53,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -47407,7 +47454,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -47427,7 +47474,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -47447,7 +47494,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -47623,57 +47670,57 @@
    "pipeline": "image-text-to-text",
    "weights_available": true,
    "signals": {
-    "likes": 726,
-    "downloads": 15562,
+    "likes": 727,
+    "downloads": 16046,
     "trending": null
    },
    "gated": false,
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "quants": [
     {
      "id": "mradermacher/GLM-4.5V-i1-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 3138
+     "downloads": 2808
     },
     {
      "id": "ggml-org/GLM-4.5V-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 748
+     "downloads": 547
     },
     {
      "id": "mradermacher/GLM-4.5V-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 402
+     "downloads": 404
     },
     {
      "id": "QuantTrio/GLM-4.5V-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 149
+     "downloads": 102
     },
     {
      "id": "mlx-community/Huihui-GLM-4.5V-abliterated-mxfp4",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 264
+     "downloads": 261
     },
     {
      "id": "INC4AI/GLM-4.5V-int4-AutoRound",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 58
+     "downloads": 44
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "score": 9.58,
    "newer": {
     "id": "zai-org/GLM-4.6V",
@@ -47681,7 +47728,7 @@
     "released": "2025-12-07",
     "url": "https://huggingface.co/zai-org/GLM-4.6V"
    },
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -47701,7 +47748,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -47721,7 +47768,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -47890,81 +47937,81 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 2347,
-    "downloads": 199492,
+    "likes": 2346,
+    "downloads": 168740,
     "trending": null
    },
    "gated": false,
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "quants": [
     {
      "id": "MaziyarPanahi/phi-4-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 40187
+     "downloads": 62359
     },
     {
      "id": "bartowski/phi-4-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 12399
+     "downloads": 12762
     },
     {
      "id": "lmstudio-community/phi-4-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 10392
+     "downloads": 11177
     },
     {
      "id": "RedHatAI/phi-4-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 14302
+     "downloads": 14024
     },
     {
      "id": "Tomhn/phi-4-FP8-Dynamic-fixed",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 2526
+     "downloads": 546
     },
     {
      "id": "stelterlab/phi-4-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 1561
+     "downloads": 1306
     },
     {
      "id": "Satwik11/Microsoft-phi-4-Instruct-AutoRound-GPTQ-4bit",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 91
+     "downloads": 77
     },
     {
      "id": "mlx-community/phi-4-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 1376
+     "downloads": 1294
     },
     {
-     "id": "unsloth/phi-4-unsloth-bnb-4bit",
+     "id": "unsloth/phi-4-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 3003
+     "downloads": 2740
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "score": 12.53,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -47984,7 +48031,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48004,7 +48051,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48024,7 +48071,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48044,7 +48091,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48064,7 +48111,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48084,7 +48131,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48104,7 +48151,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48273,59 +48320,59 @@
    "weights_available": true,
    "signals": {
     "likes": 96,
-    "downloads": 3449,
+    "downloads": 3463,
     "trending": null
    },
    "gated": false,
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "quants": [
     {
      "id": "DevQuasar-13/NousResearch.Hermes-4-405B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 2483
-    },
-    {
-     "id": "bartowski/NousResearch_Hermes-4-405B-GGUF",
-     "format": "GGUF",
-     "nvfp4": false,
-     "official": false,
-     "downloads": 1292
+     "downloads": 1891
     },
     {
      "id": "unsloth/Hermes-4-405B-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1155
+     "downloads": 1321
+    },
+    {
+     "id": "bartowski/NousResearch_Hermes-4-405B-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 990
     },
     {
      "id": "enfuse/Hermes-4-405B-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 13
+     "downloads": 21
     },
     {
      "id": "lmstudio-community/Hermes-4-405B-MLX-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 879
+     "downloads": 834
     },
     {
      "id": "cpral/Hermes-4-405B-exl3-3bpw",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 23
+     "downloads": 18
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "score": 4.79,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48345,7 +48392,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48515,24 +48562,24 @@
    "weights_available": true,
    "signals": {
     "likes": 1025,
-    "downloads": 56141,
+    "downloads": 69812,
     "trending": null
    },
    "gated": false,
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "quants": [
     {
      "id": "QuantTrio/DeepSeek-V3.2-Exp-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 182
+     "downloads": 113
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "score": 8.71,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48552,7 +48599,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48572,7 +48619,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48742,81 +48789,81 @@
    "pipeline": "text-generation",
    "weights_available": true,
    "signals": {
-    "likes": 1344,
-    "downloads": 1940236,
+    "likes": 1356,
+    "downloads": 1935974,
     "trending": null
    },
    "gated": false,
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "quants": [
     {
      "id": "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 490750
-    },
-    {
-     "id": "lmstudio-community/Qwen3-Coder-30B-A3B-Instruct-GGUF",
-     "format": "GGUF",
-     "nvfp4": false,
-     "official": false,
-     "downloads": 95880
+     "downloads": 463988
     },
     {
      "id": "ggml-org/Qwen3-Coder-30B-A3B-Instruct-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 83487
+     "downloads": 118627
+    },
+    {
+     "id": "lmstudio-community/Qwen3-Coder-30B-A3B-Instruct-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 77750
     },
     {
      "id": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 15253
+     "downloads": 19034
     },
     {
      "id": "ig1/Qwen3-Coder-30B-A3B-Instruct-NVFP4",
      "format": "NVFP4",
      "nvfp4": true,
      "official": false,
-     "downloads": 822
+     "downloads": 755
     },
     {
      "id": "dark-side-of-the-code/Qwen3-Coder-30B-A3B-Instruct-AWQ",
      "format": "AWQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 167203
+     "downloads": 169031
     },
     {
      "id": "QuantTrio/Qwen3-Coder-30B-A3B-Instruct-GPTQ-Int8",
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 67020
+     "downloads": 35884
     },
     {
      "id": "lmstudio-community/Qwen3-Coder-30B-A3B-Instruct-MLX-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 89610
+     "downloads": 87831
     },
     {
      "id": "Justvugg/Qwen3-Coder-30B-A3B-colibri-int4",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 11778
+     "downloads": 13984
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "score": 12.32,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48836,7 +48883,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48856,7 +48903,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48876,7 +48923,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48896,7 +48943,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48916,7 +48963,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48936,7 +48983,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -48956,7 +49003,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49125,56 +49172,56 @@
    "weights_available": true,
    "signals": {
     "likes": 390,
-    "downloads": 1650,
+    "downloads": 1583,
     "trending": null
    },
    "gated": false,
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "quants": [
     {
      "id": "DavidAU/Reka-Flash-3-21B-Reasoning-Uncensored-MAX-NEO-Imatrix-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 2228
+     "downloads": 2229
     },
     {
      "id": "bartowski/RekaAI_reka-flash-3-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1435
+     "downloads": 1456
     },
     {
      "id": "mradermacher/reka-flash-3-i1-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1036
+     "downloads": 934
     },
     {
      "id": "qingy2024/Reka-Flash-3-21B-FP8-dynamic",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 19
+     "downloads": 16
     },
     {
      "id": "mlx-community/reka-flash-3-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 27
+     "downloads": 11
     },
     {
      "id": "unsloth/reka-flash-3-unsloth-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 79
+     "downloads": 27
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "score": 6.33,
    "newer": {
     "id": "RekaAI/reka-flash-3.1",
@@ -49182,7 +49229,7 @@
     "released": "2025-05-28",
     "url": "https://huggingface.co/RekaAI/reka-flash-3.1"
    },
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49202,7 +49249,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49222,7 +49269,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49377,19 +49424,19 @@
    "weights_available": true,
    "signals": {
     "likes": 397,
-    "downloads": 1999,
+    "downloads": 2011,
     "trending": null
    },
    "gated": true,
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "checks": [
     "config.json non leggibile (repo gated: servono le condizioni accettate e un HF_TOKEN): KV cache, contesto massimo e parametri attivi non stimabili."
    ],
    "quants": [],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "score": 10.84,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49409,7 +49456,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49429,7 +49476,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49449,7 +49496,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49469,7 +49516,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49639,63 +49686,63 @@
    "weights_available": true,
    "signals": {
     "likes": 790,
-    "downloads": 9981,
+    "downloads": 10827,
     "trending": null
    },
    "gated": false,
-   "hf_checked": "2026-11-18",
+   "hf_checked": "2026-11-26",
    "quants": [
     {
      "id": "unsloth/Kimi-K2-Instruct-0905-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1410
+     "downloads": 2094
     },
     {
      "id": "bartowski/moonshotai_Kimi-K2-Instruct-0905-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 812
+     "downloads": 784
     },
     {
      "id": "DevQuasar/moonshotai.Kimi-K2-Instruct-0905-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 707
+     "downloads": 613
     },
     {
      "id": "DevQuasar/moonshotai.Kimi-K2-Instruct-0905-BF16",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 324
+     "downloads": 337
     },
     {
      "id": "unsloth/Kimi-K2-Instruct-0905",
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 182
+     "downloads": 164
     },
     {
      "id": "amd/Kimi-K2-Instruct-0905-MXFP4",
      "format": "MXFP4",
      "nvfp4": false,
      "official": false,
-     "downloads": 810
+     "downloads": 537
     },
     {
      "id": "mlx-community/Kimi-K2-Instruct-0905-mlx-DQ3_K_M",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 1045
+     "downloads": 1024
     }
    ],
-   "quants_checked": "2026-11-18",
+   "quants_checked": "2026-11-26",
    "score": 10.11,
    "newer": {
     "id": "moonshotai/Kimi-K3",
@@ -49703,7 +49750,7 @@
     "released": "2026-06-13",
     "url": "https://huggingface.co/moonshotai/Kimi-K3"
    },
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49723,7 +49770,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49743,7 +49790,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49763,7 +49810,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49783,7 +49830,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49803,7 +49850,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49823,7 +49870,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49843,7 +49890,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49876,7 +49923,7 @@
    "mentions": [],
    "score": 5.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49909,7 +49956,7 @@
    "mentions": [],
    "score": 5.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49942,7 +49989,7 @@
    "mentions": [],
    "score": 5.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49962,7 +50009,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -49982,7 +50029,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50002,7 +50049,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50022,7 +50069,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50042,7 +50089,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50062,7 +50109,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50095,7 +50142,7 @@
    "mentions": [],
    "score": 6.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50115,7 +50162,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50153,7 +50200,7 @@
     "released": "2026-04-24",
     "url": "https://openrouter.ai/openai/gpt-5.5"
    },
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50191,7 +50238,7 @@
     "released": "2026-02-24",
     "url": "https://openrouter.ai/openai/gpt-5.3-codex"
    },
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50224,7 +50271,7 @@
    "mentions": [],
    "score": 5.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50244,7 +50291,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50277,7 +50324,7 @@
    "mentions": [],
    "score": 6.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50297,7 +50344,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50317,7 +50364,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50337,7 +50384,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50357,7 +50404,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50377,7 +50424,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50397,7 +50444,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50417,7 +50464,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50437,7 +50484,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50457,7 +50504,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50477,7 +50524,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50497,7 +50544,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50517,7 +50564,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50537,7 +50584,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50557,7 +50604,7 @@
    "mentions": [],
    "score": 3.5,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50577,7 +50624,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50597,7 +50644,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50617,7 +50664,7 @@
    "mentions": [],
    "score": 2.0,
    "newer": null,
-   "newer_checked": "2026-11-18",
+   "newer_checked": "2026-11-26",
    "aa": {
     "intelligence": null,
     "coding": null,
@@ -50815,9 +50862,9 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 855,
+    "likes": 915,
     "downloads": 15244,
-    "trending": 658,
+    "trending": 572,
     "trend_rank": 17
    },
    "links": {
@@ -50840,7 +50887,7 @@
    "checks": [
     "Numero di parametri non determinato: niente stima della VRAM."
    ],
-   "score": 5.64,
+   "score": 5.67,
    "newer": null,
    "newer_checked": "2026-11-19",
    "deep": {
@@ -50902,9 +50949,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 301,
+    "likes": 355,
     "downloads": 6005,
-    "trending": 59,
+    "trending": 56,
     "trend_rank": 60,
     "watched_org": true
    },
@@ -51054,7 +51101,7 @@
    "first_seen": "2026-11-19",
    "mentions": [],
    "hf_checked": "2026-11-19",
-   "score": 9.73,
+   "score": 9.8,
    "newer": null,
    "newer_checked": "2026-11-19",
    "deep": {
@@ -51859,7 +51906,7 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 14,
+    "likes": 16,
     "downloads": 193,
     "trending": null,
     "watched_org": true
@@ -51984,7 +52031,7 @@
    "checks": [
     "Parametri dedotti dal nome del repository (non dai metadati dei pesi)."
    ],
-   "score": 7.56,
+   "score": 7.61,
    "newer": null,
    "newer_checked": "2026-11-19",
    "deep": {
@@ -52217,8 +52264,8 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 398,
-    "downloads": 2020,
+    "likes": 397,
+    "downloads": 2011,
     "trending": null
    },
    "links": {
@@ -52346,14 +52393,14 @@
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 1003
+     "downloads": 1011
     },
     {
      "id": "mradermacher/c4ai-command-a-03-2025-i1-GGUF",
      "format": "GGUF",
      "nvfp4": false,
      "official": false,
-     "downloads": 422
+     "downloads": 415
     },
     {
      "id": "MaziyarPanahi/c4ai-command-a-03-2025-GGUF",
@@ -52374,7 +52421,7 @@
      "format": "FP8",
      "nvfp4": false,
      "official": false,
-     "downloads": 17
+     "downloads": 16
     },
     {
      "id": "gghfez/command-a-03-2025-AWQ",
@@ -52388,24 +52435,24 @@
      "format": "GPTQ",
      "nvfp4": false,
      "official": false,
-     "downloads": 16
+     "downloads": 15
     },
     {
      "id": "mlx-community/c4ai-command-a-03-2025-4bit",
      "format": "MLX",
      "nvfp4": false,
      "official": false,
-     "downloads": 107
+     "downloads": 104
     },
     {
      "id": "unsloth/c4ai-command-a-03-2025-bnb-4bit",
      "format": "altro",
      "nvfp4": false,
      "official": false,
-     "downloads": 416
+     "downloads": 403
     }
    ],
-   "quants_checked": "2026-11-25",
+   "quants_checked": "2026-11-26",
    "first_seen": "2026-11-19",
    "mentions": [],
    "hf_checked": "2026-11-19",
@@ -53376,7 +53423,7 @@
    "arch": null,
    "weights_available": true,
    "signals": {
-    "likes": 12,
+    "likes": 13,
     "downloads": 574,
     "trending": null,
     "watched_org": true
@@ -53501,7 +53548,7 @@
    "checks": [
     "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
    ],
-   "score": 7.5,
+   "score": 7.53,
    "newer": null,
    "newer_checked": "2026-11-20",
    "deep": {
@@ -54364,9 +54411,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 5919,
+    "likes": 6109,
     "downloads": 96527,
-    "trending": 1283.5,
+    "trending": 1354.5,
     "trend_rank": 1,
     "watched_org": true
    },
@@ -54526,7 +54573,7 @@
    ],
    "quants_checked": "2026-11-21",
    "hf_checked": "2026-11-21",
-   "score": 18.1,
+   "score": 18.11,
    "newer": null,
    "newer_checked": "2026-11-24",
    "deep": {
@@ -55280,9 +55327,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 122,
+    "likes": 155,
     "downloads": 3398,
-    "trending": 91,
+    "trending": 47.5,
     "watched_org": true
    },
    "links": {
@@ -55418,7 +55465,7 @@
    "first_seen": "2026-11-21",
    "mentions": [],
    "hf_checked": "2026-11-21",
-   "score": 9.38,
+   "score": 9.47,
    "newer": null,
    "newer_checked": "2026-11-21",
    "deep": {
@@ -56593,9 +56640,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 172,
+    "likes": 197,
     "downloads": 1487,
-    "trending": 126,
+    "trending": 138,
     "trend_rank": 24
    },
    "links": {
@@ -56723,7 +56770,7 @@
    "first_seen": "2026-11-23",
    "mentions": [],
    "hf_checked": "2026-11-23",
-   "score": 7.51,
+   "score": 7.57,
    "newer": null,
    "newer_checked": "2026-11-23",
    "deep": {
@@ -56791,9 +56838,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 122,
+    "likes": 150,
     "downloads": 4635,
-    "trending": 89,
+    "trending": 47,
     "trend_rank": 53,
     "watched_org": true
    },
@@ -56943,7 +56990,7 @@
    "first_seen": "2026-11-23",
    "mentions": [],
    "hf_checked": "2026-11-23",
-   "score": 8.38,
+   "score": 8.46,
    "newer": null,
    "newer_checked": "2026-11-23",
    "deep": {
@@ -57268,9 +57315,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 201,
+    "likes": 240,
     "downloads": 1467,
-    "trending": 172,
+    "trending": 183,
     "watched_org": true
    },
    "links": {
@@ -57397,7 +57444,7 @@
    "first_seen": "2026-11-23",
    "mentions": [],
    "hf_checked": "2026-11-23",
-   "score": 7.57,
+   "score": 7.64,
    "newer": null,
    "newer_checked": "2026-11-23",
    "deep": {
@@ -57681,9 +57728,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 131,
+    "likes": 160,
     "downloads": 837,
-    "trending": 113,
+    "trending": 120,
     "trend_rank": 51
    },
    "links": {
@@ -57832,7 +57879,7 @@
    "first_seen": "2026-11-24",
    "mentions": [],
    "hf_checked": "2026-11-24",
-   "score": 6.91,
+   "score": 6.99,
    "newer": null,
    "newer_checked": "2026-11-24",
    "deep": {
@@ -58093,7 +58140,7 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 23,
+    "likes": 24,
     "downloads": 388,
     "trending": null,
     "watched_org": true
@@ -58226,7 +58273,7 @@
    "checks": [
     "Parametri attivi presi dalla dichiarazione del produttore, non dall'architettura."
    ],
-   "score": 5.74,
+   "score": 5.76,
    "newer": null,
    "newer_checked": "2026-11-24",
    "deep": {
@@ -58941,9 +58988,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 83,
+    "likes": 124,
     "downloads": 264,
-    "trending": 80,
+    "trending": 103,
     "trend_rank": 35
    },
    "links": {
@@ -59100,7 +59147,7 @@
    "first_seen": "2026-11-25",
    "mentions": [],
    "hf_checked": "2026-11-25",
-   "score": 7.73,
+   "score": 7.89,
    "newer": null,
    "newer_checked": "2026-11-25",
    "deep": {
@@ -59614,9 +59661,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 39,
+    "likes": 59,
     "downloads": 297,
-    "trending": 38,
+    "trending": 48,
     "trend_rank": 85
    },
    "links": {
@@ -59759,7 +59806,7 @@
    "first_seen": "2026-11-25",
    "mentions": [],
    "hf_checked": "2026-11-25",
-   "score": 6.44,
+   "score": 6.6,
    "newer": null,
    "newer_checked": "2026-11-25",
    "deep": {
@@ -59821,9 +59868,9 @@
    },
    "weights_available": true,
    "signals": {
-    "likes": 37,
+    "likes": 48,
     "downloads": 398,
-    "trending": 36,
+    "trending": 41,
     "trend_rank": 96
    },
    "links": {
@@ -59993,7 +60040,7 @@
    "first_seen": "2026-11-25",
    "mentions": [],
    "hf_checked": "2026-11-25",
-   "score": 7.92,
+   "score": 8.02,
    "newer": null,
    "newer_checked": "2026-11-25",
    "deep": {
@@ -60526,6 +60573,1218 @@
     "by": "anthropic/claude-haiku-5.5"
    },
    "updated": "2026-11-25"
+  },
+  "kandinskylab/Kandinsky-ImageSR-2.0": {
+   "id": "kandinskylab/Kandinsky-ImageSR-2.0",
+   "name": "Kandinsky-ImageSR-2.0",
+   "org": "kandinskylab",
+   "kind": "open",
+   "released": "2026-11-24",
+   "hf_id": "kandinskylab/Kandinsky-ImageSR-2.0",
+   "pipeline": "image-to-image",
+   "license": "mit",
+   "gated": false,
+   "params_b": 4.53,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 47,
+    "downloads": 4,
+    "trending": 47,
+    "trend_rank": 64
+   },
+   "links": {
+    "hf": "https://huggingface.co/kandinskylab/Kandinsky-ImageSR-2.0"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), 8.4 GB di pesi",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 8.4,
+    "ref_ctx": 32768,
+    "tok_s": null,
+    "kv_known": false,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 9.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 5.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 4.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 3.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 3.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 3.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 2.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 2.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 5.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 3.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": null,
+      "tok_s": null
+     }
+    ]
+   },
+   "quants": [],
+   "quants_checked": "2026-11-26",
+   "first_seen": "2026-11-26",
+   "mentions": [],
+   "hf_checked": "2026-11-26",
+   "checks": [
+    "config.json non leggibile: KV cache, contesto massimo e parametri attivi non stimabili."
+   ],
+   "score": 6.51,
+   "newer": null,
+   "newer_checked": "2026-11-26",
+   "deep": {
+    "tldr": "Kandinsky-ImageSR-2.0 è un modello di super-risoluzione immagini (image-to-image) distribuito come bundle Diffusers, con pesi unici per upscale x2 e x4. Rispetto alla versione precedente elimina il text encoder e le 50 cross-attention layers, sostituendole con tabelle per-timestep pre-calcolate in Safetensors. È adatto a upscaling di foto e immagini fino a 8K, con controllo della 'creatività' tramite il parametro di timestep.",
+    "features": [
+     "Super-risoluzione con un unico set di pesi del transformer per x2 e x4",
+     "Conditioning testuale pre-calcolato (zero-text): text tower e 50 cross-attention layers sostituite da tabelle Safetensors per timestep",
+     "Inferenza tiled a tile da 1024 px con blending Hanning consapevole dei bordi; input piccoli gestiti con replicate-padding e ritaglio",
+     "Parametro one_step_t con default x2=0.15 e x4=0.244; 'creativity' calibrato su livelli 0..8",
+     "Basato sul transformer Kandinsky 5 incluso in Diffusers 0.41 o successivo",
+     "Licenza MIT per transformer e pipeline; VAE da FLUX.1-schnell (Apache-2.0)"
+    ],
+    "benchmarks": [],
+    "params": "4.53B",
+    "context": "",
+    "availability": "Pesi aperti su Hugging Face (kandinskylab/Kandinsky-ImageSR-2.0), caricabili con from_pretrained; codice pipeline su GitHub (kandinskylab/kandinsky-image-sr); licenza MIT",
+    "local_tips": "Installare torch per la propria versione CUDA prima del pacchetto; usare dtype=torch.bfloat16; valori creativity calibrati: x2 range 0.07–0.30 (default t=0.15), x4 range 0.17–0.38 (default t=0.244); altri valori raw di one_step_t non supportati; script di test in scripts/test.py con --backend native",
+    "hw_claims": "Misure su NVIDIA H100 80GB (SXM), bfloat16, torch 2.13.0 (CUDA 12.9), tile_batch_size=1, mediana di 5 chiamate dopo 2 warm-up: 1K→2K (x2) 2.78 s con grid 3×3; 1K→4K (x4) 7.80 s con grid 5×5; 2K→4K (x2) 7.84 s con grid 5×5; 2K→8K (x4) 37.5 s con grid 11×11; 4K→8K (x2) 37.7 s con grid 11×11. Requisiti di VRAM non dichiarati nel testo.",
+    "source": "https://huggingface.co/kandinskylab/Kandinsky-ImageSR-2.0",
+    "date": "2026-11-26",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-26"
+  },
+  "Comfy-Org/SenseNova-U1": {
+   "id": "Comfy-Org/SenseNova-U1",
+   "name": "SenseNova-U1",
+   "org": "Comfy-Org",
+   "kind": "open",
+   "released": "2026-11-18",
+   "hf_id": "Comfy-Org/SenseNova-U1",
+   "pipeline": "any-to-any",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 37,
+    "downloads": 69389,
+    "trending": 37,
+    "trend_rank": 81
+   },
+   "links": {
+    "hf": "https://huggingface.co/Comfy-Org/SenseNova-U1"
+   },
+   "vram": null,
+   "quants": [],
+   "quants_checked": "2026-11-26",
+   "first_seen": "2026-11-26",
+   "mentions": [],
+   "hf_checked": "2026-11-26",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ],
+   "score": 5.42,
+   "newer": null,
+   "newer_checked": "2026-11-26",
+   "deep": {
+    "tldr": "SenseNova U1.6 8B MoT è un modello any-to-any distribuito da Comfy-Org come pacchetto di file per ComfyUI, derivato dal repository originale di SenseNova. Il testo fornito include checkpoint bf16 e int8 (convrot) e una LoRA di distillazione a 8 step per l'inferenza rapida. I workflow mostrati riguardano editing di immagini e generazione text-to-image.",
+    "features": [
+     "Repackaging in formato safetensors per ComfyUI, con checkpoint bf16 e int8_convrot",
+     "LoRA di accelerazione a 8 step (sensenova_u1.6_8b_mot_8step_lora_bf16.safetensors)",
+     "Workflow ufficiali per editing di immagini (prima/dopo) e text-to-image",
+     "Licenza Apache-2.0 (dato già noto)",
+     "Pipeline dichiarata any-to-any (dato già noto)"
+    ],
+    "benchmarks": [],
+    "params": "8B (dal nome del modello, 'SenseNova-U1.6-8B-MoT')",
+    "context": "",
+    "availability": "Pesi aperti tramite repository Hugging Face di SenseNova (sensenova/SenseNova-U1.6-8B-MoT e sensenova/SenseNova-U1.6-8B-MoT-LoRAs) e file ripacchettizzati da Comfy-Org per ComfyUI; nessun prezzo API indicato",
+    "local_tips": "Il testo indica di collocare i file in ComfyUI/models/checkpoints e ComfyUI/models/loras; menziona la LoRA a 8 step e il checkpoint int8_convrot come quantizzazione disponibile, senza specifiche di sampling",
+    "hw_claims": "",
+    "source": "https://huggingface.co/Comfy-Org/SenseNova-U1",
+    "date": "2026-11-26",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-26"
+  },
+  "ai-forever/OrbitLM-1.8B-Thinking": {
+   "id": "ai-forever/OrbitLM-1.8B-Thinking",
+   "name": "OrbitLM-1.8B-Thinking",
+   "org": "ai-forever",
+   "kind": "open",
+   "released": "2026-11-17",
+   "hf_id": "ai-forever/OrbitLM-1.8B-Thinking",
+   "pipeline": "text-generation",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 1.86,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": 32768,
+   "arch": {
+    "layers": 24,
+    "hidden": 2048,
+    "heads": 16,
+    "kv_heads": 16,
+    "head_dim": 128,
+    "full_layers": 24,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 5632,
+    "vocab": 151936,
+    "tied": false,
+    "max_ctx": 32768
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 34,
+    "downloads": 138,
+    "trending": 32,
+    "trend_rank": 98
+   },
+   "links": {
+    "hf": "https://huggingface.co/ai-forever/OrbitLM-1.8B-Thinking"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo · 32k",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~32k, ~277 tok/s",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 3.5,
+    "ref_ctx": 32768,
+    "tok_s": 277,
+    "kv_known": true,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 10.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 277
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 8.6,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 451
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 8.2,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 538
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 8.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 589
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 7.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 649
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 7.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 699
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 7.6,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 732
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 7.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 875
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 8.6,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 461
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 7.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 32768,
+      "tok_s": 677
+     }
+    ]
+   },
+   "quants": [],
+   "quants_checked": "2026-11-26",
+   "first_seen": "2026-11-26",
+   "mentions": [],
+   "hf_checked": "2026-11-26",
+   "score": 7.39,
+   "newer": null,
+   "newer_checked": "2026-11-26",
+   "deep": {
+    "tldr": "OrbitLM-1.8B-Thinking è un modello open-weight (Apache 2.0) di ai-forever da 1.86B parametri, basato su un'architettura a loop: 24 layer condivisi eseguiti 4 volte per token con un exit gate. È addestrato da zero su 1.5T token di inglese e russo, con SFT e RL su matematica e codice, ed è pensato per ragionamento matematico, istruzioni e function calling su hardware modesto.",
+    "features": [
+     "Architettura decoder a loop: 24 layer condivisi eseguiti 4 volte per token, con exit gate dopo ogni passaggio; 1.86B parametri totali, 5.24B attivati per token contando i passaggi ripetuti",
+     "Contesto di 32.768 token (RoPE base 4.000.000), tokenizer Qwen3 da 151.936 token",
+     "Lingue: inglese e russo; formato chat ChatML con blocco di thinking attivo di default; supporto a tool calling",
+     "Licenza Apache 2.0; codice di training da pretraining a RL pubblicato su GitHub (ai-forever/OrbitLM) e paper su arXiv",
+     "Novità tecniche: pesi dell'exit gate addestrati con loss pesata per passaggio e termine KL verso una distribuzione uniforme; opzione di cache KV in FP8",
+     "Self-speculative decoding: il primo passaggio del modello funge da draft per il modello completo, con accelerazione dichiarata"
+    ],
+    "benchmarks": [
+     {
+      "name": "MMLU-Pro",
+      "score": "53.1",
+      "vs": [
+       {
+        "model": "Ouro-1.4B-Thinking",
+        "score": "65.1"
+       },
+       {
+        "model": "Qwen3.5-2B",
+        "score": "65.6"
+       },
+       {
+        "model": "SmolLM3-3B",
+        "score": "57.8"
+       }
+      ]
+     },
+     {
+      "name": "GSM8K",
+      "score": "91.8",
+      "vs": [
+       {
+        "model": "Ouro-1.4B-Thinking",
+        "score": "93.4"
+       },
+       {
+        "model": "Qwen3.5-2B",
+        "score": "84.5"
+       },
+       {
+        "model": "SmolLM3-3B",
+        "score": "91.7"
+       }
+      ]
+     },
+     {
+      "name": "MATH-500",
+      "score": "91.0",
+      "vs": [
+       {
+        "model": "Ouro-1.4B-Thinking",
+        "score": "91.6"
+       },
+       {
+        "model": "Qwen3.5-2B",
+        "score": "74.4"
+       },
+       {
+        "model": "SmolLM3-3B",
+        "score": "92.8"
+       }
+      ]
+     },
+     {
+      "name": "AIME 2025",
+      "score": "66.5",
+      "vs": [
+       {
+        "model": "Ouro-1.4B-Thinking",
+        "score": "66.2"
+       },
+       {
+        "model": "SmolLM3-3B",
+        "score": "71.1"
+       },
+       {
+        "model": "Nemotron-Nano-4B",
+        "score": "70.8"
+       }
+      ]
+     },
+     {
+      "name": "AIME 2026",
+      "score": "67.3",
+      "vs": [
+       {
+        "model": "Ouro-1.4B-Thinking",
+        "score": "72.9"
+       },
+       {
+        "model": "SmolLM3-3B",
+        "score": "75.5"
+       },
+       {
+        "model": "Nemotron-Nano-4B",
+        "score": "80.7"
+       }
+      ]
+     },
+     {
+      "name": "OlympiadBench",
+      "score": "63.6",
+      "vs": [
+       {
+        "model": "Ouro-1.4B-Thinking",
+        "score": "65.7"
+       },
+       {
+        "model": "SmolLM3-3B",
+        "score": "66.5"
+       },
+       {
+        "model": "Nemotron-Nano-4B",
+        "score": "71.0"
+       }
+      ]
+     },
+     {
+      "name": "LiveCodeBench (LCB)",
+      "score": "28.2",
+      "vs": [
+       {
+        "model": "Ouro-1.4B-Thinking",
+        "score": "42.1"
+       },
+       {
+        "model": "SmolLM3-3B",
+        "score": "31.3"
+       },
+       {
+        "model": "Nemotron-Nano-4B",
+        "score": "36.4"
+       }
+      ]
+     },
+     {
+      "name": "IFEval",
+      "score": "71.9",
+      "vs": [
+       {
+        "model": "Ouro-1.4B-Thinking",
+        "score": "51.4"
+       },
+       {
+        "model": "Qwen3.5-2B",
+        "score": "79.7"
+       },
+       {
+        "model": "SmolLM3-3B",
+        "score": "68.2"
+       }
+      ]
+     },
+     {
+      "name": "BFCL (parallel)",
+      "score": "89.5",
+      "vs": [
+       {
+        "model": "Ouro-1.4B-Thinking",
+        "score": "71.5"
+       },
+       {
+        "model": "Qwen3.5-2B",
+        "score": "83.0"
+       },
+       {
+        "model": "SmolLM3-3B",
+        "score": "66.0"
+       }
+      ]
+     }
+    ],
+    "params": "1.86B totali (1.23B nei layer condivisi, 0.62B in embedding e output); 5.24B attivati per token contando i passaggi…",
+    "context": "32.768 token",
+    "availability": "Pesi aperti su Hugging Face (ai-forever/OrbitLM-1.8B-Thinking), licenza Apache 2.0; codice su GitHub (ai-forever/OrbitLM); paper arXiv 2610.00673; supporto transformers (4.56+) e vLLM tramite plugin incluso (testato con 0.34). Nessun prezzo API indicato.",
+    "local_tips": "Sampling consigliato: temperature 0.6, top_p 0.95, top_k 20 (impostato in generation_config.json). Con transformers usare trust_remote_code=True, dtype bfloat16, e disabilitare cuDNN SDP (torch.backends.cuda.enable_cudnn_sdp(False)) per contesti lunghi. Con vLLM: kv_cache_dtype=\"fp8\", max_model_len=32768, parser di reasoning qwen3; è possibile ridurre i passaggi con hf_overrides={\"total_ut_steps\": 3}. Self-speculative decoding con draft di un solo passaggio e 4 token speculativi. Nessuna…",
+    "hw_claims": "Cache KV: 0,75 MiB per token in bf16, 24 GiB per una sequenza da 32K (dimezzata con FP8). Test di self-speculative decoding su una singola H200 con 4 token draft: 1,73x più veloce di bf16 a batch 1 e 16K di contesto, 2,10x con 16 sequenze da 8K, 2,24x con 8 sequenze da 16K, senza variazioni di accuratezza su MATH-500 e GSM8K (su un checkpoint SFT precedente). FP8 da solo raddoppia i token…",
+    "source": "https://huggingface.co/ai-forever/OrbitLM-1.8B-Thinking",
+    "date": "2026-11-26",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-26"
+  },
+  "Qwen/Qwen3-0.6B": {
+   "id": "Qwen/Qwen3-0.6B",
+   "name": "Qwen3-0.6B",
+   "org": "Qwen",
+   "kind": "open",
+   "released": "2025-04-27",
+   "hf_id": "Qwen/Qwen3-0.6B",
+   "pipeline": "text-generation",
+   "license": "apache-2.0",
+   "gated": false,
+   "params_b": 0.75,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": 40960,
+   "arch": {
+    "layers": 28,
+    "hidden": 1024,
+    "heads": 16,
+    "kv_heads": 8,
+    "head_dim": 128,
+    "full_layers": 28,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 3072,
+    "vocab": 151936,
+    "tied": true,
+    "max_ctx": 40960
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 1941,
+    "downloads": 14010062,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/Qwen/Qwen3-0.6B"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo · 40k",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~40k, 500+ tok/s",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 1.4,
+    "ref_ctx": 32768,
+    "tok_s": 637,
+    "kv_known": true,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 5.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 40960,
+      "tok_s": 637
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 5.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 40960,
+      "tok_s": 990
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 4.9,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 40960,
+      "tok_s": 1156
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 4.8,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 40960,
+      "tok_s": 1250
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 4.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 40960,
+      "tok_s": 1357
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 4.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 40960,
+      "tok_s": 1445
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 4.6,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 40960,
+      "tok_s": 1500
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 4.5,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 40960,
+      "tok_s": 1735
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 5.0,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 40960,
+      "tok_s": 1009
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 4.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 40960,
+      "tok_s": 1407
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "Qwen/Qwen3-0.6B-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": true,
+     "downloads": 185891
+    },
+    {
+     "id": "unsloth/Qwen3-0.6B-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 265604
+    },
+    {
+     "id": "bartowski/Qwen_Qwen3-0.6B-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 259821
+    },
+    {
+     "id": "Qwen/Qwen3-0.6B-FP8",
+     "format": "FP8",
+     "nvfp4": false,
+     "official": true,
+     "downloads": 46372
+    },
+    {
+     "id": "RedHatAI/Qwen3-0.6B-FP8-dynamic",
+     "format": "FP8",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 810
+    },
+    {
+     "id": "Qwen/Qwen3-0.6B-GPTQ-Int8",
+     "format": "GPTQ",
+     "nvfp4": false,
+     "official": true,
+     "downloads": 954
+    },
+    {
+     "id": "mlx-community/Qwen3-0.6B-4bit",
+     "format": "MLX",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 46444
+    },
+    {
+     "id": "litert-community/Qwen3-0.6B",
+     "format": "altro",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 75622
+    }
+   ],
+   "quants_checked": "2026-11-26",
+   "first_seen": "2026-11-26",
+   "mentions": [
+    {
+     "item": "a519f60a2170",
+     "rel": 6,
+     "date": "2026-11-25",
+     "title": "llm.asm: inferenza Qwen3-0.6B in puro assembly x86-64, 12 KB",
+     "url": "https://github.com/alesha-pro/llm.asm",
+     "source": "GitHub"
+    }
+   ],
+   "hf_checked": "2026-11-26",
+   "score": 14.26,
+   "newer": null,
+   "newer_checked": "2026-11-26",
+   "deep": {
+    "tldr": "Il repository 'llm.asm' di alesha-pro non è una model card di Qwen3-0.6B ma un progetto che implementa in puro assembly x86-64 NASM l'inferenza di Qwen3-0.6B (Q8_0), un OS bare-metal avviabile che la esegue, e un trainer Mini-GPT from-scratch con TUI Braille. Il punto di interesse è la velocità di decode CPU misurata contro llama.cpp, senza dipendenze runtime. Adatto a chi studia inferenza CPU a basso livello, non a un uso produttivo generico.",
+    "features": [
+     "Inferenza Qwen3-0.6B in NASM puro (~14.7 KB binario statico, zero dipendenze, zero libc), con architettura GQA + QK-Norm + RoPE + SwiGLU e REPL --chat multi-turno con KV-cache",
+     "Kernel matmul INT8xINT8 con AVX2 (vpmaddubsw/vpmaddwd), scale FP16 per blocco via F16C, prefetch, KV-cache contigua head-major e attenzione GQA parallela (FAST_Q8=1)",
+     "Thread pool zero-libc basato su clone()/futex() con determinismo bit-exact tra 1 e 40 thread",
+     "Sistema operativo bare-metal avviabile (Multiboot 1, Long Mode, SMP via ACPI/APIC) che esegue Qwen3-0.6B su VGA/COM1, testato su QEMU KVM e su una VM Proxmox",
+     "Trainer Mini-GPT FP32 from-scratch con backward analitico e AdamW, più TUI Braille a 80x24",
+     "Licenza MIT"
+    ],
+    "benchmarks": [
+     {
+      "name": "Decode CPU Qwen3-0.6B Q8_0 (tok/s, 1 thread)",
+      "score": "20.70 tok/s (FAST_Q8=1)",
+      "vs": [
+       {
+        "model": "llama.cpp Q8_0 (CPU, -ngl 0)",
+        "score": "16.63 tok/s"
+       },
+       {
+        "model": "llm.asm FAST_Q8=0 (FP32 act)",
+        "score": "7.18 tok/s"
+       }
+      ]
+     },
+     {
+      "name": "Decode CPU Qwen3-0.6B Q8_0 (tok/s, 40 thread)",
+      "score": "125.86 tok/s (peak 126.81)",
+      "vs": [
+       {
+        "model": "llama.cpp Q8_0 (CPU, -ngl 0)",
+        "score": "105.08 tok/s"
+       },
+       {
+        "model": "llm.asm FAST_Q8=0 (FP32 act)",
+        "score": "98.50 tok/s"
+       }
+      ]
+     },
+     {
+      "name": "Decode CPU Qwen3-0.6B Q8_0 (tok/s, 16 thread)",
+      "score": "121.86 tok/s",
+      "vs": [
+       {
+        "model": "llama.cpp Q8_0 (CPU, -ngl 0)",
+        "score": "103.03 tok/s"
+       },
+       {
+        "model": "llm.asm FAST_Q8=0 (FP32 act)",
+        "score": "77.50 tok/s"
+       }
+      ]
+     },
+     {
+      "name": "Decode bare-metal OS su KVM (tok/s, 16 vCPU)",
+      "score": "134.94 tok/s",
+      "vs": []
+     },
+     {
+      "name": "Cosine similarity vs PyTorch FP32 (FAST_Q8=1)",
+      "score": "0.9996517 (64/64 token greedy…",
+      "vs": []
+     }
+    ],
+    "params": "0.6B (dichiarati 0.75B nei dati noti; il testo indica Qwen3-0.6B)",
+    "context": "",
+    "availability": "Pesi Qwen3-0.6B (Qwen/Qwen3-0.6B) convertiti in formato .asmbin tramite scripts/export_weights.py; repository GitHub alesha-pro/llm.asm con licenza MIT",
+    "local_tips": "Esportare con --scale-dtype fp16 (formato .asmbin v2, 613.66 MiB); compilare con make inference FAST_Q8=1 (default) oppure FAST_Q8=0 per attivazioni FP32 esatte; eseguire con -t fino a 40 thread; usare --chat per conversazione multi-turno",
+    "hw_claims": "Richiede CPU x86-64 con AVX2 + FMA + F16C (Intel Haswell / AMD Excavator o successive). Modello Q8_0 da 613.66 MiB (.asmbin v2) ; il binario di inferenza è 14,712 B (14,008 B con FAST_Q8=0). Benchmark su AMD EPYC 7642 (47 core online, 256 MiB L3, DDR4, CPU-only -ngl 0). Bare-metal OS: 74–94 ms di boot, 134.9 tok/s su KVM EPYC (16 vCPU), 55.4 tok/s su Proxmox con Intel Xeon E5-2670 v3 e disco 0…",
+    "source": "https://github.com/alesha-pro/llm.asm",
+    "date": "2026-11-26",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-26"
+  },
+  "Vision-CAIR/MiniGPT-4": {
+   "id": "Vision-CAIR/MiniGPT-4",
+   "name": "MiniGPT-4",
+   "org": "Vision-CAIR",
+   "kind": "open",
+   "released": "2023-04-19",
+   "hf_id": "Vision-CAIR/MiniGPT-4",
+   "pipeline": null,
+   "license": null,
+   "gated": false,
+   "params_b": null,
+   "params_source": null,
+   "active_b": null,
+   "context": null,
+   "arch": null,
+   "weights_available": true,
+   "signals": {
+    "likes": 434,
+    "downloads": 0,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/Vision-CAIR/MiniGPT-4"
+   },
+   "vram": null,
+   "quants": [],
+   "quants_checked": "2026-11-26",
+   "first_seen": "2026-11-26",
+   "mentions": [
+    {
+     "item": "a519f60a2170",
+     "rel": 6,
+     "date": "2026-11-25",
+     "title": "llm.asm: inferenza Qwen3-0.6B in puro assembly x86-64, 12 KB",
+     "url": "https://github.com/alesha-pro/llm.asm",
+     "source": "GitHub"
+    }
+   ],
+   "hf_checked": "2026-11-26",
+   "checks": [
+    "Numero di parametri non determinato: niente stima della VRAM."
+   ],
+   "score": 9.17,
+   "newer": null,
+   "newer_checked": "2026-11-26",
+   "deep": {
+    "tldr": "Il testo è una pagina GitHub del progetto llm.asm, non una model card di MiniGPT-4 (Vision-CAIR). Descrive tre progetti scritti in puro x86-64 NASM assembly: inferenza di Qwen3-0.6B (Q8_0), un sistema operativo bare-metal che esegue Qwen3-0.6B e un trainer di Mini-GPT from scratch con TUI Braille. Non contiene informazioni su MiniGPT-4 di Vision-CAIR.",
+    "features": [
+     "Inferenza Qwen3-0.6B in 14 KB come ELF statico Linux, senza dipendenze, con quantizzazione Q8_0, GQA, QK-Norm, RoPE, SwiGLU e modalità chat multi-turn con KV-cache",
+     "Sistema operativo bare-metal bootabile (24 KB) che esegue Qwen3-0.6B tramite Multiboot 1, con supporto SMP e interfaccia VGA/PS-2/COM1",
+     "Trainer e sampler di Mini-GPT FP32 da zero, con backward pass analitico, AdamW e TUI Braille live a 80x24",
+     "Kernel SIMD scritti a mano (AVX2+FMA+F16C) per GEMM/GEMV, tokenizer BPE e thread pool basato su clone()/futex()",
+     "Repository con licenza MIT e build tramite Makefile (nasm e binutils)"
+    ],
+    "benchmarks": [],
+    "params": "",
+    "context": "",
+    "availability": "Repository GitHub alesha-pro/llm.asm (MIT). Nessuna informazione su MiniGPT-4 (Vision-CAIR) nel testo.",
+    "local_tips": "Il testo indica di esportare i pesi Qwen3-0.6B con scripts/export_weights.py in formato .asmbin v2 (FP16 block scales) e di compilare con FAST_Q8=1 per l'inferenza. Non contiene consigli su MiniGPT-4.",
+    "hw_claims": "Per il progetto llm.asm (non per MiniGPT-4): CPU x86-64 con AVX2+FMA+F16C; inferenza Qwen3-0.6B Q8_0 a 126.8 tok/s decode con 40 thread (20.7 tok/s con 1 thread) su AMD EPYC 7642; 134.9 tok/s in KVM con 16 vCPU; 55.4 tok/s su Proxmox con Xeon E5-2670 v3; modello .asmbin da 613.66 MiB.",
+    "source": "https://github.com/alesha-pro/llm.asm",
+    "date": "2026-11-26",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-26"
+  },
+  "nvidia/Nemotron-3.5-Parse": {
+   "id": "nvidia/Nemotron-3.5-Parse",
+   "name": "Nemotron-3.5-Parse",
+   "org": "nvidia",
+   "kind": "open",
+   "released": "2026-09-03",
+   "hf_id": "nvidia/Nemotron-3.5-Parse",
+   "pipeline": "image-text-to-text",
+   "license": "openmdw-1.1",
+   "gated": false,
+   "params_b": 0.63,
+   "params_source": "safetensors",
+   "active_b": null,
+   "context": 16384,
+   "arch": {
+    "layers": 10,
+    "hidden": 1024,
+    "heads": 16,
+    "kv_heads": 8,
+    "head_dim": 64,
+    "full_layers": 10,
+    "sliding_layers": 0,
+    "window": null,
+    "linear_layers": 0,
+    "linear_state_bytes": 0,
+    "mla_dim": null,
+    "experts": null,
+    "experts_active": null,
+    "moe_inter": null,
+    "dense_layers": 0,
+    "inter": 4096,
+    "vocab": 72512,
+    "tied": true,
+    "max_ctx": 16384
+   },
+   "weights_available": true,
+   "signals": {
+    "likes": 181,
+    "downloads": 22492,
+    "trending": null
+   },
+   "links": {
+    "hf": "https://huggingface.co/nvidia/Nemotron-3.5-Parse"
+   },
+   "vram": {
+    "level": "ok",
+    "mode": "bf16",
+    "label": "BF16 nativo · 16k",
+    "text": "Gira su RTX 5090 senza quantizzare (BF16), contesto fino a ~16k, 500+ tok/s",
+    "best_quant": "BF16",
+    "quantized": false,
+    "native_best": "FP8",
+    "gguf_best": "BF16",
+    "tight": null,
+    "native_gb": 1.2,
+    "ref_ctx": 16384,
+    "tok_s": 933,
+    "kv_known": true,
+    "is_moe": false,
+    "offload": null,
+    "options": [
+     {
+      "q": "BF16",
+      "native": false,
+      "gb": 2.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": 933
+     },
+     {
+      "q": "Q8_0",
+      "native": false,
+      "gb": 1.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": 1665
+     },
+     {
+      "q": "Q6_K",
+      "native": false,
+      "gb": 1.6,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": 2089
+     },
+     {
+      "q": "Q5_K_M",
+      "native": false,
+      "gb": 1.5,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": 2358
+     },
+     {
+      "q": "Q4_K_M",
+      "native": false,
+      "gb": 1.5,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": 2693
+     },
+     {
+      "q": "IQ4_XS",
+      "native": false,
+      "gb": 1.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": 2997
+     },
+     {
+      "q": "Q3_K_M",
+      "native": false,
+      "gb": 1.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": 3202
+     },
+     {
+      "q": "IQ2_M",
+      "native": false,
+      "gb": 1.3,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": 4231
+     },
+     {
+      "q": "FP8",
+      "native": true,
+      "gb": 1.7,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": 1710
+     },
+     {
+      "q": "NVFP4",
+      "native": true,
+      "gb": 1.4,
+      "fits": true,
+      "comfy": true,
+      "max_ctx": 16384,
+      "tok_s": 2862
+     }
+    ]
+   },
+   "quants": [
+    {
+     "id": "SkyContact/Nemotron-3.5-Parse-GGUF",
+     "format": "GGUF",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 408
+    },
+    {
+     "id": "tuevuong/Nemotron-3.5-Parse-NVFP4",
+     "format": "NVFP4",
+     "nvfp4": true,
+     "official": false,
+     "downloads": 53
+    },
+    {
+     "id": "geoHeil/Nemotron-3.5-Parse-MLX-bf16",
+     "format": "MLX",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 275
+    },
+    {
+     "id": "smdesai/Nemotron-3.5-Parse-CoreAI",
+     "format": "altro",
+     "nvfp4": false,
+     "official": false,
+     "downloads": 0
+    }
+   ],
+   "quants_checked": "2026-11-26",
+   "first_seen": "2026-11-26",
+   "mentions": [
+    {
+     "item": "d3aa48daa62d",
+     "rel": 7,
+     "date": "2026-11-26",
+     "title": "Nemotron 3.5 Parse: dati aperti, fine-tuning e inferenza più veloce",
+     "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+     "source": "Hugging Face Blog"
+    }
+   ],
+   "hf_checked": "2026-11-26",
+   "score": 14.13,
+   "newer": null,
+   "newer_checked": "2026-11-26",
+   "deep": {
+    "tldr": "Nemotron-3.5-Parse è un modello compatto (0.63B dichiarati) che converte immagini di pagine documentali in dati strutturati (ordine di lettura, classi di contenuto, tabelle, grafici, bounding box) per RAG e agenti. L'articolo annuncia dataset sintetici open-source, una ricetta di fine-tuning SFT+GRPO e lo speculatore DFlash2 per inferenza più veloce. È adatto a parsing di documenti, OCR multilingue ed estrazione da tabelle e grafici.",
+    "features": [
+     "Parsing di pagine documentali in dati strutturati con reading order, classi di contenuto (titoli, paragrafi, tabelle, grafici) e bounding box",
+     "Architettura: input dinamici NaViT, compressione dei token visivi come prefisso causale del decoder, GQA-8 (16 query head, 8 key/value head) per ridurre la cache di attenzione",
+     "Training in due fasi: SFT seguito da RLVR con GRPO, con ricompense verificabili su estrazione, struttura e completamento (riduzione dei loop)",
+     "Speculative decoding con MTP e speculatore DFlash2 che propone fino a 32 token",
+     "Pipeline a passaggio singolo, doppio e triplo per rielaborare regioni difficili di tabelle e grafici",
+     "Dataset open-source: Synthetic Charts V1 (9.98M), Synthetic Tables V1 (1M), OCR Synthetic Multilingual v2 (7.9M) e ricetta di fine-tuning"
+    ],
+    "benchmarks": [
+     {
+      "name": "Punteggio complessivo di valutazione (sviluppo, SFT vs GRPO)",
+      "score": "71.38",
+      "vs": [
+       {
+        "model": "checkpoint SFT (sviluppo)",
+        "score": "66.24"
+       }
+      ]
+     },
+     {
+      "name": "Pagine con loop (sviluppo, SFT vs GRPO)",
+      "score": "29",
+      "vs": [
+       {
+        "model": "checkpoint SFT (sviluppo)",
+        "score": "126"
+       }
+      ]
+     },
+     {
+      "name": "Output che raggiungono il limite di 9.000 token (sviluppo)",
+      "score": "35",
+      "vs": [
+       {
+        "model": "checkpoint SFT (sviluppo)",
+        "score": "185"
+       }
+      ]
+     },
+     {
+      "name": "Throughput a concorrenza 512 su H200 BF16 (pagine/s)",
+      "score": "20.44 con DFlash2; 13.48…",
+      "vs": [
+       {
+        "model": "Nemotron Parse 2.0",
+        "score": "2.98"
+       }
+      ]
+     },
+     {
+      "name": "Tasso di successo pass@1 stimato sul caso dentale (sintetico)",
+      "score": "96.58% dopo RLVR; 95.85% dopo…",
+      "vs": [
+       {
+        "model": "modello base",
+        "score": "0.00%"
+       }
+      ]
+     }
+    ],
+    "params": "0.63B (campo dichiarato nei dati noti; il testo non indica il numero di parametri)",
+    "context": "16384 (campo dichiarato nei dati noti; il testo non indica il contesto massimo)",
+    "availability": "Pesi aperti sotto licenza openmdw-1.1 (campo dei dati noti); il testo cita 'open-sourcing' dei dataset e della ricetta di fine-tuning NeMo Automodel/NeMo RL, con integrazione vLLM. Prezzi e API non indicati.",
+    "local_tips": "Il testo indica l'uso di vLLM per la generazione di candidati nella ricetta di fine-tuning e la possibilità di speculative decoding con DFlash2 (fino a 32 token). Non sono indicate quantizzazioni ufficiali né parametri di sampling.",
+    "hw_claims": "Misure riportate su una singola H200 in BF16: 13.48 pagine/s senza speculazione e 20.44 pagine/s con DFlash2 a concorrenza 512; 7.62x di guadagno con DFlash2 a concorrenza 1. Nessun requisito di VRAM o RAM dichiarato per esecuzione locale su consumer GPU.",
+    "source": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+    "date": "2026-11-26",
+    "by": "anthropic/claude-haiku-5.5"
+   },
+   "updated": "2026-11-26"
   }
  },
  "aliases": {
