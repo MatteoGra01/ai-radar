@@ -73,7 +73,7 @@
    "n_models": 57
   }
  ],
- "updated": "2026-11-26T09:18:33Z",
+ "updated": "2026-11-26T09:22:39Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -97,10 +97,6 @@
  },
  "status": {
   "sources": {
-   "rss:Google DeepMind": {
-    "ok": true,
-    "n": 0
-   },
    "rss:Simon Willison": {
     "ok": true,
     "n": 3
@@ -113,15 +109,23 @@
     "ok": true,
     "n": 0
    },
+   "rss:Ollama Blog": {
+    "ok": true,
+    "n": 0
+   },
    "rss:Hugging Face Blog": {
     "ok": true,
     "n": 3
+   },
+   "rss:NVIDIA Developer": {
+    "ok": true,
+    "n": 1
    },
    "rss:Interconnects": {
     "ok": true,
     "n": 0
    },
-   "rss:Ollama Blog": {
+   "rss:Google DeepMind": {
     "ok": true,
     "n": 0
    },
@@ -129,19 +133,15 @@
     "ok": true,
     "n": 10
    },
-   "rss:NVIDIA Developer": {
-    "ok": true,
-    "n": 1
-   },
    "rss:Ollama releases": {
     "ok": true,
     "n": 1
    },
-   "rss:vLLM releases": {
+   "rss:Transformers releases": {
     "ok": true,
     "n": 0
    },
-   "rss:Transformers releases": {
+   "rss:vLLM releases": {
     "ok": true,
     "n": 0
    },
@@ -192,16 +192,15 @@
   },
   "llm": {
    "enabled": true,
-   "calls": 39,
-   "cost_usd": 0.0601,
+   "calls": 10,
+   "cost_usd": 0.0181,
    "failures": 0,
    "models": {
-    "openrouter/deepseek/deepseek-v4.1-flash": 32,
-    "openrouter/anthropic/claude-haiku-5.5": 7
+    "openrouter/deepseek/deepseek-v4.1-flash": 10
    },
    "log": []
   },
-  "duration_s": 168
+  "duration_s": 97
  },
  "new_model_days": 14,
  "benchmarks_meta": {
