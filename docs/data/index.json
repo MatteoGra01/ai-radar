@@ -1,6 +1,12 @@
 {
  "days": [
   {
+   "date": "2026-11-27",
+   "headline": "flyx, Ming-Image-0.2 e i nuovi modelli Innata-0 e GigaChat4: le novità della giornata",
+   "n_items": 21,
+   "n_models": 15
+  },
+  {
    "date": "2026-11-26",
    "headline": "Attenzione NVFP4 su Blackwell, Nemotron 3.5 Parse e nuovi agenti open source",
    "n_items": 13,
@@ -73,7 +79,7 @@
    "n_models": 57
   }
  ],
- "updated": "2026-11-26T09:22:39Z",
+ "updated": "2026-11-27T13:35:54Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -99,7 +105,7 @@
   "sources": {
    "rss:Simon Willison": {
     "ok": true,
-    "n": 3
+    "n": 1
    },
    "rss:r/LocalLLaMA": {
     "ok": false,
@@ -109,17 +115,13 @@
     "ok": true,
     "n": 0
    },
+   "rss:Hugging Face Blog": {
+    "ok": true,
+    "n": 2
+   },
    "rss:Ollama Blog": {
     "ok": true,
     "n": 0
-   },
-   "rss:Hugging Face Blog": {
-    "ok": true,
-    "n": 3
-   },
-   "rss:NVIDIA Developer": {
-    "ok": true,
-    "n": 1
    },
    "rss:Interconnects": {
     "ok": true,
@@ -131,13 +133,13 @@
    },
    "hackernews": {
     "ok": true,
-    "n": 10
+    "n": 13
    },
    "rss:Ollama releases": {
     "ok": true,
     "n": 1
    },
-   "rss:Transformers releases": {
+   "rss:NVIDIA Developer": {
     "ok": true,
     "n": 0
    },
@@ -145,13 +147,17 @@
     "ok": true,
     "n": 0
    },
+   "rss:Transformers releases": {
+    "ok": true,
+    "n": 0
+   },
    "github": {
     "ok": true,
-    "n": 36
+    "n": 38
    },
    "openrouter": {
     "ok": true,
-    "n": 474
+    "n": 477
    },
    "hf_trending": {
     "ok": true,
@@ -171,40 +177,41 @@
    },
    "papers:hf": {
     "ok": true,
-    "n": 202
+    "n": 236
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 366
+    "n": 358
    },
    "papers:Alignment Forum": {
     "ok": true,
-    "n": 1
+    "n": 2
    },
    "embeddings:mteb": {
     "ok": true,
-    "n": 533
+    "n": 538
    },
    "embeddings:hf": {
     "ok": true,
-    "n": 6
+    "n": 8
    }
   },
   "llm": {
    "enabled": true,
-   "calls": 10,
-   "cost_usd": 0.0181,
+   "calls": 24,
+   "cost_usd": 0.0308,
    "failures": 0,
    "models": {
-    "openrouter/deepseek/deepseek-v4.1-flash": 10
+    "openrouter/deepseek/deepseek-v4.1-flash": 11,
+    "openrouter/anthropic/claude-haiku-5.5": 13
    },
    "log": []
   },
-  "duration_s": 97
+  "duration_s": 138
  },
  "new_model_days": 14,
  "benchmarks_meta": {
-  "as_of": "2026-11-26T00:00:33.191Z",
+  "as_of": "2026-11-27T12:00:26.301Z",
   "version": "v1",
   "source": "artificial-analysis",
   "source_url": "https://artificialanalysis.ai",
