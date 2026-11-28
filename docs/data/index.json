@@ -1,6 +1,12 @@
 {
  "days": [
   {
+   "date": "2026-11-28",
+   "headline": "Inkling 2 Mini a 101 tok/s su GB10 e modelli GGUF con malware su Hugging Face",
+   "n_items": 18,
+   "n_models": 5
+  },
+  {
    "date": "2026-11-27",
    "headline": "flyx, Ming-Image-0.2 e i nuovi modelli Innata-0 e GigaChat4: le novità della giornata",
    "n_items": 21,
@@ -79,7 +85,7 @@
    "n_models": 57
   }
  ],
- "updated": "2026-11-27T13:35:54Z",
+ "updated": "2026-11-28T14:19:46Z",
  "hardware": {
   "gpu_name": "RTX 5090",
   "vram_gb": 32,
@@ -103,13 +109,17 @@
  },
  "status": {
   "sources": {
-   "rss:Simon Willison": {
-    "ok": true,
-    "n": 1
-   },
    "rss:r/LocalLLaMA": {
     "ok": false,
     "error": "HTTP 404 su https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day"
+   },
+   "rss:Ollama Blog": {
+    "ok": true,
+    "n": 0
+   },
+   "rss:Simon Willison": {
+    "ok": true,
+    "n": 1
    },
    "rss:OpenAI News": {
     "ok": true,
@@ -117,17 +127,9 @@
    },
    "rss:Hugging Face Blog": {
     "ok": true,
-    "n": 2
-   },
-   "rss:Ollama Blog": {
-    "ok": true,
     "n": 0
    },
    "rss:Interconnects": {
-    "ok": true,
-    "n": 0
-   },
-   "rss:Google DeepMind": {
     "ok": true,
     "n": 0
    },
@@ -135,13 +137,17 @@
     "ok": true,
     "n": 13
    },
-   "rss:Ollama releases": {
+   "rss:Google DeepMind": {
     "ok": true,
-    "n": 1
+    "n": 0
    },
    "rss:NVIDIA Developer": {
     "ok": true,
     "n": 0
+   },
+   "rss:Ollama releases": {
+    "ok": true,
+    "n": 2
    },
    "rss:vLLM releases": {
     "ok": true,
@@ -153,11 +159,11 @@
    },
    "github": {
     "ok": true,
-    "n": 38
+    "n": 47
    },
    "openrouter": {
     "ok": true,
-    "n": 477
+    "n": 476
    },
    "hf_trending": {
     "ok": true,
@@ -173,19 +179,19 @@
    },
    "benchmarks:openrouter": {
     "ok": true,
-    "n": 308
+    "n": 303
    },
    "papers:hf": {
     "ok": true,
-    "n": 236
+    "n": 214
    },
    "papers:arxiv": {
     "ok": true,
-    "n": 358
+    "n": 315
    },
    "papers:Alignment Forum": {
     "ok": true,
-    "n": 2
+    "n": 1
    },
    "embeddings:mteb": {
     "ok": true,
@@ -193,25 +199,25 @@
    },
    "embeddings:hf": {
     "ok": true,
-    "n": 8
+    "n": 7
    }
   },
   "llm": {
    "enabled": true,
-   "calls": 24,
-   "cost_usd": 0.0308,
+   "calls": 8,
+   "cost_usd": 0.0088,
    "failures": 0,
    "models": {
-    "openrouter/deepseek/deepseek-v4.1-flash": 11,
-    "openrouter/anthropic/claude-haiku-5.5": 13
+    "openrouter/deepseek/deepseek-v4.1-flash": 5,
+    "openrouter/anthropic/claude-haiku-5.5": 3
    },
    "log": []
   },
-  "duration_s": 138
+  "duration_s": 84
  },
  "new_model_days": 14,
  "benchmarks_meta": {
-  "as_of": "2026-11-27T12:00:26.301Z",
+  "as_of": "2026-11-28T12:00:34.359Z",
   "version": "v1",
   "source": "artificial-analysis",
   "source_url": "https://artificialanalysis.ai",
